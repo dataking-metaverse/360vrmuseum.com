@@ -6,7 +6,11 @@
 
     {{--<title>{{ $text['title'] }}</title>--}}
 
-
+    <!-- config and app -->
+    <script type="text/javascript">
+        window.config = function() { return {!! json_encode($config) !!}; };
+        window.app = function() { return {!! json_encode($app) !!}; };
+    </script>
 </head>
 <body>
     <div id="app"></div>
