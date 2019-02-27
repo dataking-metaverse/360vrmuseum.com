@@ -8,8 +8,8 @@ class WebController extends Controller
 {
     public function home(Request $request) {
         return view('layout', [
-            'config' => (object)[],
-            'app' => config('360vrmuseum.public'),
+            'app' => (object)[],
+            'config' => config('360vrmuseum.public'),
         ]);
     }
 }

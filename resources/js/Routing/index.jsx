@@ -3,7 +3,11 @@ import {BrowserRouter as Router, Route, Link} from "react-router-dom";
 
 import routes from "./routes";
 
-export default class Routing extends React.Component {
+type Props = {
+
+};
+
+export default class Routing extends React.Component<Props> {
     render() {
         return (
             <Router>

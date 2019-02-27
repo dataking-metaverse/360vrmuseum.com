@@ -1,7 +1,11 @@
-import React from "react";
+import React, {type AbstractComponent} from "react";
 import Page from "../components/Page";
 
-const page = Component => props => (
+type Props = {
+
+};
+
+const page = (Component: AbstractComponent<Props>) => (props: Props) => (
     <Page>
         <Component {...props} />
     </Page>

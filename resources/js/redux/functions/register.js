@@ -1,4 +1,4 @@
-export default type => dispatch => value => dispatch({
+export default (type: string) => (dispatch: function) => (value: any) => dispatch({
     type,
     value,
 });
