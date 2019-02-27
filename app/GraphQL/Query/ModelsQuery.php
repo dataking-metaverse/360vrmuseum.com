@@ -21,6 +21,14 @@ class ModelsQuery extends Query
     public function args()
     {
         return [
+            '_id' => [],
+            'presented_by' => [],
+            'name' => [],
+            'background_music' => [],
+            'createTime' => [],
+            'm_model' => [],
+            'showcase_image' => [],
+            'thumb_image' => [],
             '_id' => ['name' => '_id', 'type' => Type::string()],
             'email' => ['name' => 'email', 'type' => Type::string()]
         ];

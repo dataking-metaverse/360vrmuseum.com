@@ -17,11 +17,35 @@ class ModelType extends GraphQLType {
         return [
             '_id' => [
                 'type' => Type::nonNull(Type::string()),
-                'description' => 'The id of the model'
+                'description' => '_id',
             ],
-            'email' => [
+            'presented_by' => [
                 'type' => Type::nonNull(Type::string()),
-                'description' => 'The id of the model'
+                'description' => 'presented_by',
+            ],
+            'name' => [
+                'type' => Type::nonNull(Type::string()),
+                'description' => 'name',
+            ],
+            'background_music' => [
+                'type' => Type::nonNull(Type::string()),
+                'description' => 'background_music',
+            ],
+            'createTime' => [
+                'type' => Type::nonNull(Type::string()),
+                'description' => 'createTime',
+            ],
+            'm_model' => [
+                'type' => Type::nonNull(Type::string()),
+                'description' => 'm_model',
+            ],
+            'showcase_image' => [
+                'type' => Type::nonNull(Type::string()),
+                'description' => 'showcase_image',
+            ],
+            'thumb_image' => [
+                'type' => Type::nonNull(Type::string()),
+                'description' => 'thumb_image',
             ],
         ];
     }

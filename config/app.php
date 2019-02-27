@@ -166,6 +166,7 @@ return [
          * Package Service Providers...
          */
         Folklore\GraphQL\ServiceProvider::class,
+        Jenssegers\Mongodb\MongodbServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -227,6 +228,7 @@ return [
 
         // custom
         'GraphQL' => Folklore\GraphQL\Support\Facades\GraphQL::class,
+        'MongoModel' => Jenssegers\Mongodb\Eloquent\Model::class,
 
     ],
 
