@@ -4,6 +4,8 @@ import {createStore} from "redux";
 import {Provider} from "react-redux";
 
 import reducers from "./redux/reducers";
+import assets from "./assets";
+import Main from "./Main";
 
 try {
 
@@ -11,7 +13,13 @@ try {
     const node = document.getElementById('app');
 
     // redux
-    const store = createStore(reducers);
+    const app = window.app();
+    const config = window.config();
+    const store = createStore(reducers, {
+        app,
+        config,
+        assets,
+    });
 
     ReactDOM.render((
         <Provider store={store}>
