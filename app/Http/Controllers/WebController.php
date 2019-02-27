@@ -6,7 +6,10 @@ use Illuminate\Http\Request;
 
 class WebController extends Controller
 {
-    public function index(Request $request) {
-        return view('layout');
+    public function home(Request $request) {
+        return view('layout', [
+            'config' => (object)[],
+            'app' => config('360vrmuseum.public'),
+        ]);
     }
 }

@@ -11,4 +11,4 @@
 |
 */
 
-Route::get('/', 'WebController@index');
+Route::get('/', 'WebController@home');
