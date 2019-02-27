@@ -2,16 +2,19 @@ import React from "react";
 import * as R from "ramda";
 import {connect} from "react-redux";
 
+import {Root} from "./styledComponents";
 
 type Props = {
 
 };
 
-@connect(R.pick)
+
 export default class NavigationBar extends React.Component<Props> {
     render() {
         return (
-            null
+            <Root>
+
+            </Root>
         );
     }
 }

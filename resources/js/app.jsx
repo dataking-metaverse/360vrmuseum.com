@@ -20,6 +20,7 @@ try {
     // redux
     const app = window.app();
     const config = window.config();
+
     const store: Store<{}, Action> = createStore(reducers, { // TODO : here, flow typing says there is an error here but I don't know what it is even checked for an hour
         app,
         config,
@@ -34,5 +35,5 @@ try {
         </Provider>
     ), node);
 } catch (ex) {
-    // TODO : handling this
+    console.error(ex); // TODO : handling this instead of just log it out
 }
