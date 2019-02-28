@@ -1,4 +1,7 @@
+import colors from "./colors";
 import {rem} from "./functions";
+
+
 
 const variables = {
 
@@ -7,10 +10,7 @@ const variables = {
     bodyFontSize: rem(1.6), // 16px
 
     // theme
-    color: {
-
-        purple: '#1f101f',
-    },
+    colors,
 
 };
 

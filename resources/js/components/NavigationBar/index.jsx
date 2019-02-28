@@ -2,11 +2,15 @@ import React from "react";
 import * as R from "ramda";
 import {connect} from "react-redux";
 
-import {Root} from "./styledComponents";
-
 type Props = {
 
 };
+import styled from "styled-components";
+
+export const Root = styled.div`
+    
+`;
+
 
 
 export default class NavigationBar extends React.Component<Props> {
