@@ -43,9 +43,9 @@ const RightCol = styled(Col)`
 const Logo = styled.img``;
 
 const Item = styled(Link)`
+    position: relative;
     ${flexMiddle()}
-    margin-right: 2rem;
-    padding-right: 2rem;
+    margin-right: 4rem;
     height: ${themeVar('components.navigationBar.height')};
     color: ${themeVar('components.navigationBar.color')};
     text-decoration: none;
@@ -53,6 +53,23 @@ const Item = styled(Link)`
     &:last-child {
         padding-right: 0;
         margin-right: 0;
+    }
+    
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: .3rem;
+        background-color: ${themeVar('components.navigationBar.color')};
+        opacity: 0;
+        transition: ${themeVar('transitionDuration')};
+    }
+    
+    ${props => props.active && '&:before,'}
+    &:hover:before {
+        opacity: 1;
     }
 `;
 

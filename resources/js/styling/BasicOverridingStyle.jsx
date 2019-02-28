@@ -20,6 +20,8 @@ html {
 }
 
 body {
+    background-color: ${themeVar('colors.theme.body.background')};
+    color: ${themeVar('colors.theme.body.color')};
     font-size: ${themeVar('fontSize.body')};
     font-family: ${themeVar('fontFamily.base')}
 }

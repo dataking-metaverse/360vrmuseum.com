@@ -5,6 +5,7 @@ import {rem} from "./functions";
 const variables = {
 
     // globals
+    transitionDuration: '.4s',
 
     // theme
     colors,
