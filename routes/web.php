@@ -11,8 +11,9 @@
 |
 */
 
+URL::forceRootUrl(config('app.url'));
+
 Route::get('/', 'WebController@home')->name('home');
 Route::get('/national-museum', 'WebController@nationalMuseum')->name('national-museum');
-Route::get('/360vrmuseum', 'WebController@vrmuseum')->name('360vrmuseum'); // unfortunately method's name can't be started by digits
+Route::get('/360vrmuseum', 'WebController@vrmuseum')->name('vrmuseum');
 Route::get('/contact-us', 'WebController@contactUs')->name('contact-us');
-

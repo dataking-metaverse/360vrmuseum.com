@@ -1,5 +1,6 @@
 const basic = {
     purple: '#530d5e',
+    darkPurple: '#1f101f',
     white: '#ffffff',
     black: '#000000',
     gray: '#747474',
@@ -46,6 +47,10 @@ const colors = {
         },
 
     },
+
+    // pages
+
+    // components
 
 };
 

@@ -6,6 +6,7 @@ import type {ComponentType} from "react";
 
 
 const BasicOverridingStyle: ComponentType<{}> = createGlobalStyle`
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans:400,700');
 
 html, body {
     position: relative;
@@ -15,11 +16,12 @@ html, body {
 }
 
 html {
-    font-size: ${themeVar('rootFontSize')};
+    font-size: ${themeVar('fontSize.root')};
 }
 
 body {
-    font-size: ${themeVar('bodyFontSize')}
+    font-size: ${themeVar('fontSize.body')};
+    font-family: ${themeVar('fontFamily.base')}
 }
 
 `;

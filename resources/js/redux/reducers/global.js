@@ -33,3 +33,6 @@ export const locale = (state: {} | void, action: Action) => {
     if (action.type === LOCALE_REGISTER) { return action.value; }
     return state || null;
 };
+
+
+
