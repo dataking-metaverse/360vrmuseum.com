@@ -21,7 +21,7 @@ export default class HeroCarousel extends React.Component<Props> {
     render() {
         return (
             <Slider {...slickSettings}>
-                {this.props.children}
+
             </Slider>
         );
     }

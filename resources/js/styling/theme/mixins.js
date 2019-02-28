@@ -3,6 +3,11 @@ export const flexMiddle: () => string = () => `
     align-items: center;
 `;
 
+export const flexCenter: () => string = () => `
+    display: flex;
+    justify-content: center;
+`;
+
 export const flexRight: () => string = () => `
     display: flex;
     justify-content: flex-end;
@@ -11,6 +16,7 @@ export const flexRight: () => string = () => `
 
 const mixins = {
     flexMiddle,
+    flexCenter,
     flexRight,
 };
 
