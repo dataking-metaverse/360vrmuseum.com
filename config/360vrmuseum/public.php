@@ -8,6 +8,8 @@ return [
     'navigationBar' => [
         'showHome' => true,
         'staticItems' => [
+            'home',
+            'national-museum',
             '360vrmuseum',
             'contact-us',
             'login',

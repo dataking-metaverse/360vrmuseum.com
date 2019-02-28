@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class WebController extends Controller
 {
-    public function home(Request $request) {
+    public function all(Request $request) {
         return view('layout', [
             'app' => [
                 'routes' => [
@@ -14,9 +14,11 @@ class WebController extends Controller
                     'national-museum' => route('national-museum', null, false),
                     'vrmuseum' => route('vrmuseum', null, false),
                     'contact-us' => route('contact-us', null, false),
+                    'login' => route('login', null, false),
                 ]
             ],
             'config' => config('360vrmuseum.public'),
+            'lang' => config('lang.en'), // TODO : make different translations
         ]);
     }
 }

@@ -20,7 +20,9 @@ type Props = {
 type InjectedProps = {
     showHome: boolean,
     items: Array<string>,
-}
+    logo: string,
+    itemTitles: Array<string>,
+};
 
 const Root = styled.div`
     background-color: ${themeVar('components.navigationBar.background')};
@@ -74,21 +76,25 @@ const Item = styled(Link)`
 `;
 
 @connect(R.applySpec({
-    config: R.path(['assets']),
     showHome: R.path(['config', 'navigationBar', 'showHome']),
     items: R.path(['config', 'navigationBar', 'staticItems']),
     logo: R.path(['assets', 'logo']),
+    itemTitles: R.pipe(
+        R.tap(console.log),
+        R.path(['lang', 'navigation']),
+
+        R.mapObjIndexed(R.path(['title']))
+    ),
 }))
 export default class NavigationBar extends Injected.Component<Props, InjectedProps> {
 
     renderItems(): Element {
         return this.props.items.map(itemName => (
-            <Item key={itemName} to={itemName}>{itemName}</Item>
+            <Item key={itemName} to={itemName}>{this.props.itemTitles[itemName]}</Item>
         ));
     }
 
     render() {
-        console.log(this.props.items);
         return (
             <Root>
                 <Container fluid>

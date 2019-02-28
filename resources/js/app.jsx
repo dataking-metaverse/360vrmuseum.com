@@ -20,11 +20,14 @@ try {
     // redux
     const app = window.app();
     const config = window.config();
+    const lang = window.lang();
 
     const store: Store<{}, Action> = createStore(reducers, { // TODO : here, flow typing says there is an error here but I don't know what it is even checked for an hour
         app,
         config,
         assets,
+        lang,
+        locale: document.getElementsByTagName('html')[0].getAttribute('lang'),
     });
 
     if (node === null) { throw new Error('hello, world'); }

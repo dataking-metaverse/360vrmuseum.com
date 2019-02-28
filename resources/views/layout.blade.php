@@ -10,6 +10,7 @@
     <script type="text/javascript">
         window.config = function() { return {!! json_encode($config) !!}; };
         window.app = function() { return {!! json_encode($app) !!}; };
+        window.lang = function() { return {!! json_encode($lang) !!}; };
     </script>
 </head>
 <body>
