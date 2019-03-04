@@ -26,6 +26,8 @@ export default class FeaturedExhibitionCarousel extends React.Component<Props> {
                         <Slide
                             key={index}
                             backgroundImage="https://placehold.it/300x200"
+                            title=""
+                            subtitle=""
                         />
                     ))}
                 </Slider>
