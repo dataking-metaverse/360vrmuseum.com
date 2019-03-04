@@ -4,9 +4,9 @@ import {ThemeProvider} from "styled-components";
 import {GridThemeProvider} from "styled-bootstrap-grid";
 import {BaseCSS} from "styled-bootstrap-grid";
 
-
+import "./styling/ThirdPartyCSSImports";
 import BasicOverridingStyle from "./styling/BasicOverridingStyle";
-import "./styling/ThridPartyCSSImports";
+import ThirdPartyOverridingStyle from "./styling/ThirdPartyOverridingStyle";
 import theme from "./styling/theme";
 import gridTheme from "./styling/gridTheme";
 import Routing from "./Routing";
@@ -16,7 +16,15 @@ type Props = {
 
 };
 
-
+function StyleSheets() {
+    return (
+        <React.Fragment>
+            <BaseCSS />
+            <BasicOverridingStyle />
+            <ThirdPartyOverridingStyle />
+        </React.Fragment>
+    );
+}
 
 export default class Main extends React.PureComponent<Props> {
     render() {
@@ -24,8 +32,7 @@ export default class Main extends React.PureComponent<Props> {
             <ThemeProvider theme={theme}>
                 <GridThemeProvider gridTheme={gridTheme}>
                     <React.Fragment>
-                        <BaseCSS />
-                        <BasicOverridingStyle />
+                        <StyleSheets />
                         <Routing />
                     </React.Fragment>
                 </GridThemeProvider>

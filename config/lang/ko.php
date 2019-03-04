@@ -1,3 +1,16 @@
 <?php
 
-return json_decode(file_get_contents(__DIR__ . '/ko.json'), true);
+return [
+    "navigation" => [
+        "home" => ["title" => "Home"],
+        "national-museum" => ["title" => "National Museum"],
+        "360vrmuseum" => ["title" => "360°VR Museum"],
+        "contact-us" => ["title" => "Contact Us"],
+        "login" => ["title" => "Login"],
+    ],
+    "pages" => [
+        "home" => [
+
+        ],
+    ],
+];

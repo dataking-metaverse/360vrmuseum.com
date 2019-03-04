@@ -1,5 +1,7 @@
 import React from "react";
 import Slider from "react-slick";
+import {Container} from "styled-bootstrap-grid";
+
 import Slide from "./Slide";
 
 
@@ -18,14 +20,16 @@ const slickSettings = {
 export default class FeaturedExhibitionCarousel extends React.Component<Props> {
     render() {
         return (
-            <Slider {...slickSettings}>
-                {[...(new Array(8))].map((_, index) => (
-                    <Slide
-                        key={index}
-                        backgroundImage="https://placehold.it/300x200"
-                    />
-                ))}
-            </Slider>
+            <Container>
+                <Slider {...slickSettings}>
+                    {[...(new Array(8))].map((_, index) => (
+                        <Slide
+                            key={index}
+                            backgroundImage="https://placehold.it/300x200"
+                        />
+                    ))}
+                </Slider>
+            </Container>
         );
     }
 }
