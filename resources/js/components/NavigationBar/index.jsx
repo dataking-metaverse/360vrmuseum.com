@@ -11,6 +11,7 @@ import {flexMiddle, flexRight} from "../../styling/theme/mixins";
 import Injected from "../Injected";
 
 import type {Element} from "react";
+import {withRouter} from "react-router";
 
 
 type Props = {
@@ -80,12 +81,11 @@ const Item = styled(Link)`
     items: R.path(['config', 'navigationBar', 'staticItems']),
     logo: R.path(['assets', 'logo']),
     itemTitles: R.pipe(
-        R.tap(console.log),
         R.path(['lang', 'navigation']),
-
         R.mapObjIndexed(R.path(['title']))
     ),
 }))
+@withRouter
 export default class NavigationBar extends Injected.Component<Props, InjectedProps> {
 
     renderItems(): Element {
@@ -95,6 +95,7 @@ export default class NavigationBar extends Injected.Component<Props, InjectedPro
     }
 
     render() {
+        console.log(this.props);
         return (
             <Root>
                 <Container fluid>

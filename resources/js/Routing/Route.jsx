@@ -1,7 +1,7 @@
+import React from "react";
 import {connect} from "react-redux";
 import * as R from "ramda";
 import {Route} from "react-router-dom";
-import React from "react";
 
 import Injected from "../components/Injected";
 import routes from "./routes";

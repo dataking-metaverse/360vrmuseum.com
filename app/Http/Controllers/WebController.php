@@ -18,7 +18,7 @@ class WebController extends Controller
                 ]
             ],
             'config' => config('360vrmuseum.public'),
-            'lang' => config('lang.en'), // TODO : make different translations
+            'lang' => config('lang.ko'), // TODO : make different translations
         ]);
     }
 }

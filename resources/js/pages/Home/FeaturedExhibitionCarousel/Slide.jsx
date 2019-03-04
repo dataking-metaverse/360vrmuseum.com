@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import * as R from "ramda";
-import {flexMiddle, flexCenter} from "../../../styling/theme/mixins";
 
 
 type Props = {
@@ -11,30 +10,25 @@ type Props = {
 };
 
 const Root = styled.div`
-    ${flexMiddle()}
-    ${flexCenter()}
     position: relative;
-    height: 44rem;
+    height: 30rem;
+`;
+
+const Image = styled.div`
+    position: relative;
+    height: 100%;
     background-image: url(${R.path(['backgroundImage'])});
     background-size: cover;
     background-position: 50% 50%;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
 `;
-
-const Title = styled.h2`
-
-`;
-
-const Subtitle = styled.div`
-
-`;
-
 
 export default class Slide extends React.Component<Props> {
     render() {
         return (
-            <Root backgroundImage={this.props.backgroundImage}>
-                <Title>{this.props.title}</Title>
-                <Subtitle>{this.props.subtitle}</Subtitle>
+            <Root>
+                <Image backgroundImage={this.props.backgroundImage} />
             </Root>
         );
     }
