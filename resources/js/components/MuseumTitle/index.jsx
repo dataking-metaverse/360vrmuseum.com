@@ -1,4 +1,4 @@
-import React form "react";
+import React from "react";
 import styled from "styled-component";
 import {themeVar} from "../../styling/theme/functions";
 
