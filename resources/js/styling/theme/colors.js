@@ -4,6 +4,7 @@ const basic = {
     white: '#ffffff',
     black: '#000000',
     gray: '#747474',
+    whisper: '#ededed',
     whiteSmoke: '#f4f4f4',
 };
 

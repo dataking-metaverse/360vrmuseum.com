@@ -95,7 +95,6 @@ export default class NavigationBar extends Injected.Component<Props, InjectedPro
     }
 
     render() {
-        console.log(this.props);
         return (
             <Root>
                 <Container fluid>
