@@ -8,16 +8,17 @@ export const flexCenter: () => string = () => `
     justify-content: center;
 `;
 
-export const flexRight: () => string = () => `
+export const flexBottom: () => string = () => `
     display: flex;
     justify-content: flex-end;
 `;
 
+export const flexLeft: () => string = () => `
+    display: flex;
+    justify-content: flex-start;
+`;
 
-const mixins = {
-    flexMiddle,
-    flexCenter,
-    flexRight,
-};
-
-export default mixins;
+export const flexRight: () => string = () => `
+    display: flex;
+    justify-content: flex-end;
+`;

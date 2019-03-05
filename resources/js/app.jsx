@@ -5,7 +5,7 @@ import {Provider} from "react-redux";
 
 
 import reducers from "./redux/reducers";
-import assets from "./assets";
+import * as assets from "./assets";
 import Main from "./Main";
 
 import type {Store, StoreEnhancer} from "redux";

@@ -1,11 +1,11 @@
-import functions from "./functions";
+import * as functions from "./functions";
+import * as mixins from "./mixins";
 import variables from "./variables";
-import mixins from "./mixins";
 
 const theme = {
     functions,
-    variables,
     mixins,
+    variables,
 };
 
 

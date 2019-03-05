@@ -6,7 +6,13 @@ use Illuminate\Http\Request;
 
 class WebController extends Controller
 {
-    public function all(Request $request) {
+    public function home() { return $this->all(); }
+    public function nationalMuseum() { return $this->all(); }
+    public function vrmuseum() { return $this->all(); }
+    public function contactUs() { return $this->all(); }
+    public function login() { return $this->all(); }
+
+    public function all() {
         return view('layout', [
             'app' => [
                 'routes' => [

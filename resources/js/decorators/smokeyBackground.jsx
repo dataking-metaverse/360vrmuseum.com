@@ -4,7 +4,7 @@ import * as R from "ramda";
 
 import type {Element, Component} from "react";
 
-const backgroundColor = R.path(['theme', 'variables', 'colors', 'basic', 'whisper']);
+const backgroundColor = R.path(['theme', 'variables', 'colors', 'basic', 'whiteSmoke']);
 const Root = styled.div`
     background-color: ${backgroundColor};
 `;

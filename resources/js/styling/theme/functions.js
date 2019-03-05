@@ -7,6 +7,7 @@ import type {Interpolation} from "styled-components";
 
 export const px = (num: number | string) => endsWith(num + '', 'px');
 export const rem = (num: number | string) => endsWith(num + '', 'rem');
+export const percentage = (num: number | string) => endsWith(num + '', '%');
 
 
 export const themeVar: (path: string | Array<string>) => Interpolation = R.pipe(
@@ -17,11 +18,3 @@ export const themeVar: (path: string | Array<string>) => Interpolation = R.pipe(
     R.concat(['theme', 'variables']),
     R.path
 );
-
-const functions = {
-    px,
-    rem,
-    themeVar,
-};
-
-export default functions;

@@ -13,8 +13,8 @@
 
 URL::forceRootUrl(config('app.url'));
 
-Route::get('/', 'WebController@all')->name('home');
-Route::get('/national-museum', 'WebController@all')->name('national-museum');
-Route::get('/360vrmuseum', 'WebController@all')->name('vrmuseum');
-Route::get('/contact-us', 'WebController@all')->name('contact-us');
-Route::get('/login', 'WebController@all')->name('login');
+Route::get('/', 'WebController@home')->name('home');
+Route::get('/national-museum', 'WebController@nationalMuseum')->name('national-museum');
+Route::get('/360vrmuseum', 'WebController@vrmuseum')->name('vrmuseum');
+Route::get('/contact-us', 'WebController@contactUs')->name('contact-us');
+Route::get('/login', 'WebController@login')->name('login');
