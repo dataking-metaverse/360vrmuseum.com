@@ -10,6 +10,7 @@ import makeSrcset from "../../../helpers/makeSrcset";
 import type {ResponsiveImage} from "../../../assets";
 import Title from "../components/Title";
 import {themeVar} from "../../../styling/theme/functions";
+import FadeInComponent from "../../../components/FadeInComponent";
 
 type CaseType = {
     title: string,
@@ -97,23 +98,30 @@ function Discover(props: Props) {
         <Container>
             <SectionRow>
                 <Col xl="6">
-                    <ImagePre
-                        text={'                 mobile                   cardboard'}
-                        image={mcImage}
-                    />
-                    <ImagePre
-                        text={'                    hmd'}
-                        image={hmdImage}
-                    />
+                    <FadeInComponent>
+                        <ImagePre
+                            text={'                 mobile                   cardboard'}
+                            image={mcImage}
+                        />
+                    </FadeInComponent>
+                    <FadeInComponent>
+                        <ImagePre
+                            text={'                    hmd'}
+                            image={hmdImage}
+                        />
+                    </FadeInComponent>
                 </Col>
                 <RightCol xl="6">
                     <TextWrap>
+                        <FadeInComponent>
                         <Title dangerouslySetInnerHTML={{__html: text.title }} />
+                        </FadeInComponent>
                         {text.cases.map((item, index) => (
-                            <Case
-                                key={index}
-                                {...item}
-                            />
+                            <FadeInComponent key={index}>
+                                <Case
+                                    {...item}
+                                />
+                            </FadeInComponent>
                         ))}
                     </TextWrap>
                 </RightCol>

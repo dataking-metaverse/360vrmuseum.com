@@ -5,6 +5,7 @@ import {Container} from "styled-bootstrap-grid";
 import {connect} from "react-redux";
 
 import Button from "../../../components/Button";
+import FadeInComponent from "../../../components/FadeInComponent";
 
 
 type Props = {|
@@ -34,9 +35,14 @@ function PageLinks(props: Props) {
     const {text} = props;
     return (
         <Root>
-            <Button type="primary">{text.toMainPage}</Button>
-            <Spacer>&nbsp;</Spacer>
-            <Button type="secondary">{text.toContactPage}</Button>
+            {/** this transition should delay for a bit more to be locking good **/}
+            <FadeInComponent delay={1000}>
+                <div>
+                    <Button type="primary">{text.toMainPage}</Button>
+                    <Spacer>&nbsp;</Spacer>
+                    <Button type="secondary">{text.toContactPage}</Button>
+                </div>
+            </FadeInComponent>
         </Root>
     );
 }

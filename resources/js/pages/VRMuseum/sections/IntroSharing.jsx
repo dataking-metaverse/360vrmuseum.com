@@ -12,6 +12,7 @@ import Title from "../components/Title";
 import Intro from "../components/Intro";
 
 import type {ResponsiveImage} from "../../../assets/pages/vrmuseum";
+import FadeInComponent from "../../../components/FadeInComponent";
 
 
 type PercentageBarType = {
@@ -58,14 +59,25 @@ function IntroSharing(props: Props) {
         <Container>
             <SectionRow>
                 <LeftCol xl="7">
-                    <IntroImage src={props.image.src} srcSet={makeSrcset(props.srcSetObject)} />
+                    <FadeInComponent>
+                        <IntroImage src={props.image.src} srcSet={makeSrcset(props.srcSetObject)} />
+                    </FadeInComponent>
                 </LeftCol>
                 <RightCol xl="5">
                     <TextWrap>
-                        <Title dangerouslySetInnerHTML={{__html: text.title}} />
-                        <Intro dangerouslySetInnerHTML={{__html: text.intro}} />
-                        <PercentageBar {...comparee} barColor="rgba(96,64,104,.7)" />
-                        <PercentageBar {...comparer} barColor={purple} />
+                        <FadeInComponent delay={200}>
+                            <Title dangerouslySetInnerHTML={{__html: text.title}} />
+                        </FadeInComponent>
+                        <FadeInComponent delay={400}>
+                            <Intro dangerouslySetInnerHTML={{__html: text.intro}} />
+                        </FadeInComponent>
+                        <br />
+                        <FadeInComponent delay={600}>
+                            <div>
+                                <PercentageBar {...comparee} barColor="rgba(96,64,104,.7)" />
+                                <PercentageBar {...comparer} barColor={purple} />
+                            </div>
+                        </FadeInComponent>
                     </TextWrap>
                 </RightCol>
             </SectionRow>

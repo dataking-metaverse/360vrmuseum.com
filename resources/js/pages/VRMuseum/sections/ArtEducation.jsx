@@ -10,6 +10,7 @@ import Title from "../components/Title";
 import Intro from "../components/Intro";
 
 import type {ResponsiveImage} from "../../../assets/pages/vrmuseum";
+import FadeInComponent from "../../../components/FadeInComponent";
 
 
 type Props = {
@@ -52,12 +53,18 @@ function ArtEducation(props: Props) {
             <SectionRow>
                 <LeftCol xl="6">
                     <TextWrap>
-                        <Title dangerouslySetInnerHTML={{__html: text.title}} />
-                        <Intro dangerouslySetInnerHTML={{__html: text.intro}} />
+                        <FadeInComponent>
+                            <Title dangerouslySetInnerHTML={{__html: text.title}} />
+                        </FadeInComponent>
+                        <FadeInComponent delay={200}>
+                            <Intro dangerouslySetInnerHTML={{__html: text.intro}} />
+                        </FadeInComponent>
                     </TextWrap>
                 </LeftCol>
                 <RightCol xl="6">
+                    <FadeInComponent delay={400}>
                     <Image src={props.image.src} srcSet={makeSrcset(props.srcSetObject)} />
+                    </FadeInComponent>
                 </RightCol>
             </SectionRow>
         </Container>

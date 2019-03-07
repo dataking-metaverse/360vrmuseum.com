@@ -8,6 +8,7 @@ import instanceOf from "../../helpers/instanceOf";
 
 type Props = {
     className: ?string,
+    style: ?{},
     duration: ?number,
     delay: ?number,
     children: Node,
@@ -21,23 +22,24 @@ const rootAttr = name => R.pipe(
 );
 
 const Root = styled.div`
-        
-    > [class^="${className}"], > [class*=" ${className}"] {
+
+    // the child just right after the starting waypoint
+    > [data-start-waypoint] + * {
         opacity: 0;
         transform: translateY(3rem);
         transition-property: opacity, transform;
-        transition-duration: ${rootAttr('duration')}s;
-        transition-delay: ${rootAttr('delay')}s;
     }
     
     > .${className}-enter-done {
         transform: translateY(0);
         opacity: 1;
+        transition-duration: ${rootAttr('duration')}s;
+        transition-delay: ${rootAttr('delay')}s;
     }
 `;
 
 const Waypoint = styled.div`
-    position: absolute;
+    position: relative;
 `;
 
 
@@ -45,6 +47,7 @@ export default class FadeInComponent extends React.Component<Props> {
 
     static defaultProps = {
         classNames: '',
+        style: {},
         duration: 400,
         delay: 0,
     };
@@ -56,8 +59,8 @@ export default class FadeInComponent extends React.Component<Props> {
         in: false,
     };
 
-    setIn(value) {
-        this.setState({ in: value });
+    static pointInPageVertically(y) {
+        return y > 0 && y <= window.innerHeight;
     }
 
     componentDidMount() {
@@ -73,20 +76,33 @@ export default class FadeInComponent extends React.Component<Props> {
         const start = this.startWaypointRef.current;
         const end = this.endWaypointRef.current;
         if (!R.all(instanceOf(HTMLElement), [start, end])) { return; }
-        const middle = (start.getBoundingClientRect().y + end.getBoundingClientRect().y) >> 1;
-        this.setIn(middle > 0 && middle <= window.innerHeight);
+
+        const startY = start.getBoundingClientRect().y;
+        const endY = end.getBoundingClientRect().y;
+        const middleY = (startY + endY) >> 1;
+
+        if (!this.state.in) {
+            if (FadeInComponent.pointInPageVertically(middleY)) {
+                this.setState({ in: true });
+            }
+        } else {
+            if (!R.any(FadeInComponent.pointInPageVertically, [startY, endY])) {
+                this.setState({ in: false });
+            }
+        }
+
     };
 
     render() {
-        const rootProps = R.pick(['className', 'duration', 'delay'])(this.props);
+        const rootProps = R.pick(['style', 'className', 'duration', 'delay'])(this.props);
         return (
             <Root {...rootProps}>
                 <Waypoint ref={this.startWaypointRef} data-start-waypoint />
                 <CSSTransition
                     in={this.state.in}
                     timeout={300}
-                    unmountOnExit
                     classNames={className}
+                    enter={true}
                 >
                     {this.props.children}
                 </CSSTransition>

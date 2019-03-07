@@ -9,6 +9,8 @@ import Intro from "../components/Intro";
 
 import type {ResponsiveImage} from "../../../assets";
 import makeSrcset from "../../../helpers/makeSrcset";
+import FadeInComponent from "../../../components/FadeInComponent";
+
 
 type Props = {
     text: {|
@@ -21,7 +23,9 @@ type Props = {
 const Root = styled.div`
     position: relative;
     width: 97rem;
-    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5rem;
     text-align: center;
 `;
 
@@ -34,9 +38,15 @@ function CulturalData(props: Props) {
     const {text, image} = props;
     return (
         <Root>
-            <Title dangerouslySetInnerHTML={{__html: text.title}} />
-            <Intro>{text.intro}</Intro>
-            <Image src={image.src} srcSet={makeSrcset(image.srcSetObject)} />
+            <FadeInComponent>
+                <Title dangerouslySetInnerHTML={{__html: text.title}} />
+            </FadeInComponent>
+            <FadeInComponent delay={200}>
+                <Intro>{text.intro}</Intro>
+            </FadeInComponent>
+            <FadeInComponent delay={400}>
+                <Image src={image.src} srcSet={makeSrcset(image.srcSetObject)} />
+            </FadeInComponent>
         </Root>
     );
 }

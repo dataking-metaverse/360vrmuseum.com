@@ -10,6 +10,7 @@ import smokeyBackground from "../../../decorators/smokeyBackground";
 import type {ResponsiveImage} from "../../../assets";
 import makeSrcset from "../../../helpers/makeSrcset";
 import {themeVar} from "../../../styling/theme/functions";
+import FadeInComponent from "../../../components/FadeInComponent";
 
 
 type Props = {
@@ -61,13 +62,19 @@ function BenefitRow(props: RowsProps) {
         <Row className={classNames('mb-5', { 'flex-row-reverse': props.index % 2 !== 0 })}>
             <Col xl="2">&nbsp;</Col>
             <Col xl="5">
-                <Image src={image.src} srcSet={makeSrcset(image.srcSetObject)} />
+                <FadeInComponent>
+                    <Image src={image.src} srcSet={makeSrcset(image.srcSetObject)} />
+                </FadeInComponent>
             </Col>
             <Col xl="5">
-                <TextWrap stickOn={props.index % 2 === 0 ? 'left' : 'right'}>
-                    <Title>{props.title}</Title>
-                    <Description>{props.description}</Description>
-                </TextWrap>
+                    <TextWrap stickOn={props.index % 2 === 0 ? 'left' : 'right'}>
+                        <FadeInComponent delay={200}>
+                            <div>
+                                <Title>{props.title}</Title>
+                                <Description>{props.description}</Description>
+                            </div>
+                        </FadeInComponent>
+                    </TextWrap>
             </Col>
         </Row>
     );
@@ -77,7 +84,7 @@ function Benefits(props: Props) {
     const {text, images} = props;
     return (
         <Root>
-            <Container className="mb-5 pb-5">
+            <Container className="mb-5 py-5">
                 {text.map((item, index) => (
                     <BenefitRow
                         key={index}

@@ -9,6 +9,7 @@ import Intro from "../components/Intro";
 import makeSrcset from "../../../helpers/makeSrcset";
 
 import type {ResponsiveImage} from "../../../assets";
+import FadeInComponent from "../../../components/FadeInComponent";
 
 
 type Props = {
@@ -75,13 +76,21 @@ function Appreciate(props: Props) {
     return (
         <ContainerCenter>
             <Wrapper>
-                <Title dangerouslySetInnerHTML={{__html: text.title}} />
-                <Intro dangerouslySetInnerHTML={{__html: text.intro}} />
+                <FadeInComponent>
+                    <Title dangerouslySetInnerHTML={{__html: text.title}} />
+                </FadeInComponent>
+                <FadeInComponent delay={200}>
+                    <Intro dangerouslySetInnerHTML={{__html: text.intro}} />
+                </FadeInComponent>
             </Wrapper>
-            <LogoWrapper>
-                <UniversityLogos />
-            </LogoWrapper>
-            <ViewingOnIphoneX src={props.viewingOnIphoneX} />
+            <FadeInComponent delay={400}>
+                <LogoWrapper>
+                    <UniversityLogos />
+                </LogoWrapper>
+            </FadeInComponent>
+            <FadeInComponent delay={600}>
+                <ViewingOnIphoneX src={props.viewingOnIphoneX} />
+            </FadeInComponent>
         </ContainerCenter>
     );
 }
