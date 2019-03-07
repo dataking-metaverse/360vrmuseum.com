@@ -3,6 +3,7 @@ import {Container} from "styled-bootstrap-grid";
 import {connect} from "react-redux";
 import * as R from "ramda";
 import styled from "styled-components";
+import {media} from "styled-bootstrap-grid";
 
 import Title from "../components/Title";
 import Intro from "../components/Intro";
@@ -10,6 +11,7 @@ import Intro from "../components/Intro";
 import type {ResponsiveImage} from "../../../assets";
 import makeSrcset from "../../../helpers/makeSrcset";
 import FadeInComponent from "../../../components/FadeInComponent";
+import {percentage} from "../../../styling/theme/functions";
 
 
 type Props = {
@@ -20,13 +22,25 @@ type Props = {
     image: ResponsiveImage,
 };
 
-const Root = styled.div`
+const Wrap = styled.div`
     position: relative;
-    width: 97rem;
+    max-width: 100%;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 5rem;
     text-align: center;
+    
+    ${media.sm`
+        width: ${percentage(1000 / 12)};
+    `}
+    
+    ${media.md`
+        width: ${percentage(80)};
+    `}
+    
+    ${media.xl`
+        width: 97rem;
+    `}
 `;
 
 const Image = styled.img`
@@ -37,17 +51,19 @@ const Image = styled.img`
 function CulturalData(props: Props) {
     const {text, image} = props;
     return (
-        <Root>
-            <FadeInComponent>
-                <Title dangerouslySetInnerHTML={{__html: text.title}} />
-            </FadeInComponent>
-            <FadeInComponent delay={200}>
-                <Intro>{text.intro}</Intro>
-            </FadeInComponent>
-            <FadeInComponent delay={400}>
-                <Image src={image.src} srcSet={makeSrcset(image.srcSetObject)} />
-            </FadeInComponent>
-        </Root>
+        <Container>
+            <Wrap>
+                <FadeInComponent>
+                    <Title dangerouslySetInnerHTML={{__html: text.title}} />
+                </FadeInComponent>
+                <FadeInComponent delay={200}>
+                    <Intro>{text.intro}</Intro>
+                </FadeInComponent>
+                <FadeInComponent delay={400}>
+                    <Image src={image.src} srcSet={makeSrcset(image.srcSetObject)} />
+                </FadeInComponent>
+            </Wrap>
+        </Container>
     );
 }
 

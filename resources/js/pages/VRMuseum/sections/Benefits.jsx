@@ -2,7 +2,7 @@ import React from "react";
 import {connect} from "react-redux";
 import * as R from "ramda";
 import styled from "styled-components";
-import {Container, Row, Col} from "styled-bootstrap-grid";
+import {Container, Row, Col, media} from "styled-bootstrap-grid";
 import classNames from "classnames";
 
 import smokeyBackground from "../../../decorators/smokeyBackground";
@@ -33,15 +33,20 @@ const Image = styled.img`
 
 const stickOn = (leftThen, rightThen) => R.ifElse(R.pathEq(['stickOn'], 'left'), R.always(leftThen), R.always(rightThen));
 const TextWrap = styled.div`
-    position: absolute;
-    top: 50%;
-    ${stickOn('left: 0;', 'right: 0;')}
-    ${stickOn('text-align: left;', 'text-align: right;')}
-    width: 36.4rem;
-    padding-left: 4rem;
-    padding-right: 4rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
     max-width: 100%;
-    transform: translateY(-50%);
+    
+    ${media.md`
+        padding-left: 4rem;
+        padding-right: 4rem;
+        width: 36.4rem;
+        ${stickOn('', 'margin-left: auto;')}
+        ${stickOn('', 'margin-right: 0;')}
+        ${stickOn('text-align: left;', 'text-align: right;')}
+    `}
 `;
 
 const Description = styled.p`
@@ -58,23 +63,25 @@ const Title = styled.div`
 
 function BenefitRow(props: RowsProps) {
     const {image} = props;
+
+    const isOdd = props.index % 2 !== 0;
+
     return (
-        <Row className={classNames('mb-5', { 'flex-row-reverse': props.index % 2 !== 0 })}>
-            <Col xl="2">&nbsp;</Col>
-            <Col xl="5">
+        <Row className={classNames('mb-5', {'flex-md-row-reverse': !isOdd })} justifyContent="center" mdJustifyContent="start">
+            <Col sm="10" md="6" lg="5">
+                <TextWrap stickOn={!isOdd ? 'left' : 'right'}>
+                    <FadeInComponent delay={200}>
+                        <div>
+                            <Title>{props.title}</Title>
+                            <Description>{props.description}</Description>
+                        </div>
+                    </FadeInComponent>
+                </TextWrap>
+            </Col>
+            <Col sm="10" md="6" lg="5">
                 <FadeInComponent>
                     <Image src={image.src} srcSet={makeSrcset(image.srcSetObject)} />
                 </FadeInComponent>
-            </Col>
-            <Col xl="5">
-                    <TextWrap stickOn={props.index % 2 === 0 ? 'left' : 'right'}>
-                        <FadeInComponent delay={200}>
-                            <div>
-                                <Title>{props.title}</Title>
-                                <Description>{props.description}</Description>
-                            </div>
-                        </FadeInComponent>
-                    </TextWrap>
             </Col>
         </Row>
     );

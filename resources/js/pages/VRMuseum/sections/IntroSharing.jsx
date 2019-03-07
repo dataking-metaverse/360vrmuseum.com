@@ -2,7 +2,7 @@ import React from "react";
 import * as R from "ramda";
 import {connect} from "react-redux";
 import styled, {withTheme} from "styled-components";
-import {Container, Row, Col} from "styled-bootstrap-grid";
+import {Container, Row, Col, media} from "styled-bootstrap-grid";
 
 import makeSrcset from "../../../helpers/makeSrcset";
 import IntroImage from "./IntroImage";
@@ -48,7 +48,15 @@ const RightCol = styled(Col)`
 `;
 
 const TextWrap = styled.div`
-    width: 48rem;
+    max-width: 100%;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    text-align: center;
+    
+    ${media.md`
+        width: 48rem;
+        text-align: left;
+    `}
 `;
 
 function IntroSharing(props: Props) {
@@ -58,12 +66,12 @@ function IntroSharing(props: Props) {
     return (
         <Container>
             <SectionRow>
-                <LeftCol xl="7">
+                <LeftCol md="5" xl="6" order="1" mdOrder="0">
                     <FadeInComponent>
                         <IntroImage src={props.image.src} srcSet={makeSrcset(props.srcSetObject)} />
                     </FadeInComponent>
                 </LeftCol>
-                <RightCol xl="5">
+                <RightCol md="7" xl="6" order="0" mdOrder="1">
                     <TextWrap>
                         <FadeInComponent delay={200}>
                             <Title dangerouslySetInnerHTML={{__html: text.title}} />

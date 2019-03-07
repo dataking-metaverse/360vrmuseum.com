@@ -2,7 +2,7 @@ import React from "react";
 import * as R from "ramda";
 import {connect} from "react-redux";
 import styled, {withTheme} from "styled-components";
-import {Container, Row, Col} from "styled-bootstrap-grid";
+import {Container, Row, Col, media} from "styled-bootstrap-grid";
 
 import makeSrcset from "../../../helpers/makeSrcset";
 import SectionRow from "../components/SectionRow";
@@ -34,12 +34,28 @@ const RightCol = styled(Col)`
     justify-content: center;
     align-items: flex-start;
     flex-direction: column;
+    
+    > img {
+        margin-left: 1.5rem;
+        margin-right: 1.5rem;
+    }
 `;
 
 const TextWrap = styled.div`
-    width: 48rem;
-    margin-left: auto;
-    margin-right: 5rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    
+    ${media.sm`
+        padding-left: 0;
+        padding-right: 0;
+    `}
+    
+    ${media.md`
+        width: 48rem;
+        margin-left: auto;
+        margin-right: 5rem;
+    `}
+    
 `;
 
 const Image = styled.img`
@@ -50,20 +66,20 @@ function ArtEducation(props: Props) {
     const {text} = props;
     return (
         <Container>
-            <SectionRow>
-                <LeftCol xl="6">
+            <SectionRow justifyContent="center">
+                <LeftCol sm="10" xl="6">
                     <TextWrap>
                         <FadeInComponent>
                             <Title dangerouslySetInnerHTML={{__html: text.title}} />
                         </FadeInComponent>
                         <FadeInComponent delay={200}>
-                            <Intro dangerouslySetInnerHTML={{__html: text.intro}} />
+                            <Intro className="mb-4" dangerouslySetInnerHTML={{__html: text.intro}} />
                         </FadeInComponent>
                     </TextWrap>
                 </LeftCol>
-                <RightCol xl="6">
+                <RightCol sm="10" xl="6">
                     <FadeInComponent delay={400}>
-                    <Image src={props.image.src} srcSet={makeSrcset(props.srcSetObject)} />
+                        <Image src={props.image.src} srcSet={makeSrcset(props.srcSetObject)} />
                     </FadeInComponent>
                 </RightCol>
             </SectionRow>

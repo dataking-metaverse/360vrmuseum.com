@@ -1,5 +1,44 @@
-import {createGlobalStyle} from "styled-components";
+import {createGlobalStyle, css} from "styled-components";
+import {media} from "styled-bootstrap-grid";
 
+const createFlexInBreakpoint = breakpoint => css`
+${media[breakpoint]`
+  .flex-${breakpoint}-row { -ms-flex-direction: row !important; flex-direction: row !important; }
+  .flex-${breakpoint}-column { -ms-flex-direction: column !important; flex-direction: column !important; }
+  .flex-${breakpoint}-row-reverse { -ms-flex-direction: row-reverse !important; flex-direction: row-reverse !important; }
+  .flex-${breakpoint}-column-reverse { -ms-flex-direction: column-reverse !important; flex-direction: column-reverse !important; }
+  .flex-${breakpoint}-wrap { -ms-flex-wrap: wrap !important; flex-wrap: wrap !important; }
+  .flex-${breakpoint}-nowrap { -ms-flex-wrap: nowrap !important; flex-wrap: nowrap !important; }
+  .flex-${breakpoint}-wrap-reverse { -ms-flex-wrap: wrap-reverse !important; flex-wrap: wrap-reverse !important; }
+  .flex-${breakpoint}-fill { -ms-flex: 1 1 auto !important; flex: 1 1 auto !important; }
+  .flex-${breakpoint}-grow-0 { -ms-flex-positive: 0 !important; flex-grow: 0 !important; }
+  .flex-${breakpoint}-grow-1 { -ms-flex-positive: 1 !important; flex-grow: 1 !important; }
+  .flex-${breakpoint}-shrink-0 { -ms-flex-negative: 0 !important; flex-shrink: 0 !important; }
+  .flex-${breakpoint}-shrink-1 { -ms-flex-negative: 1 !important; flex-shrink: 1 !important; }
+  .justify-content-${breakpoint}-start { -ms-flex-pack: start !important; justify-content: flex-start !important; }
+  .justify-content-${breakpoint}-end { -ms-flex-pack: end !important; justify-content: flex-end !important; }
+  .justify-content-${breakpoint}-center { -ms-flex-pack: center !important; justify-content: center !important; }
+  .justify-content-${breakpoint}-between { -ms-flex-pack: justify !important; justify-content: space-between !important; }
+  .justify-content-${breakpoint}-around { -ms-flex-pack: distribute !important; justify-content: space-around !important; }
+  .align-items-${breakpoint}-start { -ms-flex-align: start !important; align-items: flex-start !important; }
+  .align-items-${breakpoint}-end { -ms-flex-align: end !important; align-items: flex-end !important; }
+  .align-items-${breakpoint}-center { -ms-flex-align: center !important; align-items: center !important; }
+  .align-items-${breakpoint}-baseline { -ms-flex-align: baseline !important; align-items: baseline !important; }
+  .align-items-${breakpoint}-stretch { -ms-flex-align: stretch !important; align-items: stretch !important; }
+  .align-content-${breakpoint}-start { -ms-flex-line-pack: start !important; align-content: flex-start !important; }
+  .align-content-${breakpoint}-end { -ms-flex-line-pack: end !important; align-content: flex-end !important; }
+  .align-content-${breakpoint}-center { -ms-flex-line-pack: center !important; align-content: center !important; }
+  .align-content-${breakpoint}-between { -ms-flex-line-pack: justify !important; align-content: space-between !important; }
+  .align-content-${breakpoint}-around { -ms-flex-line-pack: distribute !important; align-content: space-around !important; }
+  .align-content-${breakpoint}-stretch { -ms-flex-line-pack: stretch !important; align-content: stretch !important; }
+  .align-self-${breakpoint}-auto { -ms-flex-item-align: auto !important; align-self: auto !important; }
+  .align-self-${breakpoint}-start { -ms-flex-item-align: start !important; align-self: flex-start !important; }
+  .align-self-${breakpoint}-end { -ms-flex-item-align: end !important; align-self: flex-end !important; }
+  .align-self-${breakpoint}-center { -ms-flex-item-align: center !important; align-self: center !important; }
+  .align-self-${breakpoint}-baseline { -ms-flex-item-align: baseline !important; align-self: baseline !important; }
+  .align-self-${breakpoint}-stretch { -ms-flex-item-align: stretch !important; align-self: stretch !important; }
+`}
+`;
 
 const ThirdPartyOverridingStyle = createGlobalStyle`
 
@@ -119,6 +158,11 @@ const ThirdPartyOverridingStyle = createGlobalStyle`
 .align-self-center { -ms-flex-item-align: center !important; align-self: center !important; }
 .align-self-baseline { -ms-flex-item-align: baseline !important; align-self: baseline !important; }
 .align-self-stretch { -ms-flex-item-align: stretch !important; align-self: stretch !important; }
+
+${createFlexInBreakpoint('sm')}
+${createFlexInBreakpoint('md')}
+${createFlexInBreakpoint('lg')}
+${createFlexInBreakpoint('xl')}
 
 .text-justify { text-align: justify !important; }
 .text-nowrap { white-space: nowrap !important; }

@@ -2,7 +2,7 @@ import React from "react";
 import * as R from "ramda";
 import {connect} from "react-redux";
 import styled from "styled-components";
-import {Container} from "styled-bootstrap-grid";
+import {Container, media} from "styled-bootstrap-grid";
 
 import Title from "../components/Title";
 import Intro from "../components/Intro";
@@ -10,6 +10,7 @@ import makeSrcset from "../../../helpers/makeSrcset";
 
 import type {ResponsiveImage} from "../../../assets";
 import FadeInComponent from "../../../components/FadeInComponent";
+import {percentage} from "../../../styling/theme/functions";
 
 
 type Props = {
@@ -32,22 +33,43 @@ const ContainerCenter = styled(Container)`
 
 const Wrapper = styled.div`
     width: 100rem;
+    max-width: 100%;
     margin: auto;
-    padding: 0 3rem 3rem;
     margin-bottom: 3rem;
+    
+    ${media.md`
+        padding: 0 3rem 3rem;
+    `}
 `;
 
 const LogoWrapper = styled.div`
     margin-bottom: 8rem;
 `;
 
-const UniversityLogo = styled.img`
+const UniversityLogoWrap = styled.a`
+    position: relative;
     width: 18rem;
-    height: 9.4rem;
+    display: inline-block;
+    
+    &:before {
+        content: '';
+        position: relative;
+        display: block;
+        padding-top: ${percentage(9.4 * 100 / 18 )};
+    }
+`;
+
+const UniversityLogo = styled.img`
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 `;
 
 const ViewingOnIphoneX = styled.img`
-    max-width: 61.2rem;
+    width: 61.2rem;
+    max-width: 100%;
 `;
 
 
@@ -58,7 +80,7 @@ const UniversityLogos = R.compose(
     })),
 )(function UniversityLogos(props: UniversityLogosProps) {
     return props.logos.map(({src, srcSetObject}, index) => (
-        <a
+        <UniversityLogoWrap
             key={index}
             href={props.links[index]}
             target="_blank"
@@ -67,7 +89,7 @@ const UniversityLogos = R.compose(
                 src={src}
                 srcSet={makeSrcset(srcSetObject)}
             />
-        </a>
+        </UniversityLogoWrap>
     ));
 });
 

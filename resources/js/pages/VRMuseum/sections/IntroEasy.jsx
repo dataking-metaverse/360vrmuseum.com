@@ -2,7 +2,7 @@ import React from "react";
 import * as R from "ramda";
 import {connect} from "react-redux";
 import styled from "styled-components";
-import {Container, Row, Col} from "styled-bootstrap-grid";
+import {Container, Row, Col, media} from "styled-bootstrap-grid";
 
 import makeSrcset from "../../../helpers/makeSrcset";
 import IntroImage from "./IntroImage";
@@ -12,7 +12,6 @@ import Intro from "../components/Intro";
 
 import type {ResponsiveImage} from "../../../assets";
 import FadeInComponent from "../../../components/FadeInComponent";
-
 
 type Props = {
     text: {
@@ -30,11 +29,21 @@ const LeftCol = styled(Col)`
 `;
 
 const RightCol = styled(Col)`
+    display: flex;
+    align-items: center;
     text-align: center;
 `;
 
 const TextWrap = styled.div`
-    width: 48rem;
+    text-align: center;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    
+    ${media.md`
+        width: 48rem;
+        max-width: 100%;
+        text-align: left;
+    `}
 `;
 
 function IntroEasy(props: Props) {
@@ -42,7 +51,7 @@ function IntroEasy(props: Props) {
     return (
         <Container>
             <SectionRow>
-                <LeftCol xl="5">
+                <LeftCol md="7" xl="6">
                     <TextWrap>
                         <FadeInComponent>
                             <Title dangerouslySetInnerHTML={{__html: text.title}} />
@@ -52,7 +61,7 @@ function IntroEasy(props: Props) {
                         </FadeInComponent>
                     </TextWrap>
                 </LeftCol>
-                <RightCol xl="7">
+                <RightCol md="5" xl="6">
                     <FadeInComponent delay={400}>
                         <IntroImage
                             src={image.src}

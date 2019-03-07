@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import {Container, Row, Col} from "styled-bootstrap-grid";
+import {Container, Row, Col, media} from "styled-bootstrap-grid";
 import * as R from "ramda";
 import {connect} from "react-redux";
 
@@ -35,12 +35,19 @@ type CaseProps = CaseType;
 
 const ImagePreRoot = styled.div`
     position: relative;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    
+    ${media.sm`
+        padding-left: 0;
+        padding-right: 0;    
+    `}
 `;
 
 const ImagePrePre = styled.pre`
     position: absolute;
     font-family: inherit;
-`
+`;
 
 const Image = styled.img`
     max-width: 100%;
@@ -52,17 +59,30 @@ const RightCol = styled(Col)`
 `;
 
 const TextWrap = styled.div`
-    padding-left: 4rem;
-    padding-right: 4rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    
+    ${media.sm`
+        padding-left: 0;
+        padding-right: 0;
+    `}
+    
+    ${media.xl`
+        padding-left: 4rem;
+        padding-right: 4rem;
+    `}
 `;
 
 const CaseWrap = styled.div`
     position: relative;
     margin-bottom: 1rem;
     font-size: 1.8rem;
-    width: 45rem;
     max-width: 100%;
     color: ${themeVar('colors.grayscale.600')};
+    
+    ${media.xl`
+        width: 45rem;
+    `}
 `;
 
 const CaseTitle = styled.div`
@@ -89,15 +109,15 @@ function Case(props: CaseProps) {
             <CaseTitle>{props.title}</CaseTitle>
             <CaseDescription>{props.description}</CaseDescription>
         </CaseWrap>
-    )
+    );
 }
 
 function Discover(props: Props) {
     const {text, mobileCardboardImage: mcImage, hmdImage} = props;
     return (
         <Container>
-            <SectionRow>
-                <Col xl="6">
+            <SectionRow justifyContent="center">
+                <Col sm="10" md="6">
                     <FadeInComponent>
                         <ImagePre
                             text={'                 mobile                   cardboard'}
@@ -111,10 +131,10 @@ function Discover(props: Props) {
                         />
                     </FadeInComponent>
                 </Col>
-                <RightCol xl="6">
+                <RightCol sm="10" md="6">
                     <TextWrap>
                         <FadeInComponent>
-                        <Title dangerouslySetInnerHTML={{__html: text.title }} />
+                            <Title dangerouslySetInnerHTML={{__html: text.title }} />
                         </FadeInComponent>
                         {text.cases.map((item, index) => (
                             <FadeInComponent key={index}>
