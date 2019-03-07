@@ -40,8 +40,6 @@ function Button(props: Props) {
         default: { backgroundColor: color('white'), border: color('darkerPurple'), color: color('darkerPurple') },
     })(props.type);
 
-    console.log(colorSet);
-
     return (
         <Root colorSet={colorSet} {...props} />
     );

@@ -11,6 +11,7 @@ import Title from "../components/Title";
 import Intro from "../components/Intro";
 
 import type {ResponsiveImage} from "../../../assets";
+import FadeInComponent from "../../../components/FadeInComponent";
 
 
 type Props = {
@@ -43,15 +44,21 @@ function IntroEasy(props: Props) {
             <SectionRow>
                 <LeftCol xl="5">
                     <TextWrap>
-                        <Title dangerouslySetInnerHTML={{__html: text.title}} />
-                        <Intro dangerouslySetInnerHTML={{__html: text.intro}} />
+                        <FadeInComponent>
+                            <Title dangerouslySetInnerHTML={{__html: text.title}} />
+                        </FadeInComponent>
+                        <FadeInComponent delay={200}>
+                            <Intro dangerouslySetInnerHTML={{__html: text.intro}} />
+                        </FadeInComponent>
                     </TextWrap>
                 </LeftCol>
                 <RightCol xl="7">
-                    <IntroImage
-                        src={image.src}
-                        srcSet={makeSrcset(image.srcSetObject)}
-                    />
+                    <FadeInComponent delay={400}>
+                        <IntroImage
+                            src={image.src}
+                            srcSet={makeSrcset(image.srcSetObject)}
+                        />
+                    </FadeInComponent>
                 </RightCol>
             </SectionRow>
         </Container>

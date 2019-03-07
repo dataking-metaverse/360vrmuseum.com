@@ -1,7 +1,9 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import * as R from "ramda";
 import {connect} from "react-redux";
 import styled from "styled-components";
+
+import FadeInComponent from "../../../components/FadeInComponent";
 
 
 type Props = {
@@ -22,21 +24,34 @@ const Root = styled.div`
 
 
 const TitleWrapper = styled.div`
-    padding-top: 50rem;
+    padding-top: 16.8rem;
     color: #ffffff;
     text-align: center;
 `;
-const Title = styled.h1``;
-const Subtitlte = styled.div``;
+const Title = styled.h1`
+    font-size: 7.6rem;
+`;
+const Subtitlte = styled.div`
+    font-size: 1.8rem;
+`;
 
 function Hero(props: Props) {
+
+    const [transactionIn, setIn] = useState(false);
+
+    useEffect(() => {
+        window.setTimeout(() => setIn(true), 10000);
+    });
+
     const {text} = props;
     return (
         <Root image={props.image}>
-            <TitleWrapper>
-                <Title>{text.title}</Title>
-                <Subtitlte dangerouslySetInnerHTML={{__html: text.subtitle}} />
-            </TitleWrapper>
+            <FadeInComponent>
+                <TitleWrapper>
+                    <Title>{text.title}</Title>
+                    <Subtitlte dangerouslySetInnerHTML={{__html: text.subtitle}} />
+                </TitleWrapper>
+            </FadeInComponent>
         </Root>
     );
 }
