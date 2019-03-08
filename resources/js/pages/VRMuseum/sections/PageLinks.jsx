@@ -5,7 +5,7 @@ import {Container} from "styled-bootstrap-grid";
 import {connect} from "react-redux";
 
 import Button from "../../../components/Button";
-import FadeInComponent from "../../../components/FadeInComponent";
+import buildFadeComponent from "../../../helpers/buildFadeComponent";
 
 
 type Props = {|
@@ -19,6 +19,8 @@ const Root = styled(Container)`
     text-align: center;
     margin-bottom: 10rem;
 `;
+
+const Inner = buildFadeComponent('div')``;
 
 const Spacer = styled.span`
     //
@@ -35,14 +37,11 @@ function PageLinks(props: Props) {
     const {text} = props;
     return (
         <Root>
-            {/** this transition should delay for a bit more to be locking good **/}
-            <FadeInComponent delay={1000}>
-                <div>
-                    <Button type="primary">{text.toMainPage}</Button>
-                    <Spacer>&nbsp;</Spacer>
-                    <Button type="secondary">{text.toContactPage}</Button>
-                </div>
-            </FadeInComponent>
+            <Inner delay={1000}>
+                <Button type="primary">{text.toMainPage}</Button>
+                <Spacer>&nbsp;</Spacer>
+                <Button type="secondary">{text.toContactPage}</Button>
+            </Inner>
         </Root>
     );
 }

@@ -11,6 +11,7 @@ import makeSrcset from "../../../helpers/makeSrcset";
 import type {ResponsiveImage} from "../../../assets";
 import FadeInComponent from "../../../components/FadeInComponent";
 import {percentage} from "../../../styling/theme/functions";
+import buildFadeComponent from "../../../helpers/buildFadeComponent";
 
 
 type Props = {
@@ -42,7 +43,7 @@ const Wrapper = styled.div`
     `}
 `;
 
-const LogoWrapper = styled.div`
+const LogoWrapper = buildFadeComponent('div')`
     margin-bottom: 8rem;
 `;
 
@@ -67,7 +68,7 @@ const UniversityLogo = styled.img`
     height: 100%;
 `;
 
-const ViewingOnIphoneX = styled.img`
+const ViewingOnIphoneX = buildFadeComponent('img')`
     width: 61.2rem;
     max-width: 100%;
 `;
@@ -98,21 +99,13 @@ function Appreciate(props: Props) {
     return (
         <ContainerCenter>
             <Wrapper>
-                <FadeInComponent>
-                    <Title dangerouslySetInnerHTML={{__html: text.title}} />
-                </FadeInComponent>
-                <FadeInComponent delay={200}>
-                    <Intro dangerouslySetInnerHTML={{__html: text.intro}} />
-                </FadeInComponent>
+                <Title dangerouslySetInnerHTML={{__html: text.title}} />
+                <Intro delay={200} dangerouslySetInnerHTML={{__html: text.intro}} />
             </Wrapper>
-            <FadeInComponent delay={400}>
-                <LogoWrapper>
-                    <UniversityLogos />
-                </LogoWrapper>
-            </FadeInComponent>
-            <FadeInComponent delay={600}>
-                <ViewingOnIphoneX src={props.viewingOnIphoneX} />
-            </FadeInComponent>
+            <LogoWrapper delay={400}>
+                <UniversityLogos />
+            </LogoWrapper>
+                <ViewingOnIphoneX delay={600} src={props.viewingOnIphoneX} />
         </ContainerCenter>
     );
 }

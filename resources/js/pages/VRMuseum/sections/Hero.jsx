@@ -5,6 +5,7 @@ import styled from "styled-components";
 import {Container, media} from "styled-bootstrap-grid";
 
 import FadeInComponent from "../../../components/FadeInComponent";
+import buildFadeComponent from "../../../helpers/buildFadeComponent";
 
 
 type Props = {
@@ -32,21 +33,26 @@ const Root = styled.div`
 `;
 
 
-const TitleWrapper = styled.div`
-    padding-top: .1rem;
+const TitleWrapper = buildFadeComponent('div')`
+    position: relative;
+    top: .1rem;
     color: #ffffff;
     text-align: center;
     
     ${media.sm`
-        padding-top: 4.8rem;
+        top: 4.8rem;
     `}
     
     ${media.lg`
-        padding-top: 16.8rem;
+        top: 16.8rem;
     `}
 `;
+
 const Title = styled.h1`
     font-size: 4rem;
+    margin: 0;
+    padding: .67em 0;
+    
     
     ${media.sm`
         font-size: 5.4rem;
@@ -80,12 +86,10 @@ function Hero(props: Props) {
     return (
         <Root image={props.image}>
             <Container>
-                <FadeInComponent>
-                    <TitleWrapper>
-                        <Title>{text.title}</Title>
-                        <Subtitlte dangerouslySetInnerHTML={{__html: text.subtitle}} />
-                    </TitleWrapper>
-                </FadeInComponent>
+                <TitleWrapper>
+                    <Title>{text.title}</Title>
+                    <Subtitlte dangerouslySetInnerHTML={{__html: text.subtitle}} />
+                </TitleWrapper>
             </Container>
         </Root>
     );

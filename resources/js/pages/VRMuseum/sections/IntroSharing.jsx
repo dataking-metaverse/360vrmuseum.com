@@ -12,7 +12,7 @@ import Title from "../components/Title";
 import Intro from "../components/Intro";
 
 import type {ResponsiveImage} from "../../../assets/pages/vrmuseum";
-import FadeInComponent from "../../../components/FadeInComponent";
+import buildFadeComponent from "../../../helpers/buildFadeComponent";
 
 
 type PercentageBarType = {
@@ -59,6 +59,8 @@ const TextWrap = styled.div`
     `}
 `;
 
+const PercentageBarWrap = buildFadeComponent('div')``;
+
 function IntroSharing(props: Props) {
     const {text} = props;
     const {comparee, comparer} = props.percentageBars;
@@ -67,25 +69,17 @@ function IntroSharing(props: Props) {
         <Container>
             <SectionRow>
                 <LeftCol md="5" xl="6" order="1" mdOrder="0">
-                    <FadeInComponent>
-                        <IntroImage src={props.image.src} srcSet={makeSrcset(props.srcSetObject)} />
-                    </FadeInComponent>
+                    <IntroImage src={props.image.src} srcSet={makeSrcset(props.srcSetObject)} />
                 </LeftCol>
                 <RightCol md="7" xl="6" order="0" mdOrder="1">
                     <TextWrap>
-                        <FadeInComponent delay={200}>
-                            <Title dangerouslySetInnerHTML={{__html: text.title}} />
-                        </FadeInComponent>
-                        <FadeInComponent delay={400}>
-                            <Intro dangerouslySetInnerHTML={{__html: text.intro}} />
-                        </FadeInComponent>
+                        <Title delay={200} dangerouslySetInnerHTML={{__html: text.title}} />
+                        <Intro delay={400} dangerouslySetInnerHTML={{__html: text.intro}} />
                         <br />
-                        <FadeInComponent delay={600}>
-                            <div>
-                                <PercentageBar {...comparee} barColor="rgba(96,64,104,.7)" />
-                                <PercentageBar {...comparer} barColor={purple} />
-                            </div>
-                        </FadeInComponent>
+                        <PercentageBarWrap delay={600}>
+                            <PercentageBar {...comparee} barColor="rgba(96,64,104,.7)" />
+                            <PercentageBar {...comparer} barColor={purple} />
+                        </PercentageBarWrap>
                     </TextWrap>
                 </RightCol>
             </SectionRow>

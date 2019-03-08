@@ -11,6 +11,7 @@ import Intro from "../components/Intro";
 
 import type {ResponsiveImage} from "../../../assets/pages/vrmuseum";
 import FadeInComponent from "../../../components/FadeInComponent";
+import buildFadeComponent from "../../../helpers/buildFadeComponent";
 
 
 type Props = {
@@ -58,7 +59,7 @@ const TextWrap = styled.div`
     
 `;
 
-const Image = styled.img`
+const Image = buildFadeComponent('img')`
     max-width: 90%;
 `;
 
@@ -69,18 +70,12 @@ function ArtEducation(props: Props) {
             <SectionRow justifyContent="center">
                 <LeftCol sm="10" xl="6">
                     <TextWrap>
-                        <FadeInComponent>
-                            <Title dangerouslySetInnerHTML={{__html: text.title}} />
-                        </FadeInComponent>
-                        <FadeInComponent delay={200}>
-                            <Intro className="mb-4" dangerouslySetInnerHTML={{__html: text.intro}} />
-                        </FadeInComponent>
+                        <Title dangerouslySetInnerHTML={{__html: text.title}} />
+                        <Intro delay={200} className="mb-4" dangerouslySetInnerHTML={{__html: text.intro}} />
                     </TextWrap>
                 </LeftCol>
                 <RightCol sm="10" xl="6">
-                    <FadeInComponent delay={400}>
-                        <Image src={props.image.src} srcSet={makeSrcset(props.srcSetObject)} />
-                    </FadeInComponent>
+                    <Image delay={400} src={props.image.src} srcSet={makeSrcset(props.srcSetObject)} />
                 </RightCol>
             </SectionRow>
         </Container>

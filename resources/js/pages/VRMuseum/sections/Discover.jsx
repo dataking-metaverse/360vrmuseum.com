@@ -11,6 +11,7 @@ import type {ResponsiveImage} from "../../../assets";
 import Title from "../components/Title";
 import {themeVar} from "../../../styling/theme/functions";
 import FadeInComponent from "../../../components/FadeInComponent";
+import buildFadeComponent from "../../../helpers/buildFadeComponent";
 
 type CaseType = {
     title: string,
@@ -33,7 +34,7 @@ type Props = {|
 
 type CaseProps = CaseType;
 
-const ImagePreRoot = styled.div`
+const ImagePreRoot = buildFadeComponent('div')`
     position: relative;
     padding-left: 1.5rem;
     padding-right: 1.5rem;
@@ -73,7 +74,7 @@ const TextWrap = styled.div`
     `}
 `;
 
-const CaseWrap = styled.div`
+const CaseWrap = buildFadeComponent('div')`
     position: relative;
     margin-bottom: 1rem;
     font-size: 1.8rem;
@@ -118,30 +119,23 @@ function Discover(props: Props) {
         <Container>
             <SectionRow justifyContent="center">
                 <Col sm="10" md="6">
-                    <FadeInComponent>
-                        <ImagePre
-                            text={'                 mobile                   cardboard'}
-                            image={mcImage}
-                        />
-                    </FadeInComponent>
-                    <FadeInComponent>
-                        <ImagePre
-                            text={'                    hmd'}
-                            image={hmdImage}
-                        />
-                    </FadeInComponent>
+                    <ImagePre
+                        text={'                 mobile                   cardboard'}
+                        image={mcImage}
+                    />
+                    <ImagePre
+                        text={'                    hmd'}
+                        image={hmdImage}
+                    />
                 </Col>
                 <RightCol sm="10" md="6">
                     <TextWrap>
-                        <FadeInComponent>
-                            <Title dangerouslySetInnerHTML={{__html: text.title }} />
-                        </FadeInComponent>
+                        <Title dangerouslySetInnerHTML={{__html: text.title }} />
                         {text.cases.map((item, index) => (
-                            <FadeInComponent key={index}>
-                                <Case
-                                    {...item}
-                                />
-                            </FadeInComponent>
+                            <Case
+                                key={index}
+                                {...item}
+                            />
                         ))}
                     </TextWrap>
                 </RightCol>

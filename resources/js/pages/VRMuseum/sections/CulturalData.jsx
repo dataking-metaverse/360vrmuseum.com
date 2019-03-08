@@ -12,6 +12,7 @@ import type {ResponsiveImage} from "../../../assets";
 import makeSrcset from "../../../helpers/makeSrcset";
 import FadeInComponent from "../../../components/FadeInComponent";
 import {percentage} from "../../../styling/theme/functions";
+import buildFadeComponent from "../../../helpers/buildFadeComponent";
 
 
 type Props = {
@@ -43,7 +44,7 @@ const Wrap = styled.div`
     `}
 `;
 
-const Image = styled.img`
+const Image = buildFadeComponent('img')`
     width: 100rem;
     max-width: 100%;
 `;
@@ -53,15 +54,9 @@ function CulturalData(props: Props) {
     return (
         <Container>
             <Wrap>
-                <FadeInComponent>
-                    <Title dangerouslySetInnerHTML={{__html: text.title}} />
-                </FadeInComponent>
-                <FadeInComponent delay={200}>
-                    <Intro>{text.intro}</Intro>
-                </FadeInComponent>
-                <FadeInComponent delay={400}>
-                    <Image src={image.src} srcSet={makeSrcset(image.srcSetObject)} />
-                </FadeInComponent>
+                <Title dangerouslySetInnerHTML={{__html: text.title}} />
+                <Intro delay={200}>{text.intro}</Intro>
+                <Image delay={400} src={image.src} srcSet={makeSrcset(image.srcSetObject)} />
             </Wrap>
         </Container>
     );

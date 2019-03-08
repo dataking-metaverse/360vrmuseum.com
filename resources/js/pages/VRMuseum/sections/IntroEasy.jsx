@@ -53,21 +53,16 @@ function IntroEasy(props: Props) {
             <SectionRow>
                 <LeftCol md="7" xl="6">
                     <TextWrap>
-                        <FadeInComponent>
-                            <Title dangerouslySetInnerHTML={{__html: text.title}} />
-                        </FadeInComponent>
-                        <FadeInComponent delay={200}>
-                            <Intro dangerouslySetInnerHTML={{__html: text.intro}} />
-                        </FadeInComponent>
+                        <Title dangerouslySetInnerHTML={{__html: text.title}} />
+                        <Intro delay={200} dangerouslySetInnerHTML={{__html: text.intro}} />
                     </TextWrap>
                 </LeftCol>
                 <RightCol md="5" xl="6">
-                    <FadeInComponent delay={400}>
-                        <IntroImage
-                            src={image.src}
-                            srcSet={makeSrcset(image.srcSetObject)}
-                        />
-                    </FadeInComponent>
+                    <IntroImage
+                        delay={400}
+                        src={image.src}
+                        srcSet={makeSrcset(image.srcSetObject)}
+                    />
                 </RightCol>
             </SectionRow>
         </Container>

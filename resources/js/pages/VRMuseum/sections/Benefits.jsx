@@ -10,7 +10,7 @@ import smokeyBackground from "../../../decorators/smokeyBackground";
 import type {ResponsiveImage} from "../../../assets";
 import makeSrcset from "../../../helpers/makeSrcset";
 import {themeVar} from "../../../styling/theme/functions";
-import FadeInComponent from "../../../components/FadeInComponent";
+import buildFadeComponent from "../../../helpers/buildFadeComponent";
 
 
 type Props = {
@@ -27,12 +27,12 @@ type RowsProps = {
 
 const Root = styled.div``;
 
-const Image = styled.img`
+const Image = buildFadeComponent('img')`
     max-width: 100%;
 `;
 
 const stickOn = (leftThen, rightThen) => R.ifElse(R.pathEq(['stickOn'], 'left'), R.always(leftThen), R.always(rightThen));
-const TextWrap = styled.div`
+const TextWrap = buildFadeComponent('div')`
     position: relative;
     display: flex;
     flex-direction: column;
@@ -63,25 +63,17 @@ const Title = styled.div`
 
 function BenefitRow(props: RowsProps) {
     const {image} = props;
-
     const isOdd = props.index % 2 !== 0;
-
     return (
         <Row className={classNames('mb-5', {'flex-md-row-reverse': !isOdd })} justifyContent="center" mdJustifyContent="start">
             <Col sm="10" md="6" lg="5">
-                <TextWrap stickOn={!isOdd ? 'left' : 'right'}>
-                    <FadeInComponent delay={200}>
-                        <div>
-                            <Title>{props.title}</Title>
-                            <Description>{props.description}</Description>
-                        </div>
-                    </FadeInComponent>
+                <TextWrap stickOn={!isOdd ? 'left' : 'right'} delay={200}>
+                    <Title>{props.title}</Title>
+                    <Description>{props.description}</Description>
                 </TextWrap>
             </Col>
             <Col sm="10" md="6" lg="5">
-                <FadeInComponent>
-                    <Image src={image.src} srcSet={makeSrcset(image.srcSetObject)} />
-                </FadeInComponent>
+                <Image src={image.src} srcSet={makeSrcset(image.srcSetObject)} />
             </Col>
         </Row>
     );
