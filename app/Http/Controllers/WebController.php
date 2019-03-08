@@ -20,6 +20,7 @@ class WebController extends Controller
                     'national-museum' => route('national-museum', null, false),
                     'vrmuseum' => route('vrmuseum', null, false),
                     'contact-us' => route('contact-us', null, false),
+                    'privacy-policy' => route('privacy-policy', null, false),
                     'login' => route('login', null, false),
                 ]
             ],
