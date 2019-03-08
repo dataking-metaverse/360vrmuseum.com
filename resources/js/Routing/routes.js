@@ -7,7 +7,7 @@ import Home from "../pages/Home/index";
 // NOTE : paths are defined form backend, you will need to make sure the keys are correct
 
 const routes = {
-    'login': {
+    login: {
         exact: true,
         component: Login,
     },
