@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import {media} from "styled-bootstrap-grid";
 import {themeVar} from "../../../styling/theme/functions";
 
 const Intro = styled.div`
