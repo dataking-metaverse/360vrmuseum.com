@@ -1,41 +1,69 @@
 import React from "react";
 import styled from "styled-components";
 import * as R from "ramda";
-import {flexMiddle, flexCenter} from "../../../styling/theme/mixins";
+import {connect} from "react-redux";
+
+import {themeVar} from "../../../styling/theme/functions";
+
+import type ResponsiveImage from "../../../types/ResponsiveImage";
+import Button from "../../../components/Button";
+import FadeInComponent from "../../../components/FadeInComponent";
 
 
 type Props = {
-    backgroundImage: string,
+    image: ResponsiveImage,
     title: string,
     subtitle: string,
+    linkText: string,
+    active: boolean,
 };
 
 const Root = styled.div`
-    ${flexMiddle()}
-    ${flexCenter()}
     position: relative;
-    height: 44rem;
-    background-image: url(${R.path(['backgroundImage'])});
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 52rem;
+    text-align: center;
+    background-image: url(${R.prop('backgroundImage')});
     background-size: cover;
     background-position: 50% 50%;
 `;
 
 const Title = styled.h2`
-
+    color: ${themeVar('colors.basic.white')};
+    font-size: 4rem;
+    line-height: 1.25;
+    width: 50rem;
+    max-width: 100%;
 `;
 
 const Subtitle = styled.div`
-
+    color: ${themeVar('colors.basic.white')};
+    margin-bottom: 5rem;
 `;
 
 
-export default class Slide extends React.Component<Props> {
-    render() {
-        return (
-            <Root backgroundImage={this.props.backgroundImage}>
-                <Title>{this.props.title}</Title>
-                <Subtitle>{this.props.subtitle}</Subtitle>
-            </Root>
-        );
-    }
+function Slide(props: Props) {
+    return (
+        <Root backgroundImage={props.image.src}>
+            <FadeInComponent>
+                <div>
+                    <Title>{props.title}</Title>
+                    <Subtitle>{props.subtitle}</Subtitle>
+                    <Button size="small" type="whiteBorder">{props.linkText}</Button>
+                </div>
+            </FadeInComponent>
+        </Root>
+    );
 }
+
+export default R.compose(
+    connect(
+        R.applySpec({
+            linkText: R.path(['lang', 'pages', 'home', 'heroCarousel', 'linkText']),
+        }),
+        R.always({})
+    )
+)(Slide);

@@ -1,36 +1,133 @@
 import React from "react";
 import Slider from "react-slick";
+import styled from "styled-components";
+import {connect} from "react-redux";
+import * as R from "ramda";
 
-import type {Element} from "react";
 import Slide from "./Slide";
 
+import type {Element} from "react";
+import type ResponsiveImage from "../../../types/ResponsiveImage";
+import {themeVar} from "../../../styling/theme/functions";
 
-type Props = {
-    // children: Element,
+
+type SlidesTextType = {
+    title: string,
+    subtitle: string,
+    link: string,
 };
 
+type Props = {
+    slides: Array<SlidesTextType>,
+    slidesPhotos: Array<ResponsiveImage>,
+};
 
 const slickSettings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    fade: true,
 };
 
-export default class HeroCarousel extends React.Component<Props> {
-    render() {
-        return (
-            <Slider {...slickSettings}>
-                {[...(new Array(3))].map((_, index) => (
-                    <Slide
-                        key={index}
-                        backgroundImage="https://placehold.it/1920x600"
-                        title="Next-generation museum\n360 VRMuseum"
-                        subtitle=''
-                    />
-                ))}
-            </Slider>
-        );
+
+const arrowWidth = 8;
+const Root = styled.div`
+    > .slick-slider {
+        //
+        
+        > .slick-arrow {
+            display: none !important; // !!!!!
+            position: absolute;
+            top: 50%;
+            font-size: 0;
+            width: ${arrowWidth}rem;
+            height: ${arrowWidth}rem;
+            margin-top: -${arrowWidth / 2}rem;
+            border: none;
+            background-color: rgba(0,0,0,.3);
+            z-index: 1;
+            outline: none !important; // use of !important : to avoid overrings when event are applied
+            cursor: pointer;
+            transition: background-color .4s;
+            
+            &:hover {
+                background-color: rgba(0,0,0,.6);
+            }
+            
+            &:before, &:after {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 2rem;
+                height: 2px;
+                margin-top: -1px;
+                margin-left: -1rem;
+                background-color: ${themeVar('colors.basic.white')};
+            }
+        
+            &:before {
+                transform: rotate(45deg);
+            }
+            
+            &:after {
+                transform: rotate(-45deg);
+            }
+        }
+        
+        > .slick-prev {
+            //
+            
+            &:before, &:after {
+                transform-origin: 0 50%;
+            }
+        }
+        
+        > .slick-next {
+            right: 0;
+            
+            &:before, &:after {
+                transform-origin: 100% 50%;
+            }
+        }
+        
+        &:hover > .slick-arrow {
+            display: block !important;
+        }
     }
+`;
+
+const renderSlide: (slides: Array<SlidesTextType>, slidesPhotos: Array<ResponsiveImage>) => Array<Node> = R.pipe(
+    R.unapply(R.identity),
+    R.apply(R.zipWith(R.mergeLeft)),
+    R.addIndex(R.map)((slide, index) => (
+        <Slide
+            key={index}
+            image={R.pick(['src', 'srcSet'], slide)}
+            title={slide.title}
+            subtitle={slide.subtitle}
+        />
+    ))
+);
+
+function HeroCarousel(props: Props) {
+    return (
+        <Root>
+            <Slider {...slickSettings}>
+                {renderSlide(props.slides, props.slidesPhotos)}
+            </Slider>
+        </Root>
+    );
 }
+
+export default R.compose(
+    connect(
+        R.applySpec({
+            slides: R.path(['lang', 'pages', 'home', 'heroCarousel', 'slides']),
+            slidesPhotos: R.path(['assets', 'home', 'heroImageSlides']),
+        }),
+        R.always({})
+    ),
+)(HeroCarousel);

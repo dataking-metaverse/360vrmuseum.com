@@ -6,8 +6,9 @@ import {themeVar} from "../../styling/theme/functions";
 
 
 const Root = styled.div`
-    font-size: ${themeVar('colors.grayscale.400')};
+    color: ${themeVar('colors.grayscale.600')};
 `;
+
 
 function Footer(props: Props) {
     return (
