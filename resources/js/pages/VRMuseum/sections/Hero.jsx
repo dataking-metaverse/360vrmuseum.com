@@ -75,13 +75,6 @@ const Subtitlte = styled.div`
 `;
 
 function Hero(props: Props) {
-
-    const [transactionIn, setIn] = useState(false);
-
-    useEffect(() => {
-        window.setTimeout(() => setIn(true), 10000);
-    });
-
     const {text} = props;
     return (
         <Root image={props.image}>
