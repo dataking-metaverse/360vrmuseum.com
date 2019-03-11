@@ -19,6 +19,10 @@ class ModelType extends GraphQLType {
                 'type' => Type::nonNull(Type::string()),
                 'description' => '_id',
             ],
+            'email' => [
+                'type' => Type::nonNull(Type::string()),
+                'description' => 'email',
+            ],
             'presented_by' => [
                 'type' => Type::nonNull(Type::string()),
                 'description' => 'presented_by',
