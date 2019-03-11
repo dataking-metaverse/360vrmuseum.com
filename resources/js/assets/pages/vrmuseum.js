@@ -32,28 +32,27 @@ export const vrmuseumSharing: ResponsiveImage = {
     }
 };
 
-
 export const keimyungUniversity: ResponsiveImage = {
-    src: require('../files/vrmuseum/계명대.png'),
+    src: require('../files/vrmuseum/keimyung-university.png'),
     srcSetObject: {
-        '200w': require('../files/vrmuseum/계명대-200x104.png'),
-        '276w': require('../files/vrmuseum/계명대.png'),
+        '200w': require('../files/vrmuseum/keimyung-university-200x104.png'),
+        '276w': require('../files/vrmuseum/keimyung-university.png'),
     },
 };
 
 export const sookmyungWomensUniversity: ResponsiveImage = {
-    src: require('../files/vrmuseum/숙대.png'),
+    src: require('../files/vrmuseum/sookmyung-womens-university.png'),
     srcSetObject: {
-        '200w': require('../files/vrmuseum/숙대-200x104.png'),
-        '276w': require('../files/vrmuseum/숙대.png'),
+        '200w': require('../files/vrmuseum/sookmyung-womens-university-200x104.png'),
+        '276w': require('../files/vrmuseum/sookmyung-womens-university.png'),
     },
 };
 
 export const sahmyookUniversity: ResponsiveImage = {
-    src: require('../files/vrmuseum/삼육대원형.png'),
+    src: require('../files/vrmuseum/sahmyook-university.png'),
     srcSetObject: {
-        '200w': require('../files/vrmuseum/삼육대원형-200x104.png'),
-        '276w': require('../files/vrmuseum/삼육대원형.png'),
+        '200w': require('../files/vrmuseum/sahmyook-university-200x104.png'),
+        '276w': require('../files/vrmuseum/sahmyook-university.png'),
     },
 };
 
