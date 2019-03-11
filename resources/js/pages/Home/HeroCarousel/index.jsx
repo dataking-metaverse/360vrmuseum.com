@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import Slider from "react-slick";
 import styled from "styled-components";
 import {connect} from "react-redux";
@@ -6,7 +6,7 @@ import * as R from "ramda";
 
 import Slide from "./Slide";
 
-import type {Element} from "react";
+import type {Element, Node} from "react";
 import type ResponsiveImage from "../../../types/ResponsiveImage";
 import {themeVar} from "../../../styling/theme/functions";
 
@@ -16,6 +16,8 @@ type SlidesTextType = {
     subtitle: string,
     link: string,
 };
+
+type SlideType = SlidesTextType & ResponsiveImage;
 
 type Props = {
     slides: Array<SlidesTextType>,
@@ -99,24 +101,34 @@ const Root = styled.div`
     }
 `;
 
-const renderSlide: (slides: Array<SlidesTextType>, slidesPhotos: Array<ResponsiveImage>) => Array<Node> = R.pipe(
-    R.unapply(R.identity),
-    R.apply(R.zipWith(R.mergeLeft)),
-    R.addIndex(R.map)((slide, index) => (
+function renderSlide(slideItems: Array<SlideType>, activeSlide: number): Array<Node> {
+    return slideItems.map((slide, index) => (
         <Slide
             key={index}
             image={R.pick(['src', 'srcSet'], slide)}
             title={slide.title}
             subtitle={slide.subtitle}
+            active={activeSlide === index}
         />
-    ))
-);
+    ));
+}
 
 function HeroCarousel(props: Props) {
+    const {slides, slidesPhotos} = props;
+    const [activeSlide, updateActiveSlide] = useState(null);
+    const slideItems = R.apply(R.zipWith(R.mergeLeft))([slides, slidesPhotos]);
+
+    useEffect(() => {
+        window.setTimeout(() => updateActiveSlide(0), 400);
+    });
+
     return (
         <Root>
-            <Slider {...slickSettings}>
-                {renderSlide(props.slides, props.slidesPhotos)}
+            <Slider
+                {...slickSettings}
+                afterChange={updateActiveSlide}
+            >
+                {renderSlide(slideItems, activeSlide)}
             </Slider>
         </Root>
     );

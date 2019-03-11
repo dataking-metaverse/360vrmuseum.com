@@ -7,7 +7,7 @@ import {themeVar} from "../../../styling/theme/functions";
 
 import type ResponsiveImage from "../../../types/ResponsiveImage";
 import Button from "../../../components/Button";
-import FadeInComponent from "../../../components/FadeInComponent";
+import faded from "../../../helpers/faded";
 
 
 type Props = {
@@ -29,6 +29,13 @@ const Root = styled.div`
     background-image: url(${R.prop('backgroundImage')});
     background-size: cover;
     background-position: 50% 50%;
+    ${({active}) => active && 'z-index: 1;'}
+`;
+
+const Fade = styled.div`
+    transform: ${({active}) => active ? 'translateY(0)' : 'translateY(3rem)'};
+    opacity: ${({active}) => active ? '1' : '0'};
+    transition-duration: .4s;
 `;
 
 const Title = styled.h2`
@@ -46,15 +53,14 @@ const Subtitle = styled.div`
 
 
 function Slide(props: Props) {
+    console.log(props);
     return (
-        <Root backgroundImage={props.image.src}>
-            <FadeInComponent>
-                <div>
-                    <Title>{props.title}</Title>
-                    <Subtitle>{props.subtitle}</Subtitle>
-                    <Button size="small" type="whiteBorder">{props.linkText}</Button>
-                </div>
-            </FadeInComponent>
+        <Root backgroundImage={props.image.src} active={props.active}>
+            <Fade active={props.active}>
+                <Title>{props.title}</Title>
+                <Subtitle>{props.subtitle}</Subtitle>
+                <Button size="small" type="whiteBorder">{props.linkText}</Button>
+            </Fade>
         </Root>
     );
 }

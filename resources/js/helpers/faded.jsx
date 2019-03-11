@@ -7,8 +7,6 @@ import type {Node} from "react";
 
 
 type Props = {
-    duration: ?number,
-    delay: ?number,
     childrenRef: Ref,
 };
 
@@ -33,7 +31,7 @@ const rootAttr = name => R.pipe(
     R.divide(R.__, 1000)
 );
 
-class FadeComponent extends React.Component {
+class FadeComponent extends React.Component<Props> {
 
     state = {
         in: true,
@@ -80,7 +78,7 @@ class FadeComponent extends React.Component {
     }
 }
 
-const buildFadeComponent = component => (...styledProps) => {
+const faded = component => (...styledProps) => {
     const Component = styled(styled[component](...styledProps))`
     opacity: 0;
     transform: translateY(3rem);
@@ -97,7 +95,6 @@ const buildFadeComponent = component => (...styledProps) => {
     return class extends React.Component {
         ref = React.createRef();
         render() {
-            const ref = React.createRef();
             let {duration, delay, ...restProps} = this.props;
             duration = duration || 400;
             delay = delay || 400;
@@ -110,4 +107,4 @@ const buildFadeComponent = component => (...styledProps) => {
     };
 };
 
-export default buildFadeComponent;
+export default faded;

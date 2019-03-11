@@ -29,6 +29,7 @@ const Basic = styled.button`
     border: 1px solid ${border};
     color: ${color};
     line-height: 1;
+    cursor: pointer;
 `;
 const Normal = styled(Basic)`
     padding: 1.5rem 3rem;

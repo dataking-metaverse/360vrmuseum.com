@@ -5,7 +5,7 @@ import styled from "styled-components";
 import {Container, media} from "styled-bootstrap-grid";
 
 import FadeInComponent from "../../../components/FadeInComponent";
-import buildFadeComponent from "../../../helpers/buildFadeComponent";
+import faded from "../../../helpers/faded";
 
 
 type Props = {
@@ -33,7 +33,7 @@ const Root = styled.div`
 `;
 
 
-const TitleWrapper = buildFadeComponent('div')`
+const TitleWrapper = faded('div')`
     position: relative;
     top: .1rem;
     color: #ffffff;

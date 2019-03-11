@@ -5,7 +5,7 @@ import {Container} from "styled-bootstrap-grid";
 import {connect} from "react-redux";
 
 import Button from "../../../components/Button";
-import buildFadeComponent from "../../../helpers/buildFadeComponent";
+import faded from "../../../helpers/faded";
 
 
 type Props = {|
@@ -20,7 +20,7 @@ const Root = styled(Container)`
     margin-bottom: 10rem;
 `;
 
-const Inner = buildFadeComponent('div')``;
+const Inner = faded('div')``;
 
 const Spacer = styled.span`
     //

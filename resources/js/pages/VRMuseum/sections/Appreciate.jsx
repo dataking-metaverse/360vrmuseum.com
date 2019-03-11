@@ -11,7 +11,7 @@ import makeSrcset from "../../../helpers/makeSrcset";
 import type {ResponsiveImage} from "../../../assets";
 import FadeInComponent from "../../../components/FadeInComponent";
 import {percentage} from "../../../styling/theme/functions";
-import buildFadeComponent from "../../../helpers/buildFadeComponent";
+import faded from "../../../helpers/faded";
 
 
 type Props = {
@@ -43,7 +43,7 @@ const Wrapper = styled.div`
     `}
 `;
 
-const LogoWrapper = buildFadeComponent('div')`
+const LogoWrapper = faded('div')`
     margin-bottom: 8rem;
 `;
 
@@ -68,7 +68,7 @@ const UniversityLogo = styled.img`
     height: 100%;
 `;
 
-const ViewingOnIphoneX = buildFadeComponent('img')`
+const ViewingOnIphoneX = faded('img')`
     width: 61.2rem;
     max-width: 100%;
 `;

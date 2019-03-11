@@ -10,7 +10,7 @@ import smokeyBackground from "../../../decorators/smokeyBackground";
 import type {ResponsiveImage} from "../../../assets";
 import makeSrcset from "../../../helpers/makeSrcset";
 import {themeVar} from "../../../styling/theme/functions";
-import buildFadeComponent from "../../../helpers/buildFadeComponent";
+import faded from "../../../helpers/faded";
 
 
 type Props = {
@@ -27,12 +27,12 @@ type RowsProps = {
 
 const Root = styled.div``;
 
-const Image = buildFadeComponent('img')`
+const Image = faded('img')`
     max-width: 100%;
 `;
 
 const stickOn = (leftThen, rightThen) => R.ifElse(R.pathEq(['stickOn'], 'left'), R.always(leftThen), R.always(rightThen));
-const TextWrap = buildFadeComponent('div')`
+const TextWrap = faded('div')`
     position: relative;
     display: flex;
     flex-direction: column;

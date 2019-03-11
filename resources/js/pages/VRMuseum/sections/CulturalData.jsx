@@ -12,7 +12,7 @@ import type {ResponsiveImage} from "../../../assets";
 import makeSrcset from "../../../helpers/makeSrcset";
 import FadeInComponent from "../../../components/FadeInComponent";
 import {percentage} from "../../../styling/theme/functions";
-import buildFadeComponent from "../../../helpers/buildFadeComponent";
+import faded from "../../../helpers/faded";
 
 
 type Props = {
@@ -44,7 +44,7 @@ const Wrap = styled.div`
     `}
 `;
 
-const Image = buildFadeComponent('img')`
+const Image = faded('img')`
     width: 100rem;
     max-width: 100%;
 `;

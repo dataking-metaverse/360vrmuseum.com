@@ -11,7 +11,7 @@ import Intro from "../components/Intro";
 
 import type {ResponsiveImage} from "../../../assets/pages/vrmuseum";
 import FadeInComponent from "../../../components/FadeInComponent";
-import buildFadeComponent from "../../../helpers/buildFadeComponent";
+import faded from "../../../helpers/faded";
 
 
 type Props = {
@@ -59,7 +59,7 @@ const TextWrap = styled.div`
     
 `;
 
-const Image = buildFadeComponent('img')`
+const Image = faded('img')`
     max-width: 90%;
 `;
 

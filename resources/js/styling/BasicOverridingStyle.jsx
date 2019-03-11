@@ -26,6 +26,8 @@ body {
     font-family: ${themeVar('fontFamily.base')}
 }
 
+:focus { outline: none; }
+
 `;
 
 export default BasicOverridingStyle;

@@ -1,10 +1,10 @@
 import React from "react";
 import {media} from "styled-bootstrap-grid";
 
-import buildFadeComponent from "../../../helpers/buildFadeComponent";
+import faded from "../../../helpers/faded";
 
 
-const IntroImage = buildFadeComponent('img')`
+const IntroImage = faded('img')`
     width: 50%;
     
     ${media.md`

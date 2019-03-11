@@ -11,7 +11,7 @@ import type {ResponsiveImage} from "../../../assets";
 import Title from "../components/Title";
 import {themeVar} from "../../../styling/theme/functions";
 import FadeInComponent from "../../../components/FadeInComponent";
-import buildFadeComponent from "../../../helpers/buildFadeComponent";
+import faded from "../../../helpers/faded";
 
 type CaseType = {
     title: string,
@@ -34,7 +34,7 @@ type Props = {|
 
 type CaseProps = CaseType;
 
-const ImagePreRoot = buildFadeComponent('div')`
+const ImagePreRoot = faded('div')`
     position: relative;
     padding-left: 1.5rem;
     padding-right: 1.5rem;
@@ -74,7 +74,7 @@ const TextWrap = styled.div`
     `}
 `;
 
-const CaseWrap = buildFadeComponent('div')`
+const CaseWrap = faded('div')`
     position: relative;
     margin-bottom: 1rem;
     font-size: 1.8rem;

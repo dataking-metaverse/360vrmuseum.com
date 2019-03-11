@@ -1,9 +1,9 @@
 import {media} from "styled-bootstrap-grid";
 
 import {themeVar} from "../../../styling/theme/functions";
-import buildFadeComponent from "../../../helpers/buildFadeComponent";
+import faded from "../../../helpers/faded";
 
-const Intro = buildFadeComponent('div')`
+const Intro = faded('div')`
     color: ${themeVar('colors.grayscale.600')};
     font-size: 1.4rem;
     

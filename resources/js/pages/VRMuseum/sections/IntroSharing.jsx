@@ -12,7 +12,7 @@ import Title from "../components/Title";
 import Intro from "../components/Intro";
 
 import type {ResponsiveImage} from "../../../assets/pages/vrmuseum";
-import buildFadeComponent from "../../../helpers/buildFadeComponent";
+import faded from "../../../helpers/faded";
 
 
 type PercentageBarType = {
@@ -59,7 +59,7 @@ const TextWrap = styled.div`
     `}
 `;
 
-const PercentageBarWrap = buildFadeComponent('div')``;
+const PercentageBarWrap = faded('div')``;
 
 function IntroSharing(props: Props) {
     const {text} = props;
