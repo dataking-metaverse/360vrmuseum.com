@@ -36,7 +36,7 @@ export default class ContactUs extends React.Component {
                         </Col>
                     </Row>
                 </ContactFormContainer>
-                <ContactPartnerships/>
+                <ContactPartnerships />
             </React.Fragment>
         );
     }
