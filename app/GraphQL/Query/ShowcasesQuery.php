@@ -26,14 +26,8 @@ class ShowcasesQuery extends Query
 
     public function resolve($root, $args)
     {
-//        dd($args);
-
-        $showcases = config('360vrmuseum.showcases');
-
-        $result = array_first($showcases, function($value, $key) use ($args) {
+        return array_where(config('360vrmuseum.showcases'), function($value, $key) use ($args) {
             return $value['mid'] === $args['mid'];
         });
-
-        return [$result] ?? $showcases;
     }
 }
