@@ -5,14 +5,54 @@ import * as R from "ramda";
 import {themeVar} from "../../styling/theme/functions";
 
 
-const Root = styled.div`
-    font-size: ${themeVar('colors.grayscale.400')};
-`;
+type Props = {
+    privacyPolicyLink: ?string,
+    termsOfConditionsLink: ?string,
+};
 
+const Root = styled.div`
+    color: ${themeVar('colors.grayscale.500')};
+    border-top: 1px solid rgba(61,43,59,.3);
+    font-size: 1.2rem;
+    line-height: 2.3rem;
+    width: 100%;
+    height: 13rem;
+    padding: 2rem;
+    text-align: center;
+`;
+const Link = styled.a`
+    color: #a39e9e;
+    text-decoration: none;
+`;
+const Copyright = styled.span`
+    color: #bcb7b7;
+    font-weight: bold;
+`;
+const CopyrightNotice = styled.span`
+    color: #bcb7b7;
+    font-weight: bold;
+    font-size: 1rem;
+`;
 function Footer(props: Props) {
+    const {
+        privacyPolicyLink = 'https://360vrmuseum.com/?page_id=1267',
+        termsOfConditionsLink = 'https://360vrmuseum.com/?page_id=1267',
+        copyright = 'Copyright ©dataking.Inc 2015 - 2019',
+        allRigthReserved = 'All rights reserved.',
+        noPrinting = '무단전재 및 재배포금지',
+    } = props;
     return (
         <Root>
-            hello, world
+            <span>
+                <Link href={privacyPolicyLink}>개인정보 이용약관</Link>
+                ㅤ|ㅤ
+                <Link href={termsOfConditionsLink}>서비스 이용약관</Link>
+            </span><br/>
+            <Copyright>{copyright}</Copyright>
+            <br/>
+            <span>{allRigthReserved}</span>
+            <br/>
+            <CopyrightNotice>{noPrinting}</CopyrightNotice>
         </Root>
     );
 }
