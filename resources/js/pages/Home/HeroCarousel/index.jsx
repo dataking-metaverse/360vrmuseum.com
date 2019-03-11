@@ -120,7 +120,7 @@ function HeroCarousel(props: Props) {
 
     useEffect(() => {
         window.setTimeout(() => updateActiveSlide(0), 400);
-    });
+    }, [true]);
 
     return (
         <Root>
