@@ -76,7 +76,9 @@ return [
     'schemas' => [
         'default' => [
             'query' => [
-                'models' => 'App\GraphQL\Query\ModelsQuery'
+                'models' => App\GraphQL\Query\ModelsQuery::class,
+                'showcases' => App\GraphQL\Query\ShowcasesQuery::class,
+                'showcase' => App\GraphQL\Query\ShowcaseQuery::class,
             ],
             'mutation' => [
                 
@@ -100,7 +102,8 @@ return [
     // ]
     //
     'types' => [
-        'Model' => App\GraphQL\Type\ModelType::class
+        'Model' => App\GraphQL\Type\ModelType::class,
+        'Showcase' => App\GraphQL\Type\ShowcaseType::class,
     ],
     
     // This callable will received every Error objects for each errors GraphQL catch.
