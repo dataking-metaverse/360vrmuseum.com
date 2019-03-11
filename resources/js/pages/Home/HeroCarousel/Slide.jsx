@@ -53,7 +53,6 @@ const Subtitle = styled.div`
 
 
 function Slide(props: Props) {
-    console.log(props);
     return (
         <Root backgroundImage={props.image.src} active={props.active}>
             <Fade active={props.active}>
