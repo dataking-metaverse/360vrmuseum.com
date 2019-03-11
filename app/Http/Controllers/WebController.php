@@ -13,6 +13,7 @@ class WebController extends Controller
     public function login() { return $this->all(); }
 
     public function all() {
+        dd(config('360vrmuseum.showcases'));
         return view('layout', [
             'app' => [
                 'routes' => [
