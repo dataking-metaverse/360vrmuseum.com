@@ -7,13 +7,11 @@ return [
         "presented_by" => "서울, 국립중앙박물관",
         "poster" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/aSYdPZg4Mu6/poster/aSYdPZg4Mu6.jpg",
         "thumbnail" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/aSYdPZg4Mu6/thumbnail/aSYdPZg4Mu6.jpg",
-
         "kor_title" => "동아시아의 호랑이 미술-韓國・日本・中国",
         "eng_title" => "Tigers in East Asian Art",
         "venue" => "국립중앙박물관 1층",
         "map_address" => "서울특별시 용산구 서빙고로 137 국립중앙박물관",
         "map_name" => "서울특별시 용산구 서빙고로 137 국립중앙박물관 특별전시실 1층",
-
         "description" => "국립중앙박물관은 2018 평창동계올림픽 기념으로 한국, 일본, 중국이 공동으로 “동아시아의 호랑이 미술-한국·일본·중국” 특별전을 개최합니다. 평창동계올림픽의 마스코트 ‘수호랑’이 백호白虎의 상징이라는 점에 착안하여, 동아시아에서 호랑이 미술의 전통과 변용이라는 주제로 한국의 국립중앙박물관, 일본의 도쿄국립박물관, 중국의 국가박물관이 공동으로 주최하는 전시입니다.\n\n2018년 1월 26일부터 3월 18일까지 국립중앙박물관 특별전시실에서 열리는 이번 전시에는 한국의 김홍도(1745~1806?)의 <호랑이> 등 40건과, 일본 에도시대의 <용호도> 대형 병풍 3쌍 등 30건, 그리고 중국의 고대 호랑이 장식 꺾창과 십이지도용 등 35건이 출품되어 총 105건이 전시됩니다.\n\n 고대 원시신앙과 이후 도교와 불교의 미술에 보이는 수호신으로서의 호랑이, 생활 속에서 벽사辟邪와 길상吉祥, 군자君子와 덕치德治 등으로 그 상징이 다양하게 확장되는 호랑이, 그리고 근·현대 작품에서 전통과 변용의 주제가 된 호랑이를 한국과 일본, 중국의 옥기와 장신구, 도자기, 조각, 회화작품을 통해 살펴볼 수 있습니다.\n\n특별전시실 입구 영상실에서는 동아시아인들이 두려움과 경외의 대상으로 인식했던 야생의 호랑이를 관람객이 생생하게 체험할 수 있는 고화질 영상도 함께 상영됩니다. 이번 전시는 미술의 상징과 주제를 통해 한중일 문화의 보편성과 특수성을 이해하실 수 있는 자리가 될 것입니다.",
         "youtube_id" => "4sAo9K8IQ_Q",
         "list_of_images" => [
@@ -72,7 +70,6 @@ return [
         "presented_by" => "서울, 국립중앙박물관",
         "poster" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/3VzkdUcgjGM/poster/3VzkdUcgjGM.jpg",
         "thumbnail" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/3VzkdUcgjGM/thumbnail/3VzkdUcgjGM.jpg",
-
         "kor_title" => "왕이 사랑한 보물: 독일 드레스덴 박물관 연합 명품전",
         "eng_title" => "Dream of a King: Masterpieces from the Dresden State Art Collections",
         "venue" => "국립중앙박물관 1층",
