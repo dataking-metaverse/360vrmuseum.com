@@ -2,34 +2,24 @@ import React from "react";
 import styled from "styled-components";
 import * as R from "ramda";
 
+import type {Node} from "react";
+
 
 type Props = {
-    backgroundImage: string,
-    title: string,
-    subtitle: string,
+    children: Node,
 };
 
-const Root = styled.div`
-    position: relative;
-    height: 30rem;
+const Root = styled.a`
+    display: block;
+    padding-left: .85rem;
+    padding-right: .85rem;
 `;
 
-const Image = styled.div`
-    position: relative;
-    height: 100%;
-    background-image: url(${R.path(['backgroundImage'])});
-    background-size: cover;
-    background-position: 50% 50%;
-    margin-left: 1.5rem;
-    margin-right: 1.5rem;
-`;
 
-export default class Slide extends React.Component<Props> {
-    render() {
-        return (
-            <Root>
-                <Image backgroundImage={this.props.backgroundImage} />
-            </Root>
-        );
-    }
+export default function Slide(props: Props) {
+    return (
+        <Root>
+            {props.children}
+        </Root>
+    );
 }

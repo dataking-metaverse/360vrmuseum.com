@@ -21,5 +21,9 @@ return [
             ],
         ],
     ],
-    'featured'
+    'nationalMuseum' => [
+        'text' => [
+            'title' => '국립박물관',
+        ],
+    ],
 ];

@@ -46,18 +46,23 @@ export default class Showcase extends GraphQLModel<Props> {
                 }
             }
         `}`);
-        const data = R.path(['data', 'data'])(response);
+        const data = R.path(['data', 'data', 'showcase'])(response);
         if (!data) { return null; }
         return new Showcase(data);
     }
 
     constructor(props: Props) {
         super(props);
+        this.props = props;
     }
 
-    generatePoster() {
+    generatePoster = () => {
         return () => (
-            <ShowcasePoster image={this.props.poster} reference={this} />
+            <ShowcasePoster image={this.props.poster} />
         );
+    };
+
+    getAttribute(attr: string) {
+        return this.props[attr];
     }
 }

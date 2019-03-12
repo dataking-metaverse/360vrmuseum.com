@@ -25,9 +25,25 @@ return [
                     'https://placehold.it/1920x600',
                 ],
             ],
-            'featuredExhibitionCarousel' => [
-                ''
-            ]
+            'featuredExhbitionCarousel' => [
+                'qT3himjQVQ2',
+                '3MrnWzKigNP',
+                'kF3xE8edLEA',
+                'sdhXymhVog6',
+                'MsECZxmoy9y',
+                'aSYdPZg4Mu6',
+                'QkPtiaDjLbE',
+                'yDEtLE2KrWP',
+                'w6M8mr9ArwV',
+                'n4ik2CyQRWM',
+                '3VzkdUcgjGM',
+                '4MbVUmwti9x',
+                'z8Gwj4NcTUu',
+                'xSPWrtHB4Zd',
+                'kkZGik7iLgm',
+                'TyFGiCLuof9',
+                'aBb76RaccUH',
+            ],
         ],
         'vrmuseum' => [
             'appreciate' => [
