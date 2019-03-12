@@ -5,14 +5,9 @@ import {Container, Row, Col} from "styled-bootstrap-grid";
 import {connect} from "react-redux";
 
 type Props = {
-    serviceCenterText: string,
-    TelephoneInfoText: string,
-    AddressInfoText: string,
-    FaxInfoText: string,
-    inquireSkillText: string,
-    sponsorText: string,
-    VReducationText: string,
-    partnershipText: string,
+    info: Array<string>,
+    card: Array<string>,
+    backgroundImage: Array<string>,
 };
 
 const Root = styled(Container)`
@@ -70,15 +65,8 @@ const ContactInfoWrapper = styled.div`
 
 function ContactFormInfo(props: Props) {
     const {
-        serviceCenterText = '고객센터',
-        TelephoneInfoText = 'Tel: 031-421-3677(평일 09:00~19:00',
-        AddressInfoText = '경기도 안양시 동안구 시민대로327 스마트콘텐츠센터 606호',
-        FaxInfoText = 'Fax: 031-421-3677 | Mail: help@dataking.co.kr',
-
-        inquireSkillText = '기술 문의',
-        sponsorText = '제휴 제안',
-        VReducationText = 'VR 교육',
-        partnershipText = '파트너 쉽',
+        info: [serviceCenter, TelephoneInfo, AddressInfo, FaxInfo],
+        card: [skillText, sponsorText, vreducationText, partnershipText],
         backgroundBoxImage,
     } = props;
     const {skill, sponsor, vreducation, partnership} = backgroundBoxImage;
@@ -86,17 +74,17 @@ function ContactFormInfo(props: Props) {
     return (
         <Root>
             <ContactInfo>
-                <ContactInfoHeader>{serviceCenterText}</ContactInfoHeader>
-                <ContactInfoChildren>{TelephoneInfoText}</ContactInfoChildren>
-                <ContactInfoChildren>{AddressInfoText}</ContactInfoChildren>
-                <ContactInfoChildren>{FaxInfoText}</ContactInfoChildren>
+                <ContactInfoHeader>{serviceCenter}</ContactInfoHeader>
+                <ContactInfoChildren>{TelephoneInfo}</ContactInfoChildren>
+                <ContactInfoChildren>{AddressInfo}</ContactInfoChildren>
+                <ContactInfoChildren>{FaxInfo}</ContactInfoChildren>
             </ContactInfo>
             <Row>
                 <Col xl={5} lg={6} md={6}>
                     <ContactInfoWrapper backgroundImage={skill.src}>
                         <ContactInfoOverlay></ContactInfoOverlay>
                         <ContactInfoCard>
-                            {inquireSkillText}
+                            {skillText}
                         </ContactInfoCard>
                     </ContactInfoWrapper>
                 </Col>
@@ -112,7 +100,7 @@ function ContactFormInfo(props: Props) {
                     <ContactInfoWrapper backgroundImage={vreducation.src}>
                         <ContactInfoOverlay></ContactInfoOverlay>
                         <ContactInfoCard>
-                            {VReducationText}
+                            {vreducationText}
                         </ContactInfoCard>
                     </ContactInfoWrapper>
                 </Col>
@@ -131,6 +119,8 @@ function ContactFormInfo(props: Props) {
 
 export default R.compose(
     connect(R.applySpec({
-        backgroundBoxImage: R.path(['assets', 'contactUs', 'backgroundBoxImage'])
+        backgroundBoxImage: R.path(['assets', 'contactUs', 'backgroundBoxImage']),
+        info: R.path(['lang', 'pages', 'contact-us', 'contactInfo', 'text', 'info']),
+        card: R.path(['lang', 'pages', 'contact-us', 'contactInfo', 'text', 'card']),
     }))
 )(ContactFormInfo);

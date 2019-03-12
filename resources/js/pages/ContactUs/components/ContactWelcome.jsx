@@ -7,8 +7,7 @@ import {connect} from "react-redux";
 import faded from "../../../helpers/faded";
 
 type Props = {
-    contactUsText1: string,
-    contactUsText2: string,
+    text: Array<string>,
     backgroundImage: string,
 };
 
@@ -65,8 +64,7 @@ const BackgroundOverlay = styled.div`
 
 function ContactWelcome(props: Props) {
     const {
-        contactUsText1 = '360°VR Museum 고객지원에',
-        contactUsText2 = '오신 것을 환영합니다',
+        text: [text1, text2],
         backgroundImage,
     } = props;
     return (
@@ -75,9 +73,9 @@ function ContactWelcome(props: Props) {
                 <BackgroundOverlay />
             </BackgroundOverlayWrapper>
             <WelcomeText>
-                {contactUsText1}
+                {text1}
                 <br/>
-                {contactUsText2}
+                {text2}
             </WelcomeText>
         </Root>
     );
@@ -87,5 +85,6 @@ function ContactWelcome(props: Props) {
 export default R.compose(
     connect(R.applySpec({
         backgroundImage: R.path(['assets', 'contactUs', 'backgroundImage']),
+        text: R.path(['lang', 'pages', 'contact-us', 'welcome', 'text']),
     }))
 )(ContactWelcome);

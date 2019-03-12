@@ -2,6 +2,11 @@ import React from "react";
 import * as R from "ramda";
 import styled from "styled-components";
 import {Container, Col} from "styled-bootstrap-grid";
+import {connect} from "react-redux";
+
+type Props = {
+    text: Array<string>,
+};
 
 const Root = styled(Container)`
     margin-bottom: 10rem;
@@ -49,11 +54,7 @@ const ContentField = styled.textarea`
 
 function ContactForm(props: Props) {
     const {
-        name = '이름 (required)',
-        mail = '메일 (required)',
-        subject = '제목',
-        content = '내용',
-        submit = '보내기',
+        label: [name, mail, subject, content, submit]
     } = props;
     return (
         <Container>
@@ -69,5 +70,7 @@ function ContactForm(props: Props) {
 }
 
 export default R.compose(
-    R.identity
+    connect(R.applySpec({
+        label: R.path(['lang', 'pages', 'contact-us', 'contactForm', 'label']),
+    }))
 )(ContactForm);

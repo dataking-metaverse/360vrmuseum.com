@@ -12,16 +12,6 @@ const ContactFormContainer = styled(Container)`
 
 export default class ContactUs extends React.Component {
     render(Root, props: Props) {
-        // const user = styled.p`
-        //     font-size: 5.1rem;
-        // `;
-
-        // const {
-        //     welcome = '360°VR Museum 고객지원에',
-        //     welcomeMuseum = '오신 것을 환영합니다',
-        // } = props;
-
-
         return (
             <React.Fragment>
                 <ContactWelcome />
