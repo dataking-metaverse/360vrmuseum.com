@@ -4,6 +4,7 @@ import * as R from "ramda";
 import GraphQLModel from "./GraphQLModel";
 
 import ShowcasePoster from "../components/ShowcasePoster";
+import ShowcaseCard from "../components/ShowcaseCard";
 
 
 export type Props = {
@@ -58,7 +59,13 @@ export default class Showcase extends GraphQLModel<Props> {
 
     generatePoster = () => {
         return () => (
-            <ShowcasePoster image={this.props.poster} />
+            <ShowcasePoster showcase={this} />
+        );
+    };
+
+    generateCard = () => {
+        return () => (
+            <ShowcaseCard showcase={this} />
         );
     };
 

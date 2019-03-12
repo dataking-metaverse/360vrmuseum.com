@@ -3,11 +3,9 @@ import styled from "styled-components";
 import Showcase from "../models/Showcase";
 import * as R from "ramda";
 
-import type ResponsiveImage from "../types/ResponsiveImage";
 
-
-type Props = ResponsiveImage | {
-    reference: ?Showcase,
+type Props = {
+    showcase: Showcase,
 };
 
 const Root = styled.div`
@@ -27,7 +25,8 @@ const Root = styled.div`
 `;
 
 export default function ShowcasePoster(props: Props) {
+    const {showcase} = props;
     return (
-        <Root background={props.image} />
+        <Root background={showcase.getAttribute('poster')} />
     );
 }

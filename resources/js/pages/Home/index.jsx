@@ -1,10 +1,10 @@
 import React from "react";
-import styled from "styled-components";
 
 import page from "../../decorators/page";
 
 import HeroCarousel from "./HeroCarousel";
 import FeaturedExhibitionCarousel from "./FeaturedExhibitionCarousel";
+import SpecialExhibition from "./SpecialExhibition";
 
 type Props = {
 
@@ -18,6 +18,7 @@ export default class Home extends React.PureComponent<Props> {
             <React.Fragment>
                 <HeroCarousel />
                 <FeaturedExhibitionCarousel />
+                <SpecialExhibition />
             </React.Fragment>
         );
     }

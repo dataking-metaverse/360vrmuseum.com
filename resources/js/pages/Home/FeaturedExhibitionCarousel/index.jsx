@@ -121,8 +121,11 @@ function FeaturedExhibitionCarousel(props: Props) {
 }
 
 export default R.compose(
-    connect(R.applySpec({
-        text: R.path(['lang', 'pages', 'home', 'nationalMuseum', 'text']),
-        exhibitions: R.path(['config', 'pages', 'home', 'featuredExhbitionCarousel']),
-    }))
+    connect(
+        R.applySpec({
+            text: R.path(['lang', 'pages', 'home', 'nationalMuseum', 'text']),
+            exhibitions: R.path(['config', 'pages', 'home', 'featuredExhbitionCarousel']),
+        }),
+        R.always({})
+    )
 )(FeaturedExhibitionCarousel);
