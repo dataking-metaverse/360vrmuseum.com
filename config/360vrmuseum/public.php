@@ -25,6 +25,11 @@ return [
                     'https://placehold.it/1920x600',
                 ],
             ],
+            'featuredExhibitionCarousel' => [
+                ''
+            ]
+        ],
+        'vrmuseum' => [
             'appreciate' => [
                 'universityLinks' => [
                     'https://www.kmcu.ac.kr/',
