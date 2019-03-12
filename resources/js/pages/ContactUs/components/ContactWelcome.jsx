@@ -4,6 +4,8 @@ import styled from "styled-components";
 import {Container} from "styled-bootstrap-grid";
 import {connect} from "react-redux";
 
+import faded from "../../../helpers/faded";
+
 type Props = {
     contactUsText1: string,
     contactUsText2: string,
@@ -26,12 +28,12 @@ const Root = styled(Container)`
     margin-bottom: 25rem;
 `;
 
-const WelcomeText = styled.p`
+const WelcomeText = faded('p')`
     position: relative;
     text-align: center;
     font-size: 5.1rem;
     font-weight: bold;
-    line-height: 2
+    line-height: 2;
     color: white;
 `;
 
