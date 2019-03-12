@@ -94,7 +94,7 @@ function LoginForm(props: Props) {
                     </InputBoxWrapper>
                     <div className="mb-5">
                         <div className="mb-3">
-                            <Checkbox onChange={onChange} type="checkbox" />
+                            <Checkbox onChange={console.log} type="checkbox" />
                             <KeepMeSignedText className="pl-3">Keep me signed in</KeepMeSignedText>
                         </div>
                         <Row>
