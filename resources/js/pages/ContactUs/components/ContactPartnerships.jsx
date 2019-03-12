@@ -47,7 +47,7 @@ function ContactPartnerships(props: Props) {
         partnershipImages,
     } = props;
     // const {partnership, partnershipInfo} = props;
-        const {microsoft, sbck, matterport, nationalMuseum, gonjuMuseum, chuncheonMuseum, jejuMuseum, sookmyung, sahmyook, keimyung} = partnershipImages;
+    const {microsoft, sbck, matterport, nationalMuseum, gonjuMuseum, chuncheonMuseum, jejuMuseum, sookmyung, sahmyook, keimyung} = partnershipImages;
 
     return (
         <Root>
@@ -57,30 +57,38 @@ function ContactPartnerships(props: Props) {
             </div>
             <Container>
                 <Row>
-                    <Col col={2}>
+                    <Col xl={2} lg={3} md={3} sm={4} xs={6}>
                         <Img src={microsoft.src} srcSet={makeSrcset(microsoft.srcSetObject)}/>
                     </Col>
-                    <Col col={2}>
+                    <Col xl={2} lg={3} md={3} sm={4} xs={6}>
                         <Img src={sbck.src} srcSet={makeSrcset(sbck.srcSetObject)}/>
                     </Col>
-                    <Col col={2}>
+                    <Col xl={2} lg={3} md={3} sm={4} xs={6}>
                         <Img src={matterport.src} srcSet={makeSrcset(matterport.srcSetObject)}/>
                     </Col>
-                    <Col col={2}>
+                    <Col xl={2} lg={3} md={3} sm={4} xs={6}>
                         <Img src={nationalMuseum.src} srcSet={makeSrcset(nationalMuseum.srcSetObject)}/>
                     </Col>
-                    <Col col={2}>
+                    <Col xl={2} lg={3} md={3} sm={4} xs={6}>
                         <Img src={gonjuMuseum.src} srcSet={makeSrcset(gonjuMuseum.srcSetObject)}/>
                     </Col>
-                    <Col col={2}>
+                    <Col xl={2} lg={3} md={3} sm={4} xs={6}>
                         <Img src={chuncheonMuseum.src} srcSet={makeSrcset(chuncheonMuseum.srcSetObject)}/>
                     </Col>
-                </Row>
-                <Row>
-                    <Col col={3}><Img src={jejuMuseum.src} srcSet={makeSrcset(jejuMuseum.srcSetObject)}/></Col>
-                    <Col col={3}><Img src={sookmyung.src} srcSet={makeSrcset(sookmyung.srcSetObject)}/></Col>
-                    <Col col={3}><Img src={sahmyook.src} srcSet={makeSrcset(sahmyook.srcSetObject)}/></Col>
-                    <Col col={3}><Img src={keimyung.src} srcSet={makeSrcset(keimyung.srcSetObject)}/></Col>
+
+
+                    <Col xl={2} lg={3} md={3} sm={4} xs={6}>
+                        <Img src={jejuMuseum.src} srcSet={makeSrcset(jejuMuseum.srcSetObject)}/>
+                    </Col>
+                    <Col xl={2} lg={3} md={3} sm={4} xs={6}>
+                        <Img src={sookmyung.src} srcSet={makeSrcset(sookmyung.srcSetObject)}/>
+                    </Col>
+                    <Col xl={2} lg={3} md={3} sm={4} xs={6}>
+                        <Img src={sahmyook.src} srcSet={makeSrcset(sahmyook.srcSetObject)}/>
+                    </Col>
+                    <Col xl={2} lg={3} md={3} sm={4} xs={6}>
+                        <Img src={keimyung.src} srcSet={makeSrcset(keimyung.srcSetObject)}/>
+                    </Col>
                 </Row>
                 <PartnershipMore>+ 76 more</PartnershipMore>
             </Container>

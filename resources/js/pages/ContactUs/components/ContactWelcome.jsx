@@ -1,7 +1,7 @@
 import React from "react";
 import * as R from "ramda";
 import styled from "styled-components";
-import {Container} from "styled-bootstrap-grid";
+import {Container, media} from "styled-bootstrap-grid";
 import {connect} from "react-redux";
 
 import faded from "../../../helpers/faded";
@@ -12,7 +12,7 @@ type Props = {
     backgroundImage: string,
 };
 
-const Root = styled(Container)`
+const Root = styled.div`
     position: relative;
     width: 100%;
     height: 100%;
@@ -35,6 +35,10 @@ const WelcomeText = faded('p')`
     font-weight: bold;
     line-height: 2;
     color: white;
+    
+    ${media.xs`
+        font-size: 2.8rem;
+    `}
 `;
 
 const BackgroundOverlayWrapper = styled.div`
@@ -67,14 +71,14 @@ function ContactWelcome(props: Props) {
     } = props;
     return (
         <Root backgroundImage={backgroundImage.src}>
-                <BackgroundOverlayWrapper>
-                    <BackgroundOverlay/>
-                </BackgroundOverlayWrapper>
-                <WelcomeText>
-                    {contactUsText1}
-                    <br/>
-                    {contactUsText2}
-                </WelcomeText>
+            <BackgroundOverlayWrapper>
+                <BackgroundOverlay />
+            </BackgroundOverlayWrapper>
+            <WelcomeText>
+                {contactUsText1}
+                <br/>
+                {contactUsText2}
+            </WelcomeText>
         </Root>
     );
 }

@@ -24,7 +24,7 @@ export default class ContactUs extends React.Component {
 
         return (
             <React.Fragment>
-                <ContactWelcome/>
+                <ContactWelcome />
                 <ContactFormContainer>
                     <Row className="justify-content-center flex-column-reverse flex-lg-row">
                         <Col xl={5} lg={5}>

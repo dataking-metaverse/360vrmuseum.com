@@ -23,11 +23,11 @@ const InputLabel = styled.label`
 
 const InputField = styled.input`
     font-size: 1.3rem;
-    // width: 45rem;
     width: 100%;
     height: 5rem;
     padding: 1.5rem;
     outline: none;
+    border: 1px solid #dfdfdf;
     
     &[type=submit] {
         color: white;
@@ -43,7 +43,7 @@ const ContentField = styled.textarea`
     display: block;
     min-height: 15rem;
     max-height: 15rem;
-    border-color: #d2d2d2;
+    border: 1px solid #dfdfdf;
     padding-left: 1.5rem;
 `;
 
