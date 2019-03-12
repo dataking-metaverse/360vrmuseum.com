@@ -36,6 +36,7 @@ const InputField = styled.input`
     
     &[type=submit] {
         color: white;
+        cursor: pointer;
         font-weight: bold;
         height: 4.8rem;
         background-color: rgb(61, 43, 59);
