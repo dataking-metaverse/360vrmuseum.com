@@ -26,13 +26,13 @@ export default class ContactUs extends React.Component {
             <React.Fragment>
                 <ContactWelcome/>
                 <ContactFormContainer>
-                    <Row className="justify-content-center">
-                        <Col xl={5} lg={5} md={4}>
-                            <ContactForm/>
+                    <Row className="justify-content-center flex-column-reverse flex-lg-row">
+                        <Col xl={5} lg={5}>
+                            <ContactForm />
                         </Col>
 
-                        <Col xl={6} lg={5} md={4}>
-                            <ContactFormInfo/>
+                        <Col xl={6} lg={5}>
+                            <ContactFormInfo />
                         </Col>
                     </Row>
                 </ContactFormContainer>
