@@ -13,6 +13,7 @@ type Props = {
 
 const Root = styled(Container)`
     text-align: center;
+    margin-bottom: 25rem;
 `;
 
 const PartnershipTitle = styled.p`
@@ -33,6 +34,12 @@ const Img = styled.img`
     width: 100%;
 `;
 
+const PartnershipMore = styled.p`
+    font-size: 2rem;
+    text-align: right;
+    color: rgba(122,56,113,.65);
+`
+
 function ContactPartnerships(props: Props) {
     const {
         partnership = 'Partnership',
@@ -40,7 +47,7 @@ function ContactPartnerships(props: Props) {
         partnershipImages,
     } = props;
     // const {partnership, partnershipInfo} = props;
-    const {microsoft, sbck, matterport, nationalMuseum, gonjuMuseum, chuncheonMuseum, jejuMuseum, sookmyung, sahmyook, keimyung} = partnershipImages;
+        const {microsoft, sbck, matterport, nationalMuseum, gonjuMuseum, chuncheonMuseum, jejuMuseum, sookmyung, sahmyook, keimyung} = partnershipImages;
 
     return (
         <Root>
@@ -49,32 +56,33 @@ function ContactPartnerships(props: Props) {
                 <PartnershipContent dangerouslySetInnerHTML={{__html: partnershipInfo}}/>
             </div>
             <Container>
-            <Row>
-                <Col col={2}>
-                    <Img src={microsoft.src} srcSet={makeSrcset(microsoft.srcSetObject)} />
-                </Col>
-                <Col col={2}>
-                    <Img src={sbck.src} srcSet={makeSrcset(sbck.srcSetObject)} />
-                </Col>
-                <Col col={2}>
-                    <Img src={matterport.src} srcSet={makeSrcset(matterport.srcSetObject)} />
-                </Col>
-                <Col col={2}>
-                    <Img src={nationalMuseum.src} srcSet={makeSrcset(nationalMuseum.srcSetObject)} />
-                </Col>
-                <Col col={2}>
-                    <Img src={gonjuMuseum.src} srcSet={makeSrcset(gonjuMuseum.srcSetObject)} />
-                </Col>
-                <Col col={2}>
-                    <Img src={chuncheonMuseum.src} srcSet={makeSrcset(chuncheonMuseum.srcSetObject)} />
-                </Col>
-            </Row>
-            <Row>
-                <Col col={3}><Img src={jejuMuseum.src} srcSet={makeSrcset(jejuMuseum.srcSetObject)} /></Col>
-                <Col col={3}><Img src={sookmyung.src} srcSet={makeSrcset(sookmyung.srcSetObject)}/></Col>
-                <Col col={3}><Img src={sahmyook.src} srcSet={makeSrcset(sahmyook.srcSetObject)} /></Col>
-                <Col col={3}><Img src={keimyung.src} srcSet={makeSrcset(keimyung.srcSetObject)} /></Col>
-            </Row>
+                <Row>
+                    <Col col={2}>
+                        <Img src={microsoft.src} srcSet={makeSrcset(microsoft.srcSetObject)}/>
+                    </Col>
+                    <Col col={2}>
+                        <Img src={sbck.src} srcSet={makeSrcset(sbck.srcSetObject)}/>
+                    </Col>
+                    <Col col={2}>
+                        <Img src={matterport.src} srcSet={makeSrcset(matterport.srcSetObject)}/>
+                    </Col>
+                    <Col col={2}>
+                        <Img src={nationalMuseum.src} srcSet={makeSrcset(nationalMuseum.srcSetObject)}/>
+                    </Col>
+                    <Col col={2}>
+                        <Img src={gonjuMuseum.src} srcSet={makeSrcset(gonjuMuseum.srcSetObject)}/>
+                    </Col>
+                    <Col col={2}>
+                        <Img src={chuncheonMuseum.src} srcSet={makeSrcset(chuncheonMuseum.srcSetObject)}/>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col col={3}><Img src={jejuMuseum.src} srcSet={makeSrcset(jejuMuseum.srcSetObject)}/></Col>
+                    <Col col={3}><Img src={sookmyung.src} srcSet={makeSrcset(sookmyung.srcSetObject)}/></Col>
+                    <Col col={3}><Img src={sahmyook.src} srcSet={makeSrcset(sahmyook.srcSetObject)}/></Col>
+                    <Col col={3}><Img src={keimyung.src} srcSet={makeSrcset(keimyung.srcSetObject)}/></Col>
+                </Row>
+                <PartnershipMore>+ 76 more</PartnershipMore>
             </Container>
         </Root>
     );

@@ -4,6 +4,21 @@ export const backgroundImage: ResponsiveImage = {
     src: require('../files/contactUs/contactus_background.png'),
 };
 
+export const backgroundBoxImage: ResponsiveImage = {
+    skill: {
+        src: require('../files/contactUs/skill.jpeg')
+    },
+    sponsor: {
+        src: require('../files/contactUs/sponsor.jpeg')
+    },
+    vreducation: {
+        src: require('../files/contactUs/partnership.jpeg')
+    },
+    partnership: {
+        src: require('../files/contactUs/partnership.jpeg')
+    },
+}
+
 export const partnership: ResponsiveImage = {
     microsoft: {
         src: require('../files/contactUs/microsoft-logo.png'),

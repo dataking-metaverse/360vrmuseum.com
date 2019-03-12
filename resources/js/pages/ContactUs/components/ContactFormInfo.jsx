@@ -2,6 +2,18 @@ import React from "react";
 import * as R from "ramda";
 import styled from "styled-components";
 import {Container, Row, Col} from "styled-bootstrap-grid";
+import {connect} from "react-redux";
+
+type Props = {
+    serviceCenterText: string,
+    TelephoneInfoText: string,
+    AddressInfoText: string,
+    FaxInfoText: string,
+    inquireSkillText: string,
+    sponsorText: string,
+    VReducationText: string,
+    partnershipText: string,
+};
 
 const Root = styled(Container)`
     text-align: left;
@@ -25,14 +37,35 @@ const ContactInfoChildren = styled.p`
 `;
 
 const ContactInfoCard = styled.div`
+    position: relative;
     border: 1px solid;
-    background-color: rgb(61,43,59);
     color: white;
     font-weight: bold;
     padding: 5rem 0;
     text-align: center;
     line-height: 1;
     font-size: 2rem;
+`;
+
+const ContactInfoOverlay = styled.div`
+    position: absolute;
+    opacity: .5;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    transition: background .3s,border-radius .3s,opacity .3s;
+    background-color: rgba(25,0,22,.73);
+`;
+
+const ContactInfoWrapper = styled.div`
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-image: url(${R.prop('backgroundImage')});
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
 `;
 
 function ContactFormInfo(props: Props) {
@@ -42,11 +75,13 @@ function ContactFormInfo(props: Props) {
         AddressInfoText = '경기도 안양시 동안구 시민대로327 스마트콘텐츠센터 606호',
         FaxInfoText = 'Fax: 031-421-3677 | Mail: help@dataking.co.kr',
 
-        inquireSkill = '기술 문의',
-        sponsor = '제휴 제안',
-        VReducation = 'VR 교육',
-        partnership = '파트너 쉽',
+        inquireSkillText = '기술 문의',
+        sponsorText = '제휴 제안',
+        VReducationText = 'VR 교육',
+        partnershipText = '파트너 쉽',
+        backgroundBoxImage,
     } = props;
+    const {skill, sponsor, vreducation, partnership} = backgroundBoxImage;
 
     return (
         <Root>
@@ -57,17 +92,37 @@ function ContactFormInfo(props: Props) {
                 <ContactInfoChildren>{FaxInfoText}</ContactInfoChildren>
             </ContactInfo>
             <Row>
-                <Col col={5}>
-                    <ContactInfoCard>{inquireSkill}</ContactInfoCard>
+                <Col xl={5} lg={6} md={6}>
+                    <ContactInfoWrapper backgroundImage={skill.src}>
+                        <ContactInfoOverlay></ContactInfoOverlay>
+                        <ContactInfoCard>
+                            {inquireSkillText}
+                        </ContactInfoCard>
+                    </ContactInfoWrapper>
                 </Col>
-                <Col col={5}>
-                    <ContactInfoCard>{sponsor}</ContactInfoCard>
+                <Col xl={5} lg={6} md={6}>
+                    <ContactInfoWrapper backgroundImage={sponsor.src}>
+                        <ContactInfoOverlay></ContactInfoOverlay>
+                        <ContactInfoCard>
+                            {sponsorText}
+                        </ContactInfoCard>
+                    </ContactInfoWrapper>
                 </Col>
-                <Col col={5}>
-                    <ContactInfoCard>{VReducation}</ContactInfoCard>
+                <Col xl={5} lg={6} md={6}>
+                    <ContactInfoWrapper backgroundImage={vreducation.src}>
+                        <ContactInfoOverlay></ContactInfoOverlay>
+                        <ContactInfoCard>
+                            {VReducationText}
+                        </ContactInfoCard>
+                    </ContactInfoWrapper>
                 </Col>
-                <Col col={5}>
-                    <ContactInfoCard>{partnership}</ContactInfoCard>
+                <Col xl={5} lg={6} md={6}>
+                    <ContactInfoWrapper backgroundImage={partnership.src}>
+                        <ContactInfoOverlay></ContactInfoOverlay>
+                        <ContactInfoCard>
+                            {partnershipText}
+                        </ContactInfoCard>
+                    </ContactInfoWrapper>
                 </Col>
             </Row>
         </Root>
@@ -75,5 +130,7 @@ function ContactFormInfo(props: Props) {
 }
 
 export default R.compose(
-    R.identity
+    connect(R.applySpec({
+        backgroundBoxImage: R.path(['assets', 'contactUs', 'backgroundBoxImage'])
+    }))
 )(ContactFormInfo);

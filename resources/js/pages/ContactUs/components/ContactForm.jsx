@@ -13,8 +13,8 @@ const Form = styled.form`
 `;
 
 const InputLabel = styled.label`
-    float: right;
-    display: table-caption;
+    display: block;
+    width: 100%;
     margin: 1rem;
     text-align: left;
     font-size: 1.3rem;
@@ -23,7 +23,8 @@ const InputLabel = styled.label`
 
 const InputField = styled.input`
     font-size: 1.3rem;
-    width: 45rem;
+    // width: 45rem;
+    width: 100%;
     height: 5rem;
     padding: 1.5rem;
     outline: none;
@@ -38,8 +39,8 @@ const InputField = styled.input`
 
 const ContentField = styled.textarea`
     font-size: 1.3rem;
-    min-width: 45rem;
-    max-width: 45rem;
+    width: 100%;
+    display: block;
     min-height: 15rem;
     max-height: 15rem;
     border-color: #d2d2d2;

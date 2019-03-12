@@ -11,14 +11,23 @@ type Props = {
 };
 
 const Root = styled(Container)`
+    position: relative;
+    width: 100%;
+    height: 100%;
     text-align: center;
-    background-color: black;
     padding: 23rem 0;
     margin-bottom: 10rem;
     background-image: url(${R.prop('backgroundImage')});
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: background 3s,border .3s,border-radius .3s,box-shadow .3s;
+    background-color: #1f101f;
+    margin-bottom: 25rem;
 `;
 
 const WelcomeText = styled.p`
+    position: relative;
     text-align: center;
     font-size: 5.1rem;
     font-weight: bold;
@@ -26,19 +35,44 @@ const WelcomeText = styled.p`
     color: white;
 `;
 
+const BackgroundOverlayWrapper = styled.div`
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    background-color: #150216;
+    opacity: .65;
+    transition: background .3s,border-radius .3s,opacity .3s;
+`;
+
+const BackgroundOverlay = styled.div`
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    transition: background .3s,border-radius .3s,opacity .3s;
+    opacity: .5;
+`;
+
+
 function ContactWelcome(props: Props) {
     const {
-        contactUsText1= '360°VR Museum 고객지원에',
-        contactUsText2= '오신 것을 환영합니다',
+        contactUsText1 = '360°VR Museum 고객지원에',
+        contactUsText2 = '오신 것을 환영합니다',
         backgroundImage,
     } = props;
     return (
         <Root backgroundImage={backgroundImage.src}>
-            <WelcomeText>
-                {contactUsText1}
-                <br/>
-                {contactUsText2}
-            </WelcomeText>
+                <BackgroundOverlayWrapper>
+                    <BackgroundOverlay/>
+                </BackgroundOverlayWrapper>
+                <WelcomeText>
+                    {contactUsText1}
+                    <br/>
+                    {contactUsText2}
+                </WelcomeText>
         </Root>
     );
 }

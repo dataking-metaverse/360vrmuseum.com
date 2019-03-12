@@ -7,7 +7,7 @@ import ContactFormInfo from "./components/ContactFormInfo";
 import ContactPartnerships from "./components/ContactPartnerships";
 
 const ContactFormContainer = styled(Container)`
-    margin-bottom: 13rem;
+    margin-bottom: 25rem;
 `;
 
 export default class ContactUs extends React.Component {
@@ -26,12 +26,12 @@ export default class ContactUs extends React.Component {
             <React.Fragment>
                 <ContactWelcome/>
                 <ContactFormContainer>
-                    <Row>
-                        <Col col={6}>
+                    <Row className="justify-content-center">
+                        <Col xl={5} lg={5} md={4}>
                             <ContactForm/>
                         </Col>
 
-                        <Col col={6}>
+                        <Col xl={6} lg={5} md={4}>
                             <ContactFormInfo/>
                         </Col>
                     </Row>
