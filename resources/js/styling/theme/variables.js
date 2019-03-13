@@ -24,7 +24,6 @@ const variables = {
 
         navigationBar: {
             background: colors.basic.darkPurple,
-            color: colors.basic.white,
             fontSize: rem(1.5),
             height: rem(8.2),
         }
