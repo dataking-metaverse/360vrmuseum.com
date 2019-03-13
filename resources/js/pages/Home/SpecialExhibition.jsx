@@ -2,9 +2,10 @@ import React, {useState, useEffect} from "react";
 import styled from "styled-components";
 import {connect} from "react-redux";
 import * as R from "ramda";
-import {Container, Row, Col} from "styled-bootstrap-grid";
+import {Row, Col} from "styled-bootstrap-grid";
 
 import Showcases from "../../models/Showcases";
+import HomeContainer from "./HomeContainer";
 
 
 type Props = {
@@ -12,8 +13,8 @@ type Props = {
 };
 
 
-const Root = styled.div`
-    
+const Root = styled(HomeContainer)`
+    background-color: #ededed;
 `;
 
 function SpecialExhibition(props: Props) {
@@ -22,7 +23,7 @@ function SpecialExhibition(props: Props) {
         Showcases.get(props.showcases).then(R.pipe(
             Array.from,
             R.map(showcase => (
-                <Col key={showcase.getAttribute('mid')} lg={4}>
+                <Col key={showcase.getAttribute('mid')} lg={4} className="mb-5">
                     {React.createElement(showcase.generateCard())}
                 </Col>
             )),
@@ -31,11 +32,9 @@ function SpecialExhibition(props: Props) {
     }, []);
     return (
         <Root>
-            <Container>
-                <Row>
-                    {showcasesCard}
-                </Row>
-            </Container>
+            <Row>
+                {showcasesCard}
+            </Row>
         </Root>
     );
 }
