@@ -19,7 +19,7 @@ export default class Home extends React.PureComponent<Props> {
                 <HeroCarousel />
                 <FeaturedExhibitionCarousel />
                 <SpecialExhibition />
-                <SearchBox className="mb-5"/>
+                <SearchBox className="pb-5" />
             </React.Fragment>
         );
     }

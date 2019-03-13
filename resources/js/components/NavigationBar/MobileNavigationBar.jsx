@@ -71,9 +71,9 @@ export default function MobileNavigationBar(props: DecoratedProps) {
                 <Image src={props.logo} />
                 <BurgerButton onClick={() => setNavOpen(!navOpen)} />
             </Header>
-            <SlideComponent open={navOpen}>
-                <Links routes={props.routes} />
-            </SlideComponent>
+            {/*<SlideComponent open={navOpen}>*/}
+                {/*<Links routes={props.routes} />*/}
+            {/*</SlideComponent>*/}
         </React.Fragment>
     );
 }
