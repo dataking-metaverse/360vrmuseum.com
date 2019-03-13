@@ -28,6 +28,11 @@ type InjectedProps = {
 const Root = styled.div`
     background-color: ${themeVar('components.navigationBar.background')};
     font-size: ${themeVar('components.navigationBar.fontSize')};
+    letter-spacing: .1rem;
+`;
+
+const CustomContainer = styled.div`
+    
 `;
 
 const FilledRow = styled(Row)`
@@ -50,8 +55,9 @@ const Item = styled(Link)`
     ${flexMiddle()}
     margin-right: 4rem;
     height: ${themeVar('components.navigationBar.height')};
-    color: ${themeVar('components.navigationBar.color')};
+    color: #e5e5e5;
     text-decoration: none;
+    padding-bottom: 1rem;
     
     &:last-child {
         padding-right: 0;
@@ -76,38 +82,38 @@ const Item = styled(Link)`
     }
 `;
 
-@connect(R.applySpec({
-    showHome: R.path(['config', 'navigationBar', 'showHome']),
-    items: R.path(['config', 'navigationBar', 'staticItems']),
-    logo: R.path(['assets', 'logo']),
-    itemTitles: R.pipe(
-        R.path(['lang', 'navigation']),
-        R.mapObjIndexed(R.path(['title']))
-    ),
-}))
-@withRouter
-export default class NavigationBar extends Injected.Component<Props, InjectedProps> {
-
-    renderItems(): Element {
-        return this.props.items.map(itemName => (
-            <Item key={itemName} to={itemName}>{this.props.itemTitles[itemName]}</Item>
-        ));
-    }
-
-    render() {
-        return (
-            <Root>
-                <Container fluid>
-                    <FilledRow>
-                        <LeftCol col="2">
-                            <Logo src={this.props.logo} />
-                        </LeftCol>
-                        <RightCol col="10">
-                            {this.renderItems()}
-                        </RightCol>
-                    </FilledRow>
-                </Container>
-            </Root>
-        );
-    }
+function renderItems(items): Element {
+    return items.map(itemName => (
+        <Item key={itemName} to={itemName}>{this.props.itemTitles[itemName]}</Item>
+    ));
 }
+
+function NavigationBar(props: Props & InjectedProps) {
+    return (
+        <Root>
+            <Container>
+                <FilledRow>
+                    <LeftCol col="2">
+                        <Logo src={props.logo} />
+                    </LeftCol>
+                    <RightCol col="10">
+                        {renderItems(props.items)}
+                    </RightCol>
+                </FilledRow>
+            </Container>
+        </Root>
+    );
+}
+
+export default R.compose(
+    connect(R.applySpec({
+        showHome: R.path(['config', 'navigationBar', 'showHome']),
+        items: R.path(['config', 'navigationBar', 'staticItems']),
+        logo: R.path(['assets', 'logo']),
+        itemTitles: R.pipe(
+            R.path(['lang', 'navigation']),
+            R.mapObjIndexed(R.path(['title']))
+        ),
+    })),
+    withRouter
+)(NavigationBar)

@@ -12,7 +12,7 @@ const gridTheme = {
 
     },
     container: {
-        padding: 22,
+        padding: 30,
         maxWidth: {
             xl: 1480, // default 1140
             lg: 960,
