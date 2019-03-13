@@ -4,9 +4,11 @@ import {media} from "styled-bootstrap-grid";
 
 import navigationBarDecorators from "./navigationBarDecorators";
 import DesktopNavigationBar from "./DesktopNavigationBar";
+import MobileNavigationBar from "./MobileNavigationBar";
 
 
 const DesktopNav = navigationBarDecorators(DesktopNavigationBar);
+const MobileNav = navigationBarDecorators(MobileNavigationBar);
 
 type Props = {
 
@@ -37,7 +39,7 @@ export default function NavigationBar(props: Props) {
                 <DesktopNav />
             </Desktop>
             <Mobile>
-                mobile
+                <MobileNav />
             </Mobile>
         </React.Fragment>
 

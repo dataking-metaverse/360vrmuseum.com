@@ -7,10 +7,6 @@ import {Link} from "react-router-dom";
 import type {DecoratedProps, RouteProps} from "./navigationBarDecorators";
 
 
-type Props = {
-
-};
-
 type LinksProps = {
     routes: Array<RouteProps>,
 };
@@ -68,7 +64,7 @@ const Item = styled(Link)`
         height: .3rem;
         background-color: #e5e5e5;
         opacity: 0;
-        transition: ${themeVar('transitionDuration')};
+        transition: opacity ${themeVar('transitionDuration')};
     }
     
     ${props => props.active && '&:before,'}
@@ -83,13 +79,15 @@ function Links(props: LinksProps) {
     ));
 }
 
-function DesktopNavigationBar(props: Props & DecoratedProps) {
+function DesktopNavigationBar(props: DecoratedProps) {
     return (
         <Root>
             <Container>
                 <FilledRow>
                     <LeftCol col="2">
-                        <Logo src={props.logo} />
+                        <Link to={props.homeRoute}>
+                            <Logo src={props.logo} />
+                        </Link>
                     </LeftCol>
                     <RightCol col="10">
                         <Links routes={props.routes} />
