@@ -77,7 +77,7 @@ const ViewingOnIphoneX = faded('img')`
 const UniversityLogos = R.compose(
     connect(R.applySpec({
         logos: R.path(['assets', 'vrmuseum', 'universityLogos']),
-        links: R.path(['config', 'pages', 'home', 'appreciate', 'universityLinks'])
+        links: R.path(['config', 'pages', 'vrmuseum', 'appreciate', 'universityLinks'])
     })),
 )(function UniversityLogos(props: UniversityLogosProps) {
     return props.logos.map(({src, srcSetObject}, index) => (

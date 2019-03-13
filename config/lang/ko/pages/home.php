@@ -21,4 +21,12 @@ return [
             ],
         ],
     ],
+    'nationalMuseum' => [
+        'text' => [
+            'title' => '국립박물관',
+        ],
+    ],
+    'specialExhibition' => [
+        'viewDetails' => '상세보기'
+    ]
 ];

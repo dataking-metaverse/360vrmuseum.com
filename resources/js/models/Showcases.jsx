@@ -29,7 +29,7 @@ export default class Showcases extends GraphQLModel<Props> implements Iterable<S
         `}`);
         const showcases = R.path(['data', 'data', 'showcases'])(response);
         if (!showcases) { return new Showcases([]); }
-        return new Showcases(showcases);
+        return new Showcases(showcases.map(R.construct(Showcase)));
     }
 
     constructor(props: Props) {
