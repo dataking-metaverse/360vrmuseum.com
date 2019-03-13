@@ -23,6 +23,9 @@ const Root = styled.div`
 const Link = styled.a`
     color: #a39e9e;
     text-decoration: none;
+    &:hover {
+        color: #3d2b3b;
+    }
 `;
 const Copyright = styled.span`
     color: #bcb7b7;
@@ -32,6 +35,10 @@ const CopyrightNotice = styled.span`
     color: #bcb7b7;
     font-weight: bold;
     font-size: 1rem;
+`;
+
+const AllRightReserved = styled.span`
+    color: bcb7b7;
 `;
 
 function Footer(props: Props) {
@@ -51,7 +58,7 @@ function Footer(props: Props) {
             </span><br/>
             <Copyright>{copyright}</Copyright>
             <br/>
-            <span>{allRigthReserved}</span>
+            <AllRightReserved>{allRigthReserved}</AllRightReserved>
             <br/>
             <CopyrightNotice>{noPrinting}</CopyrightNotice>
         </Root>
