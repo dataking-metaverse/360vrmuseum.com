@@ -114,7 +114,7 @@ const ViewDetails = styled.a`
 `;
 
 const DetailWrapper = styled.div`
-    padding: 0 1.5rem 1.5rem
+    padding: 10rem 4.5rem 3rem;
 `;
 
 function ShowcaseCard(props: Props) {
