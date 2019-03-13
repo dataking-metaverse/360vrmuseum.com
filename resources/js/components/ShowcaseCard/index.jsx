@@ -27,7 +27,7 @@ const Image = styled.div`
     &:before {
         content: '';
         display: block;
-        padding-top: ${percentage(237 / 416)};
+        padding-top: ${percentage(100 * 237 / 416)};
     }
 `;
 
