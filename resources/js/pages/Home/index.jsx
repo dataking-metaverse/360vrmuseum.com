@@ -1,7 +1,7 @@
 import React from "react";
 
 import page from "../../decorators/page";
-
+import styled from "styled-components";
 import HeroCarousel from "./HeroCarousel";
 import FeaturedExhibitionCarousel from "./FeaturedExhibitionCarousel";
 import SpecialExhibition from "./SpecialExhibition";
@@ -17,9 +17,9 @@ export default class Home extends React.PureComponent<Props> {
         return (
             <React.Fragment>
                 <HeroCarousel />
-                {/*<FeaturedExhibitionCarousel />*/}
-                {/*<SpecialExhibition />*/}
-                <SearchBox />
+                <FeaturedExhibitionCarousel />
+                <SpecialExhibition />
+                <SearchBox className="mb-5"/>
             </React.Fragment>
         );
     }

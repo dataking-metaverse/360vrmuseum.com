@@ -12,6 +12,7 @@ type Props = {
 
 const Root = styled.div`
     color: ${themeVar('colors.grayscale.500')};
+    background-color: #ededed;
     border-top: 1px solid rgba(61,43,59,.3);
     font-size: 1.2rem;
     line-height: 2.3rem;

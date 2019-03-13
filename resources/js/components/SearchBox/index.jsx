@@ -1,11 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 import {Container, Row, Col} from "styled-bootstrap-grid";
-import * as R from "ramda";
 
 
 type Props = {
-    showcase: Showcase,
+    //
 };
 
 const Root = styled.div`
@@ -24,7 +23,7 @@ const Input = styled.input`
     border: 1px solid #d2d2d2;
 `;
 
-const Submit = styled.input`
+const Submit = styled.button`
     width: 50%;
     height: 5rem;
     background: #000;
@@ -41,19 +40,28 @@ const Submit = styled.input`
     transition: all .2s;
 `;
 
+
+const onSubmit = event => {
+    alert(event);
+};
+
 export default function SearchBox(props: Props) {
     const {} = props;
     return (
-        <Root>
+        <Root {...props}>
             <Container>
-                <Row className="justify-content-center">
-                    <Col xl={4} className="pr-0">
-                        <Input placeholder="Search ..."/>
-                    </Col>
-                    <Col xl={1} className="pl-0">
-                        <Submit type="submit" value=""/>
-                    </Col>
-                </Row>
+                <form onSubmit={onSubmit}>
+                    <Row className="justify-content-center">
+                        <Col xl={4} lg={4} md={6} sm={6} xs={7} className="pr-0">
+                            <Input placeholder="Search ..."/>
+                        </Col>
+                        <Col xl={1} lg={2} md={2} sm={3} xs={4} className="pl-0">
+                            <Submit type="submit">
+
+                            </Submit>
+                        </Col>
+                    </Row>
+                </form>
             </Container>
         </Root>
     );
