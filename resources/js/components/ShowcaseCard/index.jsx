@@ -57,7 +57,7 @@ const ViewDetails = styled.a`
 
 
 function ShowcaseCard(props: Props) {
-    const {showcase} = props;
+    const {showcase, text} = props;
     const {
         thumbnail,
         type,
@@ -65,6 +65,7 @@ function ShowcaseCard(props: Props) {
         presented_by: presentedBy,
         date,
     } = showcase.props;
+
     return (
         <Root>
             <Image image={thumbnail} />
@@ -74,7 +75,7 @@ function ShowcaseCard(props: Props) {
             <Period>{date}</Period>
             <hr />
             <Impression>TODO</Impression>
-            <ViewDetails>{text.viewDetails}</ViewDetails>
+            <ViewDetails>{text.viewDetails}{' >'}</ViewDetails>
         </Root>
     );
 }
@@ -82,7 +83,7 @@ function ShowcaseCard(props: Props) {
 export default R.compose(
     connect(
         R.applySpec({
-            text: R.path(['lang', '']),
+            text: R.path(['lang', 'pages', 'home', 'specialExhibition']),
         }),
         R.applySpec({}),
     )
