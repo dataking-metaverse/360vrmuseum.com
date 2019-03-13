@@ -20,6 +20,7 @@
         "bootstrap": "^4.3.1",
         "classnames": "latest",
         "flow-bin": "^0.93.0",
+        "ionicons": "^4.5.5",
         "laravel-mix": "^4.0.14",
         "polished": "^2.3.3",
         "ramda": "0.26.1",

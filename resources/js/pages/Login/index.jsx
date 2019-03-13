@@ -1,7 +1,13 @@
 import React from "react";
 
-export default class NationalMuseum extends React.Component {
-    render() {
-        return 'login';
-    }
+import LoginForm from "./components/LoginForm";
+
+type Props = {
+
+};
+
+export default function Login(props: Props) {
+    return (
+        <LoginForm />
+    );
 }
