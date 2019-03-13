@@ -10,7 +10,7 @@ return [
         'staticItems' => [
             'home',
             'national-museum',
-            '360vrmuseum',
+            'vrmuseum',
             'contact-us',
             'login',
         ],

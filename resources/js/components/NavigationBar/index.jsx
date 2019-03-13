@@ -20,9 +20,12 @@ type Props = {
 
 type InjectedProps = {
     showHome: boolean,
-    items: Array<string>,
     logo: string,
-    itemTitles: Array<string>,
+    routes: Array<{
+        item: string,
+        title: string,
+        to: string,
+    }>,
 };
 
 const Root = styled.div`
@@ -46,7 +49,7 @@ const LeftCol = styled(Col)`
 const RightCol = styled(Col)`
     ${flexMiddle()}
     ${flexRight()}
-`
+`;
 
 const Logo = styled.img``;
 
@@ -71,7 +74,7 @@ const Item = styled(Link)`
         left: 0;
         width: 100%;
         height: .3rem;
-        background-color: ${themeVar('components.navigationBar.color')};
+        background-color: #e5e5e5;
         opacity: 0;
         transition: ${themeVar('transitionDuration')};
     }
@@ -82,9 +85,9 @@ const Item = styled(Link)`
     }
 `;
 
-function renderItems(items): Element {
-    return items.map(itemName => (
-        <Item key={itemName} to={itemName}>{this.props.itemTitles[itemName]}</Item>
+function renderRoutes(routes): Element {
+    return routes.map(({name, title, to}) => (
+        <Item key={name} to={to}>{title}</Item>
     ));
 }
 
@@ -97,7 +100,7 @@ function NavigationBar(props: Props & InjectedProps) {
                         <Logo src={props.logo} />
                     </LeftCol>
                     <RightCol col="10">
-                        {renderItems(props.items)}
+                        {renderRoutes(props.routes)}
                     </RightCol>
                 </FilledRow>
             </Container>
@@ -106,14 +109,26 @@ function NavigationBar(props: Props & InjectedProps) {
 }
 
 export default R.compose(
-    connect(R.applySpec({
-        showHome: R.path(['config', 'navigationBar', 'showHome']),
-        items: R.path(['config', 'navigationBar', 'staticItems']),
-        logo: R.path(['assets', 'logo']),
-        itemTitles: R.pipe(
-            R.path(['lang', 'navigation']),
-            R.mapObjIndexed(R.path(['title']))
-        ),
-    })),
-    withRouter
+    connect(
+        R.applySpec({
+            showHome: R.path(['config', 'navigationBar', 'showHome']),
+            logo: R.path(['assets', 'logo']),
+            routes: R.pipe(
+                R.applySpec({
+                    items: R.path(['config', 'navigationBar', 'staticItems']),
+                    titles: R.pipe(
+                        R.path(['lang', 'navigation']),
+                        R.mapObjIndexed(R.path(['title']))
+                    ),
+                    routes: R.path(['app', 'routes']),
+                }),
+                params => params.items.map(item => ({
+                    name: item,
+                    title: params.titles[item],
+                    to: params.routes[item],
+                })),
+            ),
+        }),
+        R.always({})
+    )
 )(NavigationBar)
