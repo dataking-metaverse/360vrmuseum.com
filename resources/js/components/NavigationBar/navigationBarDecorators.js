@@ -41,7 +41,8 @@ const navigationBarDecorators = R.compose(
             ),
         }),
         R.always({})
-    )
+    ),
+    withRouter
 );
 
 export default navigationBarDecorators;
