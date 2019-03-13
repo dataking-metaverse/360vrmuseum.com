@@ -35,8 +35,8 @@ const Icon = styled.div`
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 2rem;
+    height: 2rem;
     background-image: url(${R.prop('backgroundImage')});
     display: ${({show}) => show ? 'initial' : 'none'};
 `;
@@ -50,7 +50,6 @@ function Checkbox(props: Props) {
                 checked={checked}
                 onChange={() => {
                     setChecked(!checked);
-                    props.onChange(!checked);
                 }}
                 type="checkbox"
             />

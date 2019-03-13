@@ -35,6 +35,7 @@ const Input = styled.input`
     border: 2px solid #ddd;
     border-radius: .3rem;
     padding: 0 1.2rem;
+    font-size: 1.5rem;
 `;
 
 const Button = styled.button`
@@ -49,12 +50,18 @@ const Button = styled.button`
     border-radius: .4rem;
     outline: none;
     &.loginButton {
-        background: #3ba1da;
+        background-color: #3ba1da;
         color: #fff;
+        &:hover {
+            background-color: #44b0ec;
+        }
     }
     &.registerButton {
-        background: #eee;
+        background-color: #eee;
         color: #666;
+        &:hover {
+            background-color: #e5e5e5;
+        }
     }
 `;
 
@@ -63,7 +70,7 @@ const ForgotPassword = styled.div`
     cursor: pointer;
     color: #888;
     line-height: 2.5rem;
-    font-weight: 200;
+    font-weight: 100;
     &:hover {
         text-decoration: underline;
     }
@@ -73,40 +80,39 @@ const KeepMeSignedText = styled.span`
     color: #888;
 `;
 
-function onChange(event) {
-    Checkbox();
-}
-
 function LoginForm(props: Props) {
-    const {} = props;
+    const {
+        label: [useridText, userpwText],
+        text: [keepsignText, loginButtonText, registerButtonText, forgotPasswordText],
+    } = props;
 
     return (
         <Root>
             <Row className="justify-content-center">
-                <Col md={6}>
+                <Col xl={4} md={6} sm={7} xs={10}>
                     <InputBoxWrapper>
-                        <InputLabel>아이디 또는 이메일</InputLabel>
-                        <Input/>
+                        <InputLabel>{useridText}</InputLabel>
+                        <Input />
                     </InputBoxWrapper>
                     <InputBoxWrapper>
-                        <InputLabel>비밀번호</InputLabel>
-                        <Input type="password"/>
+                        <InputLabel>{userpwText}</InputLabel>
+                        <Input type="password" />
                     </InputBoxWrapper>
                     <div className="mb-5">
                         <div className="mb-3">
-                            <Checkbox onChange={console.log} type="checkbox" />
-                            <KeepMeSignedText className="pl-3">Keep me signed in</KeepMeSignedText>
+                            <Checkbox onChange="" type="checkbox" />
+                            <KeepMeSignedText className="pl-4">{keepsignText}</KeepMeSignedText>
                         </div>
                         <Row>
-                            <Col md={6} className="mb-sm-3">
-                                <Button className="loginButton">로그인</Button>
+                            <Col md={6} xs={12} className="mb-3">
+                                <Button className="loginButton">{loginButtonText}</Button>
                             </Col>
-                            <Col md={6}>
-                                <Button className="registerButton">회원가입</Button>
+                            <Col md={6} xs={12}>
+                                <Button className="registerButton">{registerButtonText}</Button>
                             </Col>
                         </Row>
                     </div>
-                    <ForgotPassword>Forgot your password?</ForgotPassword>
+                    <ForgotPassword>{forgotPasswordText}</ForgotPassword>
                 </Col>
             </Row>
         </Root>
@@ -114,8 +120,8 @@ function LoginForm(props: Props) {
 }
 
 export default R.compose(
-    R.identity
-    // connect(R.applySpec({
-    //     label: R.path(['lang', 'pages', 'contact-us', 'contactForm', 'label']),
-    // }))
+    connect(R.applySpec({
+        label: R.path(['lang', 'pages', 'login', 'loginForm', 'label']),
+        text: R.path(['lang', 'pages', 'login', 'loginForm', 'text']),
+    }))
 )(LoginForm);
