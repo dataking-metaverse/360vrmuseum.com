@@ -27,6 +27,11 @@ return [
         ],
     ],
     'specialExhibition' => [
-        'viewDetails' => '상세보기'
+        'title' => '국립박물관',
+        'viewDetails' => '상세보기',
+    ],
+    'permanentExhibition' => [
+        'title' => '상설전시',
+        'viewDetails' => '상세보기',
     ]
 ];

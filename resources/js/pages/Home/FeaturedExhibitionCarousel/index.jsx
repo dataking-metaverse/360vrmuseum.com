@@ -117,7 +117,7 @@ function FeaturedExhibitionCarousel(props: Props) {
         <Root>
             <ContainerCustom>
                 <MuseumTitle>국립박물관</MuseumTitle>
-                <br />
+                <br /><br />
                 <SliderWrapper padding={slidePadding}>
                     <Slider {...slickSettings}>
                         {showcaseElements}
