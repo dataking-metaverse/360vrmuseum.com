@@ -9,6 +9,7 @@ import MuseumTitle from "../../../components/MuseumTitle";
 import Showcases from "../../../models/Showcases";
 import {themeVar} from "../../../styling/theme/functions";
 import Slide from "./Slide";
+import HomeContainer from "../HomeContainer";
 
 
 type Props = {
@@ -22,11 +23,13 @@ const Root = styled.div`
 const arrowWidth = 2;
 const arrowHeight = 3;
 const arrowLineWidth = .2;
-const ContainerCustom = styled.div`
-    padding: 3.2rem 1.5rem;
-    max-width: 130rem;
-    margin: auto;
+const ContainerCustom = styled(HomeContainer)`
     background-color: #ededed;
+`;
+
+const SliderWrapper = styled.div`
+    margin-left: -${R.prop('padding')};
+    margin-right: -${R.prop('padding')};
     
     > .slick-slider {
         //
@@ -88,6 +91,8 @@ const slickSettings = {
     slidesToScroll: 1,
 };
 
+const slidePadding = '.85rem';
+
 function FeaturedExhibitionCarousel(props: Props) {
     const {exhibitions} = props;
     const [showcaseElements, setShowcaseElements] = useState([]);
@@ -99,6 +104,7 @@ function FeaturedExhibitionCarousel(props: Props) {
                 <Slide
                     key={showcase.getAttribute('mid')}
                     href={`#${showcase.getAttribute('mid')}`}
+                    padding={slidePadding}
                 >
                     {React.createElement(showcase.generatePoster())}
                 </Slide>
@@ -112,9 +118,11 @@ function FeaturedExhibitionCarousel(props: Props) {
             <ContainerCustom>
                 <MuseumTitle>국립박물관</MuseumTitle>
                 <br />
-                <Slider {...slickSettings}>
-                    {showcaseElements}
-                </Slider>
+                <SliderWrapper padding={slidePadding}>
+                    <Slider {...slickSettings}>
+                        {showcaseElements}
+                    </Slider>
+                </SliderWrapper>
             </ContainerCustom>
         </Root>
     );

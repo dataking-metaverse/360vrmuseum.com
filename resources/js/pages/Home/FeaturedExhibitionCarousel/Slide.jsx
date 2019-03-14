@@ -11,14 +11,15 @@ type Props = {
 
 const Root = styled.a`
     display: block;
-    padding-left: .85rem;
-    padding-right: .85rem;
+    padding-left: ${R.prop('padding')};
+    padding-right: ${R.prop('padding')};
 `;
 
 
 export default function Slide(props: Props) {
+    const {padding = '.85rem'} = props;
     return (
-        <Root>
+        <Root padding={padding}>
             {props.children}
         </Root>
     );
