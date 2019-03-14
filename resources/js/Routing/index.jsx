@@ -31,7 +31,6 @@ function makeRouteParams(routeUris, routeParams): Array<RouteParams> {
             ...routeParam,
         })),
         R.values,
-        R.tap(console.log)
     )(routeParams);
 }
 
