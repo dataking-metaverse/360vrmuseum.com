@@ -1,5 +1,6 @@
 import React from "react";
 import {Container, Row, Col} from "styled-bootstrap-grid";
+import * as R from "ramda";
 
 type Props = {
 

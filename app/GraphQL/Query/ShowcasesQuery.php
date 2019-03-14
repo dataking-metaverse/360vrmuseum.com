@@ -25,6 +25,7 @@ class ShowcasesQuery extends Query
             'mid' => [ 'name' => 'mid', 'type' => Type::string() ],
             'mids' => [ 'name' => 'mids', 'rules' => [], 'type' => Type::listOf(Type::string()) ],
             'main_title' => [ 'name' => 'main_title', 'type' => Type::string() ],
+            'location' => [ 'name' => 'location', 'type' => Type::string() ],
             'presented_by' => [ 'name' => 'presented_by', 'type' => Type::string() ],
             'poster' => [ 'name' => 'poster', 'type' => Type::string() ],
             'thumbnail' => [ 'name' => 'thumbnail', 'type' => Type::string() ],

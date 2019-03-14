@@ -132,6 +132,7 @@ function ShowcaseCard(props: Props) {
         thumbnail,
         type,
         main_title: mainTitle,
+        location,
         presented_by: presentedBy,
         date,
     } = showcase.props;
@@ -143,7 +144,7 @@ function ShowcaseCard(props: Props) {
             <DetailWrapper>
                 <Type>{type}</Type>
                 <Title>{mainTitle}</Title>
-                <PresentedBy>{presentedBy}</PresentedBy>
+                <PresentedBy>{location}{', '}{presentedBy}</PresentedBy>
                 <Period>{date}</Period>
                 <Hr />
                 <div>

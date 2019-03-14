@@ -10,6 +10,7 @@ import ShowcaseCard from "../components/ShowcaseCard";
 export type Props = {
     mid: string,
     main_title: string,
+    location: string,
     presented_by: string,
     poster: string,
     thumbnail: string,
@@ -35,7 +36,7 @@ export default class Showcase extends GraphQLModel<Props> {
 
     props: Props;
 
-    static FIELDS = ['mid', 'main_title', 'presented_by', 'poster', 'thumbnail', 'kor_title', 'eng_title', 'venue', 'map_address', 'map_name', 'description', 'youtube_id', 'list_of_images', 'guide_information', 'is_paid', 'is_conversation', 'is_performing', 'date', 'type', 'page_url' ];
+    static FIELDS = ['mid', 'main_title', 'location', 'presented_by', 'poster', 'thumbnail', 'kor_title', 'eng_title', 'venue', 'map_address', 'map_name', 'description', 'youtube_id', 'list_of_images', 'guide_information', 'is_paid', 'is_conversation', 'is_performing', 'date', 'type', 'page_url' ];
 
     static async get(mid: string): Promise<?Showcase> {
         const {prefix} = Showcase;

@@ -4,7 +4,8 @@ return [
     [
         "mid" => "aSYdPZg4Mu6",
         "main_title" => "동아시아의 호랑이 미술",
-        "presented_by" => "서울, 국립중앙박물관",
+        "location" => "서울",
+        "presented_by" => "국립중앙박물관",
         "poster" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/aSYdPZg4Mu6/poster/aSYdPZg4Mu6-200x300.jpg",
         "thumbnail" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/aSYdPZg4Mu6/thumbnail/aSYdPZg4Mu6-416x237.jpg",
         "kor_title" => "동아시아의 호랑이 미술-韓國・日本・中国",
@@ -36,7 +37,8 @@ return [
     [
         "mid" => "w6M8mr9ArwV",
         "main_title" => "삼별초와 동아시아",
-        "presented_by" => "제주, 국립제주박물관",
+        "location" => "제주",
+        "presented_by" => "국립제주박물관",
         "poster" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/w6M8mr9ArwV/poster/w6M8mr9ArwV-200x300.jpg",
         "thumbnail" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/w6M8mr9ArwV/thumbnail/w6M8mr9ArwV-416x237.jpg",
         "kor_title" => "삼별초와 동아시아",
@@ -67,7 +69,8 @@ return [
     [
         "mid" => "3VzkdUcgjGM",
         "main_title" => "왕이 사랑한 보물: 독일 드레스덴 박물관 연합 명품전",
-        "presented_by" => "서울, 국립중앙박물관",
+        "location" => "서울",
+        "presented_by" => "국립중앙박물관",
         "poster" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/3VzkdUcgjGM/poster/3VzkdUcgjGM-200x300.jpg",
         "thumbnail" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/3VzkdUcgjGM/thumbnail/3VzkdUcgjGM-416x237.jpg",
         "kor_title" => "왕이 사랑한 보물: 독일 드레스덴 박물관 연합 명품전",
@@ -98,7 +101,8 @@ return [
     [
         "mid" => "n4ik2CyQRWM",
         "main_title" => "쇠철강 철의 문화사",
-        "presented_by" => "서울, 국립중앙박물관",
+        "location" => "서울",
+        "presented_by" => "국립중앙박물관",
         "poster" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/n4ik2CyQRWM/poster/n4ik2CyQRWM-200x300.jpg",
         "thumbnail" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/n4ik2CyQRWM/thumbnail/n4ik2CyQRWM-416x237.jpg",
         "kor_title" => "쇠철강 철의 문화사",
@@ -130,7 +134,8 @@ return [
     [
         "mid" => "rkDggYgt6LV",
         "main_title" => "국립춘천박물관",
-        "presented_by" => "춘천, 국립춘천박물관",
+        "location" => "춘천",
+        "presented_by" => "국립춘천박물관",
         "poster" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/rkDggYgt6LV/poster/rkDggYgt6LV-200x300.jpg",
         "thumbnail" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/rkDggYgt6LV/thumbnail/rkDggYgt6LV-416x237.jpg",
         "kor_title" => "국립춘천박물관 상설전",
@@ -162,7 +167,8 @@ return [
     [
         "mid" => "UarDva3g6pX",
         "main_title" => "국립공주박물관",
-        "presented_by" => "공주, 국립공주박물관",
+        "location" => "공주",
+        "presented_by" => "국립공주박물관",
         "poster" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/UarDva3g6pX/poster/UarDva3g6pX-200x300.jpg",
         "thumbnail" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/UarDva3g6pX/thumbnail/UarDva3g6pX-416x237.jpg",
         "kor_title" => "국립공주박물관 상설전",
@@ -194,7 +200,8 @@ return [
     [
         "mid" => "2Kh3PgoqoDT",
         "main_title" => "숙명여자대학교박물관",
-        "presented_by" => "서울, 숙명여자대학교",
+        "location" => "서울",
+        "presented_by" => "숙명여자대학교",
         "poster" => null,
         "thumbnail" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/2Kh3PgoqoDT/thumbnail/2Kh3PgoqoDT-416x237.jpg",
         "kor_title" => "숙명여자대학교 박물관",
@@ -223,7 +230,8 @@ return [
     [
         "mid" => "Xr48H9yMjcp",
         "main_title" => "계명대학교 행소박물관",
-        "presented_by" => "대구, 계명대학교",
+        "location" => "대구",
+        "presented_by" => "계명대학교",
         "poster" => null,
         "thumbnail" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/Xr48H9yMjcp/thumbnail/Xr48H9yMjcp-416x237.jpg",
         "kor_title" => "계명대학교 행소박물관",
@@ -254,7 +262,8 @@ return [
     [
         "mid" => "P4L5PqEWNrS",
         "main_title" => "삼육대학교 박물관",
-        "presented_by" => "서울, 삼육대학교",
+        "location" => "서울",
+        "presented_by" => "삼육대학교",
         "poster" => null,
         "thumbnail" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/P4L5PqEWNrS/thumbnail/P4L5PqEWNrS-416x237.jpg",
         "kor_title" => "삼육대학교 박물관 상설전",
@@ -285,7 +294,8 @@ return [
     [
         "mid" => "yDEtLE2KrWP",
         "main_title" => "백제의 불교미술",
-        "presented_by" => "공주, 국립공주박물관",
+        "location" => "공주",
+        "presented_by" => "국립공주박물관",
         "poster" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/yDEtLE2KrWP/poster/yDEtLE2KrWP-200x300.jpg",
         "thumbnail" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/yDEtLE2KrWP/thumbnail/yDEtLE2KrWP-416x237.jpg",
         "kor_title" => "백제의 불교미술",
@@ -317,7 +327,8 @@ return [
     [
         "mid" => "w9vxL98X4Fd",
         "main_title" => "천자만홍千紫萬紅을 짓다Ⅱ",
-        "presented_by" => "서울, 정영양자수박물관",
+        "location" => "서울",
+        "presented_by" => "정영양자수박물관",
         "poster" => null,
         "thumbnail" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/w9vxL98X4Fd/thumbnail/w9vxL98X4Fd-416x237.jpg",
         "kor_title" => "천자만홍을 짓다",
@@ -349,7 +360,8 @@ return [
     [
         "mid" => "CQVuaEc2Ug5",
         "main_title" => "시간 속에서 걸어나온 풍경들: 순안에서 삼육동까지",
-        "presented_by" => "서울, 삼육대학교",
+        "location" => "서울",
+        "presented_by" => "삼육대학교",
         "poster" => null,
         "thumbnail" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/CQVuaEc2Ug5/thumbnail/CQVuaEc2Ug5-416x237.jpg",
         "kor_title" => "시간 속에서 걸어나온 풍경들: 순안에서 삼육동까지(1906-2017)",
@@ -381,7 +393,8 @@ return [
     [
         "mid" => "B6UCtGFBjsf",
         "main_title" => "화폐박물관",
-        "presented_by" => "대전, 한국조폐공사",
+        "location" => "대전",
+        "presented_by" => "한국조폐공사",
         "poster" => null,
         "thumbnail" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/B6UCtGFBjsf/thumbnail/B6UCtGFBjsf-416x237.png",
         "kor_title" => "화폐박물관 상설전",
@@ -410,7 +423,8 @@ return [
     [
         "mid" => "V5jZZqo5CZg",
         "main_title" => "호남의 임진왜란 그 승리의 기록 -무숙공 최희량이 쓴 임란첩보서목-",
-        "presented_by" => "나주, 국립나주박물관",
+        "location" => "나주",
+        "presented_by" => "국립나주박물관",
         "poster" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/V5jZZqo5CZg/poster/V5jZZqo5CZg-200x300.jpg",
         "thumbnail" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/V5jZZqo5CZg/thumbnail/V5jZZqo5CZg-416x237.png",
         "kor_title" => "호남의 임진왜란 그 승리의 기록 -무숙공 최희량이 쓴 임란첩보서목-",
@@ -439,7 +453,8 @@ return [
     [
         "mid" => "o1ZhcnK9swd",
         "main_title" => "조선왕실 아기씨의 탄생: 나라의 복을 담은 태항아리",
-        "presented_by" => "서울, 국립고궁박물관",
+        "location" => "서울",
+        "presented_by" => "국립고궁박물관",
         "poster" => null,
         "thumbnail" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/o1ZhcnK9swd/thumbnail/o1ZhcnK9swd-416x237.jpg",
         "kor_title" => "조선왕실 아기씨의 탄생 -나라의 복을 담은 태항아리-",
@@ -468,7 +483,8 @@ return [
     [
         "mid" => "BNTTf85YsMP",
         "main_title" => "국립고궁박물관 | 과학문화",
-        "presented_by" => "서울, 국립고궁박물관",
+        "location" => "서울",
+        "presented_by" => "국립고궁박물관",
         "poster" => null,
         "thumbnail" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/BNTTf85YsMP/thumbnail/BNTTf85YsMP-416x237.jpg",
         "kor_title" => "국립고궁박물관 상설전 | 과학문화",
@@ -509,7 +525,8 @@ return [
     [
         "mid" => "iPhH5vffSTt",
         "main_title" => "국립고궁박물관 | 궁중서화",
-        "presented_by" => "서울, 국립고궁박물관",
+        "location" => "서울",
+        "presented_by" => "국립고궁박물관",
         "poster" => null,
         "thumbnail" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/iPhH5vffSTt/thumbnail/iPhH5vffSTt-416x237.jpg",
         "kor_title" => "국립고궁박물관 상설전 | 궁중서화",
@@ -550,7 +567,8 @@ return [
     [
         "mid" => "RM2QnvzmjA3",
         "main_title" => "국립고궁박물관 | 왕실의례",
-        "presented_by" => "서울, 국립고궁박물관",
+        "location" => "서울",
+        "presented_by" => "국립고궁박물관",
         "poster" => null,
         "thumbnail" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/RM2QnvzmjA3/thumbnail/RM2QnvzmjA3-416x237.jpg",
         "kor_title" => "국립고궁박물관 상설전 | 왕실의례",
@@ -591,7 +609,8 @@ return [
     [
         "mid" => "aBb76RaccUH",
         "main_title" => "황금인간의 땅, 카자흐스탄",
-        "presented_by" => "서울, 국립중앙박물관",
+        "location" => "서울",
+        "presented_by" => "국립중앙박물관",
         "poster" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/aBb76RaccUH/poster/aBb76RaccUH-200x300.jpg",
         "thumbnail" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/aBb76RaccUH/thumbnail/aBb76RaccUH-416x237.jpg",
         "kor_title" => "황금인간의 땅, 카자흐스탄",
@@ -623,7 +642,8 @@ return [
     [
         "mid" => "TyFGiCLuof9",
         "main_title" => "황금문명 엘도라도 신비의 보물을 찾아서",
-        "presented_by" => "서울, 국립중앙박물관",
+        "location" => "서울",
+        "presented_by" => "국립중앙박물관",
         "poster" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/TyFGiCLuof9/poster/TyFGiCLuof9-200x300.jpg",
         "thumbnail" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/TyFGiCLuof9/thumbnail/TyFGiCLuof9-416x237.jpg",
         "kor_title" => "황금문명 엘도라도 - 신비의 보물을 찾아서",
@@ -655,7 +675,8 @@ return [
     [
         "mid" => "kkZGik7iLgm",
         "main_title" => "칸의제국 몽골",
-        "presented_by" => "서울, 국립중앙박물관",
+        "location" => "서울",
+        "presented_by" => "국립중앙박물관",
         "poster" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/kkZGik7iLgm/poster/kkZGik7iLgm-200x300.jpg",
         "thumbnail" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/kkZGik7iLgm/thumbnail/kkZGik7iLgm-416x237.jpg",
         "kor_title" => "칸의 제국 몽골",
@@ -687,7 +708,8 @@ return [
     [
         "mid" => "4MbVUmwti9x",
         "main_title" => "지도예찬 - 조선지도 500년, 공간·시간·인간의 이야기",
-        "presented_by" => "서울, 국립중앙박물관",
+        "location" => "서울",
+        "presented_by" => "국립중앙박물관",
         "poster" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/4MbVUmwti9x/poster/4MbVUmwti9x-200x300.jpg",
         "thumbnail" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/4MbVUmwti9x/thumbnail/4MbVUmwti9x-416x237.jpg",
         "kor_title" => "지도예찬 - 조선지도 500년,공간·시간·인간의 이야기",
@@ -719,7 +741,8 @@ return [
     [
         "mid" => "MsECZxmoy9y",
         "main_title" => "대고려 918·2018 그 찬란한 도전",
-        "presented_by" => "서울, 국립중앙박물관",
+        "location" => "서울",
+        "presented_by" => "국립중앙박물관",
         "poster" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/MsECZxmoy9y/poster/MsECZxmoy9y-200x300.jpg",
         "thumbnail" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/MsECZxmoy9y/thumbnail/MsECZxmoy9y-416x237.jpg",
         "kor_title" => "대고려 918·2018 그 찬란한 도전",
@@ -751,7 +774,8 @@ return [
     [
         "mid" => "xSPWrtHB4Zd",
         "main_title" => "충청남도의 고려를 만나다",
-        "presented_by" => "공주, 국립공주박물관",
+        "location" => "공주",
+        "presented_by" => "국립공주박물관",
         "poster" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/xSPWrtHB4Zd/poster/xSPWrtHB4Zd-200x300.jpg",
         "thumbnail" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/xSPWrtHB4Zd/thumbnail/xSPWrtHB4Zd-416x237.jpg",
         "kor_title" => "충청남도의 고려를 만나다",
@@ -783,7 +807,8 @@ return [
     [
         "mid" => "qT3himjQVQ2",
         "main_title" => "고대 동아시아 무덤의 수호신 진묘수",
-        "presented_by" => "공주, 국립공주박물관",
+        "location" => "공주",
+        "presented_by" => "국립공주박물관",
         "poster" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/qT3himjQVQ2/poster/qT3himjQVQ2-200x300.jpg",
         "thumbnail" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/qT3himjQVQ2/thumbnail/qT3himjQVQ2-416x237.jpg",
         "kor_title" => "고대 동아시아 무덤의 수호신, 진묘수",
@@ -815,7 +840,8 @@ return [
     [
         "mid" => "z8Gwj4NcTUu",
         "main_title" => "창령사 터 오백나한, 당신의 마음을 닮은 얼굴",
-        "presented_by" => "춘천, 국립춘천박물관",
+        "location" => "춘천",
+        "presented_by" => "국립춘천박물관",
         "poster" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/z8Gwj4NcTUu/poster/z8Gwj4NcTUu-200x300.jpg",
         "thumbnail" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/z8Gwj4NcTUu/thumbnail/z8Gwj4NcTUu-416x237.jpg",
         "kor_title" => "국립춘천박물관: 창령사 터 오백나한, 당신의 마음을 닮은 얼굴",
@@ -847,7 +873,8 @@ return [
     [
         "mid" => "kF3xE8edLEA",
         "main_title" => "금호강과 길",
-        "presented_by" => "대구, 국립대구박물관",
+        "location" => "대구",
+        "presented_by" => "국립대구박물관",
         "poster" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/kF3xE8edLEA/poster/kF3xE8edLEA-200x300.png",
         "thumbnail" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/kF3xE8edLEA/thumbnail/kF3xE8edLEA-416x237.jpg",
         "kor_title" => "국립대구박물관: 금호강과 길",
@@ -879,7 +906,8 @@ return [
     [
         "mid" => "avWhh5K7Nop",
         "main_title" => "황룡사",
-        "presented_by" => "경주, 국립경주박물관",
+        "location" => "경주",
+        "presented_by" => "국립경주박물관",
         "poster" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/avWhh5K7Nop/poster/avWhh5K7Nop-200x300.jpg",
         "thumbnail" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/avWhh5K7Nop/thumbnail/avWhh5K7Nop-416x237.jpg",
         "kor_title" => "국립경주박물관: 황룡사",
@@ -911,7 +939,8 @@ return [
     [
         "mid" => "sdhXymhVog6",
         "main_title" => "김해",
-        "presented_by" => "김해, 국립김해박물관",
+        "location" => "김해",
+        "presented_by" => "국립김해박물관",
         "poster" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/sdhXymhVog6/poster/sdhXymhVog6-200x300.jpg",
         "thumbnail" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/sdhXymhVog6/thumbnail/sdhXymhVog6-416x237.jpg",
         "kor_title" => "국립김해박물관: 김해",
@@ -943,7 +972,8 @@ return [
     [
         "mid" => "3MrnWzKigNP",
         "main_title" => "고려청자의 정점頂點을 만나다 부안청자·강진청자",
-        "presented_by" => "전주, 국립박물관",
+        "location" => "전주",
+        "presented_by" => "국립박물관",
         "poster" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/3MrnWzKigNP/poster/3MrnWzKigNP-200x300.jpg",
         "thumbnail" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/3MrnWzKigNP/thumbnail/3MrnWzKigNP-416x237.jpg",
         "kor_title" => "국립전주박물관: 고려청자의 정점을 만나다 부안청자-강진청자",
@@ -975,7 +1005,8 @@ return [
     [
         "mid" => "kcWsN7tZAXm",
         "main_title" => "치미, 하늘의 소리를 듣다",
-        "presented_by" => "부여, 국립부여박물관",
+        "location" => "부여",
+        "presented_by" => "국립부여박물관",
         "poster" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/kcWsN7tZAXm/poster/kcWsN7tZAXm-200x300.png",
         "thumbnail" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/kcWsN7tZAXm/thumbnail/kcWsN7tZAXm-416x237.jpg",
         "kor_title" => "국립부여박물관: 치미, 하늘의 소리를 듣다",
@@ -1007,7 +1038,8 @@ return [
     [
         "mid" => "QkPtiaDjLbE",
         "main_title" => "국립미륵사지유물전시관",
-        "presented_by" => "익산, 국립미륵사지유물전시관",
+        "location" => "익산",
+        "presented_by" => "국립미륵사지유물전시관",
         "poster" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/QkPtiaDjLbE/poster/QkPtiaDjLbE-200x300.jpg",
         "thumbnail" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/QkPtiaDjLbE/thumbnail/QkPtiaDjLbE-416x237.jpg",
         "kor_title" => "국립미륵사지유물전시관 상설전",
@@ -1039,7 +1071,8 @@ return [
     [
         "mid" => "ft1emFLvBQA",
         "main_title" => "임진왜란실 | 두암실",
-        "presented_by" => "진주, 국립진주박물관",
+        "location" => "진주",
+        "presented_by" => "국립진주박물관",
         "poster" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/ft1emFLvBQA/poster/ft1emFLvBQA-200x300.jpg",
         "thumbnail" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/ft1emFLvBQA/thumbnail/ft1emFLvBQA-416x237.jpg",
         "kor_title" => "국립진주박물관 상설전",
