@@ -1,12 +1,16 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import styled from "styled-components";
 import {media} from "styled-bootstrap-grid";
+import {Link} from "react-router-dom";
+import * as R from "ramda";
 
 import {themeVar} from "../../styling/theme/functions";
-
+import SlideComponent from "../../components/SlideComponent";
 import Burger from "./Burger";
+
+
 import type {DecoratedProps, RouteProps} from "./navigationBarDecorators";
-import {Link} from "react-router-dom";
+
 
 
 type LinksProps = {
@@ -21,6 +25,8 @@ const Header = styled.div`
     background-color: ${themeVar('components.navigationBar.background')};
     letter-spacing: .1rem;
     user-select: none;
+    padding-left: 1rem;
+    padding-right: 1rem;
     
     ${media.md`
         padding-left: 3rem;
@@ -50,7 +56,7 @@ const Item = styled(Link)`
     border-top: 1px solid rgba(234,234,234,.37);
     transition: background-color ${themeVar('transitionDuration')};
     
-    ${props => props.active && 'background-color: #3d2b3b;'}
+    ${({active}) => active && 'background-color: #3d2b3b;'}
     &:hover {
         background-color: #3d2b3b;
     }
@@ -65,15 +71,17 @@ function Links(props: LinksProps) {
 
 export default function MobileNavigationBar(props: DecoratedProps) {
     const [navOpen, setNavOpen] = useState(false);
+    const currentRoute = R.path(['location', 'pathname'])(props);
+
     return (
         <React.Fragment>
             <Header>
                 <Image src={props.logo} />
                 <BurgerButton onClick={() => setNavOpen(!navOpen)} />
             </Header>
-            {/*<SlideComponent open={navOpen}>*/}
-                {/*<Links routes={props.routes} />*/}
-            {/*</SlideComponent>*/}
+            <SlideComponent open={navOpen} onClick={() => setNavOpen(false)}>
+                <Links routes={props.routes} />
+            </SlideComponent>
         </React.Fragment>
     );
 }
