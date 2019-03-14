@@ -1,11 +1,11 @@
 import React from "react";
 
 import page from "../../decorators/page";
-import styled from "styled-components";
 import HeroCarousel from "./HeroCarousel";
 import FeaturedExhibitionCarousel from "./FeaturedExhibitionCarousel";
 import SpecialExhibition from "./SpecialExhibition";
 import SearchBox from "../../components/SearchBox";
+
 type Props = {
 
 };

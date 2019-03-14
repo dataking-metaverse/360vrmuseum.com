@@ -14,7 +14,7 @@ type Props = {
 
 
 const Root = styled(HomeContainer)`
-    background-color: #ededed;
+    background-color: #f4f4f4;
 `;
 
 function SpecialExhibition(props: Props) {
