@@ -8,7 +8,7 @@ type Props = {
 };
 
 const Root = styled.div`
-    background-color: #ededed;
+    background-color: #f4f4f4;
     padding: 0 4rem;
 `;
 

@@ -3,6 +3,7 @@ import styled from "styled-components";
 import * as R from "ramda";
 
 import {themeVar} from "../../styling/theme/functions";
+import {connect} from "react-redux";
 
 
 type Props = {
@@ -12,7 +13,7 @@ type Props = {
 
 const Root = styled.div`
     color: ${themeVar('colors.grayscale.500')};
-    background-color: #ededed;
+    background-color: #f4f4f4;
     border-top: 1px solid rgba(61,43,59,.3);
     font-size: 1.2rem;
     line-height: 2.3rem;
@@ -43,29 +44,29 @@ const AllRightReserved = styled.span`
 `;
 
 function Footer(props: Props) {
-    const {
-        privacyPolicyLink = 'https://360vrmuseum.com/?page_id=1267',
-        termsOfConditionsLink = 'https://360vrmuseum.com/?page_id=1267',
-        copyright = 'Copyright ©dataking.Inc 2015 - 2019',
-        allRigthReserved = 'All rights reserved.',
-        noPrinting = '무단전재 및 재배포금지',
-    } = props;
+    const {text, routes} = props;
     return (
         <Root>
             <span>
-                <Link href={privacyPolicyLink}>개인정보 이용약관</Link>
+                <Link href={routes['privacy-policy']}>{text.privacyPolicy}</Link>
                 ㅤ|ㅤ
-                <Link href={termsOfConditionsLink}>서비스 이용약관</Link>
+                <Link href={routes['terms-and-conditions']}>{text.termsOfConditions}</Link>
             </span><br/>
-            <Copyright>{copyright}</Copyright>
+            <Copyright>{text.copyright}</Copyright>
             <br/>
-            <AllRightReserved>{allRigthReserved}</AllRightReserved>
+            <AllRightReserved>{text.allRigthReserved}</AllRightReserved>
             <br/>
-            <CopyrightNotice>{noPrinting}</CopyrightNotice>
+            <CopyrightNotice>{text.noPrinting}</CopyrightNotice>
         </Root>
     );
 }
 
 export default R.compose(
-    R.identity
+    connect(
+        R.applySpec({
+            text: R.path(['lang', 'footer']),
+            routes: R.path(['app', 'routes'])
+        }),
+        R.always({})
+    )
 )(Footer);
