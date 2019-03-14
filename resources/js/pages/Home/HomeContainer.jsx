@@ -12,7 +12,7 @@ type Props = {
 };
 
 const Root = styled.div`
-    padding: 10rem 4.5rem;
+    padding: 10rem 1rem;
 `;
 
 export default function HomeConatainer(props: Props) {
