@@ -30,7 +30,8 @@ function makeRouteParams(routeUris, routeParams): Array<RouteParams> {
             path: routeUris[key],
             ...routeParam,
         })),
-        R.values
+        R.values,
+        R.tap(console.log)
     )(routeParams);
 }
 

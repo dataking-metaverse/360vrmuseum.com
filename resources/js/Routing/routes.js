@@ -1,5 +1,6 @@
 import Login from "../pages/Login";
 import PrivacyPolicy from "../pages/PrivacyPolicy";
+import TermsOfService from "../pages/TermsOfService";
 import NationalMuseum from "../pages/NationalMuseum";
 import VRMuseum from "../pages/VRMuseum";
 import ContactUs from "../pages/ContactUs";
@@ -15,6 +16,10 @@ const routes = {
     'privacy-policy': {
         exact: true,
         component: PrivacyPolicy,
+    },
+    'terms-of-service': {
+        exact: true,
+        component: TermsOfService,
     },
     'national-museum': {
         exact: true,

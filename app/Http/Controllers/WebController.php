@@ -10,6 +10,8 @@ class WebController extends Controller
     public function nationalMuseum() { return $this->all(); }
     public function vrmuseum() { return $this->all(); }
     public function contactUs() { return $this->all(); }
+    public function privacyPolicy() { return $this->all(); }
+    public function termsOfService() { return $this->all(); }
     public function login() { return $this->all(); }
 
     public function all() {
@@ -21,6 +23,7 @@ class WebController extends Controller
                     'vrmuseum' => route('vrmuseum', null, false),
                     'contact-us' => route('contact-us', null, false),
                     'privacy-policy' => route('privacy-policy', null, false),
+                    'terms-of-service' => route('terms-of-service', null, false),
                     'login' => route('login', null, false),
                 ]
             ],

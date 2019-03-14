@@ -1,14 +1,20 @@
 import React from "react";
 import styled from "styled-components";
 import * as R from "ramda";
+import {connect} from "react-redux";
+import {Link} from "react-router-dom";
 
 import {themeVar} from "../../styling/theme/functions";
-import {connect} from "react-redux";
 
 
 type Props = {
-    privacyPolicyLink: ?string,
-    termsOfConditionsLink: ?string,
+    text: {|
+        privacyPolicy: string,
+        termsOfConditions: string,
+        copyright: string,
+        allRigthReserved: string,
+        noPrinting: string,
+    |},
 };
 
 const Root = styled.div`
@@ -22,25 +28,23 @@ const Root = styled.div`
     padding: 2rem;
     text-align: center;
 `;
-const Link = styled.a`
+const CustomLink = styled(Link)`
     color: #a39e9e;
     text-decoration: none;
+
     &:hover {
         color: #3d2b3b;
     }
 `;
 const Copyright = styled.span`
-    color: #bcb7b7;
     font-weight: bold;
 `;
 const CopyrightNotice = styled.span`
-    color: #bcb7b7;
     font-weight: bold;
     font-size: 1rem;
 `;
 
 const AllRightReserved = styled.span`
-    color: bcb7b7;
 `;
 
 function Footer(props: Props) {
@@ -48,9 +52,9 @@ function Footer(props: Props) {
     return (
         <Root>
             <span>
-                <Link href={routes['privacy-policy']}>{text.privacyPolicy}</Link>
-                ㅤ|ㅤ
-                <Link href={routes['terms-and-conditions']}>{text.termsOfConditions}</Link>
+                <CustomLink to={routes['privacy-policy']}>{text.privacyPolicy}</CustomLink>
+                {"ㅤ|ㅤ"}
+                <CustomLink to={routes['terms-of-service']}>{text.termsOfConditions}</CustomLink>
             </span><br/>
             <Copyright>{text.copyright}</Copyright>
             <br/>
