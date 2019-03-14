@@ -140,7 +140,7 @@ function ShowcaseCard(props: Props) {
                 <hr className="mb-5"/>
                 <div>
                     <Impression>TODO</Impression>
-                    <a href="#"><ViewDetails>{text.viewDetails}{' >'}</ViewDetails></a>
+                    <ViewDetails href="#">{text.viewDetails}{' >'}</ViewDetails>
                 </div>
             </DetailWrapper>
         </Root>
