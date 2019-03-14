@@ -25,6 +25,8 @@ const Header = styled.div`
     background-color: ${themeVar('components.navigationBar.background')};
     letter-spacing: .1rem;
     user-select: none;
+    padding-left: 1rem;
+    padding-right: 1rem;
     
     ${media.md`
         padding-left: 3rem;
