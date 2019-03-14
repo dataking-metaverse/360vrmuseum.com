@@ -4,7 +4,7 @@ import * as R from "ramda";
 import styled from "styled-components";
 
 import Showcase from "../../models/Showcase";
-import {percentage} from "../../styling/theme/functions";
+import {percentage, themeVar} from "../../styling/theme/functions";
 import {rgba} from "polished";
 
 
@@ -25,7 +25,6 @@ const Image = styled.div`
     background-image: url(${R.prop('image')});
     background-size: cover;
     background-position: 50% 50%;
-    margin-bottom: 2rem;
 
     &:before {
         content: '';
@@ -71,13 +70,15 @@ const QuickView = styled.div`
 
 const Type = styled.div`
     font-size: 1.3rem; 
-    color: rgb(74, 0, 135);
+    color: #4A0087;
     cursor: default;
 `;
 
+const titleLineHeight = 1.8;
 const Title = styled.h3`
-    height: 6rem;
-    margin-top: 1rem;
+    margin-top: 0;
+    min-height: ${titleLineHeight * 2}em;
+    line-height: ${titleLineHeight};
     cursor: pointer;
 `;
 
@@ -91,8 +92,15 @@ const PresentedBy = styled.div`
 const Period = styled.div`
     color: rgb(153, 153, 153);
     font-size: 1.2rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     cursor: default;
+`;
+
+const Hr = styled.hr`
+    border: none;
+    border-top: 1px solid rgba(0,0,0,.11);
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
 `;
 
 const Impression = styled.span`
@@ -102,11 +110,12 @@ const Impression = styled.span`
 `;
 
 const ViewDetails = styled.a`
-    color: #530d5e;
-    transition: all .5s;
-    cursor: pointer;
+    color: ${themeVar('colors.basic.purple')};
     font-size: 1.2rem;
+    text-decoration: none;
+    cursor: pointer;
     float: right;
+    transition: all .5s;
 
     &:hover {
         transform: scale(1.1);
@@ -114,7 +123,7 @@ const ViewDetails = styled.a`
 `;
 
 const DetailWrapper = styled.div`
-    padding: 10rem 4.5rem 3rem;
+    padding: 1.5rem;
 `;
 
 function ShowcaseCard(props: Props) {
@@ -126,7 +135,6 @@ function ShowcaseCard(props: Props) {
         presented_by: presentedBy,
         date,
     } = showcase.props;
-
     return (
         <Root>
             <Image image={thumbnail}>
@@ -137,7 +145,7 @@ function ShowcaseCard(props: Props) {
                 <Title>{mainTitle}</Title>
                 <PresentedBy>{presentedBy}</PresentedBy>
                 <Period>{date}</Period>
-                <hr className="mb-5"/>
+                <Hr />
                 <div>
                     <Impression>TODO</Impression>
                     <ViewDetails href="#">{text.viewDetails}{' >'}</ViewDetails>
