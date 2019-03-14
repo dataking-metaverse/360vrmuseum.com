@@ -1,8 +1,7 @@
-import React, {useState, useEffect} from "react";
+import React, {useState} from "react";
 import styled from "styled-components";
 import {media} from "styled-bootstrap-grid";
 import {Link} from "react-router-dom";
-import * as R from "ramda";
 
 import {themeVar} from "../../styling/theme/functions";
 import SlideComponent from "../../components/SlideComponent";
@@ -71,7 +70,6 @@ function Links(props: LinksProps) {
 
 export default function MobileNavigationBar(props: DecoratedProps) {
     const [navOpen, setNavOpen] = useState(false);
-    const currentRoute = R.path(['location', 'pathname'])(props);
 
     return (
         <React.Fragment>
