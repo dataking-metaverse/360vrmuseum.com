@@ -1,12 +1,13 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, useContext} from "react";
 import styled from "styled-components";
 import {connect} from "react-redux";
 import * as R from "ramda";
 import {Row, Col} from "styled-bootstrap-grid";
 
-import Showcases from "../../../models/Showcases";
+import ModelsContext from "../../../contexts/ModelsContext";
 import MuseumTitle from "../../../components/MuseumTitle";
 import HomeContainer from "../HomeContainer";
+
 
 
 type Props = {
@@ -21,6 +22,8 @@ const Root = styled(HomeContainer)`
 function ExhibitionList(props: Props) {
     const {title, showcases} = props;
     const [showcasesCard, setShowcasesCard] = useState([]);
+    const {Showcases} = useContext(ModelsContext);
+
     useEffect(() => {
         Showcases.get(showcases).then(R.pipe(
             Array.from,

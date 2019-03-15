@@ -1,12 +1,12 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, useContext} from "react";
 import Slider from "react-slick";
 import styled from "styled-components";
 import {Container} from "styled-bootstrap-grid";
 import {connect} from "react-redux";
 import * as R from "ramda";
 
+import ModelsContext from "../../../contexts/ModelsContext";
 import MuseumTitle from "../../../components/MuseumTitle";
-import Showcases from "../../../models/Showcases";
 import {themeVar} from "../../../styling/theme/functions";
 import Slide from "./Slide";
 import HomeContainer from "../HomeContainer";
@@ -96,6 +96,7 @@ const slidePadding = '.85rem';
 function FeaturedExhibitionCarousel(props: Props) {
     const {text, exhibitions} = props;
     const [showcaseElements, setShowcaseElements] = useState([]);
+    const {Showcases} = useContext(ModelsContext);
 
     useEffect(() => {
         Showcases.get(exhibitions).then(R.pipe(

@@ -22,3 +22,4 @@ Route::get('/login', 'WebController@login')->name('login');
 // API : showcase
 Route::get('api/showcases', 'Api\\ShowcaseController@multi')->name('api.showcases');
 Route::get('api/showcase', 'Api\\ShowcaseController@single')->name('api.showcase');
+Route::get('api/showcases/by-presented-bys', 'Api\\ShowcaseController@byPresentedBys')->name('api.showcases.by-presented-bys');

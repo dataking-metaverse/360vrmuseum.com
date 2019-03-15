@@ -27,6 +27,7 @@ class WebController extends Controller
                     'login' => route('login', null, false),
                     'api.showcases' => route('api.showcases', null, false),
                     'api.showcase' => route('api.showcase', null, false),
+                    'api.showcases.by-presented-bys' => route('api.showcases.by-presented-bys', null, false),
                 ]
             ],
             'config' => config('360vrmuseum.public'),

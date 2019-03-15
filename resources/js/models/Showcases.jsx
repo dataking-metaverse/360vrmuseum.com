@@ -17,12 +17,21 @@ export default class Showcases extends RestfulModel<Props> implements Iterable<S
 
     static FIELDS = Showcase.FIELDS;
 
-    static async get(mids: ?Array<string>): Promise<?Showcases> {
+    static async get(mids: Array<string>): Promise<?Showcases> {
         const route = Showcases.routes['api.showcases'];
         const response = await axios.get(route, {params: {mids}});
         const showcases = R.path(['data', 'data'])(response);
         if (!showcases) { return new Showcases([]); }
         return new Showcases(showcases.map(R.construct(Showcase)));
+    }
+
+    static async byPresentedBys(presentedBys: Array<string>): Promise<?Array<Showcases>> {
+        const route = Showcases.routes['api.showcases.by-presented-bys'];
+        const response = await axios.get(route, {params: {presented_bys: presentedBys}});
+        return R.pipe(
+            R.path(['data', 'data']),
+            R.mapObjIndexed(R.map(R.construct(Showcase)))
+        )(response);
     }
 
     constructor(props: Props) {
