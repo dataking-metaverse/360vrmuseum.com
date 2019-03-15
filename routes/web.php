@@ -17,3 +17,8 @@ Route::get('/contact-us', 'WebController@contactUs')->name('contact-us');
 Route::get('/privacy-policy', 'WebController@privacyPolicy')->name('privacy-policy');
 Route::get('/terms-of-service', 'WebController@termsOfService')->name('terms-of-service');
 Route::get('/login', 'WebController@login')->name('login');
+
+
+// API : showcase
+Route::get('api/showcases', 'Api\\ShowcaseController@multi')->name('api.showcases');
+Route::get('api/showcase', 'Api\\ShowcaseController@single')->name('api.showcase');

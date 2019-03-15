@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import * as R from "ramda";
 
+import params from "../helpers/params";
 import GraphQLModel from "./GraphQLModel";
 import Showcase from "./Showcase";
 
@@ -17,17 +18,8 @@ export default class Showcases extends GraphQLModel<Props> implements Iterable<S
     static FIELDS = Showcase.FIELDS;
 
     static async get(mids: ?Array<string>): Promise<?Showcases> {
-        const {prefix} = Showcases;
-        const fieldString = Showcases.FIELDS.join(' ');
-        const midsString = JSON.stringify(mids);
-        const response = await axios.get(`/${prefix}?query=${`
-            query {
-                showcases(mids: ${midsString}) {
-                    ${fieldString}
-                }
-            }
-        `}`);
-        const showcases = R.path(['data', 'data', 'showcases'])(response);
+        const response = await axios.get('/api/showcases', {params: {mids}});
+        const showcases = R.path(['data', 'data'])(response);
         if (!showcases) { return new Showcases([]); }
         return new Showcases(showcases.map(R.construct(Showcase)));
     }
