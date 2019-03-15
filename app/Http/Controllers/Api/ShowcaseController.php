@@ -10,20 +10,6 @@ class ShowcaseController extends Controller
 {
     const VALIDATE_MID = 'min:11|max:11|alpha_num';
 
-    static function response($options) {
-        return response()->json(array_merge([
-            'status' => 200,
-            'success' => true,
-            'message' => null,
-            'messageParams' => [],
-            'data' => null,
-        ], $options));
-    }
-
-    static function success($data) {
-        return static::response(['data' => $data]);
-    }
-
     function __construct(Request $request) {
         parent::__construct($request);
         $validation = Validator::make($request->all(), [
