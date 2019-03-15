@@ -17,6 +17,9 @@ return [
         ],
         'introductionVideo' => [
             'title' => '영상',
-        ]
-    ]
+        ],
+    ],
+    'related' => [
+        'title' => '국립중앙박물관의 다른전시',
+    ],
 ];
