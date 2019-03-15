@@ -10,6 +10,12 @@ import type {Props as ShowcaseProps} from "./Showcase";
 
 type Props = Array<ShowcaseProps>;
 
+type ShowcasesResponse = {
+    data: {
+        data: {},
+    }
+}
+
 
 export default class Showcases extends RestfulModel<Props> implements Iterable<ShowcaseProps> {
 
@@ -17,12 +23,22 @@ export default class Showcases extends RestfulModel<Props> implements Iterable<S
 
     static FIELDS = Showcase.FIELDS;
 
+    static responseToInstance: (response: ShowcasesResponse) => Showcases = R.pipe(
+        R.path(['data', 'data']),
+        R.ifElse(
+            R.complement(R.isNil),
+            R.pipe(
+                R.map(R.construct(Showcase)),
+                R.construct(Showcases)
+            ),
+            () => new Showcases([])
+        )
+    );
+
     static async get(mids: Array<string>): Promise<?Showcases> {
         const route = Showcases.routes['api.showcases'];
         const response = await axios.get(route, {params: {mids}});
-        const showcases = R.path(['data', 'data'])(response);
-        if (!showcases) { return new Showcases([]); }
-        return new Showcases(showcases.map(R.construct(Showcase)));
+        return Showcases.responseToInstance(response);
     }
 
     static async byPresentedBys(presentedBys: Array<string>): Promise<?Array<Showcases>> {

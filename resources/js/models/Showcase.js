@@ -70,7 +70,13 @@ export default class Showcase extends RestfulModel<Props> {
         );
     };
 
+    route = () => Showcase.routes['showcase'].replace(':mid', this.props.mid);
+
     getAttribute(attr: string) {
         return this.props[attr];
+    }
+
+    toObject() {
+        return {...this.props};
     }
 }

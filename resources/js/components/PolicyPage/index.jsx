@@ -36,11 +36,7 @@ const Title = styled.h1`
     margin-top: 0;
     margin-bottom: .8em;
 `;
-const Hr = styled.div`
-    border-top-style: solid;
-    border-top-width: 2px;
-    border-top-color: rgba(0,0,0,.15);
-`;
+
 const Content = styled.div`
     color: #7a7a7a;
     color: ${themeVar('colors.grayscale')};
@@ -52,7 +48,7 @@ export default function PolicyPage(props: Props) {
         <CustomContainer>
             <Subtitle>{props.subtitle}</Subtitle>
             <Title>{props.title}</Title>
-            <Hr />
+            <hr />
             <br /><br /><br />
             <Content dangerouslySetInnerHTML={{__html: props.content}} />
         </CustomContainer>

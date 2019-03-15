@@ -28,6 +28,13 @@ body {
 
 :focus { outline: none; }
 
+hr {
+    border: none;
+    border-top: 1px solid rgba(0,0,0,.11);
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
 `;
 
 export default BasicOverridingStyle;

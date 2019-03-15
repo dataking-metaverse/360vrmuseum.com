@@ -22,6 +22,7 @@ class WebController extends Controller {
     }
 
     public function home() { return $this->all(); }
+    public function showcase() { return $this->all(); }
     public function nationalMuseum() { return $this->all(); }
     public function vrmuseum() { return $this->all(); }
     public function contactUs() { return $this->all(); }

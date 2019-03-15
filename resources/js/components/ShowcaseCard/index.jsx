@@ -2,10 +2,11 @@ import React from "react";
 import {connect} from "react-redux";
 import * as R from "ramda";
 import styled from "styled-components";
+import {rgba} from "polished";
+import {Link} from "react-router-dom";
 
 import Showcase from "../../models/Showcase";
 import {percentage, themeVar} from "../../styling/theme/functions";
-import {rgba} from "polished";
 
 
 type Props = {
@@ -49,7 +50,7 @@ const Image = styled.div`
     }
 `;
 
-const QuickView = styled.div`
+const QuickView = styled(Link)`
     position: absolute;
     top: 50%;
     left: 50%;
@@ -59,10 +60,10 @@ const QuickView = styled.div`
     color: #ffffff;
     cursor: pointer;
     transform: translate(-50%, -50%);
-    opacity: 0;
+    text-decoration: none;
     transition: opacity .5s;
     z-index: 1;
-    
+    opacity: 0;
     &:hover {
         opacity: 1;
     }
@@ -96,20 +97,13 @@ const Period = styled.div`
     cursor: default;
 `;
 
-const Hr = styled.hr`
-    border: none;
-    border-top: 1px solid rgba(0,0,0,.11);
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
-`;
-
 const Impression = styled.span`
     font-size: 1.3rem;
     color: rgb(116, 116, 116);
     cursor: default;
 `;
 
-const ViewDetails = styled.a`
+const ViewDetails = styled(Link)`
     color: ${themeVar('colors.basic.purple')};
     font-size: 1.2rem;
     text-decoration: none;
@@ -136,20 +130,21 @@ function ShowcaseCard(props: Props) {
         presented_by: presentedBy,
         date,
     } = showcase.props;
+    const showcaseRoute = showcase.route();
     return (
         <Root>
             <Image image={thumbnail}>
-                <QuickView>{quickView}</QuickView>
+                <QuickView to={showcaseRoute}>{quickView}</QuickView>
             </Image>
             <DetailWrapper>
                 <Type>{type}</Type>
                 <Title>{mainTitle}</Title>
                 <PresentedBy>{location}{', '}{presentedBy}</PresentedBy>
                 <Period>{date}</Period>
-                <Hr />
+                <hr />
                 <div>
                     <Impression>TODO</Impression>
-                    <ViewDetails href="#">{text.viewDetails}{' >'}</ViewDetails>
+                    <ViewDetails to={showcaseRoute}>{text.viewDetails}{' >'}</ViewDetails>
                 </div>
             </DetailWrapper>
         </Root>

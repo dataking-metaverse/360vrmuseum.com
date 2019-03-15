@@ -15,10 +15,10 @@ type State = {
 
 const Root = styled.div`
     transition: height .4s;
+    overflow: hidden;
 `;
 
 const Wrapper = styled.div`
-
 `;
 
 

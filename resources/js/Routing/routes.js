@@ -4,6 +4,7 @@ import TermsOfService from "../pages/TermsOfService";
 import NationalMuseum from "../pages/NationalMuseum";
 import VRMuseum from "../pages/VRMuseum";
 import ContactUs from "../pages/ContactUs";
+import Showcase from "../pages/Showcase";
 import Home from "../pages/Home";
 
 // NOTE : paths are defined form backend, you will need to make sure the keys are correct
@@ -32,6 +33,10 @@ const routes = {
     'contact-us': {
         exact: true,
         component: ContactUs,
+    },
+    showcase: {
+        exact: true,
+        component: Showcase,
     },
     home: {
         exact: true,
