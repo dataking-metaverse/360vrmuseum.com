@@ -94,7 +94,7 @@ const slickSettings = {
 const slidePadding = '.85rem';
 
 function FeaturedExhibitionCarousel(props: Props) {
-    const {exhibitions} = props;
+    const {text, exhibitions} = props;
     const [showcaseElements, setShowcaseElements] = useState([]);
 
     useEffect(() => {
@@ -116,7 +116,7 @@ function FeaturedExhibitionCarousel(props: Props) {
     return (
         <Root>
             <ContainerCustom>
-                <MuseumTitle>국립박물관</MuseumTitle>
+                <MuseumTitle>{text.title}</MuseumTitle>
                 <br /><br />
                 <SliderWrapper padding={slidePadding}>
                     <Slider {...slickSettings}>
