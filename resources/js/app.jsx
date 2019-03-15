@@ -3,14 +3,15 @@ import ReactDOM from "react-dom";
 import {createStore} from "redux";
 import {Provider} from "react-redux";
 
-
+import Model from "./models/Model";
+import ModelsContext from "./contexts/ModelsContext";
 import reducers from "./redux/reducers";
 import * as assets from "./assets";
 import Main from "./Main";
+import * as models from "./models/all";
 
 import type {Store, StoreEnhancer} from "redux";
 import type {Action} from "./types/redux";
-
 
 try {
 
@@ -30,11 +31,16 @@ try {
         locale: document.getElementsByTagName('html')[0].getAttribute('lang'),
     });
 
+
+    Model.registerRoutes(app.routes);
+
     if (node === null) { throw new Error('hello, world'); }
 
     ReactDOM.render((
         <Provider store={store}>
-            <Main />
+            <ModelsContext.Provider value={models}>
+                <Main />
+            </ModelsContext.Provider>
         </Provider>
     ), node);
 } catch (ex) {

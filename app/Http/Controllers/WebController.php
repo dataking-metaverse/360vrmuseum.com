@@ -25,6 +25,8 @@ class WebController extends Controller
                     'privacy-policy' => route('privacy-policy', null, false),
                     'terms-of-service' => route('terms-of-service', null, false),
                     'login' => route('login', null, false),
+                    'api.showcases' => route('api.showcases', null, false),
+                    'api.showcase' => route('api.showcase', null, false),
                 ]
             ],
             'config' => config('360vrmuseum.public'),
