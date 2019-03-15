@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import Showcase from "../models/Showcase";
 import * as R from "ramda";
 
+import Showcase from "../../models/Showcase";
 
 type Props = {
     showcase: Showcase,

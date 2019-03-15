@@ -11,6 +11,7 @@
 URL::forceRootUrl(config('app.url'));
 
 Route::get('/', 'WebController@home')->name('home');
+Route::get('/showcase/{mid}', 'WebController@showcase')->name('showcase');
 Route::get('/national-museum', 'WebController@nationalMuseum')->name('national-museum');
 Route::get('/360vrmuseum', 'WebController@vrmuseum')->name('vrmuseum');
 Route::get('/contact-us', 'WebController@contactUs')->name('contact-us');
@@ -20,6 +21,6 @@ Route::get('/login', 'WebController@login')->name('login');
 
 
 // API : showcase
-Route::get('api/showcases', 'Api\\ShowcaseController@multi')->name('api.showcases');
-Route::get('api/showcase', 'Api\\ShowcaseController@single')->name('api.showcase');
-Route::get('api/showcases/by-presented-bys', 'Api\\ShowcaseController@byPresentedBys')->name('api.showcases.by-presented-bys');
+Route::get('/api/showcases', 'Api\\ShowcaseController@multi')->name('api.showcases');
+Route::get('/api/showcase', 'Api\\ShowcaseController@single')->name('api.showcase');
+Route::get('/api/showcases/by-presented-bys', 'Api\\ShowcaseController@byPresentedBys')->name('api.showcases.by-presented-bys');

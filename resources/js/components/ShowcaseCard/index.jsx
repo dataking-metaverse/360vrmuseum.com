@@ -160,7 +160,7 @@ export default R.compose(
     connect(
         R.applySpec({
             text: R.path(['lang', 'pages', 'home', 'specialExhibition']),
-            quickView: R.path(['lang', 'pages', 'home', 'heroCarousel', 'linkText']),
+            quickView: R.path(['lang', 'common', 'quickView']),
         }),
         R.applySpec({}),
     )

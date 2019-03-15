@@ -14,7 +14,7 @@ type Props = {
     image: ResponsiveImage,
     title: string,
     subtitle: string,
-    linkText: string,
+    quickView: string,
     active: boolean,
 };
 
@@ -58,7 +58,7 @@ function Slide(props: Props) {
             <Fade active={props.active}>
                 <Title>{props.title}</Title>
                 <Subtitle>{props.subtitle}</Subtitle>
-                <Button size="small" type="whiteBorder">{props.linkText}</Button>
+                <Button size="small" type="whiteBorder">{props.quickView}</Button>
             </Fade>
         </Root>
     );
@@ -67,7 +67,7 @@ function Slide(props: Props) {
 export default R.compose(
     connect(
         R.applySpec({
-            linkText: R.path(['lang', 'pages', 'home', 'heroCarousel', 'linkText']),
+            quickView: R.path(['lang', 'common', 'quickView']),
         }),
         R.always({})
     )

@@ -3,9 +3,24 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Route;
 
-class WebController extends Controller
-{
+
+class WebController extends Controller {
+
+    static function toFrontEndRoute($route) {
+        return str_replace(['{', '}'], [':', ''], $route);
+    }
+
+    static function routes($routeNames) {
+        return collect(Route::getRoutes())->filter(function($route) use ($routeNames) {
+            return in_array($route->action['as'], $routeNames);
+        })->mapWithKeys(function($route) {
+            $url = str_start(self::toFrontEndRoute($route->uri), '/');
+            return [$route->action['as'] => $url];
+        });
+    }
+
     public function home() { return $this->all(); }
     public function nationalMuseum() { return $this->all(); }
     public function vrmuseum() { return $this->all(); }
@@ -17,18 +32,19 @@ class WebController extends Controller
     public function all() {
         return view('layout', [
             'app' => [
-                'routes' => [
-                    'home' => route('home', null, false),
-                    'national-museum' => route('national-museum', null, false),
-                    'vrmuseum' => route('vrmuseum', null, false),
-                    'contact-us' => route('contact-us', null, false),
-                    'privacy-policy' => route('privacy-policy', null, false),
-                    'terms-of-service' => route('terms-of-service', null, false),
-                    'login' => route('login', null, false),
-                    'api.showcases' => route('api.showcases', null, false),
-                    'api.showcase' => route('api.showcase', null, false),
-                    'api.showcases.by-presented-bys' => route('api.showcases.by-presented-bys', null, false),
-                ]
+                'routes' => static::routes([
+                    'home',
+                    'showcase',
+                    'national-museum',
+                    'vrmuseum',
+                    'contact-us',
+                    'privacy-policy',
+                    'terms-of-service',
+                    'login',
+                    'api.showcases',
+                    'api.showcase',
+                    'api.showcases.by-presented-bys',
+                ]),
             ],
             'config' => config('360vrmuseum.public'),
             'lang' => config('lang.ko'), // TODO : make different translations

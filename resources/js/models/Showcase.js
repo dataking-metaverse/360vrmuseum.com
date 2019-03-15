@@ -3,8 +3,8 @@ import axios from "axios";
 import * as R from "ramda";
 import RestfulModel from "./RestfulModel";
 
-import params from "../helpers/params";
 import ShowcasePoster from "../components/ShowcasePoster";
+import ShowcasePosterLink from "../components/ShowcasePosterLink";
 import ShowcaseCard from "../components/ShowcaseCard";
 
 
@@ -55,6 +55,12 @@ export default class Showcase extends RestfulModel<Props> {
     generatePoster = () => {
         return () => (
             <ShowcasePoster showcase={this} />
+        );
+    };
+
+    generatePosterLink = () => {
+        return () => (
+            <ShowcasePosterLink showcase={this} />
         );
     };
 

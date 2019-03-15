@@ -30,7 +30,10 @@ export default class Showcases extends RestfulModel<Props> implements Iterable<S
         const response = await axios.get(route, {params: {presented_bys: presentedBys}});
         return R.pipe(
             R.path(['data', 'data']),
-            R.mapObjIndexed(R.map(R.construct(Showcase)))
+            R.mapObjIndexed(R.pipe(
+                R.map(R.construct(Showcase)),
+                R.construct(Showcases)
+            ))
         )(response);
     }
 
@@ -41,5 +44,9 @@ export default class Showcases extends RestfulModel<Props> implements Iterable<S
 
     [Symbol.iterator](): Iterable<Showcase> {
         return this.props[Symbol.iterator]();
+    }
+
+    toArray() {
+        return [...this];
     }
 }
