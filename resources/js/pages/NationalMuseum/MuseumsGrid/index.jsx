@@ -17,7 +17,7 @@ function MuseumsGrid(props: Props) {
                 <MuseumGridItems />
             </Row>
         </Container>
-    )
+    );
 }
 
 export default R.compose(
