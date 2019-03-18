@@ -1,3 +1,4 @@
+import Search from "../pages/Search";
 import Login from "../pages/Login";
 import PrivacyPolicy from "../pages/PrivacyPolicy";
 import TermsOfService from "../pages/TermsOfService";
@@ -10,6 +11,10 @@ import Home from "../pages/Home";
 // NOTE : paths are defined form backend, you will need to make sure the keys are correct
 
 const routes = {
+    search: {
+        exact: true,
+        component: Search,
+    },
     login: {
         exact: true,
         component: Login,

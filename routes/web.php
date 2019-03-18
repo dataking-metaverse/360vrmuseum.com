@@ -18,6 +18,7 @@ Route::get('/contact-us', 'WebController@contactUs')->name('contact-us');
 Route::get('/privacy-policy', 'WebController@privacyPolicy')->name('privacy-policy');
 Route::get('/terms-of-service', 'WebController@termsOfService')->name('terms-of-service');
 Route::get('/login', 'WebController@login')->name('login');
+Route::get('/search', 'WebController@search')->name('search');
 
 
 // API : showcase
