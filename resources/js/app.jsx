@@ -17,6 +17,7 @@ try {
 
     // react wrapper node
     const node = document.getElementById('app');
+    const backToTopButtonPortal = document.getElementById('app-back-to-top-portal');
 
     // redux
     const app = window.app();
