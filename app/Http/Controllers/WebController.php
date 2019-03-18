@@ -29,6 +29,7 @@ class WebController extends Controller {
     public function privacyPolicy() { return $this->all(); }
     public function termsOfService() { return $this->all(); }
     public function login() { return $this->all(); }
+    public function search() { return $this->all(); }
 
     public function all() {
         return view('layout', [
@@ -42,10 +43,12 @@ class WebController extends Controller {
                     'privacy-policy',
                     'terms-of-service',
                     'login',
+                    'search',
                     'api.showcase',
                     'api.showcase.by-presented-by',
                     'api.showcases',
                     'api.showcases.by-presented-bys',
+                    'api.showcases.search',
                 ]),
             ],
             'config' => config('360vrmuseum.public'),
