@@ -10,6 +10,23 @@ class ShowcaseController extends Controller
 {
     const VALIDATE_MID = 'min:11|max:11|alpha_num';
 
+    static function all() {
+        return config('360vrmuseum.showcases');
+    }
+
+    static function propEq(string $key, $value): array {
+        return array_first(static::all(), function($showcase) use ($key, $value) {
+            return isset($showcase[$key]) && $showcase[$key] === $value;
+        });
+    }
+
+    // TODO : make a limit for this function
+    static function propIn(string $key, array $value): array {
+        return array_values(array_where(static::all(), function($showcase) use ($key, $value) {
+            return isset($showcase[$key]) && in_array($showcase[$key], $value);
+        }));
+    }
+
     function __construct(Request $request) {
         parent::__construct($request);
         $validation = Validator::make($request->all(), [
@@ -25,32 +42,25 @@ class ShowcaseController extends Controller
         }
     }
 
-    function all() {
-        return config('360vrmuseum.showcases');
-    }
-
     function multi(Request $request) {
         $mids = $this->requireParam('mids');
-        return static::success(array_values(array_where(static::all(), function($showcase) use ($mids) {
-            return isset($showcase['mid']) && in_array($showcase['mid'], $mids);
-        })));
+        return static::success(static::propIn('mid', $mids));
     }
 
     function single(Request $reuqest) {
-        $mid = $reuqest->get('mid');
-        return static::success(array_first(static::all(), function($showcase) use ($mid) {
-            return isset($showcase['mid']) && $showcase['mid'] === $mid;
-        }));
+        $mid = $this->requireParam('mid');
+        return static::success(static::propEq('mid', $mid));
+    }
+
+    function byPresentedBy(Request $request) {
+        $presentedBy = $request->get('presented_by');
+        $showcases = static::propIn('presented_by', [$presentedBy]);
+        return static::success($showcases);
     }
 
     function byPresentedBys(Request $request) {
         $presentedBys = $request->get('presented_bys');
-
-        // get all the related showcases, then group them using object (k-v pairs)
-        $showcases = collect(static::all())->filter(function($showcase) use ($presentedBys) {
-            return isset($showcase['presented_by']) && in_array($showcase['presented_by'], $presentedBys);
-        })->groupBy('presented_by');
-
-        return static::success($showcases);
+        $showcasesGroups = collect(static::propIn('presented_by', $presentedBys))->groupBy('presented_by');
+        return static::success($showcasesGroups);
     }
 }

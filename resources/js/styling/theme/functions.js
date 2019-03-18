@@ -18,3 +18,12 @@ export const themeVar: (path: string | Array<string>) => Interpolation = R.pipe(
     R.concat(['theme', 'variables']),
     R.path
 );
+
+export const themeMixin: (path: string | Array<string>) => Interpolation = R.pipe(
+    R.when(
+        R.pipe(R.type, R.equals('String')),
+        R.split('.')
+    ),
+    R.concat(['theme', 'mixins']),
+    R.path
+);

@@ -3,7 +3,6 @@ import styled from "styled-components";
 import {themeVar} from "../../../styling/theme/functions";
 
 
-const black = themeVar('colors.basic.black');
 const ShowcaseSectionSubtitle = styled.h2`
     color: #7a7a7a;
     margin: 0;

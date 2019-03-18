@@ -23,7 +23,7 @@ export default class Showcases extends RestfulModel<Props> implements Iterable<S
 
     static FIELDS = Showcase.FIELDS;
 
-    static responseToInstance: (response: ShowcasesResponse) => Showcases = R.pipe(
+    static constructByResponse: (response: ShowcasesResponse) => Showcases = R.pipe(
         R.path(['data', 'data']),
         R.ifElse(
             R.complement(R.isNil),
@@ -38,7 +38,7 @@ export default class Showcases extends RestfulModel<Props> implements Iterable<S
     static async get(mids: Array<string>): Promise<?Showcases> {
         const route = Showcases.routes['api.showcases'];
         const response = await axios.get(route, {params: {mids}});
-        return Showcases.responseToInstance(response);
+        return Showcases.constructByResponse(response);
     }
 
     static async byPresentedBys(presentedBys: Array<string>): Promise<?Array<Showcases>> {

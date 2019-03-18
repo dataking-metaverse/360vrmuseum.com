@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 
+use App\Exceptions\Api\NotFoundException;
 use App\Http\Controllers\Controller as BasicController;
 use Illuminate\Http\Request;
 
@@ -22,6 +23,10 @@ class Controller extends BasicController {
 
     static function success($data) {
         return static::response(['data' => $data]);
+    }
+
+    static function abortNotFound() {
+        throw new NotFoundException();
     }
 
     public function __construct(Request $request) {

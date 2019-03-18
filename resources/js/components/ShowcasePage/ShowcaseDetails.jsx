@@ -3,14 +3,14 @@ import * as R from "ramda";
 import {Row, Col} from "styled-bootstrap-grid";
 import {connect} from "react-redux";
 
+import Showcase from "../../models/Showcase";
 import ShowcaseSectionTitle from "./components/ShowcaseSectionTitle";
 import GoogleMaps from "./components/GoogleMaps";
 import YouTubeVideo from "../../components/YouTubeVideo";
+import instanceOf from "../../helpers/instanceOf";
+import LoadingSpinner from "../LoadingSpinner";
 import ShowcaseContext from "./ShowcaseContext";
 import ShowcaseContainer from "./ShowcaseContainer";
-import instanceOf from "../../helpers/instanceOf";
-import Showcase from "../../models/Showcase";
-import LoadingSpinner from "../LoadingSpinner";
 
 
 type Props = {|
@@ -31,19 +31,24 @@ function ShowcaseDetails(props: Props) {
     const {location, introductionVideo} = text;
 
     if (!instanceOf(Showcase, showcase)) { return <LoadingSpinner />; }
+    const {
+        map_address: address,
+        map_name: title,
+    } = showcase.props;
 
     return (
         <ShowcaseContainer className="mb-5">
             <Row>
                 <Col col={12} lg={6}>
                     <ShowcaseSectionTitle>{location.title}</ShowcaseSectionTitle>
-                    <GoogleMaps />
+                    <GoogleMaps title={title} address={address} />
                 </Col>
                 <Col col={12} lg={6}>
                     <ShowcaseSectionTitle>{introductionVideo.title}</ShowcaseSectionTitle>
                     <YouTubeVideo v={showcase.getAttribute('youtube_id')} />
                 </Col>
             </Row>
+            <hr />
         </ShowcaseContainer>
     );
 }
