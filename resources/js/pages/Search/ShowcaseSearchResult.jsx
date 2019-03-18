@@ -34,7 +34,6 @@ const Subtitle = styled.div`
     margin-bottom: 2rem;
     color: #747474;
     font-size: 1.3rem;
-    font-family: "Noto Sans";
     font-weight: 400;  
 `;
 
@@ -75,8 +74,8 @@ function ShowcaseSearchResult(props: Props) {
                     <Col col={10}>
                         {date} | {'TODO'}
                     </Col>
-                    <Col col={2}>
-                        <Link to={showcase.route()}>{text.readMore} &raquo;</Link>
+                    <Col col={2} className="text-right">
+                        <Link to={showcase.route()}>{text.readMore} &raquo;</Link>&nbsp;&nbsp;
                     </Col>
                 </Row>
             </Details>

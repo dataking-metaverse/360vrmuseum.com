@@ -1,11 +1,12 @@
 import React from "react";
+import {Row, Col} from "styled-bootstrap-grid";
 
 import page from "../../decorators/page";
 import HeroCarousel from "./HeroCarousel";
 import FeaturedExhibitionCarousel from "./FeaturedExhibitionCarousel";
 import SpecialExhibition from "./SpecialExhibition";
 import PermanentExhibition from "./PermanentExhibition";
-import SearchBox from "../../components/SearchBox";
+import Search from "./Search";
 
 type Props = {
 
@@ -21,7 +22,7 @@ export default class Home extends React.PureComponent<Props> {
                 <FeaturedExhibitionCarousel />
                 <SpecialExhibition />
                 <PermanentExhibition />
-                <SearchBox className="pb-5" />
+                <Search />
             </React.Fragment>
         );
     }
