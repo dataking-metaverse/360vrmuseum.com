@@ -15,6 +15,7 @@ type Props = {|
 const Root = styled.div`
     position: relative;
     height: 50rem;
+    margin-bottom: 3rem;
 `;
 
 const Iframe = styled.iframe`

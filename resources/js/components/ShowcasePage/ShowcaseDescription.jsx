@@ -19,14 +19,32 @@ type Props = {|
 |};
 
 const Description = styled.pre`
+    color: #7a7a7a;
     white-space: pre-wrap;
     font-family: inherit;
+    font-size: 1.5rem;
+    line-height: 2.2rem;
+`;
+
+const Button = styled.button`
+    border: none;
+    cursor: pointer;
+    margin-top: 4rem;
+    color: ${({open}) => open ? 'rgba(111, 3, 198, 0.7)' : 'rgba(83,13,94,.7)'};
+    font-family: "Noto Sans",Sans-serif;
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1em;
+   
+    &:before {
+        content: "${({open}) => open ? '▼  ' : '▶  '}";
+    }
 `;
 
 function ShowcaseDescription(props: Props) {
     const {text} = props;
     const showcase = useContext(ShowcaseContext);
-    const [guideOpen, setGuideOpen] = useState(false);
+    const [open, setOpen] = useState(false);
 
     const attrs = instanceOf(Showcase, showcase) ? showcase.toObject() : null;
     if (!attrs) { return ( <LoadingSpinner /> ); }
@@ -39,8 +57,8 @@ function ShowcaseDescription(props: Props) {
     return (
         <ShowcaseContainer>
             <Description>{description}</Description>
-            <button onClick={() => setGuideOpen(!guideOpen)}>{text.program}</button>
-            <SlideComponent open={guideOpen}>
+            <Button open={open} onClick={() => setOpen(!open)}>{text.program}</Button>
+            <SlideComponent open={open}>
                 <div dangerouslySetInnerHTML={{__html: guideInformation}} />
             </SlideComponent>
             <br /><br />

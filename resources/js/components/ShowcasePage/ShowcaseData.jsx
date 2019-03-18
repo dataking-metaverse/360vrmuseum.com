@@ -25,7 +25,7 @@ const icons = connect(R.applySpec({
 }));
 
 const IconText = styled.span`
-    margin-right: 1em;
+    margin-right: 3em;
 `;
 
 const Icon = styled.svg`

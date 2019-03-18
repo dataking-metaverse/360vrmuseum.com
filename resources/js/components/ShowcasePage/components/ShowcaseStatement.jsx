@@ -9,7 +9,7 @@ const ShowcaseStatement = styled.div`
     
     
     ${media.md`
-        text-align: right;
+        text-align: left;
     `}
 `;
 
