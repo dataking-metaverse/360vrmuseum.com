@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import * as media from "ionicons";
+import {media} from "styled-bootstrap-grid";
 
-export default const ShowcaseStatement = styled.div`
+const ShowcaseStatement = styled.div`
     color: #7a7a7a;
     margin: 0;
     padding: 0;
@@ -12,3 +12,5 @@ export default const ShowcaseStatement = styled.div`
         text-align: right;
     `}
 `;
+
+export default ShowcaseStatement;
