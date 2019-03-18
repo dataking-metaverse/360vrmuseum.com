@@ -1,10 +1,16 @@
 import React from "react";
 import styled from "styled-components";
 import {Container, Row, Col} from "styled-bootstrap-grid";
+import * as R from "ramda";
+import {connect} from "react-redux";
+import {withRouter} from "react-router";
+
+import type {RouterHistory} from "react-router-dom";
 
 
 type Props = {
-    //
+    searchRoute: string,
+    history: RouterHistory,
 };
 
 const Root = styled.div`
@@ -24,8 +30,8 @@ const Input = styled.input`
 `;
 
 const Submit = styled.button`
-    width: 50%;
     height: 5rem;
+    width: 5rem;
     background: #000;
     border: none;
     border-radius: 0;
@@ -47,19 +53,24 @@ const SearchIcon = styled(SearchIconOriginal)`
     height: 1.2em;
 `;
 
-const onSubmit = event => {
-    alert(event);
-};
+function SearchBox(props: Props) {
+    const {searchRoute} = props;
+    const qRef = React.createRef();
 
-export default function SearchBox(props: Props) {
-    const {} = props;
+    function onSubmit(event) {
+        event.preventDefault();
+        const node = qRef.current;
+        if (!(node instanceof HTMLInputElement)) { return; }
+        props.history.push(`${searchRoute}?q=${node.value}`);
+    }
+
     return (
         <Root {...props}>
             <Container>
                 <form onSubmit={onSubmit}>
                     <Row className="justify-content-center">
                         <Col xl={4} lg={4} md={6} sm={6} xs={7} className="pr-0">
-                            <Input placeholder="Search ..."/>
+                            <Input ref={qRef} name="q" placeholder="Search ..." />
                         </Col>
                         <Col xl={1} lg={2} md={2} sm={3} xs={4} className="pl-0">
                             <Submit type="submit"><SearchIcon /></Submit>
@@ -70,3 +81,13 @@ export default function SearchBox(props: Props) {
         </Root>
     );
 }
+
+export default R.compose(
+    withRouter,
+    connect(
+        R.applySpec({
+            searchRoute: R.path(['app', 'routes', 'search'])
+        }),
+        R.always({})
+    )
+)(SearchBox);
