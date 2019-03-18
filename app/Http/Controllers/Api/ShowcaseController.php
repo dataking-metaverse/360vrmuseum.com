@@ -27,6 +27,15 @@ class ShowcaseController extends Controller
         }));
     }
 
+    static function searchPhraseas(array $phrases): array {
+        return array_values(array_where(static::all(), function($showcase) use ($phrases) {
+            $haystack = json_encode($showcase, JSON_UNESCAPED_UNICODE);
+            foreach($phrases as $phrase) {
+                return stripos($haystack, trim($phrase)) !== false;
+            }
+        }));
+    }
+
     function __construct(Request $request) {
         parent::__construct($request);
         $validation = Validator::make($request->all(), [
@@ -36,6 +45,7 @@ class ShowcaseController extends Controller
             'presented_by' => 'string',
             'presented_bys' => 'array',
             'presented_bys.*' => 'string',
+            'q' => 'string',
         ]);
         if ($validation->fails()) {
             throw new ValidationException($validation);
@@ -53,14 +63,22 @@ class ShowcaseController extends Controller
     }
 
     function byPresentedBy(Request $request) {
-        $presentedBy = $request->get('presented_by');
+        $presentedBy = $this->requireParam('presented_by');
         $showcases = static::propIn('presented_by', [$presentedBy]);
         return static::success($showcases);
     }
 
     function byPresentedBys(Request $request) {
-        $presentedBys = $request->get('presented_bys');
+        $presentedBys = $this->requireParam('presented_bys');
         $showcasesGroups = collect(static::propIn('presented_by', $presentedBys))->groupBy('presented_by');
         return static::success($showcasesGroups);
     }
+
+    function search(Request $request) {
+        $query = $this->requireParam('q');
+        $phrases = explode(' ', $query);
+        $showcases = static::searchPhraseas($phrases);
+        return static::success($showcases);
+    }
+
 }

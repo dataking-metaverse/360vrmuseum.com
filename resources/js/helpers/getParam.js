@@ -1,4 +1,4 @@
-export default function getParam(name, url) {
+export default function getParam(name, url): any {
     if (!url) url = window.location.href;
     name = name.replace(/[\[\]]/g, '\\$&');
     const regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),

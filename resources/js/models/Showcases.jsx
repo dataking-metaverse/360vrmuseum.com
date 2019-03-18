@@ -35,6 +35,12 @@ export default class Showcases extends RestfulModel<Props> implements Iterable<S
         )
     );
 
+    static async search(query: string): Promise<Showcases> {
+        const route = Showcases.routes['api.showcases.search'];
+        const response = await axios.get(route, {params: {q: query}});
+        return Showcases.constructByResponse(response);
+    };
+
     static async get(mids: Array<string>): Promise<?Showcases> {
         const route = Showcases.routes['api.showcases'];
         const response = await axios.get(route, {params: {mids}});

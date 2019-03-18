@@ -48,6 +48,7 @@ class WebController extends Controller {
                     'api.showcase.by-presented-by',
                     'api.showcases',
                     'api.showcases.by-presented-bys',
+                    'api.showcases.search',
                 ]),
             ],
             'config' => config('360vrmuseum.public'),

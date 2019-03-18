@@ -64,15 +64,13 @@ export default class Showcase extends RestfulModel<Props> {
         this.props = props;
     }
 
-    getRelated: () => Promise<Showcase> = async () => {
-        return await Showcase.byPresentedBy(this.props.presented_by);
-    };
+    getRelated: () => Promise<Showcase> = async () => await Showcase.byPresentedBy(this.props.presented_by);
 
     route = () => Showcase.routes['showcase'].replace(':mid', this.props.mid);
 
     // TODO : these methods should actually be implemented in super class
     getAttribute: (attr: string) => any = attr => this.props[attr];
-    toObject: () => {} = () => ({...this.props});
+    toObject: () => Props = () => ({...this.props});
 
     // components
     generatePoster = () => () => <ShowcasePoster showcase={this} />;
