@@ -11,4 +11,3 @@
 |
 */
 
-Route::get('lang/{locale}', 'LangController@lang')->name('api.lang');

@@ -21,6 +21,9 @@ Route::get('/login', 'WebController@login')->name('login');
 Route::get('/search', 'WebController@search')->name('search');
 
 
+// API : lang
+Route::get('lang/{locale}', 'LangController@lang')->name('api.lang');
+
 // API : showcase
 Route::get('/api/showcase', 'Api\\ShowcaseController@single')->name('api.showcase');
 Route::get('/api/showcase/by-presented-by', 'Api\\ShowcaseController@byPresentedBy')->name('api.showcase.by-presented-by');

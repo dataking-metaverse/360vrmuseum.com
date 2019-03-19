@@ -14,7 +14,7 @@ class WebController extends Controller {
 
     static function routes($routeNames) {
         return collect(Route::getRoutes())->filter(function($route) use ($routeNames) {
-            return in_array($route->action['as'], $routeNames);
+            return isset($route->action['as']) && in_array($route->action['as'], $routeNames);
         })->mapWithKeys(function($route) {
             $url = str_start(self::toFrontEndRoute($route->uri), '/');
             return [$route->action['as'] => $url];
