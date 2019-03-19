@@ -6,10 +6,24 @@ import {connect} from "react-redux";
 
 import ShowcaseContainer from "./ShowcaseContainer";
 import ShowcaseContext from "./ShowcaseContext";
+import instanceOf from "../../helpers/instanceOf";
+import Showcase from "../../models/Showcase";
+
+import type {ElementType} from "react";
 
 
 type Props = {|
 
+|};
+
+type ExhibitionDetails = {|
+    performing: bool,
+    conversation: bool,
+    paid: bool,
+|};
+
+type ExhibitionDetailsProps = {|
+    showcase: Showcase,
 |};
 
 type IconProps = {|
@@ -20,9 +34,27 @@ type IconProps = {|
     },
 |};
 
+type StatisticsProps = {|
+    text: {
+        impressions: string,
+        visits: string,
+        uniqueVisitors: string,
+    },
+    showcase: Showcase,
+|};
+
 const icons = connect(R.applySpec({
     text: R.path(['lang', 'pages', 'showcase']),
 }));
+
+const exhibitionDetails: (showcase: Showcase | void) => ExhibitionDetails = showcase => {
+    if (R.isNil(showcase)) { return {performing: false, conversation: false, paid: false}; }
+    return {
+        performing: showcase.getAttribute('is_performing'),
+        conversation: showcase.getAttribute('is_conversation'),
+        paid: showcase.getAttribute('is_paid'),
+    };
+};
 
 const IconText = styled.span`
     margin-right: 3em;
@@ -43,18 +75,62 @@ const IsPerformingAvailable = icons(({text}: IconProps) => ( <IconText>{mic}&nbs
 const IsConversationAvailable = icons(({text}: IconProps) => ( <IconText>{eye}&nbsp;{text.isConversationAvailable}</IconText> ));
 const IsPaidExhibition = icons(({text}: IconProps) => ( <IconText>{ticket}&nbsp;{text.isPaidExhibition}</IconText> ));
 
+const Statistic = styled.div`
+    display: inline-block;
+    color: #333;
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 2.14;
+    margin-left: 2rem;
+    
+    &:first-child {
+        margin-left: 0;
+    }
+`;
+
+const ExhibitionDetails: (props: ExhibitionDetailsProps) => ElementType = ({showcase}) => {
+    const {performing, conversation, paid} = exhibitionDetails(showcase);
+    return (
+        <React.Fragment>
+            {performing && <IsPerformingAvailable />}
+            {conversation && <IsConversationAvailable />}
+            {paid && <IsPaidExhibition />}
+        </React.Fragment>
+    );
+};
+
+const Statistics = R.compose(
+    connect(
+        R.applySpec({
+            text: R.path(['lang', 'common']),
+        }),
+        R.always({})
+    )
+)(
+    function (props: StatisticsProps) {
+        const {text, showcase} = props;
+        if (!instanceOf(Showcase, showcase)) { return null; } // no loading spinner in here
+        const statistics = showcase.getAttribute('statistics');
+        return (
+            <div>
+                <Statistic>{text.impressions} {statistics.impressions}</Statistic>
+                <Statistic>{text.visits} {statistics.visits}</Statistic>
+                <Statistic>{text.uniqueVisitors} {statistics.unique_visitors}</Statistic>
+            </div>
+        );
+    }
+);
+
 function ShowcaseData(props: Props) {
     const showcase = useContext(ShowcaseContext);
     return (
         <ShowcaseContainer>
             <Row>
                 <Col sm={6}>
-                    <IsPerformingAvailable />
-                    <IsConversationAvailable />
-                    <IsPaidExhibition />
+                    <ExhibitionDetails showcase={showcase} />
                 </Col>
                 <Col sm={6} className="text-right">
-                    todo
+                    <Statistics showcase={showcase} />
                 </Col>
             </Row>
             <br /><br />

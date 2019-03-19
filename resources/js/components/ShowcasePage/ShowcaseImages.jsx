@@ -12,12 +12,18 @@ import ShowcaseSectionSubtitle from "./components/ShowcaseSectionSubtitle";
 import ShowcaseContainer from "./ShowcaseContainer";
 import ShowcaseContext from "./ShowcaseContext";
 
+import type {ElementType} from "react";
+
 
 type Props = {|
     text: {
         title: string,
         subtitle: string,
     },
+|};
+
+type ImagesProps = {|
+    images: Array<string>,
 |};
 
 const Image = styled.div`
@@ -38,25 +44,28 @@ const Image = styled.div`
 `;
 
 
-function Images(props: ImagesProps) {
-    const showcase = useContext(ShowcaseContext);
-    if (!instanceOf(Showcase, showcase)) { return <Col><LoadingSpinner /></Col>; }
-    return showcase.getAttribute('list_of_images').map(url => (
-        <Col key={url} lg={4}>
-            <Image src={url}><LoadingSpinner cover /></Image>
+
+const Images: (props: ImagesProps) => Array<ElementType> = R.pipe(
+    R.prop('images'),
+    R.map(image => (
+        <Col key={image} lg={4}>
+            <Image src={image}><LoadingSpinner cover /></Image>
             <br />
         </Col>
-    ));
-}
+    ))
+);
 
 function ShowcaseImages(props: Props) {
     const {text} = props;
+    const showcase: Showcase = useContext(ShowcaseContext);
+    if (showcase === null) { return ( <LoadingSpinner /> ); }
+    const images = showcase.getAttribute('list_of_images');
     return (
         <ShowcaseContainer>
             <ShowcaseSectionTitle>{text.title}</ShowcaseSectionTitle>
-            <ShowcaseSectionSubtitle>{text.subtitle}</ShowcaseSectionSubtitle>
+            <ShowcaseSectionSubtitle>{text.subtitle.replace('{amount}', images.length)}</ShowcaseSectionSubtitle>
             <Row>
-                <Images />
+                <Images images={images} />
             </Row>
             <hr />
         </ShowcaseContainer>
