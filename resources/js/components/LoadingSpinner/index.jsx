@@ -64,6 +64,6 @@ const Normal = styled(Root)`
 `;
 
 export default function LoadingSpinner(props: Props): Node {
-    if (props.cover) { return ( <Cover /> ); }
+    if (props.hasOwnProperty('cover')) { return ( <Cover /> ); }
     return ( <Normal /> );
 }
