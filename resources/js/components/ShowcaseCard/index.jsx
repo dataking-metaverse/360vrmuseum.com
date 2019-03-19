@@ -121,7 +121,7 @@ const DetailWrapper = styled.div`
 `;
 
 function ShowcaseCard(props: Props) {
-    const {showcase, text, quickView} = props;
+    const {showcase, text, quickView, impressionsText} = props;
     const {
         thumbnail,
         type,
@@ -129,6 +129,7 @@ function ShowcaseCard(props: Props) {
         location,
         presented_by: presentedBy,
         date,
+        statistics,
     } = showcase.props;
     const showcaseRoute = showcase.route();
     return (
@@ -143,7 +144,7 @@ function ShowcaseCard(props: Props) {
                 <Period>{date}</Period>
                 <hr />
                 <div>
-                    <Impression>TODO</Impression>
+                    <Impression>{impressionsText} {statistics.impressions}</Impression>
                     <ViewDetails to={showcaseRoute}>{text.viewDetails}{' >'}</ViewDetails>
                 </div>
             </DetailWrapper>
@@ -156,6 +157,7 @@ export default R.compose(
         R.applySpec({
             text: R.path(['lang', 'pages', 'home', 'specialExhibition']),
             quickView: R.path(['lang', 'common', 'quickView']),
+            impressionsText: R.path(['lang', 'common', 'impressions']),
         }),
         R.applySpec({}),
     )

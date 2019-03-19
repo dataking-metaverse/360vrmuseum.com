@@ -10,7 +10,7 @@ import ShowcaseThumbnail from "../components/ShowcaseThumbnail";
 import Showcases from "./Showcases";
 
 
-export type Props = {
+export type Props = {|
     mid: string,
     main_title: string,
     location: string,
@@ -32,7 +32,12 @@ export type Props = {
     date: string,
     type: string,
     page_url: string,
-};
+    statistics: {|
+        impressions: number,
+        visits: number,
+        unique_visitors: number,
+    |},
+|};
 
 export default class Showcase extends RestfulModel<Props> {
 

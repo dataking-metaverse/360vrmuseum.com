@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\AdminMongoDB\ModelLoadHistory;
+use App\AdminMongoDB\ModelPlayHistory;
 use App\Exceptions\Api\ValidationException;
+use Cache;
 use Validator;
 use Illuminate\Http\Request;
 
@@ -11,7 +14,23 @@ class ShowcaseController extends Controller
     const VALIDATE_MID = 'min:11|max:11|alpha_num';
 
     static function all() {
-        return config('360vrmuseum.showcases');
+        return array_map(function($showcase) {
+            $mid = $showcase['mid'];
+            $showcase['statistics'] = self::statistics($mid);
+            return $showcase;
+        }, config('360vrmuseum.showcases'));
+    }
+
+    // TODO : option for no caching
+    static function statistics(string $mid, bool $noCache = false) {
+        // caching is necessary for avoiding overload
+        return Cache::remember(static::class . '::' . __FUNCTION__, 60, function() use ($mid) {
+            return [
+                'impressions' => ModelLoadHistory::impressions($mid),
+                'visits' => ModelPlayHistory::visits($mid),
+                'unique_visitors' => ModelPlayHistory::uniqueVisitors($mid),
+            ];
+        });
     }
 
     static function propEq(string $key, $value): array {

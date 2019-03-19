@@ -31,3 +31,6 @@ Route::get('/api/showcase/by-presented-by', 'Api\\ShowcaseController@byPresented
 Route::get('/api/showcases', 'Api\\ShowcaseController@multi')->name('api.showcases');
 Route::get('/api/showcases/by-presented-bys', 'Api\\ShowcaseController@byPresentedBys')->name('api.showcases.by-presented-bys');
 Route::get('/api/showcases/search', 'Api\\ShowcaseController@search')->name('api.showcases.search');
+
+Auth::routes();
+
