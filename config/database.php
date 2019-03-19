@@ -14,7 +14,7 @@ return [
     */
 
 //    'default' => env('DB_CONNECTION', 'mysql'),
-    'default' => 'mongodb',
+    'default' => 'mysql',
 
     /*
     |--------------------------------------------------------------------------

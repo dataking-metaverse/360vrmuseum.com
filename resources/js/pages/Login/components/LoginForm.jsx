@@ -3,10 +3,11 @@ import * as R from "ramda";
 import styled from "styled-components";
 import {Container, Row, Col} from "styled-bootstrap-grid";
 import {connect} from "react-redux";
-import Axios from "axios";
+import axios from "axios";
 
 import Checkbox from "../../../components/Checkbox";
 import rawFormData from "../../../helpers/rawFormData";
+import {registerAccessCredential, registerAxios} from "../../../redux/actionBuilders/global";
 
 type Props = {
     text: {
@@ -18,7 +19,9 @@ type Props = {
         forgotPassword: string,
     },
     loginRoute: string,
-    axios: Axios,
+    axiosInstance: axios,
+    registerAxios: () => {},
+    registerAccessCredential: () => {},
 };
 
 const Root = styled(Container)`
@@ -94,17 +97,32 @@ const KeepMeSignedText = styled.span`
     color: #888;
 `;
 
+function getFormData(event: Event) {
+    if (!(event.target instanceof HTMLFormElement)) { return {}; }
+    const formData = new FormData(event.target);
+    const data = rawFormData(formData);
+    data.remember_me = !!data.remember_me;
+    return data;
+}
+
+
 function LoginForm(props: Props) {
-    const {text, loginRoute, axios} = props;
+    const {text, loginRoute, axiosInstance, registerAxios, registerAccessCredential} = props;
 
     async function onSubmit(event: Event) {
         event.preventDefault();
-        if (!(event.target instanceof HTMLFormElement)) { return false; }
-        const formData = new FormData(event.target);
-        const data = rawFormData(formData);
-        data.remember_me = !!data.remember_me;
-        const response = await axios.post(loginRoute, data);
-        console.log(response);
+        const formdata = getFormData(event);
+        const response = await axiosInstance.post(loginRoute, formdata);
+        const data = R.path(['data', 'data'])(response);
+
+        // TODO : handle unauthorized
+
+        registerAxios(axios.create({
+            header: {
+                Authorization: `${data.token_type} ${data.access_token}`,
+            },
+        }));
+        registerAccessCredential(data);
     }
 
     return (
@@ -147,8 +165,11 @@ export default R.compose(
         R.applySpec({
             text: R.path(['lang', 'pages', 'login', 'loginForm']),
             loginRoute: R.path(['app', 'routes', 'api.auth.login']),
-            axios: R.prop('axios'),
+            axiosInstance: R.prop('axios'),
         }),
-        R.always({})
+        R.applySpec({
+            registerAxios,
+            registerAccessCredential,
+        })
     )
 )(LoginForm);

@@ -6,6 +6,7 @@ import {
     LOCALE_REGISTER,
     LANG_REGISTER,
     AXIOS_REGISTER,
+    ACCESS_CREDENTIAL_REGISTER,
 } from "../actionTypes";
 
 import type {Axios} from "axios";
@@ -32,3 +33,5 @@ export const axios: AxiosReducer = (state, action) => {
     if (action.type === AXIOS_REGISTER) { return action.value; }
     return state || null;
 };
+
+export const accessCredential: ObjectReducer = objectReducerBuilder(ACCESS_CREDENTIAL_REGISTER);

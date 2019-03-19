@@ -41,6 +41,7 @@ try {
 
     // model
     const updateModelAttributes = state => {
+        console.log(state.accessCredential);
         Model.registerRoutes(state.app.routes);
         Model.registerAxios(state.axios);
     };

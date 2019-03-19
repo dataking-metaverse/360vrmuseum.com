@@ -20,5 +20,4 @@ Route::get('/terms-of-service', 'WebController@termsOfService')->name('terms-of-
 Route::get('/login', 'WebController@login')->name('login');
 Route::get('/search', 'WebController@search')->name('search');
 
-
 //Auth::routes();
