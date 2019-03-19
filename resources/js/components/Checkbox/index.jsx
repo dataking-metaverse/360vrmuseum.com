@@ -6,6 +6,7 @@ import * as R from "ramda";
 
 type Props = {
     checked: string,
+    name: ?string,
     unchecked: string,
     onChange: () => void,
 };
@@ -48,6 +49,7 @@ function Checkbox(props: Props) {
         <Root>
             <Input
                 checked={checked}
+                name={props.name}
                 onChange={() => {
                     setChecked(!checked);
                 }}

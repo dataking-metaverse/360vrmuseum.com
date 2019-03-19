@@ -12,17 +12,11 @@ class Controller extends BasicController {
     private $request = null;
 
     static function response($options) {
-        return response()->json(array_merge([
-            'status' => 200,
-            'success' => true,
-            'message' => null,
-            'messageParams' => [],
-            'data' => null,
-        ], $options));
+        return responseJson($options);
     }
 
     static function success($data) {
-        return static::response(['data' => $data]);
+        return successJson($data);
     }
 
     static function abortNotFound() {

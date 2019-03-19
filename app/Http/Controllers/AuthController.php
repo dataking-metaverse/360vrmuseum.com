@@ -57,6 +57,7 @@ class AuthController extends Controller {
                 'message' => 'Unauthorized'
             ], 401);
         $user = $request->user();
+        dd($user, method_exists($user, 'createToken'));
         $tokenResult = $user->createToken('Personal Access Token');
         $token = $tokenResult->token;
         if ($request->remember_me)

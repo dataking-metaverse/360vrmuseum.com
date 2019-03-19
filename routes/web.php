@@ -21,4 +21,4 @@ Route::get('/login', 'WebController@login')->name('login');
 Route::get('/search', 'WebController@search')->name('search');
 
 
-Auth::routes();
+//Auth::routes();

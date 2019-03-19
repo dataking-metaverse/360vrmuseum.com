@@ -23,7 +23,12 @@ try {
     const app = window.app();
     const config = window.config();
     const lang = window.lang();
-    const axiosInstance = axios.create({});
+    const axiosInstance = axios.create({
+        headers: {
+            'Content-Type': 'application/json',
+            'X-Requested-With': 'XMLHttpRequest',
+        },
+    });
 
     const store: Store<{}, ReduxAction> = createStore(reducers, { // TODO : here, flow typing says there is an error here but I don't know what it is even checked for an hour
         app,

@@ -167,6 +167,7 @@ return [
          */
         Folklore\GraphQL\ServiceProvider::class,
         Jenssegers\Mongodb\MongodbServiceProvider::class,
+        DesignMyNight\Mongodb\MongodbPassportServiceProvider::class,
 
         /*
          * Application Service Providers...

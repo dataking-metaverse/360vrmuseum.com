@@ -3,11 +3,22 @@ import * as R from "ramda";
 import styled from "styled-components";
 import {Container, Row, Col} from "styled-bootstrap-grid";
 import {connect} from "react-redux";
+import Axios from "axios";
 
 import Checkbox from "../../../components/Checkbox";
+import rawFormData from "../../../helpers/rawFormData";
 
 type Props = {
-    text: Array<string>,
+    text: {
+        userId: string,
+        password: string,
+        keepSignIn: string,
+        loginButton: string,
+        registerButton: string,
+        forgotPassword: string,
+    },
+    loginRoute: string,
+    axios: Axios,
 };
 
 const Root = styled(Container)`
@@ -49,19 +60,22 @@ const Button = styled.button`
     border: none;
     border-radius: .4rem;
     outline: none;
-    &.loginButton {
-        background-color: #3ba1da;
-        color: #fff;
-        &:hover {
-            background-color: #44b0ec;
-        }
+`;
+
+const LoginButton = styled(Button)`
+    background-color: #3ba1da;
+    color: #fff;
+
+    &:hover {
+        background-color: #44b0ec;
     }
-    &.registerButton {
-        background-color: #eee;
-        color: #666;
-        &:hover {
-            background-color: #e5e5e5;
-        }
+`;
+
+const RegisterButton = styled(Button)`
+    background-color: #eee;
+    color: #666;
+    &:hover {
+        background-color: #e5e5e5;
     }
 `;
 
@@ -81,47 +95,60 @@ const KeepMeSignedText = styled.span`
 `;
 
 function LoginForm(props: Props) {
-    const {
-        label: [useridText, userpwText],
-        text: [keepsignText, loginButtonText, registerButtonText, forgotPasswordText],
-    } = props;
+    const {text, loginRoute, axios} = props;
+
+    async function onSubmit(event: Event) {
+        event.preventDefault();
+        if (!(event.target instanceof HTMLFormElement)) { return false; }
+        const formData = new FormData(event.target);
+        const data = rawFormData(formData);
+        data.remember_me = !!data.remember_me;
+        const response = await axios.post(loginRoute, data);
+        console.log(response);
+    }
 
     return (
         <Root>
-            <Row className="justify-content-center">
-                <Col xl={4} md={6} sm={7} xs={10}>
-                    <InputBoxWrapper>
-                        <InputLabel>{useridText}</InputLabel>
-                        <Input />
-                    </InputBoxWrapper>
-                    <InputBoxWrapper>
-                        <InputLabel>{userpwText}</InputLabel>
-                        <Input type="password" />
-                    </InputBoxWrapper>
-                    <div className="mb-5">
-                        <div className="mb-3">
-                            <Checkbox onChange="" type="checkbox" />
-                            <KeepMeSignedText className="pl-4">{keepsignText}</KeepMeSignedText>
+            <form onSubmit={onSubmit}>
+                <Row className="justify-content-center">
+                    <Col xl={4} md={6} sm={7} xs={10}>
+                        <InputBoxWrapper>
+                            <InputLabel>{text.userId}</InputLabel>
+                            <Input name="email" />
+                        </InputBoxWrapper>
+                        <InputBoxWrapper>
+                            <InputLabel>{text.password}</InputLabel>
+                            <Input name="password" type="password" />
+                        </InputBoxWrapper>
+                        <div className="mb-5">
+                            <div className="mb-3">
+                                <Checkbox name="remember_me" type="checkbox" />
+                                <KeepMeSignedText className="pl-4">{text.keepSignIn}</KeepMeSignedText>
+                            </div>
+                            <Row>
+                                <Col md={6} xs={12} className="mb-3">
+                                    <LoginButton>{text.loginButton}</LoginButton>
+                                </Col>
+                                <Col md={6} xs={12}>
+                                    <RegisterButton>{text.registerButton}</RegisterButton>
+                                </Col>
+                            </Row>
                         </div>
-                        <Row>
-                            <Col md={6} xs={12} className="mb-3">
-                                <Button className="loginButton">{loginButtonText}</Button>
-                            </Col>
-                            <Col md={6} xs={12}>
-                                <Button className="registerButton">{registerButtonText}</Button>
-                            </Col>
-                        </Row>
-                    </div>
-                    <ForgotPassword>{forgotPasswordText}</ForgotPassword>
-                </Col>
-            </Row>
+                        <ForgotPassword>{text.forgotPassword}</ForgotPassword>
+                    </Col>
+                </Row>
+            </form>
         </Root>
     );
 }
 
 export default R.compose(
-    connect(R.applySpec({
-        label: R.path(['lang', 'pages', 'login', 'loginForm', 'label']),
-        text: R.path(['lang', 'pages', 'login', 'loginForm', 'text']),
-    }))
+    connect(
+        R.applySpec({
+            text: R.path(['lang', 'pages', 'login', 'loginForm']),
+            loginRoute: R.path(['app', 'routes', 'api.auth.login']),
+            axios: R.prop('axios'),
+        }),
+        R.always({})
+    )
 )(LoginForm);

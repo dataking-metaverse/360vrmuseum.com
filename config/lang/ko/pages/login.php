@@ -3,15 +3,11 @@
 
 return [
     'loginForm' => [
-        'label' => [
-            '아이디 또는 이메일',
-            '비밀번호',
-        ],
-        'text' => [
-            'Keep me signed in',
-            '로그인',
-            '회원가입',
-            'Forgot your password?',
-        ],
+        'userId' => '아이디 또는 이메일',
+        'password' => '비밀번호',
+        'keepSignIn' => 'Keep me signed in',
+        'loginButton' => '로그인',
+        'registerButton' => '회원가입',
+        'forgotPassword' => 'Forgot your password?',
     ],
 ];
