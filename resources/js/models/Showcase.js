@@ -1,5 +1,4 @@
 import React from "react";
-import axios from "axios";
 import * as R from "ramda";
 import RestfulModel from "./RestfulModel";
 
@@ -54,13 +53,13 @@ export default class Showcase extends RestfulModel<Props> {
 
     static async get(mid: string): Promise<Showcase> {
         const route = Showcase.routes['api.showcase'];
-        const response = await axios.get(route, {params: {mid}});
+        const response = await Showcase.axios.get(route, {params: {mid}});
         return Showcase.constructByResponse(response);
     }
 
     static async byPresentedBy(presentedBy: string): Promise<Showcases> {
         const route = Showcase.routes['api.showcase.by-presented-by'];
-        const response = await axios.get(route, {params: {presented_by: presentedBy}});
+        const response = await Showcase.axios.get(route, {params: {presented_by: presentedBy}});
         return Showcases.constructByResponse(response); // NOTE : the response data is a list of showcases
     }
 

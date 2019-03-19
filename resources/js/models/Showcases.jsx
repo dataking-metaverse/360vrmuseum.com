@@ -1,8 +1,6 @@
 import React from "react";
-import axios from "axios";
 import * as R from "ramda";
 
-import params from "../helpers/params";
 import RestfulModel from "./RestfulModel";
 import Showcase from "./Showcase";
 
@@ -37,19 +35,19 @@ export default class Showcases extends RestfulModel<Props> implements Iterable<S
 
     static async search(query: string): Promise<Showcases> {
         const route = Showcases.routes['api.showcases.search'];
-        const response = await axios.get(route, {params: {q: query}});
+        const response = await Showcases.axios.get(route, {params: {q: query}});
         return Showcases.constructByResponse(response);
     };
 
     static async get(mids: Array<string>): Promise<?Showcases> {
         const route = Showcases.routes['api.showcases'];
-        const response = await axios.get(route, {params: {mids}});
+        const response = await Showcases.axios.get(route, {params: {mids}});
         return Showcases.constructByResponse(response);
     }
 
     static async byPresentedBys(presentedBys: Array<string>): Promise<?Array<Showcases>> {
         const route = Showcases.routes['api.showcases.by-presented-bys'];
-        const response = await axios.get(route, {params: {presented_bys: presentedBys}});
+        const response = await Showcases.axios.get(route, {params: {presented_bys: presentedBys}});
         return R.pipe(
             R.path(['data', 'data']),
             R.mapObjIndexed(R.pipe(
