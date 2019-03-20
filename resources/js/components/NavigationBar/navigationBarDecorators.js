@@ -21,6 +21,7 @@ export const desktopBreakpoint = media.lg;
 const navigationBarDecorators = R.compose(
     connect(
         R.applySpec({
+            user: R.prop('user'),
             showHome: R.path(['config', 'navigationBar', 'showHome']),
             logo: R.path(['assets', 'logo']),
             homeRoute: R.path(['app', 'routes', 'home']),
@@ -33,12 +34,17 @@ const navigationBarDecorators = R.compose(
                     ),
                     routes: R.path(['app', 'routes']),
                 }),
-                params => params.items.map(item => ({
+                prop => prop.items.map(item => ({
                     name: item,
-                    title: params.titles[item],
-                    to: params.routes[item],
+                    title: prop.titles[item],
+                    to: prop.routes[item],
                 })),
             ),
+            loginRoute: R.applySpec({
+                name: R.path(['config', 'navigationBar', 'login']),
+                title: R.path(['lang', 'navigation', 'login', 'title']),
+                to: R.path(['app', 'routes', 'login']),
+            }),
         }),
         R.always({})
     ),

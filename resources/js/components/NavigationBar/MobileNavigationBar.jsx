@@ -9,6 +9,9 @@ import Burger from "./Burger";
 
 
 import type {DecoratedProps, RouteProps} from "./navigationBarDecorators";
+import * as R from "ramda";
+import {connect} from "react-redux";
+import {clearUser} from "../../redux/actionBuilders/global";
 
 
 
@@ -61,6 +64,62 @@ const Item = styled(Link)`
     }
 `;
 
+const Submit = styled.button`
+    display: block;
+    width: 100%;
+    text-align: left;
+    background-color: ${themeVar('components.navigationBar.background')};
+    color: ${themeVar('colors.basic.white')};
+    padding: 1.4rem 3rem;
+    text-decoration: none !important;
+    font-size: 1.2rem;
+    line-height: 1;
+    border: none;
+    border-top: 1px solid rgba(234,234,234,.37);
+    transition: background-color ${themeVar('transitionDuration')};
+    font-family: inherit;
+    cursor: pointer;
+    
+    ${({active}) => active && 'background-color: #3d2b3b;'}
+    &:hover {
+        background-color: #3d2b3b;
+    }
+`;
+
+
+const LogoutButton = R.compose(
+    connect(
+        R.applySpec({
+            axios: R.prop('axios'),
+            submitRoute: R.path(['app', 'routes', 'api.auth.logout']),
+            logoutRoute: R.applySpec({
+                name: R.path(['config', 'navigationBar', 'logout']),
+                title: R.path(['lang', 'navigation', 'logout', 'title']),
+                to: R.path(['app', 'routes', 'logout']),
+            }),
+        }),
+        R.applySpec({clearUser}),
+    )
+)(function(props: LogoutFormProps) {
+    const {axios, submitRoute, logoutRoute, clearUser} = props;
+
+    async function onSubmit(event) {
+        event.preventDefault();
+        const response = await axios.post(submitRoute);
+        const success = R.path(['data', 'data', 'success'])(response);
+        if (success) {
+            clearUser();
+        }
+    }
+
+    return (
+        <React.Fragment>
+            <form onSubmit={onSubmit}>
+                <Submit type="submit">{logoutRoute.title}</Submit>
+            </form>
+        </React.Fragment>
+    );
+});
 
 function Links(props: LinksProps) {
     return props.routes.map(({name, title, to}: RouteProps) => (
@@ -69,8 +128,8 @@ function Links(props: LinksProps) {
 }
 
 export default function MobileNavigationBar(props: DecoratedProps) {
+    const {loginRoute, logoutRoute, user} = props;
     const [navOpen, setNavOpen] = useState(false);
-
     return (
         <React.Fragment>
             <Header>
@@ -79,6 +138,8 @@ export default function MobileNavigationBar(props: DecoratedProps) {
             </Header>
             <SlideComponent open={navOpen} onClick={() => setNavOpen(false)}>
                 <Links routes={props.routes} />
+                {!user && <Item to={loginRoute.to}>{loginRoute.title}</Item>}
+                {user && <LogoutButton />}
             </SlideComponent>
         </React.Fragment>
     );

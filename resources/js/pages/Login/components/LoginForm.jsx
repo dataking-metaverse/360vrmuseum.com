@@ -6,7 +6,7 @@ import {connect} from "react-redux";
 import axios from "axios";
 
 import Checkbox from "../../../components/Checkbox";
-import {updateUserAccessCredential} from "../../../redux/actionBuilders/global";
+import {registerUser} from "../../../redux/actionBuilders/global";
 import {Link} from "react-router-dom";
 import getFormData from "../../../helpers/getFormData";
 
@@ -23,7 +23,7 @@ type Props = {
     signupRoute: string,
     axiosInstance: axios,
     registerAxios: () => {},
-    registerAccessCredential: () => {},
+    registerUser: () => {},
 };
 
 const Root = styled(Container)`
@@ -104,17 +104,17 @@ const KeepMeSignedText = styled.span`
 
 
 function LoginForm(props: Props) {
-    const {text, submitRoute, signupRoute, axiosInstance, registerAxios, registerAccessCredential} = props;
+    const {text, submitRoute, signupRoute, axiosInstance, registerUser} = props;
 
     async function onSubmit(event: Event) {
         event.preventDefault();
         const formData = getFormData(event);
         formData.remember_me = !!formData.remember_me;
         const response = await axiosInstance.post(submitRoute, formData);
-        const data = R.path(['data', 'data'])(response);
+        const user = R.path(['data', 'data', 'user'])(response);
 
         // TODO : handle unauthorized
-        updateUserAccessCredential(data);
+        registerUser(user);
     }
 
     return (
@@ -161,7 +161,7 @@ export default R.compose(
             axiosInstance: R.prop('axios'),
         }),
         R.applySpec({
-            updateUserAccessCredential,
+            registerUser,
         })
     )
 )(LoginForm);

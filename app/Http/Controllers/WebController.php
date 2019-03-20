@@ -34,6 +34,7 @@ class WebController extends Controller {
 
     public function all() {
         return view('layout', [
+            'user' => AuthController::userFields(),
             'app' => [
                 'routes' => static::routes([
                     'home',

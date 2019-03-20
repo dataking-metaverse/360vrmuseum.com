@@ -12,8 +12,9 @@ return [
             'national-museum',
             'vrmuseum',
             'contact-us',
-            'login',
         ],
+        'login' => 'login',
+        'logout' => 'logout',
     ],
 
     'pages' => [

@@ -15,12 +15,12 @@ Route::group([
 ], function () {
     Route::post('login', 'AuthController@login')->name('api.auth.login');
     Route::post('signup', 'AuthController@signup')->name('api.auth.signup');
+    Route::get('user', 'AuthController@user')->name('api.auth.user');
 
     Route::group([
-        'middleware' => 'auth:api'
+        'middleware' => 'auth'
     ], function() {
-        Route::get('logout', 'AuthController@logout')->name('api.auth.logout');
-        Route::get('user', 'AuthController@user')->name('api.auth.');
+        Route::post('logout', 'AuthController@logout')->name('api.auth.logout');
     });
 });
 

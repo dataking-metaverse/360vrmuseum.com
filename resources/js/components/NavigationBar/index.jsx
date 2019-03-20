@@ -42,6 +42,5 @@ export default function NavigationBar(props: Props) {
                 <MobileNav />
             </Mobile>
         </React.Fragment>
-
     );
 }

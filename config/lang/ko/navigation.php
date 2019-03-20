@@ -6,4 +6,5 @@ return [
     'vrmuseum' => ['title' => '360°VR Museum'],
     'contact-us' => ['title' => 'Contact us'],
     'login' => ['title' => 'Login'],
+    'logout' => ['title' => 'Logout'],
 ];

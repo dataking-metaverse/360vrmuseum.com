@@ -10,6 +10,9 @@ import {
     MESSAGES_PUSH,
     MESSAGES_REMOVE_FIRST,
     REDIRECT_PUSH,
+    REDIRECT_CLEAR,
+    USER_REGISTER,
+    USER_CLEAR,
 } from "../actionTypes";
 
 import type {Axios} from "axios";
@@ -32,9 +35,10 @@ const stringReducerBuilder = (type: ReduxAction) => (state, action) => {
     return state || null;
 };
 
-const objectReducerBuilder = (type: ReduxAction) => (state, action) => {
+const objectReducerBuilder = (type: ReduxAction, clearType: ReduxAction) => (state, action) => {
     if (action.type === type) { return action.value; }
-    return state || {};
+    if (action.type === clearType) { return null; }
+    return state || null;
 };
 
 export const config: ObjectReducer = objectReducerBuilder(CONFIG_REGISTER);
@@ -58,4 +62,10 @@ export const messages: ArrayReducer = (state = [], action: ReduxAction) => {
     }
 };
 
-export const redirect: StringReducer = stringReducerBuilder(REDIRECT_PUSH);
+export const redirect: StringReducer = (state = null, action) => {
+    if (action.type === REDIRECT_PUSH) { return action.value; }
+    if (action.type === REDIRECT_CLEAR) { return null; }
+    return state || null;
+};
+
+export const user: ObjectReducer = objectReducerBuilder(USER_REGISTER, USER_CLEAR);

@@ -1,5 +1,5 @@
 import Search from "../pages/Search";
-import Signup from "../pages/Signup/index";
+import Signup from "../pages/Signup";
 import Login from "../pages/Login";
 import PrivacyPolicy from "../pages/PrivacyPolicy";
 import TermsOfService from "../pages/TermsOfService";

@@ -2,7 +2,16 @@ import * as R from "ramda";
 import axios from "axios";
 import register from "../functions/register";
 import registerEmpty from "../functions/registerEmpty";
-import {ACCESS_CREDENTIAL_REGISTER, AXIOS_REGISTER, MESSAGES_PUSH, MESSAGES_REMOVE_FIRST, REDIRECT_PUSH} from "../actionTypes";
+import {
+    ACCESS_CREDENTIAL_REGISTER,
+    AXIOS_REGISTER,
+    MESSAGES_PUSH,
+    MESSAGES_REMOVE_FIRST,
+    REDIRECT_PUSH,
+    REDIRECT_CLEAR,
+    USER_REGISTER,
+    USER_CLEAR,
+} from "../actionTypes";
 
 export const registerAxios = register(AXIOS_REGISTER);
 export const registerAccessCredential = register(ACCESS_CREDENTIAL_REGISTER);
@@ -11,7 +20,11 @@ export const pushMessage = register(MESSAGES_PUSH);
 export const removeFirstMessage = registerEmpty(MESSAGES_REMOVE_FIRST);
 
 export const pushRedirect = register(REDIRECT_PUSH);
+export const clearRedirect = registerEmpty(REDIRECT_CLEAR);
 
+
+export const registerUser = register(USER_REGISTER);
+export const clearUser = registerEmpty(USER_CLEAR);
 
 export const updateUserAccessCredential = dispatch => accessTokenGroup => {
     const dispatchRegisterAccessCredential = registerAccessCredential(dispatch);
