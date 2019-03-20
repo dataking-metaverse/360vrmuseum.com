@@ -7,6 +7,7 @@ import ShowcasePosterLink from "../components/ShowcasePosterLink";
 import ShowcaseCard from "../components/ShowcaseCard";
 import ShowcaseThumbnail from "../components/ShowcaseThumbnail";
 import Showcases from "./Showcases";
+import Comment from "./Comment";
 
 
 export type Props = {|
@@ -75,6 +76,7 @@ export default class Showcase extends RestfulModel<Props> {
     // TODO : these methods should actually be implemented in super class
     getAttribute: (attr: string) => any = attr => this.props[attr];
     toObject: () => Props = () => ({...this.props});
+    getComments = () => Comment.byShowcase(this);
 
     // components
     generatePoster = () => () => <ShowcasePoster showcase={this} />;

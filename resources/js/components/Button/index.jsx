@@ -8,10 +8,10 @@ import {themeVar} from "../../styling/theme/functions";
 import type {ComponentType} from "react";
 
 type Props = {
-    children: Element,
-    theme: {},
-    type: ?string,
-    size: 'default' | 'normal' | 'small',
+    children: Node,
+    theme?: {},
+    type?: string,
+    size?: 'default' | 'normal' | 'small',
 };
 
 type ButtonColorSet = {|

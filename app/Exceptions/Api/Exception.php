@@ -27,7 +27,7 @@ class Exception extends CustomException implements \JsonSerializable {
 
     function messageFormat() {
         $exceptions = config('lang.ko.exceptions.api');
-        return $exceptions[static::class] ?? null;
+        return $exceptions[md5(static::class)] ?? null;
     }
 
     function response() {

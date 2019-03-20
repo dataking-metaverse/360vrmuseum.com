@@ -50,7 +50,10 @@ function ShowcaseRelated(props: Props) {
             <Row>
                 {thumbnails}
             </Row>
-            <ShowcaseStatement>{text.statement}</ShowcaseStatement>
+            <br />
+            <hr />
+            <ShowcaseStatement className="text-right">{text.statement}</ShowcaseStatement>
+            <br />
         </ShowcaseContainer>
     );
 }

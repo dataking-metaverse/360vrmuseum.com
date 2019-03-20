@@ -6,7 +6,7 @@ import {themeVar} from "../../styling/theme/functions";
 import type {Node} from "react";
 
 type Props = {
-    cover: ?boolean,
+    cover?: boolean,
 };
 
 const style = {

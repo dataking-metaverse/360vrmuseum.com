@@ -1,5 +1,7 @@
 <?php
 
+use App\Exceptions\Api\UnauthorizedException;
+use App\User;
 
 function responseJson(array $options) {
     $data = array_merge([
@@ -28,4 +30,12 @@ function abortJson($status) {
         default:
             throw new \App\Exceptions\Api\Exception();
     }
+}
+
+function requireUser(): User {
+    $user = request()->user();
+    if (!$user) {
+        throw new UnauthorizedException();
+    }
+    return $user;
 }

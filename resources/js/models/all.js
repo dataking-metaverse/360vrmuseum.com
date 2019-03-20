@@ -1,4 +1,5 @@
 import Showcase from "./Showcase";
 import Showcases from "./Showcases";
+import Comment from "./Comment";
 
-export {Showcase, Showcases};
+export {Showcase, Showcases, Comment};

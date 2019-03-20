@@ -11,6 +11,7 @@ import ShowcaseDescription from "./ShowcaseDescription";
 import ShowcaseImages from "./ShowcaseImages";
 import ShowcaseDetails from "./ShowcaseDetails";
 import ShowcaseRelated from "./ShowcaseRelated";
+import CommentSection from "./components/CommentSection";
 
 type Props = {
     showcase: Showcase,
@@ -27,6 +28,7 @@ function ShowcasePage(props: Props) {
             <ShowcaseImages />
             <ShowcaseDetails />
             <ShowcaseRelated />
+            <CommentSection />
         </ShowcaseContext.Provider>
     );
 }

@@ -52,6 +52,8 @@ class WebController extends Controller {
                     'api.showcases',
                     'api.showcases.by-presented-bys',
                     'api.showcases.search',
+                    'api.comment.by-showcase',
+                    'api.comment.post',
                     'api.auth.login',
                     'api.auth.signup',
                     'api.auth.logout',
