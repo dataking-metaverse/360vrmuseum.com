@@ -49,7 +49,7 @@ class Handler extends ExceptionHandler
     {
 
         if ($exception instanceof ApiException) {
-            return response()->json($exception);
+            return $exception->response();
         }
 
         return parent::render($request, $exception);

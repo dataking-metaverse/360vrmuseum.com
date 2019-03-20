@@ -1,18 +1,25 @@
 <?php
 
 
-function responseJson($options) {
-    return response()->json(array_merge([
+function responseJson(array $options) {
+    $data = array_merge([
         'status' => 200,
         'success' => true,
         'message' => null,
         'messageParams' => [],
         'data' => null,
-    ], $options));
+        'errors' => (object)[],
+        'redirect' => null,
+    ], $options);
+    return response()->json($data, $data['status']);
 }
 
-function successJson($data) {
-    return response(['data' => $data]);
+function successJson($data, string $message = null, ...$messageParams) {
+    return responseJson([
+        'data' => $data,
+        'message' => $message,
+        'messageParams' => $messageParams
+    ]);
 }
 
 function abortJson($status) {

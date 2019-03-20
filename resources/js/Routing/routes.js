@@ -1,4 +1,5 @@
 import Search from "../pages/Search";
+import Signup from "../pages/Signup/index";
 import Login from "../pages/Login";
 import PrivacyPolicy from "../pages/PrivacyPolicy";
 import TermsOfService from "../pages/TermsOfService";
@@ -14,6 +15,10 @@ const routes = {
     search: {
         exact: true,
         component: Search,
+    },
+    signup: {
+        exact: true,
+        component: Signup,
     },
     login: {
         exact: true,

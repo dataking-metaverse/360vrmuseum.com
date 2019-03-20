@@ -6,8 +6,9 @@ import {connect} from "react-redux";
 import axios from "axios";
 
 import Checkbox from "../../../components/Checkbox";
-import rawFormData from "../../../helpers/rawFormData";
-import {registerAccessCredential, registerAxios} from "../../../redux/actionBuilders/global";
+import {updateUserAccessCredential} from "../../../redux/actionBuilders/global";
+import {Link} from "react-router-dom";
+import getFormData from "../../../helpers/getFormData";
 
 type Props = {
     text: {
@@ -18,7 +19,8 @@ type Props = {
         registerButton: string,
         forgotPassword: string,
     },
-    loginRoute: string,
+    submitRoute: string,
+    signupRoute: string,
     axiosInstance: axios,
     registerAxios: () => {},
     registerAccessCredential: () => {},
@@ -52,8 +54,10 @@ const Input = styled.input`
     font-size: 1.5rem;
 `;
 
-const Button = styled.button`
-    vertical-align: middle;
+const makeStyledButton = function(func) { return styled(func`
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-weight: 400;
     font-size: 15px;
     cursor: pointer;
@@ -63,9 +67,10 @@ const Button = styled.button`
     border: none;
     border-radius: .4rem;
     outline: none;
-`;
+    text-decoration: none;
+`)};
 
-const LoginButton = styled(Button)`
+const LoginButton = makeStyledButton(styled.button)`
     background-color: #3ba1da;
     color: #fff;
 
@@ -74,7 +79,7 @@ const LoginButton = styled(Button)`
     }
 `;
 
-const RegisterButton = styled(Button)`
+const RegisterButton = makeStyledButton(styled(Link))`
     background-color: #eee;
     color: #666;
     &:hover {
@@ -97,32 +102,19 @@ const KeepMeSignedText = styled.span`
     color: #888;
 `;
 
-function getFormData(event: Event) {
-    if (!(event.target instanceof HTMLFormElement)) { return {}; }
-    const formData = new FormData(event.target);
-    const data = rawFormData(formData);
-    data.remember_me = !!data.remember_me;
-    return data;
-}
-
 
 function LoginForm(props: Props) {
-    const {text, loginRoute, axiosInstance, registerAxios, registerAccessCredential} = props;
+    const {text, submitRoute, signupRoute, axiosInstance, registerAxios, registerAccessCredential} = props;
 
     async function onSubmit(event: Event) {
         event.preventDefault();
-        const formdata = getFormData(event);
-        const response = await axiosInstance.post(loginRoute, formdata);
+        const formData = getFormData(event);
+        formData.remember_me = !!formData.remember_me;
+        const response = await axiosInstance.post(submitRoute, formData);
         const data = R.path(['data', 'data'])(response);
 
         // TODO : handle unauthorized
-
-        registerAxios(axios.create({
-            header: {
-                Authorization: `${data.token_type} ${data.access_token}`,
-            },
-        }));
-        registerAccessCredential(data);
+        updateUserAccessCredential(data);
     }
 
     return (
@@ -148,7 +140,7 @@ function LoginForm(props: Props) {
                                     <LoginButton>{text.loginButton}</LoginButton>
                                 </Col>
                                 <Col md={6} xs={12}>
-                                    <RegisterButton>{text.registerButton}</RegisterButton>
+                                    <RegisterButton to={signupRoute}>{text.registerButton}</RegisterButton>
                                 </Col>
                             </Row>
                         </div>
@@ -164,12 +156,12 @@ export default R.compose(
     connect(
         R.applySpec({
             text: R.path(['lang', 'pages', 'login', 'loginForm']),
-            loginRoute: R.path(['app', 'routes', 'api.auth.login']),
+            submitRoute: R.path(['app', 'routes', 'api.auth.login']),
+            signupRoute: R.path(['app', 'routes', 'signup']),
             axiosInstance: R.prop('axios'),
         }),
         R.applySpec({
-            registerAxios,
-            registerAccessCredential,
+            updateUserAccessCredential,
         })
     )
 )(LoginForm);

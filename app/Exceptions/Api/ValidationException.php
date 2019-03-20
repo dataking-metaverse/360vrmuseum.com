@@ -16,9 +16,9 @@ class ValidationException extends Exception {
 
     function jsonSerialize() {
         return static::jsonResponse([
-            'status' => 401,
+            'status' => 400,
             'success' => false,
-            'message' => 'Validation Failed',
+            'message' => static::messageFormat(),
             'messageParams' => [],
             'data' => $this->validation->errors(),
         ]);

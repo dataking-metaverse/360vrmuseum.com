@@ -18,7 +18,7 @@ class MissingParameterException extends Exception {
         return static::jsonResponse([
             'status' => 401,
             'success' => false,
-            'message' => 'Parameter is Missing %s',
+            'message' => static::messageFormat(),
             'messageParams' => [$this->paramKey],
             'data' => null,
         ]);

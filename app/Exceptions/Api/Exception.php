@@ -21,8 +21,18 @@ class Exception extends CustomException implements \JsonSerializable {
         return array_merge(static::basicJsonResponse(), $options);
     }
 
-
     function jsonSerialize() {
         return static::jsonResponse();
+    }
+
+    function messageFormat() {
+        $exceptions = config('lang.ko.exceptions.api');
+        return $exceptions[static::class] ?? null;
+    }
+
+    function response() {
+        $response = $this->jsonSerialize();
+        $status = $response['status'] ?? 500;
+        return response()->json($response, $status);
     }
 }

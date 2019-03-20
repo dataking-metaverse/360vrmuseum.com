@@ -5,15 +5,10 @@ namespace App\Exceptions\Api;
 
 use Illuminate\Validation\Validator;
 
-class NotFoundException extends Exception {
-
-    public function __construct() {
-        parent::__construct();
-    }
-
+class WrongCredentialException extends Exception {
     function jsonSerialize() {
         return static::jsonResponse([
-            'status' => 404,
+            'status' => 401,
             'success' => false,
             'message' => static::messageFormat(),
             'messageParams' => [],

@@ -4,6 +4,7 @@ import {createStore} from "redux";
 import {Provider} from "react-redux";
 import axios from "axios";
 
+import {initialUserAccessCredential} from "./redux/actionBuilders/global";
 import Model from "./models/Model";
 import ModelsContext from "./contexts/ModelsContext";
 import reducers from "./redux/reducers";
@@ -23,12 +24,6 @@ try {
     const app = window.app();
     const config = window.config();
     const lang = window.lang();
-    const axiosInstance = axios.create({
-        headers: {
-            'Content-Type': 'application/json',
-            'X-Requested-With': 'XMLHttpRequest',
-        },
-    });
 
     const store: Store<{}, ReduxAction> = createStore(reducers, { // TODO : here, flow typing says there is an error here but I don't know what it is even checked for an hour
         app,
@@ -36,8 +31,15 @@ try {
         assets,
         lang,
         locale: document.getElementsByTagName('html')[0].getAttribute('lang'),
-        axios: axiosInstance,
+        axios: axios.create({
+            header: {
+                'Content-Type': 'application/json',
+                'X-Requested-With': 'XMLHttpRequest',
+            },
+        })
     });
+
+    initialUserAccessCredential(store.dispatch)();
 
     // model
     Model.subscribe(store);

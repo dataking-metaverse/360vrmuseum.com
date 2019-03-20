@@ -22,11 +22,13 @@ export default class Model<Props> {
 
     static subscribe(store: Store): void {
         if (typeof Model.unsubscribeStore === 'function') { Model.unsubscribeStore(); }
-        Model.unsubscribeStore = store.subscribe(() => {
+        const listener = () => {
             const state: State = store.getState();
             Model.routes = state.app.routes;
             Model.axios = state.axios;
-        });
+        };
+        listener();
+        Model.unsubscribeStore = store.subscribe(listener);
     }
 
     constructor(props: Props) {
