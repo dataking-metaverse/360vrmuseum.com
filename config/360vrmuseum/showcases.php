@@ -973,7 +973,7 @@ return [
         "mid" => "3MrnWzKigNP",
         "main_title" => "고려청자의 정점頂點을 만나다 부안청자·강진청자",
         "location" => "전주",
-        "presented_by" => "국립박물관",
+        "presented_by" => "국립전주박물관",
         "poster" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/3MrnWzKigNP/poster/3MrnWzKigNP-200x300.jpg",
         "thumbnail" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/3MrnWzKigNP/thumbnail/3MrnWzKigNP-416x237.jpg",
         "kor_title" => "국립전주박물관: 고려청자의 정점을 만나다 부안청자-강진청자",
