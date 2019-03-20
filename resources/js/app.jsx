@@ -40,13 +40,7 @@ try {
     });
 
     // model
-    const updateModelAttributes = state => {
-        console.log(state.accessCredential);
-        Model.registerRoutes(state.app.routes);
-        Model.registerAxios(state.axios);
-    };
-    store.subscribe(() => { updateModelAttributes(store.getState()); });
-    updateModelAttributes(store.getState());
+    Model.subscribe(store);
 
     if (node === null) { throw new Error('hello, world'); }
 
