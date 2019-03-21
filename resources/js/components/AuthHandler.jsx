@@ -22,7 +22,6 @@ function readCookie(name) {
 
 function listenCookieChange(cookieName, callback) {
     setInterval(function() {
-        console.log('ff', cookieRegistry);
         if (cookieRegistry[cookieName]) {
             if (readCookie(cookieName) != cookieRegistry[cookieName]) {
                 // update registry so we dont get triggered again

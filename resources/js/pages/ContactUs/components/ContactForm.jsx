@@ -94,7 +94,6 @@ function TextInput(props: TextInputProps) {
 }
 
 function Errors(props: ErrorsProps) {
-    console.log(props.errors);
     return R.ifElse(
         R.complement(R.isNil),
         R.pipe(

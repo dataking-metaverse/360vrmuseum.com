@@ -23,15 +23,11 @@ type Props = {
     R.applySpec({registerLang})
 )
 export default class LangHandler extends React.Component<Props> {
-    shouldComponentUpdate(nextProps) {
-        console.log('here');
-        return nextProps.locale !== this.props.locale || (nextProps.axios && !this.props.axios);
-    }
+    shouldComponentUpdate(nextProps) { return nextProps.locale !== this.props.locale || (nextProps.axios && !this.props.axios); }
     componentDidMount() { this.effect(); }
     componentDidUpdate() { this.effect(); }
     async effect() {
         const {axios, locale, langRoute, registerLang} = this.props;
-        console.log(langRoute);
         if (!axios) { return; }
         const response = await axios.get(langRoute, {params: {locale}});
         R.pipe(
