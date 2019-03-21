@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\ContactFormEmail;
 use Illuminate\Http\Request;
 use Route;
 
@@ -30,7 +31,11 @@ class WebController extends Controller {
     public function termsOfService() { return $this->all(); }
     public function login() { return $this->all(); }
     public function signup() { return $this->all(); }
-    public function search() { return $this->all(); }
+    public function search() {
+//        \Mail::to('winghim@dataking.co.kr')
+//            ->send(new ContactFormEmail());
+
+        return $this->all(); }
 
     public function all() {
         return view('layout', [
@@ -54,6 +59,7 @@ class WebController extends Controller {
                     'api.showcases.search',
                     'api.comment.by-showcase',
                     'api.comment.post',
+                    'api.contact.send',
                     'api.auth.login',
                     'api.auth.signup',
                     'api.auth.logout',

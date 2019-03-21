@@ -1,9 +1,10 @@
 import React from "react";
 import * as R from "ramda";
 import styled from "styled-components";
-import {Container, Row, Col} from "styled-bootstrap-grid";
-import makeSrcset from "../../../helpers/makeSrcset";
+import {Container, Row, Col, media} from "styled-bootstrap-grid";
 import {connect} from "react-redux";
+
+import makeSrcset from "../../../helpers/makeSrcset";
 
 type Props = {
     text: Array<String>,
@@ -17,9 +18,14 @@ const Root = styled(Container)`
 
 const PartnershipTitle = styled.p`
     color: #3d2b3b;
-    font-size: 5.2rem;
+    font-size: 3rem;
     font-weight: bold;
     margin: 0 0 3rem;
+    
+    
+    ${media.lg`
+        font-size: 5.2rem;    
+    `}
 `;
 
 const PartnershipContent = styled.p`

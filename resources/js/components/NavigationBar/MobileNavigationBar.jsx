@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import styled from "styled-components";
 import {media} from "styled-bootstrap-grid";
 import {Link} from "react-router-dom";
@@ -128,12 +128,19 @@ function Links(props: LinksProps) {
 }
 
 export default function MobileNavigationBar(props: DecoratedProps) {
-    const {loginRoute, logoutRoute, user} = props;
+    const {history, loginRoute, logoutRoute, user} = props;
     const [navOpen, setNavOpen] = useState(false);
+
+    useEffect(() => {
+        setNavOpen(false);
+    }, [location.href]);
+
     return (
         <React.Fragment>
             <Header>
-                <Image src={props.logo} />
+                <Link to={props.homeRoute}>
+                    <Image src={props.logo} />
+                </Link>
                 <BurgerButton onClick={() => setNavOpen(!navOpen)} />
             </Header>
             <SlideComponent open={navOpen} onClick={() => setNavOpen(false)}>

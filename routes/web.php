@@ -46,3 +46,6 @@ Route::get('/api/showcases/search', 'Api\\ShowcaseController@search')->name('api
 // API : comment
 Route::post('/api/comment', 'Api\\CommentController@post')->name('api.comment.post');
 Route::get('/api/comment/by-showcase', 'Api\\CommentController@byShowcase')->name('api.comment.by-showcase');
+
+// API : contact
+Route::post('/api/contact/send', 'Api\\ContactFormController@send')->name('api.contact.send');

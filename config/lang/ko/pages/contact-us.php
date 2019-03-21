@@ -10,12 +10,12 @@ return [
     ],
 
     'contactForm' => [
-        'label' => [
-            '이름 (required)',
-            '메일 (required)',
-            '제목',
-            '내용',
-            '보내기',
+        'text' => [
+            'name' => '이름 (required)',
+            'mail' => '메일 (required)',
+            'subject' => '제목',
+            'content' => '내용',
+            'submit' => '보내기',
         ]
     ],
 
