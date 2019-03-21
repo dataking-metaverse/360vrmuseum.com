@@ -28,7 +28,7 @@ function ShowcasePage(props: Props) {
             <ShowcaseImages />
             <ShowcaseDetails />
             <ShowcaseRelated />
-            <CommentSection />
+            {/*<CommentSection />*/}
         </ShowcaseContext.Provider>
     );
 }

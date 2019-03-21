@@ -171,8 +171,8 @@ function DesktopNavigationBar(props: DecoratedProps) {
                     </LeftCol>
                     <RightCol col="10">
                         <Links routes={props.routes} />
-                        {!user && <Item to={loginRoute.to}>{loginRoute.title}</Item>}
-                        {user && <LogoutButton />}
+                        {/*{!user && <Item to={loginRoute.to}>{loginRoute.title}</Item>}*/}
+                        {/*{user && <LogoutButton />}*/}
                     </RightCol>
                 </FilledRow>
             </Container>

@@ -138,8 +138,8 @@ export default function MobileNavigationBar(props: DecoratedProps) {
             </Header>
             <SlideComponent open={navOpen} onClick={() => setNavOpen(false)}>
                 <Links routes={props.routes} />
-                {!user && <Item to={loginRoute.to}>{loginRoute.title}</Item>}
-                {user && <LogoutButton />}
+                {/*{!user && <Item to={loginRoute.to}>{loginRoute.title}</Item>}*/}
+                {/*{user && <LogoutButton />}*/}
             </SlideComponent>
         </React.Fragment>
     );
