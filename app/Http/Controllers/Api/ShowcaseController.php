@@ -24,7 +24,7 @@ class ShowcaseController extends Controller
     // TODO : option for no caching
     static function statistics(string $mid, bool $noCache = false) {
         // caching is necessary for avoiding overload
-        return Cache::remember(static::class . '::' . __FUNCTION__, 60, function() use ($mid) {
+        return Cache::remember(static::class . '::' . __FUNCTION__ . "({$mid})", 60, function() use ($mid) {
             return [
                 'impressions' => ModelLoadHistory::impressions($mid),
                 'visits' => ModelPlayHistory::visits($mid),
