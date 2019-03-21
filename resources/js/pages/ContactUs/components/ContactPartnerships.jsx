@@ -6,10 +6,16 @@ import {connect} from "react-redux";
 
 import makeSrcset from "../../../helpers/makeSrcset";
 
+import type {ResponsiveImage} from "../../../types";
+
 type Props = {
     text: Array<String>,
     partnershipImages: Array<String>,
 };
+
+type ImageColProps = {
+    image: ResponsiveImage,
+}
 
 const Root = styled(Container)`
     text-align: center;
@@ -45,6 +51,15 @@ const PartnershipMore = styled.p`
     color: rgba(122,56,113,.65);
 `;
 
+function ImageCol(props: ImageColProps) {
+    const image: ResponsiveImage = props.image;
+    return (
+        <Col xl={2} lg={3} md={3} sm={4} xs={6}>
+            <Img src={image.src} srcSet={makeSrcset(image.srcSetObject)}/>
+        </Col>
+    );
+}
+
 function ContactPartnerships(props: Props) {
     const {
         text: {title, description, more},
@@ -60,37 +75,16 @@ function ContactPartnerships(props: Props) {
             </div>
             <Container>
                 <Row>
-                    <Col xl={2} lg={3} md={3} sm={4} xs={6}>
-                        <Img src={microsoft.src} srcSet={makeSrcset(microsoft.srcSetObject)}/>
-                    </Col>
-                    <Col xl={2} lg={3} md={3} sm={4} xs={6}>
-                        <Img src={sbck.src} srcSet={makeSrcset(sbck.srcSetObject)}/>
-                    </Col>
-                    <Col xl={2} lg={3} md={3} sm={4} xs={6}>
-                        <Img src={matterport.src} srcSet={makeSrcset(matterport.srcSetObject)}/>
-                    </Col>
-                    <Col xl={2} lg={3} md={3} sm={4} xs={6}>
-                        <Img src={nationalMuseum.src} srcSet={makeSrcset(nationalMuseum.srcSetObject)}/>
-                    </Col>
-                    <Col xl={2} lg={3} md={3} sm={4} xs={6}>
-                        <Img src={gonjuMuseum.src} srcSet={makeSrcset(gonjuMuseum.srcSetObject)}/>
-                    </Col>
-                    <Col xl={2} lg={3} md={3} sm={4} xs={6}>
-                        <Img src={chuncheonMuseum.src} srcSet={makeSrcset(chuncheonMuseum.srcSetObject)}/>
-                    </Col>
-
-                    <Col xl={2} lg={3} md={3} sm={4} xs={6}>
-                        <Img src={jejuMuseum.src} srcSet={makeSrcset(jejuMuseum.srcSetObject)}/>
-                    </Col>
-                    <Col xl={2} lg={3} md={3} sm={4} xs={6}>
-                        <Img src={sookmyung.src} srcSet={makeSrcset(sookmyung.srcSetObject)}/>
-                    </Col>
-                    <Col xl={2} lg={3} md={3} sm={4} xs={6}>
-                        <Img src={sahmyook.src} srcSet={makeSrcset(sahmyook.srcSetObject)}/>
-                    </Col>
-                    <Col xl={2} lg={3} md={3} sm={4} xs={6}>
-                        <Img src={keimyung.src} srcSet={makeSrcset(keimyung.srcSetObject)}/>
-                    </Col>
+                    <ImageCol image={microsoft} />
+                    <ImageCol image={sbck} />
+                    <ImageCol image={matterport} />
+                    <ImageCol image={nationalMuseum} />
+                    <ImageCol image={gonjuMuseum} />
+                    <ImageCol image={chuncheonMuseum} />
+                    <ImageCol image={jejuMuseum} />
+                    <ImageCol image={sookmyung} />
+                    <ImageCol image={sahmyook} />
+                    <ImageCol image={keimyung} />
                 </Row>
                 <PartnershipMore>{more}</PartnershipMore>
             </Container>
