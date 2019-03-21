@@ -16,7 +16,7 @@
         window.user = function() { return {!! json_encode($user, JSON_UNESCAPED_UNICODE) !!}; };
         window.config = function() { return {!! json_encode($config, JSON_UNESCAPED_UNICODE) !!}; };
         window.app = function() { return {!! json_encode($app, JSON_UNESCAPED_UNICODE) !!}; };
-        window.lang = function() { return {!! json_encode($lang, JSON_UNESCAPED_UNICODE) !!}; };
+        {{--window.lang = function() { return {!! json_encode($lang, JSON_UNESCAPED_UNICODE) !!}; };--}}
     </script>
 </head>
 <body>

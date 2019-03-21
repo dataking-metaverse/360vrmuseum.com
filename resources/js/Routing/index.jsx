@@ -4,8 +4,9 @@ import {BrowserRouter as Router} from "react-router-dom";
 import {connect} from "react-redux";
 import * as R from "ramda";
 
-import AuthHandler from "../components/AuthHandler";
 import RedirectHandler from "../components/RedirectHandler";
+import LangHandler from "../components/LangHandler";
+import AuthHandler from "../components/AuthHandler";
 import NavigationBar from "../components/NavigationBar";
 import Footer from "../components/Footer";
 import routes from "./routes";
@@ -40,15 +41,20 @@ const renderRoutes: (routeParams: Array<RouteParams>) => Node = R.map(R.curryN(2
 
 
 function Routing(props: Props) {
-    const {routePaths} = props;
+    const {lang, routePaths} = props;
     return (
         <Router>
             <React.Fragment>
                 <RedirectHandler />
+                <LangHandler />
                 {/*<AuthHandler />*/}
-                <NavigationBar />
-                {renderRoutes(makeRouteParams(routePaths, routes))}
-                <Footer />
+                {lang && (
+                    <React.Fragment>
+                        <NavigationBar />
+                        {renderRoutes(makeRouteParams(routePaths, routes))}
+                        <Footer />
+                    </React.Fragment>
+                )}
             </React.Fragment>
         </Router>
     );
@@ -56,6 +62,7 @@ function Routing(props: Props) {
 
 export default R.compose(
     connect(R.applySpec({
+        lang: R.prop('lang'),
         routePaths: R.path(['app', 'routes']),
     }))
 )(Routing);

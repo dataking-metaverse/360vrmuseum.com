@@ -64,6 +64,7 @@ class WebController extends Controller {
                     'api.auth.signup',
                     'api.auth.logout',
                     'api.auth.user',
+                    'api.lang',
                 ]),
             ],
             'config' => config('360vrmuseum.public'),

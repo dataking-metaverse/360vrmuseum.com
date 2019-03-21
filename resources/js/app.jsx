@@ -25,7 +25,7 @@ try {
     const user = window.user();
     const app = window.app();
     const config = window.config();
-    const lang = window.lang();
+    // const lang = window.lang();
     const axios = Axios.create({
         header: {
             'Content-Type': 'application/json',
@@ -38,7 +38,7 @@ try {
         app,
         config,
         assets,
-        lang,
+        // lang,
         locale: document.getElementsByTagName('html')[0].getAttribute('lang'),
         axios,
     });
