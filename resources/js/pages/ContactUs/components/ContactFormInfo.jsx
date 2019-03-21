@@ -1,7 +1,7 @@
 import React from "react";
 import * as R from "ramda";
 import styled from "styled-components";
-import {Container, Row, Col} from "styled-bootstrap-grid";
+import {Row, Col} from "styled-bootstrap-grid";
 import {connect} from "react-redux";
 
 type Props = {
@@ -10,7 +10,7 @@ type Props = {
     backgroundImage: Array<string>,
 };
 
-const Root = styled(Container)`
+const Root = styled.div`
     text-align: left;
     margin-bottom: 10rem;
 `;

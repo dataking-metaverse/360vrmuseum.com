@@ -33,7 +33,7 @@ function renderMuseumGridItem(museumName, showcases: Showcases) {
             <br />
             <Row className="mb-5">
                 {showcases.toArray().map((showcase: Showcase, index) => (
-                    <Col key={index} col={12} lg={length < 4 ? 12 / length : 3}>
+                    <Col key={index} col={12} sm={6} lg={length < 4 ? 12 / length : 3}>
                         {React.createElement(showcase.generatePosterLink())}
                     </Col>
                 ))}

@@ -128,7 +128,7 @@ function ContactForm(props: Props) {
     }
 
     return (
-        <Container>
+        <React.Fragment>
             <Form onSubmit={onSubmit}>
                 {sending && <ContactFormSpinner cover />}
                 <TextInput title={text.name} name="name" />
@@ -144,7 +144,7 @@ function ContactForm(props: Props) {
                 <Errors errors={errors} />
                 <InputLabel className="mb-4 mr-5"><InputField type="submit" value={text.submit}/></InputLabel>
             </Form>
-        </Container>
+        </React.Fragment>
     );
 }
 

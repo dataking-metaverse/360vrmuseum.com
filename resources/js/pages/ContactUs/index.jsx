@@ -1,13 +1,17 @@
 import React from "react";
 import styled from "styled-components";
-import {Container, Row, Col} from "styled-bootstrap-grid";
+import {Container, Row, Col, media} from "styled-bootstrap-grid";
 import ContactWelcome from "./components/ContactWelcome";
 import ContactForm from "./components/ContactForm";
 import ContactFormInfo from "./components/ContactFormInfo";
 import ContactPartnerships from "./components/ContactPartnerships";
 
 const ContactFormContainer = styled(Container)`
-    margin-bottom: 25rem;
+    
+    
+    ${media.lg`
+        margin-bottom: 25rem;
+    `}
 `;
 
 export default class ContactUs extends React.Component {
