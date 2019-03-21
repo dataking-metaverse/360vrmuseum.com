@@ -66,15 +66,14 @@ const CommentFormInner = R.compose(
 });
 
 function CommentForm(props: Props) {
-
-    return <CommentFormInner />
+    const user: User = props.user;
+    return user ? <CommentFormInner /> : null;
 }
 
 export default R.compose(
-    connect(
-        R.applySpec({
-            user: R.prop('user'),
-            text: R.path(['lang', 'pages', 'showcase', 'commentSection']),
-        }),
-        R.always({}))
+connect(
+    R.applySpec({
+        user: R.prop('user'),
+    }),
+    R.always({}))
 )(CommentForm);
