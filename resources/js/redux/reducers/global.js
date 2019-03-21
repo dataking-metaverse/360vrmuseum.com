@@ -1,4 +1,3 @@
-
 import {
     CONFIG_REGISTER,
     APP_REGISTER,
@@ -14,6 +13,7 @@ import {
     USER_REGISTER,
     USER_CLEAR,
 } from "../actionTypes";
+import User from "../../models/User";
 
 import type {Axios} from "axios";
 import type {ReduxAction} from "../../types";
@@ -68,4 +68,10 @@ export const redirect: StringReducer = (state = null, action) => {
     return state || null;
 };
 
-export const user: ObjectReducer = objectReducerBuilder(USER_REGISTER, USER_CLEAR);
+export const user: (state: User | void, action: ReduxAction) => User | void = (state = null, action) => {
+    switch(action.type) {
+        case USER_REGISTER: return action.value;
+        case USER_CLEAR: return null;
+        default: return state;
+    }
+};

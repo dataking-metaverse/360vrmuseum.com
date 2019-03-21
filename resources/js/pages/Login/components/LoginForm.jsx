@@ -9,6 +9,7 @@ import Checkbox from "../../../components/Checkbox";
 import {registerUser} from "../../../redux/actionBuilders/global";
 import {Link} from "react-router-dom";
 import getFormData from "../../../helpers/getFormData";
+import User from "../../../models/User";
 
 type Props = {
     text: {
@@ -110,10 +111,11 @@ function LoginForm(props: Props) {
         event.preventDefault();
         const formData = getFormData(event);
         formData.remember_me = !!formData.remember_me;
-        const response = await axiosInstance.post(submitRoute, formData);
-        const user = R.path(['data', 'data', 'user'])(response);
+        const user = User.login(formData);
 
         // TODO : handle unauthorized
+        if (user === null) { /** TODO **/ }
+
         registerUser(user);
     }
 

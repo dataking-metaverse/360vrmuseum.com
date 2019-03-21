@@ -34,4 +34,6 @@ export default class Model<Props> {
     constructor(props: Props) {
         this.props = props;
     }
+
+    getAttribute = key => this.props[key];
 }

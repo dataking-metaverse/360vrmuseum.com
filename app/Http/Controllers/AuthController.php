@@ -78,9 +78,7 @@ class AuthController extends Controller {
 
         return responseJson([
             'redirect' => route('home', null, false),
-            'data' => [
-                'user' => static::userFields(),
-            ],
+            'data' => static::userFields(),
         ]);
     }
 
@@ -103,6 +101,6 @@ class AuthController extends Controller {
      * @return [json] user object
      */
     public function user(Request $request) {
-        return successJson([ 'user' => static::userFields() ]);
+        return successJson(static::userFields());
     }
 }

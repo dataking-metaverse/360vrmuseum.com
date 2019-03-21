@@ -3,7 +3,8 @@ import * as R from "ramda";
 
 import RestfulModel from "./RestfulModel";
 import Showcase from "./Showcase";
-import CommentItem from "../components/CommentItem";
+import CommentItem from "../components/ShowcasePage/components/CommentSection/CommentItem";
+import User from "./User";
 
 export type Props = {|
     id: number,
@@ -15,9 +16,12 @@ export type Props = {|
     user: string,
 |};
 
+const userSymbol = Symbol('user');
+
 export default class Comment extends RestfulModel<Props> {
 
     props: Props;
+    [userSymbol]: User;
 
     static FIELDS = [
         'id',
@@ -44,16 +48,17 @@ export default class Comment extends RestfulModel<Props> {
     static async byShowcase(showcase: Showcase): Promise<Array<Comment>> {
         if (!Comment.routes) { return null; }
         const route = Comment.routes['api.comment.by-showcase'];
-        const response = await Showcase.axios.get(route, {params: {mid: showcase.getAttribute('mid')}});
+        const response = await Comment.axios.get(route, {params: {mid: showcase.getAttribute('mid')}});
         return Comment.constructByResponseList(response); // NOTE : the response data is a list of showcases
     }
 
     constructor(props: Props) {
         super(props);
         this.props = props;
+        if (this.props.user) { this[userSymbol] = new User(this.props.user); }
     }
 
     getCommentItem = () => () => <CommentItem comment={this} />;
-
     getAttribute = key => this.props[key];
+    getUser = () => this[userSymbol];
 }
