@@ -8,9 +8,8 @@ import ContactPartnerships from "./components/ContactPartnerships";
 
 const ContactFormContainer = styled(Container)`
     
-    
     ${media.lg`
-        margin-bottom: 25rem;
+        margin-bottom: 10rem;
     `}
 `;
 
@@ -24,7 +23,6 @@ export default class ContactUs extends React.Component {
                         <Col xl={5} lg={5}>
                             <ContactForm />
                         </Col>
-
                         <Col xl={6} lg={5}>
                             <ContactFormInfo />
                         </Col>

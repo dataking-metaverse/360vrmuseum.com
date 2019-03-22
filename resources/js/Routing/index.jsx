@@ -6,7 +6,8 @@ import * as R from "ramda";
 
 import RedirectHandler from "../components/RedirectHandler";
 import LangHandler from "../components/LangHandler";
-import AuthHandler from "../components/AuthHandler";
+import NotificationHandler from "../components/NotificationHandler";
+import SwitchPageHandler from "../components/SwitchPageHandler";
 import NavigationBar from "../components/NavigationBar";
 import Footer from "../components/Footer";
 import routes from "./routes";
@@ -47,7 +48,8 @@ function Routing(props: Props) {
             <React.Fragment>
                 <RedirectHandler />
                 <LangHandler />
-                {/*<AuthHandler />*/}
+                <NotificationHandler />
+                <SwitchPageHandler />
                 {lang && (
                     <React.Fragment>
                         <NavigationBar />

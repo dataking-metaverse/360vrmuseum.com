@@ -33,7 +33,7 @@ const Root = styled.div`
     ${media.lg`
         padding-top: 23rem;
         padding-bottom: 23rem;
-        margin-bottom: 25rem;    
+        margin-bottom: 10rem;    
     `}
 `;
 

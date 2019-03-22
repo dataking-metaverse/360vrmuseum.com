@@ -43,13 +43,14 @@ export const initialUserAccessCredential = dispatch => () => {
         },
         transformResponse: [R.pipe(
             JSON.parse,
-            R.tap(R.when(
-                R.has('message'),
-                R.pipe(
-                    R.prop('message'),
-                    dispatchPushMessage
-                )
-            )),
+            R.tap(prop => {
+                if (prop.message) {
+                    dispatchPushMessage({
+                        message: prop.message,
+                        appearance: prop.success ? 'success' : 'error'
+                    });
+                }
+            }),
             R.tap(R.when(
                 R.has('redirect'),
                 R.pipe(
