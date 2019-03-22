@@ -7,10 +7,11 @@ import {rgba} from "polished";
 
 
 import {themeVar} from "../../styling/theme/functions";
+import noSSR from "../../decorators/noSSR";
 
 
 type Props = {
-    portalNode: Element,
+    portalId: string,
 };
 
 function atTop(): boolean {
@@ -109,10 +110,12 @@ function ButtonReal(props: {||}) {
 
 
 function BackToTopButton(props: Props) {
-    const {portalNode} = props;
+    const {portalId} = props;
     return ReactDOM.createPortal((
         <ButtonReal />
-    ), portalNode);
+    ), document.getElementById(portalId));
 }
 
-export default BackToTopButton;
+export default R.compose(
+    noSSR
+)(BackToTopButton);

@@ -31,8 +31,8 @@ class NotificationHandlerInner extends React.Component<NotificationHandlerInnerP
     componentDidUpdate() { this.effect(); }
     async effect() {
         const [message] = this.props.messages;
+        this.props.removeFirstMessage();
         if (message) {
-            this.props.removeFirstMessage();
             this.props.toastManager.add(message.message, {
                 appearance: message.appearance,
                 autoDismiss: true,

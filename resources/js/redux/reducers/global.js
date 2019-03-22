@@ -1,3 +1,4 @@
+import * as R from "ramda";
 import {
     CONFIG_REGISTER,
     APP_REGISTER,
@@ -41,6 +42,7 @@ const objectReducerBuilder = (type: ReduxAction, clearType: ReduxAction) => (sta
     return state || null;
 };
 
+export const ssr = R.when(R.isNil, R.always(false));
 export const config: ObjectReducer = objectReducerBuilder(CONFIG_REGISTER);
 export const app: ObjectReducer = objectReducerBuilder(APP_REGISTER);
 export const assets: ObjectReducer = objectReducerBuilder(ASSETS_REGISTER);

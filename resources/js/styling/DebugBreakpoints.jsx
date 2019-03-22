@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 import {createGlobalStyle} from "styled-components";
 import {media} from "styled-bootstrap-grid";
 import * as R from "ramda";
+import noSSR from "../decorators/noSSR";
 
 
 const sansSerif = R.path(['theme', 'variables', 'fontFamily', 'base']);
@@ -70,4 +71,6 @@ function DebugBreakpoints() {
     return <Style width={width} />;
 }
 
-export default DebugBreakpoints;
+export default R.compose(
+    noSSR,
+)(DebugBreakpoints);

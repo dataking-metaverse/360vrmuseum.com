@@ -7,7 +7,7 @@ import {BaseCSS} from "styled-bootstrap-grid";
 import "./styling/ThirdPartyCSSImports";
 import BasicOverridingStyle from "./styling/BasicOverridingStyle";
 import ThirdPartyOverridingStyle from "./styling/ThirdPartyOverridingStyle";
-import DebugBreakpoints from "./styling/DebugBreakpoints";
+// import DebugBreakpoints from "./styling/DebugBreakpoints";
 import theme from "./styling/theme";
 import gridTheme from "./styling/gridTheme";
 import BackToTopButton from "./components/BackToTopButton";
@@ -17,8 +17,6 @@ import Routing from "./Routing";
 type Props = {
 
 };
-
-const backToTopButtonPortal = document.getElementById('app-back-to-top-portal');
 
 function StyleSheets() {
     return (
@@ -39,7 +37,7 @@ export default class Main extends React.PureComponent<Props> {
                     <React.Fragment>
                         <StyleSheets />
                         <Routing />
-                        <BackToTopButton portalNode={backToTopButtonPortal} />
+                        <BackToTopButton portalId="app-back-to-top-portal" />
                     </React.Fragment>
                 </GridThemeProvider>
             </ThemeProvider>
