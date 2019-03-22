@@ -7,6 +7,8 @@ import getFormData from "../../../helpers/getFormData";
 import LoadingSpinner from "../../../components/LoadingSpinner";
 import {themeVar} from "../../../styling/theme/functions";
 
+import type {Axios} from "axios";
+
 type Props = {
     text: {
         name: string,
@@ -15,6 +17,8 @@ type Props = {
         content: string,
         submit: string,
     },
+    submitRoute: string,
+    axios: Axios
 };
 
 type ErrorsProps = {
@@ -113,12 +117,13 @@ function ContactForm(props: Props) {
 
     async function onSubmit(event) {
         event.preventDefault();
+        const form = event.target;
         setSending(true);
         const data = getFormData(event);
 
         try {
             const response = await axios.post(submitRoute, data);
-            event.target.reset();
+            form.reset();
         } catch (error) {
             setErrors(R.path(['data', 'data'])(error.response));
         }
@@ -133,7 +138,6 @@ function ContactForm(props: Props) {
                 <TextInput title={text.name} name="name" />
                 <TextInput title={text.mail} name="email" />
                 <TextInput title={text.subject} name="subject" />
-                {/*<TextArea title={text.content} name="content" />*/}
 
                 <InputLabel className="mr-5">
                     {text.content}
