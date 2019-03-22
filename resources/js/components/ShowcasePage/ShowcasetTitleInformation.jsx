@@ -21,30 +21,29 @@ const Title = styled.h1`
 const EnglishTitle = styled.span`
     display: block;
     color: #530d5e;
-    font-family: "Noto Sans",Sans-serif;
     font-size: 2.2rem;
     font-weight: 500;
 `;
 
 const KoreanTitle = styled.span`
     color: #0c0c0c;
-    font-family: "Helvetica",Sans-serif;
     font-size: 3rem;
     font-weight: 700;
     line-height: 1.7rem;
     letter-spacing: .2rem;
 `;
 
-const RefButton = styled.button`
+const RefButton = styled.a`
     width: 13.2rem;
     height: 3.7rem;
-    font-family: "Noto Sans",Sans-serif;
     font-size: 15px;
     color: rgba(83,13,94,.92);
     background-color: #fff;
     border-style: solid;
     border-width: 1px;
     border-color: rgba(83,13,94,.55);
+    padding: .4rem 1.2rem;
+    text-decoration: none !important; // use of !important, avoid overriding when event's are happening
 
     ${media.xs`
         margin-left: 1.3rem;
@@ -78,6 +77,7 @@ function ShowcasetTitleInformation(props: Props) {
     const {
         kor_title: koreanTitle,
         eng_title: englishTitle,
+        showcase_ref: showcaseRef,
         presented_by: presentedBy,
         date,
     } = attrs;
@@ -92,7 +92,7 @@ function ShowcasetTitleInformation(props: Props) {
                     </Title>
                 </Col>
                 <Col noGutter lg={2} md={2} xs={9} sm={2}>
-                    <RefButton>{props.museumPage}</RefButton>
+                    <RefButton href={showcaseRef} taget="_blank">{props.museumPage}</RefButton>
                 </Col>
             </Row>
             <MuseumName>{presentedBy}</MuseumName>

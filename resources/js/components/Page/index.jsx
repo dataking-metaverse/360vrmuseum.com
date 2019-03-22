@@ -1,7 +1,7 @@
 import React from "react";
 import * as R from "ramda";
 import {connect} from "react-redux";
-import {Helmet} from "react-helmet";
+import CustomHelmet from "../CustomHelmet";
 
 
 type Props = {
@@ -15,9 +15,7 @@ const Page: function = function(props: Props) {
         })
     )(({title}) => (
         <React.Fragment>
-            <Helmet>
-                <title>{title}</title>
-            </Helmet>
+            <CustomHelmet title={title} />
             {props.children}
         </React.Fragment>
     ));
@@ -25,4 +23,3 @@ const Page: function = function(props: Props) {
 };
 
 export default Page;
-

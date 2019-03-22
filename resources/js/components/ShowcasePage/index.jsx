@@ -3,6 +3,7 @@ import * as R from "ramda";
 import {Container, Row, Col} from "styled-bootstrap-grid";
 
 import Showcase from "../../models/Showcase";
+import ShowcaseHelmet from "./ShowcaseHelmet";
 import ShowcaseContext from "./ShowcaseContext";
 import ShowcaseIframe from "./ShowcaseIframe";
 import ShowcasetTitleInformation from "./ShowcasetTitleInformation";
@@ -21,6 +22,7 @@ function ShowcasePage(props: Props) {
     const {showcase} = props;
     return (
         <ShowcaseContext.Provider value={showcase}>
+            <ShowcaseHelmet />
             <ShowcaseIframe />
             <ShowcasetTitleInformation />
             <ShowcaseData />
