@@ -24,6 +24,22 @@ type Props = {|
     },
 |};
 
+type YouTubeColProps = {|
+    title: string,
+    id?: string,
+|};
+
+
+function YouTubeCol(props: YouTubeColProps) {
+    const {title, id} = props;
+    if (!id) { return null; }
+    return (
+        <Col col={12} lg={6}>
+            <ShowcaseSectionTitle>{title}</ShowcaseSectionTitle>
+            <YouTubeVideo v={id} />
+        </Col>
+    );
+}
 
 function ShowcaseDetails(props: Props) {
     const {text} = props;
@@ -43,10 +59,7 @@ function ShowcaseDetails(props: Props) {
                     <ShowcaseSectionTitle>{location.title}</ShowcaseSectionTitle>
                     <GoogleMaps title={title} address={address} />
                 </Col>
-                <Col col={12} lg={6}>
-                    <ShowcaseSectionTitle>{introductionVideo.title}</ShowcaseSectionTitle>
-                    <YouTubeVideo v={showcase.getAttribute('youtube_id')} />
-                </Col>
+                <YouTubeCol title={introductionVideo.title} id={showcase.getAttribute('youtube_id')} />
             </Row>
             <hr />
         </ShowcaseContainer>
