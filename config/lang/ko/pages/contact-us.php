@@ -4,6 +4,7 @@
 return [
     'meta' => [
         'title' => 'Contact Us - 360VRMuseum',
+        'description' => '문의하기'
     ],
     'welcome' => [
         'text' => [
