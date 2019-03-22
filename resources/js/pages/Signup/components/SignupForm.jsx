@@ -3,7 +3,6 @@ import * as R from "ramda";
 import styled from "styled-components";
 import {Container, Row, Col} from "styled-bootstrap-grid";
 import {connect} from "react-redux";
-import axios from "axios";
 
 import Checkbox from "../../../components/Checkbox";
 import rawFormData from "../../../helpers/rawFormData";
@@ -12,6 +11,7 @@ import {Link} from "react-router-dom";
 import {Option} from "../../../components/Select";
 import Select from "../../../components/Select";
 
+import type {Axios} from "axios";
 import type {Element} from "react";
 import getFormData from "../../../helpers/getFormData";
 import {withRouter} from "react-router";
@@ -33,7 +33,7 @@ type Props = {
     submitRoute: string,
     loginRoute: string,
     privacyPolicyRoute: string,
-    axiosInstance: axios,
+    axiosInstance: Axios,
 
     registerAxios: () => {},
     registerAccessCredential: () => {},

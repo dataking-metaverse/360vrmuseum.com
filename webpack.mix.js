@@ -13,5 +13,6 @@ const mix = require('laravel-mix');
 
 mix
     .react('resources/js/app.jsx', 'public/js')
+    .react('resources/js/app-server.jsx', 'public/js')
     .version()
 ;

@@ -5,13 +5,21 @@ import {Provider} from "react-redux";
 import Axios from "axios";
 import * as R from "ramda";
 
-import {initialUserAccessCredential, registerUser} from "./redux/actionBuilders/global";
+import {
+    initialUserAccessCredential,
+    pushMessage,
+    pushRedirect,
+    registerAxios,
+    registerUser
+} from "./redux/actionBuilders/global";
 import Model from "./models/Model";
 import ModelsContext from "./contexts/ModelsContext";
 import reducers from "./redux/reducers";
 import * as assets from "./assets";
 import Main from "./Main";
 import * as models from "./models/all";
+
+import "./styling/ThirdPartyCSSImports";
 
 import type {Store} from "redux";
 import type {ReduxAction} from "./types";
@@ -41,10 +49,39 @@ try {
         assets,
         // lang,
         locale: document.getElementsByTagName('html')[0].getAttribute('lang'),
-        axios,
+        axios: Axios.create({
+            header: {
+                'Content-Type': 'application/json',
+                'X-Requested-With': 'XMLHttpRequest',
+            },
+        }),
     });
 
-    initialUserAccessCredential(store.dispatch)();
+
+    registerAxios(store.dispatch)(Axios.create({
+        header: {
+            'Content-Type': 'application/json',
+            'X-Requested-With': 'XMLHttpRequest',
+        },
+        transformResponse: [R.pipe(
+            JSON.parse,
+            R.tap(prop => {
+                if (prop.message) {
+                    pushMessage(store.dispatch)({
+                        message: prop.message,
+                        appearance: prop.success ? 'success' : 'error'
+                    });
+                }
+            }),
+            R.tap(R.when(
+                R.has('redirect'),
+                R.pipe(
+                    R.prop('redirect'),
+                    pushRedirect(store.dispatch)
+                )
+            ))
+        )],
+    }));
 
     // model
     Model.subscribe(store);

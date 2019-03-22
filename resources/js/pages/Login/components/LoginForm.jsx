@@ -3,13 +3,14 @@ import * as R from "ramda";
 import styled from "styled-components";
 import {Container, Row, Col} from "styled-bootstrap-grid";
 import {connect} from "react-redux";
-import axios from "axios";
 
 import Checkbox from "../../../components/Checkbox";
 import {registerUser} from "../../../redux/actionBuilders/global";
 import {Link} from "react-router-dom";
 import getFormData from "../../../helpers/getFormData";
 import User from "../../../models/User";
+
+import type {Axios} from "axios";
 
 type Props = {
     text: {
@@ -22,7 +23,7 @@ type Props = {
     },
     submitRoute: string,
     signupRoute: string,
-    axiosInstance: axios,
+    axiosInstance: Axios,
     registerAxios: () => {},
     registerUser: () => {},
 };

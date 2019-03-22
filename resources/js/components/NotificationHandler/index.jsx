@@ -1,13 +1,13 @@
 import React from "react";
 import * as R from "ramda";
 import {connect} from "react-redux";
-import {ToastProvider, ToastConsumer} from 'react-toast-notifications';
-import styled from "styled-components";
+import {ToastProvider, ToastConsumer} from "react-toast-notifications";
 
 import {removeFirstMessage} from "../../redux/actionBuilders/global";
 
 import type {Node} from "react";
 import type {Axios} from "axios";
+import noSSR from "../../decorators/noSSR";
 
 
 type Props = {||};
@@ -42,7 +42,7 @@ class NotificationHandlerInner extends React.Component<NotificationHandlerInnerP
     render() { return null; }
 }
 
-export default function NotificationHandler(props: Props) {
+function NotificationHandler(props: Props) {
     return (
         <ToastProvider placement="bottom-left">
             <ToastConsumer>
@@ -53,3 +53,8 @@ export default function NotificationHandler(props: Props) {
         </ToastProvider>
     );
 }
+
+
+export default R.compose(
+    noSSR
+)(NotificationHandler);

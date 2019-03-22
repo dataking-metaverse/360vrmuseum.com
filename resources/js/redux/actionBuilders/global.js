@@ -1,5 +1,3 @@
-import * as R from "ramda";
-import axios from "axios";
 import register from "../functions/register";
 import registerEmpty from "../functions/registerEmpty";
 import {
@@ -28,36 +26,3 @@ export const clearRedirect = registerEmpty(REDIRECT_CLEAR);
 
 export const registerUser = register(USER_REGISTER);
 export const clearUser = registerEmpty(USER_CLEAR);
-
-export const initialUserAccessCredential = dispatch => () => {
-    const dispatchRegisterAccessCredential = registerAccessCredential(dispatch);
-    const dispatchRegisterAxios = registerAxios(dispatch);
-    const dispatchPushMessage = pushMessage(dispatch);
-    const dispatchPushRedirect = pushRedirect(dispatch);
-
-    dispatchRegisterAccessCredential({});
-    dispatchRegisterAxios(axios.create({
-        header: {
-            'Content-Type': 'application/json',
-            'X-Requested-With': 'XMLHttpRequest',
-        },
-        transformResponse: [R.pipe(
-            JSON.parse,
-            R.tap(prop => {
-                if (prop.message) {
-                    dispatchPushMessage({
-                        message: prop.message,
-                        appearance: prop.success ? 'success' : 'error'
-                    });
-                }
-            }),
-            R.tap(R.when(
-                R.has('redirect'),
-                R.pipe(
-                    R.prop('redirect'),
-                    dispatchPushRedirect
-                )
-            ))
-        )],
-    }));
-};

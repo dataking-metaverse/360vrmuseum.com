@@ -128,7 +128,7 @@ function Links(props: LinksProps) {
 }
 
 export default function MobileNavigationBar(props: DecoratedProps) {
-    const {history, loginRoute, logoutRoute, user} = props;
+    const {history, location, loginRoute, logoutRoute, user} = props;
     const [navOpen, setNavOpen] = useState(false);
 
     useEffect(() => {
