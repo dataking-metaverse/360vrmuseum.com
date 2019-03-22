@@ -2,6 +2,9 @@
 
 
 return [
+    'meta' => [
+        'title' => 'Signup - 360VRMuseum',
+    ],
     'signupForm' => [
         'email' => '이메일 주소',
         'name' => '이름',

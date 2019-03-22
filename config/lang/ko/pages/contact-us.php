@@ -2,6 +2,9 @@
 
 
 return [
+    'meta' => [
+        'title' => 'Contact Us - 360VRMuseum',
+    ],
     'welcome' => [
         'text' => [
             '360°VR Museum 고객지원에',

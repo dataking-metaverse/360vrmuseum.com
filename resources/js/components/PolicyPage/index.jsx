@@ -4,11 +4,7 @@ import {Container} from "styled-bootstrap-grid";
 import {themeVar} from "../../styling/theme/functions";
 
 
-type Props = {|
-    content: ContentType,
-|};
-
-export type ContentType = {|
+export type Props = {|
     title: string,
     subtitle: string,
     content: string,

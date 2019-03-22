@@ -1,6 +1,9 @@
 <?php
 
 return [
+    'meta' => [
+        'title' => 'Terms of Service - 360VRMuseum',
+    ],
     'title' => 'Searching For %s',
     'commentCount' => '%s Comment(s)',
     'readMore' => 'Read More',

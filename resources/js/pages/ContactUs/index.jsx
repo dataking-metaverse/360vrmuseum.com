@@ -5,6 +5,7 @@ import ContactWelcome from "./components/ContactWelcome";
 import ContactForm from "./components/ContactForm";
 import ContactFormInfo from "./components/ContactFormInfo";
 import ContactPartnerships from "./components/ContactPartnerships";
+import page from "../../decorators/page";
 
 const ContactFormContainer = styled(Container)`
     
@@ -13,6 +14,8 @@ const ContactFormContainer = styled(Container)`
     `}
 `;
 
+
+@page("contact-us")
 export default class ContactUs extends React.Component {
     render(Root, props: Props) {
         return (

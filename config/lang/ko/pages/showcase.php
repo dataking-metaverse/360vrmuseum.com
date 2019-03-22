@@ -1,6 +1,9 @@
 <?php
 
 return [
+    'meta' => [
+        'title' => 'Showcase - 360VRMuseum',
+    ],
     'isPerforminAvailable' => '공연',
     'isConversationAvailable' => '강연',
     'isPaidExhibition' => '유료전시',

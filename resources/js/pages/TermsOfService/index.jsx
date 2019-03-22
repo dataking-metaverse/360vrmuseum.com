@@ -2,13 +2,14 @@ import React from "react";
 import * as R from "ramda";
 import {connect} from "react-redux";
 
+import page from "../../decorators/page";
 import PolicyPage from "../../components/PolicyPage/index";
 
-import type {ContentType} from "../../components/PolicyPage";
+import type {Props as PolicyPageProps} from "../../components/PolicyPage";
 
 
 type Props = {
-    content: ContentType,
+    content: PolicyPageProps,
 };
 
 function TermsOfService(props: Props) {
@@ -18,5 +19,6 @@ function TermsOfService(props: Props) {
 export default R.compose(
     connect(R.applySpec({
         content: R.path(['lang', 'pages', 'terms-of-service']),
-    }))
+    })),
+    page('terms-of-service')
 )(TermsOfService);

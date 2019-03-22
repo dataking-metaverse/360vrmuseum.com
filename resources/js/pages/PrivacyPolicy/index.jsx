@@ -4,11 +4,12 @@ import * as R from "ramda";
 
 import PolicyPage from "../../components/PolicyPage/index";
 
-import type {ContentType} from "../../components/PolicyPage";
+import type {Props as PolicyPageProps} from "../../components/PolicyPage";
+import page from "../../decorators/page";
 
 
 type Props = {
-    content: ContentType,
+    content: PolicyPageProps,
 };
 
 
@@ -19,5 +20,6 @@ function PrivacyPolicy(props: Props) {
 export default R.compose(
     connect(R.applySpec({
         content: R.path(['lang', 'pages', 'privacy-policy']),
-    }))
+    })),
+    page('privacy-policy')
 )(PrivacyPolicy);

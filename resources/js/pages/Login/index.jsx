@@ -16,6 +16,6 @@ function Login(props: Props) {
 }
 
 export default R.compose(
-    page
+    page('login')
 )(Login);
 

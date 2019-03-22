@@ -1,6 +1,9 @@
 <?php
 
 return [
+    'meta' => [
+        'title' => 'Home - 360VRMuseum',
+    ],
     'heroCarousel' => [
         'linkText' => '바로보기',
         'slides' => [

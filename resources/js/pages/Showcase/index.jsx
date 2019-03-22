@@ -4,6 +4,7 @@ import {withRouter} from "react-router";
 
 import ShowcasePage from "../../components/ShowcasePage";
 import ModelsContext from "../../contexts/ModelsContext";
+import page from "../../decorators/page";
 
 
 type Props = {
@@ -29,5 +30,6 @@ function Showcase(props: Props) {
 }
 
 export default R.compose(
-    withRouter
+    withRouter,
+    page('showcase')
 )(Showcase);

@@ -1,5 +1,6 @@
 import React from "react";
 
+import page from "../../decorators/page";
 import Hero from "./sections/Hero";
 import IntroEasy from "./sections/IntroEasy";
 import IntroSharing from "./sections/IntroSharing";
@@ -10,6 +11,7 @@ import ArtEducation from "./sections/ArtEducation";
 import CulturalData from "./sections/CulturalData";
 import PageLinks from "./sections/PageLinks";
 
+@page('vrmuseum')
 export default class VRMuseum extends React.Component<{}> {
     render() {
         return (

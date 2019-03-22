@@ -1,5 +1,6 @@
 import React from "react";
 import {Row, Col} from "styled-bootstrap-grid";
+import {Helmet} from "react-helmet";
 
 import page from "../../decorators/page";
 import HeroCarousel from "./HeroCarousel";
@@ -13,7 +14,7 @@ type Props = {
 };
 
 
-@page
+@page("home")
 export default class Home extends React.PureComponent<Props> {
     render() {
         return (

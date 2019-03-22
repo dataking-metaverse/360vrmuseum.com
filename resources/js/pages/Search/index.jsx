@@ -9,6 +9,7 @@ import LoadingSpinner from "../../components/LoadingSpinner";
 import SearchBox from "../../components/SearchBox";
 import ShowcaseSearchResult from "./ShowcaseSearchResult";
 import {connect} from "react-redux";
+import page from "../../decorators/page";
 
 
 type Props = {
@@ -72,5 +73,6 @@ export default R.compose(
         R.applySpec({
             text: R.path(['lang', 'pages', 'search']),
         })
-    )
+    ),
+    page('search')
 )(Search);
