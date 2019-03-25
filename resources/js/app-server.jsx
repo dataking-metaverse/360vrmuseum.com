@@ -51,20 +51,19 @@ try {
     const meta = metaTags();
 
     head = sheet.getStyleTags();
-    head += `<title>${meta.title}</title>`;
-    head += renderToString(
-        <React.Fragment>
-            <meta name="keywords" content={meta.keywords} />
-            <meta name="subtitle" content={meta.description} />
-            <meta name="description" content={meta.description} />
-            <meta property="og:title" content={meta.title} />
-            <meta property="og:description" content={meta.description} />
-            <meta property="og:image" content={meta.image} />
-            <meta property="og:image:width" content={meta.imageWidth} />
-            <meta property="og:image:height" content={meta.imageHeight} />
-            <meta property="og:url" content={meta.url} />
-        </React.Fragment>
-    );
+    head += `
+<title>${meta.title}</title>
+<meta name="keywords" content="${meta.keywords}" />
+<meta name="subtitle" content="${meta.description}" />
+<meta name="description" content="${meta.description}" />
+<meta property="og:title" content="${meta.title}" />
+<meta property="og:description" content="${meta.description}" />
+<meta property="og:image" content="${meta.image}" />
+<meta property="og:image:width" content="${meta.imageWidth}" />
+<meta property="og:image:height" content="${meta.imageHeight}" />
+<meta property="og:url" content="${meta.url}" />
+`;
+
 } catch (ex) {
     console.error(ex); // TODO : handling this instead of just log it out
 }
