@@ -62,7 +62,7 @@ function Routing(props: Props) {
 
     if (props.ssr) {
         return (
-            <StaticRouter location={'/'}>
+            <StaticRouter location={context.route || '/'} context={{}}>
                 {content}
             </StaticRouter>
         );

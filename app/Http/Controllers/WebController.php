@@ -13,6 +13,16 @@ class WebController extends Controller {
         return str_replace(['{', '}'], [':', ''], $route);
     }
 
+    static function redirectByPageId() {
+        $pageId = request()->get('page_id');
+        if ($pageId) {
+            $routeParams = config("360vrmuseum.pageIdMap.{$pageId}");
+            if ($routeParams) {
+                response()->redirectTo(route(...$routeParams))->send();
+            }
+        }
+    }
+
     static function contexts() {
         return [
             'user' => AuthController::userFields(),
@@ -58,13 +68,16 @@ class WebController extends Controller {
     }
 
     public function ssr() {
-        $routeName = \Request::route()->getName();
+        $route = \Request::route();
+        $routeName = $route->getName();
+        $routeUri = $route->uri;
         $context = static::contexts();
         $ssr = ssr('js/app-server.js')
             ->context('user', $context['user'])
             ->context('app', $context['app'])
             ->context('config', $context['config'])
             ->context('lang', $context['lang'])
+            ->context('route', $routeUri)
             ->context('viewProps', [
                 'lang' => 'ko',
                 'debug' => config('app.debug'),
@@ -72,12 +85,26 @@ class WebController extends Controller {
                 'config' => json_encode($context['config'], JSON_UNESCAPED_UNICODE),
                 'app' => json_encode($context['app'], JSON_UNESCAPED_UNICODE),
                 'js' => mix('/js/app.js')->toHtml(),
-                'meta' => config("lang.ko.pages.{$routeName}.meta"),
             ])
+            ->context('meta', array_merge(
+                [
+                    'title' => '360°VR Museum',
+                    'description' => 'Next-generation museum - 360°VR Museum',
+                    'url' => 'https://dataking.co.kr',
+                    'image' => url('og-logo.png'),
+                    'imageWidth' => '113',
+                    'imageHeight' => '42',
+                ],
+                config("lang.ko.pages.{$routeName}.meta")
+            ))
             ->render();
         return $ssr;
     }
-    public function home() { return $this->all(); }
+    public function home() {
+        // handling page id for the old website
+        static::redirectByPageId();
+        return $this->all();
+    }
     public function showcase() { return $this->all(); }
     public function nationalMuseum() { return $this->all(); }
     public function vrmuseum() { return $this->all(); }
@@ -91,5 +118,12 @@ class WebController extends Controller {
     public function all() {
         return static::ssr();
         return view('layout', static::contexts());
+    }
+
+    public function temp() {
+        $showcases = collect(config('360vrmuseum.showcases'));
+        return $showcases->mapWithKeys(function($value) {
+            return [ str_replace('https://360vrmuseum.com/?page_id=', '', $value['page_url']) => $value['mid'] ];
+        });
     }
 }
