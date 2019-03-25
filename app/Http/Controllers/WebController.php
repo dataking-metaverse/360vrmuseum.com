@@ -91,7 +91,7 @@ class WebController extends Controller {
                 [
                     'title' => '360°VR Museum',
                     'description' => 'Next-generation museum - 360°VR Museum',
-                    'url' => 'https://dataking.co.kr',
+                    'url' => config('app.url'),
                     'image' => url('og-logo.png'),
                     'imageWidth' => '113',
                     'imageHeight' => '42',
