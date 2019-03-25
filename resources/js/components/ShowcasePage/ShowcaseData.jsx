@@ -16,7 +16,7 @@ type Props = {|
 
 |};
 
-type ExhibitionDetails = {|
+type ExhibitionDetailsObject = {|
     performing: bool,
     conversation: bool,
     paid: bool,
@@ -47,7 +47,7 @@ const icons = connect(R.applySpec({
     text: R.path(['lang', 'pages', 'showcase']),
 }));
 
-const exhibitionDetails: (showcase: Showcase | void) => ExhibitionDetails = showcase => {
+const exhibitionDetails: (showcase: Showcase | void) => ExhibitionDetailsObject = showcase => {
     if (R.isNil(showcase)) { return {performing: false, conversation: false, paid: false}; }
     return {
         performing: showcase.getAttribute('is_performing'),
