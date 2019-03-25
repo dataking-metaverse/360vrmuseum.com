@@ -85,6 +85,7 @@ class WebController extends Controller {
                 'config' => json_encode($context['config'], JSON_UNESCAPED_UNICODE),
                 'app' => json_encode($context['app'], JSON_UNESCAPED_UNICODE),
                 'js' => mix('/js/app.js')->toHtml(),
+                'googleTagManagerKey' => env('GOOGLE_TAG_MANAGER_KEY'),
             ])
             ->context('meta', array_merge(
                 [
@@ -117,7 +118,7 @@ class WebController extends Controller {
 
     public function all() {
         return static::ssr();
-        return view('layout', static::contexts());
+//        return view('layout', static::contexts());
     }
 
     public function temp() {

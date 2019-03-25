@@ -21,6 +21,16 @@ const ServerLayout = (head, body, props) => `<!DOCTYPE html>
     ${body}
     <div id="app-back-to-top-portal"></div>
     <script type="text/javascript" src="${props.js}"></script>
+    ${props.googleTagManagerKey ? `
+<script async src="https://www.googletagmanager.com/gtag/js?id=${props.googleTagManagerKey}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', '${props.googleTagManagerKey}');
+</script>
+    ` : ''}
 </body>
 </html>
 
