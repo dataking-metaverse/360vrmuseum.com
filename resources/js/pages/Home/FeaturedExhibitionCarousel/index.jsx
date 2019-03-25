@@ -10,6 +10,7 @@ import MuseumTitle from "../../../components/MuseumTitle";
 import {themeVar} from "../../../styling/theme/functions";
 import Slide from "./Slide";
 import HomeContainer from "../HomeContainer";
+import noSSR from "../../../decorators/noSSR";
 
 
 type Props = {

@@ -1,12 +1,12 @@
 import React from "react";
-import {Route, withRouter} from "react-router";
-import {BrowserRouter as Router} from "react-router-dom";
+import {Route} from "react-router";
+import {BrowserRouter, StaticRouter} from "react-router-dom";
 import {connect} from "react-redux";
 import * as R from "ramda";
 
 import RedirectHandler from "../components/RedirectHandler";
 import LangHandler from "../components/LangHandler";
-import NotificationHandler from "../components/NotificationHandler";
+// import NotificationHandler from "../components/NotificationHandler";
 import SwitchPageHandler from "../components/SwitchPageHandler";
 import NavigationBar from "../components/NavigationBar";
 import Footer from "../components/Footer";
@@ -43,22 +43,34 @@ const renderRoutes: (routeParams: Array<RouteParams>) => Node = R.map(R.curryN(2
 
 function Routing(props: Props) {
     const {lang, routePaths} = props;
+
+    const content = (
+        <React.Fragment>
+            <RedirectHandler />
+            <LangHandler />
+            {/*<NotificationHandler />*/}
+            <SwitchPageHandler />
+            {lang && (
+                <React.Fragment>
+                    <NavigationBar />
+                    {renderRoutes(makeRouteParams(routePaths, routes))}
+                    <Footer />
+                </React.Fragment>
+            )}
+        </React.Fragment>
+    );
+
+    if (props.ssr) {
+        return (
+            <StaticRouter location={context.route || '/'} context={{}}>
+                {content}
+            </StaticRouter>
+        );
+    }
     return (
-        <Router>
-            <React.Fragment>
-                <RedirectHandler />
-                <LangHandler />
-                <NotificationHandler />
-                <SwitchPageHandler />
-                {lang && (
-                    <React.Fragment>
-                        <NavigationBar />
-                        {renderRoutes(makeRouteParams(routePaths, routes))}
-                        <Footer />
-                    </React.Fragment>
-                )}
-            </React.Fragment>
-        </Router>
+        <BrowserRouter>
+            {content}
+        </BrowserRouter>
     );
 }
 
@@ -66,6 +78,7 @@ export default R.compose(
     connect(R.applySpec({
         lang: R.prop('lang'),
         routePaths: R.path(['app', 'routes']),
+        ssr: R.prop('ssr'),
     }))
 )(Routing);
 

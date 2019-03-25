@@ -8,7 +8,7 @@ import {clearRedirect} from "../../redux/actionBuilders/global";
 import type {RouterHistory} from "react-router";
 
 type RedirectHandlerProps = {
-    redirect: ?RedirectHandlerProps,
+    redirect?: RedirectHandlerProps,
     history: RouterHistory,
 };
 

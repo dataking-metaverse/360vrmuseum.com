@@ -52,3 +52,7 @@ Route::get('/api/comment/by-showcase', 'Api\\CommentController@byShowcase')->nam
 
 // API : contact
 Route::post('/api/contact/send', 'Api\\ContactFormController@send')->name('api.contact.send');
+
+
+Route::get('temp', 'WebController@temp');
+Route::get('/sitemap.xml', 'SitemapController@index');
