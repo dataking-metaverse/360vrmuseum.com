@@ -5,7 +5,7 @@ const ServerLayout = (head, body, props) => `<!DOCTYPE html>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    ${props.debug && `<meta name="debug" content="1"/>`}
+    ${props.debug ? `<meta name="debug" content="1"/>` : ''}
 
     <!-- config and app -->
     <script type="text/javascript">
