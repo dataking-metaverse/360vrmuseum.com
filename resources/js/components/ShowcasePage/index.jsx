@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React from "react";
 import * as R from "ramda";
 import {Container, Row, Col} from "styled-bootstrap-grid";
 

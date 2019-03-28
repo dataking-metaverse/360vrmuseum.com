@@ -6,7 +6,6 @@ import {connect} from "react-redux";
 
 import instanceOf from "../../helpers/instanceOf";
 import Showcase from "../../models/Showcase";
-import LoadingSpinner from "../LoadingSpinner";
 import ShowcaseContainer from "./ShowcaseContainer";
 import ShowcaseContext from "./ShowcaseContext";
 import SlideComponent from "../SlideComponent";
@@ -48,7 +47,7 @@ function ShowcaseDescription(props: Props) {
     const [open, setOpen] = useState(false);
 
     const attrs = instanceOf(Showcase, showcase) ? showcase.toObject() : null;
-    if (!attrs) { return ( <LoadingSpinner /> ); }
+    if (!attrs) { return null; }
 
     const {
         description,

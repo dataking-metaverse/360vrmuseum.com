@@ -4,7 +4,6 @@ import styled from "styled-components";
 import {connect} from "react-redux";
 import {Row, Col} from "styled-bootstrap-grid";
 
-import instanceOf from "../../helpers/instanceOf";
 import Showcase from "../../models/Showcase";
 import LoadingSpinner from "../LoadingSpinner";
 import ShowcaseSectionTitle from "./components/ShowcaseSectionTitle";
@@ -58,7 +57,7 @@ const Images: (props: ImagesProps) => Array<ElementType> = R.pipe(
 function ShowcaseImages(props: Props) {
     const {text} = props;
     const showcase: Showcase = useContext(ShowcaseContext);
-    if (showcase === null) { return ( <LoadingSpinner /> ); }
+    if (showcase === null) { return null; }
     const images = showcase.getAttribute('list_of_images');
     return (
         <ShowcaseContainer>
