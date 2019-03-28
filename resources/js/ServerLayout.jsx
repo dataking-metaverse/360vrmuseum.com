@@ -4,6 +4,7 @@ const ServerLayout = (head, body, props) => `<!DOCTYPE html>
 
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="version" content="${props.version}" />
 
     ${props.debug ? `<meta name="debug" content="1"/>` : ''}
 
