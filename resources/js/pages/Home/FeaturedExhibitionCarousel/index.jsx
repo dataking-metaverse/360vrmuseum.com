@@ -12,6 +12,7 @@ import Slide from "./Slide";
 import HomeContainer from "../HomeContainer";
 import noSSR from "../../../decorators/noSSR";
 import {Link} from "react-router-dom";
+import gridTheme from "../../../styling/gridTheme";
 
 
 type Props = {
@@ -91,6 +92,26 @@ const slickSettings = {
     speed: 500,
     slidesToShow: 6,
     slidesToScroll: 1,
+    responsive: [
+        {
+            breakpoint: gridTheme.breakpoints.lg - 1,
+            settings: {
+                slidesToShow: 4,
+            },
+        },
+        {
+            breakpoint: gridTheme.breakpoints.md - 1,
+            settings: {
+                slidesToShow: 2,
+            },
+        },
+        {
+            breakpoint: gridTheme.breakpoints.xs - 1,
+            settings: {
+                slidesToShow: 1,
+            },
+        }
+    ]
 };
 
 const slidePadding = '.85rem';
