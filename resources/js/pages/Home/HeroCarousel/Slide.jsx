@@ -27,6 +27,7 @@ const Root = styled.div`
     justify-content: center;
     flex-direction: column;
     height: 52rem;
+    max-height: 80vh;
     text-align: center;
     background-image: url(${R.prop('backgroundImage')});
     background-size: cover;
@@ -44,7 +45,7 @@ const Title = styled.h2`
     color: ${themeVar('colors.basic.white')};
     font-size: 4rem;
     line-height: 1.25;
-    width: 50rem;
+    width: 59rem;
     max-width: 100%;
 `;
 
@@ -57,7 +58,7 @@ const Subtitle = styled.div`
 function Slide(props: Props) {
     return (
         <Root backgroundImage={props.image.src} active={props.active}>
-            <Fade active={props.active}>
+            <Fade active={props.active} style={{ maxWidth: '100%'}}>
                 <Title>{props.title}</Title>
                 <Subtitle>{props.subtitle}</Subtitle>
                 <Link to={props.path}>
