@@ -52,6 +52,8 @@ export default class Showcase extends RestfulModel<Props> {
         Showcase.constructByData,
     );
 
+    static routeByMid = mid => Showcase.routes['showcase'].replace(':mid', mid);
+
     static async get(mid: string): Promise<Showcase> {
         const route = Showcase.routes['api.showcase'];
         const response = await Showcase.axios.get(route, {params: {mid}});
@@ -71,7 +73,7 @@ export default class Showcase extends RestfulModel<Props> {
 
     getRelated: () => Promise<Showcase> = async () => await Showcase.byPresentedBy(this.props.presented_by);
 
-    route = () => Showcase.routes['showcase'].replace(':mid', this.props.mid);
+    route = () => Showcase.routeByMid(this.props.mid);
 
     // TODO : these methods should actually be implemented in super class
     getAttribute: (attr: string) => any = attr => this.props[attr];
@@ -79,8 +81,8 @@ export default class Showcase extends RestfulModel<Props> {
     getComments = () => Comment.byShowcase(this);
 
     // components
-    generatePoster = () => () => <ShowcasePoster showcase={this} />;
-    generatePosterLink = () => () => <ShowcasePosterLink showcase={this} />;
-    generateCard = () => () => <ShowcaseCard showcase={this} />;
-    generateThumbnail = () => () => <ShowcaseThumbnail showcase={this} />;
+    generatePoster = props => () => <ShowcasePoster showcase={this} {...props} />;
+    generatePosterLink = props => () => <ShowcasePosterLink showcase={this} {...props} />;
+    generateCard = props => () => <ShowcaseCard showcase={this} {...props} />;
+    generateThumbnail = props => () => <ShowcaseThumbnail showcase={this} {...props} />;
 }

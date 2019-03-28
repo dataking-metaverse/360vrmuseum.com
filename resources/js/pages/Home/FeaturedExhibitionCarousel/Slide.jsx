@@ -9,7 +9,7 @@ type Props = {
     children: Node,
 };
 
-const Root = styled.a`
+const Root = styled.div`
     display: block;
     padding-left: ${R.prop('padding')};
     padding-right: ${R.prop('padding')};

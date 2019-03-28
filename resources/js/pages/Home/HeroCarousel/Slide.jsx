@@ -5,9 +5,10 @@ import {connect} from "react-redux";
 
 import {themeVar} from "../../../styling/theme/functions";
 
-import type ResponsiveImage from "../../../types/ResponsiveImage";
 import Button from "../../../components/Button";
-import faded from "../../../helpers/faded";
+
+import type ResponsiveImage from "../../../types/ResponsiveImage";
+import {Link} from "react-router-dom";
 
 
 type Props = {
@@ -16,6 +17,7 @@ type Props = {
     subtitle: string,
     quickView: string,
     active: boolean,
+    path: string,
 };
 
 const Root = styled.div`
@@ -25,6 +27,7 @@ const Root = styled.div`
     justify-content: center;
     flex-direction: column;
     height: 52rem;
+    max-height: 80vh;
     text-align: center;
     background-image: url(${R.prop('backgroundImage')});
     background-size: cover;
@@ -42,7 +45,7 @@ const Title = styled.h2`
     color: ${themeVar('colors.basic.white')};
     font-size: 4rem;
     line-height: 1.25;
-    width: 50rem;
+    width: 59rem;
     max-width: 100%;
 `;
 
@@ -55,10 +58,14 @@ const Subtitle = styled.div`
 function Slide(props: Props) {
     return (
         <Root backgroundImage={props.image.src} active={props.active}>
-            <Fade active={props.active}>
+            <Fade active={props.active} style={{ maxWidth: '100%'}}>
                 <Title>{props.title}</Title>
                 <Subtitle>{props.subtitle}</Subtitle>
-                <Button size="small" type="whiteBorder">{props.quickView}</Button>
+                <Link to={props.path}>
+                    <Button size="small" type="whiteBorder">
+                        {props.quickView}
+                    </Button>
+                </Link>
             </Fade>
         </Root>
     );

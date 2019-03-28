@@ -11,6 +11,7 @@ import {themeVar} from "../../../styling/theme/functions";
 import Slide from "./Slide";
 import HomeContainer from "../HomeContainer";
 import noSSR from "../../../decorators/noSSR";
+import {Link} from "react-router-dom";
 
 
 type Props = {
@@ -105,10 +106,9 @@ function FeaturedExhibitionCarousel(props: Props) {
             R.map(showcase => (
                 <Slide
                     key={showcase.getAttribute('mid')}
-                    href={`#${showcase.getAttribute('mid')}`}
                     padding={slidePadding}
                 >
-                    {React.createElement(showcase.generatePoster())}
+                    {React.createElement(showcase.generatePosterLink({fullWidth: true}))}
                 </Slide>
             )),
             setShowcaseElements

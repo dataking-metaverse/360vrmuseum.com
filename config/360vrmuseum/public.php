@@ -20,10 +20,10 @@ return [
     'pages' => [
         'home' => [
             'heroCarousel' => [
-                'slides' => [
-                    'https://placehold.it/1920x600',
-                    'https://placehold.it/1920x600',
-                    'https://placehold.it/1920x600',
+                'showcases' => [
+                    '3VzkdUcgjGM',
+                    'UarDva3g6pX',
+                    'MsECZxmoy9y',
                 ],
             ],
             'featuredExhbitionCarousel' => [
