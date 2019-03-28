@@ -29,7 +29,7 @@ return [
         ],
     ],
     'specialExhibition' => [
-        'title' => '국립박물관',
+        'title' => '특별전시',
         'viewDetails' => '상세보기',
     ],
     'permanentExhibition' => [
