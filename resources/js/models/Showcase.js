@@ -79,8 +79,8 @@ export default class Showcase extends RestfulModel<Props> {
     getComments = () => Comment.byShowcase(this);
 
     // components
-    generatePoster = () => () => <ShowcasePoster showcase={this} />;
-    generatePosterLink = () => () => <ShowcasePosterLink showcase={this} />;
-    generateCard = () => () => <ShowcaseCard showcase={this} />;
-    generateThumbnail = () => () => <ShowcaseThumbnail showcase={this} />;
+    generatePoster = props => () => <ShowcasePoster showcase={this} {...props} />;
+    generatePosterLink = props => () => <ShowcasePosterLink showcase={this} {...props} />;
+    generateCard = props => () => <ShowcaseCard showcase={this} {...props} />;
+    generateThumbnail = props => () => <ShowcaseThumbnail showcase={this} {...props} />;
 }

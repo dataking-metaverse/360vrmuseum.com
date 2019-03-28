@@ -10,6 +10,7 @@ import * as R from "ramda";
 
 type Props = {
     showcase: Showcase,
+    fullWidth?: boolean,
 };
 
 const purple = themeVar('colors.basic.purple');
@@ -18,8 +19,8 @@ const white = themeVar('colors.basic.white');
 const Root = styled.div`
     position: relative;
     display: block;
-    padding-left: 1.6rem;
-    padding-right: 1.6rem;
+    padding-left: ${R.prop('sidePadding')};
+    padding-right: ${R.prop('sidePadding')};
     background-color: transparent;
     transition: background-color .4s;
     
@@ -62,10 +63,10 @@ const ViewMoreLink = styled(Link)`
 `;
 
 function ShowcasePosterLink(props: Props) {
-    const {showcase, quickView} = props;
+    const {showcase, quickView, fullWidth} = props;
     return (
         <React.Fragment>
-            <Root>
+            <Root sidePadding={!fullWidth ? '1.6rem' : '0'}>
                 {React.createElement(showcase.generatePoster())}
                 <ViewMoreLink to={showcase.route()}>{quickView}</ViewMoreLink>
             </Root>
