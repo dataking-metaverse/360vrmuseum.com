@@ -11,6 +11,10 @@ import ServerLayout from "./ServerLayout";
 
 import type {Store} from "redux";
 import type {ReduxAction} from "./types";
+import * as models from "./models/all";
+import ModelsContext from "./contexts/ModelsContext";
+import Model from "./models/Model";
+
 
 let head = '';
 let body = '';
@@ -39,11 +43,15 @@ try {
         locale: 'ko',
     });
 
+    Model.subscribe(store);
+
     const sheet = new ServerStyleSheet();
     body += renderToString(sheet.collectStyles(
         <div id="app">
             <Provider store={store}>
-                <Main />
+                <ModelsContext.Provider value={models}>
+                    <Main />
+                </ModelsContext.Provider>
             </Provider>
         </div>
     ));

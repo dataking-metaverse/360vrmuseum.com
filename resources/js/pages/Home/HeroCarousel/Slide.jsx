@@ -5,9 +5,10 @@ import {connect} from "react-redux";
 
 import {themeVar} from "../../../styling/theme/functions";
 
-import type ResponsiveImage from "../../../types/ResponsiveImage";
 import Button from "../../../components/Button";
-import faded from "../../../helpers/faded";
+
+import type ResponsiveImage from "../../../types/ResponsiveImage";
+import {Link} from "react-router-dom";
 
 
 type Props = {
@@ -16,6 +17,7 @@ type Props = {
     subtitle: string,
     quickView: string,
     active: boolean,
+    path: string,
 };
 
 const Root = styled.div`
@@ -58,7 +60,11 @@ function Slide(props: Props) {
             <Fade active={props.active}>
                 <Title>{props.title}</Title>
                 <Subtitle>{props.subtitle}</Subtitle>
-                <Button size="small" type="whiteBorder">{props.quickView}</Button>
+                <Link to={props.path}>
+                    <Button size="small" type="whiteBorder">
+                        {props.quickView}
+                    </Button>
+                </Link>
             </Fade>
         </Root>
     );

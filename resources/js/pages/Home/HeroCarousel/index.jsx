@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, useContext} from "react";
 import Slider from "react-slick";
 import styled from "styled-components";
 import {connect} from "react-redux";
@@ -9,12 +9,14 @@ import Slide from "./Slide";
 import type {Element, Node} from "react";
 import type ResponsiveImage from "../../../types/ResponsiveImage";
 import {themeVar} from "../../../styling/theme/functions";
+import ModelsContext from "../../../contexts/ModelsContext";
 
 
 type SlidesTextType = {
     title: string,
     subtitle: string,
     link: string,
+    path: string,
 };
 
 type SlideType = SlidesTextType & ResponsiveImage;
@@ -22,6 +24,7 @@ type SlideType = SlidesTextType & ResponsiveImage;
 type Props = {
     slides: Array<SlidesTextType>,
     slidesPhotos: Array<ResponsiveImage>,
+    slidesMids: Array<string>,
 };
 
 const slickSettings = {
@@ -101,6 +104,8 @@ const Root = styled.div`
     }
 `;
 
+const mergeArray = R.apply(R.zipWith(R.mergeLeft));
+
 function renderSlide(slideItems: Array<SlideType>, activeSlide: number): Array<Node> {
     return slideItems.map((slide, index) => (
         <Slide
@@ -109,15 +114,23 @@ function renderSlide(slideItems: Array<SlideType>, activeSlide: number): Array<N
             title={slide.title}
             subtitle={slide.subtitle}
             active={activeSlide === index}
+            path={slide.path}
         />
     ));
 }
 
 function HeroCarousel(props: Props) {
-    const {slides, slidesPhotos} = props;
+    const {slides, slidesPhotos, slidesMids} = props;
+    const {Showcase} = useContext(ModelsContext);
     const [activeSlide, updateActiveSlide] = useState(null);
-    const slideItems = R.apply(R.zipWith(R.mergeLeft))([slides, slidesPhotos]);
+    const slideRoutes = R.map(R.pipe(
+        Showcase.routeByMid,
+        R.assoc('path', R.__, {})
+    ))(slidesMids);
+    const slideText = mergeArray([slides, slidesPhotos]);
+    const slideItems = mergeArray([slideText, slideRoutes]);
 
+    // initializing only
     useEffect(() => {
         window.setTimeout(() => updateActiveSlide(0), 400);
     }, [true]);
@@ -139,6 +152,7 @@ export default R.compose(
         R.applySpec({
             slides: R.path(['lang', 'pages', 'home', 'heroCarousel', 'slides']),
             slidesPhotos: R.path(['assets', 'home', 'heroImageSlides']),
+            slidesMids: R.path(['config', 'pages', 'home', 'heroCarousel', 'showcases']),
         }),
         R.always({})
     ),
