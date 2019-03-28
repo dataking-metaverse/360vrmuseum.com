@@ -94,6 +94,7 @@ function ShowcasetTitleInformation(props: Props) {
                     <RefButton href={showcaseRef} target="_blank">{props.museumPage}</RefButton>
                 </Col>
             </Row>
+            <br />
             <MuseumName>{presentedBy}</MuseumName>
             <Period>{date}</Period>
             <hr />

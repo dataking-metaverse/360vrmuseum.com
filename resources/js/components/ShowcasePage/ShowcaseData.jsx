@@ -1,7 +1,7 @@
 import React, {useContext} from "react";
 import * as R from "ramda";
 import styled from "styled-components";
-import {Row, Col} from "styled-bootstrap-grid";
+import {Row, Col, media} from "styled-bootstrap-grid";
 import {connect} from "react-redux";
 
 import ShowcaseContainer from "./ShowcaseContainer";
@@ -88,6 +88,14 @@ const Statistic = styled.div`
     }
 `;
 
+const RightCol = styled(Col)`
+    //
+    
+    ${media.sm`
+        text-align: right;
+    `}
+`;
+
 const ExhibitionDetails: (props: ExhibitionDetailsProps) => ElementType = ({showcase}) => {
     const {performing, conversation, paid} = exhibitionDetails(showcase);
     return (
@@ -129,9 +137,9 @@ function ShowcaseData(props: Props) {
                 <Col sm={6}>
                     <ExhibitionDetails showcase={showcase} />
                 </Col>
-                <Col sm={6} className="text-right">
+                <RightCol sm={6}>
                     <Statistics showcase={showcase} />
-                </Col>
+                </RightCol>
             </Row>
             <br /><br />
         </ShowcaseContainer>
