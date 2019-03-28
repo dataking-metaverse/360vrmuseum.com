@@ -106,12 +106,9 @@ function FeaturedExhibitionCarousel(props: Props) {
             R.map(showcase => (
                 <Slide
                     key={showcase.getAttribute('mid')}
-                    href={`#${showcase.getAttribute('mid')}`}
                     padding={slidePadding}
                 >
-                    <Link to={showcase.route()}>
-                        {React.createElement(showcase.generatePosterLink({fullWidth: true}))}
-                    </Link>
+                    {React.createElement(showcase.generatePosterLink({fullWidth: true}))}
                 </Slide>
             )),
             setShowcaseElements
