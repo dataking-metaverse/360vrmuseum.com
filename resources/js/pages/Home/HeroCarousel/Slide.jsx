@@ -7,7 +7,7 @@ import {themeVar} from "../../../styling/theme/functions";
 
 import Button from "../../../components/Button";
 
-import type ResponsiveImage from "../../../types/ResponsiveImage";
+import type {ResponsiveImage} from "../../../types";
 import {Link} from "react-router-dom";
 
 
@@ -45,7 +45,6 @@ const Title = styled.h2`
     color: ${themeVar('colors.basic.white')};
     font-size: 4rem;
     line-height: 1.25;
-    width: 59rem;
     max-width: 100%;
 `;
 
@@ -59,7 +58,7 @@ function Slide(props: Props) {
     return (
         <Root backgroundImage={props.image.src} active={props.active}>
             <Fade active={props.active} style={{ maxWidth: '100%'}}>
-                <Title>{props.title}</Title>
+                <Title dangerouslySetInnerHTML={{__html: props.title}} />
                 <Subtitle>{props.subtitle}</Subtitle>
                 <Link to={props.path}>
                     <Button size="small" type="whiteBorder">
