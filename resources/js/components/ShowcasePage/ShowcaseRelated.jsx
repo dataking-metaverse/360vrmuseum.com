@@ -7,7 +7,6 @@ import {media} from "styled-bootstrap-grid";
 
 import Showcases from "../../models/Showcases";
 import shuffle from "../../helpers/shuffle";
-import LoadingSpinner from "../LoadingSpinner";
 import ShowcaseStatement from "./components/ShowcaseStatement";
 import ShowcaseSectionTitle from "./components/ShowcaseSectionTitle";
 import ShowcaseContext from "./ShowcaseContext";
@@ -15,7 +14,9 @@ import ShowcaseContainer from "./ShowcaseContainer";
 
 
 type Props = {
-
+    text: {
+        statement: string,
+    }
 };
 
 const generateThumbnailsByShowcases: (showcases: Showcases) => Array<Node> = R.pipe(
@@ -43,13 +44,11 @@ function ShowcaseRelated(props: Props) {
         showcase && showcase.getRelated().then(R.pipe(generateThumbnailsByShowcases, setThumbnails));
     }, [showcase]);
 
-    if (!showcase) { return <LoadingSpinner />; }
+    if (!showcase) { return null; }
     return (
         <ShowcaseContainer>
             <ShowcaseSectionTitle>{text.title}</ShowcaseSectionTitle>
-            <Row>
-                {thumbnails}
-            </Row>
+            <Row>{thumbnails}</Row>
             <br />
             <hr />
             <ShowcaseStatement className="text-right">{text.statement}</ShowcaseStatement>

@@ -5,7 +5,6 @@ import {Row, Col, media} from "styled-bootstrap-grid";
 
 import ShowcaseContainer from "./ShowcaseContainer";
 import ShowcaseContext from "./ShowcaseContext";
-import LoadingSpinner from "../LoadingSpinner";
 import {connect} from "react-redux";
 
 
@@ -72,7 +71,7 @@ function ShowcasetTitleInformation(props: Props) {
         setAttrs(showcase ? showcase.toObject() : null);
     }, [showcase]);
 
-    if (attrs === null) { return ( <LoadingSpinner /> ); }
+    if (attrs === null) { return null; }
 
     const {
         kor_title: koreanTitle,

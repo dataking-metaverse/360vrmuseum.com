@@ -8,7 +8,6 @@ import ShowcaseSectionTitle from "./components/ShowcaseSectionTitle";
 import GoogleMaps from "./components/GoogleMaps";
 import YouTubeVideo from "../../components/YouTubeVideo";
 import instanceOf from "../../helpers/instanceOf";
-import LoadingSpinner from "../LoadingSpinner";
 import ShowcaseContext from "./ShowcaseContext";
 import ShowcaseContainer from "./ShowcaseContainer";
 
@@ -46,7 +45,7 @@ function ShowcaseDetails(props: Props) {
     const showcase = useContext(ShowcaseContext);
     const {location, introductionVideo} = text;
 
-    if (!instanceOf(Showcase, showcase)) { return <LoadingSpinner />; }
+    if (!instanceOf(Showcase, showcase)) { return null; }
     const {
         map_address: address,
         map_name: title,
