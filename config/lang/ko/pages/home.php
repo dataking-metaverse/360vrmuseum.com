@@ -10,7 +10,7 @@ return [
         'linkText' => '바로보기',
         'slides' => [
             [
-                'title' => 'Next-generation museum 360 VRMuseum',
+                'title' => 'Next-generation museum <br />360 VRMuseum',
                 'subtitle' => '',
             ],
             [
