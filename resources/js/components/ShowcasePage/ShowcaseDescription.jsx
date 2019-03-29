@@ -54,13 +54,18 @@ function ShowcaseDescription(props: Props) {
         guide_information: guideInformation
     } = attrs;
 
+
     return (
         <ShowcaseContainer>
             <Description>{description}</Description>
-            <Button open={open} onClick={() => setOpen(!open)}>{text.program}</Button>
-            <SlideComponent open={open}>
-                <div dangerouslySetInnerHTML={{__html: guideInformation}} />
-            </SlideComponent>
+            {guideInformation && (
+                <React.Fragment>
+                    <Button open={open} onClick={() => setOpen(!open)}>{text.program}</Button>
+                    <SlideComponent open={open}>
+                        <div dangerouslySetInnerHTML={{__html: guideInformation}} />
+                    </SlideComponent>
+                </React.Fragment>
+            )}
             <br /><br />
         </ShowcaseContainer>
     );
