@@ -12,6 +12,8 @@ import {percentage, themeVar} from "../../styling/theme/functions";
 
 type Props = {
     showcase: Showcase,
+    quickView: string,
+    impressionsText: string,
     text: {|
         viewDetails: string,
     |},
