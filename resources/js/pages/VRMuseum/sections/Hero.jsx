@@ -4,7 +4,6 @@ import {connect} from "react-redux";
 import styled from "styled-components";
 import {Container, media} from "styled-bootstrap-grid";
 
-import FadeInComponent from "../../../components/FadeInComponent";
 import faded from "../../../helpers/faded";
 
 

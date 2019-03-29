@@ -10,7 +10,6 @@ import Title from "../components/Title";
 import Intro from "../components/Intro";
 
 import type {ResponsiveImage} from "../../../assets/pages/vrmuseum";
-import FadeInComponent from "../../../components/FadeInComponent";
 import faded from "../../../helpers/faded";
 
 

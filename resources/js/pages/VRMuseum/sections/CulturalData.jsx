@@ -10,7 +10,6 @@ import Intro from "../components/Intro";
 
 import type {ResponsiveImage} from "../../../assets";
 import makeSrcset from "../../../helpers/makeSrcset";
-import FadeInComponent from "../../../components/FadeInComponent";
 import {percentage} from "../../../styling/theme/functions";
 import faded from "../../../helpers/faded";
 
