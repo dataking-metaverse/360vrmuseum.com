@@ -9,11 +9,10 @@ import {connect} from "react-redux";
 
 
 type Props = {|
-
+    museumPage: string,
 |};
 
 const Title = styled.h1`
-    padding-left: 1.3rem;
     margin-top: 0;
 `;
 
@@ -64,6 +63,7 @@ const Period = styled.div`
 `;
 
 function ShowcasetTitleInformation(props: Props) {
+    const {museumPage} = props;
     const showcase = useContext(ShowcaseContext);
     const [attrs, setAttrs] = useState(null);
 
@@ -83,15 +83,15 @@ function ShowcasetTitleInformation(props: Props) {
 
     return (
         <ShowcaseContainer>
-            <Row noGutters>
-                <Col noGutter lg={10} md={10} xs={12} sm={10}>
+            <Row>
+                <Col lg={10} md={10} xs={12} sm={10}>
                     <Title>
                         <EnglishTitle>{englishTitle}</EnglishTitle>
                         <KoreanTitle>{koreanTitle}</KoreanTitle>
                     </Title>
                 </Col>
-                <Col noGutter lg={2} md={2} xs={9} sm={2}>
-                    <RefButton href={showcaseRef} target="_blank">{props.museumPage}</RefButton>
+                <Col lg={2} md={2} xs={9} sm={2} className="text-right">
+                    <RefButton href={showcaseRef} target="_blank">{museumPage}</RefButton>
                 </Col>
             </Row>
             <br />
