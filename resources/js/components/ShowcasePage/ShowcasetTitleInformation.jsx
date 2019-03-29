@@ -31,6 +31,14 @@ const KoreanTitle = styled.span`
     letter-spacing: .2rem;
 `;
 
+const RightCol = styled(Col)`
+    //
+    
+    ${media.xl`
+        text-align: right;
+    `}
+`
+
 const RefButton = styled.a`
     width: 13.2rem;
     height: 3.7rem;
@@ -42,10 +50,6 @@ const RefButton = styled.a`
     border-color: rgba(83,13,94,.55);
     padding: .4rem 1.2rem;
     text-decoration: none !important; // use of !important, avoid overriding when event's are happening
-
-    ${media.xs`
-        margin-left: 1.3rem;
-    `}
 `;
 
 const MuseumName = styled.div`
@@ -84,15 +88,15 @@ function ShowcasetTitleInformation(props: Props) {
     return (
         <ShowcaseContainer>
             <Row>
-                <Col lg={10} md={10} xs={12} sm={10}>
+                <Col xl={10}>
                     <Title>
                         <EnglishTitle>{englishTitle}</EnglishTitle>
                         <KoreanTitle>{koreanTitle}</KoreanTitle>
                     </Title>
                 </Col>
-                <Col lg={2} md={2} xs={9} sm={2} className="text-right">
+                <RightCol xl={2}>
                     <RefButton href={showcaseRef} target="_blank">{museumPage}</RefButton>
-                </Col>
+                </RightCol>
             </Row>
             <br />
             <MuseumName>{presentedBy}</MuseumName>
