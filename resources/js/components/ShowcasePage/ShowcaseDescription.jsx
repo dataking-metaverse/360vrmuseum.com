@@ -25,12 +25,15 @@ const Description = styled.pre`
     line-height: 2.2rem;
 `;
 
+const ButtonWrapper = styled.div`
+    text-align: right;
+`;
+
 const Button = styled.button`
     border: none;
     cursor: pointer;
     margin-top: 4rem;
     color: ${({open}) => open ? 'rgba(111, 3, 198, 0.7)' : 'rgba(83,13,94,.7)'};
-    font-family: "Noto Sans",Sans-serif;
     font-size: 1.4rem;
     font-weight: 400;
     line-height: 1em;
@@ -54,13 +57,14 @@ function ShowcaseDescription(props: Props) {
         guide_information: guideInformation
     } = attrs;
 
-
     return (
         <ShowcaseContainer>
             <Description>{description}</Description>
             {guideInformation && (
                 <React.Fragment>
-                    <Button open={open} onClick={() => setOpen(!open)}>{text.program}</Button>
+                    <ButtonWrapper>
+                        <Button open={open} onClick={() => setOpen(!open)}>{text.program}</Button>
+                    </ButtonWrapper>
                     <SlideComponent open={open}>
                         <div dangerouslySetInnerHTML={{__html: guideInformation}} />
                     </SlideComponent>
