@@ -1,6 +1,7 @@
 import React from "react";
 
 import page from "../../decorators/page";
+import FadeComponent from "../../components/FadeComponent";
 import Hero from "./sections/Hero";
 import IntroEasy from "./sections/IntroEasy";
 import IntroSharing from "./sections/IntroSharing";
@@ -16,15 +17,17 @@ export default class VRMuseum extends React.Component<{}> {
     render() {
         return (
             <React.Fragment>
-                <Hero />
-                <IntroEasy />
-                <IntroSharing />
-                <Appreciate />
-                <Benefits />
-                <Discover />
-                <ArtEducation />
-                <CulturalData />
-                <PageLinks />
+                <FadeComponent.Context.Provider value={{duration: 200}}>
+                    <Hero />
+                    <IntroEasy />
+                    <IntroSharing />
+                    <Appreciate />
+                    <Benefits />
+                    <Discover />
+                    <ArtEducation />
+                    <CulturalData />
+                    <PageLinks />
+                </FadeComponent.Context.Provider>
             </React.Fragment>
         );
     }

@@ -10,7 +10,6 @@ import makeSrcset from "../../../helpers/makeSrcset";
 import type {ResponsiveImage} from "../../../assets";
 import Title from "../components/Title";
 import {themeVar} from "../../../styling/theme/functions";
-import FadeInComponent from "../../../components/FadeInComponent";
 import faded from "../../../helpers/faded";
 
 type CaseType = {

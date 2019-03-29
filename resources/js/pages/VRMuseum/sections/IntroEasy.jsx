@@ -11,7 +11,6 @@ import Title from "../components/Title";
 import Intro from "../components/Intro";
 
 import type {ResponsiveImage} from "../../../assets";
-import FadeInComponent from "../../../components/FadeInComponent";
 
 type Props = {
     text: {
