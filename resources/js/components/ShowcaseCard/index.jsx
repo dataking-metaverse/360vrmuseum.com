@@ -2,6 +2,7 @@ import React from "react";
 import {connect} from "react-redux";
 import * as R from "ramda";
 import styled from "styled-components";
+import {Row, Col} from "styled-bootstrap-grid";
 import {rgba} from "polished";
 import {Link} from "react-router-dom";
 
@@ -100,7 +101,7 @@ const Period = styled.div`
 `;
 
 const Impression = styled.span`
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     color: rgb(116, 116, 116);
     cursor: default;
 `;
@@ -110,7 +111,6 @@ const ViewDetails = styled(Link)`
     font-size: 1.2rem;
     text-decoration: none;
     cursor: pointer;
-    float: right;
     transition: all .5s;
 
     &:hover {
@@ -145,10 +145,14 @@ function ShowcaseCard(props: Props) {
                 <PresentedBy>{location}{', '}{presentedBy}</PresentedBy>
                 <Period>{date}</Period>
                 <hr />
-                <div>
-                    <Impression>{impressionsText} {statistics.impressions}</Impression>
-                    <ViewDetails to={showcaseRoute}>{text.viewDetails}{' >'}</ViewDetails>
-                </div>
+                <Row>
+                    <Col col={6}>
+                        <Impression>{impressionsText} {statistics.impressions}</Impression>
+                    </Col>
+                    <Col col={6} className="text-right">
+                        <ViewDetails to={showcaseRoute}>{text.viewDetails}{' >'}</ViewDetails>
+                    </Col>
+                </Row>
             </DetailWrapper>
         </Root>
     );
