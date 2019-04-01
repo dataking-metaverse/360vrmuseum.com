@@ -73,7 +73,7 @@ class FetchShowcaseStatistics extends Command
                 'cookies' => $this->cookieJar,
             ]);
             $body = json_decode((string)$response->getBody(), true);
-            $output = $body['results'];
+            $output[$mid] = $body['results'];
             $this->info('Fetching showcase: ' . $mid . ' >>> Done');
         }
         return $output;
