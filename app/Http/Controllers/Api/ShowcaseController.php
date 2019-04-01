@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\AdminMongoDB\ModelLoadHistory;
-use App\AdminMongoDB\ModelPlayHistory;
+use App\Console\Commands\FetchShowcaseStatistics;
 use App\Exceptions\Api\ValidationException;
 use Cache;
 use Validator;
 use Illuminate\Http\Request;
+
 
 class ShowcaseController extends Controller
 {
@@ -22,15 +22,15 @@ class ShowcaseController extends Controller
     }
 
     // TODO : option for no caching
-    static function statistics(string $mid, bool $noCache = false) {
+    static function statistics(string $mid) {
         // caching is necessary for avoiding overload
-        return Cache::remember(static::class . '::' . __FUNCTION__ . "({$mid})", 60, function() use ($mid) {
-            return [
-                'impressions' => ModelLoadHistory::impressions($mid),
-                'visits' => ModelPlayHistory::visits($mid),
-                'unique_visitors' => ModelPlayHistory::uniqueVisitors($mid),
-            ];
-        });
+        $statistics = Cache::get(FetchShowcaseStatistics::CACHE_KEY);
+        $statistic = $statistics[$mid] ?? [];
+        return [
+            'impressions' => $statistic['impressions'] ?? 0,
+            'visits' => $statistic['views'] ?? 0,
+            'unique_visitors' => $statistic['unique_visitors'] ?? 0,
+        ];
     }
 
     static function propEq(string $key, $value): array {
