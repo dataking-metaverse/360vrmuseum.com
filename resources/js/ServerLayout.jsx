@@ -1,5 +1,5 @@
 const ServerLayout = (head, body, props) => `<!DOCTYPE html>
-<html lang="${props.lang}">
+<html lang="${props.locale}">
 <head>
 
     <meta charset="utf-8" />

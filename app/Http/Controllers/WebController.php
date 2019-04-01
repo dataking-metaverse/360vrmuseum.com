@@ -79,7 +79,8 @@ class WebController extends Controller {
             ->context('lang', $context['lang'])
             ->context('route', $routeUri)
             ->context('viewProps', [
-                'lang' => $context['lang'],
+                'locale' => 'ko',
+                'lang' => json_encode($context['lang'], JSON_UNESCAPED_UNICODE),
                 'debug' => config('app.debug'),
                 'user' => json_encode($context['user'], JSON_UNESCAPED_UNICODE),
                 'config' => json_encode($context['config'], JSON_UNESCAPED_UNICODE),
