@@ -79,7 +79,7 @@ class WebController extends Controller {
             ->context('lang', $context['lang'])
             ->context('route', $routeUri)
             ->context('viewProps', [
-                'lang' => 'ko',
+                'lang' => $context['lang'],
                 'debug' => config('app.debug'),
                 'user' => json_encode($context['user'], JSON_UNESCAPED_UNICODE),
                 'config' => json_encode($context['config'], JSON_UNESCAPED_UNICODE),
