@@ -78,14 +78,14 @@ const Type = styled.div`
     cursor: default;
 `;
 
-const titleLineHeight = 1.4;
+const titleLineHeight = 1.5;
 const Title = styled.h3`
     margin-top: .4em;
     min-height: ${titleLineHeight * 2}em;
     line-height: ${titleLineHeight};
     cursor: pointer;
     white-space: pre-wrap;
-    font-size: .8em;
+    font-size: .9em;
     
     &:first-line {
         font-size: initial;
