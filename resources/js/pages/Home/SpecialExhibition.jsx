@@ -1,7 +1,6 @@
 import React from "react";
 import {connect} from "react-redux";
 import * as R from "ramda";
-import {Row, Col} from "styled-bootstrap-grid";
 
 import ExhibitionList from "./components/ExhibitionList";
 
@@ -21,7 +20,7 @@ function SpecialExhibition(props: Props) {
             title={text.title}
             showcases={showcases}
         />
-    )
+    );
 }
 
 export default R.compose(
