@@ -9,7 +9,7 @@ export type * from "./pages/vrmuseum";
 export type * from "./pages/contactUs";
 export type * from "./pages/login";
 
-export const logo = require('./files/vrmuseum/360-m-logo_re-2.png');
+export const logo = require('./files/vrmuseum/Museum_logo_no_bg@4x(White).png');
 
 export {
     home,

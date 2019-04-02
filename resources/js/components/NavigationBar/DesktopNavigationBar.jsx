@@ -44,7 +44,16 @@ const RightCol = styled(Col)`
     justify-content: flex-end;
 `;
 
-const Logo = styled.img``;
+const LogoLink = styled(Link)`
+    position: relative;
+    display: block;
+    max-width: 11.3rem;
+    
+    > img {
+        display: block;
+        max-width: 11.3rem;
+    }
+`;
 
 const Item = styled(Link)`
     position: relative;
@@ -118,6 +127,14 @@ const Submit = styled.button`
     }
 `;
 
+function Logo(props: LogoProps) {
+    return (
+        <LogoLink to={props.to}>
+            <img src={props.src} />
+        </LogoLink>
+    );
+}
+
 const LogoutButton = R.compose(
     connect(
         R.applySpec({
@@ -165,9 +182,7 @@ function DesktopNavigationBar(props: DecoratedProps) {
             <Container>
                 <FilledRow>
                     <LeftCol col="2">
-                        <Link to={props.homeRoute}>
-                            <Logo src={props.logo} />
-                        </Link>
+                        <Logo to={props.homeRoute} src={props.logo} />
                     </LeftCol>
                     <RightCol col="10">
                         <Links routes={props.routes} />
