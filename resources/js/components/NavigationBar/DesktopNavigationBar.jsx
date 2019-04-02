@@ -47,11 +47,10 @@ const RightCol = styled(Col)`
 const LogoLink = styled(Link)`
     position: relative;
     display: block;
-    max-width: 11.3rem;
     
-    > img {
+    > svg {
         display: block;
-        max-width: 11.3rem;
+        width: 11.3rem;
     }
 `;
 
@@ -130,7 +129,7 @@ const Submit = styled.button`
 function Logo(props: LogoProps) {
     return (
         <LogoLink to={props.to}>
-            <img src={props.src} />
+            {props.logo}
         </LogoLink>
     );
 }
@@ -180,7 +179,7 @@ function DesktopNavigationBar(props: DecoratedProps) {
             <Container>
                 <FilledRow>
                     <LeftCol col="2">
-                        <Logo to={props.homeRoute} src={props.logo} />
+                        <Logo to={props.homeRoute} logo={props.logo} />
                     </LeftCol>
                     <RightCol col="10">
                         <Links routes={props.routes} />
