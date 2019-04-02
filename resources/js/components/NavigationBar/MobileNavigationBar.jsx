@@ -36,8 +36,13 @@ const Header = styled.div`
     `}
 `;
 
-const Image = styled.img`
-    display: block;
+const LogoLink = styled(Link)`
+    //
+    
+    > svg {
+        display: block;
+        width: 11.3rem;
+    }
 `;
 
 const BurgerButton = styled(Burger)`
@@ -138,9 +143,9 @@ export default function MobileNavigationBar(props: DecoratedProps) {
     return (
         <React.Fragment>
             <Header>
-                <Link to={props.homeRoute}>
-                    <Image src={props.logo} />
-                </Link>
+                <LogoLink to={props.homeRoute}>
+                    {props.logo}
+                </LogoLink>
                 <BurgerButton onClick={() => setNavOpen(!navOpen)} />
             </Header>
             <SlideComponent open={navOpen} onClick={() => setNavOpen(false)}>

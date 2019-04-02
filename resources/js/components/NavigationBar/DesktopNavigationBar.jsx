@@ -44,7 +44,15 @@ const RightCol = styled(Col)`
     justify-content: flex-end;
 `;
 
-const Logo = styled.img``;
+const LogoLink = styled(Link)`
+    position: relative;
+    display: block;
+    
+    > svg {
+        display: block;
+        width: 11.3rem;
+    }
+`;
 
 const Item = styled(Link)`
     position: relative;
@@ -118,6 +126,14 @@ const Submit = styled.button`
     }
 `;
 
+function Logo(props: LogoProps) {
+    return (
+        <LogoLink to={props.to}>
+            {props.logo}
+        </LogoLink>
+    );
+}
+
 const LogoutButton = R.compose(
     connect(
         R.applySpec({
@@ -138,9 +154,7 @@ const LogoutButton = R.compose(
         event.preventDefault();
         const response = await axios.post(submitRoute);
         const success = R.path(['data', 'success'])(response);
-        if (success) {
-            clearUser();
-        }
+        if (success) { clearUser(); }
     }
 
     return (
@@ -165,9 +179,7 @@ function DesktopNavigationBar(props: DecoratedProps) {
             <Container>
                 <FilledRow>
                     <LeftCol col="2">
-                        <Link to={props.homeRoute}>
-                            <Logo src={props.logo} />
-                        </Link>
+                        <Logo to={props.homeRoute} logo={props.logo} />
                     </LeftCol>
                     <RightCol col="10">
                         <Links routes={props.routes} />
