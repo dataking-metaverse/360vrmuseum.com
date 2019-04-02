@@ -155,9 +155,7 @@ const LogoutButton = R.compose(
         event.preventDefault();
         const response = await axios.post(submitRoute);
         const success = R.path(['data', 'success'])(response);
-        if (success) {
-            clearUser();
-        }
+        if (success) { clearUser(); }
     }
 
     return (
