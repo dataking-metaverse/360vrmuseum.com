@@ -26,6 +26,7 @@ function ExhibitionList(props: Props) {
 
     useEffect(() => {
         Showcases.get(showcases).then(R.pipe(
+            R.invoker(0, 'sortDateDesc'),
             Array.from,
             R.map(showcase => (
                 <Col key={showcase.getAttribute('mid')} lg={4} className="mb-5">

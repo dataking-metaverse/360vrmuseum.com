@@ -66,6 +66,13 @@ export default class Showcases extends RestfulModel<Props> implements Iterable<S
         return this.props[Symbol.iterator]();
     }
 
+    sortDateDesc() {
+        const comparison = R.descend(R.path(['props', 'date']));
+        const sorting = R.sort(comparison);
+        const newProps = sorting(this.props);
+        return new Showcases(newProps);
+    }
+
     toArray() {
         return [...this];
     }
