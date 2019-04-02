@@ -29,6 +29,7 @@ const KoreanTitle = styled.span`
     font-weight: 700;
     line-height: 1.7rem;
     letter-spacing: .2rem;
+    white-space: pre-wrap;
 `;
 
 const RightCol = styled(Col)`
