@@ -47,7 +47,7 @@ const Image = styled.div`
 const Images: (props: ImagesProps) => Array<ElementType> = R.pipe(
     R.prop('images'),
     R.map(image => (
-        <Col key={image} lg={4}>
+        <Col key={image} sm={6} lg={4}>
             <Image src={image}><LoadingSpinner cover /></Image>
             <br />
         </Col>
