@@ -24,9 +24,7 @@ const generateThumbnailsByShowcases: (showcases: Showcases) => Array<Node> = R.p
     R.slice(0, 4),
     R.map(showcase => (
         <Col key={showcase.getAttribute('mid')} sm={6} xl={3}>
-            <Link to={showcase.route()}>
-                {React.createElement(showcase.generateThumbnail())}
-            </Link>
+            {React.createElement(showcase.generateThumbnail())}
             <br />
         </Col>
     ))
