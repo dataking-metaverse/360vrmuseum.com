@@ -3,7 +3,6 @@ import * as R from "ramda";
 import {connect} from "react-redux";
 import {Row, Col} from "styled-bootstrap-grid";
 import {Link} from "react-router-dom";
-import {media} from "styled-bootstrap-grid";
 
 import Showcases from "../../models/Showcases";
 import shuffle from "../../helpers/shuffle";
@@ -24,7 +23,7 @@ const generateThumbnailsByShowcases: (showcases: Showcases) => Array<Node> = R.p
     shuffle,
     R.slice(0, 4),
     R.map(showcase => (
-        <Col key={showcase.getAttribute('mid')} col={12} md={4} lg={3}>
+        <Col key={showcase.getAttribute('mid')} sm={6} xl={3}>
             <Link to={showcase.route()}>
                 {React.createElement(showcase.generateThumbnail())}
             </Link>
