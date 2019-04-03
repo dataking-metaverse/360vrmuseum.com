@@ -15,6 +15,7 @@ import ShowcaseContainer from "./ShowcaseContainer";
 
 type Props = {
     text: {
+        title: string,
         statement: string,
     }
 };
@@ -33,7 +34,7 @@ const generateThumbnailsByShowcases: (showcases: Showcases) => Array<Node> = R.p
     ))
 );
 
-
+const title = (title, showcase) => title && showcase && showcase.getAttribute('presented_by') ? title.replace('{museumName}', showcase.getAttribute('presented_by')) : null;
 
 function ShowcaseRelated(props: Props) {
     const {text} = props;
@@ -43,11 +44,10 @@ function ShowcaseRelated(props: Props) {
     useEffect(() => {
         showcase && showcase.getRelated().then(R.pipe(generateThumbnailsByShowcases, setThumbnails));
     }, [showcase]);
-
     if (!showcase) { return null; }
     return (
         <ShowcaseContainer>
-            <ShowcaseSectionTitle>{text.title}</ShowcaseSectionTitle>
+            <ShowcaseSectionTitle>{title(text.title, showcase)}</ShowcaseSectionTitle>
             <Row>{thumbnails}</Row>
             <br />
             <hr />
@@ -61,6 +61,7 @@ export default R.compose(
     connect(
         R.applySpec({
             text: R.path(['lang', 'pages', 'showcase', 'related']),
-        })
+        }),
+        R.always({})
     )
 )(ShowcaseRelated);
