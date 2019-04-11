@@ -8,13 +8,10 @@ import MuseumTitle from "../../../components/MuseumTitle";
 import Showcases from "../../../models/Showcases";
 import Showcase from "../../../models/Showcase";
 
-import type {Node} from "react";
-
 
 type Props = {
     exhibitionGroups: Array<string>,
 };
-
 
 
 const getGridSize: (showcases: Showcases) => number = R.cond([
