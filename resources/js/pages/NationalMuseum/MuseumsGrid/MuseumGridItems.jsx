@@ -1,16 +1,23 @@
-import React, {useState, useEffect, useContext} from "react";
+import React, {useEffect, useContext} from "react";
 import * as R from "ramda";
 import {connect} from "react-redux";
 import {Row, Col} from "styled-bootstrap-grid";
 
+import {registerShowcaseGroupsElements} from "../../../redux/actionBuilders/nationalMuseum";
 import ModelsContext from "../../../contexts/ModelsContext";
 import MuseumTitle from "../../../components/MuseumTitle";
 import Showcases from "../../../models/Showcases";
 import Showcase from "../../../models/Showcase";
 
+import type {Node} from "react";
+
+
+
 
 type Props = {
     exhibitionGroups: Array<string>,
+    showcaseGroupsElements: Array<Node>,
+    registerShowcaseGroupsElements: (value: Array<Node>) => void,
 };
 
 
@@ -40,28 +47,30 @@ function renderMuseumGridItem(museumName, showcases: Showcases) {
 }
 
 function MuseumGridItems(props: Props) {
-    const {exhibitionGroups} = props;
+    const {exhibitionGroups, showcaseGroupsElements, registerShowcaseGroupsElements} = props;
     const {Showcases} = useContext(ModelsContext);
-    const [showcaseGroups, setShowcaseGroups] = useState([]);
 
     useEffect(() => {
-        Showcases.byPresentedBys(exhibitionGroups)
-            .then(R.pipe(
-                R.toPairs,
-                R.sort(([a], [b]) => exhibitionGroups.indexOf(a) - exhibitionGroups.indexOf(b)), // ramda should be able to solve this, rather than self composed
-                R.map(R.apply(renderMuseumGridItem)),
-                setShowcaseGroups
-            ));
+        if (!(Array.isArray(showcaseGroupsElements) && showcaseGroupsElements.length > 0)) {
+            Showcases.byPresentedBys(exhibitionGroups)
+                .then(R.pipe(
+                    R.toPairs,
+                    R.sort(([a], [b]) => exhibitionGroups.indexOf(a) - exhibitionGroups.indexOf(b)), // ramda should be able to solve this, rather than self composed
+                    R.map(R.apply(renderMuseumGridItem)),
+                    registerShowcaseGroupsElements
+                ));
+        }
     }, []);
 
-    return showcaseGroups;
+    return showcaseGroupsElements;
 }
 
 export default R.compose(
     connect(
         R.applySpec({
             exhibitionGroups: R.path(['config', 'pages', 'nationalMuseum', 'exhibitionGroups']),
+            showcaseGroupsElements: R.prop('showcaseGroupsElements'),
         }),
-        R.always({})
+        R.applySpec({registerShowcaseGroupsElements})
     )
 )(MuseumGridItems);
