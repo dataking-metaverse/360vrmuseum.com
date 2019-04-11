@@ -15,21 +15,14 @@ const Root = styled.div`
     padding-top: 10rem;
 `;
 
-const MuseumGridContainer = styled(Container)`
-    
-`;
-
-
 function MuseumsGrid(props: Props) {
-
-
     return (
         <Root>
-            <MuseumGridContainer>
+            <Container>
                 <Row>
                     <MuseumGridItems />
                 </Row>
-            </MuseumGridContainer>
+            </Container>
         </Root>
     );
 }
