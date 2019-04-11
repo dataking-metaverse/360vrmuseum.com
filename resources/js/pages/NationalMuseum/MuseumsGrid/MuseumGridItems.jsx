@@ -10,8 +10,7 @@ import Showcases from "../../../models/Showcases";
 import Showcase from "../../../models/Showcase";
 
 import type {Node} from "react";
-
-
+import LoadingSpinner from "../../../components/LoadingSpinner";
 
 
 type Props = {
@@ -27,6 +26,19 @@ const getGridSize: (showcases: Showcases) => number = R.cond([
     [R.pathEq(['props', 'length'], 3), R.always(9)],
     [R.T, R.always(12)],
 ]);
+
+/**
+ * @type {function(...[Array<*>]): boolean}
+ */
+const renderShowcaseGroups = R.ifElse(
+    R.complement(R.anyPass([R.isNil, R.isEmpty])),
+    R.identity,
+    R.always(
+        <Col style={{minHeight: '100vh'}}>
+            <LoadingSpinner style={{backgroundColor: 'transparent'}} />
+        </Col>
+    )
+);
 
 function renderMuseumGridItem(museumName, showcases: Showcases) {
     const gridSize = getGridSize(showcases);
@@ -62,7 +74,7 @@ function MuseumGridItems(props: Props) {
         }
     }, []);
 
-    return showcaseGroupsElements;
+    return renderShowcaseGroups(showcaseGroupsElements);
 }
 
 export default R.compose(
