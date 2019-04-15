@@ -50,7 +50,7 @@ class AuthController extends Controller {
         $user->save();
         return responseJson([
             'redirect' => route('login', null, false),
-            'message' => 'Successfully created user!',
+            'message' => config('lang.ko.notifications.createdUser'),
         ]);
     }
 
@@ -91,7 +91,7 @@ class AuthController extends Controller {
     {
         Auth::logout();
         return responseJson([
-            'message' => 'Successfully logged out',
+            'message' => config('lang.ko.notifications.logoutMessage'),
         ]);
     }
 
