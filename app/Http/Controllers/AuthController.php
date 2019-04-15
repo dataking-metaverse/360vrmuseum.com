@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Exceptions\Api\ValidationException;
 use App\Exceptions\Api\WrongCredentialException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
 use App\User;
-
+use Validator;
 
 class AuthController extends Controller {
 
@@ -65,11 +66,17 @@ class AuthController extends Controller {
      * @return [string] expires_at
      */
     public function login(Request $request) {
-        $request->validate([
+
+        $validation = Validator::make($request->all(), [
             'email' => 'required|string|email',
             'password' => 'required|string',
             'remember_me' => 'boolean'
         ]);
+
+        if ($validation->fails()) {
+            throw new ValidationException($validation);
+        }
+
         $credentials = request(['email', 'password']);
 
         if(!Auth::attempt($credentials, !!$request->remember_me)) {
