@@ -15,7 +15,7 @@ import ShowcaseRelated from "./ShowcaseRelated";
 import CommentSection from "./components/CommentSection";
 
 type Props = {
-    showcase: Showcase,
+    showcase: Showcase | void,
 };
 
 function ShowcasePage(props: Props) {
