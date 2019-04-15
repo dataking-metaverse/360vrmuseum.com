@@ -1,0 +1,3 @@
+[submodule "app/VRMuseum"]
+	path = app/VRMuseum
+	url = git@bitbucket.org:datakinginc/360vrmuseum-models.git

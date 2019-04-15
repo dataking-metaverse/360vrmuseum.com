@@ -1,5 +1,7 @@
 <?php
 namespace App;
+
+use App\VRMuseum\User as MongoUser;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
@@ -34,4 +36,12 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    function hello() {
+        return ['tasdfasf'];
+    }
+
+    function mongodb() {
+        return $this->hasOne(MongoUser::class);
+    }
 }
