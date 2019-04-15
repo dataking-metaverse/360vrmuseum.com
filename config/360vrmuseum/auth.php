@@ -4,29 +4,6 @@ use App\User;
 
 
 return [
-    'switch' => [
-
-        /**
-         * Nothing matters for the rest of this file if this is set to be false.
-         */
-        'master' => true,
-
-        /**
-         * Enable the Login route, so you can access '/login'
-         */
-        'loginRoute' => true,
-
-        /**
-         * Show the 'login' button onto the navigation bar
-         */
-        'loginNav' => true,
-
-        /**
-         * Show the leaving
-         */
-        'showCommentSection' => true,
-
-    ],
 
     /**
      * Basically the list of

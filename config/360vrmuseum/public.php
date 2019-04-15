@@ -7,6 +7,7 @@ return [
 
     'navigationBar' => [
         'showHome' => true,
+        'showAuth' => true,
         'staticItems' => [
             'home',
             'national-museum',

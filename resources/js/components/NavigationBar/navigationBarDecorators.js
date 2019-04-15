@@ -1,7 +1,6 @@
 import {connect} from "react-redux";
 import {withRouter} from "react-router";
 import * as R from "ramda";
-import {media} from "styled-bootstrap-grid";
 
 export type RouteProps = {
     item: string,
@@ -10,17 +9,21 @@ export type RouteProps = {
 };
 
 export type DecoratedProps = {
+    config: {
+        authSwitch: {
+            loginNav: boolean,
+        },
+    },
     showHome: boolean,
     logo: string,
     routes: Array<RouteParams>,
     homeRoute: string,
 };
 
-export const desktopBreakpoint = media.lg;
-
 const navigationBarDecorators = R.compose(
     connect(
         R.applySpec({
+            config: R.prop('config'),
             user: R.prop('user'),
             showHome: R.path(['config', 'navigationBar', 'showHome']),
             logo: R.path(['assets', 'logo']),

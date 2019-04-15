@@ -86,7 +86,7 @@ try {
     // model
     Model.subscribe(store);
 
-    if (node === null) { throw new Error('hello, world'); }
+    if (node === null) { throw new Error('Node #app is not defined'); }
 
     ReactDOM.render((
         <Provider store={store}>

@@ -9,6 +9,7 @@ import {themeVar} from "../../styling/theme/functions";
 import {clearUser} from "../../redux/actionBuilders/global"
 
 import type {DecoratedProps, RouteProps} from "./navigationBarDecorators";
+import User from "../../models/User";
 
 
 type LinksProps = {
@@ -18,6 +19,17 @@ type LinksProps = {
 type LogoutFormProps = {
 
 };
+
+type AuthButtonsProps = {
+    user: User,
+    show: boolean,
+    loginRoute: {|
+        name: string,
+        title: string,
+        to: string,
+    |}
+};
+
 
 const Root = styled.div`
     background-color: ${themeVar('components.navigationBar.background')};
@@ -172,8 +184,27 @@ function Links(props: LinksProps) {
     ));
 }
 
+const AuthButtons = R.compose(
+    connect(R.applySpec({
+        user: R.prop('user'),
+        show: R.path(['config', 'navigationBar', 'showAuth']),
+        loginRoute: R.applySpec({
+            name: R.path(['config', 'navigationBar', 'login']),
+            title: R.path(['lang', 'navigation', 'login', 'title']),
+            to: R.path(['app', 'routes', 'login']),
+        }),
+    }))
+)(function AuthButtons(props: AuthButtonsProps) {
+    const {user, show, loginRoute} = props;
+    if (!show) { return null; }
+    if (!user) { return <Item to={loginRoute.to}>{loginRoute.title}</Item>; }
+    return <LogoutButton />;
+});
+
+
 function DesktopNavigationBar(props: DecoratedProps) {
-    const {loginRoute, user} = props;
+    const {loginRoute, user, config} = props;
+    const {authSwitch} = config;
     return (
         <Root>
             <Container>
@@ -183,8 +214,7 @@ function DesktopNavigationBar(props: DecoratedProps) {
                     </LeftCol>
                     <RightCol col="10">
                         <Links routes={props.routes} />
-                        {/*{!user && <Item to={loginRoute.to}>{loginRoute.title}</Item>}*/}
-                        {/*{user && <LogoutButton />}*/}
+                        <AuthButtons />
                     </RightCol>
                 </FilledRow>
             </Container>
