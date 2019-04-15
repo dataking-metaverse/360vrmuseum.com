@@ -4,10 +4,29 @@ use App\User;
 
 
 return [
-    /**
-     * Nothing matters for the rest of this file if this is set to be false.
-     */
-    'enabled' => true,
+    'switch' => [
+
+        /**
+         * Nothing matters for the rest of this file if this is set to be false.
+         */
+        'master' => true,
+
+        /**
+         * Enable the Login route, so you can access '/login'
+         */
+        'loginRoute' => true,
+
+        /**
+         * Show the 'login' button onto the navigation bar
+         */
+        'loginNav' => true,
+
+        /**
+         * Show the leaving
+         */
+        'showCommentSection' => true,
+
+    ],
 
     /**
      * Basically the list of
@@ -35,12 +54,11 @@ return [
     'privileges' => [
 
         /**
-         *
          * I think usually this will only be either of below:
          *
-         *  - ['basic', 'curators']
-         *  - ['*']
-         *
+         *  - ['curators'] // (curators only)
+         *  - ['basic'] // (accessable by all kinds of users who has login)
+         *  - ['*'] // (accessable by everyone, regardless if he has logged in or not)
          */
         'viewShowcases' => ['*'],
 
