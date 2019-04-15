@@ -67,10 +67,10 @@ try {
             JSON.parse,
             R.tap(prop => {
                 if (prop.message) {
-                    pushMessage(store.dispatch)({
+                    pushMessage(store.dispatch)(new models.Message({
                         message: prop.message,
                         appearance: prop.success ? 'success' : 'error'
-                    });
+                    }));
                 }
             }),
             R.tap(R.when(

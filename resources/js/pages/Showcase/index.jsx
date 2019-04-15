@@ -23,17 +23,17 @@ const Root = styled.div`
 `;
 
 function Showcase(props: Props) {
-    const {user, pushRedirect, pushMessage, loginRoute} = props;
+    const {user, pushRedirect, pushMessage, loginRoute, requestLogin} = props;
     const mid = R.path(['match', 'params', 'mid'])(props);
-    const {Showcase: ShowcaseModel, User} = useContext(ModelsContext);
+    const {Showcase: ShowcaseModel, User, Message} = useContext(ModelsContext);
     const [showcase, setShowcase] = useState(null);
 
     useEffect(() => {
-        if (user) {
+        if (user instanceof User) {
             ShowcaseModel.get(mid).then(setShowcase);
         } else {
             setShowcase(null);
-            // pushMessage();
+            pushMessage(new Message({message: requestLogin, appearance: 'success'}));
             pushRedirect(loginRoute);
         }
     }, [mid, user]);
@@ -51,5 +51,6 @@ export default R.compose(
     connect(R.applySpec({
         user: R.prop('user'),
         loginRoute: R.path(['app', 'routes', 'login']),
+        requestLogin: R.path(['lang', 'pages', 'login', 'requestLogin']),
     }), R.applySpec({pushRedirect, pushMessage}))
 )(Showcase);
