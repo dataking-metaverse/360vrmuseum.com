@@ -37,11 +37,17 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    function hello() {
-        return ['tasdfasf'];
+    function getTypeAttribute() {
+        $userTypeFunctions = config('360vrmuseum.auth.userType');
+        $output = [];
+        foreach($userTypeFunctions as $type => $func) {
+            if ($func($this)) { $output[] = $type; }
+        }
+        return $output;
     }
 
     function mongodb() {
         return $this->hasOne(MongoUser::class);
     }
+
 }

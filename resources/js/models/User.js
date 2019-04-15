@@ -6,6 +6,7 @@ import RestfulModel from "./RestfulModel";
 type Props = {|
     email: string,
     name: string,
+    type: string,
 |};
 
 type LoginFormData = {
@@ -17,11 +18,6 @@ type LoginFormData = {
 export default class User extends RestfulModel<Props> {
 
     props: Props;
-
-    static FIELDS = [
-        'email',
-        'name',
-    ];
 
     static constructByData: (props: Props) => Promise<User> = R.construct(User);
 
