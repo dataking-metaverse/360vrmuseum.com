@@ -17,7 +17,7 @@ class AuthController extends Controller {
         return $user ? [
             'name' => $user->name ?? null,
             'email' => $user->email ?? null,
-            'type' => $user->type ?? null,
+            'types' => $user->types ?? null,
         ] : null;
     }
 

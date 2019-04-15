@@ -6,7 +6,7 @@ import RestfulModel from "./RestfulModel";
 type Props = {|
     email: string,
     name: string,
-    type: string,
+    types: string,
 |};
 
 type LoginFormData = {

@@ -37,7 +37,7 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    function getTypeAttribute() {
+    function getTypesAttribute() {
         $userTypeFunctions = config('360vrmuseum.auth.userType');
         $output = [];
         foreach($userTypeFunctions as $type => $func) {
