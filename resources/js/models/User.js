@@ -4,7 +4,6 @@ import * as R from "ramda";
 import RestfulModel from "./RestfulModel";
 
 type Props = {|
-    id: number,
     email: string,
     name: string,
 |};
@@ -20,12 +19,13 @@ export default class User extends RestfulModel<Props> {
     props: Props;
 
     static FIELDS = [
-        'id',
         'email',
         'name',
     ];
 
-    static constructByResponse: {data: {}} => User = R.pipe(
+    static constructByData: (props: Props) => Promise<User> = R.construct(User);
+
+    static constructByResponse: {data: {}} => Promise<User> = R.pipe(
         R.path(['data', 'data']),
         User.constructByData,
     );
