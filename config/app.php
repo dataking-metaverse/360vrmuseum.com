@@ -177,6 +177,7 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        Biscolab\ReCaptcha\ReCaptchaServiceProvider::class,
 
     ],
 
@@ -230,6 +231,7 @@ return [
         // custom
         'GraphQL' => Folklore\GraphQL\Support\Facades\GraphQL::class,
         'MongoModel' => Jenssegers\Mongodb\Eloquent\Model::class,
+        'ReCaptcha' => Biscolab\ReCaptcha\Facades\ReCaptcha::class,
 
     ],
 
