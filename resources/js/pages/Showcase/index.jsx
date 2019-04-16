@@ -4,18 +4,30 @@ import {withRouter} from "react-router";
 import styled from "styled-components";
 import {connect} from "react-redux";
 
+import User from "../../models/User";
 import {pushRedirect, pushMessage} from "../../redux/actionBuilders/global";
 import ShowcasePage from "../../components/ShowcasePage";
 import ModelsContext from "../../contexts/ModelsContext";
 import page from "../../decorators/page";
+import Message from "../../models/Message";
 
 
 type Props = {
+    // react router
     match: {
         params: {
             mid: string,
         },
     },
+
+    // redux
+    user: ?User,
+    loginRoute: string,
+    requestLogin: string,
+
+    // redux dispatcher
+    pushRedirect: (str: string) => void,
+    pushMessage: (str: Message) => void,
 };
 
 const Root = styled.div`
@@ -29,7 +41,7 @@ function Showcase(props: Props) {
     const [showcase, setShowcase] = useState(null);
 
     useEffect(() => {
-        if (user instanceof User) {
+        if (User.hasPrivilegeSafe(user,'viewShowcases')) {
             ShowcaseModel.get(mid).then(setShowcase);
         } else {
             setShowcase(null);

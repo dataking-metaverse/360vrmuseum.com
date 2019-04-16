@@ -15,6 +15,7 @@ type State = {
 export default class Model<Props> {
 
     static unsubscribeStore = null;
+    static state = null;
     static routes = null;
     static axios = null;
 
@@ -24,6 +25,7 @@ export default class Model<Props> {
         if (typeof Model.unsubscribeStore === 'function') { Model.unsubscribeStore(); }
         const listener = () => {
             const state: State = store.getState();
+            Model.state = state;
             Model.routes = state.app.routes;
             Model.axios = state.axios;
         };
