@@ -4,16 +4,16 @@ import styled from "styled-components";
 import {Container, Row, Col} from "styled-bootstrap-grid";
 import {connect} from "react-redux";
 
-import Checkbox from "../../../components/Checkbox";
-import rawFormData from "../../../helpers/rawFormData";
-import {registerAccessCredential, registerAxios} from "../../../redux/actionBuilders/global";
+import Checkbox from "../../components/Checkbox";
+import rawFormData from "../../helpers/rawFormData";
+import {registerAccessCredential, registerAxios} from "../../redux/actionBuilders/global";
 import {Link} from "react-router-dom";
-import {Option} from "../../../components/Select";
-import Select from "../../../components/Select";
+import {Option} from "../../components/Select";
+import Select from "../../components/Select";
 
 import type {Axios} from "axios";
 import type {Element} from "react";
-import getFormData from "../../../helpers/getFormData";
+import getFormData from "../../helpers/getFormData";
 import {withRouter} from "react-router";
 
 type Props = {
