@@ -98,4 +98,11 @@ return [
         'commenting' => ['curators'],
     ],
 
+    /**
+     * Recaptcha
+     */
+    'recaptcha' => [
+        'siteKey' => env('RECAPTCHA_SITE_KEY', ''),
+    ],
+
 ];

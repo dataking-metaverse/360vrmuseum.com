@@ -24,7 +24,6 @@ const Root = styled.div`
     font-size: 1.2rem;
     line-height: 2.3rem;
     width: 100%;
-    height: 13rem;
     padding: 2rem;
     text-align: center;
 `;
@@ -47,6 +46,23 @@ const CopyrightNotice = styled.span`
 const AllRightReserved = styled.span`
 `;
 
+const RecaptchaPolicy = styled.div`
+    max-width: 30rem;
+    margin: auto;
+    line-height: 1.4;
+    margin-bottom: 2rem;
+    
+    > a {
+        font-weight: bold;
+        color: inherit;
+        
+        &:focus, &:visited {
+            outline: none;
+            color: inherit;
+        }
+    }
+`;
+
 function Footer(props: Props) {
     const {text, routes} = props;
     return (
@@ -61,6 +77,11 @@ function Footer(props: Props) {
             <AllRightReserved>{text.allRigthReserved}</AllRightReserved>
             <br/>
             <CopyrightNotice>{text.noPrinting}</CopyrightNotice>
+            <RecaptchaPolicy>
+                This site is protected by reCAPTCHA and the Google&nbsp;
+                <a href="https://policies.google.com/privacy">Privacy Policy</a> and&nbsp;
+                <a href="https://policies.google.com/terms">Terms of Service</a> apply.
+            </RecaptchaPolicy>
         </Root>
     );
 }

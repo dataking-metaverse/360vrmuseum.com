@@ -18,4 +18,3 @@ function Signup(props: Props) {
 export default R.compose(
     page('signup')
 )(Signup);
-
