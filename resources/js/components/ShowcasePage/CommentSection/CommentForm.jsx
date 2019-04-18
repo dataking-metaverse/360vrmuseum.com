@@ -3,10 +3,10 @@ import * as R from "ramda";
 import {connect} from "react-redux";
 import styled from "styled-components";
 
+import RecaptchaField from "../../../components/RecaptchaField";
 import getFormData from "../../../helpers/getFormData";
 import ShowcaseContext from "../ShowcaseContext";
 import Button from "../../Button";
-import User from "../../../models/User";
 
 
 type Props = {
@@ -54,6 +54,7 @@ export default R.compose(
 
     return (
         <form onSubmit={onSubmit}>
+            <RecaptchaField />
             <TextArea name="comment" placeholder={text.placeholder} />
             <div className="text-right">
                 <Button type="secondary">{text.postComment}</Button>
