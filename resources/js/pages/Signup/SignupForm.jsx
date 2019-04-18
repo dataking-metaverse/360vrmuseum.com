@@ -183,14 +183,16 @@ function LoginForm(props: Props) {
 
     async function onSubmit(event: Event) {
         event.preventDefault();
-        const formdata = getFormData(event);
-        const response = await axios.post(submitRoute, formdata);
+        const formData = getFormData(event);
+
+        // NODE : the axios instance will handle the redirecting and the popup message for successfully create user
+        // TODO : handling error
+        await axios.post(submitRoute, formData);
     }
 
     return (
         <Root>
             <form onSubmit={onSubmit}>
-                <RecaptchaHandler />
                 <Row className="justify-content-center">
                     <Col xl={4} md={6} sm={7} xs={10}>
                         <input type="hidden" name="recaptcha_token" value={recaptchaVerification} />
@@ -241,7 +243,7 @@ export default R.compose(
             loginRoute: R.path(['app', 'routes', 'login']),
             privacyPolicyRoute: R.path(['app', 'routes', 'privacy-policy']),
             axios: R.prop('axios'),
-            recpatchaKey: R.path(['config', 'recaptcha', 'siteKey']),
+            recaptchaVerification: R.pipe(R.prop('recaptchaVerification'), R.when(R.isNil, R.always(''))),
         }),
         R.applySpec({
             registerAxios,

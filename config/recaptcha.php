@@ -37,7 +37,7 @@ return [
 	 * get more info @ https://developers.google.com/recaptcha/docs/versions
 	 *
 	 */
-	'version'                      => env('RECAPTCHA_DEFAULT_VERSION', 'v2'),
+	'version'                      => 'v3',
 
 	/**
 	 *

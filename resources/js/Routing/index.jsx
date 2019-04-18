@@ -51,6 +51,7 @@ function Routing(props: Props) {
             <LangHandler />
             <NotificationHandler />
             <SwitchPageHandler />
+            <RecaptchaHandler />
             {lang && (
                 <React.Fragment>
                     <NavigationBar />
