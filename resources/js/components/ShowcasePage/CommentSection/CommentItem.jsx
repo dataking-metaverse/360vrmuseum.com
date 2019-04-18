@@ -48,7 +48,7 @@ export default function CommentItem(props: Props) {
         <React.Fragment>
             <TopLine />
             <Root>
-                <Name>{person}&nbsp;{user.getAttribute(name)}</Name>
+                <Name>{person}&nbsp;{user.getAttribute('name')}</Name>
                 <br />
                 <Content>{comment.getAttribute('content')}</Content>
                 <Date>{comment.getAttribute('updated_at')}</Date>
