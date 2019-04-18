@@ -18,6 +18,6 @@ export default class RedirectHandler extends React.Component<RedirectHandlerProp
     shouldComponentUpdate(nextProps) { return nextProps.redirect !== this.props.redirect; }
     componentDidMount() { this.effect(this.props.redirect); }
     componentDidUpdate(nextProps) { this.effect(this.props.redirect); }
-    effect(redirect: string | void) { redirect && this.props.history.push(redirect); clearRedirect(); }
+    effect(redirect: string | void) { redirect && this.props.history.push(redirect); this.props.clearRedirect(); }
     render() { return null; }
 }

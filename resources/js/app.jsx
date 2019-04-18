@@ -43,7 +43,7 @@ try {
 
     const store: Store<{}, ReduxAction> = createStore(reducers, { // TODO : here, flow typing says there is an error here but I don't know what it is even checked for an hour
         ssr: false,
-        user,
+        user: user ? new models.User(user) : null,
         app,
         config,
         assets,
@@ -67,10 +67,10 @@ try {
             JSON.parse,
             R.tap(prop => {
                 if (prop.message) {
-                    pushMessage(store.dispatch)({
+                    pushMessage(store.dispatch)(new models.Message({
                         message: prop.message,
                         appearance: prop.success ? 'success' : 'error'
-                    });
+                    }));
                 }
             }),
             R.tap(R.when(
@@ -86,7 +86,7 @@ try {
     // model
     Model.subscribe(store);
 
-    if (node === null) { throw new Error('hello, world'); }
+    if (node === null) { throw new Error('Node #app is not defined'); }
 
     ReactDOM.render((
         <Provider store={store}>

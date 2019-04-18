@@ -12,11 +12,22 @@ import type {DecoratedProps, RouteProps} from "./navigationBarDecorators";
 import * as R from "ramda";
 import {connect} from "react-redux";
 import {clearUser} from "../../redux/actionBuilders/global";
+import User from "../../models/User";
 
 
 
 type LinksProps = {
     routes: Array<RouteProps>,
+};
+
+type AuthButtonsProps = {
+    user: User,
+    show: boolean,
+    loginRoute: {|
+        name: string,
+        title: string,
+        to: string,
+    |}
 };
 
 const Header = styled.div`
@@ -132,6 +143,23 @@ function Links(props: LinksProps) {
     ));
 }
 
+const AuthButtons = R.compose(
+    connect(R.applySpec({
+        user: R.prop('user'),
+        show: R.path(['config', 'navigationBar', 'showAuth']),
+        loginRoute: R.applySpec({
+            name: R.path(['config', 'navigationBar', 'login']),
+            title: R.path(['lang', 'navigation', 'login', 'title']),
+            to: R.path(['app', 'routes', 'login']),
+        }),
+    }))
+)(function AuthButtons(props: AuthButtonsProps) {
+    const {user, show, loginRoute} = props;
+    if (!show) { return null; }
+    if (!user) { return <Item to={loginRoute.to}>{loginRoute.title}</Item>; }
+    return <LogoutButton />;
+});
+
 export default function MobileNavigationBar(props: DecoratedProps) {
     const {history, location, loginRoute, logoutRoute, user} = props;
     const [navOpen, setNavOpen] = useState(false);
@@ -150,8 +178,7 @@ export default function MobileNavigationBar(props: DecoratedProps) {
             </Header>
             <SlideComponent open={navOpen} onClick={() => setNavOpen(false)}>
                 <Links routes={props.routes} />
-                {/*{!user && <Item to={loginRoute.to}>{loginRoute.title}</Item>}*/}
-                {/*{user && <LogoutButton />}*/}
+                <AuthButtons />
             </SlideComponent>
         </React.Fragment>
     );

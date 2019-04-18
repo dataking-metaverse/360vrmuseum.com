@@ -13,4 +13,5 @@ return [
         'registerButton' => '회원가입',
         'forgotPassword' => 'Forgot your password?',
     ],
+    'requestLogin' => 'Please login to continue.',
 ];
