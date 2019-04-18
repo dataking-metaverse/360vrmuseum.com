@@ -95,7 +95,10 @@ return [
         /**
          * TODO : please rewrite this comment block after it logic is actually applied
          */
-        'commenting' => ['curators'],
+//        'writeComments' => ['curators'],
+//        'readComments' => ['curators'],
+        'writeComments' => ['*'],
+        'readComments' => ['*'],
     ],
 
     /**

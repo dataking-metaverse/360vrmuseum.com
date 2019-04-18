@@ -1,8 +1,8 @@
 import React, {useContext, useState, useEffect} from "react";
 import * as R from "ramda";
-import method from "../../../../helpers/method";
-import ShowcaseContext from "../../ShowcaseContext";
-import LoadingSpinner from "../../../LoadingSpinner";
+import method from "../../../helpers/method";
+import ShowcaseContext from "../ShowcaseContext";
+import LoadingSpinner from "../../LoadingSpinner";
 
 type Props = {
 

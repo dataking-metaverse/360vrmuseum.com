@@ -3,7 +3,7 @@ import * as R from "ramda";
 
 import RestfulModel from "./RestfulModel";
 import Showcase from "./Showcase";
-import CommentItem from "../components/ShowcasePage/components/CommentSection/CommentItem";
+import CommentItem from "../components/ShowcasePage/CommentSection/CommentItem";
 import User from "./User";
 
 export type Props = {|

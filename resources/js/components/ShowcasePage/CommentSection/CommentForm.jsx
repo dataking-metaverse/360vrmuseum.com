@@ -3,22 +3,17 @@ import * as R from "ramda";
 import {connect} from "react-redux";
 import styled from "styled-components";
 
-import getFormData from "../../../../helpers/getFormData";
-import ShowcaseContext from "../../ShowcaseContext";
-import Button from "../../../Button";
-import User from "../../../../models/User";
+import getFormData from "../../../helpers/getFormData";
+import ShowcaseContext from "../ShowcaseContext";
+import Button from "../../Button";
+import User from "../../../models/User";
 
 
 type Props = {
-    user: User,
     text: {
         placeholder: string,
         postComment: string,
     }
-};
-
-type InnerProps = {
-
 };
 
 const TextArea = styled.textarea`
@@ -32,7 +27,9 @@ const TextArea = styled.textarea`
     font-family: inherit;
 `;
 
-const CommentFormInner = R.compose(
+
+
+export default R.compose(
     connect(
         R.applySpec({
             text: R.path(['lang', 'pages', 'showcase', 'commentSection']),
@@ -41,7 +38,7 @@ const CommentFormInner = R.compose(
         }),
         R.always({})
     )
-)(function(props: InnerProps) {
+)(function CommentForm(props: Props) {
     const {text, axios, submitRoute} = props;
     const showcase = useContext(ShowcaseContext);
 
@@ -64,16 +61,3 @@ const CommentFormInner = R.compose(
         </form>
     );
 });
-
-function CommentForm(props: Props) {
-    const user: User = props.user;
-    return user ? <CommentFormInner /> : null;
-}
-
-export default R.compose(
-connect(
-    R.applySpec({
-        user: R.prop('user'),
-    }),
-    R.always({}))
-)(CommentForm);
