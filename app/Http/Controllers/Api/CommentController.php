@@ -33,6 +33,10 @@ class CommentController extends Controller
     }
 
     function post(Request $request) {
+        $validation = Validator::make($request->all(), [
+            'recaptcha_token' => 'required|recaptcha',
+        ]);
+        if ($validation->fails()) { throw new ValidationException($validation); }
         $user = requireUser();
         $mid = $this->requireParam('mid');
         $content = $this->requireParam('content');
