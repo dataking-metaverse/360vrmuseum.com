@@ -45,7 +45,6 @@ const Date = styled.div`
 
 export default function CommentItem(props: Props) {
     const {comment} = props;
-    console.log(comment);
     const user = comment.getUser();
 
     return (
