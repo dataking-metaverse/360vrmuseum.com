@@ -10,6 +10,7 @@ import {
     REDIRECT_CLEAR,
     USER_REGISTER,
     USER_CLEAR,
+    RECAPTCHA_VERIFICATION_REGISTER,
 } from "../actionTypes";
 
 export const registerLang = register(LANG_REGISTER);
@@ -26,3 +27,6 @@ export const clearRedirect = registerEmpty(REDIRECT_CLEAR);
 
 export const registerUser = register(USER_REGISTER);
 export const clearUser = registerEmpty(USER_CLEAR);
+
+// recaptchaVerification
+export const registerRecaptchaVerification = register(RECAPTCHA_VERIFICATION_REGISTER);

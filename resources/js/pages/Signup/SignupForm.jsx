@@ -4,16 +4,17 @@ import styled from "styled-components";
 import {Container, Row, Col} from "styled-bootstrap-grid";
 import {connect} from "react-redux";
 
-import Checkbox from "../../../components/Checkbox";
-import rawFormData from "../../../helpers/rawFormData";
-import {registerAccessCredential, registerAxios} from "../../../redux/actionBuilders/global";
+import RecaptchaHandler from "../../components/RecaptchaHandler";
+import Checkbox from "../../components/Checkbox";
+import rawFormData from "../../helpers/rawFormData";
+import {registerAccessCredential, registerAxios} from "../../redux/actionBuilders/global";
 import {Link} from "react-router-dom";
-import {Option} from "../../../components/Select";
-import Select from "../../../components/Select";
+import {Option} from "../../components/Select";
+import Select from "../../components/Select";
 
 import type {Axios} from "axios";
 import type {Element} from "react";
-import getFormData from "../../../helpers/getFormData";
+import getFormData from "../../helpers/getFormData";
 import {withRouter} from "react-router";
 
 type Props = {
@@ -33,7 +34,8 @@ type Props = {
     submitRoute: string,
     loginRoute: string,
     privacyPolicyRoute: string,
-    axiosInstance: Axios,
+    axios: Axios,
+    recaptchaVerification: string,
 
     registerAxios: () => {},
     registerAccessCredential: () => {},
@@ -132,6 +134,22 @@ const AgreeTerms = styled.span`
     }
 `;
 
+const RecaptchaPolicy = styled.div`
+    color: #888;
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+
+    > a {
+        font-weight: bold;
+        color: #888;
+        
+        &:focus, &:visited {
+            outline: none;
+            color: #888;
+        }
+    }
+`;
+
 function InputField(props: InputFieldProps) {
     const {label, name, type = 'text'} = props;
     return (
@@ -156,7 +174,7 @@ function JobSelect(props: JobSelectProps): Element {
 }
 
 function LoginForm(props: Props) {
-    const {text, submitRoute, loginRoute, privacyPolicyRoute, axiosInstance, registerAxios, registerAccessCredential, history} = props;
+    const {text, submitRoute, loginRoute, privacyPolicyRoute, axios, recaptchaVerification} = props;
 
     function termsText() {
         const {terms, agreeTerms} = text;
@@ -165,8 +183,11 @@ function LoginForm(props: Props) {
 
     async function onSubmit(event: Event) {
         event.preventDefault();
-        const formdata = getFormData(event);
-        const response = await axiosInstance.post(submitRoute, formdata);
+        const formData = getFormData(event);
+
+        // NODE : the axios instance will handle the redirecting and the popup message for successfully create user
+        // TODO : handling error
+        await axios.post(submitRoute, formData);
     }
 
     return (
@@ -174,6 +195,7 @@ function LoginForm(props: Props) {
             <form onSubmit={onSubmit}>
                 <Row className="justify-content-center">
                     <Col xl={4} md={6} sm={7} xs={10}>
+                        <input type="hidden" name="recaptcha_token" value={recaptchaVerification} />
                         <InputField label={text.email} name="email" />
                         <InputField label={text.name} name="name" />
                         <InputField label={text.password} name="password" type="password" />
@@ -186,10 +208,16 @@ function LoginForm(props: Props) {
                             options={text.jobOptions}
                         />
 
-                        <div className="mb-5">
+                        <div className="mb-4">
                             <Checkbox name="accept_terms" type="checkbox" />
                             <AgreeTerms className="pl-4" dangerouslySetInnerHTML={{__html: termsText()}} />
                         </div>
+
+                        <RecaptchaPolicy>
+                            This site is protected by reCAPTCHA and the Google&nbsp;
+                            <a href="https://policies.google.com/privacy">Privacy Policy</a> and&nbsp;
+                            <a href="https://policies.google.com/terms">Terms of Service</a> apply.
+                        </RecaptchaPolicy>
 
                         <Row>
                             <Col md={6} xs={12} className="mb-3">
@@ -214,7 +242,8 @@ export default R.compose(
             submitRoute: R.path(['app', 'routes', 'api.auth.signup']),
             loginRoute: R.path(['app', 'routes', 'login']),
             privacyPolicyRoute: R.path(['app', 'routes', 'privacy-policy']),
-            axiosInstance: R.prop('axios'),
+            axios: R.prop('axios'),
+            recaptchaVerification: R.pipe(R.prop('recaptchaVerification'), R.when(R.isNil, R.always(''))),
         }),
         R.applySpec({
             registerAxios,

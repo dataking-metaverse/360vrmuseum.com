@@ -32,27 +32,27 @@ class AuthController extends Controller {
      */
     public function signup(Request $request)
     {
-        $request->validate([
+        $validation = Validator::make($request->all(), [
             'name' => 'required|string',
             'email' => 'required|string|email|unique:users',
             'password' => 'required|string|confirmed',
             'phone' => 'required|string',
             'job' => 'required|string',
             'accept_terms' => 'required|accepted',
+            'recaptcha_token' => 'required|recaptcha',
         ]);
-        $user = new User([
+        if ($validation->fails()) { throw new ValidationException($validation); }
+        $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
+            'phone' => $request->phone,
+            'job' => $request->job,
             'password' => bcrypt($request->password),
-            'meta' => [
-                $request->phone,
-                $request->job,
-            ],
         ]);
         $user->save();
         return responseJson([
             'redirect' => route('login', null, false),
-            'message' => 'Successfully created user!',
+            'message' => config('lang.ko.pages.signup.successMessage'),
         ]);
     }
 

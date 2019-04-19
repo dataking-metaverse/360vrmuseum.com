@@ -8,6 +8,7 @@ import RedirectHandler from "../components/RedirectHandler";
 import LangHandler from "../components/LangHandler";
 import NotificationHandler from "../components/NotificationHandler";
 import SwitchPageHandler from "../components/SwitchPageHandler";
+import RecaptchaHandler from "../components/RecaptchaHandler";
 import NavigationBar from "../components/NavigationBar";
 import Footer from "../components/Footer";
 import routes from "./routes";
@@ -50,6 +51,7 @@ function Routing(props: Props) {
             <LangHandler />
             <NotificationHandler />
             <SwitchPageHandler />
+            <RecaptchaHandler />
             {lang && (
                 <React.Fragment>
                     <NavigationBar />

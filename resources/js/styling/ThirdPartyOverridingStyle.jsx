@@ -171,6 +171,11 @@ ${createFlexInBreakpoint('xl')}
 .text-right { text-align: right !important; }
 .text-center { text-align: center !important; }
 
+
+.grecaptcha-badge {
+    visibility: hidden;
+}
+
 `;
 
 export default ThirdPartyOverridingStyle;

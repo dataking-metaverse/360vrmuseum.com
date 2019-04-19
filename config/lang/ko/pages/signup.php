@@ -18,4 +18,5 @@ return [
         'signup' => '회원가입',
         'jobOptions' => ["교수", "박사과정", "석사과정", "대학원생", "연구원", "대학생", "시간강사", "공무원", "교사", "고등학생", "중학생", "초등학생", "일반회원(기타)"],
     ],
+    'successMessage' => 'Successfully created user!',
 ];
