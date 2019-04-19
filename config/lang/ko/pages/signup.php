@@ -16,7 +16,16 @@ return [
         'terms' => '약관',
         'agreeTerms' => '{termsLink} 및 이메일 수신 동의',
         'signup' => '회원가입',
-        'jobOptions' => ["교수", "박사과정", "석사과정", "대학원생", "연구원", "대학생", "시간강사", "공무원", "교사", "고등학생", "중학생", "초등학생", "일반회원(기타)"],
+        'jobOptions' => [
+            'professor' => '교수',
+            'curator' => '학예사',
+            'researcher' => '연구원',
+            'student' => '학생',
+            'lecturer' => '강사',
+            'publicServant' => '공무원',
+            'teacher' => '교사',
+            'others' => '일반회원(기타)',
+        ],
     ],
     'successMessage' => 'Successfully created user!',
 ];
