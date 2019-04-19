@@ -1,6 +1,6 @@
 <?php
 
 return [
-    'createdUser' => 'Successfully created user',
-    'logoutMessage' => 'Successfully logged out',
+    'createdUser' => '계정 생성에 성공했습니다.',
+    'logoutMessage' => '로그아웃 되었습니다.',
 ];
