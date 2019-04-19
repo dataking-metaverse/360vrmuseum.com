@@ -21,6 +21,8 @@ type ButtonColorSet = {|
 |};
 
 
+const propValue = (propName, yes, no) => props => props[propName] ? yes : no;
+
 const backgroundColor = R.path(['colorSet', 'backgroundColor']);
 const border = R.path(['colorSet', 'border']);
 const color = R.path(['colorSet', 'color']);
@@ -29,7 +31,8 @@ const Basic = styled.button`
     border: 1px solid ${border};
     color: ${color};
     line-height: 1;
-    cursor: pointer;
+    cursor: ${propValue('disabled', 'initial', 'pointer')};
+    opacity: ${propValue('disabled', .4, 1)};
 `;
 const Normal = styled(Basic)`
     padding: 1.5rem 3rem;

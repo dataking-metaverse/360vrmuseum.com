@@ -94,8 +94,12 @@ return [
 
         /**
          * TODO : please rewrite this comment block after it logic is actually applied
+         * The comment section is restricted to logged in users only (so never put ['*'] as the value!)
          */
-        'commenting' => ['curators'],
+        'writeComments' => ['curators'],
+        'readComments' => ['curators'],
+//        'writeComments' => ['*'],
+//        'readComments' => ['*'],
     ],
 
     /**

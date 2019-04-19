@@ -12,7 +12,7 @@ import ShowcaseDescription from "./ShowcaseDescription";
 import ShowcaseImages from "./ShowcaseImages";
 import ShowcaseDetails from "./ShowcaseDetails";
 import ShowcaseRelated from "./ShowcaseRelated";
-import CommentSection from "./components/CommentSection";
+import CommentSection from "./CommentSection";
 
 type Props = {
     showcase: Showcase | void,
@@ -30,7 +30,7 @@ function ShowcasePage(props: Props) {
             <ShowcaseImages />
             <ShowcaseDetails />
             <ShowcaseRelated />
-            {/*<CommentSection />*/}
+            <CommentSection />
         </ShowcaseContext.Provider>
     );
 }

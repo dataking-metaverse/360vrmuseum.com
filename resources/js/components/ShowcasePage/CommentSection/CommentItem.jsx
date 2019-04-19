@@ -1,10 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 
+import {Row, Col} from "styled-bootstrap-grid";
+
+
 type Props = {
     comment: Comment,
 };
-
 
 const SvgIcon = styled.svg`
     display: inline-block;
@@ -44,14 +46,19 @@ const Date = styled.div`
 export default function CommentItem(props: Props) {
     const {comment} = props;
     const user = comment.getUser();
+
     return (
         <React.Fragment>
             <TopLine />
             <Root>
-                <Name>{person}&nbsp;{user.getAttribute(name)}</Name>
+                <Row>
+                    <Col md={6}><Name>{person}&nbsp;{user.getAttribute('name')}</Name></Col>
+                    <Col md={6} className="text-right">
+                        <Date>{comment.getAttribute('updated_at')}</Date>
+                    </Col>
+                </Row>
                 <br />
                 <Content>{comment.getAttribute('content')}</Content>
-                <Date>{comment.getAttribute('updated_at')}</Date>
             </Root>
         </React.Fragment>
     );

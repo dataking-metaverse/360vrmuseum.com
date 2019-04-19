@@ -4,8 +4,8 @@ import styled from "styled-components";
 import {Container, Row, Col} from "styled-bootstrap-grid";
 import {connect} from "react-redux";
 
-import RecaptchaHandler from "../../components/RecaptchaHandler";
 import Checkbox from "../../components/Checkbox";
+import RecaptchaField from "../../components/RecaptchaField";
 import rawFormData from "../../helpers/rawFormData";
 import {registerAccessCredential, registerAxios} from "../../redux/actionBuilders/global";
 import {Link} from "react-router-dom";
@@ -35,7 +35,6 @@ type Props = {
     loginRoute: string,
     privacyPolicyRoute: string,
     axios: Axios,
-    recaptchaVerification: string,
 
     registerAxios: () => {},
     registerAccessCredential: () => {},
@@ -174,7 +173,7 @@ function JobSelect(props: JobSelectProps): Element {
 }
 
 function LoginForm(props: Props) {
-    const {text, submitRoute, loginRoute, privacyPolicyRoute, axios, recaptchaVerification} = props;
+    const {text, submitRoute, loginRoute, privacyPolicyRoute, axios} = props;
 
     function termsText() {
         const {terms, agreeTerms} = text;
@@ -195,7 +194,7 @@ function LoginForm(props: Props) {
             <form onSubmit={onSubmit}>
                 <Row className="justify-content-center">
                     <Col xl={4} md={6} sm={7} xs={10}>
-                        <input type="hidden" name="recaptcha_token" value={recaptchaVerification} />
+                        <RecaptchaField />
                         <InputField label={text.email} name="email" />
                         <InputField label={text.name} name="name" />
                         <InputField label={text.password} name="password" type="password" />
@@ -243,7 +242,6 @@ export default R.compose(
             loginRoute: R.path(['app', 'routes', 'login']),
             privacyPolicyRoute: R.path(['app', 'routes', 'privacy-policy']),
             axios: R.prop('axios'),
-            recaptchaVerification: R.pipe(R.prop('recaptchaVerification'), R.when(R.isNil, R.always(''))),
         }),
         R.applySpec({
             registerAxios,
