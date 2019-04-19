@@ -87,6 +87,7 @@ class WebController extends Controller {
                 'app' => json_encode($context['app'], JSON_UNESCAPED_UNICODE),
                 'js' => mix('/js/app.js')->toHtml(),
                 'googleTagManagerKey' => env('GOOGLE_TAG_MANAGER_KEY'),
+                'recaptchaSiteKey' => env('RECAPTCHA_SITE_KEY'),
                 'version' => config('version'),
             ])
             ->context('meta', array_merge(

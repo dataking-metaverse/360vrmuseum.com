@@ -27,4 +27,5 @@ return [
             'others' => '일반회원(기타)',
         ],
     ],
+    'successMessage' => 'Successfully created user!',
 ];

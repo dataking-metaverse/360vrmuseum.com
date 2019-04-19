@@ -13,6 +13,7 @@ import {
     REDIRECT_CLEAR,
     USER_REGISTER,
     USER_CLEAR,
+    RECAPTCHA_VERIFICATION_REGISTER, //recaptchaVerification
 } from "../actionTypes";
 import User from "../../models/User";
 
@@ -72,4 +73,9 @@ export const user: (state: User | void, action: ReduxAction) => User | void = (s
         case USER_CLEAR: return null;
         default: return state;
     }
+};
+
+export const recaptchaVerification = (state = null, action) => {
+    if (action.type === RECAPTCHA_VERIFICATION_REGISTER) { return action.value; }
+    return state;
 };

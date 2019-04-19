@@ -32,6 +32,8 @@ const ServerLayout = (head, body, props) => `<!DOCTYPE html>
   gtag('config', '${props.googleTagManagerKey}');
 </script>
     ` : ''}
+<script src="https://www.google.com/recaptcha/api.js?render=${props.recaptchaSiteKey}" async defer></script>
+
 </body>
 </html>
 
