@@ -35,7 +35,7 @@ try {
 
     const store: Store<{}, ReduxAction> = createStore(reducers, { // TODO : here, flow typing says there is an error here but I don't know what it is even checked for an hour
         ssr: true,
-        user: context.user,
+        user: context.user ? new models.User(context.user) : null,
         app: context.app,
         config: context.config,
         assets,

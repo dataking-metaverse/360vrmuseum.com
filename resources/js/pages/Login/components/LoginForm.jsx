@@ -112,7 +112,7 @@ function LoginForm(props: Props) {
         event.preventDefault();
         const formData = getFormData(event);
         formData.remember_me = !!formData.remember_me;
-        const user = User.login(formData);
+        const user = await User.login(formData);
 
         // TODO : handle unauthorized
         if (user === null) { /** TODO **/ }

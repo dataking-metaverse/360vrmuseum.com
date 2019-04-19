@@ -64,11 +64,7 @@ export const messages: ArrayReducer = (state = [], action: ReduxAction) => {
     }
 };
 
-export const redirect: StringReducer = (state = null, action) => {
-    if (action.type === REDIRECT_PUSH) { return action.value; }
-    if (action.type === REDIRECT_CLEAR) { return null; }
-    return state || null;
-};
+export const redirect: StringReducer = objectReducerBuilder(REDIRECT_PUSH, REDIRECT_CLEAR);
 
 export const user: (state: User | void, action: ReduxAction) => User | void = (state = null, action) => {
     switch(action.type) {

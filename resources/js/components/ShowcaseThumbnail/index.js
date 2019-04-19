@@ -88,7 +88,6 @@ const ShowcaseCardInner = R.compose(
     }), R.always({}))
 )(function ShowcaseCardInner(props: InnerProps) {
     const {showcase, presentedBy} = props;
-    console.log(props);
     if (!showcase) { return null; }
     return (
         <React.Fragment>

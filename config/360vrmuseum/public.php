@@ -7,6 +7,7 @@ return [
 
     'navigationBar' => [
         'showHome' => true,
+        'showAuth' => true,
         'staticItems' => [
             'home',
             'national-museum',
@@ -70,6 +71,31 @@ return [
                 ],
             ],
         ],
+    ],
+
+    /**
+     * privileges
+     *
+     * All the values under the assoc 'privileges' should be key => value pairs, and the values should all be arrays.
+     *
+     * If you put an asterisk ('*'), that means the functionality is OPEN FOR EVERYONE EVEN THEY DON"T LOGIN.
+     */
+    'privileges' => [
+
+        /**
+         * I think usually this will only be either of below:
+         *
+         *  - ['curators'] // (curators only)
+         *  - ['basic'] // (accessable by all kinds of users who has login)
+         *  - ['*'] // (accessable by everyone, regardless if he has logged in or not)
+         */
+//        'viewShowcases' => ['basic'], // enable this line when you need to restrict
+        'viewShowcases' => ['*'], // enable this line to enable showcase to everyone
+
+        /**
+         * TODO : please rewrite this comment block after it logic is actually applied
+         */
+        'commenting' => ['curators'],
     ],
 
 ];

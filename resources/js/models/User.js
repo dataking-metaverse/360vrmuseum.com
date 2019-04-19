@@ -4,9 +4,9 @@ import * as R from "ramda";
 import RestfulModel from "./RestfulModel";
 
 type Props = {|
-    id: number,
     email: string,
     name: string,
+    types: string,
 |};
 
 type LoginFormData = {
@@ -15,17 +15,16 @@ type LoginFormData = {
     remember_me?: boolean,
 };
 
+const hasCommon = R.curry((arr1, arr2) => arr1.some(R.includes(R.__, arr2)));
+
+
 export default class User extends RestfulModel<Props> {
 
     props: Props;
 
-    static FIELDS = [
-        'id',
-        'email',
-        'name',
-    ];
+    static constructByData: (props: Props) => Promise<User> = R.construct(User);
 
-    static constructByResponse: {data: {}} => User = R.pipe(
+    static constructByResponse: {data: {}} => Promise<User> = R.pipe(
         R.path(['data', 'data']),
         User.constructByData,
     );
@@ -45,9 +44,33 @@ export default class User extends RestfulModel<Props> {
         return User.constructByResponse(response);
     }
 
+    static isEveryoneCan: (privilegeName: string) => boolean = R.pipe(
+        R.append(R.__, ['state', 'config', 'privileges']),
+        R.path(R.__, User),
+        R.converge(R.and, [Array.isArray, R.includes('*')])
+    );
+
+    static hasPrivilegeSafe(user: ?User, privilegeName: string): boolean {
+        if (User.isEveryoneCan(privilegeName)) { return true; }
+        return user ? user._hasPrivilegeMarked(privilegeName) : false;
+    }
+
+    static canViewShowcases = user => User.isEveryoneCan('viewShowcases') || (user && user.hasPrivilege('viewShowcases'));
+
     constructor(props: Props) {
         super(props);
         this.props = props;
+    }
+
+    hasPrivilege(privilegeName: string): boolean {
+        if (User.isEveryoneCan(privilegeName)) { return true; }
+        return this._hasPrivilegeMarked(privilegeName);
+    }
+
+    _hasPrivilegeMarked(privilegeName: string): boolean {
+        const path = ['state', 'config', 'privileges', privilegeName];
+        const privilege = R.path(path)(User);
+        return Array.isArray(privilege) && privilege.some(R.includes(R.__, this.props.types));
     }
 
 }

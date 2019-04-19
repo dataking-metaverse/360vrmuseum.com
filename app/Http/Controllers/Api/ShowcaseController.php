@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Api;
 
 use App\Console\Commands\FetchShowcaseStatistics;
+use App\Exceptions\Api\UnauthorizedException;
 use App\Exceptions\Api\ValidationException;
+use App\User;
 use Cache;
 use Validator;
 use Illuminate\Http\Request;
@@ -55,6 +57,11 @@ class ShowcaseController extends Controller
         }));
     }
 
+    static function userHasPrivilege(string $privilege): bool {
+        $user = auth()->user();
+        return User::hasPrivilegeSafe($user, $privilege);
+    }
+
     function __construct(Request $request) {
         parent::__construct($request);
         $validation = Validator::make($request->all(), [
@@ -77,6 +84,7 @@ class ShowcaseController extends Controller
     }
 
     function single(Request $reuqest) {
+        if (!static::userHasPrivilege('viewShowcases')) { throw new UnauthorizedException(); }
         $mid = $this->requireParam('mid');
         return static::success(static::propEq('mid', $mid));
     }

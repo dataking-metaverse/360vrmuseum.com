@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "21bdc0ecb4116e5b19e2f3e80fe4ee6f",
+    "content-hash": "86b0f4464a1e99a72a6ef1c865291041",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -698,16 +698,16 @@
         },
         {
             "name": "jenssegers/mongodb",
-            "version": "v3.4.0",
+            "version": "v3.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jenssegers/laravel-mongodb.git",
-                "reference": "32974fdaf5eefb76f3968a7a6c2078d06c0484ac"
+                "reference": "58972584d1b5ea61101a9aaa80c84e22f19d1daa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jenssegers/laravel-mongodb/zipball/32974fdaf5eefb76f3968a7a6c2078d06c0484ac",
-                "reference": "32974fdaf5eefb76f3968a7a6c2078d06c0484ac",
+                "url": "https://api.github.com/repos/jenssegers/laravel-mongodb/zipball/58972584d1b5ea61101a9aaa80c84e22f19d1daa",
+                "reference": "58972584d1b5ea61101a9aaa80c84e22f19d1daa",
                 "shasum": ""
             },
             "require": {
@@ -763,7 +763,7 @@
                 "mongo",
                 "mongodb"
             ],
-            "time": "2018-02-25T18:52:04+00:00"
+            "time": "2019-02-27T16:24:21+00:00"
         },
         {
             "name": "laravel/framework",
