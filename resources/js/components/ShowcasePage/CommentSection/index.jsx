@@ -27,6 +27,7 @@ function CommentSection(props: Props) {
     const canRead = User.hasPrivilegeSafe(user, 'readComments');
     const canWrite = User.hasPrivilegeSafe(user, 'writeComments');
 
+    if (!canRead && !canWrite) { return null; }
     return (
         <ShowcaseContainer>
             <ShowcaseSectionTitle>{text.title}</ShowcaseSectionTitle>

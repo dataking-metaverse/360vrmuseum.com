@@ -1,8 +1,10 @@
-import React, {useContext} from "react";
+import React, {useState, useContext} from "react";
 import * as R from "ramda";
 import {connect} from "react-redux";
 import styled from "styled-components";
 
+import {pushMessage} from "../../../redux/actionBuilders/global";
+import {updateLastCommentSubmittedTime} from "../../../redux/actionBuilders/showcase";
 import RecaptchaField from "../../../components/RecaptchaField";
 import getFormData from "../../../helpers/getFormData";
 import ShowcaseContext from "../ShowcaseContext";
@@ -13,7 +15,8 @@ type Props = {
     text: {
         placeholder: string,
         postComment: string,
-    }
+    },
+    pushMessage: function,
 };
 
 const TextArea = styled.textarea`
@@ -27,6 +30,7 @@ const TextArea = styled.textarea`
     font-family: inherit;
 `;
 
+const getMid = showcase => showcase ? showcase.getAttribute('mid') : '';
 
 
 export default R.compose(
@@ -36,28 +40,46 @@ export default R.compose(
             submitRoute: R.path(['app', 'routes', 'api.comment.post']),
             axios: R.prop('axios'),
         }),
-        R.always({})
+        R.applySpec({pushMessage, updateLastCommentSubmittedTime})
     )
 )(function CommentForm(props: Props) {
-    const {text, axios, submitRoute} = props;
+    const {text, axios, submitRoute, updateLastCommentSubmittedTime} = props;
     const showcase = useContext(ShowcaseContext);
+    const [content, setContent] = useState('');
 
-    async function onSubmit(event: Event) {
-        event.preventDefault();
-        const data = getFormData(event);
-        if (!data.comment) { return false; }
-        await axios.post(submitRoute, {
-            mid: showcase.getAttribute('mid'),
-            content: data.comment,
-        });
-    }
+    const onSubmit: (event: Event) => void = R.pipe(
+        R.tap(R.invoker(0, 'preventDefault')),
+        getFormData,
+        R.when(
+            R.prop('content'),
+            R.pipe(
+                R.curryN(2, axios.post)(submitRoute),
+                R.then(R.pipe(
+                    () => setContent(''),
+                    updateLastCommentSubmittedTime
+                ))
+            )
+        )
+    );
+
+    const onChange: (event: Event) => void = R.pipe(
+        R.path(['target', 'value']),
+        R.when(
+            R.complement(R.is(String)),
+            R.always(''),
+        ),
+        setContent
+    );
+
+    const hasContent = !!content.trim();
 
     return (
         <form onSubmit={onSubmit}>
             <RecaptchaField />
-            <TextArea name="comment" placeholder={text.placeholder} />
+            <input type="hidden" name="mid" value={getMid(showcase)} />
+            <TextArea name="content" placeholder={text.placeholder} onChange={onChange} value={content} />
             <div className="text-right">
-                <Button type="secondary">{text.postComment}</Button>
+                <Button type="secondary" disabled={!hasContent}>{text.postComment}</Button>
             </div>
         </form>
     );

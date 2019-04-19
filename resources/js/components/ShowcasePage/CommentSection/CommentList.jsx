@@ -1,15 +1,18 @@
 import React, {useContext, useState, useEffect} from "react";
 import * as R from "ramda";
+import {connect} from "react-redux";
+
 import method from "../../../helpers/method";
 import ShowcaseContext from "../ShowcaseContext";
 import LoadingSpinner from "../../LoadingSpinner";
 
-type Props = {
 
+type Props = {
+    lastCommentSubmittedTime: Date,
 };
 
-
 function CommentList(props: Props) {
+    const {lastCommentSubmittedTime} = props;
     const [items, setItems] = useState([]);
     const showcase = useContext(ShowcaseContext);
 
@@ -25,7 +28,7 @@ function CommentList(props: Props) {
                 ))
             )
         )(showcase);
-    }, [showcase]);
+    }, [showcase, lastCommentSubmittedTime]);
 
     if (showcase === null) { return <LoadingSpinner />; }
 
@@ -33,5 +36,5 @@ function CommentList(props: Props) {
 }
 
 export default R.compose(
-    R.identity
+    connect(R.pick(['lastCommentSubmittedTime']))
 )(CommentList);

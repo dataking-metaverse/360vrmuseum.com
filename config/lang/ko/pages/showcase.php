@@ -31,5 +31,6 @@ return [
         'placeholder' => 'Join the discussion...',
         'postComment' => 'Post Comment',
         'reply' => 'Reply',
+        'sent' => 'Comment is sent',
     ],
 ];

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 
+use App\Exceptions\Api\MissingParameterException;
 use App\Exceptions\Api\NotFoundException;
 use App\Http\Controllers\Controller as BasicController;
 use Illuminate\Http\Request;
