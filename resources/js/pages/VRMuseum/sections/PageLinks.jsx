@@ -3,6 +3,7 @@ import * as R from "ramda";
 import styled from "styled-components";
 import {Container} from "styled-bootstrap-grid";
 import {connect} from "react-redux";
+import {Link} from "react-router-dom";
 
 import Button from "../../../components/Button";
 import faded from "../../../helpers/faded";
@@ -34,13 +35,17 @@ const Spacer = styled.span`
 `;
 
 function PageLinks(props: Props) {
-    const {text} = props;
+    const {text, homeRoute, contactUsRoute} = props;
     return (
         <Root>
             <Inner delay={1000}>
-                <Button type="primary">{text.toMainPage}</Button>
+                <Link to={homeRoute}>
+                    <Button type="primary">{text.toMainPage}</Button>
+                </Link>
                 <Spacer>&nbsp;</Spacer>
-                <Button type="secondary">{text.toContactPage}</Button>
+                <Link to={contactUsRoute}>
+                    <Button type="secondary">{text.toContactPage}</Button>
+                </Link>
             </Inner>
         </Root>
     );
@@ -48,6 +53,8 @@ function PageLinks(props: Props) {
 
 export default R.compose(
     connect(R.applySpec({
+        homeRoute: R.path(['app', 'routes', 'home']),
+        contactUsRoute: R.path(['app', 'routes', 'contact-us']),
         text: R.path(['lang', 'pages', 'vrmuseum', 'pageLinks']),
     })),
 )(PageLinks);
