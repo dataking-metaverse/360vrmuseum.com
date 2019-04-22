@@ -17,7 +17,7 @@ const ContactFormContainer = styled(Container)`
 
 @page("contact-us")
 export default class ContactUs extends React.Component {
-    render(Root, props: Props) {
+    render() {
         return (
             <React.Fragment>
                 <ContactWelcome />
