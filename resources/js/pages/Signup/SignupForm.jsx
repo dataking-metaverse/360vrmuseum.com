@@ -159,14 +159,20 @@ function InputField(props: InputFieldProps) {
     );
 }
 
+const jobOptionMap = R.pipe(
+    R.mapObjIndexed((value, key) => (
+        <Option key={key} value={key}>{value}</Option>
+    )),
+    R.values
+);
+
 function JobSelect(props: JobSelectProps): Element {
+
     return (
         <div className="mb-5">
             <SignupLabel htmlFor={props.name}>{props.label}</SignupLabel>
             <Select name={props.name}>
-                {props.options.map(option => (
-                    <Option key={option} value={option}>{option}</Option>
-                ))}
+                {jobOptionMap(props.options)}
             </Select>
         </div>
     )
