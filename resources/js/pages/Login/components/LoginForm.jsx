@@ -147,7 +147,7 @@ function LoginForm(props: Props) {
                                 </Col>
                             </Row>
                         </div>
-                        <ForgotPassword>{text.forgotPassword}</ForgotPassword>
+                        {/*<ForgotPassword>{text.forgotPassword}</ForgotPassword>*/}
                     </Col>
                 </Row>
             </form>
