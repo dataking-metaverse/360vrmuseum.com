@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Api;
 use App\AdminMongoDB\ModelLoadHistory;
 use App\AdminMongoDB\ModelPlayHistory;
 use App\Comment;
+use App\CommentUpdateHistory;
+use App\Exceptions\Api\NotFoundException;
 use App\Exceptions\Api\ValidationException;
 use Cache;
 use Validator;
@@ -16,6 +18,7 @@ class CommentController extends Controller
     function __construct(Request $request) {
         parent::__construct($request);
         $validation = Validator::make($request->all(), [
+            'id' => 'required|integer',
             'mid' => ShowcaseController::VALIDATE_MID,
             'content' => 'string',
         ]);
@@ -49,6 +52,25 @@ class CommentController extends Controller
         ]);
         return responseJson([
             'message' => 'Comment submitted',
+            'data' => $comment,
+        ]);
+    }
+
+    function put(Request $request) {
+        $validation = Validator::make($request->all(), [
+            'recaptcha_token' => 'required|recaptcha',
+        ]);
+        if ($validation->fails()) { throw new ValidationException($validation); }
+        $user = requiredUser();
+        $id = $this->requiredParam('id');
+        $content = $this->requiredParam('content');
+        $comment = Comment::where(['user_id' => $user->id, 'id' => $id])->first();
+        if (!$comment) { throw new NotFoundException(); }
+        CommentUpdateHistory::byComment($comment);
+        $comment->content = $content;
+        $comment->save();
+        return responseJson([
+            'message' => 'Comment updated',
             'data' => $comment,
         ]);
     }

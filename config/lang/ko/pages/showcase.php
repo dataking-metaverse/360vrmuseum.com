@@ -30,6 +30,7 @@ return [
         'title' => 'Leave a Comment',
         'placeholder' => 'Join the discussion...',
         'postComment' => 'Post Comment',
+        'submitEditing' => 'Submit Editing',
         'reply' => 'Reply',
         'sent' => 'Comment is sent',
     ],

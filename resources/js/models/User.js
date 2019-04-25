@@ -57,6 +57,14 @@ export default class User extends RestfulModel<Props> {
 
     static canViewShowcases = user => User.isEveryoneCan('viewShowcases') || (user && user.hasPrivilege('viewShowcases'));
 
+    static isCurrentUser(user: User) {
+        const currentUserEmail = R.pipe(
+            R.always(User),
+            R.path(['state', 'user', 'props', 'email']),
+        )();
+        return currentUserEmail === user.getAttribute('email');
+    }
+
     constructor(props: Props) {
         super(props);
         this.props = props;

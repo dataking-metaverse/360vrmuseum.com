@@ -9,6 +9,7 @@ import RecaptchaField from "../../../components/RecaptchaField";
 import getFormData from "../../../helpers/getFormData";
 import ShowcaseContext from "../ShowcaseContext";
 import Button from "../../Button";
+import CommentTextArea from "./CommentTextArea";
 
 
 type Props = {
@@ -18,17 +19,6 @@ type Props = {
     },
     pushMessage: function,
 };
-
-const TextArea = styled.textarea`
-    display: block;
-    width: 100%;
-    height: 10em;
-    resize: none;
-    padding: .8rem 1.6rem;
-    font-size: 1.8rem;
-    margin-bottom: 1em;
-    font-family: inherit;
-`;
 
 const getMid = showcase => showcase ? showcase.getAttribute('mid') : '';
 
@@ -77,7 +67,7 @@ export default R.compose(
         <form onSubmit={onSubmit}>
             <RecaptchaField />
             <input type="hidden" name="mid" value={getMid(showcase)} />
-            <TextArea name="content" placeholder={text.placeholder} onChange={onChange} value={content} />
+            <CommentTextArea name="content" placeholder={text.placeholder} onChange={onChange} value={content} />
             <div className="text-right">
                 <Button type="secondary" disabled={!hasContent}>{text.postComment}</Button>
             </div>
