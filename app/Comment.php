@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\Relation;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Comment extends Model
@@ -15,7 +16,7 @@ class Comment extends Model
         'subscribe' => 'boolean',
     ];
 
-    public function user() {
+    public function user(): Relation {
         return $this->belongsTo(User::class)->select(['id', 'email', 'name']);
     }
 
