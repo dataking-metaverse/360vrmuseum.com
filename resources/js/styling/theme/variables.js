@@ -30,6 +30,9 @@ const variables = {
 
     },
 
+    zIndexes: {
+        confirm: 777,
+    },
 };
 
 export default variables;

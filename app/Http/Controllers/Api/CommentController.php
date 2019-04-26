@@ -74,4 +74,17 @@ class CommentController extends Controller
             'data' => $comment,
         ]);
     }
+
+    public function delete(Request $request) {
+        $validation = Validator::make($request->all(), [
+            'recaptcha_token' => 'required|recaptcha'
+        ]);
+        if ($validation->fails()) { throw new ValidationException($validation); }
+        $user = requireUser();
+        $id = $this->requireParam('id');
+        Comment::where(['user_id' => $user->id, 'id' => $id])->delete();
+        return responseJson([
+            'message' => 'Comment deleted',
+        ]);
+    }
 }

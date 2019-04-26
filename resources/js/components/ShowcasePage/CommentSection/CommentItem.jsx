@@ -2,6 +2,7 @@ import React, {useContext} from "react";
 import styled from "styled-components";
 import {Row, Col} from "styled-bootstrap-grid";
 
+import Confirm from "../../Confirm";
 import CommentEditing from "./CommentEditing";
 import ModelsContext from "../../../contexts/ModelsContext";
 
