@@ -1,7 +1,9 @@
-import React from "react";
+import React, {useContext} from "react";
 import styled from "styled-components";
-
 import {Row, Col} from "styled-bootstrap-grid";
+
+import CommentEditing from "./CommentEditing";
+import ModelsContext from "../../../contexts/ModelsContext";
 
 
 type Props = {
@@ -45,8 +47,10 @@ const Date = styled.div`
 
 export default function CommentItem(props: Props) {
     const {comment} = props;
+    const {User} = useContext(ModelsContext);
     const user = comment.getUser();
-
+    const isCurrentUser = User.isCurrentUser(user);
+    const commentEditing = isCurrentUser && comment && <CommentEditing comment={comment} />;
     return (
         <React.Fragment>
             <TopLine />
@@ -59,6 +63,7 @@ export default function CommentItem(props: Props) {
                 </Row>
                 <br />
                 <Content>{comment.getAttribute('content')}</Content>
+                {commentEditing}
             </Root>
         </React.Fragment>
     );
