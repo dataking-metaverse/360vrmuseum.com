@@ -61,9 +61,9 @@ class CommentController extends Controller
             'recaptcha_token' => 'required|recaptcha',
         ]);
         if ($validation->fails()) { throw new ValidationException($validation); }
-        $user = requiredUser();
-        $id = $this->requiredParam('id');
-        $content = $this->requiredParam('content');
+        $user = requireUser();
+        $id = $this->requireParam('id');
+        $content = $this->requireParam('content');
         $comment = Comment::where(['user_id' => $user->id, 'id' => $id])->first();
         if (!$comment) { throw new NotFoundException(); }
         CommentUpdateHistory::byComment($comment);

@@ -28,19 +28,21 @@ const Form = styled.form`
 const CommentEditingContent = R.compose(
     connect(
         R.applySpec({
-            submitRoute: R.path(['app', 'routes', 'api.comment.put']),
+            axios: R.prop('axios'),
+            submitRoute: R.path(['app', 'routes', 'api.comment.post']),
             text: R.path(['lang', 'pages', 'showcase', 'commentSection']),
         }),
         R.always({})
     )
 )(function CommentEditingContent(props: Props) {
-    const {comment, text, submitRoute, onSubmitFinish} = props;
+    const {comment, text, submitRoute, onSubmitFinish, axios} = props;
     const commentId = comment.getAttribute('id');
+    const originalContent = comment.getAttribute('content');
     const [editContent, setEditContent] = useState('');
 
     useEffect(() => {
-        setEditContent(comment.getAttribute('content'));
-    }, [comment.getAttribute('content')]);
+        setEditContent(originalContent);
+    }, [originalContent]);
 
     const onTextAreaChange = R.pipe(
         R.path(['target', 'value']),
@@ -70,7 +72,7 @@ const CommentEditingContent = R.compose(
             <Form method="PUT" action="" onSubmit={onSubmit}>
                 <RecaptchaField />
                 <input type="hidden" name="id" value={commentId} />
-                <CommentTextArea onChange={onTextAreaChange} value={editContent} />
+                <CommentTextArea name="content" onChange={onTextAreaChange} value={editContent} />
                 <div className="text-right">
                     <Button type="secondary" disabled={!hasContent}>{text.submitEditing}</Button>
                 </div>
