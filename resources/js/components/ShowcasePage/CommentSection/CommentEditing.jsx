@@ -7,6 +7,7 @@ import RecaptchaField from "../../RecaptchaField";
 import CommentTextArea from "./CommentTextArea";
 import Button from "../../Button";
 import getFormData from "../../../helpers/getFormData";
+import {updateLastCommentSubmittedTime} from "../../../redux/actionBuilders/showcase";
 
 type Props = {
     comment: Comment,
@@ -32,10 +33,10 @@ const CommentEditingContent = R.compose(
             submitRoute: R.path(['app', 'routes', 'api.comment.post']),
             text: R.path(['lang', 'pages', 'showcase', 'commentSection']),
         }),
-        R.always({})
+        R.applySpec({updateLastCommentSubmittedTime})
     )
 )(function CommentEditingContent(props: Props) {
-    const {comment, text, submitRoute, onSubmitFinish, axios} = props;
+    const {comment, text, submitRoute, onSubmitFinish, axios, updateLastCommentSubmittedTime} = props;
     const commentId = comment.getAttribute('id');
     const originalContent = comment.getAttribute('content');
     const [editContent, setEditContent] = useState('');
@@ -57,14 +58,15 @@ const CommentEditingContent = R.compose(
             R.pipe(
                 R.curryN(2, axios.put)(submitRoute),
                 R.then(R.pipe(
-                    () => setContent(''),
-                    onSubmitFinish
+                    onSubmitFinish,
+                    updateLastCommentSubmittedTime
                 ))
             )
         )
     );
 
     const hasContent = Boolean(editContent);
+    const hasUpdated = R.complement(R.equals)(editContent, originalContent);
 
     return (
         <React.Fragment>
@@ -74,7 +76,7 @@ const CommentEditingContent = R.compose(
                 <input type="hidden" name="id" value={commentId} />
                 <CommentTextArea name="content" onChange={onTextAreaChange} value={editContent} />
                 <div className="text-right">
-                    <Button type="secondary" disabled={!hasContent}>{text.submitEditing}</Button>
+                    <Button type="secondary" disabled={!hasContent || !hasUpdated}>{text.submitEditing}</Button>
                 </div>
             </Form>
         </React.Fragment>
