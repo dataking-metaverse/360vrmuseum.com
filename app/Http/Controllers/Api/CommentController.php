@@ -18,7 +18,7 @@ class CommentController extends Controller
     function __construct(Request $request) {
         parent::__construct($request);
         $validation = Validator::make($request->all(), [
-            'id' => 'required|integer',
+            'id' => 'integer',
             'mid' => ShowcaseController::VALIDATE_MID,
             'content' => 'string',
         ]);
