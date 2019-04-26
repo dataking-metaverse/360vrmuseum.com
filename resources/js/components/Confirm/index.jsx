@@ -1,24 +1,15 @@
-import React, {useState} from "react";
-import * as R from "ramda";
+import React from "react";
+import ReactDOM from "react-dom";
 
+import ConfirmActual from "./ConfirmActual";
 
-type Props = {
-    open: boolean,
-    onConfirm: () => void
-};
 
 const portalId = 'app-confirm-portal';
+const node = document.getElementById(portalId);
 
-export default R.compose(
-    R.identity
-)(function Confirm(props: Props) {
-
-    //
-    // React.createP
-    //
-    // return (
-    //     <Root>
-    //
-    //     </Root>
-    // );
-});
+export default function Confirm(props) {
+    return ReactDOM.createPortal(
+        <ConfirmActual {...props} />,
+        node
+    );
+};
