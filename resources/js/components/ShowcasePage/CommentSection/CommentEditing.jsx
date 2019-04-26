@@ -8,18 +8,22 @@ import CommentTextArea from "./CommentTextArea";
 import Button from "../../Button";
 import getFormData from "../../../helpers/getFormData";
 import {updateLastCommentSubmittedTime} from "../../../redux/actionBuilders/showcase";
+import Confirm from "../../Confirm";
 
 type Props = {
     comment: Comment,
 };
 
+const darkPurple = R.path(['theme', 'variables', 'colors', 'basic', 'darkPurple']);
 
 const ToggleButtonWrap = styled.div`
     text-align: right;
 `;
 
-const ToggleButton = styled.a`
+const ToggleButton = styled.span`
     cursor: pointer;
+    text-decoration: underline;
+    color: ${darkPurple};
 `;
 
 const Form = styled.form`
@@ -85,17 +89,39 @@ const CommentEditingContent = R.compose(
 
 
 export default R.compose(
-    R.identity
+    connect(R.applySpec({
+        recaptchaVerification: R.prop('recaptchaVerification'),
+        axios: R.prop('axios'),
+        submitUrl: R.path(['app', 'routes', 'api.comment.post']),
+    }), R.applySpec({updateLastCommentSubmittedTime}))
 )(function CommentEditing(props: Props) {
-    const {comment} = props;
+    const {comment, recaptchaVerification, axios, submitUrl, updateLastCommentSubmittedTime} = props;
     const [open, setOpen] = useState(false);
+    const [deleting, setDeleting] = useState(false);
 
     const content = open && <CommentEditingContent comment={comment} onSubmitFinish={() => setOpen(false)} />;
-    const onToggleButtonClick = () => setOpen(!open);
+    const onDeleteButtonClick = () => setDeleting(true);
+    const onEditButtonClick = () => setOpen(!open);
+
+    const deleteComment = R.pipe(
+        R.assoc('id', R.__, { recaptcha_token: recaptchaVerification }),
+        R.assoc('data', R.__, {}),
+        R.curryN(2, axios.delete)(submitUrl),
+        R.then(updateLastCommentSubmittedTime)
+    );
 
     return open ? content : (
         <ToggleButtonWrap>
-            <ToggleButton onClick={onToggleButtonClick}>edit</ToggleButton>
+            <ToggleButton onClick={onDeleteButtonClick}>delete</ToggleButton>
+            &nbsp;&nbsp;
+            <ToggleButton onClick={onEditButtonClick}>edit</ToggleButton>
+            <Confirm
+                open={deleting}
+                action={() => deleteComment(comment.getAttribute('id'))}
+                onClose={() => setDeleting(false)}
+            >
+                Are you sure you want to delete this content?
+            </Confirm>
         </ToggleButtonWrap>
     );
 });
