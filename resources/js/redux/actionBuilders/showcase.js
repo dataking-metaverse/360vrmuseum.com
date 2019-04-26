@@ -3,4 +3,4 @@ import {
 } from "../actionTypes";
 
 
-export const updateLastCommentSubmittedTime = dispatch => () => dispatch({value: new Date, type: LAST_COMMIT_SUBMITTED_TIME_UPDATE});
+export const updateLastCommentSubmittedTime = dispatch => () => dispatch({type: LAST_COMMIT_SUBMITTED_TIME_UPDATE});
