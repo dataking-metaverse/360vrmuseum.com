@@ -21,6 +21,7 @@ const ServerLayout = (head, body, props) => `<!DOCTYPE html>
 <body>
     ${body}
     <div id="app-back-to-top-portal"></div>
+    <div id="app-confirm-portal"></div>
     <script type="text/javascript" src="${props.js}"></script>
     ${props.googleTagManagerKey ? `
 <script async src="https://www.googletagmanager.com/gtag/js?id=${props.googleTagManagerKey}"></script>

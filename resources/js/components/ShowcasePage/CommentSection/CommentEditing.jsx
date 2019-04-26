@@ -91,11 +91,13 @@ export default R.compose(
     const [open, setOpen] = useState(false);
 
     const content = open && <CommentEditingContent comment={comment} onSubmitFinish={() => setOpen(false)} />;
-    const onToggleButtonClick = () => setOpen(!open);
+    const onDeleteButtonClick = () => setOpen(!open);
+    const onEditButtonClick = () => setOpen(!open);
 
     return open ? content : (
         <ToggleButtonWrap>
-            <ToggleButton onClick={onToggleButtonClick}>edit</ToggleButton>
+            <ToggleButton onClick={onDeleteButtonClick}>delete</ToggleButton>
+            <ToggleButton onClick={onEditButtonClick}>edit</ToggleButton>
         </ToggleButtonWrap>
     );
 });
