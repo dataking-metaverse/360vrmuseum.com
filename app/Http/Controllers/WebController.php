@@ -90,17 +90,6 @@ class WebController extends Controller {
                 'recaptchaSiteKey' => env('RECAPTCHA_SITE_KEY'),
                 'version' => config('version'),
             ])
-            ->context('meta', array_merge(
-                [
-                    'title' => '360°VR Museum',
-                    'description' => 'Next-generation museum - 360°VR Museum',
-                    'url' => config('app.url'),
-                    'image' => url('og-logo.png'),
-                    'imageWidth' => '113',
-                    'imageHeight' => '42',
-                ],
-                config("lang.ko.pages.{$routeName}.meta")
-            ))
             ->render();
         return $ssr;
     }
