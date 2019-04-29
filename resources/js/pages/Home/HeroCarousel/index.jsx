@@ -110,6 +110,7 @@ function renderSlide(slideItems: Array<SlideType>, activeSlide: number): Array<N
     return slideItems.map((slide, index) => (
         <Slide
             key={index}
+            index={index}
             image={R.pick(['src', 'srcSet'], slide)}
             title={slide.title}
             subtitle={slide.subtitle}

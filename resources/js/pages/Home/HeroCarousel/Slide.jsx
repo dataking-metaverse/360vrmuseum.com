@@ -12,6 +12,7 @@ import {Link} from "react-router-dom";
 
 
 type Props = {
+    index: number,
     image: ResponsiveImage,
     title: string,
     subtitle: string,
@@ -48,6 +49,13 @@ const Title = styled.h2`
     max-width: 100%;
 `;
 
+// NOTE : this h1 tag is for SEO purpose only, so it should be hidden
+const SEOTitle = styled.h1`
+    visibility: hidden;
+    position: absolute;
+    font-size: 0;
+`;
+
 const Subtitle = styled.div`
     color: ${themeVar('colors.basic.white')};
     margin-bottom: 5rem;
@@ -58,6 +66,7 @@ function Slide(props: Props) {
     return (
         <Root backgroundImage={props.image.src} active={props.active}>
             <Fade active={props.active} style={{ maxWidth: '100%'}}>
+                {props.index === 0 && <SEOTitle>{props.title}</SEOTitle>}
                 <Title dangerouslySetInnerHTML={{__html: props.title}} />
                 <Subtitle>{props.subtitle}</Subtitle>
                 <Link to={props.path}>
