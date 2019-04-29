@@ -2,9 +2,8 @@
 
 return [
     'meta' => [
-        'title' => 'Home - 360VRMuseum',
-        'description' => '국내외 모든 전시를 PC와 모바일에서 FHD로 감상이 가능한 가상 전시관람 서비스 플랫폼입니다'
-        
+        'title' => '360VRMuseum | 국내외 모든 전시를 PC와 모바일에서 FHD로 감상이 가능한 가상 전시관람 서비스 플랫폼입니다',
+        'description' => '국내외 모든 전시를 PC와 모바일에서 웹브라우져를 이용하여 Full HD로 감상이 가능한 가상 전시관람 서비스 플랫폼입니다',
     ],
     'heroCarousel' => [
         'linkText' => '바로보기',
