@@ -3,10 +3,10 @@ import * as R from "ramda";
 import styled from "styled-components";
 import {Container, Row, Col} from "styled-bootstrap-grid";
 import {connect} from "react-redux";
+import {Link} from "react-router-dom";
 
 import Checkbox from "../../../components/Checkbox";
 import {registerUser} from "../../../redux/actionBuilders/global";
-import {Link} from "react-router-dom";
 import getFormData from "../../../helpers/getFormData";
 import User from "../../../models/User";
 
@@ -89,7 +89,7 @@ const RegisterButton = makeStyledButton(styled(Link))`
     }
 `;
 
-const ForgotPassword = styled.div`
+const ForgotPassword = styled(Link)`
     text-align: center;
     cursor: pointer;
     color: #888;
@@ -147,7 +147,7 @@ function LoginForm(props: Props) {
                                 </Col>
                             </Row>
                         </div>
-                        {/*<ForgotPassword>{text.forgotPassword}</ForgotPassword>*/}
+                        <ForgotPassword>{text.forgotPassword}</ForgotPassword>
                     </Col>
                 </Row>
             </form>
