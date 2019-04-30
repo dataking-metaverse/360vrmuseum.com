@@ -3,7 +3,7 @@
     @foreach($linkList as $link)
         <url>
             <loc>{{ $link }}</loc>
-            <lastmod>2019-02-25T11:40:13+09:00</lastmod>
+            <lastmod>{{ $lastMod }}</lastmod>
         </url>
     @endforeach
 </urlset>
