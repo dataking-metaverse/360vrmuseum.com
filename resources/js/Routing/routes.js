@@ -8,10 +8,15 @@ import VRMuseum from "../pages/VRMuseum";
 import ContactUs from "../pages/ContactUs";
 import Showcase from "../pages/Showcase";
 import Home from "../pages/Home";
+import ForgotPassword from "../pages/ForgotPassword/index";
 
 // NOTE : paths are defined form backend, you will need to make sure the keys are correct
 
 const routes = {
+    'forgot-password': {
+        exact: true,
+        component: ForgotPassword,
+    },
     search: {
         exact: true,
         component: Search,

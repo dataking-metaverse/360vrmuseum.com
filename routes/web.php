@@ -34,6 +34,7 @@ Route::get('/terms-of-service', 'WebController@termsOfService')->name('terms-of-
 Route::get('/login', 'WebController@login')->name('login');
 Route::get('/signup', 'WebController@signup')->name('signup');
 Route::get('/search', 'WebController@search')->name('search');
+Route::get('/forgot-password', 'WebController@forgotPassword')->name('forgot-password');
 
 // API : lang
 Route::get('/api/lang', 'Api\\LangController@get')->name('api.lang');

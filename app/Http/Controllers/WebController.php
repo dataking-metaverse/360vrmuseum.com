@@ -38,6 +38,7 @@ class WebController extends Controller {
                     'login',
                     'signup',
                     'search',
+                    'forgot-password',
                     'api.showcase',
                     'api.showcase.by-presented-by',
                     'api.showcases',
@@ -118,6 +119,7 @@ class WebController extends Controller {
     public function login() { return $this->all(); }
     public function signup() { return $this->all(); }
     public function search() { return $this->all(); }
+    public function forgotPassword() { return $this->all(); }
 
     public function all() {
         return static::ssr();

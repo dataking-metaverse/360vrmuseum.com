@@ -106,7 +106,7 @@ const KeepMeSignedText = styled.span`
 
 
 function LoginForm(props: Props) {
-    const {text, submitRoute, signupRoute, axiosInstance, registerUser} = props;
+    const {text, signupRoute, registerUser, forgotPasswordRoute} = props;
 
     async function onSubmit(event: Event) {
         event.preventDefault();
@@ -147,7 +147,7 @@ function LoginForm(props: Props) {
                                 </Col>
                             </Row>
                         </div>
-                        <ForgotPassword>{text.forgotPassword}</ForgotPassword>
+                        <ForgotPassword to={forgotPasswordRoute}>{text.forgotPassword}</ForgotPassword>
                     </Col>
                 </Row>
             </form>
@@ -161,6 +161,7 @@ export default R.compose(
             text: R.path(['lang', 'pages', 'login', 'loginForm']),
             submitRoute: R.path(['app', 'routes', 'api.auth.login']),
             signupRoute: R.path(['app', 'routes', 'signup']),
+            forgotPasswordRoute: R.path(['app', 'routes', 'forgot-password']),
             axiosInstance: R.prop('axios'),
         }),
         R.applySpec({
