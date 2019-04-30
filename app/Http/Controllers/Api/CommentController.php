@@ -51,7 +51,7 @@ class CommentController extends Controller
             'subscribe' => false,
         ]);
         return responseJson([
-            'message' => 'Comment submitted',
+            'message' => config('lang.ko.messages.comment.submitted'),
             'data' => $comment,
         ]);
     }
@@ -70,7 +70,7 @@ class CommentController extends Controller
         $comment->content = $content;
         $comment->save();
         return responseJson([
-            'message' => 'Comment updated',
+            'message' => config('lang.ko.messages.comment.updated'),
             'data' => $comment,
         ]);
     }
@@ -84,7 +84,7 @@ class CommentController extends Controller
         $id = $this->requireParam('id');
         Comment::where(['user_id' => $user->id, 'id' => $id])->delete();
         return responseJson([
-            'message' => 'Comment deleted',
+            'message' => config('lang.ko.messages.comment.deleted'),
         ]);
     }
 }
