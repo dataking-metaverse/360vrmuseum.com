@@ -20,7 +20,7 @@ class SitemapController extends Controller
         $showcaseRouteList = collect(config('360vrmuseum.showcases'))->pluck('mid')->map(function($mid) { return route('showcase', $mid); });
         $view = view('sitemap', [
             'linkList' => $linkList->merge($showcaseRouteList),
-            'lastMod' => date('Y-m-dTH:i:sP', 1556502138),
+            'lastMod' => date('Y-m-d', 1556502138),
         ]);
         return response($view)->header('Content-Type', 'text/xml');
     }
