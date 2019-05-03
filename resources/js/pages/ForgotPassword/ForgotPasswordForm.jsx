@@ -7,10 +7,12 @@ import {connect} from "react-redux";
 import RecaptchaField from "../../components/RecaptchaField";
 import getFormData from "../../helpers/getFormData";
 import {Link} from "react-router-dom";
-import Checkbox from "../../components/Checkbox";
 
 type Props = {
-
+    passwordResetCreateUrl: string,text: {
+        enterEmail: string,
+        submitButton: string,
+    },
 };
 
 
@@ -58,7 +60,7 @@ const makeStyledButton = function(func) { return styled(func`
     text-decoration: none;
 `)};
 
-const LoginButton = makeStyledButton(styled.button)`
+const SubmitButton = makeStyledButton(styled.button)`
     background-color: #3ba1da;
     color: #fff;
 
@@ -67,37 +69,18 @@ const LoginButton = makeStyledButton(styled.button)`
     }
 `;
 
-const RegisterButton = makeStyledButton(styled(Link))`
-    background-color: #eee;
-    color: #666;
-    &:hover {
-        background-color: #e5e5e5;
-    }
-`;
-
-const ForgotPassword = styled(Link)`
-    text-align: center;
-    cursor: pointer;
-    color: #888;
-    line-height: 2.5rem;
-    font-weight: 100;
-    &:hover {
-        text-decoration: underline;
-    }
-`;
-
-const KeepMeSignedText = styled.span`
-    color: #888;
-`;
-
+const isFormDataAvailable = R.allPass([R.has('recaptcha_token'), R.has('email')]);
 
 function ForgotPasswordForm(props: Props) {
-    const {text} = props;
+    const {text, passwordResetCreateUrl} = props;
 
     const onSubmit = R.pipe(
         R.tap(R.invoker(0, 'preventDefault')),
         getFormData,
-        R.tap(console.log)
+        R.tap(console.log),
+        R.when(
+            isFormDataAvailable,
+        )
     );
 
     return (
@@ -108,20 +91,16 @@ function ForgotPasswordForm(props: Props) {
                 <Row className="justify-content-center">
                     <Col xl={4} md={6} sm={7} xs={10}>
                         <InputBoxWrapper>
-                            <InputLabel>{text.enterUserEmail}</InputLabel>
+                            <InputLabel>{text.enterEmail}</InputLabel>
                             <Input name="email" />
                         </InputBoxWrapper>
                         <div className="mb-5">
                             <Row>
                                 <Col md={6} xs={12} className="mb-3">
-                                    <LoginButton>{text.loginButton}</LoginButton>
-                                </Col>
-                                <Col md={6} xs={12}>
-                                    {/*<RegisterButton to={signupRoute}>{text.registerButton}</RegisterButton>*/}
+                                    <SubmitButton>{text.submitButton}</SubmitButton>
                                 </Col>
                             </Row>
                         </div>
-                        {/*<ForgotPassword to={forgotPasswordRoute}>{text.forgotPassword}</ForgotPassword>*/}
                     </Col>
                 </Row>
             </form>
@@ -131,6 +110,7 @@ function ForgotPasswordForm(props: Props) {
 
 export default R.compose(
     connect(R.applySpec({
-        text: R.path([])
+        passwordResetCreateUrl: R.path(['app', 'routes', 'password-reset.create']),
+        text: R.path(['lang', 'pages', 'forgot-password', 'form']),
     }), R.always({}))
 )(ForgotPasswordForm);

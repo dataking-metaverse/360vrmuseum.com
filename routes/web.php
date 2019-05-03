@@ -56,6 +56,11 @@ Route::get('/api/comment/by-showcase', 'Api\\CommentController@byShowcase')->nam
 // API : contact
 Route::post('/api/contact/send', 'Api\\ContactFormController@send')->name('api.contact.send');
 
+// API : password reset
+Route::post('/api/password/create', 'Auth\\PasswordResetController@create')->name('password-reset.create');
+Route::get('/api/password/find/{token}', 'Auth\\PasswordResetController@find')->name('password-reset.find');
+Route::post('/api/password/reset', 'Auth\\PasswordResetController@reset')->name('password-reset.reset');
+
 
 Route::get('temp', 'WebController@temp');
 Route::get('/sitemap.xml', 'SitemapController@index');

@@ -3,6 +3,7 @@
 return [
     'meta' => [],
     'form' => [
-        'enterUserEmail' => 'Enter your email',
+        'enterEmail' => 'Enter your email',
+        'submitButton' => 'Submit'
     ],
 ];
