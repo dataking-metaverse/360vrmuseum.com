@@ -39,6 +39,7 @@ class WebController extends Controller {
                     'signup',
                     'search',
                     'forgot-password',
+                    'reset-password',
                     'api.showcase',
                     'api.showcase.by-presented-by',
                     'api.showcases',
@@ -103,7 +104,7 @@ class WebController extends Controller {
                     'imageWidth' => '113',
                     'imageHeight' => '42',
                 ],
-                config("lang.ko.pages.{$routeName}.meta")
+                config("lang.ko.pages.{$routeName}.meta", [])
             ))
             ->render();
         return $ssr;
@@ -123,6 +124,7 @@ class WebController extends Controller {
     public function signup() { return $this->all(); }
     public function search() { return $this->all(); }
     public function forgotPassword() { return $this->all(); }
+    public function resetPassword() { return $this->all(); }
 
     public function all() {
         return static::ssr();

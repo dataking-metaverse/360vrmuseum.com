@@ -1,19 +1,22 @@
 import React, {useState} from "react";
+import * as R from "ramda";
+import Axios from "axios";
 import styled from "styled-components";
 import {Col, Container, Row} from "styled-bootstrap-grid";
-import * as R from "ramda";
-import {connect} from "react-redux";
-
 import RecaptchaField from "../../components/RecaptchaField";
+import {connect} from "react-redux";
 import getFormData from "../../helpers/getFormData";
 
 type Props = {
-    passwordResetCreateUrl: string,text: {
-        enterEmail: string,
+    token: string,
+    text: {
+        newPassword: string,
+        confirmPassword: string,
         submitButton: string,
     },
+    axios: Axios,
+    passwordResetUrl: string,
 };
-
 
 const Root = styled(Container)`
     margin-bottom: 10rem;
@@ -69,36 +72,34 @@ const SubmitButton = makeStyledButton(styled.button)`
     }
 `;
 
-const isFormDataAvailable = R.allPass([
-    R.has('recaptcha_token'),
-    R.has('email')]
-);
-
-function ForgotPasswordForm(props: Props) {
-    const {text, passwordResetCreateUrl, axios} = props;
+function ResetPasswordForm(props: Props) {
+    const {token, text, axios, passwordResetUrl} = props;
     const [buttonDisabled, setButtonDisabled] = useState(false);
 
     const onSubmit = R.pipe(
         R.tap(R.invoker(0, 'preventDefault')),
-        R.tap(() => setButtonDisabled(true)),
         getFormData,
-        R.ifElse(
-            isFormDataAvailable,
-            R.curryN(2, axios.post)(passwordResetCreateUrl),
-            () => new Promise(R.F) // TODO : show an error message
-        ),
-        R.then(() => setButtonDisabled(false))
+        R.curryN(2, axios.post)(passwordResetUrl),
     );
 
     return (
         <Root>
             <form method="POST" action="" onSubmit={onSubmit}>
                 <RecaptchaField />
+                <input type="hidden" name="token" value={token} />
                 <Row className="justify-content-center">
                     <Col xl={4} md={6} sm={7} xs={10}>
                         <InputBoxWrapper>
-                            <InputLabel>{text.enterEmail}</InputLabel>
+                            <InputLabel>{text.email}</InputLabel>
                             <Input name="email" />
+                        </InputBoxWrapper>
+                        <InputBoxWrapper>
+                            <InputLabel>{text.newPassword}</InputLabel>
+                            <Input name="password" type="password" />
+                        </InputBoxWrapper>
+                        <InputBoxWrapper>
+                            <InputLabel>{text.confirmPassword}</InputLabel>
+                            <Input name="password_confirmation" type="password" />
                         </InputBoxWrapper>
                         <div className="mb-5">
                             <Row>
@@ -116,8 +117,8 @@ function ForgotPasswordForm(props: Props) {
 
 export default R.compose(
     connect(R.applySpec({
-        passwordResetCreateUrl: R.path(['app', 'routes', 'password-reset.create']),
-        text: R.path(['lang', 'pages', 'forgot-password', 'form']),
+        text: R.path(['lang', 'pages', 'reset-password', 'form']),
         axios: R.prop('axios'),
-    }), R.always({}))
-)(ForgotPasswordForm);
+        passwordResetUrl: R.path(['app', 'routes', 'password-reset.reset']),
+    }))
+)(ResetPasswordForm);

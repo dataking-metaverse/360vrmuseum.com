@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Notifications\PasswordResetSuccess;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use App\Notifications\PasswordResetRequest;
@@ -21,6 +22,7 @@ class PasswordResetController extends Controller
     {
         $request->validate([
             'email' => 'required|string|email',
+            'recaptcha_token' => 'required|recaptcha',
         ]);
         $user = User::where('email', $request->email)->first();
         if (!$user)
@@ -38,10 +40,11 @@ class PasswordResetController extends Controller
             $user->notify(
                 new PasswordResetRequest($passwordReset->token)
             );
-        return response()->json([
+        return responseJson([
             'message' => 'We have e-mailed your password reset link!'
         ]);
     }
+
     /**
      * Find token password reset
      *
@@ -80,7 +83,8 @@ class PasswordResetController extends Controller
         $request->validate([
             'email' => 'required|string|email',
             'password' => 'required|string|confirmed',
-            'token' => 'required|string'
+            'token' => 'required|string',
+            'recaptcha_token' => 'required|recaptcha',
         ]);
         $passwordReset = PasswordReset::where([
             ['token', $request->token],
@@ -99,6 +103,10 @@ class PasswordResetController extends Controller
         $user->save();
         $passwordReset->delete();
         $user->notify(new PasswordResetSuccess($passwordReset));
-        return response()->json($user);
+        return responseJson([
+            'message' => 'Password is updated',
+            'redirect' => route('login', null, false),
+            'data' => $user,
+        ]);
     }
 }
