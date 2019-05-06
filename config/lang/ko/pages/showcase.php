@@ -33,5 +33,8 @@ return [
         'submitEditing' => 'Submit Editing',
         'reply' => 'Reply',
         'sent' => 'Comment is sent',
+        'edit' => 'Edit',
+        'delete' => 'Delete',
+        'confirmDeleting' => 'Are you sure you want to delete this content?',
     ],
 ];
