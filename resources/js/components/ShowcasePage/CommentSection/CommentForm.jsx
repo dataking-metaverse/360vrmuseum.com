@@ -7,9 +7,12 @@ import {pushMessage} from "../../../redux/actionBuilders/global";
 import {updateLastCommentSubmittedTime} from "../../../redux/actionBuilders/showcase";
 import RecaptchaField from "../../../components/RecaptchaField";
 import getFormData from "../../../helpers/getFormData";
+import countWords from "../../../helpers/countWords";
+import countChars from "../../../helpers/countChars";
 import ShowcaseContext from "../ShowcaseContext";
 import Button from "../../Button";
 import CommentTextArea from "./CommentTextArea";
+import WordLimit from "./WordLimit";
 
 
 type Props = {
@@ -36,6 +39,8 @@ export default R.compose(
     const {text, axios, submitRoute, updateLastCommentSubmittedTime} = props;
     const showcase = useContext(ShowcaseContext);
     const [content, setContent] = useState('');
+    const [wordCount, setWordCount] = useState(0);
+    const [charCount, setCharCount] = useState(0);
 
     const onSubmit: (event: Event) => void = R.pipe(
         R.tap(R.invoker(0, 'preventDefault')),
@@ -58,7 +63,9 @@ export default R.compose(
             R.complement(R.is(String)),
             R.always(''),
         ),
-        setContent
+        R.tap(setContent),
+        R.tap(R.pipe(countWords, setWordCount)),
+        R.tap(R.pipe(countChars, setCharCount)),
     );
 
     const hasContent = !!content.trim();
@@ -67,6 +74,7 @@ export default R.compose(
         <form onSubmit={onSubmit}>
             <RecaptchaField />
             <input type="hidden" name="mid" value={getMid(showcase)} />
+            <WordLimit invalid={wordCount > 100}>{'{wordCount} / {wordLimit}'.replace('{wordCount}', wordCount).replace('{wordLimit}', 100)}</WordLimit>
             <CommentTextArea name="content" placeholder={text.placeholder} onChange={onChange} value={content} />
             <div className="text-right">
                 <Button type="secondary" disabled={!hasContent}>{text.postComment}</Button>
