@@ -34,6 +34,8 @@ Route::get('/terms-of-service', 'WebController@termsOfService')->name('terms-of-
 Route::get('/login', 'WebController@login')->name('login');
 Route::get('/signup', 'WebController@signup')->name('signup');
 Route::get('/search', 'WebController@search')->name('search');
+Route::get('/forgot-password', 'WebController@forgotPassword')->name('forgot-password');
+Route::get('/reset-password/{token}', 'WebController@resetPassword')->name('reset-password');
 
 // API : lang
 Route::get('/api/lang', 'Api\\LangController@get')->name('api.lang');
@@ -54,6 +56,11 @@ Route::get('/api/comment/by-showcase', 'Api\\CommentController@byShowcase')->nam
 
 // API : contact
 Route::post('/api/contact/send', 'Api\\ContactFormController@send')->name('api.contact.send');
+
+// API : password reset
+Route::post('/api/password/create', 'Auth\\PasswordResetController@create')->name('password-reset.create');
+Route::get('/api/password/find/{token}', 'Auth\\PasswordResetController@find')->name('password-reset.find');
+Route::post('/api/password/reset', 'Auth\\PasswordResetController@reset')->name('password-reset.reset');
 
 
 Route::get('/sitemap.xml', 'SitemapController@index')->name('sitemap');

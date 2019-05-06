@@ -1,3 +1,5 @@
+import ResetPassword from "../pages/ResetPassword";
+import ForgotPassword from "../pages/ForgotPassword";
 import Search from "../pages/Search";
 import Signup from "../pages/Signup";
 import Login from "../pages/Login";
@@ -12,6 +14,14 @@ import Home from "../pages/Home";
 // NOTE : paths are defined form backend, you will need to make sure the keys are correct
 
 const routes = {
+    'reset-password': {
+        exact: true,
+        component: ResetPassword,
+    },
+    'forgot-password': {
+        exact: true,
+        component: ForgotPassword,
+    },
     search: {
         exact: true,
         component: Search,

@@ -14,7 +14,6 @@ use Illuminate\Http\Request;
 
 class CommentController extends Controller
 {
-
     function __construct(Request $request) {
         parent::__construct($request);
         $validation = Validator::make($request->all(), [

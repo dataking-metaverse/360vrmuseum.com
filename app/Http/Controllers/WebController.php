@@ -38,6 +38,8 @@ class WebController extends Controller {
                     'login',
                     'signup',
                     'search',
+                    'forgot-password',
+                    'reset-password',
                     'api.showcase',
                     'api.showcase.by-presented-by',
                     'api.showcases',
@@ -51,6 +53,9 @@ class WebController extends Controller {
                     'api.auth.logout',
                     'api.auth.user',
                     'api.lang',
+                    'password-reset.create',
+                    'password-reset.find',
+                    'password-reset.reset',
                 ]),
             ],
             'config' => config('360vrmuseum.public'),
@@ -107,6 +112,8 @@ class WebController extends Controller {
     public function login() { return $this->all(); }
     public function signup() { return $this->all(); }
     public function search() { return $this->all(); }
+    public function forgotPassword() { return $this->all(); }
+    public function resetPassword() { return $this->all(); }
 
     public function all() {
         return static::ssr();
