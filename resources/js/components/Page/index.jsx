@@ -8,18 +8,23 @@ type Props = {
     pageName: string,
 };
 
-const Page: function = function(props: Props) {
+export default function Page(props: Props) {
     const Component = connect(
         R.applySpec({
-            title: R.path(['lang', 'pages', props.pageName, 'meta', 'title'])
+            meta: R.converge(
+                R.mergeLeft,
+                [ R.path(['lang', 'pages', props.pageName, 'meta']), R.path(['config', 'defaultMeta']) ]
+            ),
         })
-    )(({title}) => (
+    )(({meta}) => (
         <React.Fragment>
-            <CustomHelmet title={title} />
+            <CustomHelmet {...meta} />
             {props.children}
         </React.Fragment>
     ));
     return <Component />;
 };
 
-export default Page;
+Page.defaultProps = {
+    children: null,
+};

@@ -12,6 +12,7 @@ import {Link} from "react-router-dom";
 
 
 type Props = {
+    index: number,
     image: ResponsiveImage,
     title: string,
     subtitle: string,
@@ -41,7 +42,15 @@ const Fade = styled.div`
     transition-duration: .4s;
 `;
 
-const Title = styled.h2`
+// NOTE : this h1 tag is for SEO purpose, so this should be shown instead of the H2Title when the slide is the first one
+const H1Title = styled.h1`
+    color: ${themeVar('colors.basic.white')};
+    font-size: 4rem;
+    line-height: 1.25;
+    max-width: 100%;
+`;
+
+const H2Title = styled.h2`
     color: ${themeVar('colors.basic.white')};
     font-size: 4rem;
     line-height: 1.25;
@@ -55,6 +64,7 @@ const Subtitle = styled.div`
 
 
 function Slide(props: Props) {
+    const Title = props.index === 0 ? H1Title : H2Title;
     return (
         <Root backgroundImage={props.image.src} active={props.active}>
             <Fade active={props.active} style={{ maxWidth: '100%'}}>

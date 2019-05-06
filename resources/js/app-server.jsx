@@ -3,6 +3,7 @@ import {renderToString} from "react-dom/server";
 import {createStore} from "redux";
 import {Provider} from "react-redux";
 import {ServerStyleSheet} from "styled-components";
+import Helmet from "react-helmet";
 
 import Main from "./Main";
 import reducers from "./redux/reducers";
@@ -19,17 +20,6 @@ import Model from "./models/Model";
 let head = '';
 let body = '';
 
-function metaTags() {
-    return {
-        keywords: 'vrmuseum, dataking, vr, museum, 360, bediomap, national museum, 국립박물관, 박물관, 데이터킹',
-        title: context.meta.title || '360°VR Museum',
-        description: context.meta.description || 'Next-generation museum - 360°VR Museum',
-        image: context.meta.image || '/og-logo.png',
-        imageWidth: context.meta.imageWidth || '113',
-        imageHeight: context.meta.imageHeight || '42',
-        url: context.meta.url || 'https://360vrmuseum.com',
-    };
-}
 
 try {
 
@@ -56,21 +46,15 @@ try {
         </div>
     ));
 
-    const meta = metaTags();
+    const helmet = Helmet.renderStatic();
+
+    const hemletString = [
+        helmet.title.toString(),
+        helmet.meta.toString(),
+    ].join('');
 
     head = sheet.getStyleTags();
-    head += `
-<title>${meta.title}</title>
-<meta name="keywords" content="${meta.keywords}" />
-<meta name="subtitle" content="${meta.description}" />
-<meta name="description" content="${meta.description}" />
-<meta property="og:title" content="${meta.title}" />
-<meta property="og:description" content="${meta.description}" />
-<meta property="og:image" content="${meta.image}" />
-<meta property="og:image:width" content="${meta.imageWidth}" />
-<meta property="og:image:height" content="${meta.imageHeight}" />
-<meta property="og:url" content="${meta.url}" />
-`;
+    head += hemletString;
 
 } catch (ex) {
     console.error(ex); // TODO : handling this instead of just log it out

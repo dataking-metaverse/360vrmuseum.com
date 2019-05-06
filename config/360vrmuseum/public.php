@@ -5,6 +5,16 @@ return [
 
     'appBase' => env('APP_URL'),
 
+    'defaultMeta' => [
+        'title' => '360°VR Museum',
+        'description' => 'Next-generation museum - 360°VR Museum',
+        'keywords' => 'vrmuseum, dataking, vr, museum, 360, bideomap, national museum, 국립박물관, 박물관, 데이터킹',
+        'url' => env('APP_URL'),
+        'image' => env('APP_URL') . '/og-logo.png',
+        'imageWidth' => '113',
+        'imageHeight' => '42',
+    ],
+
     'navigationBar' => [
         'showHome' => true,
         'showAuth' => true,
