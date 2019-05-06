@@ -31,8 +31,6 @@ return [
         'placeholder' => 'Join the discussion...',
         'postComment' => 'Post Comment',
         'submitEditing' => 'Submit Editing',
-        'reply' => 'Reply',
-        'sent' => 'Comment is sent',
         'edit' => 'Edit',
         'delete' => 'Delete',
         'confirmDeleting' => 'Are you sure you want to delete this content?',
