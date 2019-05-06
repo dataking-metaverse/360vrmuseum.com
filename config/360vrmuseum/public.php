@@ -56,6 +56,11 @@ return [
                 'P4L5PqEWNrS', 'w9vxL98X4Fd',
             ],
         ],
+        'showcase' => [
+            'comments' => [
+                'wordLimit' => 100,
+            ],
+        ],
         'nationalMuseum' => [
             'exhibitionGroups' => [
                 '국립중앙박물관',

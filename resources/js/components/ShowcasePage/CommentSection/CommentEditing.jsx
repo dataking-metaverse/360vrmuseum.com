@@ -7,10 +7,12 @@ import RecaptchaField from "../../RecaptchaField";
 import CommentTextArea from "./CommentTextArea";
 import Button from "../../Button";
 import getFormData from "../../../helpers/getFormData";
+import countWords from "../../../helpers/countWords";
 import {updateLastCommentSubmittedTime} from "../../../redux/actionBuilders/showcase";
 import Confirm from "../../Confirm";
 
 import type Axios from "axios";
+import WordLimit from "./WordLimit";
 
 type CommentEditingContentProps = {
     comment: Comment,
@@ -34,6 +36,7 @@ type Props = {
         delete: string,
         confirmDeleting: string,
     },
+    wordLimit: number,
 };
 
 const darkPurple = R.path(['theme', 'variables', 'colors', 'basic', 'darkPurple']);
@@ -58,14 +61,17 @@ const CommentEditingContent = R.compose(
             axios: R.prop('axios'),
             submitRoute: R.path(['app', 'routes', 'api.comment.post']),
             text: R.path(['lang', 'pages', 'showcase', 'commentSection']),
+            wordLimit: R.path(['config', 'pages', 'showcase', 'comments', 'wordLimit']),
         }),
         R.applySpec({updateLastCommentSubmittedTime})
     )
 )(function CommentEditingContent(props: CommentEditingContentProps) {
-    const {comment, text, submitRoute, onSubmitFinish, axios, updateLastCommentSubmittedTime} = props;
+    const {comment, text, submitRoute, onSubmitFinish, axios, updateLastCommentSubmittedTime, wordLimit} = props;
     const commentId = comment.getAttribute('id');
     const originalContent = comment.getAttribute('content');
     const [editContent, setEditContent] = useState('');
+    const [wordCount: number, setWordCount: (wordCount: number) => void] = useState(0);
+    const wordCountStr: string = String(wordCount);
 
     useEffect(() => {
         setEditContent(originalContent);
@@ -73,14 +79,18 @@ const CommentEditingContent = R.compose(
 
     const onTextAreaChange = R.pipe(
         R.path(['target', 'value']),
-        setEditContent
+        R.tap(setEditContent),
+        R.tap(R.pipe(countWords, setWordCount)),
     );
 
     const onSubmit: (event: Event) => void = R.pipe(
         R.tap(R.invoker(0, 'preventDefault')),
         getFormData,
         R.when(
-            R.prop('content'),
+            R.allPass([
+                R.prop('content'),
+                R.pipe(R.prop('content'), countWords, R.gte(wordLimit)),
+            ]),
             R.pipe(
                 R.curryN(2, axios.put)(submitRoute),
                 R.then(R.pipe(
@@ -93,6 +103,7 @@ const CommentEditingContent = R.compose(
 
     const hasContent = Boolean(editContent);
     const hasUpdated = R.complement(R.equals)(editContent, originalContent);
+    const buttonDisabled = !hasContent || !hasUpdated || (wordCount > wordLimit);
 
     return (
         <React.Fragment>
@@ -100,9 +111,10 @@ const CommentEditingContent = R.compose(
             <Form method="PUT" action="" onSubmit={onSubmit}>
                 <RecaptchaField />
                 <input type="hidden" name="id" value={commentId} />
+                <WordLimit invalid={wordCount > 100}>{'{wordCount} / {wordLimit}'.replace('{wordCount}', wordCountStr).replace('{wordLimit}', wordLimit)}</WordLimit>
                 <CommentTextArea name="content" onChange={onTextAreaChange} value={editContent} />
                 <div className="text-right">
-                    <Button type="secondary" disabled={!hasContent || !hasUpdated}>{text.submitEditing}</Button>
+                    <Button type="secondary" disabled={buttonDisabled}>{text.submitEditing}</Button>
                 </div>
             </Form>
         </React.Fragment>
@@ -116,9 +128,10 @@ export default R.compose(
         axios: R.prop('axios'),
         submitUrl: R.path(['app', 'routes', 'api.comment.post']),
         text: R.path(['lang', 'pages', 'showcase', 'commentSection']),
+        wordLimit: R.path(['config', 'pages', 'showcase', 'comments', 'wordLimit']),
     }), R.applySpec({updateLastCommentSubmittedTime}))
 )(function CommentEditing(props: Props) {
-    const {comment, recaptchaVerification, axios, submitUrl, updateLastCommentSubmittedTime} = props;
+    const {text, comment, recaptchaVerification, axios, submitUrl, updateLastCommentSubmittedTime, wordLimit} = props;
     const [open, setOpen] = useState(false);
     const [deleting, setDeleting] = useState(false);
 
