@@ -42,6 +42,10 @@ const routes = {
         exact: true,
         component: TermsOfService,
     },
+    'national-museum.single': {
+        exact: true,
+        component: NationalMuseum,
+    },
     'national-museum': {
         exact: true,
         component: NationalMuseum,

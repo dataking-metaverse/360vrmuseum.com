@@ -31,6 +31,7 @@ class WebController extends Controller {
                     'home',
                     'showcase',
                     'national-museum',
+                    'national-museum.single',
                     'vrmuseum',
                     'contact-us',
                     'privacy-policy',
