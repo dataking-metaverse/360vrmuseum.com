@@ -1,6 +1,5 @@
 import React from "react";
 import {Container, Row, Col} from "styled-bootstrap-grid";
-import * as R from "ramda";
 import styled from "styled-components";
 
 import MuseumGridItems from "./MuseumGridItems";
@@ -19,7 +18,7 @@ function MuseumsGrid(props: Props) {
     return (
         <Root>
             <Container>
-                <Row>
+                <Row justifyContent="center">
                     <MuseumGridItems />
                 </Row>
             </Container>
