@@ -27,6 +27,4 @@ function MuseumsGrid(props: Props) {
     );
 }
 
-export default R.compose(
-    R.identity
-)(MuseumsGrid);
+export default MuseumsGrid;
