@@ -33,7 +33,7 @@ const embedRoute = 'https://embed.360vrmuseum.com/showcase/:mid';
 
 const getIframe = R.ifElse(
     instanceOf(Showcase),
-    showcase => () => ( <Iframe src={embedRoute.replace(':mid', showcase.getAttribute('mid'))} /> ),
+    showcase => () => ( <Iframe src={embedRoute.replace(':mid', showcase.getAttribute('mid'))} allowFullScreen allow="vr" /> ),
     () => () => ( <LoadingSpinner cover /> )
 );
 
