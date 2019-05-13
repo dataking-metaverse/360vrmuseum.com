@@ -13,8 +13,3 @@ export type AccessCredential = {|
     token_type: string,
     expires_at: string,
 |};
-
-export type Action = {
-    type: string,
-    value?: any,
-};
