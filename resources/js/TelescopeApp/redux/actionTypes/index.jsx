@@ -1,0 +1,2 @@
+export const UPDATE_SHOWCASE = 'UPDATE_SHOWCASE';
+export const EMPTY_SHOWCASE = 'EMPTY_SHOWCASE';
