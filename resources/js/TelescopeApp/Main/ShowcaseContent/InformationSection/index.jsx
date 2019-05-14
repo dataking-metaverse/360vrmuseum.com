@@ -22,7 +22,6 @@ import type {Showcase} from "../../../types";
 export default function InformationSection(props: Props): Node {
     const showcase: Showcase = useShowcase();
     const {statistics} = showcase;
-    console.log(showcase);
     return (
         <Root>
             <EngTitle>{showcase.eng_title}</EngTitle>
