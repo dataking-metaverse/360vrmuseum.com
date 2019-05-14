@@ -8,7 +8,6 @@ import {
     Name,
 } from "./styled";
 import ShowcasesGrid from "../ShowcasesGrid";
-import {arrow} from "../../assets";
 
 import type {Showcases} from "../../types";
 
@@ -18,7 +17,7 @@ type Props = {
     showcases: Showcases,
 };
 
-const ToggleButtonStyled = styled(ToggleButton)`
+const ToggleButtonAbsolute = styled(ToggleButton)`
     position: absolute;
     top: 0;
     right: 0;
@@ -28,7 +27,7 @@ export default function MuseumShowcases(props: Props) {
     const [open, setOpen] = useState<boolean>(false);
     return (
         <Root>
-            <ToggleButtonStyled open={open} src={arrow.down} onClick={() => setOpen(!open)} />
+            <ToggleButtonAbsolute open={open} onClick={() => setOpen(!open)} />
             <Name>{props.name}</Name>
             <Collapsable open={open}>
                 <ShowcasesGrid showcases={props.showcases} />

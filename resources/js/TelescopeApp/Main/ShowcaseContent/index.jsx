@@ -1,25 +1,31 @@
 import React from "react";
-import * as R from "ramda";
-import {connect} from "react-redux";
 
+import useShowcase from "../../hooks/useShowcase";
+import Scrollable from "../../components/Scrollable";
 import {
     Root,
+    Content,
 } from "./styled";
+import CloseButtonSection from "./CloseButtonSection";
+import IframeSection from "./IframeSection";
+
+import type {Showcase} from "../../types";
 
 type Props = {|
-
+    activeShowcase: Showcase,
 |};
 
-function ShowcaseContent(props: Props) {
+export default function ShowcaseContent(props: Props) {
+    const showcase = useShowcase();
+    if (!showcase) { return null; }
     return (
         <Root>
-
+            <Scrollable>
+                <Content>
+                    <CloseButtonSection />
+                    <IframeSection />
+                </Content>
+            </Scrollable>
         </Root>
     );
 }
-
-export default R.compose(
-    connect(
-
-    )
-)(ShowcaseContent);

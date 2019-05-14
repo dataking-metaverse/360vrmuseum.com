@@ -25,6 +25,7 @@
         "laravel-mix": "^4.0.15",
         "polished": "^2.3.3",
         "ramda": "0.26.1",
+        "ramda-extension": "^0.7.2",
         "react": "^16.8.1",
         "react-dom": "^16.8.1",
         "react-helmet": "^5.2.0",

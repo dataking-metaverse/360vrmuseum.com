@@ -1,5 +1,6 @@
 const containerWidth: number = 144.6;
 const themeRed = '#a73030';
+const buttonWidth = 4.8;
 
 const theme = {
 
@@ -21,6 +22,17 @@ const theme = {
     showcaseMenu: {
         widthFull: containerWidth,
         widthCollapse: 30,
+    },
+
+    // ShowcaseContent
+    showcaseContent: {
+        width: 101.2,
+        closeButtonSection: {
+            marginButtom: 6.2,
+        },
+        iframeSection: {
+            height: 45,
+        },
     },
 
     // Header
@@ -57,10 +69,18 @@ const theme = {
 
     // components
     toggleButton: {
-        width: 4.8,
+        width: buttonWidth,
         arrow: {
             width: 3.2,
             height: 2,
+        },
+    },
+
+    closeButton: {
+        width: buttonWidth,
+        cross: {
+            width: 2.45,
+            height: 2.45,
         },
     },
 
