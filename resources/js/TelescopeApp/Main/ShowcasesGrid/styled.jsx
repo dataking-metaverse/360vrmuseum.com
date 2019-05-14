@@ -9,6 +9,11 @@ const gutterWidthHalf = R.pipe(gutterWidth, half);
 export const Root = styled.div`
     margin-left: -${gutterWidthHalf}rem;
     margin-right: -${gutterWidthHalf}rem;
+    overflow: hidden;
+`;
+
+export const Collapsable = styled.div`
+    
 `;
 
 const posterWidth = R.path(['theme', 'showcasesGrid', 'poster', 'width']);
