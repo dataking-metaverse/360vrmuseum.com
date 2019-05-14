@@ -27,8 +27,8 @@ export type Showcase = {|
     list_of_images: Array<string>,
     guide_information: string,
     is_paid: boolean,
-    is_conversation: boolean
-    is_performing: boolean
+    is_conversation: boolean,
+    is_performing: boolean,
     date: string,
     type: string,
     page_url: string,
