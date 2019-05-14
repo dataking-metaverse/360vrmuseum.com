@@ -18,7 +18,7 @@ type Props = {
 };
 
 function hasSameMid(a: ?Showcase, b: ?Showcase): boolean {
-    return a && b && typeof a.mid !== 'undefined' && a.mid === b.mid;
+    return Boolean(a) && Boolean(b) && typeof a.mid !== 'undefined' && a.mid === b.mid;
 }
 
 function ShowcasesGrid(props: Props) {
