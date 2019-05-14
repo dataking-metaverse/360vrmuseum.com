@@ -10,6 +10,7 @@ export const Root = styled.div`
     top: 0;
     right: 0;
     width: ${width}rem;
+    height: 100vh;
 `;
 
 const headerHeight = R.path(['theme', 'header', 'height']);
@@ -18,4 +19,5 @@ const marginTop = R.converge(R.add, [headerHeight, headerMarginBottom]);
 export const Content = styled.div`
     ${topBorder}
     margin-top: ${marginTop}rem;
+    overflow: hidden;
 `;

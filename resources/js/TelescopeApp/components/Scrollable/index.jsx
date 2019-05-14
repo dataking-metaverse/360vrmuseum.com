@@ -10,7 +10,7 @@ const height = R.pipe(
 );
 const Scrollable = styled.div`
     position: relative;
-    height: ${height};
+    height: ${height}rem;
     overflow: auto;
 `;
 

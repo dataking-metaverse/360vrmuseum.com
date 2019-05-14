@@ -9,6 +9,7 @@ export const Root = styled.div`
     left: 0;
     width: ${width}rem;
     height: ${height}rem;
+    overflow: hidden;
 `;
 
 const containerWidth = R.path(['theme', 'container', 'width']);

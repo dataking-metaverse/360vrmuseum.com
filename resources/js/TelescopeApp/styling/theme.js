@@ -1,4 +1,6 @@
 const font = "'Noto Sans KR', sans-serif, Arial, Calibri";
+const width = 192;
+const height = 108;
 const containerWidth: number = 144.6;
 const themeRed = '#a73030';
 const themeRedText = '#a63333';
@@ -12,8 +14,8 @@ const theme = {
     font,
     fontSize: 2.5,
     color: themeBlackText,
-    width: 192,
-    height: 108,
+    width,
+    height,
 
     // Menu
     container: {
@@ -22,7 +24,7 @@ const theme = {
 
     // Scrollable
     scrollable: {
-        height: 192,
+        height,
     },
 
     // ShowcaseMenu
@@ -96,6 +98,13 @@ const theme = {
             },
             additionalInformation: {
                 fontSize: 2,
+            },
+        },
+        imagesSection: {
+            gutterWidth: 4,
+            images: {
+                width: 48.6,
+                height: 27.3,
             },
         },
     },

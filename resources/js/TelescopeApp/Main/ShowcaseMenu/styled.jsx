@@ -10,6 +10,7 @@ const width = R.ifElse(
     widthCollapse
 );
 export const Root = styled.div`
+    height: 100vh;
     width: ${width}rem;
 `;
 

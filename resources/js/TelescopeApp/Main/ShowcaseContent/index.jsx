@@ -9,6 +9,7 @@ import {
 import CloseButtonSection from "./CloseButtonSection";
 import IframeSection from "./IframeSection";
 import InformationSection from "./InformationSection";
+import ImagesSection from "./ImagesSection";
 
 import type {Showcase} from "../../types";
 
@@ -26,6 +27,7 @@ export default function ShowcaseContent(props: Props) {
                     <CloseButtonSection />
                     <IframeSection />
                     <InformationSection />
+                    <ImagesSection />
                 </Content>
             </Scrollable>
         </Root>
