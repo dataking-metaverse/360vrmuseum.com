@@ -35,12 +35,8 @@ const theme = {
         height: 2.6,
     },
 
-    // MuseumShowcases
+    // MuseumShowcasesborder-top: ${borderHeight}rem solid ${borderColor};
     museumShowcases: {
-        borderTop: {
-            height: .4,
-            color: '#d8d8d8',
-        },
         name: {
             fontSize: 2.5,
             lineHeight: 1.5,
@@ -56,7 +52,7 @@ const theme = {
             height: 40,
             activeBorderWidth: 1.3,
             activeBorderColor: themeRed,
-        }
+        },
     },
 
     // components
@@ -66,6 +62,12 @@ const theme = {
             width: 3.2,
             height: 2,
         },
+    },
+
+    // mixins
+    topBorder: {
+        height: .4,
+        color: '#d8d8d8',
     },
 
 };

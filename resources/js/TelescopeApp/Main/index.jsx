@@ -1,6 +1,7 @@
 import React from "react";
 
-import ShowcaseMenu from "./ShowcaseMenu"
+import ShowcaseMenu from "./ShowcaseMenu";
+import ShowcaseContent from "./ShowcaseContent";
 import {
     Root,
     Container,
@@ -16,6 +17,7 @@ export default function Main(props: Props) {
         <Root>
             <Container>
                 <ShowcaseMenu />
+                <ShowcaseContent />
             </Container>
         </Root>
     );

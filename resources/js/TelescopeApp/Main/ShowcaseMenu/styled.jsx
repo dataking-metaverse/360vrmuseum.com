@@ -1,6 +1,18 @@
 import styled from "styled-components";
 import * as R from "ramda";
 
+
+const widthFull = R.path(['theme', 'showcaseMenu', 'widthFull']);
+const widthCollapse = R.path(['theme', 'showcaseMenu', 'widthCollapse']);
+const width = R.ifElse(
+    R.prop('wide'),
+    widthFull,
+    widthCollapse
+);
+export const Root = styled.div`
+    width: ${width}rem;
+`;
+
 const headerHeight = R.path(['theme', 'header', 'height']);
 const headerMarginBottom = R.path(['theme', 'header', 'marginBottom']);
 export const Header = styled.div`

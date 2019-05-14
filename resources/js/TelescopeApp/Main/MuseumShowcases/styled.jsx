@@ -1,12 +1,12 @@
 import styled from "styled-components";
 import * as R from "ramda";
 
+import {topBorder} from "../../styling/mixins";
 
-const borderHeight = R.path(['theme', 'museumShowcases', 'borderTop', 'height']);
-const borderColor = R.path(['theme', 'museumShowcases', 'borderTop', 'color']);
+
 export const Root = styled.div`
     position: relative;
-    border-top: ${borderHeight}rem solid ${borderColor};
+    ${topBorder}
 `;
 
 const nameFontSize = R.path(['theme', 'museumShowcases', 'name', 'fontSize']);
