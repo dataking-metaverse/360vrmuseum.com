@@ -1,10 +1,15 @@
+const font = "'Noto Sans KR', sans-serif, Arial, Calibri";
 const containerWidth: number = 144.6;
 const themeRed = '#a73030';
+const themeRedText = '#a63333';
+const themeBlackText = '#414141';
+const lightGrey = '#d8d8d8';
 const buttonWidth = 4.8;
 
 const theme = {
 
     // baisc
+    font,
     width: 192,
     height: 108,
 
@@ -32,6 +37,50 @@ const theme = {
         },
         iframeSection: {
             height: 45,
+            marginBottom: 5.8,
+        },
+        informationSection: {
+            marginBottom: 7.8,
+            paddingLeft: 24.3,
+            engTitle: {
+                color: themeRedText,
+                fontSize: 2.2,
+                marginBottom: 2.8,
+            },
+            korTitle: {
+                color: themeBlackText,
+                fontSize: 3.5,
+                marginBottom: 7.7,
+            },
+            museumName: {
+                color: themeBlackText,
+                fontSize: 2,
+                marginBottom: 1.8,
+            },
+            dateAndStatistics: {
+                marginBottom: 2.3,
+            },
+            datePeriod: {
+                color: themeBlackText,
+                fontSize: 2.5,
+            },
+            statistics: {
+                color: themeBlackText,
+                fontSize: 2,
+            },
+            statisticsItem: {
+                marginRight: 3,
+            },
+            hr: {
+                marginBottom: 2,
+            },
+            detailPoint: {
+                marginRight: 3.6,
+                fontSize: 2,
+                dotColor: lightGrey,
+                dotWidth: 2.4,
+                dotMarginRight: .7,
+            },
         },
     },
 
@@ -47,7 +96,7 @@ const theme = {
         height: 2.6,
     },
 
-    // MuseumShowcasesborder-top: ${borderHeight}rem solid ${borderColor};
+    // MuseumShowcases
     museumShowcases: {
         name: {
             fontSize: 2.5,
@@ -87,7 +136,7 @@ const theme = {
     // mixins
     topBorder: {
         height: .4,
-        color: '#d8d8d8',
+        color: lightGrey,
     },
 
 };

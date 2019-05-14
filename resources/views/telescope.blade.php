@@ -5,6 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="version" content="{{ config('version') }}" />
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&amp;subset=korean" rel="stylesheet" />
 
     @if (config('app.debug') === true)
         <meta name="debug" content="1"/>

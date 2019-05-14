@@ -1,5 +1,7 @@
 import {createGlobalStyle} from "styled-components";
+import * as R from "ramda";
 
+const font = R.path(['theme', 'font']);
 const BasicStyle = createGlobalStyle`
 *,
 *::before,
@@ -15,6 +17,10 @@ html, body {
     border: none;
     padding: 0;
     margin: 0;
+}
+
+body {
+    font-family: ${font};
 }
 `;
 
