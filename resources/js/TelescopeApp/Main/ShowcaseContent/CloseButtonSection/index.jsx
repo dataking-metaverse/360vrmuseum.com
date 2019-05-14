@@ -17,7 +17,7 @@ const Root = styled.div`
 function CloseButtonSection(props: Props) {
     return (
         <Root>
-            <CloseButton onClick={props.onClick} />
+            <CloseButton onClick={props.emptyShowcase} />
         </Root>
     );
 }
