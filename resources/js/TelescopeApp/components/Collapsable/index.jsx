@@ -40,14 +40,11 @@ export default function Collapsable(props: Props) {
 
     useEffect(() => {
         const newHeight = refHeight(innerRef);
-        if (newHeight !== height) {
-            setHeight(newHeight);
-        }
+        if (newHeight !== height) { setHeight(newHeight); }
     });
 
     useEffect(() => {
-
-        setTimeout(() => setDelayedOpen(open), 300);
+        setTimeout(() => setDelayedOpen(open), 100);
     }, [open]);
 
     return (
