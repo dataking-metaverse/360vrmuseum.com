@@ -1,3 +1,6 @@
+const containerWidth: number = 144.6;
+const themeRed = '#a73030';
+
 const theme = {
 
     // baisc
@@ -6,7 +9,7 @@ const theme = {
 
     // Menu
     container: {
-        width: 144.6,
+        width: containerWidth,
     },
 
     // Scrollable
@@ -16,7 +19,7 @@ const theme = {
 
     // ShowcaseMenu
     showcaseMenu: {
-        widthFull: 144.6,
+        widthFull: containerWidth,
         widthCollapse: 30,
     },
 
@@ -51,6 +54,8 @@ const theme = {
         poster: {
             width: 30,
             height: 40,
+            activeBorderWidth: 1.3,
+            activeBorderColor: themeRed,
         }
     },
 
