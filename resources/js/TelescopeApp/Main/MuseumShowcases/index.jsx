@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import styled from "styled-components";
 
 import ToggleButton from "../../components/ToggleButton";
+import Collapsable from "../../components/Collapsable";
 import {
     Root,
     Name,
@@ -24,12 +25,14 @@ const ToggleButtonStyled = styled(ToggleButton)`
 `;
 
 export default function MuseumShowcases(props: Props) {
-    const [open, setOpen] = useState(false);
+    const [open, setOpen] = useState<boolean>(false);
     return (
         <Root>
             <ToggleButtonStyled open={open} src={arrow.down} onClick={() => setOpen(!open)} />
             <Name>{props.name}</Name>
-            <ShowcasesGrid showcases={props.showcases} />
+            <Collapsable open={open}>
+                <ShowcasesGrid showcases={props.showcases} />
+            </Collapsable>
         </Root>
     );
 };

@@ -12,10 +12,6 @@ export const Root = styled.div`
     overflow: hidden;
 `;
 
-export const Collapsable = styled.div`
-    
-`;
-
 const posterWidth = R.path(['theme', 'showcasesGrid', 'poster', 'width']);
 const posterHeight = R.path(['theme', 'showcasesGrid', 'poster', 'height']);
 const backgroundImage = R.ifElse(R.has('src'), R.prop('src'), R.always("''"));

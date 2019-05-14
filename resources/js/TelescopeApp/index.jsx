@@ -17,9 +17,6 @@ type Props = {
 export default function TelescopeApp(props: Props) {
     const preloadedState: State = props.preloadedState;
     const store = useMemo(() => createStoreWithPreloadedState(preloadedState), []);
-    store.subscribe(() => {
-        console.log(store.getState());
-    });
     return (
         <Provider store={store}>
             <ThemeProvider theme={theme}>
