@@ -2,6 +2,8 @@ import {createGlobalStyle} from "styled-components";
 import * as R from "ramda";
 
 const font = R.path(['theme', 'font']);
+const fontSize = R.path(['theme', 'fontSize']);
+const color = R.path(['theme', 'color']);
 const BasicStyle = createGlobalStyle`
 *,
 *::before,
@@ -21,6 +23,8 @@ html, body {
 
 body {
     font-family: ${font};
+    font-size: ${fontSize}rem;
+    color: ${color};
 }
 `;
 

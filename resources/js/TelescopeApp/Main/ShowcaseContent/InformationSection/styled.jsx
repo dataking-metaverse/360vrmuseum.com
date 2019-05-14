@@ -15,7 +15,6 @@ const half = R.divide(R.__, 2);
 const marginBottom = path(['marginBottom']);
 const paddingLeft = path(['paddingLeft']);
 export const Root = styled.div`
-    margin-bottom: ${marginBottom}rem;
     padding-left: ${paddingLeft}rem;
 `;
 
@@ -103,6 +102,11 @@ export const Hr = styled.div`
     margin-bottom: ${hrMarginBottom}rem;
 `;
 
+const showcaseDetailsMarginBottom = path(['showcaseDetails', 'marginBottom']);
+export const ShowcaseDetails = styled.div`
+    margin-bottom: ${showcaseDetailsMarginBottom}rem;
+`;
+
 const DetailPoint = (() => {
     const marginRight = path(['detailPoint', 'marginRight']);
     const fontSize = path(['detailPoint', 'fontSize']);
@@ -130,3 +134,34 @@ const DetailPoint = (() => {
 export const IsPerformingAvailable = ({children}) => ( <DetailPoint><MiddleSpan>{children}</MiddleSpan></DetailPoint> );
 export const IsConversationAvailable = ({children}) => ( <DetailPoint><MiddleSpan>{children}</MiddleSpan></DetailPoint> );
 export const IsPaidExhibition = ({children}) => ( <DetailPoint><MiddleSpan>{children}</MiddleSpan></DetailPoint> );
+
+
+export const Description = (() => {
+    const fontSize = path(['description', 'fontSize']);
+    const marginBottom = path(['description', 'marginBottom']);
+    return styled.div`
+        font-size: ${fontSize}rem;
+        margin-bottom: ${marginBottom}rem;
+        white-space: pre-wrap;
+    `;
+})();
+
+export const AdditionalInformationTitle = (() => {
+    const fontSize = path(['additionalInformationTitle', 'fontSize']);
+    const color = path(['additionalInformationTitle', 'color']);
+    return styled.div`
+        font-size: ${fontSize}rem;
+        color: ${color};
+    `;
+})();
+
+export const AdditionalInformation = (() => {
+    const fontSize = path(['additionalInformation', 'fontSize']);
+    return styled.div`
+        font-size: ${fontSize}rem;
+        
+        span[style*='font-size:'] {
+            font-size: ${fontSize}rem !important;
+        }
+    `;
+})();

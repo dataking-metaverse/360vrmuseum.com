@@ -10,6 +10,8 @@ const theme = {
 
     // baisc
     font,
+    fontSize: 2.5,
+    color: themeBlackText,
     width: 192,
     height: 108,
 
@@ -40,7 +42,7 @@ const theme = {
             marginBottom: 5.8,
         },
         informationSection: {
-            marginBottom: 7.8,
+            marginBottom: 6.8,
             paddingLeft: 24.3,
             engTitle: {
                 color: themeRedText,
@@ -74,12 +76,26 @@ const theme = {
             hr: {
                 marginBottom: 2,
             },
+            showcaseDetails: {
+                marginBottom: 7.8,
+            },
             detailPoint: {
                 marginRight: 3.6,
                 fontSize: 2,
                 dotColor: lightGrey,
                 dotWidth: 2.4,
                 dotMarginRight: .7,
+            },
+            description: {
+                fontSize: 2.5,
+                marginBottom: 6.8,
+            },
+            additionalInformationTitle: {
+                color: themeRedText,
+                fontSize: 2.5,
+            },
+            additionalInformation: {
+                fontSize: 2,
             },
         },
     },
