@@ -10,7 +10,7 @@ type Props = {
     open: boolean,
 };
 
-const transitionDuration = 400;
+const transitionDuration: number = 400;
 
 const Root = styled.div`
     overflow: hidden;
