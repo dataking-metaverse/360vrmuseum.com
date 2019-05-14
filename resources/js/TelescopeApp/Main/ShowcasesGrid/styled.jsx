@@ -13,7 +13,7 @@ export const Root = styled.div`
 
 const posterWidth = R.path(['theme', 'showcasesGrid', 'poster', 'width']);
 const posterHeight = R.path(['theme', 'showcasesGrid', 'poster', 'height']);
-const backgroundImage = R.prop('src');
+const backgroundImage = R.ifElse(R.has('src'), R.prop('src'), R.always("''"));
 export const Poster = styled.div`
     display: inline-block;
     width: ${posterWidth}rem;
