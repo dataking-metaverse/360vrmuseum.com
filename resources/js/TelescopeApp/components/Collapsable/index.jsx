@@ -44,7 +44,8 @@ export default function Collapsable(props: Props) {
     });
 
     useEffect(() => {
-        setTimeout(() => setDelayedOpen(open), 100);
+        const timeoutId = setTimeout(() => setDelayedOpen(open), 100);
+        return () => clearTimeout(timeoutId);
     }, [open]);
 
     return (
