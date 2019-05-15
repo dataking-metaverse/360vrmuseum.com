@@ -14,7 +14,7 @@ type Props = {|
 
 |};
 
-const embedRoute: string = 'https://embed.360vrmuseum.com/showcase/:mid';
+const embedRoute: string = 'https://embed.360vrmuseum.com/showcase/:mid?autoplay=1&hl=2';
 const makeEmbedRoute: (mid: string) => string = R.replace(':mid', R.__, embedRoute);
 const embedUrl: (showcase: Showcase) => string = R.pipe(
     R.prop('mid'),
