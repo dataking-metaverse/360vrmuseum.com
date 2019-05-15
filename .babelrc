@@ -1,6 +1,6 @@
 {
     "presets": [
-        "@babel/preset-flow",
+        ["@babel/preset-flow", { "all": true }],
         ["@babel/preset-env", { "targets": "> 0.25%, not dead"}]
     ],
     "plugins": [

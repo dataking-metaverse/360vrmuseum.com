@@ -38,6 +38,9 @@ Route::get('/search', 'WebController@search')->name('search');
 Route::get('/forgot-password', 'WebController@forgotPassword')->name('forgot-password');
 Route::get('/reset-password/{token}', 'WebController@resetPassword')->name('reset-password');
 
+// telescope museum application
+Route::get('/telescope', 'TelescopeController@index')->name('telescope');
+
 // API : lang
 Route::get('/api/lang', 'Api\\LangController@get')->name('api.lang');
 

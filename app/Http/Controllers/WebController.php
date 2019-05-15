@@ -9,10 +9,6 @@ use Route;
 
 class WebController extends Controller {
 
-    static function toFrontEndRoute($route) {
-        return str_replace(['{', '}'], [':', ''], $route);
-    }
-
     static function redirectByPageId() {
         $pageId = request()->get('page_id');
         if ($pageId) {
@@ -27,7 +23,7 @@ class WebController extends Controller {
         return [
             'user' => AuthController::userFields(),
             'app' => [
-                'routes' => static::routes([
+                'routes' => routes([
                     'home',
                     'showcase',
                     'national-museum',
@@ -62,15 +58,6 @@ class WebController extends Controller {
             'config' => config('360vrmuseum.public'),
             'lang' => config('lang.ko'), // TODO : make different translations
         ];
-    }
-
-    static function routes($routeNames) {
-        return collect(Route::getRoutes())->filter(function($route) use ($routeNames) {
-            return isset($route->action['as']) && in_array($route->action['as'], $routeNames);
-        })->mapWithKeys(function($route) {
-            $url = str_start(self::toFrontEndRoute($route->uri), '/');
-            return [$route->action['as'] => $url];
-        });
     }
 
     public function ssr() {
