@@ -3,6 +3,7 @@ import {Provider} from "react-redux";
 import {ThemeProvider} from "styled-components";
 
 import createStoreWithPreloadedState from "./redux/createStoreWithPreloadedState";
+import FullScreenRequest from "./components/FullScreenRequest";
 import BasicTheme from "./styling/BasicTheme";
 import theme from "./styling/theme";
 import SideEffects from "./SideEffects";
@@ -22,7 +23,9 @@ export default function TelescopeApp(props: Props) {
             <ThemeProvider theme={theme}>
                 <React.Fragment>
                     <BasicTheme />
-                    <Main />
+                    <FullScreenRequest>
+                        <Main />
+                    </FullScreenRequest>
                     <SideEffects />
                 </React.Fragment>
             </ThemeProvider>
