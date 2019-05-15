@@ -22,11 +22,6 @@ const app = R.cond<any, App>([
     [R.T, R.nthArg<App>(0)],
 ]);
 
-const root = R.when(
-    R.isNil,
-    R.always(null)
-);
-
 const showcases = R.cond<any, ShowcasesGroup>([
     [isAction(REGISTER_SHOWCASES), actionValue],
     [R.nthArg<ShowcasesGroup>(0), R.nthArg<ShowcasesGroup>(0)],
@@ -49,7 +44,6 @@ const lightBoxImageIndex = R.cond<any, Array<string>>([
 
 export default combineReducers<function, Action>({
     // app,
-    root,
     showcases,
     showcase,
     lightBoxImageIndex,

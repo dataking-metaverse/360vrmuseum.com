@@ -1,11 +1,33 @@
 import React from "react";
 import styled from "styled-components";
 
-import useReduxState from "../../hooks/useReduxState";
+import useReduxAction from "../../hooks/useReduxAction";
 
 type Props = {|
 
 |};
+
+function requestEnterFullScreen(element) {
+    if(element.requestFullscreen)
+        element.requestFullscreen();
+    else if(element.mozRequestFullScreen)
+        element.mozRequestFullScreen();
+    else if(element.webkitRequestFullscreen)
+        element.webkitRequestFullscreen();
+    else if(element.msRequestFullscreen)
+        element.msRequestFullscreen();
+}
+
+function requestLeaveFullScreen() {
+    if(document.exitFullscreen)
+        document.exitFullscreen();
+    else if(document.mozCancelFullScreen)
+        document.mozCancelFullScreen();
+    else if(document.webkitExitFullscreen)
+        document.webkitExitFullscreen();
+    else if(document.msExitFullscreen)
+        document.msExitFullscreen();
+}
 
 const Root = styled.div`
     position: absolute;
@@ -22,26 +44,9 @@ const Button = styled.div`
     text-align: center;
 `;
 
-function goInFullscreen(element) {
-    if(element.requestFullscreen)
-        element.requestFullscreen();
-    else if(element.mozRequestFullScreen)
-        element.mozRequestFullScreen();
-    else if(element.webkitRequestFullscreen)
-        element.webkitRequestFullscreen();
-    else if(element.msRequestFullscreen)
-        element.msRequestFullscreen();
-}
-
 export default function FullScreenButtonPage(props: Props) {
-    const {root} = useReduxState();
-
-    function goFullScreen() {
-        goInFullscreen(root)
-    }
-
     return (
-        <Root onClick={goFullScreen}>
+        <Root onClick={() => requestEnterFullScreen(document.body)}>
             <Button>
                 Tap anywhere to go fullscreen <br />
                 화면을 터치하시면 전체화면으로 전환됩니다.

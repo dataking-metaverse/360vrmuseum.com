@@ -8,6 +8,7 @@ import {
 
 import type {Dispatch} from "redux";
 
+
 const valueAssign = <V>(type: string) => (dispatch: Dispatch<{ type: string, value: V }>) => (value: V) => dispatch({type, value});
 const emptyAssign = (type: string) => (dispatch: Dispatch<{ type: string }>) => () => dispatch({type});
 
