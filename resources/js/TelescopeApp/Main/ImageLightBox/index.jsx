@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import Lightbox from 'react-image-lightbox';
+import * as R from "ramda";
 
 import {emptyLightBoxImageIndex as emptyLightBoxImageIndexAction} from "../../redux/actionCreators";
 import useReduxState from "../../hooks/useReduxState";
@@ -40,5 +41,5 @@ function ImageLightBoxActual(props: Props): Node {
 
 export default function ImageLightBox(props: Props): ?Node {
     const {lightBoxImageIndex} = useReduxState();
-    return lightBoxImageIndex ? <ImageLightBoxActual /> : null;
+    return R.complement(R.isNil)(lightBoxImageIndex) ? <ImageLightBoxActual /> : null;
 }
