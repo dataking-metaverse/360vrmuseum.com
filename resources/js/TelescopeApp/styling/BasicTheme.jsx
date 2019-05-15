@@ -33,10 +33,16 @@ body {
 }
 
 
-::-webkit-scrollbar {
-    width: 0px;  /* Remove scrollbar space */
-    background: transparent;  /* Optional: just make scrollbar invisible */
+//::-webkit-scrollbar {
+//    width: 0px;  /* Remove scrollbar space */
+//    background: transparent;  /* Optional: just make scrollbar invisible */
+//}
+
+body * {
+    scrollbar-width: none;
 }
+
+
 `;
 
 export default BasicStyle;
