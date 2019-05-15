@@ -1,15 +1,15 @@
 import React from "react";
-import * as R from "ramda";
-import {connect} from "react-redux";
 
 import {
     Root,
     Poster,
 } from "./styled";
 
-import type {Showcases, Showcase} from "../../types";
 import {updateShowcase as updateShowcaseAction} from "../../redux/actionCreators";
 import useReduxAction from "../../hooks/useReduxAction";
+import useShowcase from "../../hooks/useShowcase";
+
+import type {Showcases, Showcase} from "../../types";
 
 
 type Props = {
@@ -22,8 +22,8 @@ function hasSameMid(a: ?Showcase, b: ?Showcase): boolean {
     return Boolean(a) && Boolean(b) && typeof a.mid !== 'undefined' && a.mid === b.mid;
 }
 
-function ShowcasesGrid(props: Props) {
-    const {activeShowcase} = props;
+export default function ShowcasesGrid(props: Props) {
+    const activeShowcase = useShowcase();
     const updateShowcase = useReduxAction(updateShowcaseAction);
     return (
         <Root>
@@ -38,12 +38,3 @@ function ShowcasesGrid(props: Props) {
         </Root>
     );
 }
-
-export default R.compose(
-    connect(
-        R.applySpec({
-            activeShowcase: R.prop('showcase'),
-        }),
-        // R.applySpec({updateShowcaseAction})
-    )
-)(ShowcasesGrid);

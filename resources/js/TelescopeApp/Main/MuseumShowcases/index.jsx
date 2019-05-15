@@ -28,7 +28,7 @@ export default function MuseumShowcases(props: Props) {
     return (
         <Root>
             <ToggleButtonAbsolute open={open} onClick={() => setOpen(!open)} />
-            <Name>{props.name}</Name>
+            <Name onClick={() => setOpen(!open)}>{props.name}</Name>
             <Collapsable open={open}>
                 <ShowcasesGrid showcases={props.showcases} />
             </Collapsable>

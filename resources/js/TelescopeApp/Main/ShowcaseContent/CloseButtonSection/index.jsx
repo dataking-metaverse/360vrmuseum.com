@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import * as R from "ramda";
-import {connect} from "react-redux";
 
-import {emptyShowcase} from "../../../redux/actionCreators";
+import useReduxAction from "../../../hooks/useReduxAction";
+import {emptyShowcase as emptyShowcaseAction} from "../../../redux/actionCreators";
 import CloseButton from "../../../components/CloseButton";
 
 
@@ -14,21 +14,15 @@ const Root = styled.div`
 `;
 
 type Props = {|
-    emptyShowcase: () => void,
+
 |};
 
 
-function CloseButtonSection(props: Props) {
+export default function CloseButtonSection(props: Props) {
+    const emptyShowcase = useReduxAction(emptyShowcaseAction);
     return (
         <Root>
-            <CloseButton onClick={props.emptyShowcase} />
+            <CloseButton onClick={emptyShowcase} />
         </Root>
     );
 }
-
-export default R.compose(
-    connect(
-        R.applySpec({}),
-        R.applySpec({emptyShowcase})
-    )
-)(CloseButtonSection);

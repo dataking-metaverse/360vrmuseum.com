@@ -1,6 +1,10 @@
 import styled from "styled-components";
 import * as R from "ramda";
 
+const lightGrey = R.path(['theme', 'showcaseContent', 'iframeSection', 'backgroundColor']);
+export const Root = styled.div`
+    background-color: ${lightGrey};
+`;
 
 const height = R.path(['theme', 'showcaseContent', 'iframeSection', 'height']);
 const marginBottom = R.path(['theme', 'showcaseContent', 'iframeSection', 'marginBottom']);

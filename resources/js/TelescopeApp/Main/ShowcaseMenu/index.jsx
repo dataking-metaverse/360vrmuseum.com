@@ -1,23 +1,23 @@
 import React from "react";
-import * as R from "ramda";
-import {connect} from "react-redux";
 
 import {scopeLogo} from "../../assets";
 import Scrollable from "../../components/Scrollable";
 import MuseumIndex from "../MuseumIndex";
+import useShowcase from "../../hooks/useReduxState";
 import {
     Root,
     Header,
     Logo,
 } from "./styled";
+
 import type {Showcase} from "../../types";
 
 type Props = {|
-    activeShowcase: Showcase,
+
 |};
 
-function ShowcaseMenu(props: Props) {
-    const {activeShowcase} = props;
+export default function ShowcaseMenu(props: Props) {
+    const activeShowcase: Showcase = useShowcase();
     const wideLayout = !activeShowcase;
     return (
         <Root wide={wideLayout}>
@@ -30,11 +30,3 @@ function ShowcaseMenu(props: Props) {
         </Root>
     );
 }
-
-export default R.compose(
-    connect(
-        R.applySpec({
-            activeShowcase: R.prop('showcase'),
-        })
-    )
-)(ShowcaseMenu);

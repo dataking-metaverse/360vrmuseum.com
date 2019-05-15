@@ -40,6 +40,7 @@ const theme = {
             marginButtom: 6.2,
         },
         iframeSection: {
+            backgroundColor: lightGrey,
             height: 45,
             marginBottom: 5.8,
         },

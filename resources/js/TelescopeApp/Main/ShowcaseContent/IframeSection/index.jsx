@@ -26,6 +26,6 @@ export default function IframeSection(props: Props): ?Node {
     if (!showcase) { return null; }
     const src = embedUrl(showcase);
     return (
-        <Iframe src={src} allowFullScreen />
+        <Iframe key={src} src={src} allowFullScreen allow="vr" />
     );
 }

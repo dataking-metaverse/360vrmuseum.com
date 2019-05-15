@@ -13,7 +13,7 @@ class TelescopeController extends Controller
         return view('telescope', [
             'preloadedState' => json_encode((object)[
                 'showcases' => $showcasesGroups,
-                'showcase' => $showcasesGroups['국립중앙박물관'][0],
+//                'showcase' => $showcasesGroups['국립중앙박물관'][0],
             ]),
         ]);
     }
