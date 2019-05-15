@@ -6,6 +6,8 @@ import {
     REGISTER_SHOWCASES,
     UPDATE_SHOWCASE,
     EMPTY_SHOWCASE,
+    UPDATE_LIGHT_BOX_IMAGES,
+    EMPTY_LIGHT_BOX_IMAGES,
 } from "../actionTypes";
 
 import type {Action, App, ShowcasesGroup, Showcase} from "../../types";
@@ -29,12 +31,20 @@ const showcases = R.cond<any, ShowcasesGroup>([
 const showcase = R.cond<any, Showcase>([
     [isAction(UPDATE_SHOWCASE), actionValue],
     [isAction(EMPTY_SHOWCASE), R.always(null)],
-    [R.nthArg<Showcase>(0), R.nthArg<Showcases>(0)],
-    [R.T, R.always(null)],
+    [R.nthArg<Showcase>(0), R.nthArg<Showcase>(0)],
+    [R.T, R.always<any>(null)],
+]);
+
+const lightBoxImages = R.cond<any, Array<string>>([
+    [isAction(UPDATE_LIGHT_BOX_IMAGES), actionValue],
+    [isAction(EMPTY_LIGHT_BOX_IMAGES), R.always(null)],
+    [R.nthArg<string>(0), R.nthArg<string>(0)],
+    [R.T, R.always<any>(null)],
 ]);
 
 export default combineReducers<function, Action>({
     // app,
     showcases,
     showcase,
+    lightBoxImages,
 });

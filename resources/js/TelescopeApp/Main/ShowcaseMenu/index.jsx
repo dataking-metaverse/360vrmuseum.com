@@ -1,9 +1,9 @@
 import React from "react";
 
 import {scopeLogo} from "../../assets";
+import useShowcase from "../../hooks/useShowcase";
 import Scrollable from "../../components/Scrollable";
 import MuseumIndex from "../MuseumIndex";
-import useShowcase from "../../hooks/useReduxState";
 import {
     Root,
     Header,
@@ -18,7 +18,7 @@ type Props = {|
 
 export default function ShowcaseMenu(props: Props) {
     const activeShowcase: Showcase = useShowcase();
-    const wideLayout = !activeShowcase;
+    const wideLayout: boolean = !activeShowcase;
     return (
         <Root wide={wideLayout}>
             <Scrollable>
