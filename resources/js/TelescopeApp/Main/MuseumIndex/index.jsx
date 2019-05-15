@@ -13,5 +13,5 @@ type Props = {|
 export default function MuseumIndex(props: Props) {
     const showcases: Showcases = useShowcases();
     const keys: Array<string> = Object.keys(showcases);
-    return keys.map(key => <MuseumShowcases key={key} name={key} showcases={showcases[key]} />);
+    return keys.map((key: string, index: number) => <MuseumShowcases key={key} index={index} name={key} showcases={showcases[key]} />);
 }
