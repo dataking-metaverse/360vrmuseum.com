@@ -13,6 +13,10 @@ const Root = styled.div`
     margin-bottom: ${marginButtom}rem;
 `;
 
+type Props = {|
+    emptyShowcase: () => void,
+|};
+
 
 function CloseButtonSection(props: Props) {
     return (

@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import * as R from "ramda";
 
+import {ComponentType, Node} from "react";
 import MiddleSpan from "../../../components/MiddleSpan";
 import {topBorder} from "../../../styling/mixins";
 
@@ -131,9 +132,10 @@ const DetailPoint = (() => {
         }
     `;
 })();
-export const IsPerformingAvailable = ({children}) => ( <DetailPoint><MiddleSpan>{children}</MiddleSpan></DetailPoint> );
-export const IsConversationAvailable = ({children}) => ( <DetailPoint><MiddleSpan>{children}</MiddleSpan></DetailPoint> );
-export const IsPaidExhibition = ({children}) => ( <DetailPoint><MiddleSpan>{children}</MiddleSpan></DetailPoint> );
+const DetailPointComponent: ComponentType<{children: Node}> = ({children}) => ( <DetailPoint><MiddleSpan>{children}</MiddleSpan></DetailPoint> );
+export const IsPerformingAvailable = DetailPointComponent;
+export const IsConversationAvailable = DetailPointComponent;
+export const IsPaidExhibition = DetailPointComponent;
 
 
 export const Description = (() => {

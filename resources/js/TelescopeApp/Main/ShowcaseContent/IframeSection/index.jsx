@@ -6,6 +6,7 @@ import {
     Iframe,
 } from "./styled";
 
+import type {Node} from "react";
 import type {Showcase} from "../../../types";
 
 
@@ -13,13 +14,14 @@ type Props = {|
 
 |};
 
-const embedRoute = 'https://embed.360vrmuseum.com/showcase/:mid';
+const embedRoute: string = 'https://embed.360vrmuseum.com/showcase/:mid';
+const makeEmbedRoute: (mid: string) => string = R.replace(':mid', R.__, embedRoute);
 const embedUrl: (showcase: Showcase) => string = R.pipe(
     R.prop('mid'),
-    R.replace(':mid', R.__, embedRoute)
+    makeEmbedRoute,
 );
 
-export default function IframeSection(props: Props) {
+export default function IframeSection(props: Props): ?Node {
     const showcase: ?Showcase = useShowcase();
     if (!showcase) { return null; }
     const src = embedUrl(showcase);

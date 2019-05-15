@@ -23,10 +23,13 @@ import useShowcase from "../../../hooks/useShowcase";
 import type {Node} from "react";
 import type {Showcase} from "../../../types";
 
+type Props = {|
+
+|};
+
 export default function InformationSection(props: Props): Node {
     const showcase: Showcase = useShowcase();
     const {statistics} = showcase;
-    console.log(showcase);
     return (
         <Root>
             <EngTitle>{showcase.eng_title}</EngTitle>

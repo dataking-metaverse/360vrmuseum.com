@@ -21,7 +21,7 @@ type RouteParams = {
     path: string,
     exact: ?boolean,
     component: ComponentType<{}>,
-}
+};
 
 type Props = {
 
