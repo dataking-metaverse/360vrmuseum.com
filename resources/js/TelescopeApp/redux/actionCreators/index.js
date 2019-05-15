@@ -2,8 +2,8 @@ import {
     REGISTER_APP,
     UPDATE_SHOWCASE,
     EMPTY_SHOWCASE,
-    UPDATE_LIGHT_BOX_IMAGES,
-    EMPTY_LIGHT_BOX_IMAGES,
+    UPDATE_LIGHT_BOX_IMAGE_INDEX,
+    EMPTY_LIGHT_BOX_IMAGE_INDEX,
 } from "../actionTypes";
 
 import type {Dispatch} from "redux";
@@ -17,5 +17,5 @@ export const registerApp = valueAssign(REGISTER_APP);
 export const updateShowcase = valueAssign(UPDATE_SHOWCASE);
 export const emptyShowcase = emptyAssign(EMPTY_SHOWCASE);
 
-export const updateLightBoxImages = valueAssign(UPDATE_LIGHT_BOX_IMAGES);
-export const emptyLightBoxImages = emptyAssign(EMPTY_LIGHT_BOX_IMAGES);
+export const updateLightBoxImageIndex = valueAssign(UPDATE_LIGHT_BOX_IMAGE_INDEX);
+export const emptyLightBoxImageIndex = emptyAssign(EMPTY_LIGHT_BOX_IMAGE_INDEX);

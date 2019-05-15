@@ -1,9 +1,10 @@
 import React, {useState} from "react";
 import Lightbox from 'react-image-lightbox';
 
-import {emptyLightBoxImages as emptyLightBoxImagesAction} from "../../redux/actionCreators";
+import {emptyLightBoxImageIndex as emptyLightBoxImageIndexAction} from "../../redux/actionCreators";
 import useReduxState from "../../hooks/useReduxState";
 import useReduxAction from "../../hooks/useReduxAction";
+import useShowcase from "../../hooks/useShowcase";
 
 import type {Node} from "react";
 
@@ -19,18 +20,18 @@ function getNextPrevIndex(length: number, index: number): number {
 }
 
 function ImageLightBoxActual(props: Props): Node {
-    const {lightBoxImages} = useReduxState();
-    const emptyLightBoxImages = useReduxAction(emptyLightBoxImagesAction);
+    const {list_of_images: images} = useShowcase();
+    const emptyLightBoxImageIndex = useReduxAction(emptyLightBoxImageIndexAction);
     const [index, setIndex] = useState(0);
-    const {prev, next} = getNextPrevIndex(lightBoxImages.length, index);
+    const {prev, next} = getNextPrevIndex(images.length, index);
     const goPrev = () => setIndex(prev);
     const goNext = () => setIndex(next);
     return (
         <Lightbox
-            mainSrc={lightBoxImages[index]}
-            prevSrc={lightBoxImages[prev]}
-            nextSrc={lightBoxImages[next]}
-            onCloseRequest={emptyLightBoxImages}
+            mainSrc={images[index]}
+            prevSrc={images[prev]}
+            nextSrc={images[next]}
+            onCloseRequest={emptyLightBoxImageIndex}
             onMovePrevRequest={goPrev}
             onMoveNextRequest={goNext}
         />
@@ -38,6 +39,6 @@ function ImageLightBoxActual(props: Props): Node {
 }
 
 export default function ImageLightBox(props: Props): ?Node {
-    const {lightBoxImages} = useReduxState();
-    return lightBoxImages ? <ImageLightBoxActual /> : null;
+    const {lightBoxImageIndex} = useReduxState();
+    return lightBoxImageIndex ? <ImageLightBoxActual /> : null;
 }

@@ -1,6 +1,11 @@
 import {createGlobalStyle} from "styled-components";
 import * as R from "ramda";
 
+
+// 3rd parties
+import "react-image-lightbox/style.css";
+
+
 const font = R.path(['theme', 'font']);
 const fontSize = R.path(['theme', 'fontSize']);
 const color = R.path(['theme', 'color']);
