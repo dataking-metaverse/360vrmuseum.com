@@ -2,9 +2,9 @@ import * as R from "ramda";
 
 import useReduxState from "./useReduxState";
 
-const useShowcase = R.pipe(
+const useShowcases = R.pipe(
     useReduxState,
-    R.prop('showcase')
+    R.prop('showcases')
 );
 
-export default useShowcase;
+export default useShowcases;

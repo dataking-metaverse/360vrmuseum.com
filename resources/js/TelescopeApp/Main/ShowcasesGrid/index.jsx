@@ -8,7 +8,8 @@ import {
 } from "./styled";
 
 import type {Showcases, Showcase} from "../../types";
-import {updateShowcase} from "../../redux/actionCreators";
+import {updateShowcase as updateShowcaseAction} from "../../redux/actionCreators";
+import useReduxAction from "../../hooks/useReduxAction";
 
 
 type Props = {
@@ -22,7 +23,8 @@ function hasSameMid(a: ?Showcase, b: ?Showcase): boolean {
 }
 
 function ShowcasesGrid(props: Props) {
-    const {activeShowcase, updateShowcase} = props;
+    const {activeShowcase} = props;
+    const updateShowcase = useReduxAction(updateShowcaseAction);
     return (
         <Root>
             {props.showcases.map((showcase: Showcase, index: number) => (
@@ -42,6 +44,6 @@ export default R.compose(
         R.applySpec({
             activeShowcase: R.prop('showcase'),
         }),
-        R.applySpec({updateShowcase})
+        // R.applySpec({updateShowcaseAction})
     )
 )(ShowcasesGrid);

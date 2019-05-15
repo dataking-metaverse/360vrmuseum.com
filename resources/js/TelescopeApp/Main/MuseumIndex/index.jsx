@@ -1,6 +1,6 @@
 import React from "react";
 
-import useShowcase from "../../hooks/useShowcase";
+import useShowcases from "../../hooks/useShowcases";
 import MuseumShowcases from "../MuseumShowcases";
 
 import type {ShowcasesGroup} from "../../types";
@@ -11,7 +11,7 @@ type Props = {
 
 
 export default function MuseumIndex(props: Props) {
-    const showcases = useShowcase();
+    const showcases = useShowcases();
     const keys: Array<string> = Object.keys(showcases);
     return keys.map(key => <MuseumShowcases key={key} name={key} showcases={showcases[key]} />);
 }
