@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import styled from "styled-components";
+import * as R from "ramda";
 
 import ToggleButton from "../../components/ToggleButton";
 import Collapsable from "../../components/Collapsable";
@@ -28,7 +29,7 @@ export default function MuseumShowcases(props: Props) {
     const [open, setOpen] = useState<boolean>(props.index === 0);
     return (
         <Root>
-            <ToggleButtonAbsolute open={open} onClick={() => setOpen(!open)} />
+            <ToggleButtonAbsolute open={open} onClick={R.F} />
             <Name onClick={() => setOpen(!open)}>{props.name}</Name>
             <Collapsable open={open}>
                 <ShowcasesGrid showcases={props.showcases} />
