@@ -26,7 +26,7 @@ export default function ShowcaseContent(props: Props) {
     useEffect(() => {
         const scrollable: ComponentType<Scrollable> | void = scrollableRef.current;
         if (R.is(React.Component, scrollable)) {
-            scrollable.scrollToTop();
+            scrollable.jumpToTop();
         }
     }, [showcase]);
 
