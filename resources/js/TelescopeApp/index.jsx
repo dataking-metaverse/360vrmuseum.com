@@ -1,6 +1,7 @@
 import React, {useMemo} from "react";
-import {Provider} from "react-redux";
+import {Provider, ReactReduxContext} from "react-redux";
 import {ThemeProvider} from "styled-components";
+import * as R from "ramda";
 
 import createStoreWithPreloadedState from "./redux/createStoreWithPreloadedState";
 import FullScreenRequest from "./components/FullScreenRequest";
@@ -15,17 +16,33 @@ type Props = {
     preloadedState: State,
 };
 
+function renderMainScreen() {
+    return (
+        <ReactReduxContext.Consumer>
+            {R.pipe(
+                R.path(['storeState', 'debug']),
+                R.ifElse(
+                    Boolean,
+                    () => <Main />,
+                    () => <FullScreenRequest><Main /></FullScreenRequest>,
+                )
+            )}
+        </ReactReduxContext.Consumer>
+    );
+}
+
 export default function TelescopeApp(props: Props) {
+
+    // initial state
     const preloadedState: State = props.preloadedState;
     const store = useMemo(() => createStoreWithPreloadedState(preloadedState), []);
+
     return (
         <Provider store={store}>
             <ThemeProvider theme={theme}>
                 <React.Fragment>
                     <BasicTheme />
-                    <FullScreenRequest>
-                        <Main />
-                    </FullScreenRequest>
+                    {renderMainScreen()}
                     <SideEffects />
                 </React.Fragment>
             </ThemeProvider>

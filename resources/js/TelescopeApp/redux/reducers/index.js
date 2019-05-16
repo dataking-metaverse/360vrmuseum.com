@@ -42,9 +42,15 @@ const lightBoxImageIndex = R.cond<any, Array<string>>([
     [R.T, R.always<any>(null)],
 ]);
 
+const debug = R.when(
+    R.isNil,
+    R.F,
+);
+
 export default combineReducers<function, Action>({
     // app,
     showcases,
     showcase,
     lightBoxImageIndex,
+    debug,
 });
