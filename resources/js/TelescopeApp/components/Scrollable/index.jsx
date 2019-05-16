@@ -28,7 +28,6 @@ export default class Scrollable extends React.Component<Props> {
     jumpToTop = R.pipe(
         R.always(this),
         R.path(['rootRef', 'current']),
-        R.tap(console.log),
         R.when(
             R.is(Element),
             el => el.scrollTop = 0 // !!! side effect performed here
