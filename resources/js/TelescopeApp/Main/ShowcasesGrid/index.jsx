@@ -5,7 +5,7 @@ import {
     Poster,
 } from "./styled";
 
-import {updateShowcase as updateShowcaseAction} from "../../redux/actionCreators";
+import {emptyShowcase as emptyShowcaseAction, updateShowcase as updateShowcaseAction} from "../../redux/actionCreators";
 import useReduxAction from "../../hooks/useReduxAction";
 import useShowcase from "../../hooks/useShowcase";
 
@@ -25,6 +25,7 @@ function hasSameMid(a: ?Showcase, b: ?Showcase): boolean {
 export default function ShowcasesGrid(props: Props) {
     const activeShowcase = useShowcase();
     const updateShowcase = useReduxAction(updateShowcaseAction);
+    const emptyShowcase = useReduxAction(emptyShowcaseAction);
     return (
         <Root>
             {props.showcases.map((showcase: Showcase, index: number) => (
@@ -32,7 +33,10 @@ export default function ShowcasesGrid(props: Props) {
                     key={index}
                     src={showcase.poster}
                     active={hasSameMid(showcase, activeShowcase)}
-                    onClick={() => updateShowcase(showcase)}
+                    onClick={() => {
+                        if (hasSameMid(showcase, activeShowcase)) { emptyShowcase(); }
+                        else { updateShowcase(showcase); }
+                    }}
                 />
             ))}
         </Root>
