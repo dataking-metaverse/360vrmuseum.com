@@ -13,6 +13,7 @@ const crossHeight = R.path(['theme', 'closeButton', 'cross', 'height']);
 const ToggleButton = styled.div`
     position: relative;
     display: inline-block;
+    vertical-align: bottom;
     width: ${width}rem;
     height: ${height}rem;
     
