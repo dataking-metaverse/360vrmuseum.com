@@ -2,21 +2,22 @@ import React from "react";
 import styled from "styled-components";
 import * as R from "ramda";
 
-import {ComponentType, Node} from "react";
+import half from "../../../functions/half";
 import MiddleSpan from "../../../components/MiddleSpan";
 import {topBorder} from "../../../styling/mixins";
+
+import type {ComponentType, Node} from "react";
 
 const path = R.pipe(
     R.concat(['theme', 'showcaseContent', 'informationSection']),
     R.path,
 );
 
-const half = R.divide(R.__, 2);
-
 const marginBottom = path(['marginBottom']);
 const paddingLeft = path(['paddingLeft']);
 export const Root = styled.div`
     padding-left: ${paddingLeft}rem;
+    margin-bottom: ${marginBottom}rem;
 `;
 
 
@@ -140,9 +141,11 @@ export const IsPaidExhibition = DetailPointComponent;
 
 export const Description = (() => {
     const fontSize = path(['description', 'fontSize']);
+    const lineHeight = path(['description', 'lineHeight']);
     const marginBottom = path(['description', 'marginBottom']);
     return styled.div`
         font-size: ${fontSize}rem;
+        line-height: ${lineHeight};
         margin-bottom: ${marginBottom}rem;
         white-space: pre-wrap;
     `;

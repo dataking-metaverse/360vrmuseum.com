@@ -2,10 +2,17 @@ import styled from "styled-components";
 import * as R from "ramda";
 
 import {topBorder} from "../../styling/mixins";
+import half from "../../functions/half";
 
+const gutterWidth = R.path(['theme', 'showcasesGrid', 'gutterWidth']);
+const gutterWidthHalf = R.pipe(gutterWidth, half);
 
 export const Root = styled.div`
     position: relative;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: ${gutterWidthHalf}rem;
+    margin-right: ${gutterWidthHalf}rem;
     ${topBorder}
 `;
 

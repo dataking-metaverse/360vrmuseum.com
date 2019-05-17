@@ -2,12 +2,12 @@ import styled from "styled-components";
 import * as R from "ramda";
 
 import type {ComponentType} from "react";
+import half from "../../../functions/half";
 
 type ImageProps = {|
     src: string
 |};
 
-const half: (dividee: number) => number = R.divide(R.__, 2);
 const minus = R.multiply(-1);
 const minusHalf = R.o(half, minus);
 
