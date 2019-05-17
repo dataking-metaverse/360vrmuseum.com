@@ -9,7 +9,7 @@ import type {Showcase} from "../../types";
 import useShowcase from "../../hooks/useShowcase";
 import useReduxAction from "../../hooks/useReduxAction";
 import useReduxState from "../../hooks/useReduxState";
-import {updateShowcase as updateShowcaseAction} from "../../redux/actionCreators";
+import {updateShowcase as updateShowcaseAction, emptyShowcase as emptyShowcaseAction} from "../../redux/actionCreators";
 
 import type {Ref} from "react";
 type Props = {|
@@ -40,6 +40,7 @@ export default function ShowcasePoster(props: Props): ?Node {
     const {showcase} = props;
     const activeShowcase = useShowcase();
     const updateShowcase = useReduxAction(updateShowcaseAction);
+    const emptyShowcase = useReduxAction(emptyShowcaseAction);
     const {menuScrollableRef, showcaseIframeRef} = useReduxState();
     const rootRef = useRef();
     const active = hasSameMid(showcase, activeShowcase);
@@ -60,7 +61,10 @@ export default function ShowcasePoster(props: Props): ?Node {
             ref={rootRef}
             src={showcase.poster}
             active={active}
-            onClick={() => updateShowcase(showcase)}
+            onClick={() => {
+                if (hasSameMid(showcase, activeShowcase)) { emptyShowcase(); }
+                else { updateShowcase(showcase); }
+            }}
         />
     );
 };
