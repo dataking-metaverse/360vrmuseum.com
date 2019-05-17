@@ -17,6 +17,7 @@ const marginBottom = path(['marginBottom']);
 const paddingLeft = path(['paddingLeft']);
 export const Root = styled.div`
     padding-left: ${paddingLeft}rem;
+    margin-bottom: ${marginBottom}rem;
 `;
 
 
