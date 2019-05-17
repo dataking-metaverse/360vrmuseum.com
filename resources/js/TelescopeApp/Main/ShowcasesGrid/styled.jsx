@@ -20,6 +20,7 @@ const activeBorderWidth = R.path(['theme', 'showcasesGrid', 'poster', 'activeBor
 const abw = activeBorderWidth; // alias
 export const Poster = styled.div`
     display: inline-block;
+    vertical-align: bottom;
     width: ${posterWidth}rem;
     height: ${posterHeight}rem;
     background-image: url(${backgroundImage});
