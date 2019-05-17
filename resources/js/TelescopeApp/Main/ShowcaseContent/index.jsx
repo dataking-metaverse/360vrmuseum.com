@@ -12,16 +12,16 @@ import IframeSection from "./IframeSection";
 import InformationSection from "./InformationSection";
 import ImagesSection from "./ImagesSection";
 
-import type {ComponentType} from "react";
+import type {ComponentType, Ref} from "react";
 import type {Showcase} from "../../types";
 
 type Props = {|
     activeShowcase: Showcase,
 |};
 
-export default function ShowcaseContent(props: Props) {
+export default function ShowcaseContent(props: Props): ?Node {
     const showcase = useShowcase();
-    const scrollableRef = useRef();
+    const scrollableRef: Ref = useRef(null);
 
     useEffect(() => {
         const scrollable: ComponentType<Scrollable> | void = scrollableRef.current;

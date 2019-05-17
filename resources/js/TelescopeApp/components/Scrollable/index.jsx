@@ -23,7 +23,7 @@ const Root = styled.div`
 
 export default class Scrollable extends React.Component<Props> {
 
-    rootRef = React.createRef();
+    rootRef: Ref = React.createRef<Element>();
 
     jumpToTop: () => void = R.pipe(
         R.always(this),
