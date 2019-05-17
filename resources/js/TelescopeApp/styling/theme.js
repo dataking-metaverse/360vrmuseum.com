@@ -136,7 +136,7 @@ const theme = {
         gutterWidth: 8.2,
         poster: {
             width: 30,
-            height: 40,
+            height: 45,
             activeBorderWidth: 1.3,
             activeBorderColor: themeRed,
         },
