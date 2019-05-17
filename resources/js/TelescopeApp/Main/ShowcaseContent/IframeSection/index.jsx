@@ -1,7 +1,12 @@
-import React from "react";
+import React, {useEffect, useRef} from "react";
 import * as R from "ramda";
 
+import {
+    updateShowcaseIframeRef as updateShowcaseIframeRefAction,
+    emptyShowcaseIframeRef as emptyShowcaseIframeRefAction,
+} from "../../../redux/actionCreators";
 import useShowcase from "../../../hooks/useShowcase";
+import useReduxAction from "../../../hooks/useReduxAction";
 import {
     Iframe,
 } from "./styled";
@@ -23,9 +28,18 @@ const embedUrl: (showcase: Showcase) => string = R.pipe(
 
 export default function IframeSection(props: Props): ?Node {
     const showcase: ?Showcase = useShowcase();
-    if (!showcase) { return null; }
     const src = embedUrl(showcase);
+    const updateShowcaseIframeRef = useReduxAction(updateShowcaseIframeRefAction);
+    const emptyShowcaseIframeRef = useReduxAction(emptyShowcaseIframeRefAction);
+    const iframeRef = useRef();
+
+    useEffect(() => {
+        updateShowcaseIframeRef(iframeRef);
+        return emptyShowcaseIframeRef;
+    }, [src]);
+
+    if (!showcase) { return null; }
     return (
-        <Iframe key={src} src={src} allowFullScreen allow="vr" />
+        <Iframe key={src} ref={iframeRef} src={src} allowFullScreen allow="vr" />
     );
 }
