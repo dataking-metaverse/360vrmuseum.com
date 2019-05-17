@@ -16,7 +16,6 @@ import type {Showcases} from "../../types";
 type Props = {
     name: string,
     showcases: Showcases,
-    index: number,
 };
 
 const ToggleButtonAbsolute = styled(ToggleButton)`
@@ -26,7 +25,7 @@ const ToggleButtonAbsolute = styled(ToggleButton)`
 `;
 
 export default function MuseumShowcases(props: Props) {
-    const [open, setOpen] = useState<boolean>(props.index === 0);
+    const [open, setOpen] = useState<boolean>(true);
     return (
         <Root>
             <ToggleButtonAbsolute open={open} onClick={R.F} />
