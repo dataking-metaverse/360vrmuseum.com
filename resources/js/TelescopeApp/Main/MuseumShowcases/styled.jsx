@@ -14,6 +14,7 @@ const nameLineHeight = R.path(['theme', 'museumShowcases', 'name', 'lineHeight']
 const nameMarginBottom = R.path(['theme', 'museumShowcases', 'name', 'marginBottom']);
 const nameMarginTop = R.path(['theme', 'museumShowcases', 'name', 'marginTop']);
 export const Name = styled.div`
+    position: relative;
     font-size: ${nameFontSize}rem;
     line-height: ${nameLineHeight};
     margin-bottom: ${nameMarginBottom}rem;
