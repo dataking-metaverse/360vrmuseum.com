@@ -91,6 +91,7 @@ const theme = {
             },
             description: {
                 fontSize: 2.5,
+                lineHeight: 2,
                 marginBottom: 6.8,
             },
             additionalInformationTitle: {

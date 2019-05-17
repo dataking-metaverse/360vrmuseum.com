@@ -141,9 +141,11 @@ export const IsPaidExhibition = DetailPointComponent;
 
 export const Description = (() => {
     const fontSize = path(['description', 'fontSize']);
+    const lineHeight = path(['description', 'lineHeight']);
     const marginBottom = path(['description', 'marginBottom']);
     return styled.div`
         font-size: ${fontSize}rem;
+        line-height: ${lineHeight};
         margin-bottom: ${marginBottom}rem;
         white-space: pre-wrap;
     `;
