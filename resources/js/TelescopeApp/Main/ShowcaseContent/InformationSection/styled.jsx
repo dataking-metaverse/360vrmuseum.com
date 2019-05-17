@@ -2,16 +2,16 @@ import React from "react";
 import styled from "styled-components";
 import * as R from "ramda";
 
-import {ComponentType, Node} from "react";
+import half from "../../../functions/half";
 import MiddleSpan from "../../../components/MiddleSpan";
 import {topBorder} from "../../../styling/mixins";
+
+import type {ComponentType, Node} from "react";
 
 const path = R.pipe(
     R.concat(['theme', 'showcaseContent', 'informationSection']),
     R.path,
 );
-
-const half = R.divide(R.__, 2);
 
 const marginBottom = path(['marginBottom']);
 const paddingLeft = path(['paddingLeft']);

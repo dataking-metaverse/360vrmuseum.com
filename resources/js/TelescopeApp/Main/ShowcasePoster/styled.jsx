@@ -1,7 +1,7 @@
 import * as R from "ramda";
 import styled from "styled-components";
 
-const half = R.divide(R.__, 2);
+import half from "../../functions/half";
 
 const gutterWidth = R.path(['theme', 'showcasesGrid', 'gutterWidth']);
 const gutterWidthHalf = R.pipe(gutterWidth, half);
