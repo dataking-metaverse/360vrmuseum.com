@@ -25,9 +25,14 @@ export default class Scrollable extends React.Component<Props> {
 
     rootRef: Ref = React.createRef<Element>();
 
+    getElement: () => Element = R.pipe(
+        R.always(this),
+        R.path(['rootRef', 'current'])
+    );
+
     jumpToTop: () => void = R.pipe(
         R.always(this),
-        R.path(['rootRef', 'current']),
+        R.invoker(0, 'getElement'),
         R.when(
             R.is(Element),
             el => el.scrollTop = 0 // !!! side effect performed here
