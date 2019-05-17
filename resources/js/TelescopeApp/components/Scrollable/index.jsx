@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import * as R from "ramda";
-import {quintic as ease} from "easing/src/functions";
+import {sinusoidal as ease} from "easing/src/functions";
 
 import type {Ref, Node} from "react";
 
