@@ -138,7 +138,7 @@ const theme = {
 
     showcasePoster: {
         width: 30,
-        height: 40,
+        height: 45,
         activeBorderWidth: 1.3,
         activeBorderColor: themeRed,
     },
