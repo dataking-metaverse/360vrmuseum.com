@@ -4,6 +4,7 @@ import {
     EMPTY_SHOWCASE,
     UPDATE_LIGHT_BOX_IMAGE_INDEX,
     EMPTY_LIGHT_BOX_IMAGE_INDEX,
+    UPDATE_MENU_SCROLLABLE_REF,
 } from "../actionTypes";
 
 import type {Dispatch} from "redux";
@@ -20,3 +21,5 @@ export const emptyShowcase = emptyAssign(EMPTY_SHOWCASE);
 
 export const updateLightBoxImageIndex = valueAssign(UPDATE_LIGHT_BOX_IMAGE_INDEX);
 export const emptyLightBoxImageIndex = emptyAssign(EMPTY_LIGHT_BOX_IMAGE_INDEX);
+
+export const updateMenuScrollableRef = valueAssign(UPDATE_MENU_SCROLLABLE_REF);

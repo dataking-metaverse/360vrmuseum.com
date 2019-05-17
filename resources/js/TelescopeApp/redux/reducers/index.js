@@ -8,8 +8,10 @@ import {
     EMPTY_SHOWCASE,
     UPDATE_LIGHT_BOX_IMAGE_INDEX,
     EMPTY_LIGHT_BOX_IMAGE_INDEX,
+    UPDATE_MENU_SCROLLABLE_REF,
 } from "../actionTypes";
 
+import type {Ref} from "react";
 import type {Action, App, ShowcasesGroup, Showcase} from "../../types";
 
 const secondArg = R.nthArg(1);
@@ -42,6 +44,12 @@ const lightBoxImageIndex = R.cond<any, Array<string>>([
     [R.T, R.always<any>(null)],
 ]);
 
+const menuScrollableRef = R.cond<any, Ref>([
+    [isAction(UPDATE_MENU_SCROLLABLE_REF), actionValue],
+    [R.nthArg<string>(0), R.nthArg<string>(0)],
+    [R.T, R.always<any>(null)],
+]);
+
 const debug = R.when(
     R.isNil,
     R.F,
@@ -52,5 +60,6 @@ export default combineReducers<function, Action>({
     showcases,
     showcase,
     lightBoxImageIndex,
+    menuScrollableRef,
     debug,
 });
