@@ -39,6 +39,7 @@ export default function ShowcaseContent(props: Props): ?Node {
                     <IframeSection />
                     <InformationSection />
                     <ImagesSection />
+                    <RelatedSection />
                 </Content>
             </Scrollable>
         </Root>
