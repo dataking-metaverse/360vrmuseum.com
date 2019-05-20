@@ -103,11 +103,10 @@ const theme = {
             },
         },
         imagesSection: {
-            gutterWidth: 4,
-            images: {
-                width: 48.6,
-                height: 27.3,
-            },
+            paddingBottom: 13.8,
+        },
+        relatedSection: {
+            paddingBottom: 13.8,
         },
     },
 
@@ -158,6 +157,19 @@ const theme = {
         cross: {
             width: 2.45,
             height: 2.45,
+        },
+    },
+
+    sectionTitle: {
+        fontSize: 2.5,
+        marginBottom: 3.7,
+    },
+
+    imageGrid: {
+        gutterWidth: 4,
+        image: {
+            width: 48.6,
+            height: 27.3,
         },
     },
 
