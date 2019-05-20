@@ -5,29 +5,34 @@ import Scrollable from "../../components/Scrollable";
 import {
     Root
 } from "./styled";
-import type {Showcase} from "../../types";
+import ary from "../../functions/ary";
 import useShowcase from "../../hooks/useShowcase";
 import useReduxAction from "../../hooks/useReduxAction";
 import useReduxState from "../../hooks/useReduxState";
 import {updateShowcase as updateShowcaseAction, emptyShowcase as emptyShowcaseAction} from "../../redux/actionCreators";
 
-import type {Ref} from "react";
+import type {Showcase} from "../../types";
+import type {Ref, ElementRef, StatelessComponent} from "react";
 type Props = {|
     showcase: ?Showcase,
 |};
 
+type DivRef = Ref<ElementRef<'div'>>;
+type IframeRef = Ref<ElementRef<'iframe'>>;
+
 function hasSameMid(a: ?Showcase, b: ?Showcase): boolean {
-    return Boolean(a) && Boolean(b) && typeof a.mid !== 'undefined' && a.mid === b.mid;
+    return Boolean(a && b && typeof a.mid !== 'undefined' && a.mid === b.mid);
 }
 
-const shouldApplyEffect = (menuScrollableRef: Ref, showcaseIframeRef: Ref, rootRef: Ref) => (
+const shouldApplyEffect = (menuScrollableRef: DivRef, showcaseIframeRef: IframeRef, rootRef: DivRef) => (
     menuScrollableRef && menuScrollableRef.current instanceof Scrollable &&
     showcaseIframeRef && showcaseIframeRef.current instanceof Element &&
     rootRef && rootRef.current instanceof Element
 );
 
-const rectTop: (element: Element) => number = R.ifElse(
-    R.propIs(Element, 'current'),
+const rectTop: (element: ?Element) => number = R.ifElse<any, number, number>(
+    ary<ElementRef<'iframe'>, boolean>(R.propIs(Element, 'current')),
+    // Boolean,
     R.pipe(
         R.prop('current'),
         R.invoker(0, 'getBoundingClientRect'),
@@ -36,7 +41,8 @@ const rectTop: (element: Element) => number = R.ifElse(
     R.always(0)
 );
 
-export default function ShowcasePoster(props: Props): ?Node {
+
+const ShowcasePoster: StatelessComponent<Props> = props => {
     const {showcase} = props;
     const activeShowcase = useShowcase();
     const updateShowcase = useReduxAction(updateShowcaseAction);
@@ -68,3 +74,5 @@ export default function ShowcasePoster(props: Props): ?Node {
         />
     );
 };
+
+export default ShowcasePoster;
