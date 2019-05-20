@@ -11,6 +11,7 @@ import CloseButtonSection from "./CloseButtonSection";
 import IframeSection from "./IframeSection";
 import InformationSection from "./InformationSection";
 import ImagesSection from "./ImagesSection";
+import RelatedSection from "./RelatedSection";
 
 import type {ComponentType, Ref} from "react";
 import type {Showcase} from "../../types";

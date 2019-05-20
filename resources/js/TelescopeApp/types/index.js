@@ -19,7 +19,7 @@ export type Showcase = {|
     thumbnail: string,
     kor_title: string,
     eng_title: string,
-    venur: string,
+    venue: string,
     map_address: string,
     map_name: string,
     description: string,
