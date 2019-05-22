@@ -32,7 +32,6 @@ const shouldApplyEffect = (menuScrollableRef: DivRef, showcaseIframeRef: IframeR
 
 const rectTop: (element: ?Element) => number = R.ifElse<any, number, number>(
     ary<ElementRef<'iframe'>, boolean>(R.propIs(Element, 'current')),
-    // Boolean,
     R.pipe(
         R.prop('current'),
         R.invoker(0, 'getBoundingClientRect'),
@@ -48,7 +47,7 @@ const ShowcasePoster: StatelessComponent<Props> = props => {
     const updateShowcase = useReduxAction(updateShowcaseAction);
     const emptyShowcase = useReduxAction(emptyShowcaseAction);
     const {menuScrollableRef, showcaseIframeRef} = useReduxState();
-    const rootRef = useRef();
+    const rootRef = useRef<?HTMLDivElement>(null);
     const active = hasSameMid(showcase, activeShowcase);
     const shouldUpdate = shouldApplyEffect(menuScrollableRef, showcaseIframeRef, rootRef);
 

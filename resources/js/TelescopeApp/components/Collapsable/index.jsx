@@ -3,7 +3,7 @@ import styled from "styled-components";
 import * as R from "ramda";
 import {Transition} from "react-transition-group";
 
-import type {Ref, Node} from "react";
+import type {Node, ComponentType, Ref} from "react";
 
 type Props = {
     children: Node,
@@ -22,20 +22,20 @@ const Inner = styled.div`
     
 `;
 
-function refRect(ref: Ref): ?DomRect {
+function refRect(ref: Ref<ComponentType<HTMLDivElement>>): ?ClientRect {
     return ref.current instanceof Element ? ref.current.getBoundingClientRect() : null;
 }
 
-const refHeight: (ref: Ref) => ?number = R.pipe(
+const refHeight: (ref: Ref<ComponentType<HTMLDivElement>>) => number = R.pipe(
     refRect,
     R.prop('height'),
-    R.when(R.isNil, R.always(null))
+    R.when(R.isNil, R.always(0))
 );
 
 export default function Collapsable(props: Props) {
     const {children, open} = props;
     const [delayedOpen, setDelayedOpen] = useState(open);
-    const [height, setHeight] = useState(null);
+    const [height, setHeight] = useState<number>(0);
     const innerRef = useRef(null);
 
     useEffect(() => {

@@ -1,13 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 
-import useReduxAction from "../../hooks/useReduxAction";
 
 type Props = {|
 
 |};
 
-function requestEnterFullScreen(element) {
+function requestEnterFullScreen(element: Element) {
     if(element.requestFullscreen)
         element.requestFullscreen();
     else if(element.mozRequestFullScreen)

@@ -13,15 +13,13 @@ import InformationSection from "./InformationSection";
 import ImagesSection from "./ImagesSection";
 import RelatedSection from "./RelatedSection";
 
-import type {ComponentType, Ref} from "react";
+import type {Node, ComponentType, Ref} from "react";
 import type {Showcase} from "../../types";
 
-type Props = {|
-    activeShowcase: Showcase,
-|};
+type Props = {||};
 
-export default function ShowcaseContent(props: Props): ?Node {
-    const showcase = useShowcase();
+export default function ShowcaseContent(props: Props): Node | null {
+    const showcase: Showcase = useShowcase();
     const scrollableRef: Ref = useRef(null);
 
     useEffect(() => {
