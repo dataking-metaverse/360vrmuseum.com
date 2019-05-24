@@ -2,8 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Mail\ContactFormEmail;
-use Illuminate\Http\Request;
 use Route;
 
 
