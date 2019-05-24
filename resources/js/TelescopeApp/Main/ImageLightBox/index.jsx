@@ -29,9 +29,9 @@ function ImageLightBoxActual(props: Props): Node {
     const goNext = () => setIndex(next);
     return (
         <Lightbox
-            mainSrc={images[index]}
-            prevSrc={images[prev]}
-            nextSrc={images[next]}
+            mainSrc={images[index].original}
+            prevSrc={images[prev].original}
+            nextSrc={images[next].original}
             onCloseRequest={emptyLightBoxImageIndex}
             onMovePrevRequest={goPrev}
             onMoveNextRequest={goNext}

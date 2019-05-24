@@ -79,7 +79,7 @@ const Subtitle = styled(ElipsesText)`
     font-size: 1.2rem;
 `;
 
-const firstThumbnail = R.path(['props', 'list_of_images', 0]);
+const firstThumbnail = R.path<string | number, string>(['props', 'list_of_images', 0, 'thumb']);
 const mainTitle = R.invoker(1, 'getAttribute')('main_title');
 
 const ShowcaseCardInner = R.compose(

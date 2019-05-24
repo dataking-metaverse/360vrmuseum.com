@@ -25,7 +25,7 @@ const ShowcaseThumbLinks: StatelessComponent<ShowcaseThumbLinksProps> = (props: 
     const images = relatedShowcases.map((showcase: Showcase, index: number) => (
         <Image
             key={index}
-            src={showcase.list_of_images[0]}
+            src={showcase.list_of_images[0].thumb}
             onClick={() => updateShowcase(showcase)}
         />
     ));
