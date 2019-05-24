@@ -1,9 +1,9 @@
-import React, {useState, useEffect, useContext} from "react";
+import React, {useState, useContext} from "react";
 import styled from "styled-components";
-import {connect} from "react-redux";
 import * as R from "ramda";
 import {Row, Col} from "styled-bootstrap-grid";
 
+import useCleanEffect from "../../../hooks/useCleanEffect";
 import ModelsContext from "../../../contexts/ModelsContext";
 import MuseumTitle from "../../../components/MuseumTitle";
 import HomeContainer from "../HomeContainer";
@@ -24,7 +24,7 @@ function ExhibitionList(props: Props) {
     const [showcasesCard, setShowcasesCard] = useState([]);
     const {Showcases} = useContext(ModelsContext);
 
-    useEffect(() => {
+    useCleanEffect(hasUnmounted => {
         Showcases.get(showcases).then(R.pipe(
             R.invoker(0, 'sortDateDesc'),
             Array.from,
@@ -33,7 +33,10 @@ function ExhibitionList(props: Props) {
                     {React.createElement(showcase.generateCard())}
                 </Col>
             )),
-            setShowcasesCard
+            R.when(
+                R.complement(hasUnmounted),
+                setShowcasesCard
+            )
         ));
     }, []);
     return (
