@@ -24,7 +24,10 @@ export type Showcase = {|
     map_name: string,
     description: string,
     youtube_id: string,
-    list_of_images: Array<string>,
+    list_of_images: {|
+        original: string,
+        thumb: string,
+    |},
     guide_information: string,
     is_paid: boolean,
     is_conversation: boolean,

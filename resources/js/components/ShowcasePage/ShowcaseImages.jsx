@@ -11,7 +11,7 @@ import ShowcaseSectionSubtitle from "./components/ShowcaseSectionSubtitle";
 import ShowcaseContainer from "./ShowcaseContainer";
 import ShowcaseContext from "./ShowcaseContext";
 
-import type {ElementType} from "react";
+import type {ComponentType} from "react";
 
 
 type Props = {|
@@ -22,7 +22,14 @@ type Props = {|
 |};
 
 type ImagesProps = {|
-    images: Array<string>,
+    images: {|
+        original: string,
+        thumb: string,
+    |},
+|};
+
+type ImageProps = {|
+    image: string,
 |};
 
 const Image = styled.div`
@@ -42,11 +49,10 @@ const Image = styled.div`
     }
 `;
 
-
-
-const Images: (props: ImagesProps) => Array<ElementType> = R.pipe(
+const Images = R.pipe<ImagesProps, Array<ComponentType<ImageProps>>>(
     R.prop('images'),
-    R.map(image => (
+    R.pluck('thumb'),
+    R.map((image: string) => (
         <Col key={image} sm={6} lg={4}>
             <Image src={image}><LoadingSpinner cover /></Image>
             <br />

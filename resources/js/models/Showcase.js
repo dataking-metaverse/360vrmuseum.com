@@ -9,7 +9,6 @@ import ShowcaseThumbnail from "../components/ShowcaseThumbnail";
 import Showcases from "./Showcases";
 import Comment from "./Comment";
 
-
 export type Props = {|
     mid: string,
     main_title: string,
@@ -24,7 +23,10 @@ export type Props = {|
     map_name: string,
     description: string,
     youtube_id: string,
-    list_of_images: Array<string>,
+    list_of_images: Array<{|
+        original: string,
+        thumb: string,
+    |}>,
     guide_information: string,
     is_paid: boolean,
     is_conversation: boolean,
