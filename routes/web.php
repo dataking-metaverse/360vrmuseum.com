@@ -30,6 +30,7 @@ Route::get('/national-museum', 'WebController@nationalMuseum')->name('national-m
 Route::get('/national-museum/{museumName}', 'WebController@nationalMuseum')->name('national-museum.single');
 Route::get('/360vrmuseum', 'WebController@vrmuseum')->name('vrmuseum');
 Route::get('/contact-us', 'WebController@contactUs')->name('contact-us');
+Route::get('/my-account', 'WebController@myAccount')->name('my-account');
 Route::get('/privacy-policy', 'WebController@privacyPolicy')->name('privacy-policy');
 Route::get('/terms-of-service', 'WebController@termsOfService')->name('terms-of-service');
 Route::get('/login', 'WebController@login')->name('login');

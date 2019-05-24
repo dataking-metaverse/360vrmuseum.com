@@ -28,6 +28,7 @@ class WebController extends Controller {
                     'national-museum.single',
                     'vrmuseum',
                     'contact-us',
+                    'my-account',
                     'privacy-policy',
                     'terms-of-service',
                     'login',
@@ -93,6 +94,7 @@ class WebController extends Controller {
     public function nationalMuseum() { return $this->all(); }
     public function vrmuseum() { return $this->all(); }
     public function contactUs() { return $this->all(); }
+    public function myAccount() { return $this->all(); }
     public function privacyPolicy() { return $this->all(); }
     public function termsOfService() { return $this->all(); }
     public function login() { return $this->all(); }
