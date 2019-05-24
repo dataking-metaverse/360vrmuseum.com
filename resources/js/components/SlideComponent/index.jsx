@@ -1,12 +1,12 @@
 import React from "react";
 import styled from "styled-components";
+import * as R from "ramda";
 
-import type {ComponentType, ElementType} from "react";
+import type {Node} from "react";
 
 type Props = {
     open: boolean,
-    component: ComponentType,
-    children: ElementType,
+    children: Node,
 };
 
 type State = {
@@ -41,6 +41,12 @@ export default class SlideComponent extends React.Component<Props, State> {
         this.hasUnmounted = true;
     }
 
+    restProps: () => {} = R.pipe(
+        R.always(this),
+        R.prop('props'),
+        R.omit(['children'])
+    );
+
     checkWrapperHeight = () => {
         if (this.hasUnmounted) { return; }
 
@@ -58,7 +64,7 @@ export default class SlideComponent extends React.Component<Props, State> {
 
     render() {
         return (
-            <Root style={this.getStyle()}>
+            <Root {...this.restProps()} style={this.getStyle()}>
                 <Wrapper ref={this.wrapperRef}>
                     {this.props.children}
                 </Wrapper>
