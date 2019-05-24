@@ -8,6 +8,7 @@ import TermsOfService from "../pages/TermsOfService";
 import NationalMuseum from "../pages/NationalMuseum";
 import VRMuseum from "../pages/VRMuseum";
 import ContactUs from "../pages/ContactUs";
+import MyAccount from "../pages/MyAccount";
 import Showcase from "../pages/Showcase";
 import Home from "../pages/Home";
 
@@ -53,6 +54,10 @@ const routes = {
     vrmuseum: {
         exact: true,
         component: VRMuseum,
+    },
+    'my-account': {
+        exact: true,
+        component: MyAccount,
     },
     'contact-us': {
         exact: true,
