@@ -1,17 +1,15 @@
-import React, {useState, useEffect, useContext} from "react";
+import React, {useState, useContext} from "react";
 import Slider from "react-slick";
 import styled from "styled-components";
-import {Container} from "styled-bootstrap-grid";
 import {connect} from "react-redux";
 import * as R from "ramda";
 
+import useCleanEffect from "../../../hooks/useCleanEffect";
 import ModelsContext from "../../../contexts/ModelsContext";
 import MuseumTitle from "../../../components/MuseumTitle";
 import {themeVar} from "../../../styling/theme/functions";
 import Slide from "./Slide";
 import HomeContainer from "../HomeContainer";
-import noSSR from "../../../decorators/noSSR";
-import {Link} from "react-router-dom";
 import gridTheme from "../../../styling/gridTheme";
 
 
@@ -121,7 +119,7 @@ function FeaturedExhibitionCarousel(props: Props) {
     const [showcaseElements, setShowcaseElements] = useState([]);
     const {Showcases} = useContext(ModelsContext);
 
-    useEffect(() => {
+    useCleanEffect(hasUnmounted => {
         Showcases.get(exhibitions).then(R.pipe(
             Array.from,
             R.map(showcase => (
@@ -132,7 +130,10 @@ function FeaturedExhibitionCarousel(props: Props) {
                     {React.createElement(showcase.generatePosterLink({fullWidth: true}))}
                 </Slide>
             )),
-            setShowcaseElements
+            R.when(
+                R.complement(hasUnmounted),
+                setShowcaseElements
+            )
         ));
     }, []);
 
