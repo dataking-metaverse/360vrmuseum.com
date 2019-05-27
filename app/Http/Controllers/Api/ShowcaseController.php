@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\Api;
 
 use App\Console\Commands\FetchShowcaseStatistics;
+use App\Exceptions\Api\NotFoundException;
 use App\Exceptions\Api\UnauthorizedException;
 use App\Exceptions\Api\ValidationException;
 use App\User;
+use App\VRMuseum\User as MongoUser;
 use Cache;
 use Validator;
 use Illuminate\Http\Request;
@@ -86,7 +88,10 @@ class ShowcaseController extends Controller
     function single(Request $reuqest) {
         if (!static::userHasPrivilege('viewShowcases')) { throw new UnauthorizedException(); }
         $mid = $this->requireParam('mid');
-        return static::success(static::propEq('mid', $mid));
+        $singleShowcase = static::propEq('mid', $mid);
+        if (!$singleShowcase) { throw new NotFoundException(); }
+        User::pushViewHistory($mid);
+        return static::success($singleShowcase);
     }
 
     function byPresentedBy(Request $request) {
