@@ -47,6 +47,24 @@ class User extends Authenticatable
         return in_array('*', $privilege);
     }
 
+    public static function pushViewHistory(string $mid): void {
+        $user = auth()->user();
+        if (!$user) { return; }
+        $mongoUser = $user->mongoUser();
+        $viewHistory = isset($mongoUser->view_history) ? $mongoUser->view_history : [];
+        if ($mongoUser) {
+            if (in_array($mid, $viewHistory)) {
+                $key = array_search($mid, $viewHistory);
+                unset($viewHistory[$key]);
+                $viewHistory = array_values($viewHistory);
+            }
+            array_unshift($viewHistory, $mid);
+            array_slice($viewHistory, 0, 15);
+            $mongoUser->view_history = $viewHistory;
+            $mongoUser->save();
+        }
+    }
+
     function getTypesAttribute() {
         $userTypeFunctions = config('360vrmuseum.auth.userType');
         $output = [];
@@ -58,6 +76,10 @@ class User extends Authenticatable
 
     function mongodb() {
         return $this->hasOne(MongoUser::class);
+    }
+
+    function mongoUser() {
+        return MongoUser::where(['userid' => $this->name])->first();
     }
 
     static function hasPrivilegeSafe($user, string $privilegeName): bool {

@@ -4,10 +4,11 @@ import styled from "styled-components";
 import {connect} from "react-redux";
 import * as R from "ramda";
 
+import useCleanEffect from "../../../hooks/useCleanEffect";
 import Slide from "./Slide";
 
-import type {Element, Node} from "react";
-import type ResponsiveImage from "../../../types/ResponsiveImage";
+import type {Node} from "react";
+import type {ResponsiveImage} from "../../../types";
 import {themeVar} from "../../../styling/theme/functions";
 import ModelsContext from "../../../contexts/ModelsContext";
 
@@ -132,8 +133,8 @@ function HeroCarousel(props: Props) {
     const slideItems = mergeArray([slideText, slideRoutes]);
 
     // initializing only
-    useEffect(() => {
-        window.setTimeout(() => updateActiveSlide(0), 400);
+    useCleanEffect(hasUnmounted => {
+        window.setTimeout(() => !hasUnmounted() && updateActiveSlide(0), 400);
     }, [true]);
 
     return (
