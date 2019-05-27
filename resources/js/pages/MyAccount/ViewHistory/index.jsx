@@ -3,6 +3,7 @@ import Slider from "react-slick";
 
 import useLangPath from "../../../hooks/useLangPath";
 import Card from "../../../components/Card";
+import ViewHistorySlider from "./ViewHistorySlider";
 
 
 type Props = {

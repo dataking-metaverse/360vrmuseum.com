@@ -38,6 +38,7 @@ const slickSettings = {
 };
 
 export default function ViewHistorySlider(props: Props) {
+    // TODO : udpate it to be the real history
     const slides = useSlides();
     return (
         <Root>
