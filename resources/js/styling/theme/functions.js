@@ -27,3 +27,12 @@ export const themeMixin: (path: string | Array<string>) => Interpolation = R.pip
     R.concat(['theme', 'mixins']),
     R.path
 );
+
+export const themeColor: (path: string | Array<string>) => Interpolation = R.pipe(
+    R.when(
+        R.pipe(R.type, R.equals('String')),
+        R.split('.')
+    ),
+    R.concat(['theme', 'variables', 'colors']),
+    R.path
+);

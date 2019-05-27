@@ -2,7 +2,7 @@ const basic = {
 
     // bootstraps default
     blue: '#007bff',
-    indigo: '#6610f2',
+    indigo: '#66`10f2',
     pink: '#e83e8c',
     red: '#dc3545',
     orange: '#fd7e14',
