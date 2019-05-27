@@ -68,7 +68,7 @@ Route::get('/api/password/find/{token}', 'Auth\\PasswordResetController@find')->
 Route::post('/api/password/reset', 'Auth\\PasswordResetController@reset')->name('password-reset.reset');
 
 // API : my account
-Route::get('/api/my-account/view-history', 'Api\\ViewHistoryController@get');
+Route::get('/api/my-account/view-history', 'Api\\ViewHistoryController@get')->name('api.my-account.view-history');
 
 Route::get('/sitemap.xml', 'SitemapController@index')->name('sitemap');
 Route::get('/robots.txt', 'RobotsController@index')->name('robots');

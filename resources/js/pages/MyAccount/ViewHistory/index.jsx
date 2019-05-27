@@ -12,6 +12,7 @@ type Props = {
 
 export default function ViewHistory(props: Props) {
     const lang = useLangPath(['pages', 'my-account', 'viewHistory']);
+
     return (
         <Card header={lang.title}>
             <ViewHistorySlider />

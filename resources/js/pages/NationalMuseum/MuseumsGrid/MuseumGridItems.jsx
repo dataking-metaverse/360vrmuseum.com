@@ -59,6 +59,7 @@ function renderMuseumGridItem(museumName, showcases: Showcases) {
                 {showcases.toArray().map((showcase: Showcase, index) => (
                     <Col key={index} col={12} sm={6} lg={length < 4 ? 12 / length : 3}>
                         {React.createElement(showcase.generatePosterLink())}
+                        <br /><br />
                     </Col>
                 ))}
             </Row>

@@ -14,7 +14,6 @@ type Props = {|
 const bodyOptions = R.pick(['noPadding']);
 
 export default function Card(props: Props) {
-    typeof window !== 'undefined' && console.log(bodyOptions(props));
     return (
         <Root>
             <Header>{props.header}</Header>

@@ -1,19 +1,23 @@
 import React from "react";
 import Slider from "react-slick";
-
+import * as R from "ramda";
 
 import gridTheme from "../../../../styling/gridTheme";
 import {
-    Root
+    Root,
+    Inner,
+    SlideWrapper,
 } from "./styled";
-import useSlides from "./useSlides";
+import useRoute from "../../../../hooks/useRoute";
+import useAxios from "../../../../hooks/useAxios";
+import Showcase from "../../../../models/Showcase";
 
 
 
 const slickSettings = {
     infinite: true,
     speed: 500,
-    slidesToShow: 6,
+    slidesToShow: 4,
     slidesToScroll: 1,
     responsive: [
         {
@@ -37,12 +41,27 @@ const slickSettings = {
     ]
 };
 
+const generateSlides: (showcase: ?Array<{}>) => Array<Node> = R.ifElse(
+    R.complement(R.isNil),
+    R.addIndex(R.map)((showcaseObject: {}, index: number) => {
+        const showcase = Showcase.constructByData(showcaseObject);
+        const Poster = showcase.generatePosterLink();
+        return <SlideWrapper key={index}><Poster /></SlideWrapper>;
+    }),
+    R.always(null),
+);
+
 export default function ViewHistorySlider(props: Props) {
     // TODO : udpate it to be the real history
-    const slides = useSlides();
+    const historyRoute = useRoute('api.my-account.view-history');
+    const [viewHistory] = useAxios(historyRoute);
+    if (!Array.isArray(viewHistory)) { return null; }
+    const slides = generateSlides([...viewHistory, ...viewHistory, ...viewHistory, ...viewHistory, ...viewHistory, ...viewHistory]);
     return (
         <Root>
-            <Slider {...slickSettings}>{slides}</Slider>
+            <Inner>
+                <Slider {...slickSettings}>{slides}</Slider>
+            </Inner>
         </Root>
     );
 };
