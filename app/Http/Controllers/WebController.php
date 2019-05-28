@@ -53,6 +53,7 @@ class WebController extends Controller {
                     'password-reset.find',
                     'password-reset.reset',
                     'api.my-account.view-history',
+                    'api.my-account.view-suggestions',
                 ]),
             ],
             'config' => config('360vrmuseum.public'),

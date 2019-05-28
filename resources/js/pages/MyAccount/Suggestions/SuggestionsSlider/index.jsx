@@ -2,17 +2,16 @@ import React from "react";
 import Slider from "react-slick";
 import * as R from "ramda";
 
-import gridTheme from "../../../../styling/gridTheme";
+import Showcase from "~/models/Showcase";
+import useRoute from "~/hooks/useRoute";
+import useAxios from "~/hooks/useAxios";
+import useTheme from "~/hooks/useTheme";
 import {
     Root,
     Inner,
-    SlideWrapper,
+    SlideWrap,
 } from "./styled";
-import useRoute from "../../../../hooks/useRoute";
-import useAxios from "../../../../hooks/useAxios";
-import Showcase from "../../../../models/Showcase";
-
-import type {ElementType} from "react";
+import gridTheme from "../../../../styling/gridTheme";
 
 type Props = {|
 
@@ -45,34 +44,37 @@ const slickSettings = {
     ]
 };
 
-const mapSlides: (showcase: ?Array<{}>) => Array<Node> = R.ifElse<Array<Showcase>, Array<ElementType>, null>(
+const mapSlides = R.addIndex(R.map)((showcaseObject, index: number) => {
+    const Slide = Showcase.constructByData(showcaseObject).generateThumbnail();
+    return <SlideWrap data-king="jjj" key={index}><Slide /></SlideWrap>
+});
+
+const makeSlides = R.ifElse(
     R.allPass([
         R.complement(R.isNil),
-        Array.isArray,
+        // R.all(R.is(Showcase)),
     ]),
-    R.addIndex(R.map)((showcaseObject: {}, index: number) => {
-        const showcase = Showcase.constructByData(showcaseObject);
-        const Poster = showcase.generatePosterLink();
-        return <SlideWrapper key={index}><Poster /></SlideWrapper>;
-    }),
-    R.always<null>(null),
+    mapSlides,
+    R.always(null)
 );
 
-const useSlides = R.pipe(
-    R.always('api.my-account.view-history'),
+const useSuggestions = R.pipe(
+    R.always('api.my-account.view-suggestions'),
     useRoute,
     useAxios,
     R.prop('data'),
-    mapSlides
+    R.tap(console.log),
+    makeSlides
 );
 
-export default function ViewHistorySlider(props: Props) {
-    const slides = useSlides();
+export default function SuggestionsSlider(props: Props) {
+    const suggestionsSlides = useSuggestions();
     return (
         <Root>
             <Inner>
-                <Slider {...slickSettings}>{slides}</Slider>
+                <Slider {...slickSettings}>{suggestionsSlides}</Slider>
             </Inner>
         </Root>
+
     );
 };

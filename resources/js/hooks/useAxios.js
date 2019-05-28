@@ -24,7 +24,7 @@ function useAxios(route: string) {
         });
     }, [route]);
     const data = dataProp(response);
-    return [data, loading, response];
+    return {data, loading, response};
 }
 
 export default useAxios;
