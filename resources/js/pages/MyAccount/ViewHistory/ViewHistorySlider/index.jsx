@@ -12,7 +12,11 @@ import useRoute from "../../../../hooks/useRoute";
 import useAxios from "../../../../hooks/useAxios";
 import Showcase from "../../../../models/Showcase";
 
+import type {ElementType} from "react";
 
+type Props = {|
+
+|};
 
 const slickSettings = {
     infinite: true,
@@ -41,22 +45,29 @@ const slickSettings = {
     ]
 };
 
-const generateSlides: (showcase: ?Array<{}>) => Array<Node> = R.ifElse(
-    R.complement(R.isNil),
+const generateSlides: (showcase: ?Array<{}>) => Array<Node> = R.ifElse<Array<Showcase>, Array<ElementType>, null>(
+    R.allPass([
+        R.complement(R.isNil),
+        Array.isArray,
+    ]),
     R.addIndex(R.map)((showcaseObject: {}, index: number) => {
         const showcase = Showcase.constructByData(showcaseObject);
         const Poster = showcase.generatePosterLink();
         return <SlideWrapper key={index}><Poster /></SlideWrapper>;
     }),
-    R.always(null),
+    R.always<null>(null),
+);
+
+const useSlides = R.pipe(
+    R.always('api.my-account.view-history'),
+    useRoute,
+    useAxios,
+    R.nth<{}, Array<{}>>(0),
+    generateSlides
 );
 
 export default function ViewHistorySlider(props: Props) {
-    // TODO : udpate it to be the real history
-    const historyRoute = useRoute('api.my-account.view-history');
-    const [viewHistory] = useAxios(historyRoute);
-    if (!Array.isArray(viewHistory)) { return null; }
-    const slides = generateSlides([...viewHistory, ...viewHistory, ...viewHistory, ...viewHistory, ...viewHistory, ...viewHistory]);
+    const slides = useSlides();
     return (
         <Root>
             <Inner>

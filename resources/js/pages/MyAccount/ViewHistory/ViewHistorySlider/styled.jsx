@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import {themeVar} from "../../../../styling/theme/functions";
 
 
 const width = 4.8;
@@ -10,6 +11,8 @@ export const Root = styled.div`
     padding-right: 6rem;
 `;
 
+const arrowLeft = themeVar('arrowLeft');
+const arrowRight = themeVar('arrowRight');
 export const Inner = styled.div`
    position: relative;
     
@@ -22,15 +25,21 @@ export const Inner = styled.div`
             margin-top: ${-widthHalf}rem;
             border: none;
             cursor: pointer;
+            font-size: 0;
+            background-color: transparent;
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
             z-index: 1;
         }
         
         > .slick-prev {
             left: ${-width}rem;
+            background-image: url(${arrowLeft});
         }
         
         > .slick-next {
             right: ${-width}rem;
+            background-image: url(${arrowRight});
         }
     }
 `;

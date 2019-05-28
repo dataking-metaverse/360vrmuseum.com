@@ -1,5 +1,4 @@
 import React from "react";
-import Slider from "react-slick";
 
 import useLangPath from "../../../hooks/useLangPath";
 import Card from "../../../components/Card";

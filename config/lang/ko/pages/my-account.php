@@ -9,4 +9,7 @@ return [
     'viewHistory' => [
         'title' => '최근 본 전시',
     ],
+    'suggestions' => [
+        'title' => '국립중앙박물관의 다른 전시',
+    ],
 ];

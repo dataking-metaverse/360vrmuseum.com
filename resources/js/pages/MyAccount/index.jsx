@@ -5,6 +5,7 @@ import {Container} from "styled-bootstrap-grid";
 import page from "../../decorators/page";
 import AccountInformation from "./AccountInformation";
 import ViewHistory from "./ViewHistory";
+import Suggestions from "./Suggestions/index";
 
 
 type Props = {|
@@ -24,6 +25,7 @@ export default class MyAccount extends React.PureComponent<Props> {
                 <Container>
                     <AccountInformation />
                     <ViewHistory />
+                    <Suggestions />
                 </Container>
             </Root>
         );
