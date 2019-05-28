@@ -45,7 +45,7 @@ const slickSettings = {
     ]
 };
 
-const generateSlides: (showcase: ?Array<{}>) => Array<Node> = R.ifElse<Array<Showcase>, Array<ElementType>, null>(
+const mapSlides: (showcase: ?Array<{}>) => Array<Node> = R.ifElse<Array<Showcase>, Array<ElementType>, null>(
     R.allPass([
         R.complement(R.isNil),
         Array.isArray,
@@ -63,7 +63,7 @@ const useSlides = R.pipe(
     useRoute,
     useAxios,
     R.nth<{}, Array<{}>>(0),
-    generateSlides
+    mapSlides
 );
 
 export default function ViewHistorySlider(props: Props) {

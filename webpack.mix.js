@@ -11,6 +11,14 @@ const mix = require('laravel-mix');
  |
  */
 
+mix.webpackConfig({
+    resolve: {
+        alias: {
+            "~" : path.resolve(__dirname, 'resources/js'),
+        },
+    },
+});
+
 mix
     .react('resources/js/telescope.jsx', 'public/js')
     .react('resources/js/app.jsx', 'public/js')
