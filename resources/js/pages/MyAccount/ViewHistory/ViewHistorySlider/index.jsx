@@ -2,7 +2,6 @@ import React from "react";
 import Slider from "react-slick";
 import * as R from "ramda";
 
-import gridTheme from "~/styling/gridTheme";
 import {
     Root,
     Inner,
@@ -19,49 +18,40 @@ type Props = {|
 
 |};
 
-const basicSlickSettings = {
-    infinite: true,
-    speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    responsive: [
-        {
-            breakpoint: gridTheme.breakpoints.lg - 1,
-            settings: {
-                slidesToShow: 4,
-            },
-        },
-        {
-            breakpoint: gridTheme.breakpoints.md - 1,
-            settings: {
-                slidesToShow: 2,
-            },
-        },
-        {
-            breakpoint: gridTheme.breakpoints.xs - 1,
-            settings: {
-                slidesToShow: 1,
-            },
-        }
-    ]
-};
-
-const slidesToShow = {
+const slidesToShow = 4;
+const slidesToShowResponsive = {
     lg: 4,
     md: 2,
     xs: 1,
 };
 
-const useSlickSettings = function() {
-    const theme = useTheme();
-    // const {styledBootstrapGrid} = theme;
+const basicSlickSettings = {
+    infinite: true,
+    speed: 500,
+    slidesToShow,
+    slidesToScroll: 1,
+};
 
-    const responsive = R.mapObjIndexed((value: number, key: string) => ({
-        breakpoint: theme
-    }))(slidesToShow);
+const minusOne = R.subtract(R.__, 1);
+
+const useSlickSettings = function(slides: ?Array<Node>) {
+    const {styledBootstrapGrid} = useTheme();
+    const length = Array.isArray(slides) ? slides.length : 0;
+
+    const responsive = R.o(
+        R.values,
+        R.mapObjIndexed((value: number, key: string) => ({
+            breakpoint: minusOne(styledBootstrapGrid.breakpoints[key]),
+            settings: {
+                slidesToShow: value,
+                infinite: length > value,
+            },
+        }))
+    )(slidesToShowResponsive);
 
     return R.pipe(
-        R.identity
+        R.assoc('responsive', responsive),
+        R.assoc('infinite', length > slidesToShow)
     )(basicSlickSettings);
 };
 
@@ -88,7 +78,7 @@ const useSlides = R.pipe(
 
 export default function ViewHistorySlider(props: Props) {
     const slides = useSlides();
-    const slickSettings = useSlickSettings();
+    const slickSettings = useSlickSettings(slides);
     return (
         <Root>
             <Inner>
