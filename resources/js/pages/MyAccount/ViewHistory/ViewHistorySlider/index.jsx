@@ -6,10 +6,12 @@ import {
     Root,
     Inner,
     SlideWrapper,
+    EmptyMessage,
 } from "./styled";
 import useRoute from "~/hooks/useRoute";
 import useAxios from "~/hooks/useAxios";
 import useTheme from "~/hooks/useTheme";
+import useLangPath from "~/hooks/useLangPath";
 import Showcase from "~/models/Showcase";
 
 import type {ElementType} from "react";
@@ -79,10 +81,15 @@ const useSlides = R.pipe(
 export default function ViewHistorySlider(props: Props) {
     const slides = useSlides();
     const slickSettings = useSlickSettings(slides);
+    const lang = useLangPath(['pages', 'my-account', 'suggestions']);
+    const showSlides = R.allPass([
+        Array.isArray,
+        R.complement(R.isEmpty)
+    ])([]);
     return (
         <Root>
             <Inner>
-                <Slider {...slickSettings}>{slides}</Slider>
+                {showSlides ? <Slider {...slickSettings}>{slides}</Slider> : <EmptyMessage>{lang.empty}</EmptyMessage>}
             </Inner>
         </Root>
     );

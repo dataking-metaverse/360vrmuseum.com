@@ -47,3 +47,8 @@ export const Inner = styled.div`
 export const SlideWrapper = styled.div`
     
 `;
+
+export const EmptyMessage = styled.div`
+    text-align: center;
+    margin-bottom: 1rem;
+`;
