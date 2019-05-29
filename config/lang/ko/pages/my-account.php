@@ -5,6 +5,12 @@ return [
         'title' => '프로필',
         'edit' => '수정',
         'save' => '저장',
+        'form' => [
+            'email' => '이메일',
+            'name' => '이름',
+            'phone' => '휴대폰',
+            'job' => '직업',
+        ],
     ],
     'viewHistory' => [
         'title' => '최근 본 전시',

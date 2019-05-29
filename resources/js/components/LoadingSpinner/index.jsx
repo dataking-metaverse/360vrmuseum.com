@@ -1,12 +1,14 @@
 import React from "react";
 import styled, {keyframes} from "styled-components";
+import * as R from "ramda";
 
-import {themeVar} from "../../styling/theme/functions";
+import {themeVar} from "~/styling/theme/functions";
 
 import type {Node} from "react";
 
 type Props = {
     cover?: boolean,
+    transparentBackground?: boolean,
 };
 
 const style = {
@@ -19,13 +21,19 @@ const style = {
     }
 };
 
+const backgroundColor = R.ifElse(
+    R.prop('transparentBackground'),
+    R.always('transparent'),
+    themeVar('colors.basic.white')
+);
+
 const spinning = keyframes`
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 `;
 
 const Root = styled.div`
-    background-color: ${themeVar('colors.basic.white')};
+    background-color: ${backgroundColor};
     text-align: center;
     
     &:before {
@@ -63,7 +71,14 @@ const Normal = styled(Root)`
     padding-bottom: ${style.normal.paddingX}rem;
 `;
 
-export default function LoadingSpinner(props: Props): Node {
+function LoadingSpinner(props: Props): Node {
     if (props.hasOwnProperty('cover') && props.cover) { return ( <Cover {...props} /> ); }
     return ( <Normal {...props} /> );
 }
+
+LoadingSpinner.defaultProps = {
+    transparentBackground: false,
+};
+
+export default LoadingSpinner;
+

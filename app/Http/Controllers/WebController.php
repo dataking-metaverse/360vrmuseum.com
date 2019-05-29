@@ -52,6 +52,7 @@ class WebController extends Controller {
                     'password-reset.create',
                     'password-reset.find',
                     'password-reset.reset',
+                    'api.my-account.account-information',
                     'api.my-account.view-history',
                     'api.my-account.view-suggestions',
                 ]),

@@ -1,27 +1,29 @@
 import React, {useState} from "react";
-import styled from "styled-components";
 import * as R from "ramda";
 
 import Card from "~/components/Card";
-import useReduxState from "~/hooks/useReduxState";
+import LoadingSpinner from "~/components/LoadingSpinner";
+import useRoute from "~/hooks/useRoute";
+import useAxios from "~/hooks/useAxios";
 import {Provider} from "./AccountEditStateContext";
 import AccountInformationHeader from "./AccountInformationHeader";
-import AccountInformationItem from "./AccountInformationItem";
 
 import type {Props as UserProps} from "~/models/User"
+import AccountInformationForm from "./AccountInformationForm";
 
 type Props = {|
 
 |};
 
-const CardBodyInner = styled.div`
-    padding-left: 9.8rem;
-`;
+const useApiUrl = R.pipe(
+    R.always('api.my-account.account-information'),
+    useRoute,
+);
 
 const useUserProps = R.pipe(
-    useReduxState,
-    R.path(['user', 'props']),
-    R.tap(console.log)
+    useApiUrl,
+    useAxios,
+    R.prop('data')
 );
 
 export default function AccountInformation(props: Props) {
@@ -30,9 +32,7 @@ export default function AccountInformation(props: Props) {
     return (
         <Provider value={editState}>
             <Card header={<AccountInformationHeader />} noPadding>
-                <CardBodyInner>
-                    <AccountInformationItem />
-                </CardBodyInner>
+                {user ? <AccountInformationForm user={user} /> : <LoadingSpinner transparentBackground />}
             </Card>
         </Provider>
     );

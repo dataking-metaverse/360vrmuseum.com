@@ -68,6 +68,7 @@ Route::get('/api/password/find/{token}', 'Auth\\PasswordResetController@find')->
 Route::post('/api/password/reset', 'Auth\\PasswordResetController@reset')->name('password-reset.reset');
 
 // API : my account
+Route::get('/api/my-account/account-information', 'Api\\AccountInformationController@get')->name('api.my-account.account-information');
 Route::get('/api/my-account/view-history', 'Api\\ViewHistoryController@get')->name('api.my-account.view-history');
 Route::get('/api/my-account/view-suggestions', 'Api\\ViewSuggestinosController@get')->name('api.my-account.view-suggestions');
 
