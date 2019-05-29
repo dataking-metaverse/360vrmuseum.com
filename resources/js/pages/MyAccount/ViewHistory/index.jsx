@@ -16,4 +16,4 @@ export default function ViewHistory(props: Props) {
             <ViewHistorySlider />
         </Card>
     );
-}
+};
