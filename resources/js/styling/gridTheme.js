@@ -1,5 +1,6 @@
 // reference: https://www.npmjs.com/package/styled-bootstrap-grid
 
+// TODO : this should be removed and all the usage of this should be switched to be using ThemeContent from "styled-bootstrap-grid"
 
 const gridTheme = {
     breakpoints: {

@@ -17,14 +17,37 @@ const Root = styled.div`
     padding-bottom: 10.2rem;
 `;
 
+const Row1 = styled.div`
+    display: table;
+    width: 100%;
+
+    > * {
+        display: table-cell;
+    }
+`;
+
+Row1.Col1 = styled.div`
+    width: 39.6rem;
+`;
+
+Row1.Col2 = styled.div`
+    padding-left: 5.4rem;
+`;
+
 @page('my-account')
 export default class MyAccount extends React.PureComponent<Props> {
     render() {
         return (
             <Root>
                 <Container>
-                    <AccountInformation />
-                    <ViewHistory />
+                    <Row1>
+                        <Row1.Col1>
+                            <AccountInformation />
+                        </Row1.Col1>
+                        <Row1.Col2>
+                            <ViewHistory />
+                        </Row1.Col2>
+                    </Row1>
                     <Suggestions />
                 </Container>
             </Root>

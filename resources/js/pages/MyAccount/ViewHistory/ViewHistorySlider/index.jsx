@@ -2,15 +2,16 @@ import React from "react";
 import Slider from "react-slick";
 import * as R from "ramda";
 
-import gridTheme from "../../../../styling/gridTheme";
+import gridTheme from "~/styling/gridTheme";
 import {
     Root,
     Inner,
     SlideWrapper,
 } from "./styled";
-import useRoute from "../../../../hooks/useRoute";
-import useAxios from "../../../../hooks/useAxios";
-import Showcase from "../../../../models/Showcase";
+import useRoute from "~/hooks/useRoute";
+import useAxios from "~/hooks/useAxios";
+import useTheme from "~/hooks/useTheme";
+import Showcase from "~/models/Showcase";
 
 import type {ElementType} from "react";
 
@@ -18,7 +19,7 @@ type Props = {|
 
 |};
 
-const slickSettings = {
+const basicSlickSettings = {
     infinite: true,
     speed: 500,
     slidesToShow: 4,
@@ -45,6 +46,25 @@ const slickSettings = {
     ]
 };
 
+const slidesToShow = {
+    lg: 4,
+    md: 2,
+    xs: 1,
+};
+
+const useSlickSettings = function() {
+    const theme = useTheme();
+    // const {styledBootstrapGrid} = theme;
+
+    const responsive = R.mapObjIndexed((value: number, key: string) => ({
+        breakpoint: theme
+    }))(slidesToShow);
+
+    return R.pipe(
+        R.identity
+    )(basicSlickSettings);
+};
+
 const mapSlides: (showcase: ?Array<{}>) => Array<Node> = R.ifElse<Array<Showcase>, Array<ElementType>, null>(
     R.allPass([
         R.complement(R.isNil),
@@ -68,6 +88,7 @@ const useSlides = R.pipe(
 
 export default function ViewHistorySlider(props: Props) {
     const slides = useSlides();
+    const slickSettings = useSlickSettings();
     return (
         <Root>
             <Inner>

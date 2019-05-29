@@ -63,7 +63,6 @@ const useSuggestions = R.pipe(
     useRoute,
     useAxios,
     R.prop('data'),
-    R.tap(console.log),
     makeSlides
 );
 
