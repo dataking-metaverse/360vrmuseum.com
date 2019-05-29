@@ -1,6 +1,8 @@
 import React from "react";
 
-const AccountEditStateContext = React.createContext<boolean>();
+type ContentType = [boolean, (newState: boolean) => void];
+
+const AccountEditStateContext = React.createContext<?ContentType>();
 
 export const Provider = AccountEditStateContext.Provider;
 export const Consumer = AccountEditStateContext.Consumer;

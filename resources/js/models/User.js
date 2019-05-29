@@ -3,7 +3,7 @@ import * as R from "ramda";
 
 import RestfulModel from "./RestfulModel";
 
-type Props = {|
+export type Props = {|
     email: string,
     name: string,
     types: string,
