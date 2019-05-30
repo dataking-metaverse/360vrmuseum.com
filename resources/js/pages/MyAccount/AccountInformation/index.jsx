@@ -29,20 +29,19 @@ const useUserProps = R.pipe(
 
 export default function AccountInformation(props: Props) {
     const editState: [boolean, (newState: boolean) => void] = useState<boolean>(false);
+    const [isEdit, setIsEdit] = editState;
     const user: UserProps = useUserProps();
     const formRef: Ref = createRef();
 
     function onSaveButtonClick(): void {
         const form = formRef.current;
-        if (form) {
-            form.save();
-        }
+        if (form) { form.save(); }
     }
 
     return (
         <AccountEditStateContext.Provider value={editState}>
             <Card header={<AccountInformationHeader onSaveButtonClick={onSaveButtonClick} />} noPadding>
-                {user ? <AccountInformationForm ref={formRef} user={user} /> : <LoadingSpinner transparentBackground />}
+                {user ? <AccountInformationForm ref={formRef} user={user} onSubmitDone={() => setIsEdit(false)} /> : <LoadingSpinner transparentBackground />}
             </Card>
         </AccountEditStateContext.Provider>
     );

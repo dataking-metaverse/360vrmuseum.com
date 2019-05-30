@@ -13,6 +13,7 @@ type Props = {|
         phone: string,
         job: string,
     },
+    onSubmitDone: () => void,
 |};
 
 type State = {|
@@ -81,6 +82,7 @@ export default class AccountInformationForm extends React.Component<Props, State
         const route = this.getRoute();
         const data = this.getData();
         await axios.post(route, data);
+        this.props.onSubmitDone();
     };
 
     // setters
