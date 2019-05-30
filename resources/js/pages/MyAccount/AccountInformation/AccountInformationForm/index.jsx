@@ -1,8 +1,8 @@
-import React, {useState} from "react";
+import React from "react";
 import styled from "styled-components";
 import * as R from "ramda";
+import {connect} from "react-redux";
 
-import useLangPath from "~/hooks/useLangPath";
 import AccountInformationItem from "../AccountInformationItem";
 
 
@@ -15,36 +15,97 @@ type Props = {|
     },
 |};
 
-const CardBodyInner = styled.div`
+type State = {|
+    mounted: boolean,
+    email: string,
+    phone: string,
+    job: string,
+|};
+
+type SavableFormData = {|
+    email: string,
+    phone: string,
+    job: string,
+|};
+
+const CardBodyInner = styled.form`
     padding-left: 9.8rem;
 `;
 
-const eventSetValue = (setter: (value: string) => void) => (event: Event) => { setter(event.target.value); };
+const getEventValue = R.path<string, string>(['target', 'value']);
 
-// TODO : correct the path, it's not making sense that it's pointing to another page
-const useJobOptions = R.pipe(
-    R.always(['pages', 'signup', 'signupForm', 'jobOptions']),
-    useLangPath
-);
+const pipeEmpty = (...args) => R.unary(R.pipe(...args));
 
-export default function AccountInformationForm(props: Props) {
-    const {user} = props;
-    const lang = useLangPath(['pages', 'my-account', 'accountInformation', 'form']);
-    const [phone, setPhone] = useState(user.phone);
-    const [job, setJob] = useState(user.job);
-    const jobOptions = useJobOptions();
-    return (
-        <CardBodyInner>
-            <AccountInformationItem title={lang.email} name="email" value={user.email} />
-            <AccountInformationItem title={lang.name} name="name" value={user.name} />
-            <AccountInformationItem title={lang.phone} name="phone" value={phone} onChange={eventSetValue(setPhone)} editable />
-            <AccountInformationItem
-                title={lang.job}
-                name="job"
-                value={job}
-                selectOptions={jobOptions}
-                onChange={eventSetValue(setJob)}
-            />
-        </CardBodyInner>
+@connect(R.applySpec({
+    submitRoute: R.path(['app', 'routes', 'api.my-account.account-information']),
+    axios: R.prop('axios'),
+    lang: R.path(['lang', 'pages', 'my-account', 'accountInformation', 'form']),
+    jobOptions: R.path(['lang', 'pages', 'signup', 'signupForm', 'jobOptions']),
+}), R.always({}), null, {forwardRef: true})
+export default class AccountInformationForm extends React.Component<Props, State> {
+
+    state = {
+        mounted: false,
+        email: null,
+        phone: null,
+        job: null,
+    };
+
+    static getDerivedStateFromProps(nextProps, prevState) {
+        const newState = {};
+        if (!prevState.mounted) {
+            Object.assign(newState, R.pick(['email', 'phone', 'job'])(nextProps.user));
+            newState.mounted = true;
+        }
+        return newState;
+    }
+
+    getData: () => SavableFormData = pipeEmpty(
+        R.always(this),
+        R.prop('state'),
+        R.pick(['email', 'phone', 'job'])
     );
-};
+
+    getRoute: () => string = pipeEmpty(
+        R.always(this),
+        R.path(['props', 'submitRoute'])
+    );
+
+    getAxios = pipeEmpty(
+        R.always(this),
+        R.path(['props', 'axios']),
+    );
+
+    save = async () => {
+        const axios = this.getAxios();
+        const route = this.getRoute();
+        const data = this.getData();
+        await axios.post(route, data);
+    };
+
+    // setters
+    setterCreator = (stateKey: string) => (event: Event) => this.setState({ [stateKey]: getEventValue(event) });
+    setEmail = this.setterCreator('email');
+    setPhone = this.setterCreator('phone');
+    setJob = this.setterCreator('job');
+
+    render() {
+        const {user, lang, jobOptions} = this.props;
+        const {email, phone, job} = this.state;
+        const {setEmail, setPhone, setJob} = this;
+        return (
+            <CardBodyInner>
+                <AccountInformationItem title={lang.email} name="email" value={email} onChange={setEmail} editable />
+                <AccountInformationItem title={lang.name} name="name" value={user.name} />
+                <AccountInformationItem title={lang.phone} name="phone" value={phone} onChange={setPhone} editable />
+                <AccountInformationItem
+                    title={lang.job}
+                    name="job"
+                    value={job}
+                    selectOptions={jobOptions}
+                    onChange={setJob}
+                />
+            </CardBodyInner>
+        );
+    }
+}

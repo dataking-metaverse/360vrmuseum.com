@@ -1,12 +1,12 @@
 import styled from "styled-components";
-import {themeVar} from "../../../../styling/theme/functions";
+import {themeVar} from "~/styling/theme/functions";
 
 
 const width = 4.8;
 const widthHalf = width / 2;
 
 export const Root = styled.div`
-    display: block;
+    position: relative;
     padding-left: 6rem;
     padding-right: 6rem;
 `;
@@ -14,8 +14,9 @@ export const Root = styled.div`
 const arrowLeft = themeVar('arrowLeft');
 const arrowRight = themeVar('arrowRight');
 export const Inner = styled.div`
-   position: relative;
-    
+    position: relative;
+    overflow: hidden;
+
     > .slick-slider {
         > .slick-arrow {
             position: absolute;
@@ -31,12 +32,12 @@ export const Inner = styled.div`
             background-repeat: no-repeat;
             z-index: 1;
         }
-        
+
         > .slick-prev {
             left: ${-width}rem;
             background-image: url(${arrowLeft});
         }
-        
+
         > .slick-next {
             right: ${-width}rem;
             background-image: url(${arrowRight});

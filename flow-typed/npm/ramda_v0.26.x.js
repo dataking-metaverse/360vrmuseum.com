@@ -1,4 +1,4 @@
-// flow-typed signature: fbe5e912fd0a10377e0f7c61ea1c5889
+$ReadOnlyArray// flow-typed signature: fbe5e912fd0a10377e0f7c61ea1c5889
 // flow-typed version: 259dafeeeb/ramda_v0.26.x/flow_>=v0.76.x
 
 /* eslint-disable no-unused-vars, no-redeclare */

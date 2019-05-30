@@ -5,7 +5,9 @@ import {themeColor} from "../../../../styling/theme/functions";
 import useLangPath from "../../../../hooks/useLangPath";
 import AccountEditStateContext from "../AccountEditStateContext";
 
-type Props = {|  |};
+type Props = {|
+    onSaveButtonClick: () => void,
+|};
 
 const Root = styled.div`
     position: relative;
@@ -31,7 +33,7 @@ export default function AccountInformationHeader(props: Props) {
     const [isEdit, setIsEdit] = useContext(AccountEditStateContext);
 
     const editButton = <Button onClick={() => setIsEdit(true)}>{lang.edit}</Button>;
-    const saveButton = <Button onClick={() => console.log('TODO')}>{lang.save}</Button>;
+    const saveButton = <Button onClick={props.onSaveButtonClick}>{lang.save}</Button>;
     return (
         <Root>
             <Title>{lang.title}</Title>

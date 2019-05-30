@@ -28,7 +28,7 @@ const slidesToShowResponsive = {
 };
 
 const basicSlickSettings = {
-    infinite: true,
+    infinite: false,
     speed: 500,
     slidesToShow,
     slidesToScroll: 1,
@@ -36,9 +36,8 @@ const basicSlickSettings = {
 
 const minusOne = R.subtract(R.__, 1);
 
-const useSlickSettings = function(slides: ?Array<Node>) {
+const useSlickSettings = function() {
     const {styledBootstrapGrid} = useTheme();
-    const length = Array.isArray(slides) ? slides.length : 0;
 
     const responsive = R.o(
         R.values,
@@ -46,14 +45,12 @@ const useSlickSettings = function(slides: ?Array<Node>) {
             breakpoint: minusOne(styledBootstrapGrid.breakpoints[key]),
             settings: {
                 slidesToShow: value,
-                infinite: length > value,
             },
         }))
     )(slidesToShowResponsive);
 
     return R.pipe(
-        R.assoc('responsive', responsive),
-        R.assoc('infinite', length > slidesToShow)
+        R.assoc('responsive', responsive)
     )(basicSlickSettings);
 };
 
@@ -80,12 +77,13 @@ const useSlides = R.pipe(
 
 export default function ViewHistorySlider(props: Props) {
     const slides = useSlides();
-    const slickSettings = useSlickSettings(slides);
+    const slickSettings = useSlickSettings();
     const lang = useLangPath(['pages', 'my-account', 'suggestions']);
     const showSlides = R.allPass([
         Array.isArray,
         R.complement(R.isEmpty)
     ])([]);
+    // ])(slides);
     return (
         <Root>
             <Inner>

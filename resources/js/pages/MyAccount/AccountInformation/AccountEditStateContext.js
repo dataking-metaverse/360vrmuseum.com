@@ -1,6 +1,6 @@
 import React from "react";
 
-type ContentType = [boolean, (newState: boolean) => void];
+export type ContentType = [boolean, (newState: boolean) => void];
 
 const AccountEditStateContext = React.createContext<?ContentType>();
 

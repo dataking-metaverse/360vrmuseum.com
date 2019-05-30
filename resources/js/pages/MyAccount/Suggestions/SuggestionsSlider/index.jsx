@@ -46,14 +46,11 @@ const slickSettings = {
 
 const mapSlides = R.addIndex(R.map)((showcaseObject, index: number) => {
     const Slide = Showcase.constructByData(showcaseObject).generateThumbnail();
-    return <SlideWrap data-king="jjj" key={index}><Slide /></SlideWrap>
+    return <SlideWrap key={index}><Slide /></SlideWrap>
 });
 
 const makeSlides = R.ifElse(
-    R.allPass([
-        R.complement(R.isNil),
-        // R.all(R.is(Showcase)),
-    ]),
+    R.complement(R.isNil),
     mapSlides,
     R.always(null)
 );

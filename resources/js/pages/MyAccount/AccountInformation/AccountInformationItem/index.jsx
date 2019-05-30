@@ -7,12 +7,14 @@ import {
     Root, Table, Cell,
 } from "./styled";
 
+
 type Props = {|
     title: string,
     name: string,
     value?: string,
     editable?: boolean,
-    selectOptions: boolean,
+    selectOptions?: boolean,
+    onChange?: (event: Event) => void,
 |};
 
 type SelectProps = {
@@ -73,14 +75,16 @@ const _ = R.always;
 export default function AccountInformationItem(props: Props) {
     const {editable, selectOptions} = props;
     const [isEdit] = useContext(AccountEditStateContext);
-    const selectProps = R.pick(['name', 'value', 'onChange', 'selectOptions'])(props);
-    const inputProps = R.pick(['name', 'value', 'onChange'])(props);
-    const content = R.cond([
-        [_(isEdit && selectOptions), _(<Select {...selectProps} />)],
-        [_(isEdit && editable), _(<Input {...inputProps} />)],
-        [_(selectOptions), _(selectOptions && selectOptions[props.value])],
-        [R.T, _(props.value)],
-    ])();
+    const selectProps = R.pick<SelectProps, Array<string>>(['name', 'value', 'onChange', 'selectOptions'])(props);
+    const inputProps = R.pick<InputProps, Array<string>>(['name', 'value', 'onChange'])(props);
+    const content: React.Element = (() => {
+        switch(true) {
+            case Boolean(isEdit && selectOptions): return <Select {...selectProps} />;
+            case Boolean(isEdit && editable): return <Input {...inputProps} />;
+            case Boolean(selectOptions): return Boolean(selectOptions) && selectOptions[props.value];
+            default: return props.value;
+        }
+    })();
     return (
         <Root>
             <Table>
