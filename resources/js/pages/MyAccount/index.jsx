@@ -1,11 +1,14 @@
 import React from "react";
 import styled from "styled-components";
-import {Container} from "styled-bootstrap-grid";
+import {Container, media} from "styled-bootstrap-grid";
+import {connect} from "react-redux";
+import * as R from "ramda";
 
 import page from "../../decorators/page";
 import AccountInformation from "./AccountInformation";
 import ViewHistory from "./ViewHistory";
 import Suggestions from "./Suggestions/index";
+import {Redirect} from "react-router";
 
 
 type Props = {|
@@ -18,25 +21,43 @@ const Root = styled.div`
 `;
 
 const Row1 = styled.div`
-    display: table;
-    width: 100%;
 
-    > * {
-        display: table-cell;
-    }
+  ${media.sm`
+        display: table;
+        width: 100%;
+    
+        > * {
+            display: table-cell;
+        }
+  `}
 `;
 
 Row1.Col1 = styled.div`
-    width: 39.6rem;
+    //
+
+    ${media.sm`
+        width: 39.6rem;
+    `}
+    
 `;
 
 Row1.Col2 = styled.div`
-    padding-left: 5.4rem;
+    //
+    
+    ${media.sm`
+        padding-left: 5.4rem;
+    `}
 `;
 
+@connect(R.applySpec({
+    user: R.prop('user'),
+    homeRoute: R.path(['app', 'routes', 'home']),
+}), R.always({}))
 @page('my-account')
 export default class MyAccount extends React.PureComponent<Props> {
     render() {
+        const {user, homeRoute} = this.props;
+        if (!user) { return (<Redirect to={homeRoute} />) }
         return (
             <Root>
                 <Container>

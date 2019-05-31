@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import {media} from "styled-bootstrap-grid";
 import * as R from "ramda";
 import {connect} from "react-redux";
 
@@ -31,7 +32,10 @@ type SavableFormData = {|
 |};
 
 const CardBodyInner = styled.form`
-    padding-left: 9.8rem;
+    
+    ${media.sm`
+        padding-left: 9.8rem;
+    `}
 `;
 
 const getEventValue = R.path<string, string>(['target', 'value']);

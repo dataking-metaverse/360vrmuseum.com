@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import {media} from "styled-bootstrap-grid";
 import * as R from "ramda";
 import {themeVar} from "../../../../styling/theme/functions";
 
@@ -9,8 +10,11 @@ const widthHalf = width / 2;
 const paddingX = R.always(6);
 export const Root = styled.div`
     position: relative;
-    padding-left: ${paddingX}rem;
-    padding-right: ${paddingX}rem;
+    
+    ${media.sm`
+        padding-left: ${paddingX}rem;
+        padding-right: ${paddingX}rem;
+    `}
 `;
 
 const arrowLeft = themeVar('arrowLeft');
