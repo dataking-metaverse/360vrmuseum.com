@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Api;
 
-use Validator;
 use App\Exceptions\Api\ValidationException;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+use Validator;
 
 class LangController extends Controller
 {

@@ -30,6 +30,7 @@ Route::get('/national-museum', 'WebController@nationalMuseum')->name('national-m
 Route::get('/national-museum/{museumName}', 'WebController@nationalMuseum')->name('national-museum.single');
 Route::get('/360vrmuseum', 'WebController@vrmuseum')->name('vrmuseum');
 Route::get('/contact-us', 'WebController@contactUs')->name('contact-us');
+Route::get('/my-account', 'WebController@myAccount')->name('my-account');
 Route::get('/privacy-policy', 'WebController@privacyPolicy')->name('privacy-policy');
 Route::get('/terms-of-service', 'WebController@termsOfService')->name('terms-of-service');
 Route::get('/login', 'WebController@login')->name('login');
@@ -66,6 +67,11 @@ Route::post('/api/password/create', 'Auth\\PasswordResetController@create')->nam
 Route::get('/api/password/find/{token}', 'Auth\\PasswordResetController@find')->name('password-reset.find');
 Route::post('/api/password/reset', 'Auth\\PasswordResetController@reset')->name('password-reset.reset');
 
+// API : my account
+Route::get('/api/my-account/account-information', 'Api\\AccountInformationController@get')->name('api.my-account.account-information');
+Route::post('/api/my-account/account-information', 'Api\\AccountInformationController@post');
+Route::get('/api/my-account/view-history', 'Api\\ViewHistoryController@get')->name('api.my-account.view-history');
+Route::get('/api/my-account/view-suggestions', 'Api\\ViewSuggestinosController@get')->name('api.my-account.view-suggestions');
 
 Route::get('/sitemap.xml', 'SitemapController@index')->name('sitemap');
 Route::get('/robots.txt', 'RobotsController@index')->name('robots');

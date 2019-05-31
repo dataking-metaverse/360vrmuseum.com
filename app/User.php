@@ -37,6 +37,14 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    static function mongoUserApply(string $method, ...$attr) {
+        $user = auth()->user();
+        if (!$user) { return null; }
+        $mongoUser = $user->mongoUser();
+        if (!$mongoUser) { return null; }
+        return $mongoUser->{$method}(...$attr);
+    }
+
     static function getPrivilege(string $privilegeName): array {
         $privileges = config('360vrmuseum.public.privileges');
         return $privileges[$privilegeName];
@@ -79,6 +87,10 @@ class User extends Authenticatable
     }
 
     function mongoUser() {
+        return MongoUser::where(['userid' => $this->name])->first();
+    }
+
+    function mongoUserAttr() {
         return MongoUser::where(['userid' => $this->name])->first();
     }
 

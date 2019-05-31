@@ -70,7 +70,6 @@ function ShowcasePosterLink(props: Props) {
                 {React.createElement(showcase.generatePoster())}
                 <ViewMoreLink to={showcase.route()}>{quickView}</ViewMoreLink>
             </Root>
-            <br /><br />
         </React.Fragment>
     );
 }

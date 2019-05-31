@@ -13,6 +13,8 @@ import * as R from "ramda";
 import {connect} from "react-redux";
 import {clearUser} from "../../redux/actionBuilders/global";
 import User from "../../models/User";
+import useRoute from "../../hooks/useRoute";
+import useLangPath from "../../hooks/useLangPath";
 
 
 
@@ -163,6 +165,8 @@ const AuthButtons = R.compose(
 export default function MobileNavigationBar(props: DecoratedProps) {
     const {history, location, loginRoute, logoutRoute, user} = props;
     const [navOpen, setNavOpen] = useState(false);
+    const myAccountRoute = useRoute('my-account');
+    const myAccountTitle = useLangPath(['navigation', 'my-account', 'title']);
 
     useEffect(() => {
         setNavOpen(false);
@@ -178,6 +182,7 @@ export default function MobileNavigationBar(props: DecoratedProps) {
             </Header>
             <SlideComponent open={navOpen} onClick={() => setNavOpen(false)}>
                 <Links routes={props.routes} />
+                <Item to={myAccountRoute}>{myAccountTitle}</Item>
                 <AuthButtons />
             </SlideComponent>
         </React.Fragment>

@@ -2,8 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Mail\ContactFormEmail;
-use Illuminate\Http\Request;
 use Route;
 
 
@@ -30,6 +28,7 @@ class WebController extends Controller {
                     'national-museum.single',
                     'vrmuseum',
                     'contact-us',
+                    'my-account',
                     'privacy-policy',
                     'terms-of-service',
                     'login',
@@ -53,6 +52,9 @@ class WebController extends Controller {
                     'password-reset.create',
                     'password-reset.find',
                     'password-reset.reset',
+                    'api.my-account.account-information',
+                    'api.my-account.view-history',
+                    'api.my-account.view-suggestions',
                 ]),
             ],
             'config' => config('360vrmuseum.public'),
@@ -95,6 +97,7 @@ class WebController extends Controller {
     public function nationalMuseum() { return $this->all(); }
     public function vrmuseum() { return $this->all(); }
     public function contactUs() { return $this->all(); }
+    public function myAccount() { return $this->all(); }
     public function privacyPolicy() { return $this->all(); }
     public function termsOfService() { return $this->all(); }
     public function login() { return $this->all(); }
