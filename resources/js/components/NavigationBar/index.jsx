@@ -37,7 +37,7 @@ export default function NavigationBar(props: Props) {
     return (
         <React.Fragment>
             <Desktop>
-            <DesktopNav />
+                <DesktopNav />
             </Desktop>
             <Mobile>
                 <MobileNav />

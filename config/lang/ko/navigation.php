@@ -7,4 +7,5 @@ return [
     'contact-us' => ['title' => 'Contact us'],
     'login' => ['title' => 'Login'],
     'logout' => ['title' => 'Logout'],
+    'my-account' => ['title' => 'My Account'],
 ];

@@ -34,6 +34,7 @@ const variables = {
 
     zIndexes: {
         confirm: 777,
+        logoutButtonsWrap: 666,
     },
 };
 

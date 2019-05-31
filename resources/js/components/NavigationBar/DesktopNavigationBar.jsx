@@ -5,11 +5,13 @@ import styled from "styled-components";
 import {Link} from "react-router-dom";
 import {connect} from "react-redux";
 
+import useRoute from "~/hooks/useRoute";
 import {themeVar} from "../../styling/theme/functions";
 import {clearUser} from "../../redux/actionBuilders/global"
 
 import type {DecoratedProps, RouteProps} from "./navigationBarDecorators";
 import User from "../../models/User";
+import useLangPath from "../../hooks/useLangPath";
 
 
 type LinksProps = {
@@ -99,42 +101,47 @@ const Item = styled(Link)`
     }
 `;
 
+const MyAccountItem = styled(Item)`
+        padding-right: 0;
+        margin-right: 0;
+`;
+
+const LogoutForm = styled.form`
+    position: absolute;
+    display: block;
+    height: auto;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: gray;
+`;
+
+const submitButtonBackgroundColor = themeVar(['colors', 'grayscale', '600']);
+const submitButtonColor = themeVar(['colors', 'basic', 'white']);
 const Submit = styled.button`
     position: relative;
-    display: flex;
     align-items: center;
-    height: ${themeVar('components.navigationBar.height')};
-    margin-right: 4rem;
-    color: #e5e5e5;
+    padding: 1rem 3rem;
     text-decoration: none;
-    padding-bottom: 1rem;
-    background-color: transparent;
     border: none;
     font-size: 1em;
     font-family: inherit;
-    padding-left: 0;
     cursor: pointer;
+    background-color: ${submitButtonBackgroundColor};
+    color: ${submitButtonColor};
+`;
+
+const logoutButtonsWrapZIndex = themeVar(['zIndexes', 'logoutButtonsWrap']);
+const LogoutButtonsWrap = styled.div`
+    position: relative;
+    z-index: ${logoutButtonsWrapZIndex};
     
-    &:last-child {
-        padding-right: 0;
-        margin-right: 0;
+    > ${LogoutForm} {
+        display: none;
     }
     
-    &:before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: .3rem;
-        background-color: #e5e5e5;
-        opacity: 0;
-        transition: opacity ${themeVar('transitionDuration')};
-    }
-    
-    ${props => props.active && '&:before,'}
-    &:hover:before {
-        opacity: 1;
+    &:hover > ${LogoutForm} {
+        display: block;
     }
 `;
 
@@ -159,8 +166,10 @@ const LogoutButton = R.compose(
         }),
         R.applySpec({clearUser}),
     )
-)(function(props: LogoutFormProps) {
+)(function LogoutButton(props: LogoutFormProps) {
     const {axios, submitRoute, logoutRoute, clearUser} = props;
+    const myAccountRoute = useRoute('my-account');
+    const myAccountTitle = useLangPath(['navigation', 'my-account', 'title']);
 
     async function onSubmit(event) {
         event.preventDefault();
@@ -170,11 +179,12 @@ const LogoutButton = R.compose(
     }
 
     return (
-        <React.Fragment>
-            <form onSubmit={onSubmit}>
+        <LogoutButtonsWrap>
+            <MyAccountItem to={myAccountRoute}>{myAccountTitle}</MyAccountItem>
+            <LogoutForm onSubmit={onSubmit}>
                 <Submit type="submit">{logoutRoute.title}</Submit>
-            </form>
-        </React.Fragment>
+            </LogoutForm>
+        </LogoutButtonsWrap>
     );
 });
 
