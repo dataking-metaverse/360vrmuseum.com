@@ -1,6 +1,7 @@
 <?php
 namespace App;
 
+use App\Exceptions\Api\NotFoundException;
 use App\VRMuseum\User as MongoUser;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -35,7 +36,14 @@ class User extends Authenticatable
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+        'view_history' => 'array',
     ];
+
+    static function current() {
+        $user = auth()->user();
+        if (!$user) { return null; }
+        return $user;
+    }
 
     static function mongoUserApply(string $method, ...$attr) {
         $user = auth()->user();
@@ -58,9 +66,8 @@ class User extends Authenticatable
     public static function pushViewHistory(string $mid): void {
         $user = auth()->user();
         if (!$user) { return; }
-        $mongoUser = $user->mongoUser();
-        $viewHistory = isset($mongoUser->view_history) ? $mongoUser->view_history : [];
-        if ($mongoUser) {
+        $viewHistory = isset($user->view_history) ? $user->view_history : [];
+        if ($user) {
             if (in_array($mid, $viewHistory)) {
                 $key = array_search($mid, $viewHistory);
                 unset($viewHistory[$key]);
@@ -68,8 +75,8 @@ class User extends Authenticatable
             }
             array_unshift($viewHistory, $mid);
             array_slice($viewHistory, 0, 15);
-            $mongoUser->view_history = $viewHistory;
-            $mongoUser->save();
+            $user->view_history = $viewHistory;
+            $user->save();
         }
     }
 
