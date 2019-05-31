@@ -19,7 +19,10 @@ class AccountInformationController extends Controller
 
     public function __constructor(Request $request) {
         $validation = Validator::make($request->all(), [
-            'locale' => 'required|string',
+            'email' => 'email',
+            'job' => 'string',
+            'phone' => 'string',
+            'recaptcha_token' => 'required|recaptcha',
         ]);
         if ($validation->fails()) {
             throw new ValidationException($validation);

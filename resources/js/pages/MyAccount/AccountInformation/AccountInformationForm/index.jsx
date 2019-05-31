@@ -7,6 +7,7 @@ import AccountInformationItem from "../AccountInformationItem";
 
 
 type Props = {|
+    recaptchaVerification?: string,
     user: {
         email: string,
         name: string,
@@ -38,6 +39,7 @@ const getEventValue = R.path<string, string>(['target', 'value']);
 const pipeEmpty = (...args) => R.unary(R.pipe(...args));
 
 @connect(R.applySpec({
+    recaptchaVerification: R.prop('recaptchaVerification'),
     submitRoute: R.path(['app', 'routes', 'api.my-account.account-information']),
     axios: R.prop('axios'),
     lang: R.path(['lang', 'pages', 'my-account', 'accountInformation', 'form']),
@@ -64,7 +66,7 @@ export default class AccountInformationForm extends React.Component<Props, State
     getData: () => SavableFormData = pipeEmpty(
         R.always(this),
         R.prop('state'),
-        R.pick(['email', 'phone', 'job'])
+        R.pick(['email', 'phone', 'job']),
     );
 
     getRoute: () => string = pipeEmpty(
@@ -81,6 +83,7 @@ export default class AccountInformationForm extends React.Component<Props, State
         const axios = this.getAxios();
         const route = this.getRoute();
         const data = this.getData();
+        data.recaptcha_token = this.props.recaptchaVerification;
         await axios.post(route, data);
         this.props.onSubmitDone();
     };
