@@ -7,8 +7,9 @@ const widthHalf = width / 2;
 
 export const Root = styled.div`
     position: relative;
-    padding-left: 6rem;
-    padding-right: 6rem;
+    overflow: hidden;
+    // padding-left: 6rem;
+    // padding-right: 6rem;
 `;
 
 const arrowLeft = themeVar('arrowLeft');
@@ -46,7 +47,7 @@ export const Inner = styled.div`
 `;
 
 export const SlideWrapper = styled.div`
-    
+    //
 `;
 
 export const EmptyMessage = styled.div`

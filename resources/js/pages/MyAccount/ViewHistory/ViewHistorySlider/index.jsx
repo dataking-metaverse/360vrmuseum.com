@@ -60,7 +60,7 @@ const mapSlides: (showcase: ?Array<{}>) => Array<Node> = R.ifElse<Array<Showcase
         Array.isArray,
     ]),
     R.addIndex(R.map)((showcaseObject: {}, index: number) => {
-        const showcase = Showcase.constructByData(showcaseObject);
+        const showcase: Showcase = Showcase.constructByData(showcaseObject);
         const Poster = showcase.generatePosterLink();
         return <SlideWrapper key={index}><Poster /></SlideWrapper>;
     }),
@@ -75,6 +75,8 @@ const useSlides = R.pipe(
     mapSlides
 );
 
+// TODO : fix the problem about the "automatic increasing slides"
+
 export default function ViewHistorySlider(props: Props) {
     const slides = useSlides();
     const slickSettings = useSlickSettings();
@@ -82,12 +84,11 @@ export default function ViewHistorySlider(props: Props) {
     const showSlides = R.allPass([
         Array.isArray,
         R.complement(R.isEmpty)
-    ])([]);
-    // ])(slides);
+    ])(slides);
     return (
         <Root>
             <Inner>
-                {showSlides ? <Slider {...slickSettings}>{slides}</Slider> : <EmptyMessage>{lang.empty}</EmptyMessage>}
+                {showSlides ? <Slider {...slickSettings}>{slides.splice(0, 4)}</Slider> : <EmptyMessage>{lang.empty}</EmptyMessage>}
             </Inner>
         </Root>
     );
