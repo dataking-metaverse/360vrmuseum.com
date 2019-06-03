@@ -33,11 +33,11 @@ const PureLink = styled(Link)`
     &:after {
         content: '';
         position: absolute;
-        top: 0;
+        bottom: 0;
         left: 0;
+        height: 50%;
         width: 100%;
-        height: 100%;
-        background-color: ${rgba('#000000', .4)};
+        background-image: linear-gradient(to bottom, rgba(68, 68, 68, 0), #444444);
         opacity: 0;
         transition: opacity .4s;
     }
