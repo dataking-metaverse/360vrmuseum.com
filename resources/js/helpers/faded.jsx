@@ -1,19 +1,25 @@
-import React from "react";
+import React, {useRef} from "react";
 import * as R from "ramda";
 import styled from "styled-components";
 
 import FadeComponent from "../components/FadeComponent";
 
+import type {ComponentType, Element} from "react";
+
+type Props = {
+    duration?: number,
+    delay?: number,
+};
 
 const rootAttr = name => R.pipe(
     R.prop(name),
     R.divide(R.__, 1000)
 );
 
-const duration = R.path('duration');
-const delay = R.path('delay');
+const duration = R.prop('duration');
+const delay = R.prop('delay');
 
-const faded = component => (...styledProps) => {
+const faded = (component: ComponentType<any>) => (...styledProps) => {
     const Component = styled(styled[component](...styledProps))`
     opacity: 0;
     transform: translateY(3rem);
@@ -27,24 +33,22 @@ const faded = component => (...styledProps) => {
     }
 `;
 
-    return class extends React.Component {
-        ref = React.createRef();
-        render() {
-            return (
-                <FadeComponent.Context.Consumer>
-                    {value => (
-                        <FadeComponent childrenRef={this.ref}>
-                            <Component
-                                ref={this.ref}
-                                {...this.props}
-                                duration={this.props.duration || duration(value) || 400}
-                                delay={this.props.delay || delay(value) || 400}
-                            />
-                        </FadeComponent>
-                    )}
-                </FadeComponent.Context.Consumer>
-            );
-        }
+    return function FadedComponent(props: Props): Element {
+        const ref = useRef();
+        return (
+            <FadeComponent.Context.Consumer>
+                {value => (
+                    <FadeComponent childrenRef={ref}>
+                        <Component
+                            ref={ref}
+                            {...props}
+                            duration={props.duration || duration(value) || 400}
+                            delay={props.delay || delay(value) || 400}
+                        />
+                    </FadeComponent>
+                )}
+            </FadeComponent.Context.Consumer>
+        );
     };
 };
 
