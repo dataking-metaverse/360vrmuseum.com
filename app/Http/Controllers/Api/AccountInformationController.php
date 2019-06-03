@@ -19,7 +19,6 @@ class AccountInformationController extends Controller
 
     public function __constructor(Request $request) {
         $validation = Validator::make($request->all(), [
-            'email' => 'email',
             'job' => 'string',
             'phone' => 'string',
             'recaptcha_token' => 'required|recaptcha',
@@ -36,12 +35,10 @@ class AccountInformationController extends Controller
 
     public function post(Request $request): JsonResponse {
         $user = static::currentUser();
-        $email = $this->requireParam('email');
         $job = $this->requireParam('job');
         $phone = $this->requireParam('phone');
 
         // update the record
-        $user->setAttribute('email', $email);
         $user->setAttribute('job', $job);
         $user->setAttribute('phone', $phone);
         $user->save();

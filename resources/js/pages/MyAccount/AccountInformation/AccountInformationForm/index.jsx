@@ -53,7 +53,6 @@ export default class AccountInformationForm extends React.Component<Props, State
 
     state = {
         mounted: false,
-        email: null,
         phone: null,
         job: null,
     };
@@ -61,7 +60,7 @@ export default class AccountInformationForm extends React.Component<Props, State
     static getDerivedStateFromProps(nextProps, prevState) {
         const newState = {};
         if (!prevState.mounted) {
-            Object.assign(newState, R.pick(['email', 'phone', 'job'])(nextProps.user));
+            Object.assign(newState, R.pick(['phone', 'job'])(nextProps.user));
             newState.mounted = true;
         }
         return newState;
@@ -70,7 +69,7 @@ export default class AccountInformationForm extends React.Component<Props, State
     getData: () => SavableFormData = pipeEmpty(
         R.always(this),
         R.prop('state'),
-        R.pick(['email', 'phone', 'job']),
+        R.pick(['phone', 'job']),
     );
 
     getRoute: () => string = pipeEmpty(
@@ -94,17 +93,16 @@ export default class AccountInformationForm extends React.Component<Props, State
 
     // setters
     setterCreator = (stateKey: string) => (event: Event) => this.setState({ [stateKey]: getEventValue(event) });
-    setEmail = this.setterCreator('email');
     setPhone = this.setterCreator('phone');
     setJob = this.setterCreator('job');
 
     render() {
         const {user, lang, jobOptions} = this.props;
-        const {email, phone, job} = this.state;
-        const {setEmail, setPhone, setJob} = this;
+        const {phone, job} = this.state;
+        const {setPhone, setJob} = this;
         return (
             <CardBodyInner>
-                <AccountInformationItem title={lang.email} name="email" value={email} onChange={setEmail} editable />
+                <AccountInformationItem title={lang.email} name="email" value={user.email} />
                 <AccountInformationItem title={lang.name} name="name" value={user.name} />
                 <AccountInformationItem title={lang.phone} name="phone" value={phone} onChange={setPhone} editable />
                 <AccountInformationItem
