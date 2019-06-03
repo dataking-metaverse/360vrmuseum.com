@@ -4,16 +4,17 @@ import styled from "styled-components";
 
 import FadeComponent from "../components/FadeComponent";
 
+import type {ComponentType} from "react";
 
 const rootAttr = name => R.pipe(
     R.prop(name),
     R.divide(R.__, 1000)
 );
 
-const duration = R.path('duration');
-const delay = R.path('delay');
+const duration = R.prop('duration');
+const delay = R.prop('delay');
 
-const faded = component => (...styledProps) => {
+const faded = (component: ComponentType<any>) => (...styledProps) => {
     const Component = styled(styled[component](...styledProps))`
     opacity: 0;
     transform: translateY(3rem);
