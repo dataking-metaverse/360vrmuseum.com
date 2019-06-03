@@ -6,7 +6,7 @@ import {connect} from "react-redux";
 import {Link} from "react-router-dom";
 
 import Checkbox from "../../../components/Checkbox";
-import {registerUser} from "../../../redux/actionBuilders/global";
+import {registerUser} from "../../../redux/actionCreators/global";
 import getFormData from "../../../helpers/getFormData";
 import User from "../../../models/User";
 

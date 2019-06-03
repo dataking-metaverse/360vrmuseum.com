@@ -2,7 +2,7 @@ import React from "react";
 import * as R from "ramda";
 import {connect} from "react-redux";
 
-import {pushMessage, removeFirstMessage} from "../../redux/actionBuilders/global";
+import {pushMessage, removeFirstMessage} from "../../redux/actionCreators/global";
 
 import type {Axios} from "axios";
 import {withRouter } from "react-router";

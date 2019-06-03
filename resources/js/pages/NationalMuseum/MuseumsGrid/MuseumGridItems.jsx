@@ -4,7 +4,7 @@ import {connect} from "react-redux";
 import {withRouter} from "react-router";
 import {Row, Col} from "styled-bootstrap-grid";
 
-import {registerShowcaseGroupsElements} from "../../../redux/actionBuilders/nationalMuseum";
+import {registerShowcaseGroupsElements} from "../../../redux/actionCreators/nationalMuseum";
 import ModelsContext from "../../../contexts/ModelsContext";
 import MuseumTitle from "../../../components/MuseumTitle";
 import Showcases from "../../../models/Showcases";

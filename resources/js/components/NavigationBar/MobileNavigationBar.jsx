@@ -11,7 +11,7 @@ import Burger from "./Burger";
 import type {DecoratedProps, RouteProps} from "./navigationBarDecorators";
 import * as R from "ramda";
 import {connect} from "react-redux";
-import {clearUser} from "../../redux/actionBuilders/global";
+import {clearUser} from "../../redux/actionCreators/global";
 import User from "../../models/User";
 import useRoute from "../../hooks/useRoute";
 import useLangPath from "../../hooks/useLangPath";

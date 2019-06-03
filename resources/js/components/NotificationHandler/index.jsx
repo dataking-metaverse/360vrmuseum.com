@@ -3,7 +3,7 @@ import * as R from "ramda";
 import {connect} from "react-redux";
 import {ToastProvider, ToastConsumer} from "react-toast-notifications";
 
-import {removeFirstMessage} from "../../redux/actionBuilders/global";
+import {removeFirstMessage} from "../../redux/actionCreators/global";
 
 import type {Node} from "react";
 import type {Axios} from "axios";
