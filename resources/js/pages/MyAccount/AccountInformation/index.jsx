@@ -6,8 +6,8 @@ import LoadingSpinner from "~/components/LoadingSpinner";
 import useRoute from "~/hooks/useRoute";
 import useAxios from "~/hooks/useAxios";
 import AccountEditStateContext from "./AccountEditStateContext";
-import AccountInformationHeader from "./AccountInformationHeader";
-import AccountInformationForm from "./AccountInformationForm";
+import Header from "./AccountInformationHeader";
+import Form from "./AccountInformationForm";
 
 import type {Ref} from "react";
 import type {Props as UserProps} from "~/models/User"
@@ -40,8 +40,8 @@ export default function AccountInformation(props: Props) {
 
     return (
         <AccountEditStateContext.Provider value={editState}>
-            <Card header={<AccountInformationHeader onSaveButtonClick={onSaveButtonClick} />} noPadding>
-                {user ? <AccountInformationForm ref={formRef} user={user} onSubmitDone={() => setIsEdit(false)} /> : <LoadingSpinner transparentBackground />}
+            <Card header={<Header onSaveButtonClick={onSaveButtonClick} />} noPadding>
+                {user ? <Form ref={formRef} user={user} onSubmitDone={() => setIsEdit(false)} /> : <LoadingSpinner transparentBackground />}
             </Card>
         </AccountEditStateContext.Provider>
     );
