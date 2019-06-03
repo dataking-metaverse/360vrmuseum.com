@@ -16,7 +16,7 @@ return [
         'title' => '최근 본 전시',
     ],
     'suggestions' => [
-        'title' => '국립중앙박물관의 다른 전시',
+        'title' => '국립박물관의 다른 전시',
         'empty' => 'There are no recent visits.',
     ],
     'messages' => [
