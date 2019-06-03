@@ -14,7 +14,6 @@ export const Root = styled.div`
 const headerColor = themeColor('grayscale.600');
 export const Header = styled.div`
     font-size: 2rem;
-    margin-bottom: 5.3rem;
     color: ${headerColor};
 `;
 

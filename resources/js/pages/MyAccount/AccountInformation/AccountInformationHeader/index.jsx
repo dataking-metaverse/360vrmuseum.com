@@ -11,6 +11,7 @@ type Props = {|
 
 const Root = styled.div`
     position: relative;
+    margin-bottom: 4.8rem;
 `;
 
 const Title = styled.div`

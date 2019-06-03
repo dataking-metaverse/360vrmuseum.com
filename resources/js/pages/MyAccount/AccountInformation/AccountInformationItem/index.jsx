@@ -49,6 +49,7 @@ const SelectRoot = styled.select`
     color: ${color};
     padding: .4rem 1.4rem;
     width: 100%;
+    border-radius: 0;
 `;
 const Select = (props: SelectProps) => (
     <SelectRoot name={props.name} value={props.value} onChange={props.onChange}>
@@ -57,13 +58,14 @@ const Select = (props: SelectProps) => (
 );
 
 const InputRoot = styled.input`
-    background-color: ${backgroundColor};
-    font-size: inherit;
-    letter-spacing: inherit;
-    border: none;
-    font-family: inherit;
-    color: ${color};
+    width: 100%;
     padding: .4rem 1.4rem;
+    border: none;
+    background-color: ${backgroundColor};
+    font-family: inherit;
+    font-size: inherit;
+    color: ${color};
+    letter-spacing: inherit;
 `;
 
 const Input = (props: InputProps) => {
