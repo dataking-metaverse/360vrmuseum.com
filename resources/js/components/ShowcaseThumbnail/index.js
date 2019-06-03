@@ -11,6 +11,7 @@ import RatioGrid from "../RatioGrid";
 
 type Props = {
     showcase: Showcase,
+    ratio?: number,
 };
 
 type InnerProps = {
@@ -102,11 +103,11 @@ const ShowcaseCardInner = R.compose(
 });
 
 function ShowcaseThumbnail(props: Props) {
-    const {showcase} = props;
+    const {showcase, ratio} = props;
     const showcaseRoute = showcase.route();
     return (
         <PureLink to={showcaseRoute}>
-            <RatioGrid ratio={.5625}>
+            <RatioGrid ratio={ratio || .5625}>
                 <ShowcaseCardInner showcase={showcase} />
             </RatioGrid>
         </PureLink>
