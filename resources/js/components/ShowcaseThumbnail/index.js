@@ -7,7 +7,6 @@ import {Link} from "react-router-dom";
 import Showcase from "../../models/Showcase";
 import {themeMixin, themeVar} from "../../styling/theme/functions";
 import RatioGrid from "../RatioGrid";
-import {rgba} from "polished";
 
 
 type Props = {
@@ -68,7 +67,7 @@ const ElipsesText = styled.div`
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-`
+`;
 
 const MainTitle = styled(ElipsesText)`
     font-size: 2rem;
@@ -102,7 +101,7 @@ const ShowcaseCardInner = R.compose(
     );
 });
 
-function ShowcaseCard(props: Props) {
+function ShowcaseThumbnail(props: Props) {
     const {showcase} = props;
     const showcaseRoute = showcase.route();
     return (
@@ -114,6 +113,4 @@ function ShowcaseCard(props: Props) {
     );
 }
 
-export default R.compose(
-    R.identity
-)(ShowcaseCard);
+export default ShowcaseThumbnail;
