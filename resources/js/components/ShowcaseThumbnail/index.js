@@ -7,7 +7,6 @@ import {Link} from "react-router-dom";
 import Showcase from "../../models/Showcase";
 import {themeMixin, themeVar} from "../../styling/theme/functions";
 import RatioGrid from "../RatioGrid";
-import {rgba} from "polished";
 
 
 type Props = {
@@ -33,11 +32,11 @@ const PureLink = styled(Link)`
     &:after {
         content: '';
         position: absolute;
-        top: 0;
+        bottom: 0;
         left: 0;
+        height: 50%;
         width: 100%;
-        height: 100%;
-        background-color: ${rgba('#000000', .4)};
+        background-image: linear-gradient(to bottom, rgba(68, 68, 68, 0), #444444);
         opacity: 0;
         transition: opacity .4s;
     }
@@ -68,7 +67,7 @@ const ElipsesText = styled.div`
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-`
+`;
 
 const MainTitle = styled(ElipsesText)`
     font-size: 2rem;
@@ -102,7 +101,7 @@ const ShowcaseCardInner = R.compose(
     );
 });
 
-function ShowcaseCard(props: Props) {
+function ShowcaseThumbnail(props: Props) {
     const {showcase} = props;
     const showcaseRoute = showcase.route();
     return (
@@ -114,6 +113,4 @@ function ShowcaseCard(props: Props) {
     );
 }
 
-export default R.compose(
-    R.identity
-)(ShowcaseCard);
+export default ShowcaseThumbnail;
