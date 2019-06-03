@@ -3,9 +3,8 @@ import styled, {withTheme} from "styled-components";
 import * as R from "ramda";
 import switchcase from "switchcase";
 
-import {themeVar} from "../../styling/theme/functions";
-
-import type {ComponentType} from "react";
+import type {Node, ComponentType} from "react";
+import type {Theme} from "styled-components";
 
 type Props = {
     children: Node,
@@ -23,7 +22,7 @@ type ButtonColorSet = {|
 
 const propValue = (propName, yes, no) => props => props[propName] ? yes : no;
 
-const backgroundColor = R.path(['colorSet', 'backgroundColor']);
+const backgroundColor = R.path<string, string>(['colorSet', 'backgroundColor']);
 const border = R.path(['colorSet', 'border']);
 const color = R.path(['colorSet', 'color']);
 const Basic = styled.button`
@@ -45,8 +44,10 @@ const Small = styled(Basic)`
     border-radius: .2rem;
 `;
 
-const getColorSet: (theme: Theme) => (type: string) => ButtonColorSet = theme => type => {
-    const color = name => R.path(['variables', 'colors', 'basic', name])(theme);
+const getColorSet = (theme: Theme) => (type: string): ButtonColorSet => {
+
+    const color = name => R.path<string, string>(['variables', 'colors', 'basic', name], theme);
+
     return R.pipe(
         switchcase({
             primary: {backgroundColor: 'white', border: 'darkerPurple', color: 'darkerPurple'},

@@ -7,10 +7,12 @@ import {themeVar} from "../../styling/theme/functions";
 import {connect} from "react-redux";
 import * as R from "ramda";
 
+import type {Theme} from "styled-components";
 
 type Props = {
     showcase: Showcase,
     fullWidth?: boolean,
+    quickView: string,
 };
 
 const purple = themeVar('colors.basic.purple');
@@ -19,8 +21,8 @@ const white = themeVar('colors.basic.white');
 const Root = styled.div`
     position: relative;
     display: block;
-    padding-left: ${R.prop('sidePadding')};
-    padding-right: ${R.prop('sidePadding')};
+    padding-left: ${R.prop<Theme, number>('sidePadding')};
+    padding-right: ${R.prop<Theme, number>('sidePadding')};
     background-color: transparent;
     transition: background-color .4s;
     

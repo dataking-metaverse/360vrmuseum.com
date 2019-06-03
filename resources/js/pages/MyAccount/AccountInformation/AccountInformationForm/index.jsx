@@ -16,6 +16,12 @@ type Props = {|
         job: string,
     },
     onSubmitDone: () => void,
+    lang: {|
+        name: string,
+        phone: string,
+        job: string,
+    |},
+
 |};
 
 type State = {|
@@ -87,8 +93,10 @@ export default class AccountInformationForm extends React.Component<Props, State
         const route = this.getRoute();
         const data = this.getData();
         data.recaptcha_token = this.props.recaptchaVerification;
-        await axios.post(route, data);
-        this.props.onSubmitDone();
+        axios.post(route, data).then(() => {
+            this.props.onSubmitDone();
+        });
+
     };
 
     // setters

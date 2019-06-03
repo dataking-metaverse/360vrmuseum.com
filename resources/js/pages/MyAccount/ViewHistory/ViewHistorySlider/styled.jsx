@@ -8,8 +8,6 @@ const widthHalf = width / 2;
 export const Root = styled.div`
     position: relative;
     overflow: hidden;
-    // padding-left: 6rem;
-    // padding-right: 6rem;
 `;
 
 const arrowLeft = themeVar('arrowLeft');
