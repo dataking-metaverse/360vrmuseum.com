@@ -109,6 +109,7 @@ const MyAccountItem = styled(Item)`
 const LogoutForm = styled.form`
     position: absolute;
     display: block;
+    width: 100%;
     height: auto;
     top: 100%;
     left: 50%;
@@ -120,8 +121,10 @@ const submitButtonBackgroundColor = themeVar(['colors', 'grayscale', '600']);
 const submitButtonColor = themeVar(['colors', 'basic', 'white']);
 const Submit = styled.button`
     position: relative;
+    width: 100%;
     align-items: center;
-    padding: 1rem 3rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
     text-decoration: none;
     border: none;
     font-size: 1em;
