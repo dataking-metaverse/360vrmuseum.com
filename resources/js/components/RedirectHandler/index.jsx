@@ -3,7 +3,7 @@ import {connect} from "react-redux";
 import * as R from "ramda";
 import React from "react";
 
-import {clearRedirect} from "../../redux/actionBuilders/global";
+import {clearRedirect} from "../../redux/actionCreators/global";
 
 import type {RouterHistory} from "react-router";
 

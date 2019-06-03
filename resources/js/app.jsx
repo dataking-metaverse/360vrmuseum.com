@@ -11,7 +11,7 @@ import {
     pushRedirect,
     registerAxios,
     registerUser
-} from "./redux/actionBuilders/global";
+} from "./redux/actionCreators/global";
 import Model from "./models/Model";
 import ModelsContext from "./contexts/ModelsContext";
 import reducers from "./redux/reducers";

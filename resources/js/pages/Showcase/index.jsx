@@ -5,7 +5,7 @@ import styled from "styled-components";
 import {connect} from "react-redux";
 
 import User from "../../models/User";
-import {pushRedirect, pushMessage} from "../../redux/actionBuilders/global";
+import {pushRedirect, pushMessage} from "../../redux/actionCreators/global";
 import ShowcasePage from "../../components/ShowcasePage";
 import ModelsContext from "../../contexts/ModelsContext";
 import page from "../../decorators/page";

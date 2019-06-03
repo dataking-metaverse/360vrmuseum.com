@@ -2,8 +2,8 @@ import React, {useState, useContext} from "react";
 import * as R from "ramda";
 import {connect} from "react-redux";
 
-import {pushMessage} from "../../../redux/actionBuilders/global";
-import {updateLastCommentSubmittedTime} from "../../../redux/actionBuilders/showcase";
+import {pushMessage} from "../../../redux/actionCreators/global";
+import {updateLastCommentSubmittedTime} from "../../../redux/actionCreators/showcase";
 import RecaptchaField from "../../../components/RecaptchaField";
 import getFormData from "../../../helpers/getFormData";
 import countWords from "../../../helpers/countWords";

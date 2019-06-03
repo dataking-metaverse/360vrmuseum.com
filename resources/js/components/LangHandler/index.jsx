@@ -2,7 +2,7 @@ import React from "react";
 import * as R from "ramda";
 import {connect} from "react-redux";
 
-import {registerLang} from "../../redux/actionBuilders/global";
+import {registerLang} from "../../redux/actionCreators/global";
 
 import type {Axios} from "axios";
 

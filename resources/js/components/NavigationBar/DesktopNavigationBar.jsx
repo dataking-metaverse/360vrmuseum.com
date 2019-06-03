@@ -7,7 +7,7 @@ import {connect} from "react-redux";
 
 import useRoute from "~/hooks/useRoute";
 import {themeVar} from "../../styling/theme/functions";
-import {clearUser} from "../../redux/actionBuilders/global"
+import {clearUser} from "../../redux/actionCreators/global"
 
 import type {DecoratedProps, RouteProps} from "./navigationBarDecorators";
 import User from "../../models/User";

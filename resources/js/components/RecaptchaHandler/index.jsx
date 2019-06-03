@@ -1,7 +1,7 @@
 import React from "react";
 import {connect} from "react-redux";
 import * as R from "ramda";
-import {registerRecaptchaVerification} from "../../redux/actionBuilders/global";
+import {registerRecaptchaVerification} from "../../redux/actionCreators/global";
 
 
 type Props = {

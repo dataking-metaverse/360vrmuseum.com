@@ -8,7 +8,7 @@ import CommentTextArea from "./CommentTextArea";
 import Button from "../../Button";
 import getFormData from "../../../helpers/getFormData";
 import countWords from "../../../helpers/countWords";
-import {updateLastCommentSubmittedTime} from "../../../redux/actionBuilders/showcase";
+import {updateLastCommentSubmittedTime} from "../../../redux/actionCreators/showcase";
 import Confirm from "../../Confirm";
 
 import type Axios from "axios";

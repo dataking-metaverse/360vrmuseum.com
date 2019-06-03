@@ -7,7 +7,7 @@ import {connect} from "react-redux";
 import Checkbox from "../../components/Checkbox";
 import RecaptchaField from "../../components/RecaptchaField";
 import rawFormData from "../../helpers/rawFormData";
-import {registerAccessCredential, registerAxios} from "../../redux/actionBuilders/global";
+import {registerAccessCredential, registerAxios} from "../../redux/actionCreators/global";
 import {Link} from "react-router-dom";
 import {Option} from "../../components/Select";
 import Select from "../../components/Select";
