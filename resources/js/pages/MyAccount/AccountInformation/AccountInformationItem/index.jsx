@@ -11,7 +11,7 @@ import {
 type Props = {|
     title: string,
     name: string,
-    value?: string,
+    value?: ?string,
     editable?: boolean,
     selectOptions?: boolean,
     onChange?: (event: Event) => void,
