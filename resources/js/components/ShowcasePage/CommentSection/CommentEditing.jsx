@@ -3,15 +3,16 @@ import * as R from "ramda";
 import styled from "styled-components";
 import {connect} from "react-redux";
 
+import getFormData from "~/helpers/getFormData";
+import countWords from "~/helpers/countWords";
+import {updateLastCommentSubmittedTime} from "~/redux/actionCreators/showcase";
+import Comment from "~/models/Comment";
 import RecaptchaField from "../../RecaptchaField";
 import CommentTextArea from "./CommentTextArea";
 import Button from "../../Button";
-import getFormData from "../../../helpers/getFormData";
-import countWords from "../../../helpers/countWords";
-import {updateLastCommentSubmittedTime} from "../../../redux/actionCreators/showcase";
 import Confirm from "../../Confirm";
 
-import type Axios from "axios";
+import type {Axios} from "axios";
 import WordLimit from "./WordLimit";
 
 type CommentEditingContentProps = {
@@ -23,6 +24,7 @@ type CommentEditingContentProps = {
     onSubmitFinish: Function,
     axios: Axios,
     updateLastCommentSubmittedTime: Function,
+    wordLimit: number,
 };
 
 type Props = {
@@ -70,7 +72,7 @@ const CommentEditingContent = R.compose(
     const commentId = comment.getAttribute('id');
     const originalContent = comment.getAttribute('content');
     const [editContent, setEditContent] = useState('');
-    const [wordCount: number, setWordCount: (wordCount: number) => void] = useState(0);
+    const [wordCount, setWordCount] = useState<number>(0);
     const wordCountStr: string = String(wordCount);
 
     useEffect(() => {
