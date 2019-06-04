@@ -7,4 +7,5 @@ return [
     'uniqueVisitors' => '재방문',
     'edit' => '수정',
     'save' => '저장',
+    'search' => '전시',
 ];

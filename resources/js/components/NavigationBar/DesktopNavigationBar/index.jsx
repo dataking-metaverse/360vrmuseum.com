@@ -8,6 +8,7 @@ import useNavRoutes from "../useNavRoutes";
 import AuthButtons from "./AuthButtons";
 import Links from "./Links";
 import Logo from "./Logo";
+import SearchWidget from "./SearchWidget";
 import {
     Root,
     FilledRow,
@@ -38,6 +39,7 @@ export default function DesktopNavigationBar(props: Props) {
                     <RightCol col="10">
                         <Links routes={routes} />
                         <AuthButtons />
+                        <SearchWidget />
                     </RightCol>
                 </FilledRow>
             </Container>

@@ -1,29 +1,47 @@
-import React, {useState, useMemo} from "react";
-import {Redirect} from "react-router";
+import React, {useState} from "react";
+import * as R from "ramda";
 
 import params from "~/helpers/params";
 import useRoute from "~/hooks/useRoute";
+import useReduxAction from "~/hooks/useReduxAction";
+import {pushRedirect as pushRedirectAction} from "~/redux/actionCreators/global";
+import Context from "./Context";
+import Input from "./Input";
+import Submit from "./Submit";
 
 import type {Element} from "react";
 
 type SubmitFunction = (search: string) => void;
 
 type Props = {|
-    children: (submit: SubmitFunction) => Element,
+    children: (onSubmit: SubmitFunction) => Element,
 |};
 
-
 export default function SearchSupplier(props: Props) {
-    const [searchUrl, setSearchUrl] = useState<?string>(null);
+    const pushRedirect = useReduxAction(pushRedirectAction);
+    const [input, setInput] = useState<string>('');
     const searchRoute = useRoute('search');
-    const submit = useMemo<SubmitFunction>(() => (search: string) => {
-        const searchQuery = params({q: search});
-        setSearchUrl(`${searchRoute}?${searchQuery}`);
-    });
+
+    const onSubmit = (event: Event) => {
+        const searchQuery = params({q: input});
+        pushRedirect(`${searchRoute}?${searchQuery}`);
+    };
+
+    const onInput = R.pipe(
+        R.path(['target', 'value']),
+        R.when(
+            R.is(String),
+            setInput,
+        )
+    );
+
     return (
-        <>
-            {searchUrl && <Redirect searchUrl={searchUrl} />}
-            {props.children(submit)}
-        </>
+        <Context.Provider value={{onSubmit, onInput}}>
+            {props.children}
+        </Context.Provider>
     );
 };
+
+SearchSupplier.Context = Context;
+SearchSupplier.Input = Input;
+SearchSupplier.Submit = Submit;
