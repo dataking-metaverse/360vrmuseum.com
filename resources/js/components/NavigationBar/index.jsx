@@ -7,7 +7,6 @@ import DesktopNavigationBar from "./DesktopNavigationBar";
 import MobileNavigationBar from "./MobileNavigationBar";
 
 
-const DesktopNav = navigationBarDecorators(DesktopNavigationBar);
 const MobileNav = navigationBarDecorators(MobileNavigationBar);
 
 type Props = {
@@ -37,7 +36,7 @@ export default function NavigationBar(props: Props) {
     return (
         <React.Fragment>
             <Desktop>
-                <DesktopNav />
+                <DesktopNavigationBar />
             </Desktop>
             <Mobile>
                 <MobileNav />
