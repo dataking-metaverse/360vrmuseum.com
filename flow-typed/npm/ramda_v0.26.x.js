@@ -1,5 +1,5 @@
-$ReadOnlyArray// flow-typed signature: fbe5e912fd0a10377e0f7c61ea1c5889
-// flow-typed version: 259dafeeeb/ramda_v0.26.x/flow_>=v0.76.x
+// flow-typed signature: 369d0b55c493decfd4deacaadaba2877
+// flow-typed version: 36a16cbe25/ramda_v0.26.x/flow_>=v0.76.x
 
 /* eslint-disable no-unused-vars, no-redeclare */
 
@@ -486,7 +486,11 @@ declare module ramda {
   declare var multiply: CurriedFunction2<number, number, number>;
   declare var negate: UnaryFn<number, number>;
   declare var product: UnaryFn<Array<number>, number>;
-  declare var subtract: CurriedFunction2<number, number, number>;
+  declare var subtract:
+    & CurriedFunction2<number, number, number>
+    & CurriedFunction2<Date, Date, number>
+    & CurriedFunction2<Date, number, number>
+    & CurriedFunction2<number, Date, number>;
   declare var sum: UnaryFn<Array<number>, number>;
 
   // Filter
@@ -1918,20 +1922,20 @@ declare module ramda {
     y: (...args: Array<any>) => *
   ): (...args: Array<any>) => *;
 
-  declare function ifElse<A, B, C>(
-    cond: (...args: Array<A>) => boolean,
+  declare function ifElse<Args, B, C>(
+    cond: (...args: Args) => boolean
   ): ((
-    f1: (...args: Array<A>) => B,
-  ) => (f2: (...args: Array<A>) => C) => (...args: Array<A>) => B | C) &
+    f1: (...args: Args) => B
+  ) => (f2: (...args: Args) => C) => (...args: Args) => B | C) &
     ((
-      f1: (...args: Array<A>) => B,
-      f2: (...args: Array<A>) => C
-    ) => (...args: Array<A>) => B | C);
-  declare function ifElse<A, B, C>(
-    cond: (...args: Array<any>) => boolean,
-    f1: (...args: Array<any>) => B,
-    f2: (...args: Array<any>) => C
-  ): (...args: Array<A>) => B | C;
+      f1: (...args: Args) => B,
+      f2: (...args: Args) => C
+    ) => (...args: Args) => B | C);
+  declare function ifElse<Args, B, C>(
+    cond: (...args: Args) => boolean,
+    f1: (...args: Args) => B,
+    f2: (...args: Args) => C
+  ): (...args: Args) => B | C;
 
   declare function isEmpty(x: ?Array<any> | Object | string): boolean;
 
