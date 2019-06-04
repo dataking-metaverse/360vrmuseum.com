@@ -1,19 +1,35 @@
 import React, {useState, useEffect} from "react";
 import SlideComponent from "~/components/SlideComponent";
+import * as R from "ramda";
+import {withRouter} from "react-router";
 
-import type {DecoratedProps, RouteProps} from "../navigationBarDecorators";
 import useRoute from "~/hooks/useRoute";
 import useLangPath from "~/hooks/useLangPath";
+import useReduxState from "~/hooks/useReduxState";
 import {BurgerButton, Header, LogoLink, Item} from "./styled";
 import Links from "./Links";
 import AuthButtons from "./AuthButtons";
+import useNavRoutes from "../useNavRoutes";
 
+type Props = {|
+    location: {
+        href: string,
+    },
+|};
 
-export default function MobileNavigationBar(props: DecoratedProps) {
-    const {history, location, loginRoute, logoutRoute, user} = props;
+const useLogo = R.pipe(
+    useReduxState,
+    R.path(['assets', 'logo'])
+);
+
+function MobileNavigationBar(props: Props) {
+    const {location} = props;
     const [navOpen, setNavOpen] = useState(false);
+    const routes = useNavRoutes();
     const myAccountRoute = useRoute('my-account');
-    const myAccountTitle = useLangPath(['navigation', 'my-account', 'title']);
+    const homeRoute = useRoute('home');
+    const logo = useLogo();
+    const lang = useLangPath(['navigation', 'my-account']);
 
     useEffect(() => {
         setNavOpen(false);
@@ -22,16 +38,18 @@ export default function MobileNavigationBar(props: DecoratedProps) {
     return (
         <React.Fragment>
             <Header>
-                <LogoLink to={props.homeRoute}>
-                    {props.logo}
+                <LogoLink to={homeRoute}>
+                    {logo}
                 </LogoLink>
                 <BurgerButton onClick={() => setNavOpen(!navOpen)} />
             </Header>
             <SlideComponent open={navOpen} onClick={() => setNavOpen(false)}>
-                <Links routes={props.routes} />
-                <Item to={myAccountRoute}>{myAccountTitle}</Item>
+                <Links routes={routes} />
+                <Item to={myAccountRoute}>{lang.title}</Item>
                 <AuthButtons />
             </SlideComponent>
         </React.Fragment>
     );
 }
+
+export default withRouter(MobileNavigationBar);
