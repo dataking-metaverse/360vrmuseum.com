@@ -6,12 +6,12 @@ import {Link} from "react-router-dom";
 import {connect} from "react-redux";
 
 import useRoute from "~/hooks/useRoute";
-import {themeVar} from "../../styling/theme/functions";
-import {clearUser} from "../../redux/actionCreators/global"
+import {themeVar} from "~/styling/theme/functions";
+import {clearUser} from "~/redux/actionCreators/global"
 
-import type {DecoratedProps, RouteProps} from "./navigationBarDecorators";
-import User from "../../models/User";
-import useLangPath from "../../hooks/useLangPath";
+import type {DecoratedProps, RouteProps} from "../navigationBarDecorators";
+import User from "~/models/User";
+import useLangPath from "~/hooks/useLangPath";
 
 
 type LinksProps = {

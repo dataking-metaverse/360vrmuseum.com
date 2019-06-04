@@ -3,18 +3,18 @@ import styled from "styled-components";
 import {media} from "styled-bootstrap-grid";
 import {Link} from "react-router-dom";
 
-import {themeVar} from "../../styling/theme/functions";
-import SlideComponent from "../../components/SlideComponent";
-import Burger from "./Burger";
+import {themeVar} from "~/styling/theme/functions";
+import SlideComponent from "~/components/SlideComponent";
+import Burger from "../Burger";
 
 
-import type {DecoratedProps, RouteProps} from "./navigationBarDecorators";
+import type {DecoratedProps, RouteProps} from "../navigationBarDecorators";
 import * as R from "ramda";
 import {connect} from "react-redux";
-import {clearUser} from "../../redux/actionCreators/global";
-import User from "../../models/User";
-import useRoute from "../../hooks/useRoute";
-import useLangPath from "../../hooks/useLangPath";
+import {clearUser} from "~/redux/actionCreators/global";
+import User from "~/models/User";
+import useRoute from "~/hooks/useRoute";
+import useLangPath from "~/hooks/useLangPath";
 
 
 
