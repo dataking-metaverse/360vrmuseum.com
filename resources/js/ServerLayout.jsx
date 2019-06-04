@@ -20,6 +20,7 @@ const ServerLayout = (head, body, props) => `<!DOCTYPE html>
 </head>
 <body>
     ${body}
+    <div id="app"></div>
     <div id="app-back-to-top-portal"></div>
     <div id="app-confirm-portal"></div>
     <script type="text/javascript" src="${props.js}"></script>
