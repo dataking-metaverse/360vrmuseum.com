@@ -38,10 +38,10 @@ export default R.compose(
     const {text, axios, submitRoute, updateLastCommentSubmittedTime, wordLimit} = props;
     const showcase = useContext(ShowcaseContext);
     const [content, setContent] = useState('');
-    const [wordCount: number, setWordCount: (wordCount: number) => void] = useState(0);
+    const [wordCount, setWordCount] = useState(0);
     const wordCountStr: string = String(wordCount);
 
-    const onSubmit: (event: Event) => void = R.pipe(
+    const onSubmit: (event: Event) => void = R.pipe<Event, void>(
         R.tap(R.invoker(0, 'preventDefault')),
         getFormData,
         R.tap(prop => {
@@ -69,7 +69,7 @@ export default R.compose(
         R.path(['target', 'value']),
         R.when(
             R.complement(R.is(String)),
-            R.always(''),
+            R.always<string>(''),
         ),
         R.tap(setContent),
         R.tap(R.pipe(countWords, setWordCount)),
@@ -82,7 +82,7 @@ export default R.compose(
         <form onSubmit={onSubmit}>
             <RecaptchaField />
             <input type="hidden" name="mid" value={getMid(showcase)} />
-            <WordLimit invalid={wordCount > 100}>{'{wordCount} / {wordLimit}'.replace('{wordCount}', wordCountStr).replace('{wordLimit}', wordLimit)}</WordLimit>
+            <WordLimit invalid={wordCount > 100}>{`${wordCountStr} / ${wordLimit}`}</WordLimit>
             <CommentTextArea name="content" placeholder={text.placeholder} onChange={onChange} value={content} />
             <div className="text-right">
                 <Button type="secondary" disabled={buttonDisabled}>{text.postComment}</Button>
