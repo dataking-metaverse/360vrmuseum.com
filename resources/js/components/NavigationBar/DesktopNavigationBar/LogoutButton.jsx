@@ -1,10 +1,11 @@
 import React from "react";
 import * as R from "ramda";
-import {connect} from "react-redux";
 
-import {clearUser} from "~/redux/actionCreators/global";
 import useRoute from "~/hooks/useRoute";
 import useLangPath from "~/hooks/useLangPath";
+import useReduxAction from "~/hooks/useReduxAction";
+import useReduxState from "~/hooks/useReduxState";
+import * as actions from "~/redux/actionCreators/global";
 import {
     LogoutButtonsWrap,
     LogoutForm,
@@ -13,25 +14,19 @@ import {
 } from "./styled";
 
 
-type LogoutFormProps = {
+type Props = {|  |};
 
-};
+const useLogoutTitle = R.pipe(
+    useReduxState,
+    R.path(['lang', 'navigation', 'logout', 'title']),
+);
 
-const LogoutButton = R.compose(
-    connect(
-        R.applySpec({
-            axios: R.prop('axios'),
-            submitRoute: R.path(['app', 'routes', 'api.auth.logout']),
-            logoutRoute: R.applySpec({
-                name: R.path(['config', 'navigationBar', 'logout']),
-                title: R.path(['lang', 'navigation', 'logout', 'title']),
-                to: R.path(['app', 'routes', 'logout']),
-            }),
-        }),
-        R.applySpec({clearUser}),
-    )
-)(function LogoutButton(props: LogoutFormProps) {
-    const {axios, submitRoute, logoutRoute, clearUser} = props;
+export default function LogoutButton(props: Props) {
+    const clearUser = useReduxAction(actions.clearUser);
+    const {axios} = useReduxState();
+    const submitRoute = useRoute('api.auth.logout');
+    const logoutTitle = useLogoutTitle();
+
     const myAccountRoute = useRoute('my-account');
     const myAccountTitle = useLangPath(['navigation', 'my-account', 'title']);
 
@@ -46,10 +41,8 @@ const LogoutButton = R.compose(
         <LogoutButtonsWrap>
             <MyAccountItem to={myAccountRoute}>{myAccountTitle}</MyAccountItem>
             <LogoutForm onSubmit={onSubmit}>
-                <Submit type="submit">{logoutRoute.title}</Submit>
+                <Submit type="submit">{logoutTitle}</Submit>
             </LogoutForm>
         </LogoutButtonsWrap>
     );
-});
-
-export default LogoutButton;
+}

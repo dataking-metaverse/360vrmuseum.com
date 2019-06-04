@@ -2,8 +2,15 @@ import * as R from "ramda";
 
 import useReduxState from "../../hooks/useReduxState";
 
+export type NavRoutes = {|
+    item: string,
+    title: string,
+    to: string,
+|};
 
-const useNavRoutes = R.pipe(
+type Params = () => NavRoutes;
+
+const useNavRoutes: Params = R.pipe(
     useReduxState,
     R.applySpec({
         items: R.path(['config', 'navigationBar', 'staticItems']),

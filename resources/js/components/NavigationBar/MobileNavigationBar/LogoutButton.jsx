@@ -4,8 +4,8 @@ import {Axios} from "axios";
 
 import {clearUser} from "~/redux/actionCreators/global";
 import {Submit} from "./styled";
-import useReduxState from "../../../hooks/useReduxState";
-import useRoute from "../../../hooks/useRoute";
+import useReduxState from "~/hooks/useReduxState";
+import useRoute from "~/hooks/useRoute";
 
 
 type Props = {|  |};

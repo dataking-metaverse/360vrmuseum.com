@@ -1,38 +1,37 @@
 import React from "react";
 import * as R from "ramda";
-import {connect} from "react-redux";
-import User from "../../../models/User";
 
+import useReduxState from "~/hooks/useReduxState";
 import LogoutButton from "./LogoutButton";
 import {
     Item,
 } from "./styled";
 
-type AuthButtonsProps = {
-    user: User,
-    show: boolean,
-    loginRoute: {|
-        name: string,
-        title: string,
-        to: string,
-    |}
-};
+type Props = {|  |};
+type LoginButtonProps = {|  |};
 
-const AuthButtons = R.compose(
-    connect(R.applySpec({
-        user: R.prop('user'),
-        show: R.path(['config', 'navigationBar', 'showAuth']),
-        loginRoute: R.applySpec({
-            name: R.path(['config', 'navigationBar', 'login']),
-            title: R.path(['lang', 'navigation', 'login', 'title']),
-            to: R.path(['app', 'routes', 'login']),
-        }),
-    }))
-)(function AuthButtons(props: AuthButtonsProps) {
-    const {user, show, loginRoute} = props;
+const useLoginRoute = R.pipe(
+    useReduxState,
+    R.applySpec({
+        title: R.path(['lang', 'navigation', 'login', 'title']),
+        to: R.path(['app', 'routes', 'login']),
+    })
+);
+
+const useShowNav = R.pipe(
+    useReduxState,
+    R.path(['config', 'navigationBar', 'showAuth']),
+);
+
+function LoginButton(props: LoginButtonProps) {
+    const {to, title} = useLoginRoute();
+    return <Item to={to}>{title}</Item>;
+}
+
+export default function AuthButtons(props: Props) {
+    const {user} = useReduxState();
+    const show = useShowNav();
     if (!show) { return null; }
-    if (!user) { return <Item to={loginRoute.to}>{loginRoute.title}</Item>; }
+    if (!user) { return <LoginButton />; }
     return <LogoutButton />;
-});
-
-export default AuthButtons;
+}

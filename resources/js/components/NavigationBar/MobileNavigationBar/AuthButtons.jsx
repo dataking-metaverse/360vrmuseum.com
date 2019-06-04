@@ -1,14 +1,13 @@
 import * as R from "ramda";
 import React from "react";
 
+import useReduxState from "~/hooks/useReduxState";
+import LogoutButton from "./LogoutButton";
 import {
     Item,
 } from "./styled";
-import LogoutButton from "./LogoutButton";
-import useReduxState from "../../../hooks/useReduxState";
 
 type Props = {|  |};
-
 type LoginButtonProps = {|  |};
 
 const useLoginRoute = R.pipe(

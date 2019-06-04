@@ -2,23 +2,17 @@ import React from "react";
 import styled from "styled-components";
 import {media} from "styled-bootstrap-grid";
 
-import navigationBarDecorators from "./navigationBarDecorators";
 import DesktopNavigationBar from "./DesktopNavigationBar";
 import MobileNavigationBar from "./MobileNavigationBar";
 
+type Props = {|  |};
 
-const MobileNav = navigationBarDecorators(MobileNavigationBar);
-
-type Props = {
-
-};
-
-const desktopBreakpoint = media.lg;
+const desktop = media.lg;
 
 const Desktop = styled.div`
     display: none;
 
-    ${desktopBreakpoint`
+    ${desktop`
         display: block;
     `}
 `;
@@ -26,21 +20,29 @@ const Desktop = styled.div`
 const Mobile = styled.div`
     display: block;
     
-    ${desktopBreakpoint`
+    ${desktop`
         display: none;
     `}
 `;
 
+const desktopNav = (
+    <Desktop>
+        <DesktopNavigationBar />
+    </Desktop>
+);
+
+const mobileNav = (
+    <Mobile>
+        <MobileNavigationBar />
+    </Mobile>
+);
+
 
 export default function NavigationBar(props: Props) {
     return (
-        <React.Fragment>
-            <Desktop>
-                <DesktopNavigationBar />
-            </Desktop>
-            <Mobile>
-                <MobileNav />
-            </Mobile>
-        </React.Fragment>
+        <>
+            {desktopNav}
+            {mobileNav}
+        </>
     );
 }
