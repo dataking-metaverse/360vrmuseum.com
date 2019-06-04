@@ -16,8 +16,8 @@ const Root = styled.div`
 
 const Input = styled(SearchSupplier.Input)`
     width: 20.3rem;
-    line-heigth: 1;
-    padding: 1.1rem 2.4rem;
+    line-height: 1;
+    padding: 1.4rem 2.4rem;
     border: none;
     border-radius: .5rem;
 `;
