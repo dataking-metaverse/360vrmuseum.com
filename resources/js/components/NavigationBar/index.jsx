@@ -11,38 +11,23 @@ const desktop = media.lg;
 
 const Desktop = styled.div`
     display: none;
-
-    ${desktop`
-        display: block;
-    `}
+    ${desktop` display: block; `}
 `;
 
 const Mobile = styled.div`
     display: block;
-    
-    ${desktop`
-        display: none;
-    `}
+    ${desktop` display: none; `}
 `;
-
-const desktopNav = (
-    <Desktop>
-        <DesktopNavigationBar />
-    </Desktop>
-);
-
-const mobileNav = (
-    <Mobile>
-        <MobileNavigationBar />
-    </Mobile>
-);
-
 
 export default function NavigationBar(props: Props) {
     return (
         <>
-            {desktopNav}
-            {mobileNav}
+            <Desktop>
+                <DesktopNavigationBar />
+            </Desktop>
+            <Mobile>
+                <MobileNavigationBar />
+            </Mobile>
         </>
     );
 }
