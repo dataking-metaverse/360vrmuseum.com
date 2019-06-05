@@ -3,7 +3,6 @@ import * as R from "ramda";
 import {Container, Row, Col} from "styled-bootstrap-grid";
 
 import LoadingSpinner from "~/components/LoadingSpinner";
-import SearchBox from "~/components/SearchBox";
 import getParam from "~/helpers/getParam";
 import useLangPath from "~/hooks/useLangPath";
 import Showcases from "~/models/Showcases";
@@ -12,8 +11,6 @@ import ShowcaseSearchResult from "./ShowcaseSearchResult";
 import {
     Root,
     Title,
-    MoreSearchTitle,
-    MoreSearchSubtitle,
 } from "./styled";
 
 
@@ -48,12 +45,6 @@ function Search(props: Props) {
             <Container>
                 <Title>{title}</Title>
                 {result}
-                <br /><br /><br /><br />
-                <MoreSearchTitle>{text.moreSearch.title}</MoreSearchTitle>
-                <MoreSearchSubtitle>{text.moreSearch.subtitle}</MoreSearchSubtitle>
-                <br /><br />
-                <SearchBox />
-                <br /><br />
             </Container>
         </Root>
     );
