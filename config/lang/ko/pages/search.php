@@ -2,9 +2,9 @@
 
 return [
     'meta' => [
-        'title' => 'Terms of Service - 360VRMuseum',
+        'title' => 'Search Result - 360VRMuseum',
     ],
-    'title' => 'Searching For %s',
+    'title' => '‘%s’ 검색결과',
     'commentCount' => '%s Comment(s)',
     'readMore' => 'Read More',
     'moreSearch' => [

@@ -1,17 +1,18 @@
 import React from "react";
-import {Row, Col} from "styled-bootstrap-grid";
+import * as R from "ramda";
 
 import useLangPath from "~/hooks/useLangPath";
 import Showcase from "~/models/Showcase";
 import {
     Root,
+    Detail,
     Type as TypeAttr,
     Title,
+    Subtitle,
     PresentedBy,
     Period,
-    Impression,
-    ViewDetails,
-    DetailWrapper,
+    LinkShadow,
+    LinkText,
 } from "./styled";
 import Image from "./Image";
 
@@ -21,37 +22,35 @@ type Props = {|
     type: Type,
 |};
 
+const getDetail = R.pipe(
+    R.prop('props'),
+    R.applySpec({
+        typeAttr: R.prop('type'),
+        mainTitle: R.prop('main_title'),
+        presentedBy: R.prop('presented_by'),
+        date: R.prop('date'),
+    })
+);
+
+const splitTitle = R.o(R.map(R.trim), R.split("\n"));
+
 export default function ShowcaseCard(props: Props) {
     const {showcase, type} = props;
-    const text = useLangPath(['pages', 'home', 'specialExhibition']);
-    const impressionsText = useLangPath(['common', 'impressions']);
-    const {
-        type: typeAttr,
-        main_title: mainTitle,
-        location,
-        presented_by: presentedBy,
-        date,
-        statistics,
-    } = showcase.props;
+    const linkText = useLangPath(['common', 'quickView']);
+    const detail = getDetail(showcase);
     const showcaseRoute = showcase.route();
+    const [title, subtitle] = splitTitle(detail.mainTitle);
     return (
         <Root>
             <Image showcase={showcase} type={type} />
-            <DetailWrapper>
-                <TypeAttr>{typeAttr}</TypeAttr>
-                <Title>{mainTitle}</Title>
-                <PresentedBy>{location}{', '}{presentedBy}</PresentedBy>
-                <Period>{date}</Period>
-                <hr />
-                <Row>
-                    <Col col={6}>
-                        <Impression>{impressionsText} {statistics.impressions}</Impression>
-                    </Col>
-                    <Col col={6} className="text-right">
-                        <ViewDetails to={showcaseRoute}>{text.viewDetails}{' >'}</ViewDetails>
-                    </Col>
-                </Row>
-            </DetailWrapper>
+            <Detail>
+                <TypeAttr>{detail.typeAttr}</TypeAttr>
+                <Title>{title}</Title><br />
+                <Subtitle>{subtitle}&nbsp;</Subtitle>
+                <PresentedBy>{detail.presentedBy}</PresentedBy>
+                <Period>{detail.date}</Period>
+            </Detail>
+            <LinkShadow to={showcaseRoute}><LinkText>{linkText}</LinkText></LinkShadow>
         </Root>
     );
 };

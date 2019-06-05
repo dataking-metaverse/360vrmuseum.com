@@ -1,14 +1,82 @@
 import * as R from "ramda";
 import {Link} from "react-router-dom";
 import styled from "styled-components";
-import {rgba} from "polished";
+import {rgba, ellipsis} from "polished";
 
-import {percentage, themeVar} from "~/styling/theme/functions";
+import {percentage} from "~/styling/theme/functions";
 
 
 export const Root = styled.div`
-    background-color: white;
+    position: relative;
     border-radius: 0.4rem;
+    margin-bottom: 6rem;
+    background-color: #ffffff;
+    color: #666666;
+`;
+
+export const Detail = styled.div`
+    padding: 1.8rem 2rem;
+`;
+
+export const Type = styled.div`
+    font-size: 1.3rem;
+    line-height: 1;
+    cursor: default;
+`;
+
+export const Title = styled.h3`
+    margin-top: .2rem;
+    margin-bottom: 0;
+    cursor: pointer;
+    font-size: 1.7rem;
+    font-weight: normal;
+    line-height: normal;
+    ${ellipsis('100%')}
+`;
+
+export const Subtitle = styled.h4`
+    margin-top: 0;
+    margin-bottom: 2.6rem;
+    font-weight: normal;
+    line-height: normal;
+    ${ellipsis('100%')}
+`;
+
+export const PresentedBy = styled.div`
+    font-size: 1.2rem;
+    margin-bottom: .7rem;
+    cursor: default;
+`;
+
+export const Period = styled.div`
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    cursor: default;
+`;
+
+export const LinkShadow = styled(Link)`
+    position: absolute;
+    display: flex;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    background-color: #1b1b1b;
+    opacity: 0;
+    transition: opacity .4s;
+    text-decoration: none;
+    z-index: 1;
+    
+    &:hover {
+        opacity: 0.77;
+    }
+`;
+
+export const LinkText = styled.div`
+    color: #ffffff;
+    letter-spacing: normal;
 `;
 
 export const Image = styled.div`
@@ -57,60 +125,4 @@ export const QuickView = styled(Link)`
     &:hover {
         opacity: 1;
     }
-`;
-
-export const Type = styled.div`
-    font-size: 1.3rem; 
-    color: #4A0087;
-    cursor: default;
-`;
-
-const titleLineHeight = 1.5;
-export const Title = styled.h3`
-    margin-top: .4em;
-    min-height: ${titleLineHeight * 2}em;
-    line-height: ${titleLineHeight};
-    cursor: pointer;
-    white-space: pre-wrap;
-    font-size: .9em;
-    
-    &:first-line {
-        font-size: initial;
-    }
-`;
-
-export const PresentedBy = styled.div`
-    font-size: 1.5rem;
-    color: rgba(40, 40, 40, 0.91);
-    margin-bottom: 1rem;
-    cursor: default;
-`;
-
-export const Period = styled.div`
-    color: rgb(153, 153, 153);
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
-    cursor: default;
-`;
-
-export const Impression = styled.span`
-    font-size: 1.2rem;
-    color: rgb(116, 116, 116);
-    cursor: default;
-`;
-
-export const ViewDetails = styled(Link)`
-    color: ${themeVar('colors.basic.purple')};
-    font-size: 1.2rem;
-    text-decoration: none;
-    cursor: pointer;
-    transition: all .5s;
-
-    &:hover {
-        transform: scale(1.1);
-    }
-`;
-
-export const DetailWrapper = styled.div`
-    padding: 1.5rem;
 `;
