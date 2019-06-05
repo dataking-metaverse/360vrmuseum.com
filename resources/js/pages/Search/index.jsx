@@ -1,48 +1,28 @@
 import React, {useState, useEffect} from "react";
 import * as R from "ramda";
-import {Container, Row, Col} from "styled-bootstrap-grid";
-import Showcases from "../../models/Showcases";
-import styled from "styled-components";
+import {Container} from "styled-bootstrap-grid";
 
-import getParam from "../../helpers/getParam";
-import LoadingSpinner from "../../components/LoadingSpinner";
-import SearchBox from "../../components/SearchBox";
+import LoadingSpinner from "~/components/LoadingSpinner";
+import SearchBox from "~/components/SearchBox";
+import getParam from "~/helpers/getParam";
+import useLangPath from "~/hooks/useLangPath";
+import Showcases from "~/models/Showcases";
+import page from "~/decorators/page";
 import ShowcaseSearchResult from "./ShowcaseSearchResult";
-import {connect} from "react-redux";
-import page from "../../decorators/page";
+import {
+    MoreSearchTitle,
+    MoreSearchSubtitle,
+} from "./styled";
 
 
-type Props = {
-    text: {
-        title: string,
-        commentCount: string,
-        readMore: string,
-        moreSearch: {
-            title: string,
-            subtitle: string,
-        },
-    },
-};
+type Props = {|  |};
 
 
-const MoreSearchTitle = styled.h2`
-    font-size: 5.2rem;
-    line-height: 1.3;
-    margin: 0;
-    margin-bottom: .5em;
-`;
-
-const MoreSearchSubtitle = styled.div`
-    color: #7a7a7a;
-    margin: 0;
-    padding: 0;
-    font-size: 1.3rem;
-`;
 
 function Search(props: Props) {
-    const {text} = props;
     const query: string = getParam('q');
     const [result, setResult] = useState([]);
+    const text = useLangPath(['lang', 'pages', 'search']);
 
     useEffect(() => {
         Showcases.search(query).then(R.pipe(
@@ -68,11 +48,4 @@ function Search(props: Props) {
     );
 }
 
-export default R.compose(
-    connect(
-        R.applySpec({
-            text: R.path(['lang', 'pages', 'search']),
-        })
-    ),
-    page('search')
-)(Search);
+export default page('search')(Search);
