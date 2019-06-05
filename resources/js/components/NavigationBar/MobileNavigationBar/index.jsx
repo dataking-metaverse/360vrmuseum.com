@@ -1,8 +1,9 @@
-import React, {useState, useEffect} from "react";
+import React, {useEffect} from "react";
 import SlideComponent from "~/components/SlideComponent";
 import * as R from "ramda";
 import {withRouter} from "react-router";
 
+import useBooleanState from "~/hooks/useBooleanState";
 import useRoute from "~/hooks/useRoute";
 import useLangPath from "~/hooks/useLangPath";
 import useReduxState from "~/hooks/useReduxState";
@@ -30,7 +31,7 @@ const useLogo = R.pipe(
 
 function MobileNavigationBar(props: Props) {
     const {location} = props;
-    const [navOpen, setNavOpen] = useState(false);
+    const [navOpen,, setNotNavOpen, toggleNavOpen] = useBooleanState(false);
     const routes = useNavRoutes();
     const myAccountRoute = useRoute('my-account');
     const homeRoute = useRoute('home');
@@ -38,7 +39,7 @@ function MobileNavigationBar(props: Props) {
     const lang = useLangPath(['navigation', 'my-account']);
 
     useEffect(() => {
-        setNavOpen(false);
+        setNotNavOpen();
     }, [location.href]);
 
     return (
@@ -47,11 +48,11 @@ function MobileNavigationBar(props: Props) {
                 <LogoLink to={homeRoute}>
                     {logo}
                 </LogoLink>
-                <BurgerButton onClick={() => setNavOpen(!navOpen)} />
+                <BurgerButton onClick={toggleNavOpen} />
             </Header>
             <SlideComponent open={navOpen}>
-                <SeardchWidget onSubmitFinished={() => setNavOpen(false)} />
-                <div onClick={() => setNavOpen(false)}>
+                <SeardchWidget onSubmitFinished={setNotNavOpen} />
+                <div onClick={setNotNavOpen}>
                     <Links routes={routes} />
                     <Item to={myAccountRoute}>{lang.title}</Item>
                     <AuthButtons />
