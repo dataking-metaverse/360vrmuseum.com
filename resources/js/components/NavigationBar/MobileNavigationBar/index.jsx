@@ -6,10 +6,16 @@ import {withRouter} from "react-router";
 import useRoute from "~/hooks/useRoute";
 import useLangPath from "~/hooks/useLangPath";
 import useReduxState from "~/hooks/useReduxState";
-import {BurgerButton, Header, LogoLink, Item} from "./styled";
-import Links from "./Links";
-import AuthButtons from "./AuthButtons";
 import useNavRoutes from "../useNavRoutes";
+import AuthButtons from "./AuthButtons";
+import Links from "./Links";
+import SeardchWidget from "./SeardchWidget";
+import {
+    BurgerButton,
+    Header,
+    LogoLink,
+    Item,
+} from "./styled";
 
 type Props = {|
     location: {
@@ -43,10 +49,13 @@ function MobileNavigationBar(props: Props) {
                 </LogoLink>
                 <BurgerButton onClick={() => setNavOpen(!navOpen)} />
             </Header>
-            <SlideComponent open={navOpen} onClick={() => setNavOpen(false)}>
-                <Links routes={routes} />
-                <Item to={myAccountRoute}>{lang.title}</Item>
-                <AuthButtons />
+            <SlideComponent open={navOpen}>
+                <SeardchWidget />
+                <div onClick={() => setNavOpen(false)}>
+                    <Links routes={routes} />
+                    <Item to={myAccountRoute}>{lang.title}</Item>
+                    <AuthButtons />
+                </div>
             </SlideComponent>
         </React.Fragment>
     );

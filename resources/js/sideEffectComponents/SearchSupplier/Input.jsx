@@ -17,7 +17,7 @@ export default function Input(props: InputProps) {
     return (
         <Consumer>
             {({onInput, onSubmit}) => (
-                <input type="text" {...props} onInput={onInput} onKeyPress={onEnterPressSubmit(onSubmit)} />
+                <input type="search" {...props} onInput={onInput} onKeyPress={onEnterPressSubmit(onSubmit)} />
             )}
         </Consumer>
     );

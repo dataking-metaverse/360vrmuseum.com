@@ -42,6 +42,12 @@ export default function SearchSupplier(props: Props) {
     );
 };
 
+export {
+    Context,
+    Input,
+    Submit,
+};
+
 SearchSupplier.Context = Context;
 SearchSupplier.Input = Input;
 SearchSupplier.Submit = Submit;
