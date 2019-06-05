@@ -27,6 +27,11 @@ type Props = {
 
 };
 
+function refineRoute(route: string): string {
+    if (typeof route !== string) { return '/'; }
+    return route[0] !== '/' ? '/' + route : route;
+}
+
 function makeRouteParams(routeUris, routeParams): Array<RouteParams> {
     return R.pipe(
         R.mapObjIndexed((routeParam, key) => ({
@@ -64,7 +69,7 @@ function Routing(props: Props) {
 
     if (props.ssr) {
         return (
-            <StaticRouter location={context.route || '/'} context={{}}>
+            <StaticRouter location={refineRoute(context.route)} context={{}}>
                 {content}
             </StaticRouter>
         );
