@@ -28,7 +28,7 @@ type Props = {
 };
 
 function refineRoute(route: string): string {
-    if (typeof route !== string) { return '/'; }
+    if (typeof route !== 'string') { return '/'; }
     return route[0] !== '/' ? '/' + route : route;
 }
 
