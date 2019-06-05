@@ -50,7 +50,7 @@ function MobileNavigationBar(props: Props) {
                 <BurgerButton onClick={() => setNavOpen(!navOpen)} />
             </Header>
             <SlideComponent open={navOpen}>
-                <SeardchWidget />
+                <SeardchWidget onSubmitFinished={() => setNavOpen(false)} />
                 <div onClick={() => setNavOpen(false)}>
                     <Links routes={routes} />
                     <Item to={myAccountRoute}>{lang.title}</Item>

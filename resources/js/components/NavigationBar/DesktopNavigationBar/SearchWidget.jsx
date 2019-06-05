@@ -14,12 +14,28 @@ const Root = styled.div`
     justify-content: center;
 `;
 
+const Flex = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: .3rem;
+    background-color: #ffffff;
+    padding-left: .6rem;
+    padding-right: .6rem;
+`;
+
+const Icon = styled(SearchSupplier.Icon)`
+    margin-left: .7rem;
+    margin-right: .7rem;
+`;
+
 const Input = styled(SearchSupplier.Input)`
-    width: 20.3rem;
+    width: 16.3rem;
     line-height: 1;
     padding: 1.4rem 2.4rem;
     border: none;
     border-radius: .5rem;
+    background-color: transparent;
 `;
 
 export default function SearchWidget(props: Props) {
@@ -27,7 +43,10 @@ export default function SearchWidget(props: Props) {
     return (
         <Root>
             <SearchSupplier>
-                <Input placeholder={searchText} />
+                <Flex>
+                    <Icon />
+                    <Input placeholder={searchText} />
+                </Flex>
             </SearchSupplier>
         </Root>
     );
