@@ -2,7 +2,8 @@ import React from "react";
 import Helmet from "react-helmet";
 import {withRouter} from "react-router";
 import * as R from "ramda";
-import {connect} from "react-redux";
+
+import useReduxState from "~/hooks/useReduxState";
 
 type Props = {
     appBase: string,
@@ -12,20 +13,20 @@ type Props = {
     image: string,
     imageWidth: string,
     imageHeight: string,
-    url: string,
     location: {
         pathname: string,
     },
 };
 
 
-const CustomHelmet = R.compose(
-    withRouter,
-    connect(R.applySpec({
-        appBase: R.path(['config', 'appBase']),
-    }), R.always({}))
-)(function CustomHelmet(props: Props) {
-    const { appBase, title, keywords, description, image, imageWidth, imageHeight, url, location } = props;
+const useAppBase = R.pipe(
+    useReduxState,
+    R.path(['config', 'appBase'])
+);
+
+function CustomHelmet(props: Props) {
+    const {title, keywords, description, image, imageWidth, imageHeight, location} = props;
+    const appBase = useAppBase();
     return (
         <Helmet>
             <title>{props.title}</title>
@@ -40,10 +41,10 @@ const CustomHelmet = R.compose(
             <meta property="og:url" content={appBase + location.pathname} />
         </Helmet>
     );
-});
-
-export default CustomHelmet;
+}
 
 CustomHelmet.defaultProps = {
     title: '360VRMuseum',
 };
+
+export default withRouter(CustomHelmet);
