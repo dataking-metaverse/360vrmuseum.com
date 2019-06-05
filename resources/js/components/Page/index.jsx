@@ -2,7 +2,7 @@ import React from "react";
 import * as R from "ramda";
 
 import useLangPath from "~/hooks/useLangPath";
-import useReactState from "~/hooks/useReactState";
+import useReduxState from "~/hooks/useReduxState";
 import CustomHelmet from "../CustomHelmet";
 
 import type {Node} from "react";
@@ -13,7 +13,7 @@ type Props = {|
 |};
 
 const useDefaultMeta = R.pipe(
-    useReactState,
+    useReduxState,
     R.path(['config', 'defaultMeta'])
 );
 
