@@ -37,24 +37,18 @@ try {
 
     const sheet = new ServerStyleSheet();
     body += renderToString(sheet.collectStyles(
-        <div id="app">
-            <Provider store={store}>
-                <ModelsContext.Provider value={models}>
-                    <Main />
-                </ModelsContext.Provider>
-            </Provider>
-        </div>
+        <Provider store={store}>
+            <ModelsContext.Provider value={models}>
+                <Main />
+            </ModelsContext.Provider>
+        </Provider>
     ));
 
     const helmet = Helmet.renderStatic();
 
-    const hemletString = [
-        helmet.title.toString(),
-        helmet.meta.toString(),
-    ].join('');
-
-    head = sheet.getStyleTags();
-    head += hemletString;
+    head += sheet.getStyleTags();
+    head += helmet.title.toString();
+    head += helmet.meta.toString();
 
 } catch (ex) {
     console.error(ex); // TODO : handling this instead of just log it out
