@@ -12,6 +12,7 @@
 [options]
 all=true
 esproposal.decorators=ignore
+module.name_mapper='^~' ->'<PROJECT_ROOT>/resources/js'
 
 [strict]
 nonstrict-import

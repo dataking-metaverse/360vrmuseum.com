@@ -20,7 +20,7 @@ type RouteParams = {
     name: string,
     path: string,
     exact: ?boolean,
-    component: ComponentType<{}>,
+    component: React.Component<ComponentProp>, // TODO HERE
 };
 
 type Props = {
@@ -38,7 +38,8 @@ function makeRouteParams(routeUris, routeParams): Array<RouteParams> {
             key,
             name: key,
             path: routeUris[key],
-            ...routeParam,
+            exact: routeParam.exact,
+            component: routeParam.component,
         })),
         R.values,
     )(routeParams);

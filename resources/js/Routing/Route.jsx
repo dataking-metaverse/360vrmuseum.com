@@ -3,31 +3,25 @@ import {connect} from "react-redux";
 import * as R from "ramda";
 import {Route} from "react-router-dom";
 
-import Injected from "../components/Injected";
-import routes from "./routes";
+import useReduxState from "~/hooks/useReduxState";
+import routesConfig from "./routes";
 
 type Props = {
     name: string,
 };
 
-type InjectedProps = {
-    app: {
-        routes: {
-            [string]: string,
-        },
-    },
-};
 
-@connect(R.applySpec({
-    routes: R.path(['app', 'routes']),
-}))
-export default class CustomRoute extends Injected.Component<Props, InjectedProps> {
-    render() {
-        return (
-            <Route
-                {...routes[this.props.name]}
-                path={this.props.routes[this.props.name]}
-            />
-        );
-    }
+const useRoutes = R.pipe(
+    useReduxState,
+    R.path(['app', 'routes'])
+);
+
+export default function CustomRoute(props: Props) {
+    const routes = useRoutes();
+    return (
+        <Route
+            {...routesConfig[props.name]}
+            path={routes[props.name]}
+        />
+    );
 }
