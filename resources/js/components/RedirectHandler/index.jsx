@@ -1,23 +1,26 @@
+import React, {useEffect} from "react";
 import {withRouter} from "react-router";
 import {connect} from "react-redux";
-import * as R from "ramda";
-import React from "react";
 
-import {clearRedirect} from "../../redux/actionCreators/global";
+import useReduxAction from "~/hooks/useReduxAction";
+import useReduxState from "~/hooks/useReduxState";
+import * as actions from "~/redux/actionCreators/global";
 
-import type {RouterHistory} from "react-router";
+type Props = {|  |};
 
-type RedirectHandlerProps = {
-    redirect?: RedirectHandlerProps,
-    history: RouterHistory,
-};
 
-@withRouter
-@connect(R.pick(['redirect']), R.applySpec({clearRedirect}))
-export default class RedirectHandler extends React.Component<RedirectHandlerProps> {
-    shouldComponentUpdate(nextProps) { return nextProps.redirect !== this.props.redirect; }
-    componentDidMount() { this.effect(this.props.redirect); }
-    componentDidUpdate(nextProps) { this.effect(this.props.redirect); }
-    effect(redirect: string | void) { redirect && this.props.history.push(redirect); this.props.clearRedirect(); }
-    render() { return null; }
+function RedirectHandler(props: Props) {
+    const {redirect} = useReduxState();
+    const clearRedirect = useReduxAction(actions.clearRedirect);
+
+    useEffect(() => {
+        if (redirect) {
+            props.history.push(redirect);
+            clearRedirect();
+        }
+    }, [redirect]);
+
+    return null;
 }
+
+export default withRouter<Props>(RedirectHandler);

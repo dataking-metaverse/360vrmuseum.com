@@ -7,7 +7,7 @@ import CustomHelmet from "~/components/CustomHelmet";
 
 import type {Node} from "react";
 
-type Props = {|
+export type Props = {|
     pageName: string,
     children: ?Node,
 |};

@@ -6,6 +6,8 @@ import * as R from "ramda";
 
 import RedirectHandler from "../components/RedirectHandler";
 import LangHandler from "../components/LangHandler";
+import useLang from "~/hooks/useLang";
+import useReduxState from "~/hooks/useReduxState";
 import NotificationHandler from "../components/NotificationHandler";
 import SwitchPageHandler from "../components/SwitchPageHandler";
 import RecaptchaHandler from "../components/RecaptchaHandler";
@@ -13,14 +15,16 @@ import NavigationBar from "../components/NavigationBar";
 import Footer from "../components/Footer";
 import routes from "./routes";
 
-import type {ComponentType} from "react";
+import type {ComponentType, Node, Element} from "react";
+import type {Props as PageProps} from "~/components/Page";
+
 
 type RouteParams = {
     key: string,
     name: string,
     path: string,
     exact: ?boolean,
-    component: React.Component<ComponentProp>, // TODO HERE
+    component: ComponentType<PageProps>,
 };
 
 type Props = {
@@ -45,11 +49,16 @@ function makeRouteParams(routeUris, routeParams): Array<RouteParams> {
     )(routeParams);
 }
 
-const renderRoutes: (routeParams: Array<RouteParams>) => Node = R.map(R.curryN(2, React.createElement)(Route));
+const renderRoutes: (routeParams: Array<RouteParams>) => Node = R.map(R.curryN<Node, Element>(2, React.createElement)(Route));
 
+const useRoutePaths = R.pipe(
+    useReduxState,
+    R.path(['app', 'routes'])
+);
 
-function Routing(props: Props) {
-    const {lang, routePaths} = props;
+export default function Routing(props: Props) {
+    const lang = useLang();
+    const routePaths = useRoutePaths();
 
     const content = (
         <React.Fragment>
@@ -81,12 +90,3 @@ function Routing(props: Props) {
         </BrowserRouter>
     );
 }
-
-export default R.compose(
-    connect(R.applySpec({
-        lang: R.prop('lang'),
-        routePaths: R.path(['app', 'routes']),
-        ssr: R.prop('ssr'),
-    }))
-)(Routing);
-
