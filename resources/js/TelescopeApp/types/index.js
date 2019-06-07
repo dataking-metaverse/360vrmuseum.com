@@ -51,3 +51,7 @@ export type Showcases = Array<Showcase>;
 export type ShowcasesGroup = {
     [string]: Showcases,
 };
+
+export type ReactRef<Current> = {
+    current: Current | null,
+};
