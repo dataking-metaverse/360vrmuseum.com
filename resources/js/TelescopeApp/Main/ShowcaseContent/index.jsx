@@ -20,7 +20,7 @@ type Props = {||};
 
 export default function ShowcaseContent(props: Props): Node | null {
     const showcase: Showcase = useShowcase();
-    const scrollableRef: Ref<'div'> = useRef(null);
+    const scrollableRef: Ref<typeof HTMLDivElement> = useRef(null);
 
     useEffect(() => {
         const scrollable: ComponentType<Scrollable> | void = scrollableRef.current;
