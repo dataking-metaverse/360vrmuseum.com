@@ -2,9 +2,8 @@ import React, {useEffect} from "react";
 import {withRouter} from "react-router";
 
 import type {Axios} from "axios";
-import type {ContextRouter} from "react-router";
 
-type Props = {| ...ContextRouter |};
+type Props = {|  |};
 
 function SwitchPageHandler(props: Props) {
 

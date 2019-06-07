@@ -9,7 +9,7 @@ import type {Node} from "react";
 
 export type Props = {|
     pageName: string,
-    children: ?Node,
+    children?: ?Node,
 |};
 
 const useDefaultMeta = R.pipe(

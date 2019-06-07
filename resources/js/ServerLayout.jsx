@@ -1,4 +1,19 @@
-const ServerLayout = (head, body, props) => `<!DOCTYPE html>
+type Props = {|
+    app: string,
+    config: string,
+    debug: string,
+    googleTagManagerKey: string,
+    js: string,
+    lang: string,
+    locale: string,
+    recaptchaSiteKey: string,
+    user: string,
+    version: string,
+|};
+
+type ServerLayoutType = (head: string, body: string, props: Props) => string;
+
+const ServerLayout: ServerLayoutType = (head, body, props) => `<!DOCTYPE html>
 <html lang="${props.locale}">
 <head>
 
