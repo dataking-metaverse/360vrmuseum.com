@@ -1479,16 +1479,10 @@ declare module ramda {
 
   declare function path<T: string | number, V>(
     p: Array<T>,
-  ): (o: NestedObject<V>) => V;
-  declare function path<T: string | number, V>(
-    p: Array<T>,
-  ): (o: null | void) => void;
-  declare function path<T: string | number, V>(
-    p: Array<T>,
-  ): (o: mixed) => ?V;
+  ): (o: mixed) => V;
   declare function path<T: string | number, V, A: NestedObject<V>>(p: Array<T>, o: A): V;
   declare function path<T: string | number, V, A: null | void>(p: Array<T>, o: A): void;
-  declare function path<T: string | number, V, A>(p: Array<T>, o: A): ?V;
+  declare function path<T: string | number, V, A>(p: Array<T>, o: A): V;
 
   declare function path<V>(
     p: Array<string>,

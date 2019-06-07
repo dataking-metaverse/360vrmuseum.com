@@ -34,29 +34,34 @@ function refineRoute(route: string): string {
     return route[0] !== '/' ? '/' + route : route;
 }
 
-function makeRouteParams(routeUris, routeParams): Array<RouteParams> {
-    return R.pipe(
-        R.mapObjIndexed((routeParam, key) => ({
+function makeRouteParams(routeUris: {[string]: string}, routeParams): Array<RouteParams> {
+    const output = [];
+    for(let key in routeParams) {
+        if (!routeUris.hasOwnProperty(key) || !routeParams.hasOwnProperty(key)) { continue; }
+        const routeParam = routeParams[key];
+        output.push({
             key,
             path: routeUris[key],
             exact: routeParam.exact,
             component: routeParam.component,
-        })),
-        R.values,
-    )(routeParams);
+        });
+    }
+    return output;
 }
 
 const renderRoutes = R.map<RouteParams, Node, (routeParams: RouteParams) => Node>(routeParam => React.createElement(Route, routeParam));
 
 const useRoutePaths = R.pipe(
     useReduxState,
-    R.path(['app', 'routes'])
+    R.path<string, {[string]: string}>(['app', 'routes'])
 );
 
 export default function Routing(props: Props) {
     const lang = useLang();
     const routePaths = useRoutePaths();
     const {ssr} = useReduxState();
+
+    if (!routePaths) { return null; }
 
     const content = (
         <React.Fragment>

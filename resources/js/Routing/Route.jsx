@@ -1,23 +1,24 @@
 import React from "react";
-import {connect} from "react-redux";
 import * as R from "ramda";
 import {Route} from "react-router-dom";
 
 import useReduxState from "~/hooks/useReduxState";
 import routesConfig from "./routes";
 
-type Props = {
+type Props = {|
     name: string,
-};
+|};
 
+type Routes = {| [string]: string |};
 
-const useRoutes = R.pipe(
+const useRoutes = R.pipe<[], ?Routes, any>(
     useReduxState,
-    R.path(['app', 'routes'])
+    R.path<string, Routes>(['app', 'routes'])
 );
 
 export default function CustomRoute(props: Props) {
     const routes = useRoutes();
+    if (!routes || !routes.hasOwnProperty(props.name)) { return null; }
     return (
         <Route
             {...routesConfig[props.name]}
