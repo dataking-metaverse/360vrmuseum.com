@@ -11,7 +11,7 @@ class ViewHistoryController extends Controller
         $user = User::current();
         $mids = $user->getAttribute('view_history');
         if (!$mids) { $mids = []; }
-        $viewHistory = ShowcaseController::propIn('mid', $mids);
+        $viewHistory = array_map(function($mid) { return ShowcaseController::propEq('mid', $mid); }, $mids);
         return static::success($viewHistory);
     }
 }
