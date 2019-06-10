@@ -74,7 +74,7 @@ class User extends Authenticatable
                 $viewHistory = array_values($viewHistory);
             }
             array_unshift($viewHistory, $mid);
-            array_slice($viewHistory, 0, 15);
+            $viewHistory = array_slice($viewHistory, 0, 15);
             $user->view_history = $viewHistory;
             $user->save();
         }
