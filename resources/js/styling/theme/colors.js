@@ -31,7 +31,7 @@ const basic = {
 };
 
 const grayscale = {
-    '100': '#f8f9fa',
+    '100': '#f4f4f4',
     '200': '#e9ecef',
     '300': '#dee2e6',
     '400': '#ced4da',

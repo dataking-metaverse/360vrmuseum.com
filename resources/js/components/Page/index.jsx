@@ -1,29 +1,36 @@
 import React from "react";
 import * as R from "ramda";
-import {connect} from "react-redux";
+
+import useLangPath from "~/hooks/useLangPath";
+import useReduxState from "~/hooks/useReduxState";
 import CustomHelmet from "../CustomHelmet";
 
+import type {Node} from "react";
 
-type Props = {
+type Props = {|
     pageName: string,
-};
+    children: ?Node,
+|};
+
+const useDefaultMeta = R.pipe(
+    useReduxState,
+    R.path(['config', 'defaultMeta'])
+);
 
 export default function Page(props: Props) {
-    const Component = connect(
-        R.applySpec({
-            meta: R.converge(
-                R.mergeLeft,
-                [ R.path(['lang', 'pages', props.pageName, 'meta']), R.path(['config', 'defaultMeta']) ]
-            ),
-        })
-    )(({meta}) => (
-        <React.Fragment>
-            <CustomHelmet {...meta} />
-            {props.children}
-        </React.Fragment>
-    ));
+    const Component = () => {
+        const pageMeta = useLangPath(['pages', props.pageName, 'meta']);
+        const defaultMeta = useDefaultMeta();
+        const realMeta = R.mergeLeft(pageMeta, defaultMeta);
+        return (
+            <>
+                <CustomHelmet {...realMeta} />
+                {props.children}
+            </>
+        );
+    };
     return <Component />;
-};
+}
 
 Page.defaultProps = {
     children: null,

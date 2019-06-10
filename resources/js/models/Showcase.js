@@ -73,6 +73,11 @@ export default class Showcase extends RestfulModel<Props> {
         this.props = props;
     }
 
+    getPoster = () => {
+        if (this.props.poster) { return this.props.poster; }
+        return this.props.thumbnail;
+    };
+
     getRelated: () => Promise<Showcase> = async () => await Showcase.byPresentedBy(this.props.presented_by);
 
     route = () => Showcase.routeByMid(this.props.mid);
@@ -86,5 +91,6 @@ export default class Showcase extends RestfulModel<Props> {
     generatePoster = props => () => <ShowcasePoster showcase={this} {...props} />;
     generatePosterLink = props => () => <ShowcasePosterLink showcase={this} {...props} />;
     generateCard = props => () => <ShowcaseCard showcase={this} {...props} />;
+    generatePosterCard = props => () => <ShowcaseCard showcase={this} {...props} type="poster" />;
     generateThumbnail = props => () => <ShowcaseThumbnail showcase={this} {...props} />;
 }

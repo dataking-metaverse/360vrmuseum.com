@@ -2,7 +2,7 @@ import React from "react";
 
 type Props = {
 
-}
+};
 
 export default function Burger(props: Props) {
     return (
