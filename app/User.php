@@ -67,17 +67,15 @@ class User extends Authenticatable
         $user = auth()->user();
         if (!$user) { return; }
         $viewHistory = isset($user->view_history) ? $user->view_history : [];
-        if ($user) {
-            if (in_array($mid, $viewHistory)) {
-                $key = array_search($mid, $viewHistory);
-                unset($viewHistory[$key]);
-                $viewHistory = array_values($viewHistory);
-            }
-            array_unshift($viewHistory, $mid);
-            array_slice($viewHistory, 0, 15);
-            $user->view_history = $viewHistory;
-            $user->save();
+        if (in_array($mid, $viewHistory)) {
+            $key = array_search($mid, $viewHistory);
+            unset($viewHistory[$key]);
+            $viewHistory = array_values($viewHistory);
         }
+        array_unshift($viewHistory, $mid);
+        $viewHistory = array_slice($viewHistory, 0, 15);
+        $user->view_history = $viewHistory;
+        $user->save();
     }
 
     function getTypesAttribute() {
