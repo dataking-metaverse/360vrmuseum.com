@@ -1,3 +1,5 @@
+import React from "react";
+
 import ResetPassword from "../pages/ResetPassword";
 import ForgotPassword from "../pages/ForgotPassword";
 import Search from "../pages/Search";
@@ -12,9 +14,17 @@ import MyAccount from "../pages/MyAccount";
 import Showcase from "../pages/Showcase";
 import Home from "../pages/Home";
 
+import type {ComponentType} from "react";
+import type {Props as PageProps} from "~/components/Page";
+
 // NOTE : paths are defined form backend, you will need to make sure the keys are correct
 
-const routes = {
+export type Route = {|
+    exact: boolean,
+    component: ComponentType<PageProps>,
+|};
+
+const routes: {[string]: Route} = {
     'reset-password': {
         exact: true,
         component: ResetPassword,

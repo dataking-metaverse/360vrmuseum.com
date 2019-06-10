@@ -3,13 +3,13 @@ import * as R from "ramda";
 
 import useLangPath from "~/hooks/useLangPath";
 import useReduxState from "~/hooks/useReduxState";
-import CustomHelmet from "../CustomHelmet";
+import CustomHelmet from "~/components/CustomHelmet";
 
 import type {Node} from "react";
 
-type Props = {|
+export type Props = {|
     pageName: string,
-    children: ?Node,
+    children?: ?Node,
 |};
 
 const useDefaultMeta = R.pipe(

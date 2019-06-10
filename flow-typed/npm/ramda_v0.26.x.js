@@ -1,5 +1,5 @@
-// flow-typed signature: 369d0b55c493decfd4deacaadaba2877
-// flow-typed version: 36a16cbe25/ramda_v0.26.x/flow_>=v0.76.x
+// flow-typed signature: 3f660ab2306fb89be2a41b2dd3edc047
+// flow-typed version: 96b2a111f3/ramda_v0.26.x/flow_>=v0.76.x
 
 /* eslint-disable no-unused-vars, no-redeclare */
 
@@ -1198,11 +1198,16 @@ declare module ramda {
   declare function eqBy<T>(fn: (x: T) => T, x: T): (y: T) => boolean;
   declare function eqBy<T>(fn: (x: T) => T): (x: T) => (y: T) => boolean;
 
-  declare function gt<T>(x: T): (y: T) => boolean;
-  declare function gt<T>(x: T, y: T): boolean;
+  declare type RelationCompare =
+    & ((x: number) => (y: number) => bool)
+    & ((x: number, y: number) => bool)
+    & ((x: string) => (y: string) => bool)
+    & ((x: string, y: string) => bool)
 
-  declare function gte<T>(x: T): (y: T) => boolean;
-  declare function gte<T>(x: T, y: T): boolean;
+  declare var gt: RelationCompare
+  declare var gte: RelationCompare
+  declare var lt: RelationCompare
+  declare var lte: RelationCompare
 
   declare function identical<T>(x: T): (y: T) => boolean;
   declare function identical<T>(x: T, y: T): boolean;
@@ -1224,12 +1229,6 @@ declare module ramda {
 
   declare function intersection<T>(x: Array<T>, y: Array<T>): Array<T>;
   declare function intersection<T>(x: Array<T>): (y: Array<T>) => Array<T>;
-
-  declare function lt<T>(x: T): (y: T) => boolean;
-  declare function lt<T>(x: T, y: T): boolean;
-
-  declare function lte<T>(x: T): (y: T) => boolean;
-  declare function lte<T>(x: T, y: T): boolean;
 
   declare function max<T>(x: T): (y: T) => T;
   declare function max<T>(x: T, y: T): T;
@@ -1480,16 +1479,10 @@ declare module ramda {
 
   declare function path<T: string | number, V>(
     p: Array<T>,
-  ): (o: NestedObject<V>) => V;
-  declare function path<T: string | number, V>(
-    p: Array<T>,
-  ): (o: null | void) => void;
-  declare function path<T: string | number, V>(
-    p: Array<T>,
-  ): (o: mixed) => ?V;
+  ): (o: mixed) => V;
   declare function path<T: string | number, V, A: NestedObject<V>>(p: Array<T>, o: A): V;
   declare function path<T: string | number, V, A: null | void>(p: Array<T>, o: A): void;
-  declare function path<T: string | number, V, A>(p: Array<T>, o: A): ?V;
+  declare function path<T: string | number, V, A>(p: Array<T>, o: A): V;
 
   declare function path<V>(
     p: Array<string>,

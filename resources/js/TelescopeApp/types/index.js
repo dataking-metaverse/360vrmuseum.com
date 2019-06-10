@@ -9,6 +9,13 @@ export type App = {
     routes: {[string]: string},
 };
 
+export type ImageItem = {|
+    original: string,
+    thumb: string,
+|};
+
+export type ListOfImages = Array<ImageItem>;
+
 export type Showcase = {|
     mid: string,
     main_title: string,
@@ -24,10 +31,7 @@ export type Showcase = {|
     map_name: string,
     description: string,
     youtube_id: string,
-    list_of_images: {|
-        original: string,
-        thumb: string,
-    |},
+    list_of_images: ListOfImages,
     guide_information: string,
     is_paid: boolean,
     is_conversation: boolean,
@@ -46,4 +50,8 @@ export type Showcases = Array<Showcase>;
 
 export type ShowcasesGroup = {
     [string]: Showcases,
+};
+
+export type ReactRef<Current> = {
+    current: Current | null,
 };

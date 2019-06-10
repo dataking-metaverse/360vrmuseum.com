@@ -13,20 +13,28 @@ import InformationSection from "./InformationSection";
 import ImagesSection from "./ImagesSection";
 import RelatedSection from "./RelatedSection";
 
-import type {Node, ComponentType, Ref} from "react";
-import type {Showcase} from "../../types";
+import type {Node} from "react";
+import type {Showcase, ReactRef} from "../../types";
 
-type Props = {||};
+type Props = {|  |};
+
+type ScrollableRef = ReactRef<Scrollable>;
+
+const jumpToTop = R.pipe<[ScrollableRef], null, ?Scrollable, any>(
+    R.prop('current'),
+    R.when(
+        R.is(Scrollable),
+        R.invoker(0, 'jumpToTop')
+    ),
+    R.always(null)
+);
 
 export default function ShowcaseContent(props: Props): Node | null {
     const showcase: Showcase = useShowcase();
-    const scrollableRef: Ref = useRef(null);
+    const scrollableRef: ScrollableRef = useRef(null);
 
     useEffect(() => {
-        const scrollable: ComponentType<Scrollable> | void = scrollableRef.current;
-        if (R.is(React.Component, scrollable)) {
-            scrollable.jumpToTop();
-        }
+        jumpToTop(scrollableRef);
     }, [showcase]);
 
     if (!showcase) { return null; }

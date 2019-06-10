@@ -1,49 +1,67 @@
 import React from "react";
 import {Route} from "react-router";
 import {BrowserRouter, StaticRouter} from "react-router-dom";
-import {connect} from "react-redux";
 import * as R from "ramda";
 
-import RedirectHandler from "../components/RedirectHandler";
-import LangHandler from "../components/LangHandler";
-import NotificationHandler from "../components/NotificationHandler";
-import SwitchPageHandler from "../components/SwitchPageHandler";
-import RecaptchaHandler from "../components/RecaptchaHandler";
-import NavigationBar from "../components/NavigationBar";
-import Footer from "../components/Footer";
+import Footer from "~/components/Footer";
+import LangHandler from "~/components/LangHandler";
+import NavigationBar from "~/components/NavigationBar";
+import NotificationHandler from "~/components/NotificationHandler";
+import RecaptchaHandler from "~/components/RecaptchaHandler";
+import RedirectHandler from "~/components/RedirectHandler";
+import SwitchPageHandler from "~/components/SwitchPageHandler";
+import useLang from "~/hooks/useLang";
+import useReduxState from "~/hooks/useReduxState";
 import routes from "./routes";
 
-import type {ComponentType} from "react";
+import type {ComponentType, Node, Element} from "react";
+import type {Props as PageProps} from "~/components/Page";
 
-type RouteParams = {
+
+type RouteParams = {|
     key: string,
-    name: string,
     path: string,
-    exact: ?boolean,
-    component: ComponentType<{}>,
-};
+    exact: boolean,
+    component: ComponentType<PageProps>,
+|};
 
 type Props = {
 
 };
 
-function makeRouteParams(routeUris, routeParams): Array<RouteParams> {
-    return R.pipe(
-        R.mapObjIndexed((routeParam, key) => ({
-            key,
-            name: key,
-            path: routeUris[key],
-            ...routeParam,
-        })),
-        R.values,
-    )(routeParams);
+function refineRoute(route: string): string {
+    if (typeof route !== 'string') { return '/'; }
+    return route[0] !== '/' ? '/' + route : route;
 }
 
-const renderRoutes: (routeParams: Array<RouteParams>) => Node = R.map(R.curryN(2, React.createElement)(Route));
+function makeRouteParams(routeUris: {[string]: string}, routeParams): Array<RouteParams> {
+    const output = [];
+    for(let key in routeParams) {
+        if (!routeUris.hasOwnProperty(key) || !routeParams.hasOwnProperty(key)) { continue; }
+        const routeParam = routeParams[key];
+        output.push({
+            key,
+            path: routeUris[key],
+            exact: routeParam.exact,
+            component: routeParam.component,
+        });
+    }
+    return output;
+}
 
+const renderRoutes = R.map<RouteParams, Node, (routeParams: RouteParams) => Node>(routeParam => React.createElement(Route, routeParam));
 
-function Routing(props: Props) {
-    const {lang, routePaths} = props;
+const useRoutePaths = R.pipe(
+    useReduxState,
+    R.path<string, {[string]: string}>(['app', 'routes'])
+);
+
+export default function Routing(props: Props) {
+    const lang = useLang();
+    const routePaths = useRoutePaths();
+    const {ssr} = useReduxState();
+
+    if (!routePaths) { return null; }
 
     const content = (
         <React.Fragment>
@@ -62,9 +80,9 @@ function Routing(props: Props) {
         </React.Fragment>
     );
 
-    if (props.ssr) {
+    if (ssr && typeof global.context !== 'undefined') {
         return (
-            <StaticRouter location={context.route || '/'} context={{}}>
+            <StaticRouter location={refineRoute(global.context.route)} context={{}}>
                 {content}
             </StaticRouter>
         );
@@ -75,12 +93,3 @@ function Routing(props: Props) {
         </BrowserRouter>
     );
 }
-
-export default R.compose(
-    connect(R.applySpec({
-        lang: R.prop('lang'),
-        routePaths: R.path(['app', 'routes']),
-        ssr: R.prop('ssr'),
-    }))
-)(Routing);
-

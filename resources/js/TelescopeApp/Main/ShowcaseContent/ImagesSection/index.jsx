@@ -8,23 +8,21 @@ import useShowcase from "../../../hooks/useShowcase";
 import ImageGrid, {Image} from "../../../components/ImageGrid";
 
 import type {Node} from "react";
-import type {Showcase} from "../../../types";
+import type {ImageItem, ListOfImages, Showcase} from "../../../types";
 
 type Props = {|
 
 |};
-
-type ListOfImagesType = $ElementType<Showcase, 'list_of_images'>;
 
 const paddingBottom = R.path(['theme', 'showcaseContent', 'imagesSection', 'paddingBottom']);
 const Root = styled.div`
     margin-bottom: ${paddingBottom}rem;
 `;
 
-const useImageThumbnails = R.pipe<any, Array<string>>(
+const useImageThumbnails = R.pipe<[], Array<string>, Showcase, ListOfImages>(
     useShowcase,
-    R.prop<Showcase, 'list_of_images'>('list_of_images'),
-    R.pluck<'thumb', ListOfImagesType>('thumb')
+    R.prop<'list_of_images', Showcase>('list_of_images'),
+    R.pluck<ImageItem, 'thumb'>('thumb')
 );
 
 export default function ImagesSection(props: Props): Node {

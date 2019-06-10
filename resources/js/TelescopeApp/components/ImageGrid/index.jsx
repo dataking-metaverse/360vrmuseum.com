@@ -5,7 +5,8 @@ import type {ComponentType} from "react";
 import half from "../../functions/half";
 
 type ImageProps = {|
-    src: string
+    src: string,
+    onClick: () => void,
 |};
 
 const minus = R.multiply(-1);

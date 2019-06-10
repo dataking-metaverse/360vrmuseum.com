@@ -1,10 +1,7 @@
 import React, {useEffect, useRef} from "react";
 import * as R from "ramda";
 
-import {
-    updateShowcaseIframeRef as updateShowcaseIframeRefAction,
-    emptyShowcaseIframeRef as emptyShowcaseIframeRefAction,
-} from "../../../redux/actionCreators";
+import * as actions from "../../../redux/actionCreators";
 import useShowcase from "../../../hooks/useShowcase";
 import useReduxAction from "../../../hooks/useReduxAction";
 import {
@@ -20,17 +17,14 @@ type Props = {|
 |};
 
 const embedRoute: string = 'https://embed.360vrmuseum.com/showcase/:mid?autoplay=1&hl=2';
-const makeEmbedRoute: (mid: string) => string = R.replace(':mid', R.__, embedRoute);
-const embedUrl: (showcase: Showcase) => string = R.pipe(
-    R.prop('mid'),
-    makeEmbedRoute,
-);
+const makeEmbedRoute: (mid: string) => string = mid => embedRoute.replace(':mid', mid);
+const embedUrl: (showcase: Showcase) => string = R.o<Showcase, string, string>( makeEmbedRoute, R.prop<'mid', Showcase>('mid') );;
 
-export default function IframeSection(props: Props): ?Node {
+export default function IframeSection(props: Props) {
     const showcase: ?Showcase = useShowcase();
-    const src = embedUrl(showcase);
-    const updateShowcaseIframeRef = useReduxAction(updateShowcaseIframeRefAction);
-    const emptyShowcaseIframeRef = useReduxAction(emptyShowcaseIframeRefAction);
+    const src = showcase ? embedUrl(showcase) : null;
+    const updateShowcaseIframeRef = useReduxAction(actions.updateShowcaseIframeRef);
+    const emptyShowcaseIframeRef = useReduxAction(actions.emptyShowcaseIframeRef);
     const iframeRef = useRef();
 
     useEffect(() => {
@@ -39,6 +33,7 @@ export default function IframeSection(props: Props): ?Node {
     }, [src]);
 
     if (!showcase) { return null; }
+
     return (
         <Iframe key={src} ref={iframeRef} src={src} allowFullScreen allow="vr" />
     );

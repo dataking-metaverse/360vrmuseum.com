@@ -1,25 +1,17 @@
-import React from "react";
-import * as R from "ramda";
-import {connect} from "react-redux";
-
-import {pushMessage, removeFirstMessage} from "../../redux/actionCreators/global";
+import React, {useEffect} from "react";
+import {withRouter} from "react-router";
 
 import type {Axios} from "axios";
-import {withRouter } from "react-router";
-import noSSR from "../../decorators/noSSR";
 
-type Props = {
-    location: {
-        pathname: string,
-    }
-};
+type Props = {|  |};
 
-@withRouter
-@noSSR
-export default class SwitchPageHandler extends React.Component<Props> {
-    shouldComponentUpdate(nextProps) { return nextProps.location.pathname !== this.props.location.pathname; }
-    componentDidMount() { this.effect(); }
-    componentDidUpdate() { this.effect(); }
-    async effect() { window.scrollTo(0, 0); }
-    render() { return null; }
+function SwitchPageHandler(props: Props) {
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [props.location.pathname]);
+
+    return null;
 }
+
+export default withRouter<Props>(SwitchPageHandler);

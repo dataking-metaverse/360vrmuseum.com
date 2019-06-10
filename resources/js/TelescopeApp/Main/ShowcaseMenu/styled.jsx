@@ -1,10 +1,12 @@
 import styled from "styled-components";
 import * as R from "ramda";
 
+import type {Theme} from "styled-components";
 
-const widthFull = R.path(['theme', 'showcaseMenu', 'widthFull']);
-const widthCollapse = R.path(['theme', 'showcaseMenu', 'widthCollapse']);
-const width = R.ifElse(
+
+const widthFull = R.path<string, number>(['theme', 'showcaseMenu', 'widthFull']);
+const widthCollapse = R.path<string, number>(['theme', 'showcaseMenu', 'widthCollapse']);
+const width = R.ifElse<[Theme], number, number>(
     R.prop('wide'),
     widthFull,
     widthCollapse
