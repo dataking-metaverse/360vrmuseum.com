@@ -5,7 +5,6 @@ import * as R from "ramda";
 import {
     Root,
     Inner,
-    SlideWrapper,
     EmptyMessage,
 } from "./styled";
 import useRoute from "~/hooks/useRoute";
@@ -13,6 +12,7 @@ import useAxios from "~/hooks/useAxios";
 import useTheme from "~/hooks/useTheme";
 import useLangPath from "~/hooks/useLangPath";
 import Showcase from "~/models/Showcase";
+import Poster from "./Poster";
 
 import type {ElementType} from "react";
 
@@ -36,6 +36,23 @@ const basicSlickSettings = {
 
 const minusOne = R.subtract(R.__, 1);
 
+const mapSlides: (showcase: ?Array<{}>) => Array<Node> = R.ifElse<Array<Showcase>, Array<ElementType>, null>(
+    R.allPass([
+        R.complement(R.isNil),
+        Array.isArray,
+    ]),
+    R.addIndex(R.map)((showcaseObject: {}, index: number) => {
+        const showcase: Showcase = Showcase.constructByData(showcaseObject);
+        return <Poster key={index} showcase={showcase} />;
+    }),
+    R.always<null>(null),
+);
+
+const isValidSlides = R.allPass([
+    Array.isArray,
+    R.complement(R.isEmpty)
+]);
+
 const useSlickSettings = function() {
     const {styledBootstrapGrid} = useTheme();
 
@@ -54,19 +71,6 @@ const useSlickSettings = function() {
     )(basicSlickSettings);
 };
 
-const mapSlides: (showcase: ?Array<{}>) => Array<Node> = R.ifElse<Array<Showcase>, Array<ElementType>, null>(
-    R.allPass([
-        R.complement(R.isNil),
-        Array.isArray,
-    ]),
-    R.addIndex(R.map)((showcaseObject: {}, index: number) => {
-        const showcase: Showcase = Showcase.constructByData(showcaseObject);
-        const Poster = showcase.generatePosterLink();
-        return <SlideWrapper key={index}><Poster /></SlideWrapper>;
-    }),
-    R.always<null>(null),
-);
-
 const useSlides = R.pipe(
     R.always('api.my-account.view-history'),
     useRoute,
@@ -81,10 +85,7 @@ export default function ViewHistorySlider(props: Props) {
     const slides = useSlides();
     const slickSettings = useSlickSettings();
     const lang = useLangPath(['pages', 'my-account', 'suggestions']);
-    const showSlides = R.allPass([
-        Array.isArray,
-        R.complement(R.isEmpty)
-    ])(slides);
+    const showSlides = isValidSlides(slides);
     return (
         <Root>
             <Inner>

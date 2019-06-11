@@ -19,12 +19,27 @@ type InnerProps = {
     presentedByText: string,
 };
 
+const Text = styled.div`
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.6rem 1.83rem;
+    z-index: 1;
+`;
+
 const PureLink = styled(Link)`
     position: relative;
     display: block;
     color: ${themeVar('colors.basic.white')};
     border-radius: .4rem;
     overflow: hidden;
+    
+    ${Text} {
+        transition: color .4s;
+        transition-delay: 0s !important;
+    }
+    
     
     &:hover, &:visited, &:focus {
         color: ${themeVar('colors.basic.white')};
@@ -33,17 +48,20 @@ const PureLink = styled(Link)`
     &:after {
         content: '';
         position: absolute;
-        bottom: 0;
+        top: 0;
         left: 0;
-        height: 50%;
+        height: 150%;
         width: 100%;
         background-image: linear-gradient(to bottom, rgba(68, 68, 68, 0), #444444);
-        opacity: 0;
-        transition: opacity .4s;
+        transition: top .4s;
     }
     
     &:hover:after {
-        opacity: 1;
+        top: -50%;
+    }
+    
+    &:hover ${Text} {
+        color: transparent !important;
     }
 `;
 
@@ -54,15 +72,6 @@ const Image = styled.div`
     background-position: 50% 50%;
 `;
 
-const Text = styled.div`
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    padding: 1rem;
-    z-index: 1;
-`;
-
 const ElipsesText = styled.div`
     line-height: 1;
     white-space: nowrap;
@@ -71,7 +80,7 @@ const ElipsesText = styled.div`
 `;
 
 const MainTitle = styled(ElipsesText)`
-    font-size: 2rem;
+    font-size: 1.7rem;
     margin-bottom: .4em;
 `;
 

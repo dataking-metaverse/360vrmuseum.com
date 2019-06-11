@@ -1,11 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 import {Link} from "react-router-dom";
-
-import Showcase from "../../models/Showcase";
-import {themeVar} from "../../styling/theme/functions";
 import {connect} from "react-redux";
 import * as R from "ramda";
+
+import ShowcasePoster from "~/components/ShowcasePoster";
+import Showcase from "~/models/Showcase";
+import {themeVar} from "~/styling/theme/functions";
 
 import type {Theme} from "styled-components";
 
@@ -69,7 +70,7 @@ function ShowcasePosterLink(props: Props) {
     return (
         <React.Fragment>
             <Root sidePadding={!fullWidth ? '1.6rem' : '0'}>
-                {React.createElement(showcase.generatePoster())}
+                <ShowcasePoster showcase={showcase} />
                 <ViewMoreLink to={showcase.route()}>{quickView}</ViewMoreLink>
             </Root>
         </React.Fragment>
