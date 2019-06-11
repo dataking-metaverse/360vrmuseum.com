@@ -48,7 +48,7 @@ return [
                 'TyFGiCLuof9', '4MbVUmwti9x', 'kcWsN7tZAXm', '3MrnWzKigNP', 'sdhXymhVog6',
                 'avWhh5K7Nop', 'kF3xE8edLEA', 'kkZGik7iLgm', 'o1ZhcnK9swd', 'V5jZZqo5CZg',
                 'w6M8mr9ArwV', 'aSYdPZg4Mu6', 'yDEtLE2KrWP', 'n4ik2CyQRWM', '3VzkdUcgjGM',
-                'CQVuaEc2Ug5',
+                'CQVuaEc2Ug5', 'QHhwyfbvgQM',
             ],
             'permanentExhibition' => [
                 'QkPtiaDjLbE', 'ft1emFLvBQA', 'BNTTf85YsMP', 'iPhH5vffSTt', 'RM2QnvzmjA3',
