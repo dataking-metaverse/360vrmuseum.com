@@ -110,6 +110,7 @@ export const Submit = styled.button`
     padding-top: 1rem;
     padding-bottom: 1rem;
     text-decoration: none;
+    margin-right: 4rem;
     border: none;
     font-size: 1em;
     font-family: inherit;
