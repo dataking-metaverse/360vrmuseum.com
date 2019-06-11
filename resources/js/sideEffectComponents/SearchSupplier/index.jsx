@@ -23,9 +23,11 @@ export default function SearchSupplier(props: Props) {
     const searchRoute = useRoute('search');
 
     const onSubmit = (event: Event) => {
-        const searchQuery = params({q: input});
-        pushRedirect(`${searchRoute}?${searchQuery}`);
-        props.onSubmitFinished(event);
+        if (input) {
+            const searchQuery = params({q: input});
+            pushRedirect(`${searchRoute}?${searchQuery}`);
+            props.onSubmitFinished(event);
+        }
     };
 
     const onInput = R.pipe(
