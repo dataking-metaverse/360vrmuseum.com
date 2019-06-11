@@ -824,6 +824,67 @@ return [
         "page_url" => "https://360vrmuseum.com/?page_id=2674"
     ],
     [
+        "mid" => "QHhwyfbvgQM",
+        "main_title" => "국립나주박물관: 풍요의 땅 전라 - 천년의 시간을 걷다",
+        "location" => "나주",
+        "presented_by" => "국립나주박물관",
+        "showcase_ref" => "http://naju.museum.go.kr/html/kr/exhibition/exhibition_030303.html?mode=V&mng_no=42",
+        "poster" => 'https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum-posters/QHhwyfbvgQM/thumb-470.jpg',
+        "thumbnail" => 'https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum-thumbnails/QHhwyfbvgQM/thumb-470.jpg',
+        "kor_title" => "풍요의 땅 전라-천년의 시간을 걷다",
+        "eng_title" => "Masterpieces of Jeolla",
+        "venue" => "국립나주박물관 기획전시실",
+        "map_address" => "전라남도 나주시 반남면 고분로 747 나주박물관",
+        "map_name" => "전라남도 나주시 반남면 고분로 747 국립나주박물관",
+        "description" => "전라도 문화의 정수를 담은 분야별 명품 문화재 소개\n\n전라도 정명 천년을 맞이하여 국보·보물 등 전라도 명품 문화재를 분야별로 소개하여 지역민의 문화향유권 확대 및 자긍심을 고취하려합니다.\n\n2018년 올해는 ‘전라도全羅道’라는 이름으로 불리운 지 천년이 되는 해입니다. 국립나주박물관은 이를 기념하여 특별전 “풍요의 땅 전라-천년의 시간을 걷다”를 마련하였습니다. 이번 전시는 전라도를 대표하는 명품 문화재를 모아 소개함으로써 그 속에 담긴 전라도 사람의 삶과 문화를 조명하고자 합니다.\n\n일찍이 전라도는 나라 살림을 떠받치는 풍요의 땅이었고, 이를 바탕으로 세계적인 고인돌 문화, 대형 독널(옹관甕棺) 문화, 미륵사지석탑의 사리장엄구에 보이는 섬세한 백제 문화, 9세기 경 선종 산문으로 보여주는 불교문화 등 풍성한 문화유산을 남겼습니다. 조선시대에는 전라도 사람들은 도의와 염치를 아는 사회를 만들기 위해 향악을 운영하였고, 이항李恒(1499-1576), 김인후金麟厚(1510-1560), 기대승奇大升(1527-1572) 같은 뛰어난 유학자를 배출하였습니다. 이와 같은 전라도 사람들이 이룬 성취는 문화 예술 분야에서 더욱 돋보였습니다. 익산 미륵사지 석탑의 사리장엄구, ‘천하제일’의 명품인 고려청자, 가사와 시조, 판소리, 남도회화南道繪畵는 전라도의 넓고 깊은 문화의 힘을 보여주고 있습니다.\n\n이번 전시가 명품 문화재를 통해 전라도의 역사와 문화를 돌아보고, 새로운 천년을 기약하는 계기가 되기를 기원합니다.",
+        "youtube_id" => null,
+        "list_of_images" => [
+            [
+                'original' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/QHhwyfbvgQM/M-Jeolla_001.jpg',
+                'thumb' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/QHhwyfbvgQM/M-Jeolla_001-thumb.jpg',
+            ],
+            [
+                'original' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/QHhwyfbvgQM/M-Jeolla_002.jpg',
+                'thumb' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/QHhwyfbvgQM/M-Jeolla_002-thumb.jpg',
+            ],
+            [
+                'original' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/QHhwyfbvgQM/M-Jeolla_003.jpg',
+                'thumb' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/QHhwyfbvgQM/M-Jeolla_003-thumb.jpg',
+            ],
+            [
+                'original' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/QHhwyfbvgQM/M-Jeolla_004.jpg',
+                'thumb' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/QHhwyfbvgQM/M-Jeolla_004-thumb.jpg',
+            ],
+            [
+                'original' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/QHhwyfbvgQM/M-Jeolla_005.jpg',
+                'thumb' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/QHhwyfbvgQM/M-Jeolla_005-thumb.jpg',
+            ],
+            [
+                'original' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/QHhwyfbvgQM/M-Jeolla_006.jpg',
+                'thumb' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/QHhwyfbvgQM/M-Jeolla_006-thumb.jpg',
+            ],
+            [
+                'original' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/QHhwyfbvgQM/M-Jeolla_007.jpg',
+                'thumb' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/QHhwyfbvgQM/M-Jeolla_007-thumb.jpg',
+            ],
+            [
+                'original' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/QHhwyfbvgQM/M-Jeolla_008.jpg',
+                'thumb' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/QHhwyfbvgQM/M-Jeolla_008-thumb.jpg',
+            ],
+            [
+                'original' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/QHhwyfbvgQM/M-Jeolla_009.jpg',
+                'thumb' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/QHhwyfbvgQM/M-Jeolla_009-thumb.jpg',
+            ],
+        ],
+        "guide_information" => "",
+        "is_paid" => false,
+        "is_conversation" => false,
+        "is_performing" => false,
+        "date" => "18.11.23 - 19.02.24",
+        "type" => "특별전시",
+        "page_url" => null,
+    ],
+    [
         "mid" => "o1ZhcnK9swd",
         "main_title" => "조선왕실 아기씨의 탄생\n나라의 복을 담은 태항아리",
         "location" => "서울",
