@@ -9,20 +9,17 @@ export const Root = styled.div`
 
 export const Row1 = styled.div`
 
-  ${media.sm`
+  ${media.lg`
         display: table;
         width: 100%;
-    
-        > * {
-            display: table-cell;
-        }
   `}
 `;
 
 Row1.Col1 = styled.div`
     //
 
-    ${media.sm`
+    ${media.lg`
+        display: table-cell;
         width: 39.6rem;
     `}
     
@@ -30,8 +27,9 @@ Row1.Col1 = styled.div`
 
 Row1.Col2 = styled.div`
     //
-    
-    ${media.sm`
+
+    ${media.lg`
+        display: table-cell;
         padding-left: 5.4rem;
     `}
 `;

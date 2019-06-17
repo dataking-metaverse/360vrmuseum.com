@@ -1,5 +1,4 @@
 import React from "react";
-import Slider from "react-slick";
 import * as R from "ramda";
 
 import {
@@ -13,6 +12,7 @@ import useTheme from "~/hooks/useTheme";
 import useLangPath from "~/hooks/useLangPath";
 import Showcase from "~/models/Showcase";
 import Poster from "./Poster";
+import Slider from "./Slider";
 
 import type {ElementType} from "react";
 
@@ -89,7 +89,7 @@ export default function ViewHistorySlider(props: Props) {
     return (
         <Root>
             <Inner>
-                {showSlides ? <Slider {...slickSettings}>{slides.splice(0, 4)}</Slider> : <EmptyMessage>{lang.empty}</EmptyMessage>}
+                {showSlides ? <Slider {...slickSettings}>{slides}</Slider> : <EmptyMessage>{lang.empty}</EmptyMessage>}
             </Inner>
         </Root>
     );

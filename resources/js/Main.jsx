@@ -1,12 +1,11 @@
 import React from "react";
-import {connect} from "react-redux";
 import {ThemeProvider} from "styled-components";
 import {GridThemeProvider} from "styled-bootstrap-grid";
 import {BaseCSS} from "styled-bootstrap-grid";
 
 import BasicOverridingStyle from "./styling/BasicOverridingStyle";
 import ThirdPartyOverridingStyle from "./styling/ThirdPartyOverridingStyle";
-// import DebugBreakpoints from "./styling/DebugBreakpoints";
+import DebugBreakpoints from "./styling/DebugBreakpoints";
 import theme from "./styling/theme";
 import gridTheme from "./styling/gridTheme";
 import BackToTopButton from "./components/BackToTopButton";
@@ -23,7 +22,7 @@ function StyleSheets() {
             <BaseCSS />
             <BasicOverridingStyle />
             <ThirdPartyOverridingStyle />
-            {/*<DebugBreakpoints />*/}
+            <DebugBreakpoints />
         </React.Fragment>
     );
 }

@@ -4,7 +4,10 @@ import * as R from "ramda";
 import {themeVar} from "../../../../styling/theme/functions";
 
 
-const width = 4.8;
+const lgWidth = 4.8;
+const lgWidthHalf = lgWidth / 2;
+
+const width = lgWidth / 2;
 const widthHalf = width / 2;
 
 const paddingX = R.always(6);
@@ -36,16 +39,30 @@ export const Inner = styled.div`
             background-position: 50% 50%;
             background-repeat: no-repeat;
             z-index: 1;
+            
+            ${media.lg`
+                width: ${lgWidth}rem;
+                height: ${lgWidth}rem;
+                margin-top: ${-lgWidthHalf}rem;
+            `}
         }
         
         > .slick-prev {
             left: ${-width}rem;
             background-image: url(${arrowLeft});
+            
+            ${media.lg`
+                left: ${-lgWidth}rem;
+            `}
         }
         
         > .slick-next {
             right: ${-width}rem;
             background-image: url(${arrowRight});
+            
+            ${media.lg`
+                right: ${-lgWidth}rem;
+            `}
         }
     }
 `;
