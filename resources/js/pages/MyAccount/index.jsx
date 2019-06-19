@@ -1,6 +1,5 @@
 import React from "react";
-import styled from "styled-components";
-import {Container, media} from "styled-bootstrap-grid";
+import {Container} from "styled-bootstrap-grid";
 import {Redirect} from "react-router";
 import * as R from "ramda";
 
@@ -15,12 +14,14 @@ import {
 } from "./styled";
 
 
-type Props = {|
-
-|};
+type Props = {|  |};
 
 
-const useHomeRoute = R.o(R.path(['app', 'routes', 'home']), useReduxState);
+const useHomeRoute = R.pipe(
+    R.always(undefined),
+    useReduxState,
+    R.path(['app', 'routes', 'home'])
+);
 
 function MyAccount(props: Props) {
     const {user} = useReduxState();
