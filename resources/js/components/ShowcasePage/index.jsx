@@ -1,6 +1,5 @@
 import React from "react";
 import * as R from "ramda";
-import {Container, Row, Col} from "styled-bootstrap-grid";
 
 import Showcase from "../../models/Showcase";
 import ShowcaseHelmet from "./ShowcaseHelmet";
@@ -18,7 +17,7 @@ type Props = {
     showcase: Showcase | void,
 };
 
-function ShowcasePage(props: Props) {
+export default function ShowcasePage(props: Props) {
     const {showcase} = props;
     return (
         <ShowcaseContext.Provider value={showcase}>
@@ -34,7 +33,3 @@ function ShowcasePage(props: Props) {
         </ShowcaseContext.Provider>
     );
 }
-
-export default R.compose(
-    R.identity
-)(ShowcasePage);
