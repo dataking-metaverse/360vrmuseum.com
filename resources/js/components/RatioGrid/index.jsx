@@ -13,10 +13,12 @@ type Props = {
 const Root = styled.div`
     position: relative;
     
-    &:after {
+    &:before {
         content: '';
+        position: relative;
         display: block;
         padding-bottom: ${R.prop('ratio')};
+        z-index: -1;
     }
 `;
 
@@ -38,4 +40,4 @@ export default function RatioGrid(props: Props) {
             </Inner>
         </Root>
     );
-}
+};
