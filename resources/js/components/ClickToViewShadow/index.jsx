@@ -46,7 +46,7 @@ const ClickToViewShadowStyled = styled.div`
     }
     
     &:hover:before {
-        opacity: .6;
+        opacity: 1;
     }
 `;
 
