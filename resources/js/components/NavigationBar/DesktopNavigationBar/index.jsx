@@ -16,9 +16,7 @@ import {
     RightCol,
 } from "./styled";
 
-type Props = {|
-
-|};
+type Props = {|  |};
 
 const useLogo = R.pipe(
     useReduxState,
