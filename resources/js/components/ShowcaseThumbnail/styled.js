@@ -38,6 +38,20 @@ export const Image = styled.div`
     background-image: url(${R.prop('src')});
     background-size: cover;
     background-position: 50% 50%;
+
+    &:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 50%;
+        background-image: linear-gradient(rgba(68, 68, 68, 0), rgb(68, 68, 68));
+    }
+
+    &:hover:after {
+        opacity: 0;
+    }
 `;
 
 const ElipsesText = styled.div`
