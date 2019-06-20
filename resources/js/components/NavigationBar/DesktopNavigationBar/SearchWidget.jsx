@@ -22,12 +22,12 @@ const Icon = styled(SearchSupplier.Icon)`
 `;
 
 const Input = styled(SearchSupplier.Input)`
-width: 16.3rem;
-line-height: 1;
-padding: 1.4rem 2.4rem;
-border: none;
-border-radius: .5rem;
-background-color: transparent;
+    width: 16.3rem;
+    line-height: 1;
+    padding: 1.4rem 2.4rem;
+    border: none;
+    border-radius: .5rem;
+    background-color: transparent;
 `;
 
 export default function SearchWidget(props: Props) {
