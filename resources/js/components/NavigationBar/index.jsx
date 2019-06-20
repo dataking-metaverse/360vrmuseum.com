@@ -30,4 +30,4 @@ export default function NavigationBar(props: Props) {
             </Mobile>
         </>
     );
-}
+};
