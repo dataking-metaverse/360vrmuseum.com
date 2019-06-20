@@ -26,9 +26,9 @@ type Props = {|
 
 type State = {|
     mounted: boolean,
-    email: string,
-    phone: string,
-    job: string,
+    email: ?string,
+    phone: ?string,
+    job: ?string,
 |};
 
 type SavableFormData = {|
@@ -38,6 +38,8 @@ type SavableFormData = {|
 |};
 
 const CardBodyInner = styled.form`
+    margin-left: 2.3rem;
+    margin-right: -2.3rem;
     
     ${media.sm`
         padding-left: 9.8rem;
@@ -59,6 +61,7 @@ export default class AccountInformationForm extends React.Component<Props, State
 
     state = {
         mounted: false,
+        email: null,
         phone: null,
         job: null,
     };
