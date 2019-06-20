@@ -1,10 +1,10 @@
 import React from "react";
 import {Container} from "styled-bootstrap-grid";
 import {Redirect} from "react-router";
-import * as R from "ramda";
 
 import page from "~/decorators/page";
 import useReduxState from "~/hooks/useReduxState";
+import useRoute from "~/hooks/useRoute";
 import AccountInformation from "./AccountInformation";
 import Suggestions from "./Suggestions";
 import ViewHistory from "./ViewHistory";
@@ -17,15 +17,9 @@ import {
 type Props = {|  |};
 
 
-const useHomeRoute = R.pipe(
-    R.always(undefined),
-    useReduxState,
-    R.path(['app', 'routes', 'home'])
-);
-
 function MyAccount(props: Props) {
     const {user} = useReduxState();
-    const homeRoute = useHomeRoute();
+    const homeRoute = useRoute('home');
     if (!user) { return (<Redirect to={homeRoute} />) }
     return (
         <Root>
