@@ -13,15 +13,14 @@ import {
     Subtitle,
 } from "./styled";
 
-type Props = {
+type Props = {|
     showcase: Showcase,
     ratio?: number,
-};
+|};
 
-type InnerProps = {
+type InnerProps = {|
     showcase: Showcase,
-    presentedByText: string,
-};
+|};
 
 const firstThumbnail = R.path<string | number, string>(['props', 'list_of_images', 0, 'thumb']);
 const mainTitle = R.invoker(1, 'getAttribute')('main_title');
@@ -45,7 +44,7 @@ function ShowcaseCardInner(props: InnerProps) {
             <Image src={firstThumbnail(showcase)} />
             <Text>
                 <MainTitle>{mainTitle(showcase)}</MainTitle>
-                <Subtitle>
+                <Subtitle>e
                     {presentedBy}
                 </Subtitle>
             </Text>
