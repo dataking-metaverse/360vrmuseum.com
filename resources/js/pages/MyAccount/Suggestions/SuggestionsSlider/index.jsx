@@ -2,15 +2,15 @@ import React from "react";
 import Slider from "react-slick";
 import * as R from "ramda";
 
-import Showcase from "~/models/Showcase";
 import useRoute from "~/hooks/useRoute";
 import useAxios from "~/hooks/useAxios";
+import Showcase from "~/models/Showcase";
+import gridTheme from "~/styling/gridTheme";
 import {
     Root,
     Inner,
     SlideWrap,
 } from "./styled";
-import gridTheme from "~/styling/gridTheme";
 
 type Props = {|
 
