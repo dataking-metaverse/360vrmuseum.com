@@ -38,6 +38,7 @@ type SavableFormData = {|
 |};
 
 const CardBodyInner = styled.form`
+    margin-left: 2.3rem;
     margin-right: -2.3rem;
     
     ${media.sm`
