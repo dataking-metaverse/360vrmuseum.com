@@ -7,14 +7,6 @@ import useLangPath from "~/hooks/useLangPath";
 type Props = {|  |};
 
 const Root = styled.div`
-    position: relative;
-    display: flex;
-    height: 100%;
-    align-items: center;
-    justify-content: center;
-`;
-
-const Flex = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
@@ -41,13 +33,11 @@ const Input = styled(SearchSupplier.Input)`
 export default function SearchWidget(props: Props) {
     const searchText = useLangPath(['common', 'search']);
     return (
-        <Root>
-            <SearchSupplier>
-                <Flex>
-                    <Icon />
-                    <Input placeholder={searchText} />
-                </Flex>
-            </SearchSupplier>
-        </Root>
+        <SearchSupplier>
+            <Root>
+                <Icon />
+                <Input placeholder={searchText} />
+            </Root>
+        </SearchSupplier>
     );
 };

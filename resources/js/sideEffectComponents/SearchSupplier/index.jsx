@@ -14,10 +14,11 @@ import type {Node} from "react";
 
 type Props = {|
     children: Node,
-    onSubmitFinished: (event: Event) => void,
+    onSubmitFinished?: (event: Event) => void,
 |};
 
 export default function SearchSupplier(props: Props) {
+    const {onSubmitFinished, children} = props;
     const pushRedirect = useReduxAction(pushRedirectAction);
     const [input, setInput] = useState<string>('');
     const searchRoute = useRoute('search');
@@ -26,7 +27,7 @@ export default function SearchSupplier(props: Props) {
         if (input) {
             const searchQuery = params({q: input});
             pushRedirect(`${searchRoute}?${searchQuery}`);
-            props.onSubmitFinished(event);
+            onSubmitFinished && onSubmitFinished(event);
         }
     };
 
@@ -40,7 +41,7 @@ export default function SearchSupplier(props: Props) {
 
     return (
         <Context.Provider value={{onSubmit, onInput}}>
-            {props.children}
+            {children}
         </Context.Provider>
     );
 };
