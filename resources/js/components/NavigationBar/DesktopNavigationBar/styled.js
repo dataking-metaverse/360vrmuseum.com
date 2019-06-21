@@ -47,6 +47,7 @@ export const Item = styled(Link)`
     margin-right: 4rem;
     color: #e5e5e5;
     text-decoration: none;
+    letter-spacing: normal;
     
     &:last-child {
         padding-right: 0;
