@@ -79,11 +79,10 @@ export const MyAccountItem = styled(Item)`
 export const LogoutForm = styled.form`
     position: absolute;
     display: block;
+    top: 100%;
+    left: 0;
     width: 100%;
     height: auto;
-    top: 100%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     background-color: gray;
 `;
 
@@ -108,8 +107,8 @@ export const Submit = styled.button`
     position: relative;
     width: 100%;
     align-items: center;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
     text-decoration: none;
     border: none;
     font-size: 1em;
