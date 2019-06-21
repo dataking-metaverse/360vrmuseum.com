@@ -107,8 +107,8 @@ export const Submit = styled.button`
     position: relative;
     width: 100%;
     align-items: center;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
     text-decoration: none;
     border: none;
     font-size: 1em;
