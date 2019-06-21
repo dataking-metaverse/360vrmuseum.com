@@ -69,7 +69,6 @@ const iconColor = R.ifElse(
 export default function SearchWidget(props: Props) {
     const [active,,, toggleActive] = useBooleanState(false);
     const searchText = useLangPath(['common', 'search']);
-    console.log('active', active);
     return (
             <Root active={active}>
                 <SearchSupplier>

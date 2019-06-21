@@ -44,12 +44,6 @@ export default R.compose(
     const onSubmit: (event: Event) => void = R.pipe<Event, void>(
         R.tap(R.invoker(0, 'preventDefault')),
         getFormData,
-        R.tap(prop => {
-            console.log([
-                R.prop('content')(prop),
-                R.pipe(R.prop('content'), countWords, R.gte(wordLimit))(prop),
-            ]);
-        }),
         R.when(
             R.allPass([
                 R.prop('content'),
