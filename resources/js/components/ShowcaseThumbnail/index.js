@@ -44,7 +44,7 @@ function ShowcaseCardInner(props: InnerProps) {
             <Image src={firstThumbnail(showcase)} />
             <Text>
                 <MainTitle>{mainTitle(showcase)}</MainTitle>
-                <Subtitle>e
+                <Subtitle>
                     {presentedBy}
                 </Subtitle>
             </Text>
