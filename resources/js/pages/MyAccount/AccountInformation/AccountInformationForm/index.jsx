@@ -41,8 +41,9 @@ const CardBodyInner = styled.form`
     margin-left: 2.3rem;
     margin-right: -2.3rem;
     
-    ${media.sm`
-        padding-left: 9.8rem;
+    ${media.lg`
+        margin-left: auto;
+        width: 29.5rem;
     `}
 `;
 
