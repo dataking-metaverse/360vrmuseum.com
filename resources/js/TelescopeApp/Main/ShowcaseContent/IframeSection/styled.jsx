@@ -18,3 +18,11 @@ export const Iframe = styled.iframe`
     width: 100%;
     height: ${height}rem;
 `;
+
+export const Placeholder = styled.div`
+    position: relative;
+    display: block;
+    margin-bottom: ${marginBottom}rem;
+    height: ${height}rem;
+    background-color: #666;
+`;
