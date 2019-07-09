@@ -14,7 +14,7 @@ import type {Showcase} from "../../../types";
 
 type Props = {|  |};
 
-const embedRoute: string = 'https://embed.360vrmuseum.com/showcase/:mid?autoplay=1&hl=2&mls=2';
+const embedRoute: string = 'https://embed.360vrmuseum.com/showcase/:mid?autoplay=1&hl=2';
 const makeEmbedRoute: (mid: string) => string = mid => embedRoute.replace(':mid', mid);
 const embedUrl: (showcase: Showcase) => string = R.o<Showcase, string, string>( makeEmbedRoute, R.prop<'mid', Showcase>('mid') );;
 
@@ -43,5 +43,5 @@ export default function IframeSection(props: Props) {
 
 
 
-    return <Iframe key={src} ref={iframeRef} src={src} allowFullScreen allow="vr" />;
+    return <Iframe key={src} ref={iframeRef} src={src} allow="vr" />;
 }
