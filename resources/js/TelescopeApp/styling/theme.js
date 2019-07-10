@@ -6,9 +6,15 @@ const themeRed = '#a73030';
 const themeRedText = '#a63333';
 const themeBlackText = '#414141';
 const lightGrey = '#d8d8d8';
+const black = '#414141';
 const buttonWidth = 4.8;
 
 const theme = {
+
+    colors: {
+        lightGrey,
+        black,
+    },
 
     // baisc
     font,
@@ -114,6 +120,13 @@ const theme = {
     header: {
         height: 9.9,
         marginBottom: 10,
+    },
+
+    // HR
+    hr: {
+        black,
+        lightGrey,
+        height: .4,
     },
 
     // Logo

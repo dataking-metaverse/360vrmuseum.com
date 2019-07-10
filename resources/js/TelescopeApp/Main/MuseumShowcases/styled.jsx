@@ -1,8 +1,7 @@
 import styled from "styled-components";
 import * as R from "ramda";
 
-import {topBorder} from "../../styling/mixins";
-import half from "../../functions/half";
+import half from "~/TelescopeApp/functions/half";
 
 const gutterWidth = R.path(['theme', 'showcasesGrid', 'gutterWidth']);
 const gutterWidthHalf = R.pipe(gutterWidth, half);
@@ -13,7 +12,6 @@ export const Root = styled.div`
     vertical-align: top;
     margin-left: ${gutterWidthHalf}rem;
     margin-right: ${gutterWidthHalf}rem;
-    ${topBorder}
 `;
 
 const nameFontSize = R.path(['theme', 'museumShowcases', 'name', 'fontSize']);
