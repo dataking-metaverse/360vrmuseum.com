@@ -126,7 +126,7 @@ const theme = {
     hr: {
         black,
         lightGrey,
-        height: .4,
+        height: .3,
     },
 
     // Logo

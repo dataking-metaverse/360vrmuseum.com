@@ -23,6 +23,7 @@ const ToggleButtonAbsolute = styled(ToggleButton)`
     position: absolute;
     top: 0;
     right: 0;
+    margin-top: .7rem;
 `;
 
 export default function MuseumShowcases(props: Props) {
