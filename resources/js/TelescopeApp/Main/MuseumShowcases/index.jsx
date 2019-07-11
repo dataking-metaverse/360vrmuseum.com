@@ -2,15 +2,16 @@ import React, {useState} from "react";
 import styled from "styled-components";
 import * as R from "ramda";
 
-import ToggleButton from "../../components/ToggleButton";
-import Collapsable from "../../components/Collapsable";
+import HR from "~/TelescopeApp/components/HR";
+import ToggleButton from "~/TelescopeApp/components/ToggleButton";
+import Collapsable from "~/TelescopeApp/components/Collapsable";
 import {
     Root,
     Name,
 } from "./styled";
 import ShowcasesGrid from "../ShowcasesGrid";
 
-import type {Showcases} from "../../types";
+import type {Showcases} from "~/TelescopeApp/types";
 
 
 type Props = {
@@ -28,6 +29,7 @@ export default function MuseumShowcases(props: Props) {
     const [open, setOpen] = useState<boolean>(true);
     return (
         <Root>
+            <HR.Black />
             <ToggleButtonAbsolute open={open} onClick={R.F} />
             <Name onClick={() => setOpen(!open)}>{props.name}</Name>
             <Collapsable open={open}>
