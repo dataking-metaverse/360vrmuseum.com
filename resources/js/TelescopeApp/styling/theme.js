@@ -36,18 +36,18 @@ const theme = {
     // ShowcaseMenu
     showcaseMenu: {
         widthFull: containerWidth,
-        widthCollapse: 30,
+        widthCollapse: 0,
     },
 
     // ShowcaseContent
     showcaseContent: {
-        width: 101.2,
+        width: containerWidth,
         closeButtonSection: {
             marginButtom: 6.2,
         },
         iframeSection: {
             backgroundColor: lightGrey,
-            height: 45,
+            height: 85.4,
             marginBottom: 5.8,
         },
         informationSection: {
