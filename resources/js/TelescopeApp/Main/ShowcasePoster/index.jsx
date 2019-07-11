@@ -3,7 +3,8 @@ import * as R from "ramda";
 
 import Scrollable from "../../components/Scrollable";
 import {
-    Root
+    Root,
+    Poster,
 } from "./styled";
 import ary from "../../functions/ary";
 import useShowcase from "../../hooks/useShowcase";
@@ -62,15 +63,17 @@ const ShowcasePoster: StatelessComponent<Props> = props => {
     }, [active, shouldUpdate]);
 
     return (
-        <Root
-            ref={rootRef}
-            src={showcase.poster}
-            active={active}
-            onClick={() => {
-                if (hasSameMid(showcase, activeShowcase)) { emptyShowcase(); }
-                else { updateShowcase(showcase); }
-            }}
-        />
+        <Root>
+            <Poster
+                ref={rootRef}
+                src={showcase.poster}
+                active={active}
+                onClick={() => {
+                    if (hasSameMid(showcase, activeShowcase)) { emptyShowcase(); }
+                    else { updateShowcase(showcase); }
+                }}
+            />
+        </Root>
     );
 };
 

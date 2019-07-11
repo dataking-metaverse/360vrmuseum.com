@@ -9,9 +9,7 @@ import MuseumShowcases from "../MuseumShowcases";
 import type {Node} from "react";
 import type {ShowcasesGroup} from "../../types";
 
-type Props = {|
-
-|};
+type Props = {|  |};
 
 
 export default function MuseumIndex(props: Props): Node {

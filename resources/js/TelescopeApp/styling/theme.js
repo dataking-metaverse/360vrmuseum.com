@@ -5,7 +5,7 @@ const containerWidth: number = 144.6;
 const themeRed = '#a73030';
 const themeRedText = '#a63333';
 const themeBlackText = '#414141';
-const lightGrey = '#d8d8d8';
+const lightGrey = '#d7d7d7';
 const black = '#414141';
 const buttonWidth = 4.8;
 
