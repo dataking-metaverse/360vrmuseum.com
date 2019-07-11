@@ -21,7 +21,7 @@ type Props = {|
 export default function ShowcaseMenu(props: Props) {
     const activeShowcase: Showcase = useShowcase();
     const updateMenuScrollableRef = useReduxAction(updateMenuScrollableRefAction);
-    const wideLayout: boolean = !activeShowcase;
+    const show: boolean = !activeShowcase;
     const menuScrollableRef = useRef();
 
     useEffect(() => {
@@ -29,7 +29,7 @@ export default function ShowcaseMenu(props: Props) {
     }, [menuScrollableRef]);
 
     return (
-        <Root wide={wideLayout}>
+        <Root show={show}>
             <Scrollable ref={menuScrollableRef}>
                 <Header>
                     <Logo src={scopeLogo} />

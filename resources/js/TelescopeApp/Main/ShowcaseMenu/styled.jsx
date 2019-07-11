@@ -7,7 +7,7 @@ import type {Theme} from "styled-components";
 const widthFull = R.path<string, number>(['theme', 'showcaseMenu', 'widthFull']);
 const widthCollapse = R.path<string, number>(['theme', 'showcaseMenu', 'widthCollapse']);
 const width = R.ifElse<[Theme], number, number>(
-    R.prop('wide'),
+    R.prop('show'),
     widthFull,
     widthCollapse
 );
