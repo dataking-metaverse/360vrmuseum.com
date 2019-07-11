@@ -1,19 +1,12 @@
 import styled from "styled-components";
 import * as R from "ramda";
 
-import type {Theme} from "styled-components";
 
-
-const widthFull = R.path<string, number>(['theme', 'showcaseMenu', 'widthFull']);
-const widthCollapse = R.path<string, number>(['theme', 'showcaseMenu', 'widthCollapse']);
-const width = R.ifElse<[Theme], number, number>(
-    R.prop('show'),
-    widthFull,
-    widthCollapse
-);
+const display = ({show}) => show ? 'block' : 'none';
 export const Root = styled.div`
+    display: ${display};
     height: 100vh;
-    width: ${width}rem;
+    margin: auto;
 `;
 
 const headerHeight = R.path(['theme', 'header', 'height']);

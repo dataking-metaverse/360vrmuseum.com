@@ -2,12 +2,7 @@ import styled from "styled-components";
 import * as R from "ramda";
 
 
-const width = R.path(['theme', 'showcaseContent', 'width']);
 export const Root = styled.div`
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: ${width}rem;
     height: 100vh;
 `;
 
