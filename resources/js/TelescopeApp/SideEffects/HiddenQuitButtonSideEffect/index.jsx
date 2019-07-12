@@ -38,11 +38,11 @@ function requestLeaveFullScreen() {
 function touchStackReducer(state: Array<string>, action) {
     let output = state;
     switch (action) {
-        case 'top-left': output = R.append('top-left', state).slice(-4);
-        case 'bottom-right': output = R.append('bottom-right', state).slice(-4);
+        case 'top-left': output = R.append('top-left', state).slice(-4); break;
+        case 'bottom-right': output = R.append('bottom-right', state).slice(-4); break;
         case 'empty': output = [];
     }
-    return state;
+    return output;
 }
 
 export default function HiddenQuitButtonSideEffect(props: Props) {
