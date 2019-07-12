@@ -17,17 +17,6 @@ function requestEnterFullScreen(element: Element) {
         element.msRequestFullscreen();
 }
 
-function requestLeaveFullScreen() {
-    if(document.exitFullscreen)
-        document.exitFullscreen();
-    else if(document.mozCancelFullScreen)
-        document.mozCancelFullScreen();
-    else if(document.webkitExitFullscreen)
-        document.webkitExitFullscreen();
-    else if(document.msExitFullscreen)
-        document.msExitFullscreen();
-}
-
 const Root = styled.div`
     position: absolute;
     display: flex;

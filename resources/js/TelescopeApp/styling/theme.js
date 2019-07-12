@@ -184,6 +184,10 @@ const theme = {
         color: lightGrey,
     },
 
+    zIndexes: {
+        quitFullScreenButton: 10000,
+    }
+
 };
 
 export default theme;
