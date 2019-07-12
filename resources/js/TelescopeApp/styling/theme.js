@@ -45,7 +45,6 @@ const theme = {
         },
         informationSection: {
             marginBottom: 6.8,
-            paddingLeft: 24.3,
             engTitle: {
                 color: themeRedText,
                 fontSize: 2.2,
@@ -174,8 +173,8 @@ const theme = {
     imageGrid: {
         gutterWidth: 4,
         image: {
-            width: 48.6,
-            height: 27.3,
+            width: 58,
+            height: 32.5,
         },
     },
 

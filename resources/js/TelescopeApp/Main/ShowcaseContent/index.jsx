@@ -11,6 +11,7 @@ import {
 } from "./styled";
 import CloseButtonSection from "./CloseButtonSection";
 import IframeSection from "./IframeSection";
+import InformationDivider from "./InformationDivider";
 import InformationSection from "./InformationSection";
 import ImagesSection from "./ImagesSection";
 import RelatedSection from "./RelatedSection";
@@ -50,12 +51,14 @@ export default function ShowcaseContent(props: Props): Node | null {
                     </Container>
                     <IframeSection />
                     <Container>
-                        <InformationSection />
-                        <ImagesSection />
+                        <InformationDivider>
+                            <ImagesSection />
+                            <InformationSection />
+                        </InformationDivider>
                         <RelatedSection />
                     </Container>
                 </Content>
             </Scrollable>
         </Root>
     );
-}
+};
