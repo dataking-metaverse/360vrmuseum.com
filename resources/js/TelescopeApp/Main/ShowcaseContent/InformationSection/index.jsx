@@ -1,5 +1,9 @@
 import React from "react";
 
+import HR from "../../../components/HR";
+import useShowcase from "../../../hooks/useShowcase";
+import LocationInformation from "./LocationInformation";
+import YouTubeVideo from "./YouTubeVideo";
 import {
     Root,
     EngTitle,
@@ -18,7 +22,6 @@ import {
     AdditionalInformationTitle,
     AdditionalInformation,
 } from "./styled";
-import useShowcase from "../../../hooks/useShowcase";
 
 import type {Node} from "react";
 import type {Showcase} from "../../../types";
@@ -30,6 +33,7 @@ type Props = {|
 export default function InformationSection(props: Props): Node {
     const showcase: Showcase = useShowcase();
     const {statistics} = showcase;
+    console.log('statistics', showcase);
     return (
         <Root>
             <EngTitle>{showcase.eng_title}</EngTitle>
@@ -52,6 +56,11 @@ export default function InformationSection(props: Props): Node {
             <Description>{showcase.description}</Description>
             <AdditionalInformationTitle>전시 연계 프로그램</AdditionalInformationTitle>
             <AdditionalInformation dangerouslySetInnerHTML={{__html: showcase.guide_information}} />
+            <br /><br /><br />
+            <HR.LightGrey />
+            <br />
+            <LocationInformation address={showcase.map_address} />
+            <YouTubeVideo id={showcase.youtube_id} />
         </Root>
     );
 }

@@ -11,13 +11,13 @@ import {
 } from "./styled";
 import CloseButtonSection from "./CloseButtonSection";
 import IframeSection from "./IframeSection";
+import InformationDivider from "./InformationDivider";
 import InformationSection from "./InformationSection";
 import ImagesSection from "./ImagesSection";
 import RelatedSection from "./RelatedSection";
 
 import type {Node} from "react";
 import type {Showcase, ReactRef} from "../../types";
-import Footer from "../Footer";
 
 type Props = {|  |};
 
@@ -51,8 +51,12 @@ export default function ShowcaseContent(props: Props): Node | null {
                     </Container>
                     <IframeSection />
                     <Container>
-                        <InformationSection />
-                        <ImagesSection />
+                        <InformationDivider>
+                            <ImagesSection />
+                            <InformationSection />
+                        </InformationDivider>
+                        <HR.LightGrey />
+                        <br />
                         <RelatedSection />
                         <Footer />
                     </Container>
@@ -60,4 +64,4 @@ export default function ShowcaseContent(props: Props): Node | null {
             </Scrollable>
         </Root>
     );
-}
+};

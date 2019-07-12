@@ -3,7 +3,7 @@ import * as R from "ramda";
 import styled from "styled-components";
 
 import SectionTitle from "../../../components/SectionTitle";
-import ImageGrid, {Image} from "../../../components/ImageGrid";
+import ImageGrid, {Image as GridImage} from "../../../components/ImageGrid";
 import useRelatedShowcases from "../../../hooks/useRelatedShowcases";
 import useReduxAction from "../../../hooks/useReduxAction";
 
@@ -17,6 +17,11 @@ type ShowcaseThumbLinksProps = {|  |};
 const paddingBottom = R.path(['theme', 'showcaseContent', 'relatedSection', 'paddingBottom']);
 const Root = styled.div`
     padding-bottom: ${paddingBottom}rem;
+`;
+
+const Image = styled(GridImage)`
+    width: 45rem;
+    height: 25.1rem;
 `;
 
 function ShowcaseThumbLinks(props: ShowcaseThumbLinksProps) {
