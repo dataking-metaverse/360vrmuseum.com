@@ -2,6 +2,8 @@ import React, {useEffect, useRef} from "react";
 import * as R from "ramda";
 
 import useShowcase from "../../hooks/useShowcase";
+import HR from "../../components/HR";
+import Container from "../../components/Container";
 import Scrollable from "../../components/Scrollable";
 import {
     Root,
@@ -42,11 +44,16 @@ export default function ShowcaseContent(props: Props): Node | null {
         <Root>
             <Scrollable ref={scrollableRef}>
                 <Content>
-                    <CloseButtonSection />
+                    <Container>
+                        <HR.Black />
+                        <CloseButtonSection />
+                    </Container>
                     <IframeSection />
-                    <InformationSection />
-                    <ImagesSection />
-                    <RelatedSection />
+                    <Container>
+                        <InformationSection />
+                        <ImagesSection />
+                        <RelatedSection />
+                    </Container>
                 </Content>
             </Scrollable>
         </Root>

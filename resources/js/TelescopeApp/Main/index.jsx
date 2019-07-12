@@ -16,11 +16,9 @@ type Props = {|
 export default function Main(props: Props) {
     return (
         <Root>
-            <Container>
-                <ShowcaseMenu />
-                <ShowcaseContent />
-                <ImageLightBox />
-            </Container>
+            <ShowcaseMenu />
+            <ShowcaseContent />
+            <ImageLightBox />
         </Root>
     );
 };

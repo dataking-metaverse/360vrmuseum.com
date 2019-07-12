@@ -3,6 +3,7 @@ import React, {useEffect, useRef} from "react";
 import {updateMenuScrollableRef as updateMenuScrollableRefAction} from "../../redux/actionCreators";
 import {scopeLogo} from "../../assets";
 import useShowcase from "../../hooks/useShowcase";
+import Container from "../../components/Container";
 import Scrollable from "../../components/Scrollable";
 import MuseumIndex from "../MuseumIndex";
 import {
@@ -30,12 +31,14 @@ export default function ShowcaseMenu(props: Props) {
 
     return (
         <Root show={show}>
-            <Scrollable ref={menuScrollableRef}>
-                <Header>
-                    <Logo src={scopeLogo} />
-                </Header>
-                <MuseumIndex />
-            </Scrollable>
+            <Container>
+                <Scrollable ref={menuScrollableRef}>
+                    <Header>
+                        <Logo src={scopeLogo} />
+                    </Header>
+                    <MuseumIndex />
+                </Scrollable>
+            </Container>
         </Root>
     );
 }

@@ -33,15 +33,8 @@ const theme = {
         height,
     },
 
-    // ShowcaseMenu
-    showcaseMenu: {
-        widthFull: containerWidth,
-        widthCollapse: 0,
-    },
-
     // ShowcaseContent
     showcaseContent: {
-        width: containerWidth,
         closeButtonSection: {
             marginButtom: 6.2,
         },
