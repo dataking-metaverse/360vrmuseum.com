@@ -5,7 +5,6 @@ import useShowcase from "../../hooks/useShowcase";
 import HR from "../../components/HR";
 import Container from "../../components/Container";
 import Scrollable from "../../components/Scrollable";
-import HR from "../../components/HR";
 import {
     Root,
     Content,
