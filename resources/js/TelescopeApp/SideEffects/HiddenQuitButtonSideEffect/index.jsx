@@ -36,11 +36,11 @@ function requestLeaveFullScreen() {
 }
 
 function touchStackReducer(state: Array<string>, action) {
-    console.log(action);
+    let output = state;
     switch (action) {
-        case 'top-left': return R.append('top-left', state);
-        case 'bottom-right': return R.append('bottom-right', state);
-        case 'empty': return [];
+        case 'top-left': output = R.append('top-left', state).slice(-4);
+        case 'bottom-right': output = R.append('bottom-right', state).slice(-4);
+        case 'empty': output = [];
     }
     return state;
 }
