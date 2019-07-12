@@ -17,6 +17,7 @@ import RelatedSection from "./RelatedSection";
 
 import type {Node} from "react";
 import type {Showcase, ReactRef} from "../../types";
+import Footer from "../Footer";
 
 type Props = {|  |};
 
@@ -53,6 +54,7 @@ export default function ShowcaseContent(props: Props): Node | null {
                         <InformationSection />
                         <ImagesSection />
                         <RelatedSection />
+                        <Footer />
                     </Container>
                 </Content>
             </Scrollable>
