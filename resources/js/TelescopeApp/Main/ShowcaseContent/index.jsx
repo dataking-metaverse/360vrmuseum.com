@@ -18,6 +18,7 @@ import RelatedSection from "./RelatedSection";
 
 import type {Node} from "react";
 import type {Showcase, ReactRef} from "../../types";
+import YouTubeVideo from "./InformationSection/YouTubeVideo";
 
 type Props = {|  |};
 
@@ -55,6 +56,8 @@ export default function ShowcaseContent(props: Props): Node | null {
                             <ImagesSection />
                             <InformationSection />
                         </InformationDivider>
+                        <HR.LightGrey />
+                        <br />
                         <RelatedSection />
                     </Container>
                 </Content>
