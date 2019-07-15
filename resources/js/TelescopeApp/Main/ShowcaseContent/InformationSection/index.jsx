@@ -33,7 +33,6 @@ type Props = {|
 export default function InformationSection(props: Props): Node {
     const showcase: Showcase = useShowcase();
     const {statistics} = showcase;
-    console.log('statistics', showcase);
     return (
         <Root>
             <EngTitle>{showcase.eng_title}</EngTitle>
