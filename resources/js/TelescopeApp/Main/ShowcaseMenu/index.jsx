@@ -14,6 +14,8 @@ import {
 
 import type {Showcase} from "../../types";
 import useReduxAction from "../../hooks/useReduxAction";
+import ShowcaseContent from "../ShowcaseContent";
+import Footer from "../Footer";
 
 type Props = {|
 
@@ -37,6 +39,7 @@ export default function ShowcaseMenu(props: Props) {
                         <Logo src={scopeLogo} />
                     </Header>
                     <MuseumIndex />
+                    <Footer />
                 </Scrollable>
             </Container>
         </Root>

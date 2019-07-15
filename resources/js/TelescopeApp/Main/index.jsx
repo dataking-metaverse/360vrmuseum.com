@@ -5,7 +5,6 @@ import ShowcaseContent from "./ShowcaseContent";
 import ImageLightBox from "./ImageLightBox";
 import {
     Root,
-    Container,
 } from "./styled";
 
 
