@@ -22,6 +22,7 @@ import {Header, Logo} from "../ShowcaseMenu/styled";
 import {scopeLogo} from "../../assets";
 import useReduxAction from "../../hooks/useReduxAction";
 import {emptyShowcase as emptyShowcaseAction} from "../../redux/actionCreators";
+import Footer from "../Footer";
 
 type Props = {|  |};
 
