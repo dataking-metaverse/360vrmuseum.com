@@ -5,7 +5,6 @@ import styled from "styled-components";
 
 const attr = R.pipe<string, Array<string>, number>(
     R.append<string>(R.__, ['theme', 'hr']),
-    R.tap(console.log),
     R.path,
 );
 

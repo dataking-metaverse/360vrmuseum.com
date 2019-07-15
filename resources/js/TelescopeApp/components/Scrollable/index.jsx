@@ -91,6 +91,16 @@ export default class Scrollable extends React.Component<Props> {
         R.always(undefined)
     );
 
+    disableHorizontalScrolling = (event: MouseEvent) => { event.target.scrollLeft = 0; };
+
+    componentDidMount() {
+        if (this.rootRef.current) { this.rootRef.current.addEventListener('scroll', this.disableHorizontalScrolling); }
+    }
+
+    componentWillUnmount() {
+        if (this.rootRef.current) { this.rootRef.current.removeEventListener('scroll', this.disableHorizontalScrolling); }
+    }
+
     render() {
         return (
             <Root ref={this.rootRef}>
