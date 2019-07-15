@@ -18,6 +18,10 @@ import RelatedSection from "./RelatedSection";
 
 import type {Node} from "react";
 import type {Showcase, ReactRef} from "../../types";
+import {Header, Logo} from "../ShowcaseMenu/styled";
+import {scopeLogo} from "../../assets";
+import useReduxAction from "../../hooks/useReduxAction";
+import {emptyShowcase as emptyShowcaseAction} from "../../redux/actionCreators";
 
 type Props = {|  |};
 
@@ -35,6 +39,7 @@ const jumpToTop = R.pipe<[ScrollableRef], null, ?Scrollable, any>(
 export default function ShowcaseContent(props: Props): Node | null {
     const showcase: Showcase = useShowcase();
     const scrollableRef: ScrollableRef = useRef(null);
+    const emptyShowcase = useReduxAction(emptyShowcaseAction);
 
     useEffect(() => {
         jumpToTop(scrollableRef);
@@ -46,6 +51,12 @@ export default function ShowcaseContent(props: Props): Node | null {
             <Scrollable ref={scrollableRef}>
                 <Content>
                     <Container>
+                        <Header>
+                            <Logo
+                                src={scopeLogo}
+                                onClick={emptyShowcase}
+                            />
+                        </Header>
                         <HR.Black />
                         <CloseButtonSection />
                     </Container>
