@@ -52,17 +52,19 @@ const getColorSet = (theme: Theme) => (type: string): ButtonColorSet => {
             primary: {backgroundColor: 'white', border: 'darkerPurple', color: 'darkerPurple'},
             secondary: {backgroundColor: 'darkerPurple', border: 'darkerPurple', color: 'white'},
             whiteBorder: {backgroundColor: 'darkerPurple', border: 'white', color: 'white'},
-            default: {backgroundColor: 'white', border: 'darkerPurple', color: 'darkerPurple'},
         }),
+        R.when(R.isNil, R.always({backgroundColor: 'white', border: 'darkerPurple', color: 'darkerPurple'})),
         R.mapObjIndexed(color),
     )(type);
 };
 
-const getButtonComponent: (size: string) => ComponentType = size => ({
-    small: Small,
-    normal: Normal,
-    default: Normal,
-})[size];
+const getButtonComponent: (size: string) => ComponentType = R.pipe(
+    R.prop(R.__, {
+        small: Small,
+        normal: Normal,
+    }),
+    R.when(R.isNil, R.always(Normal))
+);
 
 function Button(props: Props) {
     const colorSet: ButtonColorSet = getColorSet(props.theme)(props.type);
