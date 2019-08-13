@@ -1,7 +1,13 @@
 {
     "presets": [
         ["@babel/preset-flow", { "all": true }],
-        ["@babel/preset-env", { "targets": "> 0.25%, not dead"}]
+        ["@babel/preset-env", {
+            "targets": {
+                "chrome": "58",
+                "ie": "10"
+            },
+            "forceAllTransforms": true
+        }]
     ],
     "plugins": [
         ["@babel/plugin-proposal-decorators", { "legacy": true }],

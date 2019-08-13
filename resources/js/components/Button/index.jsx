@@ -1,7 +1,6 @@
 import React from "react";
 import styled, {withTheme} from "styled-components";
 import * as R from "ramda";
-import switchcase from "switchcase";
 
 import type {Node, ComponentType} from "react";
 import type {Theme} from "styled-components";
@@ -49,7 +48,7 @@ const getColorSet = (theme: Theme) => (type: string): ButtonColorSet => {
     const color = name => R.path<string, string>(['variables', 'colors', 'basic', name], theme);
 
     return R.pipe(
-        switchcase({
+        R.prop(R.__, {
             primary: {backgroundColor: 'white', border: 'darkerPurple', color: 'darkerPurple'},
             secondary: {backgroundColor: 'darkerPurple', border: 'darkerPurple', color: 'white'},
             whiteBorder: {backgroundColor: 'darkerPurple', border: 'white', color: 'white'},
@@ -59,11 +58,11 @@ const getColorSet = (theme: Theme) => (type: string): ButtonColorSet => {
     )(type);
 };
 
-const getButtonComponent: (size: string) => ComponentType = switchcase({
+const getButtonComponent: (size: string) => ComponentType = size => ({
     small: Small,
     normal: Normal,
     default: Normal,
-});
+})[size];
 
 function Button(props: Props) {
     const colorSet: ButtonColorSet = getColorSet(props.theme)(props.type);

@@ -43,5 +43,5 @@ export default function IframeSection(props: Props) {
 
 
 
-    return <Iframe key={src} ref={iframeRef} src={src} allow="vr" />;
+    return <Iframe key={src} ref={iframeRef} src={src} allow="vr" allowFullScreen />;
 }
