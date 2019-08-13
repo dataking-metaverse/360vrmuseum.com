@@ -19,12 +19,29 @@ const rootAttr = name => R.pipe(
 const duration = R.prop('duration');
 const delay = R.prop('delay');
 
+function isIE() {
+    if (typeof window === 'undefined') { return true; }
+    var ua = window.navigator.userAgent;
+    var msie = ua.indexOf("MSIE ");
+    return !!(msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./));
+}
+
+
+
+
+
+
 const faded = (component: ComponentType<any>) => (...styledProps) => {
+
+    if (isIE()) {
+        return styled(styled[component](...styledProps))``;
+    }
+
     const Component = styled(styled[component](...styledProps))`
     opacity: 0;
     transform: translateY(3rem);
     transition-property: opacity, transform;
-    
+
     &.${FadeComponent.className.enterDone} {
         opacity: 1;
         transform: translateY(0);
