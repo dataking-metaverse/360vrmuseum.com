@@ -2138,5 +2138,67 @@ return [
         "date" => "상시",
         "type" => "상설전시",
         "page_url" => "https://360vrmuseum.com/?page_id=3540"
-    ]
+    ],
+    [
+        "mid" => "s7Zcy87gkns",
+        "main_title" => "고대의 빛깔, 옻칠",
+        "location" => "진주",
+        "presented_by" => "국립김해박물관",
+        "showcase_ref" => "http://gimhae.museum.go.kr/index.php",
+        "poster" => 'https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum-posters/s7Zcy87gkns/18.Poster%20Image.jpg',
+        "thumbnail" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum-thumbnails/s7Zcy87gkns/1.Thumbnail%20Image-470.jpg",
+        "kor_title" => "고대의 빛깔, 옻칠",
+        "eng_title" => "Ottchil the Color and Light of Ancient Artifacts",
+        "venue" => "국립진주박물관",
+        "map_address" => "경남 김해시 가야의길 190 국립김해박물관",
+        "map_name" => "경남 김해시 가야의길 190 국립김해박물관",
+        "description" => "“옻칠이 무엇인지 아시나요?” 묻는 질문에 많은 사람들이 “옻칠? 그게 뭐죠?” 라고 답했다.\n\n옻칠은 수천 년 동안 인류가 사용한 가장 오래된 천연도료이다. 지금의 페인트와 비슷한 기능이 있는 옻칠은 물건에 윤기와 광택을 내고, 내구성을 좋게 하는 기능을 하였다. 사실상 옻칠은 자연에서 얻을 수 있는 가장 좋은 도료이다. 그러나 우리는 이런 옻칠에 대해 그다지 궁금해 하지 않았다. 옻칠을 언제부터 사용하였는지, 언제부터 우리의 삶에 스며들었는지 관심이 없었다. 특히 고대의 옻칠은 더욱 그러했다. 우리는 이와 같은 의문에서 우리나라 고대 옻칠 문화를 밝혀 보고 싶었다.\n\n국립김해박물관은 특별전 ‘고대의 빛깔, 옻칠’(2019.6.25.~9.29.)을 개최했다. 우리나라 고대 옻칠을 소재로 한 이번 전시에는 무령왕릉 왕비 베개 봉황장식 국보 제164호, 통일신라 청동 옻칠 발걸이 보물 제1151호, 고려 나전경함 보물 제1975호등 옻칠 문화를 대표하는 국가지정문화재 3점 등 약 280여점이 전시되었다.\n\n전시는 총 4부로 구성하였다. <1부: 옻칠은 무엇일까>에서는 옻나무, 옻칠도구, 옻칠 제작 방법 등을 소개한다. <2부: 우리나라 옻칠의 역사>는 선사부터 통일신라까지 시대별 옻칠 문화재의 특징과 변화를 살펴본다. 우리나라에서 가장 오래된 옻칠 흔적인 여수 적량동 비파형동검과 아름다운 흑칠기인 창원 다호리유적의 굽다리접시, 낙랑 칠기 등을 소개한다. 아름다운 고대 옻칠 전시품 8점을 한 공간에 전시하여 고대 옻칠 문화재를 감상하도록 조성하였다. <3부: 사람의 삶에 깃든 옻칠>에서는 오래 전부터 인간의 삶에 뿌리내리고 있던 옻칠 문화를 소개한다. 옻칠은 일상생활 그릇뿐 아니라 전쟁 무기와 제사 그릇에도 사용되었다. 우리에게 멀게만 느껴졌던 옻칠이지만 항상 우리의 삶 가까이에 옻칠을 사용하고 있었다는 것을 조명한다. <4부: 고려와 조선시대의 옻칠>에서는 고대 옻칠 문화가 고려~조선시대 옻칠로 계승되었음을 소개한다.\n\n이번 전시가 국민들이 우리나라 옻칠 문화에 관심과 흥미를 갖게 하는 계기가 되길 바란다. 올 여름 고대 옻칠 문화재를 한 눈에 확인할 수 있는 국립김해박물관을 방문해 우리나라 옻칠 문화를 보고, 만지고, 체험하는 시간을 갖는건 어떨까?",
+        "youtube_id" => null,
+        "list_of_images" => [
+            [
+                'original' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/s7Zcy87gkns/15.Showcase%20Image2.jpg',
+                'thumb' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/s7Zcy87gkns/15.Showcase%20Image2d',
+            ],
+            [
+                'original' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/s7Zcy87gkns/15.Showcase%20Image3.jpg',
+                'thumb' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/s7Zcy87gkns/15.Showcase%20Image3d',
+            ],
+            [
+                'original' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/s7Zcy87gkns/15.Showcase%20Image4.jpg',
+                'thumb' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/s7Zcy87gkns/15.Showcase%20Image4d',
+            ],
+            [
+                'original' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/s7Zcy87gkns/15.Showcase%20Image5.jpg',
+                'thumb' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/s7Zcy87gkns/15.Showcase%20Image5d',
+            ],
+            [
+                'original' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/s7Zcy87gkns/15.Showcase%20Image6.jpg',
+                'thumb' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/s7Zcy87gkns/15.Showcase%20Image6d',
+            ],
+            [
+                'original' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/s7Zcy87gkns/15.Showcase%20Image7.jpg',
+                'thumb' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/s7Zcy87gkns/15.Showcase%20Image7d',
+            ],
+            [
+                'original' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/s7Zcy87gkns/15.Showcase%20Image8.jpg',
+                'thumb' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/s7Zcy87gkns/15.Showcase%20Image8d',
+            ],
+            [
+                'original' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/s7Zcy87gkns/15.Showcase%20Image9.jpg',
+                'thumb' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/s7Zcy87gkns/15.Showcase%20Image9d',
+            ],
+            [
+                'original' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/s7Zcy87gkns/15.Showcase%20Image.jpg',
+                'thumb' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/s7Zcy87gkns/15.Showcase%20Imaged',
+            ],
+
+        ],
+        "guide_information" => "2019년 특별전 <고대의 빛깔, 옻칠> 연계 공개강연 안내\n\n1. 운영 게요\nㅇ 일 시: 2019.8.22.(목)/ 8.29.(목)/ 9.5.(목)/ 9.19.(목), 14:00~16:00(2시간)\nㅇ 대 상: 누구나\nㅇ 인 원: 200명\nㅇ 횟 수: 4회\nㅇ 장 소: 국립김해박물관 강당\nㅇ 접수방법: 당일 현장접수(선착순 마감)\nㅇ 주제 및 강사\n\n2019.8.22.(목)\n옻칠의 고고학\n(광주 신창동 유적을 중심으로)\n조현종\n(前 국립광주박물관장)\n\n2019.8.29.(목)\n빛의 예술 - 한국의 나전칠기\n황지현\n(국립중앙박물관 학예연구관)\n\n2019.9.5.(목)\n자연 속 천연 예술 옻칠\n김성수\n(통영옻칠미술관장)\n\n2019.9.19.(목)\n다호리 유적 칠기\n이건무\n(前 국립중앙박물관장)",
+        "is_paid" => false,
+        "is_conversation" => true,
+        "is_performing" => false,
+        "date" => "2019-06-25 ~ 2019-09-29",
+        "type" => "특별전시",
+        "page_url" => "https://360vrmuseum.com/?page_id=3540"
+    ],
 ];
