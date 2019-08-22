@@ -2157,39 +2157,39 @@ return [
         "list_of_images" => [
             [
                 'original' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/s7Zcy87gkns/15.Showcase%20Image2.jpg',
-                'thumb' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/s7Zcy87gkns/15.Showcase%20Image2d',
+                'thumb' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/s7Zcy87gkns/15.Showcase%20Image2-thumb.jpg',
             ],
             [
                 'original' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/s7Zcy87gkns/15.Showcase%20Image3.jpg',
-                'thumb' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/s7Zcy87gkns/15.Showcase%20Image3d',
+                'thumb' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/s7Zcy87gkns/15.Showcase%20Image3-thumb.jpg',
             ],
             [
                 'original' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/s7Zcy87gkns/15.Showcase%20Image4.jpg',
-                'thumb' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/s7Zcy87gkns/15.Showcase%20Image4d',
+                'thumb' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/s7Zcy87gkns/15.Showcase%20Image4-thumb.jpg',
             ],
             [
                 'original' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/s7Zcy87gkns/15.Showcase%20Image5.jpg',
-                'thumb' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/s7Zcy87gkns/15.Showcase%20Image5d',
+                'thumb' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/s7Zcy87gkns/15.Showcase%20Image5-thumb.jpg',
             ],
             [
                 'original' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/s7Zcy87gkns/15.Showcase%20Image6.jpg',
-                'thumb' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/s7Zcy87gkns/15.Showcase%20Image6d',
+                'thumb' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/s7Zcy87gkns/15.Showcase%20Image6-thumb.jpg',
             ],
             [
                 'original' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/s7Zcy87gkns/15.Showcase%20Image7.jpg',
-                'thumb' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/s7Zcy87gkns/15.Showcase%20Image7d',
+                'thumb' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/s7Zcy87gkns/15.Showcase%20Image7-thumb.jpg',
             ],
             [
                 'original' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/s7Zcy87gkns/15.Showcase%20Image8.jpg',
-                'thumb' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/s7Zcy87gkns/15.Showcase%20Image8d',
+                'thumb' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/s7Zcy87gkns/15.Showcase%20Image8-thumb.jpg',
             ],
             [
                 'original' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/s7Zcy87gkns/15.Showcase%20Image9.jpg',
-                'thumb' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/s7Zcy87gkns/15.Showcase%20Image9d',
+                'thumb' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/s7Zcy87gkns/15.Showcase%20Image9-thumb.jpg',
             ],
             [
                 'original' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/s7Zcy87gkns/15.Showcase%20Image.jpg',
-                'thumb' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/s7Zcy87gkns/15.Showcase%20Imaged',
+                'thumb' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/s7Zcy87gkns/15.Showcase%20Image-thumb.jpg',
             ],
 
         ],
@@ -2197,7 +2197,7 @@ return [
         "is_paid" => false,
         "is_conversation" => true,
         "is_performing" => false,
-        "date" => "2019-06-25 ~ 2019-09-29",
+        "date" => "19.06.25 - 19.09.29",
         "type" => "특별전시",
         "page_url" => null,
     ],
@@ -2260,7 +2260,7 @@ return [
         "is_paid" => false,
         "is_conversation" => true,
         "is_performing" => false,
-        "date" => "2019-06-25 ~ 2019-09-29",
+        "date" => "19.06.25 - 19.09.29",
         "type" => "특별전시",
         "page_url" => null,
     ],
@@ -2321,7 +2321,7 @@ return [
         "is_paid" => false,
         "is_conversation" => false,
         "is_performing" => false,
-        "date" => "2019-03-18 ~ 2019-06-16",
+        "date" => "19.03.18 - 19.06.16",
         "type" => "특별전시",
         "page_url" => null,
     ],
