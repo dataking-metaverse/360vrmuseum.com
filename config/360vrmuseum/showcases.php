@@ -2138,5 +2138,191 @@ return [
         "date" => "상시",
         "type" => "상설전시",
         "page_url" => "https://360vrmuseum.com/?page_id=3540"
-    ]
+    ],
+    [
+        "mid" => "s7Zcy87gkns",
+        "main_title" => "고대의 빛깔, 옻칠",
+        "location" => "김해",
+        "presented_by" => "국립김해박물관",
+        "showcase_ref" => "http://gimhae.museum.go.kr/index.php",
+        "poster" => 'https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum-posters/s7Zcy87gkns/18.Poster%20Image.jpg',
+        "thumbnail" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum-thumbnails/s7Zcy87gkns/1.Thumbnail%20Image-470.jpg",
+        "kor_title" => "고대의 빛깔, 옻칠",
+        "eng_title" => "Ottchil the Color and Light of Ancient Artifacts",
+        "venue" => "국립진주박물관",
+        "map_address" => "경남 김해시 가야의길 190 국립김해박물관",
+        "map_name" => "경남 김해시 가야의길 190 국립김해박물관",
+        "description" => "“옻칠이 무엇인지 아시나요?” 묻는 질문에 많은 사람들이 “옻칠? 그게 뭐죠?” 라고 답했다.\n\n옻칠은 수천 년 동안 인류가 사용한 가장 오래된 천연도료이다. 지금의 페인트와 비슷한 기능이 있는 옻칠은 물건에 윤기와 광택을 내고, 내구성을 좋게 하는 기능을 하였다. 사실상 옻칠은 자연에서 얻을 수 있는 가장 좋은 도료이다. 그러나 우리는 이런 옻칠에 대해 그다지 궁금해 하지 않았다. 옻칠을 언제부터 사용하였는지, 언제부터 우리의 삶에 스며들었는지 관심이 없었다. 특히 고대의 옻칠은 더욱 그러했다. 우리는 이와 같은 의문에서 우리나라 고대 옻칠 문화를 밝혀 보고 싶었다.\n\n국립김해박물관은 특별전 ‘고대의 빛깔, 옻칠’(2019.6.25.~9.29.)을 개최했다. 우리나라 고대 옻칠을 소재로 한 이번 전시에는 무령왕릉 왕비 베개 봉황장식 국보 제164호, 통일신라 청동 옻칠 발걸이 보물 제1151호, 고려 나전경함 보물 제1975호등 옻칠 문화를 대표하는 국가지정문화재 3점 등 약 280여점이 전시되었다.\n\n전시는 총 4부로 구성하였다. <1부: 옻칠은 무엇일까>에서는 옻나무, 옻칠도구, 옻칠 제작 방법 등을 소개한다. <2부: 우리나라 옻칠의 역사>는 선사부터 통일신라까지 시대별 옻칠 문화재의 특징과 변화를 살펴본다. 우리나라에서 가장 오래된 옻칠 흔적인 여수 적량동 비파형동검과 아름다운 흑칠기인 창원 다호리유적의 굽다리접시, 낙랑 칠기 등을 소개한다. 아름다운 고대 옻칠 전시품 8점을 한 공간에 전시하여 고대 옻칠 문화재를 감상하도록 조성하였다. <3부: 사람의 삶에 깃든 옻칠>에서는 오래 전부터 인간의 삶에 뿌리내리고 있던 옻칠 문화를 소개한다. 옻칠은 일상생활 그릇뿐 아니라 전쟁 무기와 제사 그릇에도 사용되었다. 우리에게 멀게만 느껴졌던 옻칠이지만 항상 우리의 삶 가까이에 옻칠을 사용하고 있었다는 것을 조명한다. <4부: 고려와 조선시대의 옻칠>에서는 고대 옻칠 문화가 고려~조선시대 옻칠로 계승되었음을 소개한다.\n\n이번 전시가 국민들이 우리나라 옻칠 문화에 관심과 흥미를 갖게 하는 계기가 되길 바란다. 올 여름 고대 옻칠 문화재를 한 눈에 확인할 수 있는 국립김해박물관을 방문해 우리나라 옻칠 문화를 보고, 만지고, 체험하는 시간을 갖는건 어떨까?",
+        "youtube_id" => null,
+        "list_of_images" => [
+            [
+                'original' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/s7Zcy87gkns/15.Showcase%20Image2.jpg',
+                'thumb' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/s7Zcy87gkns/15.Showcase%20Image2d',
+            ],
+            [
+                'original' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/s7Zcy87gkns/15.Showcase%20Image3.jpg',
+                'thumb' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/s7Zcy87gkns/15.Showcase%20Image3d',
+            ],
+            [
+                'original' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/s7Zcy87gkns/15.Showcase%20Image4.jpg',
+                'thumb' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/s7Zcy87gkns/15.Showcase%20Image4d',
+            ],
+            [
+                'original' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/s7Zcy87gkns/15.Showcase%20Image5.jpg',
+                'thumb' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/s7Zcy87gkns/15.Showcase%20Image5d',
+            ],
+            [
+                'original' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/s7Zcy87gkns/15.Showcase%20Image6.jpg',
+                'thumb' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/s7Zcy87gkns/15.Showcase%20Image6d',
+            ],
+            [
+                'original' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/s7Zcy87gkns/15.Showcase%20Image7.jpg',
+                'thumb' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/s7Zcy87gkns/15.Showcase%20Image7d',
+            ],
+            [
+                'original' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/s7Zcy87gkns/15.Showcase%20Image8.jpg',
+                'thumb' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/s7Zcy87gkns/15.Showcase%20Image8d',
+            ],
+            [
+                'original' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/s7Zcy87gkns/15.Showcase%20Image9.jpg',
+                'thumb' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/s7Zcy87gkns/15.Showcase%20Image9d',
+            ],
+            [
+                'original' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/s7Zcy87gkns/15.Showcase%20Image.jpg',
+                'thumb' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/s7Zcy87gkns/15.Showcase%20Imaged',
+            ],
+
+        ],
+        "guide_information" => "2019년 특별전 <고대의 빛깔, 옻칠> 연계 공개강연 안내\n\n1. 운영 게요\nㅇ 일 시: 2019.8.22.(목)/ 8.29.(목)/ 9.5.(목)/ 9.19.(목), 14:00~16:00(2시간)\nㅇ 대 상: 누구나\nㅇ 인 원: 200명\nㅇ 횟 수: 4회\nㅇ 장 소: 국립김해박물관 강당\nㅇ 접수방법: 당일 현장접수(선착순 마감)\nㅇ 주제 및 강사\n\n2019.8.22.(목)\n옻칠의 고고학\n(광주 신창동 유적을 중심으로)\n조현종\n(前 국립광주박물관장)\n\n2019.8.29.(목)\n빛의 예술 - 한국의 나전칠기\n황지현\n(국립중앙박물관 학예연구관)\n\n2019.9.5.(목)\n자연 속 천연 예술 옻칠\n김성수\n(통영옻칠미술관장)\n\n2019.9.19.(목)\n다호리 유적 칠기\n이건무\n(前 국립중앙박물관장)",
+        "is_paid" => false,
+        "is_conversation" => true,
+        "is_performing" => false,
+        "date" => "2019-06-25 ~ 2019-09-29",
+        "type" => "특별전시",
+        "page_url" => null,
+    ],
+    [
+        "mid" => "CKBEnmk9CVG",
+        "main_title" => "이영희 기증 복식, 새바람",
+        "location" => "대구",
+        "presented_by" => "국립대구박물관",
+        "showcase_ref" => "https://daegu.museum.go.kr/",
+        "poster" => 'https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum-posters/CKBEnmk9CVG/18.poster%20image-470.jpg',
+        "thumbnail" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum-thumbnails/CKBEnmk9CVG/1.Thumbnail%20Image-470.jpg",
+        "kor_title" => "이영희 기증 복식, 새바람",
+        "eng_title" => "Donated Collection of LEE YOUNG HEE",
+        "venue" => "국립대구박물관",
+        "map_address" => "대구 수성구 청호로 321 국립대구박물관",
+        "map_name" => "대구 수성구 청호로 321 국립대구박물관",
+        "description" => "대구박물관은 2018년 故 이영희선생(1936~2018)의 유족으로부터 작품을 기증받았습니다. \n‘이영희 기증 복식, 새바람’전은 기증받은 작품 가운데 이영희를 대표하는 바람의 옷, 올림픽 의상 등 세계무대에 오른 작품을 집중 조명하는 전시입니다. \n한복의 일상화와 세계화에 이바지한 선생의 발자취를 접할 수 있는 좋은 기회가 될 것입니다. \n내 꿈은 ‘한복이라는 브랜드’를 디자인하는 것이다....이영희\n\n이번 전시는 2018~2019년 기증받은 한복 디자이너 故 이영희 선생의 복식을 모아, 그 의미를 조명하고 작품의 우수성을 일반 시민들에게 널리 알리고자 마련하였습니다. 이영희 선생은 대구 출신으로 한복을 세계화와 일상화에 일생을 바치신 분입니다. 세계적으로 유명한 프랑스 파리 컬렉션에 우리 한복과 바람의 옷을 선보였고 미국 뉴욕 카네기홀 패션쇼에도 참가하는 등 세계에 우리 옷의 아름다움을 널리 알리는 데 앞장섰습니다. 새바람 전시가 많은 이에게 전해지고 또 지역문화 융성에 이바지하는 좋은 기회가 되길 기대해 봅니다.",
+        "youtube_id" => null,
+        "list_of_images" => [
+            [
+                [
+                    'original' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/CKBEnmk9CVG/15.Showcase%20image1.jpg',
+                    'thumb' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/CKBEnmk9CVG/15.Showcase%20image1-470.jpg',
+                ],
+                [
+                    'original' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/CKBEnmk9CVG/15.Showcase%20image2.jpg',
+                    'thumb' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/CKBEnmk9CVG/15.Showcase%20image2-470.jpg',
+                ],
+                [
+                    'original' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/CKBEnmk9CVG/15.Showcase%20image3.jpg',
+                    'thumb' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/CKBEnmk9CVG/15.Showcase%20image3-470.jpg',
+                ],
+                [
+                    'original' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/CKBEnmk9CVG/15.Showcase%20image4.jpg',
+                    'thumb' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/CKBEnmk9CVG/15.Showcase%20image4-470.jpg',
+                ],
+                [
+                    'original' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/CKBEnmk9CVG/15.Showcase%20image5.jpg',
+                    'thumb' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/CKBEnmk9CVG/15.Showcase%20image5-470.jpg',
+                ],
+                [
+                    'original' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/CKBEnmk9CVG/15.Showcase%20image6.jpg',
+                    'thumb' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/CKBEnmk9CVG/15.Showcase%20image6-470.jpg',
+                ],
+                [
+                    'original' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/CKBEnmk9CVG/15.Showcase%20images9.jpg',
+                    'thumb' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/CKBEnmk9CVG/15.Showcase%20images9-470.jpg',
+                ],
+                [
+                    'original' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/CKBEnmk9CVG/16.Showcase%20image7.jpg',
+                    'thumb' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/CKBEnmk9CVG/16.Showcase%20image7-470.jpg',
+                ],
+                [
+                    'original' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/CKBEnmk9CVG/17.Showcase%20image8.jpg',
+                    'thumb' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/CKBEnmk9CVG/17.Showcase%20image8-470.jpg',
+                ],
+            ],
+        ],
+        "guide_information" => "<특별전 '이영희 기증복식, 새바람' 연계 큐레이터와의 대화 MUTALK SECTION 3>\n\n바람의 대화\n\n세계적인 패션 디자이너 故 이영희 선생의 유작을 만나다. \n\n◎ 일시: 전시 기간 중 6. 25.(화) ~ 9. 15.(일)\n\n              매주 화요일, 목요일, 매월 마지막 토요일 오후 3시 30분\n\n              ※ 강의일 변경: 8.15.(목) 광복절 → 8.16.(금)\n\n               9.12.(목) 추석연휴 → 9.15.(일)\n\n◎ 대상: 관람객 누구나 \n\n◎ 장소: 기획전시실\n◎ 참여방법: 당일 현장 선착순 접수 20명\n\n◎ 이벤트\n\n   · 참여하고 SNS 인증사진 업로드 시 스케치북과 스티커 각 1매씩 지급\n\n   · 매회 참가자에 한해 2명 추첨하여 박물관 네임택 지급\n\n◎ 문의: 학예연구실 053.760.8580, 8582~3",
+        "is_paid" => false,
+        "is_conversation" => true,
+        "is_performing" => false,
+        "date" => "2019-06-25 ~ 2019-09-29",
+        "type" => "특별전시",
+        "page_url" => null,
+    ],
+    [
+        "mid" => "wDBBzvtMFHZ",
+        "main_title" => "무병장수의 별 노인성, 제주를 비추다",
+        "location" => "제주",
+        "presented_by" => "국립제주박물관",
+        "showcase_ref" => "http://jeju.museum.go.kr/html/kr/index.html",
+        "poster" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum-posters/wDBBzvtMFHZ/18.poster%20image-thumb.jpg",
+        "thumbnail" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum-thumbnails/wDBBzvtMFHZ/1.Thumbnail%20Image-thumb.jpg",
+        "kor_title" => "무병장수의 별 노인성, 제주를 비추다",
+        "eng_title" => "Canopus, the Star of Longevity ILLUMINATES JEJU",
+        "venue" => "국립제주박물관",
+        "map_address" => "제주 제주시 일주동로 17",
+        "map_name" => "제주 제주시 일주동로 17",
+        "description" => '‘제주의 별’을 만나는 특별한 시간 \n\n국립제주박물관의 2019년 첫 번째 특별전에 오신 여러분을 환영합니다. \n\n제주의 밤하늘에는 아주 특별한 별이 하나 있습니다. ‘노인성老人星’, ‘남극노인성南極老人星’, ‘수성壽星’, `카노푸스Canopus`라는 여러 가지 이름으로 불리는 이 별은 고도가 낮아 보기가 매우 어려운 별입니다. 그렇기 때문에 옛 사람들은 노인성이 뜨면 나라가 평화로워지고 이를 본 사람은 영원히 살 수 있다고 믿었습니다. 제주는 우리나라에서 노인성을 볼 수 있는 가장 좋은 장소입니다. 우리 선조들은 제주에 가야만 노인성을 볼 수 있고 그 별빛이 비추기 때문에 제주에는 장수하는 사람이 많다고 생각했습니다. \n\n전시는 시간의 흐름을 따라가며 ‘제주의 별, 노인성’에 대한 세 가지 이야기를 풀어갑니다. \n첫번째 이야기, 『나라의 운명을 점치는 별』에서는 노인성의 개념과 역사적 의미를 소개합니다. \n두 번째 이야기, 『장수의 별』에서는 노인성을 상징하며 사람의 수명을 주관하는 ‘수노인’이라는 존재를 만나봅니다. 마지막 이야기, 『노인성이 비추는 땅, 제주』에서는 제주와 노인성의 흥미로운 이야기가 펼쳐집니다. \n\n전시가 말하는 ‘제주의 별, 노인성’에 대한 이야기는 아주 오래된 옛날이야기처럼 보이지만 가만히 살펴보면 현재를 살아가고 있는 우리의 이야기이기도 합니다. 우리 모두는 하루하루 나이를 먹어 언젠가는 노년에 이르게 될 것이고 또 언젠가는 죽음을 맞이하게 될 겁니다. 그렇기 때문에 우리는 누구나 오래도록 행복하기를 그래서 우리 삶의 의미를 찾기를 바랍니다. 남쪽하늘의 커다란 별에게 ‘노인’이라는 이름을 붙이고 이를 바라보며 오래 살기를 빌었던 몇 천, 몇 백 년 전의 사람들이 그랬던 것처럼 말입니다. 이번 전시에서 만나는 제주의 별, 노인성이 보내는 행복의 별빛이 여러분의 마음속에서 오래도록 빛나게 되기를 바랍니다.',
+        "youtube_id" => null,
+        "list_of_images" => [
+            [
+                'original' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/wDBBzvtMFHZ/15.Showcase%20image.jpg',
+                'thumb' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/wDBBzvtMFHZ/15.Showcase%20image-470.jpg',
+            ],
+            [
+                'original' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/wDBBzvtMFHZ/15.Showcase%20image2.jpg',
+                'thumb' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/wDBBzvtMFHZ/15.Showcase%20image2-470.jpg',
+            ],
+            [
+                'original' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/wDBBzvtMFHZ/15.Showcase%20image3.jpg',
+                'thumb' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/wDBBzvtMFHZ/15.Showcase%20image3-470.jpg',
+            ],
+            [
+                'original' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/wDBBzvtMFHZ/15.Showcase%20image4.jpg',
+                'thumb' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/wDBBzvtMFHZ/15.Showcase%20image4-470.jpg',
+            ],
+            [
+                'original' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/wDBBzvtMFHZ/15.Showcase%20image5.jpg',
+                'thumb' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/wDBBzvtMFHZ/15.Showcase%20image5-470.jpg',
+            ],
+            [
+                'original' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/wDBBzvtMFHZ/15.Showcase%20image6.jpg',
+                'thumb' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/wDBBzvtMFHZ/15.Showcase%20image6-470.jpg',
+            ],
+            [
+                'original' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/wDBBzvtMFHZ/15.Showcase%20image7.jpg',
+                'thumb' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/wDBBzvtMFHZ/15.Showcase%20image7-470.jpg',
+            ],
+            [
+                'original' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/wDBBzvtMFHZ/15.Showcase%20image8.jpg',
+                'thumb' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/wDBBzvtMFHZ/15.Showcase%20image8-470.jpg',
+            ],
+            [
+                'original' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/wDBBzvtMFHZ/15.Showcase%20image9.jpg',
+                'thumb' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/wDBBzvtMFHZ/15.Showcase%20image9-470.jpg',
+            ],
+        ],
+        "guide_information" => null,
+        "is_paid" => false,
+        "is_conversation" => false,
+        "is_performing" => false,
+        "date" => "2019-03-18 ~ 2019-06-16",
+        "type" => "특별전시",
+        "page_url" => null,
+    ],
 ];
