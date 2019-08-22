@@ -2218,42 +2218,40 @@ return [
         "youtube_id" => null,
         "list_of_images" => [
             [
-                [
-                    'original' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/CKBEnmk9CVG/15.Showcase%20image1.jpg',
-                    'thumb' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/CKBEnmk9CVG/15.Showcase%20image1-470.jpg',
-                ],
-                [
-                    'original' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/CKBEnmk9CVG/15.Showcase%20image2.jpg',
-                    'thumb' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/CKBEnmk9CVG/15.Showcase%20image2-470.jpg',
-                ],
-                [
-                    'original' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/CKBEnmk9CVG/15.Showcase%20image3.jpg',
-                    'thumb' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/CKBEnmk9CVG/15.Showcase%20image3-470.jpg',
-                ],
-                [
-                    'original' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/CKBEnmk9CVG/15.Showcase%20image4.jpg',
-                    'thumb' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/CKBEnmk9CVG/15.Showcase%20image4-470.jpg',
-                ],
-                [
-                    'original' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/CKBEnmk9CVG/15.Showcase%20image5.jpg',
-                    'thumb' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/CKBEnmk9CVG/15.Showcase%20image5-470.jpg',
-                ],
-                [
-                    'original' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/CKBEnmk9CVG/15.Showcase%20image6.jpg',
-                    'thumb' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/CKBEnmk9CVG/15.Showcase%20image6-470.jpg',
-                ],
-                [
-                    'original' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/CKBEnmk9CVG/15.Showcase%20images9.jpg',
-                    'thumb' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/CKBEnmk9CVG/15.Showcase%20images9-470.jpg',
-                ],
-                [
-                    'original' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/CKBEnmk9CVG/16.Showcase%20image7.jpg',
-                    'thumb' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/CKBEnmk9CVG/16.Showcase%20image7-470.jpg',
-                ],
-                [
-                    'original' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/CKBEnmk9CVG/17.Showcase%20image8.jpg',
-                    'thumb' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/CKBEnmk9CVG/17.Showcase%20image8-470.jpg',
-                ],
+                'original' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/CKBEnmk9CVG/15.Showcase%20image1.jpg',
+                'thumb' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/CKBEnmk9CVG/15.Showcase%20image1-470.jpg',
+            ],
+            [
+                'original' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/CKBEnmk9CVG/15.Showcase%20image2.jpg',
+                'thumb' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/CKBEnmk9CVG/15.Showcase%20image2-470.jpg',
+            ],
+            [
+                'original' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/CKBEnmk9CVG/15.Showcase%20image3.jpg',
+                'thumb' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/CKBEnmk9CVG/15.Showcase%20image3-470.jpg',
+            ],
+            [
+                'original' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/CKBEnmk9CVG/15.Showcase%20image4.jpg',
+                'thumb' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/CKBEnmk9CVG/15.Showcase%20image4-470.jpg',
+            ],
+            [
+                'original' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/CKBEnmk9CVG/15.Showcase%20image5.jpg',
+                'thumb' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/CKBEnmk9CVG/15.Showcase%20image5-470.jpg',
+            ],
+            [
+                'original' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/CKBEnmk9CVG/15.Showcase%20image6.jpg',
+                'thumb' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/CKBEnmk9CVG/15.Showcase%20image6-470.jpg',
+            ],
+            [
+                'original' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/CKBEnmk9CVG/15.Showcase%20images9.jpg',
+                'thumb' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/CKBEnmk9CVG/15.Showcase%20images9-470.jpg',
+            ],
+            [
+                'original' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/CKBEnmk9CVG/16.Showcase%20image7.jpg',
+                'thumb' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/CKBEnmk9CVG/16.Showcase%20image7-470.jpg',
+            ],
+            [
+                'original' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/CKBEnmk9CVG/17.Showcase%20image8.jpg',
+                'thumb' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/CKBEnmk9CVG/17.Showcase%20image8-470.jpg',
             ],
         ],
         "guide_information" => "<특별전 '이영희 기증복식, 새바람' 연계 큐레이터와의 대화 MUTALK SECTION 3>\n\n바람의 대화\n\n세계적인 패션 디자이너 故 이영희 선생의 유작을 만나다. \n\n◎ 일시: 전시 기간 중 6. 25.(화) ~ 9. 15.(일)\n\n              매주 화요일, 목요일, 매월 마지막 토요일 오후 3시 30분\n\n              ※ 강의일 변경: 8.15.(목) 광복절 → 8.16.(금)\n\n               9.12.(목) 추석연휴 → 9.15.(일)\n\n◎ 대상: 관람객 누구나 \n\n◎ 장소: 기획전시실\n◎ 참여방법: 당일 현장 선착순 접수 20명\n\n◎ 이벤트\n\n   · 참여하고 SNS 인증사진 업로드 시 스케치북과 스티커 각 1매씩 지급\n\n   · 매회 참가자에 한해 2명 추첨하여 박물관 네임택 지급\n\n◎ 문의: 학예연구실 053.760.8580, 8582~3",

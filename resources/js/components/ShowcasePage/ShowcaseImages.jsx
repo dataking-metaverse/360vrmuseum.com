@@ -35,7 +35,7 @@ type ImageProps = {|
 const Image = styled.div`
     position: relative;
     border: 2px solid #aaaaaa;
-    
+
     &:after {
         position: relative;
         content: '';
@@ -44,7 +44,7 @@ const Image = styled.div`
         background-size: cover;
         background-position: 50% 50%;
         background-repeat: no-repeat;
-        background-image: url(${R.prop('src')});
+        background-image: url("${R.prop('src')}");
         z-index: 1;
     }
 `;
