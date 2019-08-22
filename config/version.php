@@ -1,4 +1,4 @@
 <?php
 
 
-return '4.3.0';
+return '4.4.0';
