@@ -139,16 +139,17 @@ export const hmd: ResponsiveImage = {
     },
 };
 
+
 export const artEducation: ResponsiveImage = {
-    src: require('../files/vrmuseum/samsung-gear-vr-headset4-class-810x456.png'),
+    src: require('../files/vrmuseum/photo-1524178232363-1fb2b075b655-810.jpg'),
     srcSetObject: {
-        '200w': require('../files/vrmuseum/samsung-gear-vr-headset4-class-810x456-200x113.png'),
-        '300w': require('../files/vrmuseum/samsung-gear-vr-headset4-class-810x456-300x169.png'),
-        '400w': require('../files/vrmuseum/samsung-gear-vr-headset4-class-810x456-400x225.png'),
-        '600w': require('../files/vrmuseum/samsung-gear-vr-headset4-class-810x456-600x338.png'),
-        '768w': require('../files/vrmuseum/samsung-gear-vr-headset4-class-810x456-768x432.png'),
-        '800w': require('../files/vrmuseum/samsung-gear-vr-headset4-class-810x456-800x450.png'),
-        '810w': require('../files/vrmuseum/samsung-gear-vr-headset4-class-810x456.png'),
+        '200w': require('../files/vrmuseum/photo-1524178232363-1fb2b075b655-200.jpg'),
+        '300w': require('../files/vrmuseum/photo-1524178232363-1fb2b075b655-300.jpg'),
+        '400w': require('../files/vrmuseum/photo-1524178232363-1fb2b075b655-400.jpg'),
+        '600w': require('../files/vrmuseum/photo-1524178232363-1fb2b075b655-600.jpg'),
+        '768w': require('../files/vrmuseum/photo-1524178232363-1fb2b075b655-768.jpg'),
+        '800w': require('../files/vrmuseum/photo-1524178232363-1fb2b075b655-800.jpg'),
+        '810w': require('../files/vrmuseum/photo-1524178232363-1fb2b075b655-810.jpg'),
     },
 };
 
@@ -167,5 +168,3 @@ export const culturalData: ResponsiveImage = {
         '1920w': require('../files/vrmuseum/35p.png'),
     },
 };
-
-
