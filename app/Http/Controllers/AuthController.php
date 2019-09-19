@@ -48,6 +48,7 @@ class AuthController extends Controller {
             'phone' => $request->phone,
             'job' => $request->job,
             'password' => bcrypt($request->password),
+            'view_history' => [],
         ]);
         $user->save();
         return responseJson([
