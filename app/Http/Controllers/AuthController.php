@@ -39,7 +39,7 @@ class AuthController extends Controller {
             'phone' => 'required|string',
             'job' => 'required|string',
             'accept_terms' => 'required|accepted',
-            'recaptcha_token' => 'required|recaptcha',
+            // 'recaptcha_token' => 'required|recaptcha',
         ]);
         if ($validation->fails()) { throw new ValidationException($validation); }
         $user = User::create([

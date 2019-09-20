@@ -36,7 +36,7 @@ class CommentController extends Controller
 
     function post(Request $request) {
         $validation = Validator::make($request->all(), [
-            'recaptcha_token' => 'required|recaptcha',
+            // 'recaptcha_token' => 'required|recaptcha',
         ]);
         if ($validation->fails()) { throw new ValidationException($validation); }
         $user = requireUser();
@@ -57,7 +57,7 @@ class CommentController extends Controller
 
     function put(Request $request) {
         $validation = Validator::make($request->all(), [
-            'recaptcha_token' => 'required|recaptcha',
+            // 'recaptcha_token' => 'required|recaptcha',
         ]);
         if ($validation->fails()) { throw new ValidationException($validation); }
         $user = requireUser();
@@ -76,7 +76,7 @@ class CommentController extends Controller
 
     public function delete(Request $request) {
         $validation = Validator::make($request->all(), [
-            'recaptcha_token' => 'required|recaptcha'
+            // 'recaptcha_token' => 'required|recaptcha'
         ]);
         if ($validation->fails()) { throw new ValidationException($validation); }
         $user = requireUser();
