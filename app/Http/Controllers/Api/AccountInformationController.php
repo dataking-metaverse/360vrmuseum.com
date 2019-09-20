@@ -21,7 +21,7 @@ class AccountInformationController extends Controller
         $validation = Validator::make($request->all(), [
             'job' => 'string',
             'phone' => 'string',
-            // 'recaptcha_token' => 'required|recaptcha',
+            'recaptcha_token' => 'required|recaptcha',
         ]);
         if ($validation->fails()) {
             throw new ValidationException($validation);

@@ -22,7 +22,7 @@ class PasswordResetController extends Controller
     {
         $request->validate([
             'email' => 'required|string|email',
-            // 'recaptcha_token' => 'required|recaptcha',
+            'recaptcha_token' => 'required|recaptcha',
         ]);
         $user = User::where('email', $request->email)->first();
         if (!$user)
@@ -84,7 +84,7 @@ class PasswordResetController extends Controller
             'email' => 'required|string|email',
             'password' => 'required|string|confirmed',
             'token' => 'required|string',
-            // 'recaptcha_token' => 'required|recaptcha',
+            'recaptcha_token' => 'required|recaptcha',
         ]);
         $passwordReset = PasswordReset::where([
             ['token', $request->token],
