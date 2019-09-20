@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Exceptions\Api\DuplicatedEmailException;
+use App\Exceptions\Api\DuplicatedNameException;
 use App\Exceptions\Api\ValidationException;
 use App\Exceptions\Api\WrongCredentialException;
 use Illuminate\Http\Request;
@@ -34,7 +36,7 @@ class AuthController extends Controller {
     {
         $validation = Validator::make($request->all(), [
             'name' => 'required|string',
-            'email' => 'required|string|email|unique:users',
+            'email' => 'required|string|email',
             'password' => 'required|string|confirmed',
             'phone' => 'required|string',
             'job' => 'required|string',
@@ -42,6 +44,17 @@ class AuthController extends Controller {
             'recaptcha_token' => 'required|recaptcha',
         ]);
         if ($validation->fails()) { throw new ValidationException($validation); }
+
+        // check if email or name is repeated. The error showing should be different and customized.
+        // 1. email
+        if (User::where(['email' => $request->email])->first()) {
+            throw new DuplicatedEmailException($request->email);
+        }
+        // 2. name
+        if (User::where(['name' => $request->name])->first()) {
+            throw new DuplicatedNameException($request->name);
+        }
+
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
