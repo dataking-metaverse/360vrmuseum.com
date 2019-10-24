@@ -3,6 +3,7 @@
 return [
     [
         "mid" => "aSYdPZg4Mu6",
+		"show_embed" => false,
         "main_title" => "동아시아의 호랑이 미술",
         "location" => "서울",
         "presented_by" => "국립중앙박물관",
@@ -64,6 +65,7 @@ return [
     ],
     [
         "mid" => "w6M8mr9ArwV",
+		"show_embed" => true,
         "main_title" => "삼별초와 동아시아",
         "location" => "제주",
         "presented_by" => "국립제주박물관",
@@ -125,6 +127,7 @@ return [
     ],
     [
         "mid" => "3VzkdUcgjGM",
+		"show_embed" => true,
         "main_title" => "왕이 사랑한 보물\n독일 드레스덴 박물관 연합 명품전",
         "location" => "서울",
         "presented_by" => "국립중앙박물관",
@@ -186,6 +189,7 @@ return [
     ],
     [
         "mid" => "n4ik2CyQRWM",
+		"show_embed" => false,
         "main_title" => "쇠철강 철의 문화사",
         "location" => "서울",
         "presented_by" => "국립중앙박물관",
@@ -247,6 +251,7 @@ return [
     ],
     [
         "mid" => "rkDggYgt6LV",
+		"show_embed" => true,
         "main_title" => "국립춘천박물관",
         "location" => "춘천",
         "presented_by" => "국립춘천박물관",
@@ -308,6 +313,7 @@ return [
     ],
     [
         "mid" => "UarDva3g6pX",
+		"show_embed" => true,
         "main_title" => "국립공주박물관",
         "location" => "공주",
         "presented_by" => "국립공주박물관",
@@ -369,6 +375,7 @@ return [
     ],
     [
         "mid" => "2Kh3PgoqoDT",
+		"show_embed" => true,
         "main_title" => "숙명여자대학교박물관",
         "location" => "서울",
         "presented_by" => "숙명여자대학교",
@@ -418,6 +425,7 @@ return [
     ],
     [
         "mid" => "Xr48H9yMjcp",
+		"show_embed" => true,
         "main_title" => "계명대학교 행소박물관",
         "location" => "대구",
         "presented_by" => "계명대학교",
@@ -475,6 +483,7 @@ return [
     ],
     [
         "mid" => "P4L5PqEWNrS",
+		"show_embed" => true,
         "main_title" => "삼육대학교 박물관",
         "location" => "서울",
         "presented_by" => "삼육대학교",
@@ -532,6 +541,7 @@ return [
     ],
     [
         "mid" => "yDEtLE2KrWP",
+		"show_embed" => false,
         "main_title" => "백제의 불교미술",
         "location" => "공주",
         "presented_by" => "국립공주박물관",
@@ -593,6 +603,7 @@ return [
     ],
     [
         "mid" => "w9vxL98X4Fd",
+		"show_embed" => true,
         "main_title" => "천자만홍千紫萬紅을 짓다Ⅱ",
         "location" => "서울",
         "presented_by" => "정영양자수박물관",
@@ -654,6 +665,7 @@ return [
     ],
     [
         "mid" => "CQVuaEc2Ug5",
+		"show_embed" => true,
         "main_title" => "시간 속에서 걸어나온 풍경들\n순안에서 삼육동까지",
         "location" => "서울",
         "presented_by" => "삼육대학교",
@@ -715,6 +727,7 @@ return [
     ],
     [
         "mid" => "B6UCtGFBjsf",
+		"show_embed" => true,
         "main_title" => "화폐박물관",
         "location" => "대전",
         "presented_by" => "한국조폐공사",
@@ -764,6 +777,7 @@ return [
     ],
     [
         "mid" => "V5jZZqo5CZg",
+		"show_embed" => true,
         "main_title" => "호남의 임진왜란 그 승리의 기록\n무숙공 최희량이 쓴 임란첩보서목",
         "location" => "나주",
         "presented_by" => "국립나주박물관",
@@ -825,6 +839,7 @@ return [
     ],
     [
         "mid" => "QHhwyfbvgQM",
+		"show_embed" => true,
         "main_title" => "국립나주박물관: 풍요의 땅 전라 - 천년의 시간을 걷다",
         "location" => "나주",
         "presented_by" => "국립나주박물관",
@@ -886,6 +901,7 @@ return [
     ],
     [
         "mid" => "o1ZhcnK9swd",
+		"show_embed" => true,
         "main_title" => "조선왕실 아기씨의 탄생\n나라의 복을 담은 태항아리",
         "location" => "서울",
         "presented_by" => "국립고궁박물관",
@@ -935,6 +951,7 @@ return [
     ],
     [
         "mid" => "BNTTf85YsMP",
+		"show_embed" => true,
         "main_title" => "국립고궁박물관 | 과학문화",
         "location" => "서울",
         "presented_by" => "국립고궁박물관",
@@ -1032,6 +1049,7 @@ return [
     ],
     [
         "mid" => "iPhH5vffSTt",
+		"show_embed" => true,
         "main_title" => "국립고궁박물관 | 궁중서화",
         "location" => "서울",
         "presented_by" => "국립고궁박물관",
@@ -1129,6 +1147,7 @@ return [
     ],
     [
         "mid" => "RM2QnvzmjA3",
+		"show_embed" => true,
         "main_title" => "국립고궁박물관 | 왕실의례",
         "location" => "서울",
         "presented_by" => "국립고궁박물관",
@@ -1226,6 +1245,7 @@ return [
     ],
     [
         "mid" => "aBb76RaccUH",
+		"show_embed" => false,
         "main_title" => "황금인간의 땅, 카자흐스탄",
         "location" => "서울",
         "presented_by" => "국립중앙박물관",
@@ -1287,6 +1307,7 @@ return [
     ],
     [
         "mid" => "TyFGiCLuof9",
+		"show_embed" => true,
         "main_title" => "황금문명 엘도라도 신비의 보물을 찾아서",
         "location" => "서울",
         "presented_by" => "국립중앙박물관",
@@ -1348,6 +1369,7 @@ return [
     ],
     [
         "mid" => "kkZGik7iLgm",
+		"show_embed" => true,
         "main_title" => "칸의제국 몽골",
         "location" => "서울",
         "presented_by" => "국립중앙박물관",
@@ -1409,6 +1431,7 @@ return [
     ],
     [
         "mid" => "4MbVUmwti9x",
+		"show_embed" => true,
         "main_title" => "지도예찬\n조선지도 500년, 공간·시간·인간의 이야기",
         "location" => "서울",
         "presented_by" => "국립중앙박물관",
@@ -1470,6 +1493,7 @@ return [
     ],
     [
         "mid" => "MsECZxmoy9y",
+		"show_embed" => false,
         "main_title" => "대고려 918·2018 그 찬란한 도전",
         "location" => "서울",
         "presented_by" => "국립중앙박물관",
@@ -1531,6 +1555,7 @@ return [
     ],
     [
         "mid" => "xSPWrtHB4Zd",
+		"show_embed" => false,
         "main_title" => "충청남도의 고려를 만나다",
         "location" => "공주",
         "presented_by" => "국립공주박물관",
@@ -1592,6 +1617,7 @@ return [
     ],
     [
         "mid" => "qT3himjQVQ2",
+		"show_embed" => false,
         "main_title" => "고대 동아시아 무덤의 수호신 진묘수",
         "location" => "공주",
         "presented_by" => "국립공주박물관",
@@ -1653,6 +1679,7 @@ return [
     ],
     [
         "mid" => "z8Gwj4NcTUu",
+		"show_embed" => true,
         "main_title" => "창령사 터 오백나한,\n당신의 마음을 닮은 얼굴",
         "location" => "춘천",
         "presented_by" => "국립춘천박물관",
@@ -1714,6 +1741,7 @@ return [
     ],
     [
         "mid" => "kF3xE8edLEA",
+		"show_embed" => true,
         "main_title" => "금호강과 길",
         "location" => "대구",
         "presented_by" => "국립대구박물관",
@@ -1775,6 +1803,7 @@ return [
     ],
     [
         "mid" => "avWhh5K7Nop",
+		"show_embed" => true,
         "main_title" => "황룡사",
         "location" => "경주",
         "presented_by" => "국립경주박물관",
@@ -1836,6 +1865,7 @@ return [
     ],
     [
         "mid" => "sdhXymhVog6",
+		"show_embed" => true,
         "main_title" => "김해",
         "location" => "김해",
         "presented_by" => "국립김해박물관",
@@ -1897,6 +1927,7 @@ return [
     ],
     [
         "mid" => "3MrnWzKigNP",
+		"show_embed" => true,
         "main_title" => "고려청자의 정점頂點을 만나다\n부안청자·강진청자",
         "location" => "전주",
         "presented_by" => "국립전주박물관",
@@ -1958,6 +1989,7 @@ return [
     ],
     [
         "mid" => "kcWsN7tZAXm",
+		"show_embed" => true,
         "main_title" => "치미, 하늘의 소리를 듣다",
         "location" => "부여",
         "presented_by" => "국립부여박물관",
@@ -2019,6 +2051,7 @@ return [
     ],
     [
         "mid" => "QkPtiaDjLbE",
+		"show_embed" => true,
         "main_title" => "국립미륵사지유물전시관",
         "location" => "익산",
         "presented_by" => "국립미륵사지유물전시관",
@@ -2080,6 +2113,7 @@ return [
     ],
     [
         "mid" => "ft1emFLvBQA",
+		"show_embed" => true,
         "main_title" => "임진왜란실 | 두암실",
         "location" => "진주",
         "presented_by" => "국립진주박물관",
@@ -2141,6 +2175,7 @@ return [
     ],
     [
         "mid" => "s7Zcy87gkns",
+		"show_embed" => true,
         "main_title" => "고대의 빛깔, 옻칠",
         "location" => "김해",
         "presented_by" => "국립김해박물관",
@@ -2203,6 +2238,7 @@ return [
     ],
     [
         "mid" => "CKBEnmk9CVG",
+		"show_embed" => true,
         "main_title" => "이영희 기증 복식, 새바람",
         "location" => "대구",
         "presented_by" => "국립대구박물관",
@@ -2264,6 +2300,7 @@ return [
     ],
     [
         "mid" => "wDBBzvtMFHZ",
+		"show_embed" => true,
         "main_title" => "무병장수의 별 노인성, 제주를 비추다",
         "location" => "제주",
         "presented_by" => "국립제주박물관",
