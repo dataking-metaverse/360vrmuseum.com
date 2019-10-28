@@ -12,6 +12,10 @@ type Props = {|
 
 |};
 
+type FrameProps = {
+    showcase: ?Showcase,
+};
+
 const Root = styled.div`
     position: relative;
     height: 50rem;
@@ -31,20 +35,17 @@ const Iframe = styled.iframe`
 
 const embedRoute = 'https://embed.360vrmuseum.com/showcase/:mid';
 
-const getIframe = R.ifElse(
-    instanceOf(Showcase),
-    showcase => () => ( <Iframe src={embedRoute.replace(':mid', showcase.getAttribute('mid'))} allowFullScreen allow="vr" /> ),
-    () => () => ( <LoadingSpinner cover /> )
-);
+function Frame (props: FrameProps) {
+    const {showcase} = props;
+    if (!(showcase instanceof Showcase)) { return <LoadingSpinner cover />; }
+    const mid = showcase.getAttribute('mid');
+    const showEmbed = showcase.getAttribute('show_embed');
+    return <Iframe src={`https://embed.360vrmuseum.com/showcase/${mid}?show_embed=${showEmbed ? 1 : 0}`} allowFullScreen allow="vr" />;
+}
 
 function ShowcaseIframe(props: Props) {
     const showcase = useContext(ShowcaseContext);
-    const Iframe = getIframe(showcase);
-    return (
-        <Root>
-            <Iframe />
-        </Root>
-    );
+    return <Root><Frame showcase={showcase} /></Root>;
 }
 
 export default ShowcaseIframe;
