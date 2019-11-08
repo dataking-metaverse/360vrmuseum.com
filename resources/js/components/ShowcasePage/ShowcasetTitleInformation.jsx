@@ -10,6 +10,7 @@ import {connect} from "react-redux";
 
 type Props = {|
     museumPage: string,
+    nonPublic: string,
 |};
 
 const Title = styled.h1`
@@ -34,13 +35,15 @@ const KoreanTitle = styled.span`
 
 const RightCol = styled(Col)`
     //
-    
+
     ${media.xl`
         text-align: right;
     `}
 `
 
 const RefButton = styled.a`
+    display: inline-block;
+    text-align: center;
     width: 13.2rem;
     height: 3.7rem;
     font-size: 15px;
@@ -51,6 +54,20 @@ const RefButton = styled.a`
     border-color: rgba(83,13,94,.55);
     padding: .4rem 1.2rem;
     text-decoration: none !important; // use of !important, avoid overriding when event's are happening
+    line-height: 1.9;
+`;
+
+const NonPublicSign = styled.div`
+    display: inline-block;
+    text-align: center;
+    width: 13.2rem;
+    height: 3.7rem;
+    font-size: 15px;
+    background-color: #fff;
+    color: #7b7b7b;
+    border: 1px solid #7b7b7b;
+    padding: .4rem 1.2rem;
+    line-height: 1.9;
 `;
 
 const MuseumName = styled.div`
@@ -68,7 +85,7 @@ const Period = styled.div`
 `;
 
 function ShowcasetTitleInformation(props: Props) {
-    const {museumPage} = props;
+    const {museumPage, nonPublic} = props;
     const showcase = useContext(ShowcaseContext);
     const [attrs, setAttrs] = useState(null);
 
@@ -83,9 +100,10 @@ function ShowcasetTitleInformation(props: Props) {
         eng_title: englishTitle,
         showcase_ref: showcaseRef,
         presented_by: presentedBy,
+        show_embed: showEmbed,
         date,
     } = attrs;
-
+    console.log("showEmbed", showEmbed);
     return (
         <ShowcaseContainer>
             <Row>
@@ -97,6 +115,8 @@ function ShowcasetTitleInformation(props: Props) {
                 </Col>
                 <RightCol xl={2}>
                     <RefButton href={showcaseRef} target="_blank">{museumPage}</RefButton>
+                    <br /><br />
+                    {!showEmbed ? <NonPublicSign>{nonPublic}</NonPublicSign> : null}
                 </RightCol>
             </Row>
             <br />
@@ -109,6 +129,7 @@ function ShowcasetTitleInformation(props: Props) {
 
 export default R.compose(
     connect(R.applySpec({
-        museumPage: R.path(['lang', 'pages', 'national-museum', 'ShowcaseTitleInformation', 'museumPage'])
+        museumPage: R.path(['lang', 'pages', 'national-museum', 'ShowcaseTitleInformation', 'museumPage']),
+        nonPublic: R.path(['lang', 'pages', 'national-museum', 'ShowcaseTitleInformation', 'nonPublic']),
     })),
 )(ShowcasetTitleInformation);
