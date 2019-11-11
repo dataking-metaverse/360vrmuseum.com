@@ -103,7 +103,7 @@ function ShowcasetTitleInformation(props: Props) {
         show_embed: showEmbed,
         date,
     } = attrs;
-    console.log("showEmbed", showEmbed);
+
     return (
         <ShowcaseContainer>
             <Row>
