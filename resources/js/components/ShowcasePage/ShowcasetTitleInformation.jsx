@@ -63,9 +63,9 @@ const NonPublicSign = styled.div`
     width: 13.2rem;
     height: 3.7rem;
     font-size: 15px;
-    background-color: #fff;
-    color: #7b7b7b;
-    border: 1px solid #7b7b7b;
+    background-color: #f0f0f0;
+    color: #5a1864;
+    border: 1px solid #a581aa;
     padding: .4rem 1.2rem;
     line-height: 1.9;
 `;
