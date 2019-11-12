@@ -52,7 +52,6 @@ const RefButton = styled.a`
     border-style: solid;
     border-width: 1px;
     border-color: rgba(83,13,94,.55);
-    padding: .4rem 1.2rem;
     text-decoration: none !important; // use of !important, avoid overriding when event's are happening
     line-height: 1.9;
 `;
@@ -66,7 +65,6 @@ const NonPublicSign = styled.div`
     background-color: #f0f0f0;
     color: #5a1864;
     border: 1px solid #a581aa;
-    padding: .4rem 1.2rem;
     line-height: 1.9;
 `;
 
