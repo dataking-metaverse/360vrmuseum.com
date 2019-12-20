@@ -65,7 +65,7 @@ return [
     ],
     [
         "mid" => "w6M8mr9ArwV",
-		"show_embed" => true,
+		"show_embed" => false,
         "main_title" => "삼별초와 동아시아",
         "location" => "제주",
         "presented_by" => "국립제주박물관",
