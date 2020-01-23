@@ -2379,35 +2379,35 @@ return [
         "list_of_images" => [
             [
                 'original' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/3MxD4FVo6e5/1.jpg',
-                'thumbnail' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/3MxD4FVo6e5/1-470.jpg',
+                'thumb' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/3MxD4FVo6e5/1-470.jpg',
             ],
             [
                 'original' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/3MxD4FVo6e5/2.jpg',
-                'thumbnail' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/3MxD4FVo6e5/2-470.jpg',
+                'thumb' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/3MxD4FVo6e5/2-470.jpg',
             ],
             [
                 'original' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/3MxD4FVo6e5/3.jpg',
-                'thumbnail' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/3MxD4FVo6e5/3-470.jpg',
+                'thumb' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/3MxD4FVo6e5/3-470.jpg',
             ],
             [
                 'original' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/3MxD4FVo6e5/4.jpg',
-                'thumbnail' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/3MxD4FVo6e5/4-470.jpg',
+                'thumb' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/3MxD4FVo6e5/4-470.jpg',
             ],
             [
                 'original' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/3MxD4FVo6e5/5.jpg',
-                'thumbnail' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/3MxD4FVo6e5/5-470.jpg',
+                'thumb' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/3MxD4FVo6e5/5-470.jpg',
             ],
             [
                 'original' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/3MxD4FVo6e5/6.jpg',
-                'thumbnail' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/3MxD4FVo6e5/6-470.jpg',
+                'thumb' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/3MxD4FVo6e5/6-470.jpg',
             ],
             [
                 'original' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/3MxD4FVo6e5/7.jpg',
-                'thumbnail' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/3MxD4FVo6e5/7-470.jpg',
+                'thumb' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/3MxD4FVo6e5/7-470.jpg',
             ],
             [
                 'original' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/3MxD4FVo6e5/8.jpg',
-                'thumbnail' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/3MxD4FVo6e5/8-470.jpg',
+                'thumb' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/3MxD4FVo6e5/8-470.jpg',
             ],
         "guide_information" => null,
         "is_paid" => true,
@@ -2436,35 +2436,35 @@ return [
         "list_of_images" => [
             [
                 "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/ZkdCV6kHtjR/1.jpg",
-                "thumbnail" => "https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/ZkdCV6kHtjR/1-470.jpg",
+                "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/ZkdCV6kHtjR/1-470.jpg",
             ],
             [
                 "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/ZkdCV6kHtjR/2.jpg",
-                "thumbnail" => "https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/ZkdCV6kHtjR/2-470.jpg",
+                "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/ZkdCV6kHtjR/2-470.jpg",
             ],
             [
                 "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/ZkdCV6kHtjR/3.jpg",
-                "thumbnail" => "https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/ZkdCV6kHtjR/3-470.jpg",
+                "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/ZkdCV6kHtjR/3-470.jpg",
             ],
             [
                 "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/ZkdCV6kHtjR/4.jpg",
-                "thumbnail" => "https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/ZkdCV6kHtjR/4-470.jpg",
+                "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/ZkdCV6kHtjR/4-470.jpg",
             ],
             [
                 "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/ZkdCV6kHtjR/5.jpg",
-                "thumbnail" => "https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/ZkdCV6kHtjR/5-470.jpg",
+                "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/ZkdCV6kHtjR/5-470.jpg",
             ],
             [
                 "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/ZkdCV6kHtjR/6.jpg",
-                "thumbnail" => "https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/ZkdCV6kHtjR/6-470.jpg",
+                "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/ZkdCV6kHtjR/6-470.jpg",
             ],
             [
                 "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/ZkdCV6kHtjR/7.jpg",
-                "thumbnail" => "https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/ZkdCV6kHtjR/7-470.jpg",
+                "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/ZkdCV6kHtjR/7-470.jpg",
             ],
             [
                 "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/ZkdCV6kHtjR/8.jpg",
-                "thumbnail" => "https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/ZkdCV6kHtjR/8-470.jpg",
+                "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/ZkdCV6kHtjR/8-470.jpg",
             ],
         ],
         "guide_information" => null,
