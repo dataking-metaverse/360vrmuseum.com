@@ -53,7 +53,7 @@ return [
             'permanentExhibition' => [
                 'QkPtiaDjLbE', 'ft1emFLvBQA', 'BNTTf85YsMP', 'iPhH5vffSTt', 'RM2QnvzmjA3',
                 'B6UCtGFBjsf', '2Kh3PgoqoDT', 'Xr48H9yMjcp', 'rkDggYgt6LV', 'UarDva3g6pX',
-                'P4L5PqEWNrS', 'w9vxL98X4Fd',
+                'P4L5PqEWNrS', 'w9vxL98X4Fd', '3MxD4FVo6e5',
             ],
         ],
         'showcase' => [
