@@ -2426,7 +2426,7 @@ return [
         "presented_by" => "부산시립박물관",
         "showcase_ref" => "http://museum.busan.go.kr/busan/index",
         "poster" => "https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/ZkdCV6kHtjR/poster-470.jpg",
-        "thumbnail" => "https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/ZkdCV6kHtjR/poster-470.jpg",
+        "thumbnail" => "https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/ZkdCV6kHtjR/Thumbnail-470.jpg",
         "kor_title" => "미얀마의 불교미술",
         "eng_title" => "Buddhist Art of Myanmar",
         "venue" => "부산시립박물관",
