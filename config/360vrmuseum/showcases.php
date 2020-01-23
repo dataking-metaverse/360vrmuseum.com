@@ -2409,6 +2409,7 @@ return [
                 'original' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/3MxD4FVo6e5/8.jpg',
                 'thumb' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/3MxD4FVo6e5/8-470.jpg',
             ],
+		],
         "guide_information" => null,
         "is_paid" => true,
         "is_conversation" => false,
