@@ -2417,4 +2417,62 @@ return [
         "type" => "상설전시",
         "page_url" => null,
     ],
+    [
+        "mid" => "ZkdCV6kHtjR",
+        "show_embed" => true,
+        "main_title" => "미얀마의 불교미술",
+        "location" => "부산",
+        "presented_by" => "부산시립박물관",
+        "showcase_ref" => "http://museum.busan.go.kr/busan/index",
+        "poster" => "https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/ZkdCV6kHtjR/poster-470.jpg",
+        "thumbnail" => "https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/ZkdCV6kHtjR/poster-470.jpg",
+        "kor_title" => "미얀마의 불교미술",
+        "eng_title" => "Buddhist Art of Myanmar",
+        "venue" => "부산시립박물관",
+        "map_address" => "부산 남구 유엔평화로 63",
+        "map_name" => "부산 남구 유엔평화로 63",
+        "description" => "    이번 국제교류전은 개관 41주년과 이번 달 말에 예정된 ‘한-아세안 특별정상회담’ 및 ‘한-메콩 정상회의’의 부산 개최를 기념하기 위해 기획되었다.\t\t     부산박물관은 이번 전시를 위해 지난 2017년부터 미얀마 현지 박물관의 자료를 조사하고, 미얀마 종교문화부 고고학국립박물관국과의 긴밀한 협의를 이어왔다. 이에 미얀마 국립박물관(양곤·네피도·바간·스리 크세트라) 4개처와 국립중앙박물관 소장 불교 유물 110여 점을 대여할 수 있게 되었다.\t\t     이번 전시는 국내에 미얀마를 소개하는 첫 전시인 만큼 불교미술을 통해 미얀마의 역사와 문화를 통사적으로 살펴볼 수 있도록 구성하였다.\t\t   ▲1장 <에야와디강의 여명, 쀼와 몬>에는 미얀마의 선주민인 쀼 족과 몬 족의 불교유적과 유물을 통해 미얀마 불교문화의 원형을 조명해 본다.\t\t   ▲2장 <공덕의 평원, 바간>에서는 최초의 통일왕조인 바간 왕조의 상좌부불교의 수용과 발전상을 소개하고 이 시기 화려하게 꽃피운 불교미술의 양상을 살펴본다.\t\t   ▲3장 <분열과 통일, 생성과 소멸의 시간>에서는 왕조의 분열과 소멸, 통일을 거치면서 다양하게 변화하는 불교문화의 모습을 다루었다.\t\t   ▲4장 <일상속의 불교>에서는 마지막 불교 왕국 꼰바웅의 불교미술과 미얀마인의 일상 속에 꽃 피운 불교문화에 대해 소개한다.\t\t     주요 전시유물은 미얀마 초기불교 문화의 존재를 확인해 주는 스리 크세트라 유적 출토 <은화>, <봉헌판>을 비롯해서 <붓다의 탄생>, <싯다르타의 삭발>, <고행하는 붓다>, <도리천에서 내려오는 붓다> 등 부처의 팔상을 표현한 단독 조각상과 <보살상>, <범천상>, <낫> 등 미얀마 불교의 다양성과 문화혼성(文化混成)을 보여주는 유물도 같이 전시된다. 특히 부처의 일생인 팔상 장면을 담은 단독조각상의 경우 우리나라를 비롯한 동북아시아 불교미술에서 쉽게 접할 수 없는 도상이어서 주목을 끌고 있다.\t\t     이번 전시는 우리나라에서 지금까지 제대로 소개된 적이 없는 미얀마의 역사와 문화, 전통 불교미술을 한자리에서 만나보는 좋은 기회가 될 것이다. 특히 미얀마에서 해외로 처음 반출되는 네피도 국립박물관 소장 <석조 항마촉지인 불상>을 비롯하여 미얀마 문화의 정수라 할 수 있는 아름답고, 수준 높은 불교미술을 대규모로 선보이는 최초의 전시로 일반 관람객뿐만 아니라 학계에도 큰 반향을 일으킬 것으로 예상된다.",
+        "youtube_id" => null,
+        "list_of_images" => [
+            [
+                "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/ZkdCV6kHtjR/1.jpg",
+                "thumbnail" => "https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/ZkdCV6kHtjR/1-470.jpg",
+            ],
+            [
+                "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/ZkdCV6kHtjR/2.jpg",
+                "thumbnail" => "https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/ZkdCV6kHtjR/2-470.jpg",
+            ],
+            [
+                "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/ZkdCV6kHtjR/3.jpg",
+                "thumbnail" => "https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/ZkdCV6kHtjR/3-470.jpg",
+            ],
+            [
+                "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/ZkdCV6kHtjR/4.jpg",
+                "thumbnail" => "https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/ZkdCV6kHtjR/4-470.jpg",
+            ],
+            [
+                "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/ZkdCV6kHtjR/5.jpg",
+                "thumbnail" => "https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/ZkdCV6kHtjR/5-470.jpg",
+            ],
+            [
+                "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/ZkdCV6kHtjR/6.jpg",
+                "thumbnail" => "https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/ZkdCV6kHtjR/6-470.jpg",
+            ],
+            [
+                "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/ZkdCV6kHtjR/7.jpg",
+                "thumbnail" => "https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/ZkdCV6kHtjR/7-470.jpg",
+            ],
+            [
+                "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/ZkdCV6kHtjR/8.jpg",
+                "thumbnail" => "https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/ZkdCV6kHtjR/8-470.jpg",
+            ],
+        ],
+        "guide_information" => null,
+        "is_paid" => false,
+        "is_conversation" => false,
+        "is_performing" => false,
+        "date" => "19.11.19 - 20.01.12",
+        "type" => "특별전",
+        "page_url" => null,
+    ],
 ];
