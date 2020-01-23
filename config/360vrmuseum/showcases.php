@@ -2360,4 +2360,61 @@ return [
         "type" => "특별전시",
         "page_url" => null,
     ],
+    [
+        "mid" => "3MxD4FVo6e5",
+        "show_embed" => true,
+        "main_title" => "한국대중음악박물관",
+        "location" => "경주",
+        "presented_by" => "한국대중음악박물관",
+        "showcase_ref" => "http://www.kpopmuseum.com/",
+        "poster" => "https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/3MxD4FVo6e5/Thumbnail-470.jpg",
+        "thumbnail" => "https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/3MxD4FVo6e5/Thumbnail-470.jpg",
+        "kor_title" => "한국대중음악박물관",
+        "eng_title" => "K-pop musuem_Permanent Exhibition",
+        "venue" => "한국대중음악박물관",
+        "map_address" => "경북 경주시 엑스포로 9",
+        "map_name" => "경북 경주시 엑스포로 9",
+        "description" => '경주 보문단지 내에 위치한 한국대중음악박물관은 대한민국에서 최초로 유성 음반부터 현재까지의 음반 및 대중음악 관련 자료를 상설 및 기획 전시하는 곳이다. 층당 330평 규모에 총 3개 층을 박물관으로 사용하고 있으며, 대한민국 대중음악 100년사의 주요 음반과 관련된 여러 기획 전시가 진행된다. 대중음악 관련 자료 외에도 소리 예술인 오디오 100년사 세계최초 스피커 등 웨스턴 일렉트릭 16A(WE 16A 혼), 웨스턴 일레트릭 미로포닉(Mirrorphonic) 시스템 웨스턴 일렉트릭, 터보, L10, 750A, 자이스콘, 프로페셔널 오토그래프, 웨스턴 일렉트릭 41+42+43 앰프 시스템 등 세계 최고의 진귀한 음향 시스템도 상설 전시된다',
+        "youtube_id" => null,
+        "list_of_images" => [
+            [
+                'original' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/3MxD4FVo6e5/1.jpg',
+                'thumbnail' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/3MxD4FVo6e5/1-470.jpg',
+            ],
+            [
+                'original' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/3MxD4FVo6e5/2.jpg',
+                'thumbnail' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/3MxD4FVo6e5/2-470.jpg',
+            ],
+            [
+                'original' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/3MxD4FVo6e5/3.jpg',
+                'thumbnail' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/3MxD4FVo6e5/3-470.jpg',
+            ],
+            [
+                'original' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/3MxD4FVo6e5/4.jpg',
+                'thumbnail' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/3MxD4FVo6e5/4-470.jpg',
+            ],
+            [
+                'original' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/3MxD4FVo6e5/5.jpg',
+                'thumbnail' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/3MxD4FVo6e5/5-470.jpg',
+            ],
+            [
+                'original' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/3MxD4FVo6e5/6.jpg',
+                'thumbnail' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/3MxD4FVo6e5/6-470.jpg',
+            ],
+            [
+                'original' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/3MxD4FVo6e5/7.jpg',
+                'thumbnail' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/3MxD4FVo6e5/7-470.jpg',
+            ],
+            [
+                'original' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/3MxD4FVo6e5/8.jpg',
+                'thumbnail' => 'https://dataking.blob.core.windows.net/360vrmuseum-media/190524vrm/3MxD4FVo6e5/8-470.jpg',
+            ],
+        "guide_information" => null,
+        "is_paid" => true,
+        "is_conversation" => false,
+        "is_performing" => false,
+        "date" => "상시",
+        "type" => "상설전시",
+        "page_url" => null,
+    ],
 ];
