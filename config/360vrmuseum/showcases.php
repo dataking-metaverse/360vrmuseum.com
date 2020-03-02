@@ -2796,4 +2796,66 @@ return [
 	    "type" => "특별전",
 	    "page_url" => null,
 	],
+	[
+	    "mid" => "s7Zcy87gkns",
+	    "show_embed" => true,
+		"main_title" => "고대의 빛깔, 옻칠",
+	    "location" => "김해",
+	    "presented_by" => "국립김해박물관",
+	    "showcase_ref" => "https://gimhae.museum.go.kr/kr/",
+	    "poster" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/s7Zcy87gkns/poster-thumb.jpg",
+	    "thumbnail" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/s7Zcy87gkns/Thumbnail-thumb.jpg",
+	    "kor_title" => "고대의 빛깔, 옻칠",
+	    "eng_title" => "Ottchil the Color and Light of Ancient Artifacts",
+	    "venue" => "국립김해박물관",
+	    "map_address" => "경상남도 김해시 가야의길 190",
+	    "map_name" => "경상남도 김해시 가야의길 190",
+	    "description" => "옻칠은 수천 년 동안 인류가 사용한 가장 오래된 천연도료이다. 지금의 페인트와 유사한 옻칠은 물건에 윤기와 광택을 내고, 내구성을 좋게 하는 기능을 하였다. 사실상 촟칠은 자연에서 얻을 수 있는 가장 좋은 도료로 금이 사용되기 이전까지는 옻칠문화재가 가장 귀하고 아름다운 물건이었다. 이번 전시는 청동기시대부터 시작된 옻칠의 역사와 소중한 가치를 되새겨보고, 국민들에게 우수한 옻칠을 소개하기 위해 기획하였다. 옻나무, 옻칠 방식 등 옻칠이 무엇인가에 대한 간단한 설명에서부터 한국 옻칠의 역사와 계승과정을 전반적으로 살펴볼 수 있는 내용으로 구성되었다. 이를 위해 국보 제164호 무령왕릉 왕비 베개 봉황장식, 보물 제1151호 통일신라 청동 옻칠 발걸이, 보물 제1975호 고려 나전경함 등 국가지정문화재 3점을 포함하여 320여점의 문화재가 전시되었다. 이번 전시가 그동안 잊혀져가는 전통 공예인 옻칠을 새롭게 조명하고, 한국 옻칠 문화를 널리 알려는 계기가 되길 기대한다. 아울러 이 전시는 2020년 여름 국립중앙박물관으로 자리를 옮겨 전시할 예정이다. 이 전시에도 많은 관심을 바란다. ",
+	    "youtube_id" => null,
+	    "list_of_images" => [
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/s7Zcy87gkns/1.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/s7Zcy87gkns/1-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/s7Zcy87gkns/2.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/s7Zcy87gkns/2-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/s7Zcy87gkns/3.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/s7Zcy87gkns/3-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/s7Zcy87gkns/4.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/s7Zcy87gkns/4-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/s7Zcy87gkns/5.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/s7Zcy87gkns/5-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/s7Zcy87gkns/6.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/s7Zcy87gkns/6-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/s7Zcy87gkns/7.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/s7Zcy87gkns/7-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/s7Zcy87gkns/8.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/s7Zcy87gkns/8-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/s7Zcy87gkns/9.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/s7Zcy87gkns/9-thumb.jpg",
+	        ],
+	    ],
+	    "guide_information" => null,
+	    "is_paid" => false,
+	    "is_conversation" => false,
+	    "is_performing" => false,
+	    "date" => "19.06.25 - 19.09.29",
+	    "type" => "특별전",
+	    "page_url" => null,
+	],
 ];
