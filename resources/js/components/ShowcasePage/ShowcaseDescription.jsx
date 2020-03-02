@@ -59,7 +59,7 @@ function ShowcaseDescription(props: Props) {
 
     return (
         <ShowcaseContainer>
-            <Description dangerouslySetInnerHTML={{_html: description}} />
+            <Description>{description}</Description>
             {guideInformation && (
                 <React.Fragment>
                     <ButtonWrapper>
