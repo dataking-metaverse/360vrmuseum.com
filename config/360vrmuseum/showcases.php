@@ -2548,4 +2548,66 @@ return [
 	    "type" => "특별전",
 	    "page_url" => null,
 	],
+	[
+	    "mid" => "VVJ1C5AbyjP",
+	    "show_embed" => true,
+	    "main_title" => "호서의 마한, 미지의 역사를 깨우다",
+	    "location" => "청주",
+	    "presented_by" => "국립청주박물관",
+	    "showcase_ref" => "https://cheongju.museum.go.kr/www/index.do",
+	    "poster" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/VVJ1C5AbyjP/poster-thumb.jpg",
+	    "thumbnail" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/VVJ1C5AbyjP/Thumbnail-thumb.jpg",
+	    "kor_title" => "호서의 마한, 미지의 역사를 깨우다",
+	    "eng_title" => "Hidden History of Mahan unearthed from Hoseo Area",
+	    "venue" => "국립청주박물관",
+	    "map_address" => "충청북도 청주시 상당구 명암로 143",
+	    "map_name" => "충청북도 청주시 상당구 명암로 143",
+	    "description" => "https://cheongju.museum.go.kr/www/speclExbiView.do?key=48&exbiNo=138&searchDeTy=before&pageUnit=10&searchCnd=all&searchKrwd=&pageIndex=1",
+	    "youtube_id" => null,
+	    "list_of_images" => [
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/VVJ1C5AbyjP/1.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/VVJ1C5AbyjP/1-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/VVJ1C5AbyjP/2.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/VVJ1C5AbyjP/2-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/VVJ1C5AbyjP/3.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/VVJ1C5AbyjP/3-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/VVJ1C5AbyjP/4.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/VVJ1C5AbyjP/4-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/VVJ1C5AbyjP/5.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/VVJ1C5AbyjP/5-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/VVJ1C5AbyjP/6.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/VVJ1C5AbyjP/6-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/VVJ1C5AbyjP/7.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/VVJ1C5AbyjP/7-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/VVJ1C5AbyjP/8.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/VVJ1C5AbyjP/8-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/VVJ1C5AbyjP/9.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/VVJ1C5AbyjP/9-thumb.jpg",
+	        ],
+	    ],
+	    "guide_information" => "<특별전 연계 학술 심포지엄> '호서 마한의 대외 관계망 형성' 일시: 2019. 5. 24. 금 10:00~18:00 장소: 청명관 대강당",
+	    "is_paid" => false,
+	    "is_conversation" => true,
+	    "is_performing" => true,
+	    "date" => "19.04.30 - 19.08.11",
+	    "type" => "특별전",
+	    "page_url" => null,
+	],
 ];
