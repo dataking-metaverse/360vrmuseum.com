@@ -2879,7 +2879,7 @@ It was just a natural continuance of the fulness of life. Everything was in term
 	    "location" => "경주",
 	    "presented_by" => "국립경주박물관",
 	    "showcase_ref" => "http://gyeongju.museum.go.kr/kor/",
-	    "poster" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/9tDHv3bWHBt/poster-thumb.jpg",
+	    "poster" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/9tDHv3bWHBt/Thumbnail-thumb.jpg", // Poster doesn't exist
 	    "thumbnail" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/9tDHv3bWHBt/Thumbnail-thumb.jpg",
 	    "kor_title" => "신라 역사관 2실(황금의 나라 신라)",
 	    "eng_title" => "Silla the Kingdom of Gold",
@@ -2941,7 +2941,7 @@ It was just a natural continuance of the fulness of life. Everything was in term
 	    "location" => "경주",
 	    "presented_by" => "국립경주박물관",
 	    "showcase_ref" => "http://gyeongju.museum.go.kr/kor/",
-	    "poster" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/qhS4UkDnpnn/poster-thumb.jpg",
+	    "poster" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/qhS4UkDnpnn/Thumbnail-thumb.jpg", // Poster doesn't exist
 	    "thumbnail" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/qhS4UkDnpnn/Thumbnail-thumb.jpg",
 	    "kor_title" => "영남권 수장고",
 	    "eng_title" => "the storage of Yeongnam",
