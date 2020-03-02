@@ -3375,4 +3375,66 @@ It was just a natural continuance of the fulness of life. Everything was in term
 	    "type" => "특별전",
 	    "page_url" => null,
 	],
+	[
+	    "mid" => "zyXcQFNAoQc",
+	    "show_embed" => true,
+		"main_title" => "고성 청간정",
+	    "location" => "춘천",
+	    "presented_by" => "국립춘천박물관",
+	    "showcase_ref" => "https://chuncheon.museum.go.kr/html/kr/",
+	    "poster" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/zyXcQFNAoQc/poster-thumb.jpg",
+	    "thumbnail" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/zyXcQFNAoQc/Thumbnail-thumb.jpg",
+	    "kor_title" => "고성 청간정",
+	    "eng_title" => "Cheongganjeong Pavilion Goseong from the Eight",
+	    "venue" => "국립춘천박물관",
+	    "map_address" => "강원도 춘천시 우석로 70 ",
+	    "map_name" => "강원도 춘천시 우석로 70 ",
+	    "description" => "국립춘천박물관의 브랜드 문화자산인 관동팔경을 주제로 한 네 번째 기획전시 ‘고성 청간정’ 특별전을 국립춘천박물관과 고성군이 준비했습니다. 맑은 날에는 바닷물에서 불과 오륙보 거리의 탁 트인 풍치로 야심한 달밤에는 해풍에 실려 들려오는 파도소리로 청간정은 수많은 시인묵객들의 눈과 귀를 사로잡아온 명승입니다. 관동팔경의 오랜 역사에도 불구하고 그간 충분히 알려지지 않았던 청간정의 숨겨진 아름다운 이야기들, 청명한 가을 바람과 함께 힐링하는 시간을 선사해 드리겠습니다.",
+	    "youtube_id" => null,
+	    "list_of_images" => [
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/zyXcQFNAoQc/1.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/zyXcQFNAoQc/1-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/zyXcQFNAoQc/2.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/zyXcQFNAoQc/2-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/zyXcQFNAoQc/3.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/zyXcQFNAoQc/3-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/zyXcQFNAoQc/4.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/zyXcQFNAoQc/4-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/zyXcQFNAoQc/5.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/zyXcQFNAoQc/5-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/zyXcQFNAoQc/6.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/zyXcQFNAoQc/6-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/zyXcQFNAoQc/7.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/zyXcQFNAoQc/7-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/zyXcQFNAoQc/8.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/zyXcQFNAoQc/8-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/zyXcQFNAoQc/9.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/zyXcQFNAoQc/9-thumb.jpg",
+	        ],
+	    ],
+	    "guide_information" => null,
+	    "is_paid" => false,
+	    "is_conversation" => false,
+	    "is_performing" => false,
+        "date" => " 19.10.29 - 19.12.15",
+	    "type" => "특별전",
+	    "page_url" => null,
+	],
 ];
