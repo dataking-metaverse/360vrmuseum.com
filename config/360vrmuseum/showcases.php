@@ -3314,7 +3314,7 @@ It was just a natural continuance of the fulness of life. Everything was in term
 	    "page_url" => null,
 	],
 	[
-	    "mid" => "UbfZyiAhTQ9",
+	    "mid" => "b35AU3ctUba",
 	    "show_embed" => true,
 		"main_title" => "가야본성, 칼과 현",
 	    "location" => "서울",
