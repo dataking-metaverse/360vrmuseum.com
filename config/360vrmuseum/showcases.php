@@ -2476,4 +2476,76 @@ return [
         "type" => "특별전",
         "page_url" => null,
     ],
+	[
+	    "mid" => "wDBBzvtMFHZ",
+	    "show_embed" => true,
+	    "main_title" => "무병장수의 별 노인성, 제주를 비추다",
+	    "location" => "제주",
+	    "presented_by" => "국립제주박물관",
+	    "showcase_ref" => "http://jeju.museum.go.kr/html/kr/",
+	    "poster" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/wDBBzvtMFHZ/poster-thumb.jpg",
+	    "thumbnail" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/wDBBzvtMFHZ/Thumbnail-thumb.jpg",
+	    "kor_title" => "무병장수의 별 노인성, 제주를 비추다",
+	    "eng_title" => "Canopus, the star of Longevity illuminates JEJU",
+	    "venue" => "국립제주박물관",
+	    "map_address" => "제주특별자치도 제주시 일주동로-17",
+	    "map_name" => "제주특별자치도 제주시 일주동로-17",
+	    "description" => "‘제주의 별’을 만나는 특별한 시간
+
+국립제주박물관의 2019년 첫 번째 특별전에 오신 여러분을 환영합니다.
+
+제주의 밤하늘에는 아주 특별한 별이 하나 있습니다. ‘노인성老人星’, ‘남극노인성南極老人星’, ‘수성壽星’, `카노푸스Canopus`라는 여러 가지 이름으로 불리는 이 별은 고도가 낮아 보기가 매우 어려운 별입니다. 그렇기 때문에 옛 사람들은 노인성이 뜨면 나라가 평화로워지고 이를 본 사람은 영원히 살 수 있다고 믿었습니다. 제주는 우리나라에서 노인성을 볼 수 있는 가장 좋은 장소입니다. 우리 선조들은 제주에 가야만 노인성을 볼 수 있고 그 별빛이 비추기 때문에 제주에는 장수하는 사람이 많다고 생각했습니다.
+
+전시는 시간의 흐름을 따라가며 ‘제주의 별, 노인성’에 대한 세 가지 이야기를 풀어갑니다.
+첫번째 이야기, 『나라의 운명을 점치는 별』에서는 노인성의 개념과 역사적 의미를 소개합니다.
+두 번째 이야기, 『장수의 별』에서는 노인성을 상징하며 사람의 수명을 주관하는 ‘수노인’이라는 존재를 만나봅니다. 마지막 이야기, 『노인성이 비추는 땅, 제주』에서는 제주와 노인성의 흥미로운 이야기가 펼쳐집니다.
+
+전시가 말하는 ‘제주의 별, 노인성’에 대한 이야기는 아주 오래된 옛날이야기처럼 보이지만 가만히 살펴보면 현재를 살아가고 있는 우리의 이야기이기도 합니다. 우리 모두는 하루하루 나이를 먹어 언젠가는 노년에 이르게 될 것이고 또 언젠가는 죽음을 맞이하게 될 겁니다. 그렇기 때문에 우리는 누구나 오래도록 행복하기를 그래서 우리 삶의 의미를 찾기를 바랍니다. 남쪽하늘의 커다란 별에게 ‘노인’이라는 이름을 붙이고 이를 바라보며 오래 살기를 빌었던 몇 천, 몇 백 년 전의 사람들이 그랬던 것처럼 말입니다. 이번 전시에서 만나는 제주의 별, 노인성이 보내는 행복의 별빛이 여러분의 마음속에서 오래도록 빛나게 되기를 바랍니다.",
+		"youtube_id" => null,
+	    "list_of_images" => [
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/wDBBzvtMFHZ/1.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/wDBBzvtMFHZ/1-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/wDBBzvtMFHZ/2.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/wDBBzvtMFHZ/2-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/wDBBzvtMFHZ/3.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/wDBBzvtMFHZ/3-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/wDBBzvtMFHZ/4.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/wDBBzvtMFHZ/4-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/wDBBzvtMFHZ/5.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/wDBBzvtMFHZ/5-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/wDBBzvtMFHZ/6.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/wDBBzvtMFHZ/6-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/wDBBzvtMFHZ/7.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/wDBBzvtMFHZ/7-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/wDBBzvtMFHZ/8.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/wDBBzvtMFHZ/8-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/wDBBzvtMFHZ/9.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/wDBBzvtMFHZ/9-thumb.jpg",
+	        ],
+	    ],
+	    "guide_information" => null,
+	    "is_paid" => false,
+	    "is_conversation" => false,
+	    "is_performing" => false,
+	    "date" => "19.03.18 - 19.06.16",
+	    "type" => "특별전",
+	    "page_url" => null,
+	],
 ];
