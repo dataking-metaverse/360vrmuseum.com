@@ -3182,4 +3182,73 @@ It was just a natural continuance of the fulness of life. Everything was in term
 	    "type" => "특별전",
 	    "page_url" => null,
 	],
+	[
+	    "mid" => "AyXpvFkHzPo",
+	    "show_embed" => true,
+		"main_title" => "공주 수촌리, 한성에서 웅진으로Ⅰ",
+	    "location" => "공주",
+	    "presented_by" => "국립공주박물관",
+	    "showcase_ref" => "https://gongju.museum.go.kr/gongju/",
+	    "poster" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/AyXpvFkHzPo/poster-thumb.jpg",
+	    "thumbnail" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/AyXpvFkHzPo/Thumbnail-thumb.jpg",
+	    "kor_title" => "공주 수촌리, 한성에서 웅진으로Ⅰ",
+	    "eng_title" => "From Hansoeng to Ungjin, Suchonri - Gongju",
+	    "venue" => "국립공주박물관",
+	    "map_address" => "충청남도 공주시 관광단지길 34",
+	    "map_name" => "충청남도 공주시 관광단지길 34",
+	    "description" => "공주 수촌리 유적을 중심으로 웅진천도의 역사적 배경 이해와 백제 중앙과 지역 세력 간의 관계를 조명하는 전시입니다. 전시 구성은 다음과 같습니다.
+
+ㅇ 프롤로그: 공주 수촌리
+ㅇ 1부: 금강유역 세력의 성장
+ㅇ 2부: 웅진천도의 중심세력, 공주 수촌리
+ㅇ 3부: 웅진천도의 배경과 과정
+ㅇ 에필로그: 웅진천도 그 이후
+",
+	    "youtube_id" => null,
+	    "list_of_images" => [
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/AyXpvFkHzPo/1.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/AyXpvFkHzPo/1-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/AyXpvFkHzPo/2.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/AyXpvFkHzPo/2-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/AyXpvFkHzPo/3.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/AyXpvFkHzPo/3-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/AyXpvFkHzPo/4.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/AyXpvFkHzPo/4-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/AyXpvFkHzPo/5.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/AyXpvFkHzPo/5-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/AyXpvFkHzPo/6.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/AyXpvFkHzPo/6-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/AyXpvFkHzPo/7.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/AyXpvFkHzPo/7-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/AyXpvFkHzPo/8.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/AyXpvFkHzPo/8-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/AyXpvFkHzPo/9.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/AyXpvFkHzPo/9-thumb.jpg",
+	        ],
+	    ],
+	    "guide_information" => null,
+	    "is_paid" => false,
+	    "is_conversation" => false,
+	    "is_performing" => false,
+        "date" => "19.09.27 - 20.03.01",
+	    "type" => "특별전",
+	    "page_url" => null,
+	],
 ];
