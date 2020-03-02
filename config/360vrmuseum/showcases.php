@@ -2610,4 +2610,66 @@ return [
 	    "type" => "특별전",
 	    "page_url" => null,
 	],
+	[
+	    "mid" => "CKBEnmk9CVG",
+	    "show_embed" => true,
+	    "main_title" => "이영희 기증 복식, 새바람",
+	    "location" => "대구",
+	    "presented_by" => "국립대구박물관",
+	    "showcase_ref" => "https://daegu.museum.go.kr/",
+	    "poster" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/CKBEnmk9CVG/poster-thumb.jpg",
+	    "thumbnail" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/CKBEnmk9CVG/Thumbnail-thumb.jpg",
+	    "kor_title" => "이영희 기증 복식, 새바람",
+	    "eng_title" => "Donated Collection of LEE YOUNG HEE The New Wind",
+	    "venue" => "국립대구박물관",
+	    "map_address" => "대구광역시 수성구 청호로 321",
+	    "map_name" => "대구광역시 수성구 청호로 321",
+	    "description" => "대구박물관은 2018년 故 이영희선생(1936~2018)의 유족으로부터 작품을 기증받았습니다. ‘이영희 기증 복식, 새바람’전은 기증받은 작품 가운데 이영희를 대표하는 바람의 옷, 올림픽 의상 등 세계무대에 오른 작품을 집중 조명하는 전시입니다. 한복의 일상화와 세계화에 이바지한 선생의 발자취를 접할 수 있는 좋은 기회가 될 것입니다. 내 꿈은 ‘한복이라는 브랜드’를 디자인하는 것이다....이영희",
+	    "youtube_id" => null,
+	    "list_of_images" => [
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/CKBEnmk9CVG/1.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/CKBEnmk9CVG/1-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/CKBEnmk9CVG/2.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/CKBEnmk9CVG/2-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/CKBEnmk9CVG/3.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/CKBEnmk9CVG/3-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/CKBEnmk9CVG/4.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/CKBEnmk9CVG/4-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/CKBEnmk9CVG/5.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/CKBEnmk9CVG/5-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/CKBEnmk9CVG/6.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/CKBEnmk9CVG/6-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/CKBEnmk9CVG/7.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/CKBEnmk9CVG/7-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/CKBEnmk9CVG/8.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/CKBEnmk9CVG/8-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/CKBEnmk9CVG/9.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/CKBEnmk9CVG/9-thumb.jpg",
+	        ],
+	    ],
+	    "guide_information" => null,
+	    "is_paid" => false,
+	    "is_conversation" => false,
+	    "is_performing" => false,
+	    "date" => "19.05.18 - 19.10.13",
+	    "type" => "특별전",
+	    "page_url" => null,
+	],
 ];
