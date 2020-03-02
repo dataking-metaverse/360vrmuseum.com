@@ -3251,4 +3251,66 @@ It was just a natural continuance of the fulness of life. Everything was in term
 	    "type" => "특별전",
 	    "page_url" => null,
 	],
+	[
+	    "mid" => "kmYoTwSBEJ7",
+	    "show_embed" => true,
+		"main_title" => "조선도자 히젠의 색을 입다",
+	    "location" => "진주",
+	    "presented_by" => "국립진주박물관",
+	    "showcase_ref" => "https://jinju.museum.go.kr/kor/",
+	    "poster" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/kmYoTwSBEJ7/poster-thumb.jpg",
+	    "thumbnail" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/kmYoTwSBEJ7/Thumbnail-thumb.jpg",
+	    "kor_title" => "조선도자 히젠의 색을 입다",
+	    "eng_title" => "The Flowering Korea Ceramic Culture in Japan",
+	    "venue" => "국립진주박물관",
+	    "map_address" => "경남 진주시 남강로 626-35",
+	    "map_name" => "경남 진주시 남강로 626-35",
+	    "description" => "히젠은 현재 일본 규슈 북부의 사가현(佐賀縣)과 나가사키현(長崎縣) 일대에 해당하는 옛 지명(地名)입니다. 히젠은 임진왜란 때 일본이 조선 침략의 출병기지로 세웠던 나고야성(名護屋城)이 위치해 있으며, 임진왜란에 참전하여 조선 장인을 가장 많이 포로로 끌고 갔던 일본군 장수 나베시마 가문의 영지(領地)이기도 합니다. 또 일본 자기의 발생지이자, 도자기의 생산지로 유럽에까지 알려질 정도로 유명한 곳입니다. 일본의 도자문화는 임진왜란 이후 히젠을 중심으로 눈부시게 발전하여 17세기 중반에는 아시아를 넘어 유럽 각지로 수출되었습니다. 히젠 자기는 아리타(有田·자기 생산지)나 이마리(伊万里·자기 수출항)의 이름을 따서 ‘아리타 자기’, ‘이마리 자기’로도 불렀습니다. 일본 도자문화는 조선의 영향을 빼놓고는 설명이 불가능합니다. 일본에서는 임진왜란 이전부터 조선의 영향을 받아 도기 제작이 시작되었고, 임진왜란 당시 히젠으로 끌려온 조선 장인에 의해 1610년대 최초의 자기가 생산되었습니다. 우리가 히젠 지역 도자기에 주목한 이유도 여기에 있습니다. 히젠 자기는 다양한 색상의 화려함을 추구하였지만, 그 기원은 소박하면서도 친근한 조선 도자문화와 그것을 만든 조선 장인에게서 시작되었습니다. 이에 국립진주박물관은 2019년 한일문화교류 특별전 <조선 도자, 히젠肥前의 색을 입다>를 개최합니다. 이번 전시에서는 조선 도자가 일본 도자문화에 끼친 영향과 조선 도자 기술을 바탕으로 히젠의 색을 담은 일본 도자가 어떻게 발전해 나갔는지 살펴보고자 합니다. 전시를 통해, 우리는 도자기를 매개로 한 조선과 일본의 교류, 우리가 그동안 알지 못했던 일본 도자문화의 새로운 모습을 만나게 될 것입니다.",
+	    "youtube_id" => null,
+	    "list_of_images" => [
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/kmYoTwSBEJ7/1.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/kmYoTwSBEJ7/1-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/kmYoTwSBEJ7/2.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/kmYoTwSBEJ7/2-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/kmYoTwSBEJ7/3.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/kmYoTwSBEJ7/3-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/kmYoTwSBEJ7/4.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/kmYoTwSBEJ7/4-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/kmYoTwSBEJ7/5.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/kmYoTwSBEJ7/5-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/kmYoTwSBEJ7/6.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/kmYoTwSBEJ7/6-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/kmYoTwSBEJ7/7.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/kmYoTwSBEJ7/7-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/kmYoTwSBEJ7/8.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/kmYoTwSBEJ7/8-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/kmYoTwSBEJ7/9.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/kmYoTwSBEJ7/9-thumb.jpg",
+	        ],
+	    ],
+	    "guide_information" => null,
+	    "is_paid" => false,
+	    "is_conversation" => false,
+	    "is_performing" => false,
+        "date" => "19.10.01 - 19.12.08",
+	    "type" => "특별전",
+	    "page_url" => null,
+	],
 ];
