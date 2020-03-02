@@ -3433,7 +3433,7 @@ It was just a natural continuance of the fulness of life. Everything was in term
 	    "is_paid" => false,
 	    "is_conversation" => false,
 	    "is_performing" => false,
-        "date" => " 19.10.29 - 19.12.15",
+        "date" => "19.10.29 - 19.12.15",
 	    "type" => "특별전",
 	    "page_url" => null,
 	],
