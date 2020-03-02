@@ -2858,4 +2858,204 @@ return [
 	    "type" => "특별전",
 	    "page_url" => null,
 	],
+	[
+	    "mid" => "QcXyw9K7xLD",
+	    "show_embed" => true,
+		"main_title" => "로마 이전, 에트루리아",
+	    "location" => "서울",
+	    "presented_by" => "국립중앙박물관",
+	    "showcase_ref" => "http://www.museum.go.kr/site/main/home",
+	    "poster" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/QcXyw9K7xLD/poster-thumb.jpg",
+	    "thumbnail" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/QcXyw9K7xLD/Thumbnail-thumb.jpg",
+	    "kor_title" => "로마 이전, 에트루리아",
+	    "eng_title" => "THE ETRUSCANS – RISING TO ROME",
+	    "venue" => "국립중앙박물관",
+	    "map_address" => "서울시 용산구 서빙고로 137",
+	    "map_name" => "서울시 용산구 서빙고로 137",
+	    "description" => "국립중앙박물관은 고대 지중해 문명의 한 축이었던 에트루리아의 역사와 문화를 소개하는 특별전 <로마 이전, 에트루리아>를 개최합니다. 에트루리아는 기원전 900년부터 기원전 100년경까지 이탈리아 반도 중북부 지역에 있던 고대 국가입니다. 에트루리아 사람들은 지중해에 살았던 모든 사람들 중에서 가장 매력적인 사람들로 평가되고 있습니다. 당시 역사가들은 에트루리아인들을 “다른 모든 사람들과 다른 태곳적 사람들”이라 여겼습니다. 베일에 싸인 그들의 기원과 언어, 종교는 에트루리아인들을 더욱 신비롭게 만들며, 오늘날에도 여전히 감탄과 매력을 자아냅니다.
+로마 문화의 근간을 이루지만 아직 그 실체가 알려지지 않은 에트루리아. 이번 전시는 에트루리아의 문화를 살피며, 우리의 문화적 시야를 넓히고자 마련되었습니다. 국내에 처음으로 소개되는 약 300점의 전시품에는 에트루리아 사람들의 생활 모습과 세계관, 종교관, 사후 관념 등이 고스란히 담겨 있습니다. 2천여 년의 긴 잠에서 깨어나 우리 앞에 펼쳐진 에트루리아의 다양한 유물들은 죽어서도 현재의 삶이 이어지기를 바랐던 그들의 간절한 바람을 전합니다. 세련되고 신비로운 고대 유럽 문명의 하나로, 로마의 근간을 이룬 에트루리아. 이제 그 문명의 숨결을 함께 느껴보시기 바랍니다.
+
+에트루리아사람들에게 죽음이란 여전히 보석과 와인,
+그리고 춤을 추기 위한 연주용 피리가 있는 삶의 즐거운 연장이었다.
+황홀한 축복, 천국도 아니었고, 고통의 연옥도 아니었다.
+그저 풍요로운 삶의 자연스런 연장이었던 것이다. 모든 것을 생명, 삶이란 관점에서 본 것이다.
+
+
+And death, to Etruscans, was a pleasant continuance of life, with jewels and wine and flutes playing for the dance. It was neither an ecstasy of bliss, a heaven, nor purgatory of torment.
+It was just a natural continuance of the fulness of life. Everything was in terms of life, living.
+
+
+- D.H. 로렌스의 『에트루리아 유적 기행기』 중 -",
+	    "youtube_id" => "1zWTLmmlgbY",
+	    "list_of_images" => [
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/QcXyw9K7xLD/1.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/QcXyw9K7xLD/1-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/QcXyw9K7xLD/2.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/QcXyw9K7xLD/2-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/QcXyw9K7xLD/3.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/QcXyw9K7xLD/3-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/QcXyw9K7xLD/4.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/QcXyw9K7xLD/4-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/QcXyw9K7xLD/5.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/QcXyw9K7xLD/5-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/QcXyw9K7xLD/6.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/QcXyw9K7xLD/6-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/QcXyw9K7xLD/7.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/QcXyw9K7xLD/7-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/QcXyw9K7xLD/8.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/QcXyw9K7xLD/8-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/QcXyw9K7xLD/9.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/QcXyw9K7xLD/9-thumb.jpg",
+	        ],
+	    ],
+	    "guide_information" => '<table cellpadding="1" cellspacing="0" width="879"><tbody><tr><td height="27" width="5.895953757225434%"><p><span lang="ko-KR"><strong>번호</strong></span></p></td><td width="12.023121387283236%"><p><span lang="ko-KR"><strong>행사명</strong></span></p></td><td width="17.45664739884393%"><p><span lang="ko-KR"><strong>일자</strong></span></p></td><td width="15.028901734104046%"><p><span lang="ko-KR"><strong>장소</strong></span></p></td><td width="31.44508670520231%"><p><span lang="ko-KR"><strong>내용</strong></span></p></td><td width="18.15028901734104%"><p><span lang="ko-KR"><strong>참여</strong><strong>대상</strong></span></p></td></tr><tr><td height="71" width="5.895953757225434%"><p>1</p></td><td rowspan="6" width="12.023121387283236%"><p><span lang="ko-KR"><strong>연</strong></span></p><p><span lang="ko-KR"><strong>계</strong></span></p><p><span lang="ko-KR"><strong>강</strong></span></p><p><span lang="ko-KR"><strong>연</strong></span></p></td><td width="17.45664739884393%"><p>7.9.</p><p>14:00~16:00</p></td><td width="15.028901734104046%"><p><span lang="ko-KR">교육관</span></p><p>제1<span lang="ko-KR">강의실</span></p></td><td width="31.44508670520231%"><p><span lang="ko-KR"><strong>에트루리아</strong><strong>문명</strong></span></p><p>– <span lang="ko-KR"><strong>볼테라를</strong><strong>중심으로</strong></span></p><p>엘레나소르제(피사-리보르노지역관할문화유산관리국감독관)</p></td><td rowspan="6" width="18.15028901734104%"><p>일반인&nbsp;200<span lang="ko-KR">여명</span></p></td></tr><tr><td height="71" width="8.443708609271523%"><p>2</p></td><td width="25%"><p>7.17. 16:00~18:00</p></td><td width="21.52317880794702%"><p><span lang="ko-KR">소강당</span></p></td><td width="45.033112582781456%"><p><strong>D. H.&nbsp;</strong><span lang="ko-KR"><strong>로렌스와</strong><strong>같이</strong><strong>가는</strong></span></p><p><span lang="ko-KR"><strong>에트루리아</strong><strong>기행</strong></span></p><p>박시영(이화여대교수)</p></td></tr><tr><td height="52" width="8.443708609271523%"><p>3</p></td><td width="25%"><p>7.24. 16:00~18:00</p></td><td width="21.52317880794702%"><p><span lang="ko-KR">소강당</span></p></td><td width="45.033112582781456%"><p><span lang="ko-KR"><strong>에트루리아와</strong><strong>고대</strong><strong>지중해의</strong><strong>미술</strong><strong>문화</strong></span></p><p>김혜진(한국외국어대교수)</p></td></tr><tr><td height="52" width="8.443708609271523%"><p>4</p></td><td width="25%"><p>7.31. 16:00~18:00</p></td><td width="21.52317880794702%"><p><span lang="ko-KR">소강당</span></p></td><td width="45.033112582781456%"><p><span lang="ko-KR"><strong>에트루리아의</strong><strong>내세관과</strong><strong>삶의</strong><strong>풍경</strong></span></p><p>최병진(한국외국어대교수)</p></td></tr><tr><td height="36" width="8.443708609271523%"><p>5</p></td><td width="25%"><p>8.7. 16:00~18:00</p></td><td width="21.52317880794702%"><p><span lang="ko-KR">소강당</span></p></td><td width="45.033112582781456%"><p><span lang="ko-KR"><strong>에트루리아의</strong><strong>금속문화</strong></span></p><p>조대연(전북대교수)</p></td></tr><tr><td height="52" width="8.443708609271523%"><p>6</p></td><td width="25%"><p>8.14. 16:00~18:00</p></td><td width="21.52317880794702%"><p><span lang="ko-KR">소강당</span></p></td><td width="45.033112582781456%"><p><strong>삶과</strong><strong>죽음의</strong><strong>장소</strong><strong>,&nbsp;</strong><span lang="ko-KR"><strong>에트루리아</strong><strong>문명의</strong><strong>유산</strong></span></p><p>김일현(경희대교수)</p></td></tr><tr><td height="55" width="5.895953757225434%"><p>7</p></td><td width="12.023121387283236%"><p><span lang="ko-KR"><strong>박물관</strong><strong>역사문화</strong></span></p><p><span lang="ko-KR"><strong>교실</strong></span></p></td><td width="17.45664739884393%"><p>7.10.</p><p>14:00~16:00</p></td><td width="15.028901734104046%"><p><span lang="ko-KR">대강당</span></p></td><td bgcolor="#ffffff" width="31.44508670520231%"><p><span lang="ko-KR"><strong>고대</strong><strong>에트루리아</strong><strong>미술</strong></span></p><p>조은정(목포대교수)</p></td><td width="18.15028901734104%"><p>일반인&nbsp;700여명/</p><p><span lang="ko-KR">선착순현장접수</span></p></td></tr><tr><td height="60" width="5.895953757225434%"><p>8</p></td><td width="12.023121387283236%"><p><span lang="ko-KR"><strong>뮤지엄</strong></span></p><p><span lang="ko-KR"><strong>나이트</strong></span></p></td><td width="17.45664739884393%"><p>7.12.</p></td><td width="15.028901734104046%"><p><span lang="ko-KR">기획전시실</span></p></td><td width="31.44508670520231%"><p><span lang="ko-KR"><strong>에트루리아전을</strong><strong>특별하게</strong><strong>감상할</strong><strong>&nbsp;</strong><strong>수</strong><strong>있는</strong><strong>초청</strong><strong>이벤트</strong></span></p><p>(도슨트와함께하는전시관람, 경품추첨, 다과제공등)</p></td><td width="18.15028901734104%"><p><span lang="ko-KR">사전신청자</span></p><p>(40명내외)</p></td></tr><tr><td height="63" width="5.895953757225434%"><p>9</p></td><td width="12.023121387283236%"><p><span lang="ko-KR"><strong>문화향연</strong><strong>오페라</strong><strong>이야기</strong></span></p></td><td width="17.45664739884393%"><p>8.3</p><p>15:00~16:00</p></td><td width="15.028901734104046%"><p><span lang="ko-KR">으뜸홀</span></p></td><td width="31.44508670520231%"><p><span lang="ko-KR">남녀노소가함께즐길수있는오페라갈라콘서트</span></p></td><td width="18.15028901734104%"><p><span lang="ko-KR">전체관람객</span></p><p>(무료)</p></td></tr><tr><td height="64" width="5.895953757225434%"><p>10</p></td><td width="12.023121387283236%"><p><span lang="ko-KR"><strong>가족</strong></span></p><p><span lang="ko-KR"><strong>프로그램</strong></span></p></td><td width="17.45664739884393%"><p>7.9.~10.27.</p><p>매주토요일&nbsp;(9.14.&nbsp;제외)</p><p>14:00~16:00</p></td><td width="15.028901734104046%"><p><span lang="ko-KR">교육관</span></p><p>제1<span lang="ko-KR">실기실</span></p></td><td bgcolor="#ffffff" width="31.44508670520231%"><p>에트루리아,&nbsp;넌누구냐&nbsp;?</p><p><span lang="ko-KR">에트루리아에대해알아보기</span></p></td><td width="18.15028901734104%"><p>회당&nbsp;30 가족/</p><p><span lang="ko-KR">선착순인터넷접수</span></p></td></tr><tr><td height="74" width="5.895953757225434%"><p>11</p></td><td width="12.023121387283236%"><p><span lang="ko-KR"><strong>전시</strong><strong>감상</strong></span></p><p><span lang="ko-KR"><strong>활동지</strong></span></p><p><strong>(</strong><strong>국ㆍ영문</strong><strong>)</strong></p></td><td width="17.45664739884393%"><p>7.9.~10.27.</p></td><td width="15.028901734104046%"><p><span lang="ko-KR">기획전시실</span></p></td><td bgcolor="#ffffff" width="31.44508670520231%"><p><span lang="ko-KR">에트루리아의역사와예술의핵심키워드를담은전시안내지</span></p></td><td width="18.15028901734104%"><p>누구나/</p><p><span lang="ko-KR">기획전시실뮤지엄샵판매</span></p></td></tr><tr><td height="70" width="5.895953757225434%"><p>12</p></td><td width="12.023121387283236%"><p><strong>&lt;</strong><strong>에트루리아</strong><strong>&gt;</strong></p><p><span lang="ko-KR"><strong>큐레이션</strong><strong>서가</strong></span></p></td><td width="17.45664739884393%"><p>7.9.~10.27.</p></td><td width="15.028901734104046%"><p><span lang="ko-KR">도서관</span></p></td><td bgcolor="#ffffff" width="31.44508670520231%"><p><span lang="ko-KR">에트루리아전연계학술도서ㆍ도록ㆍ논문집등</span></p></td><td width="18.15028901734104%"><p><span lang="ko-KR">청소년이상관람객</span></p></td></tr></tbody></table>',
+	    "is_paid" => true,
+	    "is_conversation" => false,
+	    "is_performing" => false,
+	    "date" => "19.07.09 - 19.10.27",
+	    "type" => "특별전",
+	    "page_url" => null,
+	],
+	[
+	    "mid" => "A2G2zXe2a3K",
+	    "show_embed" => false,
+		"main_title" => "우리 강산을 그리다: 화가의 시선, 조선시대 실경산수화",
+	    "location" => "서울",
+	    "presented_by" => "국립중앙박물관",
+	    "showcase_ref" => "http://www.museum.go.kr/site/main/home",
+	    "poster" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/A2G2zXe2a3K/poster-thumb.jpg",
+	    "thumbnail" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/A2G2zXe2a3K/Thumbnail-thumb.jpg",
+	    "kor_title" => "우리 강산을 그리다: 화가의 시선, 조선시대 실경산수화",
+	    "eng_title" => "THROUGH THE EYES OF JOSEON PAINTERS: REAL SCENERY LANDSCAPES OF KOREA",
+	    "venue" => "국립중앙박물관",
+	    "map_address" => "서울시 용산구 서빙고로 137",
+	    "map_name" => "서울시 용산구 서빙고로 137",
+	    "description" => "\"우리 강산을 그리다: 화가의 시선, 조선시대 실경산수화\"는 그림의 창작자인 화가에 초점을 맞추어 실경산수화의 제작 과정을 소개하는 전시입니다.  정선, 김홍도를 비롯하여 노영, 한시각, 조세걸, 전충효, 김윤겸, 강세황, 정수영, 김응환, 김하종, 윤제홍 등 고려시대부터 조선말기까지 옛 화가들이 그린 다양한 실경산수화를 선보입니다. 현장에서 스케치한 초본 및 기행화첩, 두루마리(횡권), 부채, 병풍 등을 감상하시면서 각양각색으로 펼쳐진 우리 산수의 아름다움을 느껴보실 수 있습니다.
+이번 특별전에서는 화가의 시점에 따라 실제 경치가 화면에 그려지는 방식들을 살펴보고, 주관적 시선(해석)에 의해 해체, 재구성되는 양상을 조명하고자 합니다.",
+	    "youtube_id" => "iG3c1TT_yh4",
+	    "list_of_images" => [
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/A2G2zXe2a3K/1.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/A2G2zXe2a3K/1-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/A2G2zXe2a3K/2.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/A2G2zXe2a3K/2-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/A2G2zXe2a3K/3.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/A2G2zXe2a3K/3-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/A2G2zXe2a3K/4.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/A2G2zXe2a3K/4-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/A2G2zXe2a3K/5.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/A2G2zXe2a3K/5-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/A2G2zXe2a3K/6.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/A2G2zXe2a3K/6-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/A2G2zXe2a3K/7.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/A2G2zXe2a3K/7-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/A2G2zXe2a3K/8.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/A2G2zXe2a3K/8-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/A2G2zXe2a3K/9.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/A2G2zXe2a3K/9-thumb.jpg",
+	        ],
+	    ],
+	    "guide_information" => '<p><strong>o&nbsp;</strong><span lang="ko-KR"><strong>연계</strong><strong>&nbsp;</strong><strong>강연회</strong><strong>&nbsp;</strong><strong>안내</strong></span></p><table cellpadding="1" cellspacing="0" width="590"><tbody><tr><td height="25" width="17.52577319587629%"><p><br></p></td><td width="16.49484536082474%"><p>일시/<span lang="ko-KR">장소</span></p></td><td width="65.97938144329896%"><p><span lang="ko-KR">강연자와주제</span></p></td></tr><tr><td bgcolor="#f2f2f2" height="50" width="17.52577319587629%"><p>박물관역사<br><span lang="ko-KR">문화교실</span></p></td><td width="16.49484536082474%"><p>7.24(수)<br>14~16<span lang="ko-KR">시</span></p><p><span lang="ko-KR">대강당</span></p></td><td width="65.97938144329896%"><p>이태호(전명지대학교교수)&nbsp;</p><p>‘금강산수’&nbsp;- <span lang="ko-KR">옛그림과함께아름다운금강산돌아보기</span></p></td></tr><tr><td bgcolor="#f2f2f2" height="86" width="17.52577319587629%"><p>연계강연회&nbsp;1</p></td><td width="16.49484536082474%"><p>7.31(수)<br>14~17<span lang="ko-KR">시</span></p><p><span lang="ko-KR">대강당</span></p></td><td width="65.97938144329896%"><p>박은순(덕성여자대학교교수)</p><p>: <span lang="ko-KR">조선시대실경산수화의유형과변모</span></p><p>이수미(국립중앙박물관미술부장)</p><p>: <span lang="ko-KR">조선전기실경산수화의전통과관동명승도</span></p></td></tr><tr><td bgcolor="#f2f2f2" height="87" width="17.52577319587629%"><p>연계강연회&nbsp;2</p></td><td width="16.49484536082474%"><p>8.28(수)<br>14~17<span lang="ko-KR">시</span></p><p><span lang="ko-KR">소강당</span></p></td><td width="65.97938144329896%"><p>박은화(충북대학교교수)</p><p>: <span lang="ko-KR">중국실경산수화전통의형성과전승</span></p><p>문동수(국립중앙박물관미술부학예연구관)</p><p>: <span lang="ko-KR">조선후기실경산수화의실험과파격&nbsp;–&nbsp;강세황과윤제홍</span></p></td></tr><tr><td bgcolor="#f2f2f2" height="86" width="17.52577319587629%"><p>연계강연회&nbsp;3</p></td><td width="16.49484536082474%"><p>9.4(수)<br>14~17<span lang="ko-KR">시</span></p><p><span lang="ko-KR">소강당</span></p></td><td width="65.97938144329896%"><p>정치영(한국학중앙연구원교수)</p><p>: <span lang="ko-KR">사대부와유람문화</span></p><p>오다연(국립중앙박물관미술부학예연구사)</p><p>: 금강산유람과김응환의&nbsp;&lt;해악전도첩&gt;</p></td></tr><tr><td bgcolor="#f2f2f2" height="48" width="17.52577319587629%"><p>연계강연회&nbsp;4</p></td><td width="16.49484536082474%"><p>9.5(목)<br>14~15<span lang="ko-KR">시</span></p><p>교육관&nbsp; &nbsp; &nbsp;제&nbsp;&nbsp;2<span lang="ko-KR">강의실</span></p></td><td width="65.97938144329896%"><p><span lang="ko-KR">박대성화백</span></p><p>: <span lang="ko-KR">우리실경산수화와화가의창작</span></p></td></tr><tr><td bgcolor="#f2f2f2" height="40" width="17.52577319587629%"><p>&nbsp;먼데이토크1</p></td><td width="16.49484536082474%"><p>9.2(월)<br>14시~15시<br><span lang="ko-KR">특별전시실</span></p></td><td width="65.97938144329896%"><p>문동수(국립중앙박물관미술부학예연구관)<br>: <span lang="ko-KR">전시기획자가들려주는특별전이야기</span></p></td></tr><tr><td bgcolor="#f2f2f2" height="48" width="17.52577319587629%"><p>먼데이토크2&nbsp;</p></td><td width="16.49484536082474%"><p>9.9(월)<br>14시~15시<br><span lang="ko-KR">특별전시실</span></p></td><td width="65.97938144329896%"><p>오다연(국립중앙박물관미술부학예연구사)<br>: <span lang="ko-KR">전시기획자가들려주는특별전이야기</span></p></td></tr><tr><td bgcolor="#f2f2f2" height="48" width="17.52577319587629%"><p>먼데이토크3</p></td><td width="16.49484536082474%"><p>9.16(월)<br>14시~15시<br><span lang="ko-KR">특별전시실</span></p></td><td width="65.97938144329896%"><p>최훈이(국립중앙박물관 디자인팀전문경력관&nbsp;)<br>: <span lang="ko-KR">전시디자이너가들려주는특별전이야기</span></p></td></tr><tr><td bgcolor="#f2f2f2" height="48" width="17.52577319587629%"><p>&nbsp; &nbsp; 먼데이토크4</p></td><td width="16.49484536082474%"><p>10.7(월)<br>14시~15시<br><span lang="ko-KR">특별전시실</span></p></td><td width="65.97938144329896%"><p>이수미(국립중앙박물관미술부장)<br>: <span lang="ko-KR">전시기획자가들려주는특별전이야기</span></p></td></tr><tr><td bgcolor="#f2f2f2" height="47" width="17.52577319587629%"><p>&nbsp; &nbsp; 먼데이토크5</p></td><td width="16.49484536082474%"><p>10.14(월)<br>14시~15시<br><span lang="ko-KR">특별전시실</span></p></td><td width="65.97938144329896%"><p>전배호(국립중앙박물관 디자인팀전문경력관&nbsp;)<br>: <span lang="ko-KR">전시디자이너가들려주는특별전이야기</span></p></td></tr></tbody></table><p>&nbsp; * <strong>먼데이토크</strong><strong>&nbsp;</strong><strong>Monday Talk</strong>: 하단의 연관 교육을 클릭하시어&nbsp;신청하실 수 있습니다.&nbsp;(1회&nbsp;30인)<br>누리집&gt; 교육,행사&gt; 교육 신청&gt; <span lang="ko-KR">누리집 가입 후 신청 가능</span></p><p><br><br></p>',
+	    "is_paid" => true,
+	    "is_conversation" => false,
+	    "is_performing" => false,
+	    "date" => "19.7.23 - 19. 10.20",
+	    "type" => "특별전",
+	    "page_url" => null,
+	],
+	[
+	    "mid" => "9tDHv3bWHBt",
+	    "show_embed" => true,
+		"main_title" => "신라 역사관 2실(황금의 나라 신라)",
+	    "location" => "경주",
+	    "presented_by" => "국립경주박물관",
+	    "showcase_ref" => "http://gyeongju.museum.go.kr/kor/",
+	    "poster" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/9tDHv3bWHBt/poster-thumb.jpg",
+	    "thumbnail" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/9tDHv3bWHBt/Thumbnail-thumb.jpg",
+	    "kor_title" => "신라 역사관 2실(황금의 나라 신라)",
+	    "eng_title" => "Silla the Kingdom of Gold",
+	    "venue" => "국립경주박물관",
+	    "map_address" => "경상북도 경주시 일정로 186",
+	    "map_name" => "경상북도 경주시 일정로 186",
+	    "description" => "신라는 4세기 중반에 마립간이라는 지배자를 중심으로 고대 국가의 틀을 갖추기 시작했습니다. 마립간과 그 일족은 금·은·금동으로 화려하게 세공을 한 각종 장신구를 걸쳤고, 또 금과 은으로 만든 그릇도 썼습니다. 제2실에서는 신라가 황금의 나라였으며, 지배자들에게 황금은 곧 권력의 상징이었음을 보여줍니다.",
+	    "youtube_id" => null,
+	    "list_of_images" => [
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/9tDHv3bWHBt/1.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/9tDHv3bWHBt/1-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/9tDHv3bWHBt/2.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/9tDHv3bWHBt/2-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/9tDHv3bWHBt/3.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/9tDHv3bWHBt/3-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/9tDHv3bWHBt/4.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/9tDHv3bWHBt/4-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/9tDHv3bWHBt/5.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/9tDHv3bWHBt/5-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/9tDHv3bWHBt/6.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/9tDHv3bWHBt/6-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/9tDHv3bWHBt/7.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/9tDHv3bWHBt/7-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/9tDHv3bWHBt/8.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/9tDHv3bWHBt/8-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/9tDHv3bWHBt/9.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/9tDHv3bWHBt/9-thumb.jpg",
+	        ],
+	    ],
+	    "guide_information" => null,
+	    "is_paid" => false,
+	    "is_conversation" => false,
+	    "is_performing" => false,
+        "date" => "상시",
+	    "type" => "상설전시",
+	    "page_url" => null,
+	],
 ];
