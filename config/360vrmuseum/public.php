@@ -48,12 +48,16 @@ return [
                 'TyFGiCLuof9', '4MbVUmwti9x', 'kcWsN7tZAXm', '3MrnWzKigNP', 'sdhXymhVog6',
                 'avWhh5K7Nop', 'kF3xE8edLEA', 'kkZGik7iLgm', 'o1ZhcnK9swd', 'V5jZZqo5CZg',
                 'w6M8mr9ArwV', 'aSYdPZg4Mu6', 'yDEtLE2KrWP', 'n4ik2CyQRWM', '3VzkdUcgjGM',
-                'CQVuaEc2Ug5', 'QHhwyfbvgQM',
+                'CQVuaEc2Ug5', 'QHhwyfbvgQM', 'CKBEnmk9CVG', 'wDBBzvtMFHZ', 'VVJ1C5AbyjP',
+                '8vo1vboP9vz', '6NerCD25MLi', 's7Zcy87gkns', 'QcXyw9K7xLD', 'A2G2zXe2a3K',
+                'qPk7yxoRZHP', 'AyXpvFkHzPo', 'kmYoTwSBEJ7', 'L1TuoKoNakR', 'zyXcQFNAoQc',
+                'UbfZyiAhTQ9',
             ],
             'permanentExhibition' => [
                 'QkPtiaDjLbE', 'ft1emFLvBQA', 'BNTTf85YsMP', 'iPhH5vffSTt', 'RM2QnvzmjA3',
                 'B6UCtGFBjsf', '2Kh3PgoqoDT', 'Xr48H9yMjcp', 'rkDggYgt6LV', 'UarDva3g6pX',
-                'P4L5PqEWNrS', 'w9vxL98X4Fd', '3MxD4FVo6e5', "ZkdCV6kHtjR",
+                'P4L5PqEWNrS', 'w9vxL98X4Fd', '3MxD4FVo6e5', "ZkdCV6kHtjR", '9tDHv3bWHBt',
+                'qhS4UkDnpnn',
             ],
         ],
         'showcase' => [
