@@ -3120,4 +3120,66 @@ It was just a natural continuance of the fulness of life. Everything was in term
 	    "type" => "상설전시",
 	    "page_url" => null,
 	],
+	[
+	    "mid" => "qPk7yxoRZHP",
+	    "show_embed" => true,
+		"main_title" => "四神사신이 호위하사, 백제 능산리 1호 東下塚동하총",
+	    "location" => "부여",
+	    "presented_by" => "국립부여박물관",
+	    "showcase_ref" => "http://buyeo.museum.go.kr/contents/siteMain.do",
+	    "poster" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/qPk7yxoRZHP/poster-thumb.jpg",
+	    "thumbnail" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/qPk7yxoRZHP/Thumbnail-thumb.jpg",
+	    "kor_title" => "四神사신이 호위하사, 백제 능산리 1호 東下塚동하총",
+	    "eng_title" => "TOMB NO.1 DONGHACHONG NEUNGSAN-RI IN BAEK JE",
+	    "venue" => "국립부여박물관",
+	    "map_address" => "충남 부여군 부여읍 금성로 5",
+	    "map_name" => "충남 부여군 부여읍 금성로 5",
+	    "description" => "국립부여박물관은 2019년 9월 10일부터 11월 24일까지 특별전 “四神사신이 호위하사, 백제 능산리 1호 東下塚동하총”을 개최합니다. 옛 백제 사비도성의 동쪽, 부여군 능산리에는 백제 사비시기 왕실의 무덤으로 알려진 부여 능산리 고분군(사적 제14호)이 있습니다. 그 중에서도 능산리 1호 東下塚동하총은 네 벽에 청룡, 백호, 주작, 현무 등 이 그려진 벽화고분입니다. 백제지역에서 단 2기만 발견된 백제 최고 수준의 무덤입니다. 고분군의 서쪽에는 능산리 고분군에 모신 백제 왕을 제사지내는 특별한 사찰 터가 있습니다. 이곳에서 발견한 백제금동대향로는 백제 왕실이 주관하는 의례와 제사 등에 사용된 것으로 보입니다. 백제 사람들은 돌아가신 백제 왕을 추모하고 백제의 번영과 안녕을 기원하기 위해 능산리 사찰에서 제사지낸 후 고분군에서 참배하였습니다. 이번 전시는 부여 능산리 1호 東下塚동하총의 석실과 목관을 재현하여 백제 왕릉을 체감할 수 있도록 구성하였습니다. 흔적만 남아있는 사신의 모습과 연꽃구름무늬벽화를 디지털영상으로 구현하였으며, 여전히 백제금동대향로에서 살아 숨 쉬는 용과 봉황 등 사신의 의미를 되새겨 보았습니다. 그리고 백제금동대향로의 발견 과정과 세부 모습 등 다양한 정보도 제공할 예정입니다. 102년 전 일본인 연구자가 조사한 능산리 1호 東下塚동하총은 무덤의 위상과 학술적 중요성에 비해 제대로 주목받지 못하였습니다. 최근 국립부여박물관은 우리의 고고학·보존과학 분석기술로 능산리 1호 東下塚동하총의 다양한 내용을 새롭게 밝혀냈고, 이를 이번 특별전에서 소개하고자 합니다. 국립부여박물관은 국립부여문화재연구소와 함께 능산리 1호 東下塚동하총을 정밀 재발굴하여 무덤의 전모를 밝힐 예정이며, 이번 전시가 백제 고분문화 연구의 새로운 동력이 될 것입니다.",
+	    "youtube_id" => null,
+	    "list_of_images" => [
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/qPk7yxoRZHP/1.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/qPk7yxoRZHP/1-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/qPk7yxoRZHP/2.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/qPk7yxoRZHP/2-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/qPk7yxoRZHP/3.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/qPk7yxoRZHP/3-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/qPk7yxoRZHP/4.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/qPk7yxoRZHP/4-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/qPk7yxoRZHP/5.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/qPk7yxoRZHP/5-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/qPk7yxoRZHP/6.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/qPk7yxoRZHP/6-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/qPk7yxoRZHP/7.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/qPk7yxoRZHP/7-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/qPk7yxoRZHP/8.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/qPk7yxoRZHP/8-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/qPk7yxoRZHP/9.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/qPk7yxoRZHP/9-thumb.jpg",
+	        ],
+	    ],
+	    "guide_information" => null,
+	    "is_paid" => false,
+	    "is_conversation" => false,
+	    "is_performing" => false,
+        "date" => "19.09.10 - 20.01.27",
+	    "type" => "특별전",
+	    "page_url" => null,
+	],
 ];
