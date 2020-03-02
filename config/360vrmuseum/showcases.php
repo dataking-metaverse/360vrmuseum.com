@@ -3313,4 +3313,66 @@ It was just a natural continuance of the fulness of life. Everything was in term
 	    "type" => "특별전",
 	    "page_url" => null,
 	],
+	[
+	    "mid" => "L1TuoKoNakR",
+	    "show_embed" => true,
+		"main_title" => "나주 복암리 정촌고분 마한사람들, 큰 무덤에 함께 잠들다",
+	    "location" => "나주",
+	    "presented_by" => "국립나주박물관",
+	    "showcase_ref" => "http://naju.museum.go.kr/html/kr/index.html",
+	    "poster" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/L1TuoKoNakR/poster-thumb.jpg",
+	    "thumbnail" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/L1TuoKoNakR/Thumbnail-thumb.jpg",
+	    "kor_title" => "나주 복암리 정촌고분 마한사람들, 큰 무덤에 함께 잠들다",
+	    "eng_title" => "Tomb in Jeongchon of Bogam-ri, Naju",
+	    "venue" => "국립나주박물관",
+	    "map_address" => "전라남도 나주시 반남면 고분로 747",
+	    "map_name" => "전라남도 나주시 반남면 고분로 747",
+	    "description" => "특별전<나주 복암리 정촌고분> 전시기간: 2019년 10월 8일(화) ~ 2020년 1월 5일(일) 전시장소: 국립나주박물관 기획전시실 대 상 품: 나주 복암리 정촌고분 출토 유물 등 200여점 이번 특별 전시는 나주 복암리 정촌고분 금동신발 출토 5주년을 계기로 정촌고분 금동신발을 재조명하고, 나주 정촌고분의 고고학·역사학적 의미를 살펴보고자 하였습니다.",
+	    "youtube_id" => "N37N1zWixdw",
+	    "list_of_images" => [
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/L1TuoKoNakR/1.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/L1TuoKoNakR/1-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/L1TuoKoNakR/2.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/L1TuoKoNakR/2-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/L1TuoKoNakR/3.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/L1TuoKoNakR/3-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/L1TuoKoNakR/4.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/L1TuoKoNakR/4-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/L1TuoKoNakR/5.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/L1TuoKoNakR/5-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/L1TuoKoNakR/6.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/L1TuoKoNakR/6-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/L1TuoKoNakR/7.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/L1TuoKoNakR/7-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/L1TuoKoNakR/8.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/L1TuoKoNakR/8-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/L1TuoKoNakR/9.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/L1TuoKoNakR/9-thumb.jpg",
+	        ],
+	    ],
+	    "guide_information" => null,
+	    "is_paid" => false,
+	    "is_conversation" => false,
+	    "is_performing" => false,
+        "date" => "19.10.08 - 20.01.05",
+	    "type" => "특별전",
+	    "page_url" => null,
+	],
 ];
