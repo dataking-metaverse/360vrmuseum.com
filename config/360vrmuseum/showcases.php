@@ -3058,4 +3058,66 @@ It was just a natural continuance of the fulness of life. Everything was in term
 	    "type" => "상설전시",
 	    "page_url" => null,
 	],
+	[
+	    "mid" => "qhS4UkDnpnn",
+	    "show_embed" => true,
+		"main_title" => "영남권 수장고",
+	    "location" => "경주",
+	    "presented_by" => "국립경주박물관",
+	    "showcase_ref" => "http://gyeongju.museum.go.kr/kor/",
+	    "poster" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/qhS4UkDnpnn/poster-thumb.jpg",
+	    "thumbnail" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/qhS4UkDnpnn/Thumbnail-thumb.jpg",
+	    "kor_title" => "영남권 수장고",
+	    "eng_title" => "the storage of Yeongnam",
+	    "venue" => "국립경주박물관",
+	    "map_address" => "경상북도 경주시 일정로 186",
+	    "map_name" => "경상북도 경주시 일정로 186",
+	    "description" => "신라천년보고는 경상도 지역에서 발굴된 문화재를 안전하고 효율적으로 보관하기 위해 지어진 전용 보관시설입니다.",
+	    "youtube_id" => null,
+	    "list_of_images" => [
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/qhS4UkDnpnn/1.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/qhS4UkDnpnn/1-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/qhS4UkDnpnn/2.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/qhS4UkDnpnn/2-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/qhS4UkDnpnn/3.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/qhS4UkDnpnn/3-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/qhS4UkDnpnn/4.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/qhS4UkDnpnn/4-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/qhS4UkDnpnn/5.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/qhS4UkDnpnn/5-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/qhS4UkDnpnn/6.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/qhS4UkDnpnn/6-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/qhS4UkDnpnn/7.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/qhS4UkDnpnn/7-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/qhS4UkDnpnn/8.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/qhS4UkDnpnn/8-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/qhS4UkDnpnn/9.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/qhS4UkDnpnn/9-thumb.jpg",
+	        ],
+	    ],
+	    "guide_information" => null,
+	    "is_paid" => false,
+	    "is_conversation" => false,
+	    "is_performing" => false,
+        "date" => "상시",
+	    "type" => "상설전시",
+	    "page_url" => null,
+	],
 ];
