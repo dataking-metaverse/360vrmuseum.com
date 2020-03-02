@@ -3437,4 +3437,66 @@ It was just a natural continuance of the fulness of life. Everything was in term
 	    "type" => "특별전",
 	    "page_url" => null,
 	],
+	[
+	    "mid" => "UbfZyiAhTQ9",
+	    "show_embed" => true,
+		"main_title" => "가야본성, 칼과 현",
+	    "location" => "서울",
+	    "presented_by" => "국립중앙박물관",
+	    "showcase_ref" => "https://chuncheon.museum.go.kr/html/kr/",
+	    "poster" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/UbfZyiAhTQ9/poster-thumb.jpg",
+	    "thumbnail" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/UbfZyiAhTQ9/Thumbnail-thumb.jpg",
+	    "kor_title" => "가야본성, 칼과 현",
+	    "eng_title" => "Views of Gwandong",
+	    "venue" => "국립중앙박물관",
+	    "map_address" => "강원도 춘천시 우석로 70 ",
+	    "map_name" => "강원도 춘천시 우석로 70 ",
+	    "description" => "가야의 존재방식은 공존입니다. 여러 가야가 함께 어우러져 살았습니다. 여러 나라가 각축을 하던 삼국시대는 바야흐로 통합을 원﻿했습니다. 공존의 왕국 가야는 통합을 추구한 나라들에 굴하지 않았습니다. 가야는 철로 칼과 갑옷을 만들어 강력한 군대를 이끌고, 가야금으로 완벽한 하모니를 만들어 사람들을 사로잡았습니다. 칼과 현은 가야의 본성입니다. 우리는 가야를 하나로 통합하지 못한 작은 나라로 기억하지만, 사실은 다양성이 공존한 평화의 모습을 잊었을 뿐입니다. 이제 가야가 탄생하고 사라진 기억을 다시 되돌려보고자 합니다. 1부 ‘공존’에서는 520여 년간 가야가 추구했던 공존의 흔적을 찾아봅니다. 공존은 서로 자율성을 존중하고 협력하며 살아가는 존재방식입니다. 가야의 여러 나라는 제각기 자율적인 대외관계를 유지하였고, 다양하고 개성있는 양식의 토기를 생산하였습니다. 가야 사람은 남방과 북방 등 여러 곳에서 온 사람들이 모여 살았으며, 다양한 문화를 누렸습니다. 2부 ‘화합’에서는 가야가 공존을 지속할 수 있었던 원동력을 살펴봅니다. 가야의 여러 나라는 중앙집권화한 통합국가인 삼국에 맞서기 위해 서로 뭉쳤습니다. 5세기 후반 가라국은 낙동강과 섬진강의 여러 세력을 규합하고, 남제에 사신을 파견하여 국제적 위상을 새롭게 정립했습니다. 가라국이 규합한 지역에서는 장식대도와 제사토기를 공유하였습니다. 3부 ‘힘’에서는 철의 나라 가야의 모습을 조명합니다. 공존은 힘을 갖추었을 때 유지할 수 있습니다. 가야의 힘은 철을 다루던 기술에서 나왔습니다. 가야가 생산한 철갑옷은 삼국에 뒤지지 않는 뛰어난 제철기술과 이를 기반으로 한 군사력이 있었음을 말해줍니다. 국보 제275호 말탄 무사모양뿔잔은 가야가 철로 무장한 중장기병의 전술을 매우 중요하게 여겼음을 말하고 있습니다. 4부 ‘번영’에서는 4세기 전반 이전 동북아시아의 국제시장으로 번영을 누린 가락국이 왜 강자의 패권으로 가야를 통합하지 않았는지를 살펴봅니다. 철과 여러 나라의 특산품이 모이는 당대 최고의 국제시장으로 번영을 누린 가락국의 모습은 최고 지배자의 무덤에 타임캡슐처럼 남아있습니다. 가락국은 물질적 번영을 누렸을 뿐만 아니라 힘(무력, 이념, 경제력)을 갖춘 지배자가 있었지만 4세기 후반 이후에는 점차 쇠약해졌습니다.",
+	    "youtube_id" => null,
+	    "list_of_images" => [
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/UbfZyiAhTQ9/1.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/UbfZyiAhTQ9/1-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/UbfZyiAhTQ9/2.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/UbfZyiAhTQ9/2-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/UbfZyiAhTQ9/3.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/UbfZyiAhTQ9/3-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/UbfZyiAhTQ9/4.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/UbfZyiAhTQ9/4-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/UbfZyiAhTQ9/5.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/UbfZyiAhTQ9/5-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/UbfZyiAhTQ9/6.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/UbfZyiAhTQ9/6-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/UbfZyiAhTQ9/7.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/UbfZyiAhTQ9/7-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/UbfZyiAhTQ9/8.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/UbfZyiAhTQ9/8-thumb.jpg",
+	        ],
+	        [
+	            "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/UbfZyiAhTQ9/9.jpg",
+	            "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/UbfZyiAhTQ9/9-thumb.jpg",
+	        ],
+	    ],
+	    "guide_information" => null,
+	    "is_paid" => false,
+	    "is_conversation" => false,
+	    "is_performing" => false,
+        "date" => "19.12.03 - 20.03.01",
+	    "type" => "특별전",
+	    "page_url" => null,
+	],
 ];
