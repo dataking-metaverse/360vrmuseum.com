@@ -38,7 +38,7 @@ const Button = styled.button`
     font-weight: 400;
     line-height: 1em;
     background-color: transparent;
-   
+
     &:before {
         content: "${({open}) => open ? '▼  ' : '▶  '}";
     }
@@ -59,7 +59,7 @@ function ShowcaseDescription(props: Props) {
 
     return (
         <ShowcaseContainer>
-            <Description>{description}</Description>
+            <Description dangerouslySetInnerHTML={{_html: description}} />
             {guideInformation && (
                 <React.Fragment>
                     <ButtonWrapper>
