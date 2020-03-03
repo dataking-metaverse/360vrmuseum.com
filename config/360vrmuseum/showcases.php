@@ -777,7 +777,7 @@ return [
     ],
     [
         "mid" => "V5jZZqo5CZg",
-		"show_embed" => true,
+		"show_embed" => false,
         "main_title" => "호남의 임진왜란 그 승리의 기록\n무숙공 최희량이 쓴 임란첩보서목",
         "location" => "나주",
         "presented_by" => "국립나주박물관",
@@ -839,7 +839,7 @@ return [
     ],
     [
         "mid" => "QHhwyfbvgQM",
-		"show_embed" => true,
+		"show_embed" => false,
         "main_title" => "국립나주박물관: 풍요의 땅 전라 - 천년의 시간을 걷다",
         "location" => "나주",
         "presented_by" => "국립나주박물관",
@@ -1927,7 +1927,7 @@ return [
     ],
     [
         "mid" => "3MrnWzKigNP",
-		"show_embed" => true,
+		"show_embed" => false,
         "main_title" => "고려청자의 정점頂點을 만나다\n부안청자·강진청자",
         "location" => "전주",
         "presented_by" => "국립전주박물관",
@@ -2051,7 +2051,7 @@ return [
     ],
     [
         "mid" => "QkPtiaDjLbE",
-		"show_embed" => true,
+		"show_embed" => false,
         "main_title" => "국립미륵사지유물전시관",
         "location" => "익산",
         "presented_by" => "국립미륵사지유물전시관",
