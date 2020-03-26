@@ -82,21 +82,19 @@ class AuthController extends Controller {
      */
     public function login(Request $request) {
 
-        // If the user is using username instead of email to login, still going.
-		$email = $request->get("email");
-		$password = $request->get("password");
-		$user = User::where(["name" => $email])->first();
-        if ($user) { $email = $user->email; }
-
         $validation = Validator::make($request->all(), [
             'email' => 'required|string|email',
             'password' => 'required|string',
             'remember_me' => 'boolean'
         ]);
 
-        if ($validation->fails()) { throw new ValidationException($validation); }
+        if ($validation->fails()) {
+            throw new ValidationException($validation);
+        }
 
-        if(!Auth::attempt(["email" => $email, "password" => $password], !!$request->remember_me)) {
+        $credentials = request(['email', 'password']);
+
+        if(!Auth::attempt($credentials, !!$request->remember_me)) {
             throw new WrongCredentialException();
         }
 
