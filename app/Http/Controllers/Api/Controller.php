@@ -33,4 +33,9 @@ class Controller extends BasicController {
         if (is_null($value)) { throw new MissingParameterException($key); }
         return $value;
     }
+
+    public function param($key) {
+        $value = $this->request->get($key);
+        return !is_null($value) ? $value : null;
+    }
 }
