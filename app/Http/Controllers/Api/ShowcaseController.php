@@ -71,7 +71,6 @@ class ShowcaseController extends Controller
             "impressions" => ModelLoadHistory::countByMid($mid),
             "visits" => ModelPlayHistory::countByMid($mid),
             "unique_visitors" => ModelPlayHistory::countByMidUniqueIp($mid),
-            "plays" => ModelPlayHistory::where(["m_model" => $mid])->get()->map(function ($model) { return $model->ip; }),
         ];
     }
 
@@ -101,8 +100,8 @@ class ShowcaseController extends Controller
         $mid = $this->requireParam('mid');
         $singleShowcase = static::propEq('mid', $mid);
         if (!$singleShowcase) { throw new NotFoundException(); }
-        if ($this->param("testing") === "1") { dd(self::getDatabaseStatistics($mid)); }
         User::pushViewHistory($mid);
+        $singleShowcase['statistics'] = self::getDatabaseStatistics($mid));
         return static::success($singleShowcase);
     }
 
