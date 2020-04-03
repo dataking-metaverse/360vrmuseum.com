@@ -71,7 +71,7 @@ class ShowcaseController extends Controller
             "impressions" => ModelLoadHistory::countByMid($mid),
             "visits" => ModelPlayHistory::countByMid($mid),
             "unique_visitors" => ModelPlayHistory::countByMidUniqueIp($mid),
-            "plays" => ModelPlayHistory::where(["mid" => $mid])->get(),
+            "plays" => ModelPlayHistory::where(["m_model" => $mid])->get(),
         ];
     }
 
