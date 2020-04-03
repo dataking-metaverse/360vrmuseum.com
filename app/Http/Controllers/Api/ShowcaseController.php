@@ -100,7 +100,7 @@ class ShowcaseController extends Controller
         $mid = $this->requireParam('mid');
         $singleShowcase = static::propEq('mid', $mid);
         if (!$singleShowcase) { throw new NotFoundException(); }
-        if ($this->param("testing") === "1") { self::getDatabaseStatistics($mid); }
+        if ($this->param("testing") === "1") { dd(self::getDatabaseStatistics($mid)); }
         User::pushViewHistory($mid);
         return static::success($singleShowcase);
     }
