@@ -101,7 +101,7 @@ class ShowcaseController extends Controller
         $singleShowcase = static::propEq('mid', $mid);
         if (!$singleShowcase) { throw new NotFoundException(); }
         User::pushViewHistory($mid);
-        $singleShowcase['statistics'] = self::getDatabaseStatistics($mid));
+        $singleShowcase['statistics'] = self::getDatabaseStatistics($mid);
         return static::success($singleShowcase);
     }
 
