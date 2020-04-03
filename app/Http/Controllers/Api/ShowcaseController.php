@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers\Api;
 
 use App\Console\Commands\FetchShowcaseStatistics;
@@ -8,6 +7,9 @@ use App\Exceptions\Api\UnauthorizedException;
 use App\Exceptions\Api\ValidationException;
 use App\User;
 use App\VRMuseum\User as MongoUser;
+use App\VRMuseum\Model;
+use App\VRMuseum\ModelLoadHistory;
+use App\VRMuseum\ModelPlayHistory;
 use Cache;
 use Validator;
 use Illuminate\Http\Request;
@@ -64,6 +66,14 @@ class ShowcaseController extends Controller
         return User::hasPrivilegeSafe($user, $privilege);
     }
 
+    static function getDatabaseStatistics(string $mid): array {
+        return [
+            "impressions" => ModelLoadHistory::countByMid($mid),
+            "visits" => ModelPlayHistory::countByMid($mid),
+            "unique_visitors" => ModelPlayHistory::countByMidUniqueIp($mid),
+        ];
+    }
+
     function __construct(Request $request) {
         parent::__construct($request);
         $validation = Validator::make($request->all(), [
@@ -90,7 +100,7 @@ class ShowcaseController extends Controller
         $mid = $this->requireParam('mid');
         $singleShowcase = static::propEq('mid', $mid);
         if (!$singleShowcase) { throw new NotFoundException(); }
-        if ($this->param("testing") === "1") { dd($singleShowcase); }
+        if ($this->param("testing") === "1") { self::getDatabaseStatistics($mid); }
         User::pushViewHistory($mid);
         return static::success($singleShowcase);
     }
