@@ -2054,7 +2054,7 @@ return [
 		"show_embed" => false,
         "main_title" => "국립익산박물관전시관",
         "location" => "익산",
-        "presented_by" => "국립익산박물관전시관",
+        "presented_by" => "국립익산박물관",
         "showcase_ref" => "https://iksan.museum.go.kr/kor/html/sub02/0201.html",
         "poster" => 'https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum-posters/QkPtiaDjLbE/thumb-470.jpg',
         "thumbnail" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum-thumbnails/QkPtiaDjLbE/thumb-470.jpg",
