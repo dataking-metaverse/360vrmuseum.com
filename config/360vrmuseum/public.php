@@ -111,8 +111,8 @@ return [
          *  - ['basic'] // (accessable by all kinds of users who has login)
          *  - ['*'] // (accessable by everyone, regardless if he has logged in or not)
          */
-       'viewShowcases' => ['basic'], // enable this line when you need to restrict
-        // 'viewShowcases' => ['*'], // enable this line to enable showcase to everyone
+       // 'viewShowcases' => ['basic'], // enable this line when you need to restrict
+        'viewShowcases' => ['*'], // enable this line to enable showcase to everyone
 
         /**
          * TODO : please rewrite this comment block after it logic is actually applied
