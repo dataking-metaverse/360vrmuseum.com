@@ -3,7 +3,7 @@
 return [
     [
         "mid" => "aSYdPZg4Mu6",
-		"show_embed" => true,
+		"show_embed" => false,
         "main_title" => "동아시아의 호랑이 미술",
         "location" => "서울",
         "presented_by" => "국립중앙박물관",
