@@ -3921,10 +3921,6 @@ It was just a natural continuance of the fulness of life. Everything was in term
                 "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/E4XEikvxH28/The-Days-of-King-Sukjong-07012020_133346-thumb.jpg",
             ],
             [
-                "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/E4XEikvxH28/The-Days-of-King-Sukjong-07012020_133346.jpg",
-                "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/E4XEikvxH28/The-Days-of-King-Sukjong-07012020_133346-thumb.jpg",
-            ],
-            [
                 "original" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/E4XEikvxH28/The-Days-of-King-Sukjong-Photo-6.jpg",
                 "thumb" => "https://dataking.blob.core.windows.net/360vrmuseum-media/vrmuseum/E4XEikvxH28/The-Days-of-King-Sukjong-Photo-6-thumb.jpg",
             ],
