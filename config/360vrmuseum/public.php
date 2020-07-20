@@ -41,7 +41,10 @@ return [
                 'qT3himjQVQ2', '3MrnWzKigNP', 'kF3xE8edLEA', 'sdhXymhVog6', 'MsECZxmoy9y',
                 'aSYdPZg4Mu6', 'QkPtiaDjLbE', 'yDEtLE2KrWP', 'w6M8mr9ArwV', 'n4ik2CyQRWM',
                 '3VzkdUcgjGM', '4MbVUmwti9x', 'z8Gwj4NcTUu', 'xSPWrtHB4Zd', 'kkZGik7iLgm',
-                'TyFGiCLuof9', 'aBb76RaccUH',
+                'TyFGiCLuof9', 'aBb76RaccUH', "AyXpvFkHzPo", "8vo1vboP9vz", "s7Zcy87gkns",
+                "L1TuoKoNakR", "CKBEnmk9CVG", "qPk7yxoRZHP", "6NerCD25MLi", "wDBBzvtMFHZ",
+                "b35AU3ctUba", "QcXyw9K7xLD", "kmYoTwSBEJ7", "VVJ1C5AbyjP", "zyXcQFNAoQc",
+                "egCpUWDSjug", "NrX8UbPpz3y",
             ],
             'specialExhibition' => [
                 'qT3himjQVQ2', 'MsECZxmoy9y', 'aBb76RaccUH', 'xSPWrtHB4Zd', 'z8Gwj4NcTUu',
