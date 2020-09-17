@@ -40,7 +40,7 @@ function Frame (props: FrameProps) {
     if (!(showcase instanceof Showcase)) { return <LoadingSpinner cover />; }
     const mid = showcase.getAttribute('mid');
     const showEmbed = showcase.getAttribute('show_embed');
-    return <Iframe src={`https://embed.360vrmuseum.com/showcase/${mid}?show_embed=${showEmbed ? 1 : 0}`} allowFullScreen allow="vr" />;
+    return <Iframe src={`https://embed.360vrmuseum.com/showcase/${mid}?show_embed=${showEmbed ? 1 : 0}`} allowFullScreen allow="vr" allow="xr-spatial-tracking" />;
 }
 
 function ShowcaseIframe(props: Props) {
