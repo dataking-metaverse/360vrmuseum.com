@@ -39,7 +39,15 @@ function Frame (props: FrameProps) {
     const {showcase} = props;
     if (!(showcase instanceof Showcase)) { return <LoadingSpinner cover />; }
     const mid = showcase.getAttribute('mid');
+    const isPremium = showcase.getAttribute('isPremium');
+    console.log('isPremium');
+    console.log(isPremium);
     const showEmbed = showcase.getAttribute('show_embed');
+
+    if(isPremium === true){
+        return <Iframe src={`https://premium.360vrmuseum.com/?m=${mid}&play=0&qs=0&hr=1`} allowFullScreen allow="vr" allow="xr-spatial-tracking" />;    
+    }
+
     return <Iframe src={`https://embed.360vrmuseum.com/showcase/${mid}?show_embed=${showEmbed ? 1 : 0}`} allowFullScreen allow="vr" allow="xr-spatial-tracking" />;
 }
 

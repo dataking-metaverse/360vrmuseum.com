@@ -12,6 +12,7 @@ import Comment from "./Comment";
 export type Props = {|
     mid: string,
     show_embed: boolean,
+    isPremium : boolean,
     main_title: string,
     location: string,
     presented_by: string,

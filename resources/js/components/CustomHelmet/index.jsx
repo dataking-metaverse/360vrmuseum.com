@@ -30,6 +30,7 @@ function CustomHelmet(props: Props) {
     return (
         <Helmet>
             <title>{props.title}</title>
+            <link rel="icon" href="https://360hexaworld.blob.core.windows.net/glb-files-dev/museumLogo.png" />
             <meta name="keywords" content={keywords} />
             <meta name="subtitle" content={description} />
             <meta name="description" content={description} />

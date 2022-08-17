@@ -9,16 +9,16 @@ return [
         'linkText' => '바로보기',
         'slides' => [
             [
-                'title' => 'Next-generation museum <br />360 VRMuseum',
+                'title' => 'Metaverse museum <br />360 VRMuseum',
                 'subtitle' => '',
             ],
             [
-                'title' => '갈 수 있는 곳을 더 가까이',
-                'subtitle' => 'VR속에 담긴 감성을 더 가깝게 만날 차례입니다.',
+                'title' => '갈 수 없는 곳을 더 가까이',
+                'subtitle' => '시간과 공간의 제약을 넘어서 항상 열려있습니다',
             ],
             [
                 'title' => '볼 수 있는 것을 더 새롭게',
-                'subtitle' => '새로워진 뮤지엄을 만나보세요.',
+                'subtitle' => '시간을 거슬러 올라가는 디지털 시간여행을 제공합니다',
             ],
         ],
     ],
