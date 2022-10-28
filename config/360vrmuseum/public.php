@@ -58,32 +58,35 @@ return [
                 "GTuNscDGeeJ", "E4XEikvxH28", "ttXr3u6Yep8", "QbvdKVQQAQK", "tdcFoxxNr94",
 				"ZkdCV6kHtjR", "Zkqgp8oGEMZ", "5ga3YWyfs6N", "Rowya1Az6sQ",
                 "GeVm7Q1pgzw", "KtMzVq6Wb2j", "pybatcDP6XN", "xc7dQu8hm8q", "NCB18b761cL",
-                "gdiSTbENaWa", "xs4udigpfA4", "QkJcmx9YVkd", "RgeNNi3UhUx", "CxNsvfier2r", 
+                "gdiSTbENaWa", "xs4udigpfA4", "QkJcmx9YVkd", "RgeNNi3UhUx", "CxNsvfier2r",
                 "5F4ztyM4xgF", "aTz5QHBiwfY", "tUfbuhe1TNC", "jhSay4aaBpL",
                 "6EkPgDXdELu", "5Q8JUsn7idf", "7BEgs7sZTJ6", "GXgCjQ3RKKp", "AgVRR52vm4Z",
                 "kr4FhvcJ1FZ", "wtsn1HJMyCi", "DG8kzvoNBfK", "ZXYZZQRDo94",
                 "W3yaNnVueif", "SFxGciXpsk1", "NbA9Vo2qdMV", "szqU6gfWcBm", "TJpVtKQobAV",
                 "hgpJzGvbKt1", "jnx1iyzcHxP", "GngBPH6CiCa", "b27MkLHNFUf", "HxEfrg4v4Gp",
                 "BW9ESm56ipA", "2hwSZh6uCxB", "RVKzQM8KQoY", "Aj7r6hTcGGX", "2wP7SjkTaFv",
-                "KYbPtXrfQN1", "ffwBQqzFFtr", "nnw6J5j1aDy", "ZRt3kzpjmeL", "RwunMWz2fCQ"
+                "KYbPtXrfQN1", "ffwBQqzFFtr", "nnw6J5j1aDy", "ZRt3kzpjmeL", "RwunMWz2fCQ",
+                "ushsxppVR7j", "uhLyQwqeKtW", "hZaMBjiiYDi", "iLU66xUciTr", "4H2pJj83Ezw",
+                "sNKxi7FFmSG"
+
             ],
             'permanentExhibition' => [
                 'QkPtiaDjLbE', 'ft1emFLvBQA', 'BNTTf85YsMP', 'iPhH5vffSTt', 'RM2QnvzmjA3',
                 'B6UCtGFBjsf', '2Kh3PgoqoDT', 'Xr48H9yMjcp', 'rkDggYgt6LV', 'UarDva3g6pX',
                 'P4L5PqEWNrS', 'w9vxL98X4Fd', '3MxD4FVo6e5', '9tDHv3bWHBt', 'qhS4UkDnpnn',
-				'oud3DFwGm9R', 'yKz3BkBb7ob', 'tBQAYUHPuhd', "aFndwV2W5c1", 
+				'oud3DFwGm9R', 'yKz3BkBb7ob', 'tBQAYUHPuhd', "aFndwV2W5c1",
                 "cTKXFAPi5m5",
                 "miZyAxmmwgM", "xwghCfgnXWc", "cRabefs5PvB",
                 "RYxozGTokiF", "QQJVtS4dntk", "Msxw5Ro5Rbq", "VaaJmq7mpvQ",
-                "zwDCr9d7Hn3", "YD97yZR8T41", 
-                "e9bP5KXG3pG", "tNoi3UrSk3j", 
+                "zwDCr9d7Hn3", "YD97yZR8T41",
+                "e9bP5KXG3pG", "tNoi3UrSk3j",
                 "wdRybhdBhTR", "Qsv58Bir2md", "qf4TMS7AyEE", "qf4TMS7AyEE", "iXDXBvQaXwT",
                 "dRmexZNqo6F", "3kzBfSHbqh7", "4ZrybKMjds7", "HAEF4tkradM", "HAEF4tkradM",
                 "NJfe1w1bi8q", "gLeh2gcGdSX", "2RSKTmwiEeU", "bxDm1AxnSmL", "fGpGDyV9XBs",
                 "iP2abD2ZcJp", "ZiTw5wTnUs9", "S1xzDTjDsDc", "wTgRH7BaYCm", "o5HpgChzsqP",
                 "3ZXKfUyAyTX", "QCNVvQoY3SK", "sN5q8NkNdVP", "muUUxgmr7DT", "LDBS4Xw2Wna",
                 "LCnfvFnjEQr", "WdvU2hUi6Hu", "W7A453enU7X", "gAi76oB5H8q", "S7tQsM5wxNn",
-                "DmrHB5F6SXT"
+                "DmrHB5F6SXT", "eMbbm8Xky6G", "UAgEZptXViQ"
             ],
         ],
         'showcase' => [
