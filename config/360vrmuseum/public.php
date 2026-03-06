@@ -44,10 +44,12 @@ return [
                 'TyFGiCLuof9', 'aBb76RaccUH', "AyXpvFkHzPo", "8vo1vboP9vz", "s7Zcy87gkns",
                 "L1TuoKoNakR", "CKBEnmk9CVG", "qPk7yxoRZHP", "6NerCD25MLi", "wDBBzvtMFHZ",
                 "b35AU3ctUba", "QcXyw9K7xLD", "kmYoTwSBEJ7", "VVJ1C5AbyjP", "zyXcQFNAoQc",
-                "egCpUWDSjug", "NrX8UbPpz3y", "QCNVvQoY3SK",
+                "egCpUWDSjug", "NrX8UbPpz3y", "QCNVvQoY3SK", "ZtMjhvxh7Ze",
             ],
             'specialExhibition' => [
-                'qT3himjQVQ2', 'MsECZxmoy9y', 'aBb76RaccUH', 'xSPWrtHB4Zd', 'z8Gwj4NcTUu',
+
+
+'qT3himjQVQ2', 'MsECZxmoy9y', 'aBb76RaccUH', 'xSPWrtHB4Zd', 'z8Gwj4NcTUu',
                 'TyFGiCLuof9', '4MbVUmwti9x', 'kcWsN7tZAXm', '3MrnWzKigNP', 'sdhXymhVog6',
                 'avWhh5K7Nop', 'kF3xE8edLEA', 'kkZGik7iLgm', 'o1ZhcnK9swd', 'V5jZZqo5CZg',
                 'w6M8mr9ArwV', 'aSYdPZg4Mu6', 'yDEtLE2KrWP', 'n4ik2CyQRWM', '3VzkdUcgjGM',
@@ -67,11 +69,20 @@ return [
                 "BW9ESm56ipA", "2hwSZh6uCxB", "RVKzQM8KQoY", "Aj7r6hTcGGX", "2wP7SjkTaFv",
                 "KYbPtXrfQN1", "ffwBQqzFFtr", "nnw6J5j1aDy", "ZRt3kzpjmeL", "RwunMWz2fCQ",
                 "ushsxppVR7j", "uhLyQwqeKtW", "hZaMBjiiYDi", "iLU66xUciTr", "4H2pJj83Ezw",
-                "sNKxi7FFmSG"
+                "sNKxi7FFmSG",
+                "6p6Sy9GFtr4", "XdFCzEdxnmS", "hnpw67yd2N6", "vfpqr5DZfrR", "Xem7Xy8ucnR",
+                "DePDvbVCdGj", "2Czdd4satnZ", "98bC88P88ks", "zbXjiEj7kg4", "55RxbMtqmnK",
+                "Xfr3M74wWkH", "tPa2cQxrCgj", "JSZSgW7Ycen", "e3dWhp4ejPQ", "wSqWTasn7hP",
+                "eFmfU3W3Yg2", "rwkgTUcqsRD", "JnhdDbh2QfG", "odUfXM8rhKZ", "AaTC6H2Q9DT",
+                "wcvi9banCMA", "ZfveSAsLdU2", "EGX2hjqynN7", "SUxLaWHpcmv", "8DtnJUr6J5c",
+                "YeGMzr8wjhG", "xkioJCHv7Xa", "9s7WADM8Bva", "4ZTPmokKmR8", "GJGx6fV2XPY",
+                "9HJuemda1nG", "qYNzrKin5HX", "zyz6LNx5WB5", "ums9Z8hBCCw", "4N1AtpUfYaE",
+                "JDZ9wqDmcjy", "UVgTPTKYtA3", "MKQ1K8x5RZv", "2hbpeCHjPPb", "3goYNsVtiD5",
 
-            ],
+
+],
             'permanentExhibition' => [
-                'QkPtiaDjLbE', 'ft1emFLvBQA', 'BNTTf85YsMP', 'iPhH5vffSTt', 'RM2QnvzmjA3',
+'QkPtiaDjLbE', 'ft1emFLvBQA', 'BNTTf85YsMP', 'iPhH5vffSTt', 'RM2QnvzmjA3',
                 'B6UCtGFBjsf', '2Kh3PgoqoDT', 'Xr48H9yMjcp', 'rkDggYgt6LV', 'UarDva3g6pX',
                 'P4L5PqEWNrS', 'w9vxL98X4Fd', '3MxD4FVo6e5', '9tDHv3bWHBt', 'qhS4UkDnpnn',
 				'oud3DFwGm9R', 'yKz3BkBb7ob', 'tBQAYUHPuhd', "aFndwV2W5c1",
@@ -86,8 +97,11 @@ return [
                 "iP2abD2ZcJp", "ZiTw5wTnUs9", "S1xzDTjDsDc", "wTgRH7BaYCm", "o5HpgChzsqP",
                 "3ZXKfUyAyTX", "QCNVvQoY3SK", "sN5q8NkNdVP", "muUUxgmr7DT", "LDBS4Xw2Wna",
                 "LCnfvFnjEQr", "WdvU2hUi6Hu", "W7A453enU7X", "gAi76oB5H8q", "S7tQsM5wxNn",
-                "DmrHB5F6SXT", "eMbbm8Xky6G", "UAgEZptXViQ"
-            ],
+                "DmrHB5F6SXT", "eMbbm8Xky6G", "UAgEZptXViQ",
+                "8EKpHTZ4TTb", "jNHutWvGg41", "RjrSBoUDd2T", "qL77gQGEsWe", "BdPGURXi9Mr",
+                "X1uJtBGaxyq", "9DyyKimqHus", "hAq5GxCFBdJ", "9ypDCYYkGfs", "A3565cXuMo2",
+                "mxqQx7QvC9k", "iiubeU6mgfx", "WSDh4kZ4cMS", "xkSFWj7dPeV", "ByMaSeN1Rfi",
+],
         ],
         'showcase' => [
             'comments' => [
