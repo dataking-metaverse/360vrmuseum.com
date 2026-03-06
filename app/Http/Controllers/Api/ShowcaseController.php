@@ -19,18 +19,26 @@ class ShowcaseController extends Controller
 {
     const VALIDATE_MID = 'min:11|max:11|alpha_num';
 
-    static function all() {
-        return array_map(function($showcase) {
-            $mid = $showcase['mid'];
-            $showcase['statistics'] = self::statistics($mid);
-            return $showcase;
-        }, config('360vrmuseum.showcases'));
+    static function raw() {
+        return config('360vrmuseum.showcases');
     }
 
-    // TODO : option for no caching
+    static function addStatistics(array $showcases) {
+        $statistics = Cache::get(FetchShowcaseStatistics::CACHE_KEY) ?? [];
+        return array_map(function($showcase) use ($statistics) {
+            $mid = $showcase['mid'];
+            $statistic = $statistics[$mid] ?? [];
+            $showcase['statistics'] = [
+                'impressions' => $statistic['impressions'] ?? 0,
+                'visits' => $statistic['views'] ?? 0,
+                'unique_visitors' => $statistic['unique_visitors'] ?? 0,
+            ];
+            return $showcase;
+        }, $showcases);
+    }
+
     static function statistics(string $mid) {
-        // caching is necessary for avoiding overload
-        $statistics = Cache::get(FetchShowcaseStatistics::CACHE_KEY);
+        $statistics = Cache::get(FetchShowcaseStatistics::CACHE_KEY) ?? [];
         $statistic = $statistics[$mid] ?? [];
         return [
             'impressions' => $statistic['impressions'] ?? 0,
@@ -40,25 +48,28 @@ class ShowcaseController extends Controller
     }
 
     static function propEq(string $key, $value): array {
-        return array_first(static::all(), function($showcase) use ($key, $value) {
+        $showcase = array_first(static::raw(), function($showcase) use ($key, $value) {
             return isset($showcase[$key]) && $showcase[$key] === $value;
         });
+        return $showcase ? static::addStatistics([$showcase])[0] : [];
     }
 
-    // TODO : make a limit for this function
     static function propIn(string $key, array $value): array {
-        return array_values(array_where(static::all(), function($showcase) use ($key, $value) {
+        $filtered = array_values(array_where(static::raw(), function($showcase) use ($key, $value) {
             return isset($showcase[$key]) && in_array($showcase[$key], $value);
         }));
+        return static::addStatistics($filtered);
     }
 
     static function searchPhraseas(array $phrases): array {
-        return array_values(array_where(static::all(), function($showcase) use ($phrases) {
+        $filtered = array_values(array_where(static::raw(), function($showcase) use ($phrases) {
             $haystack = json_encode($showcase, JSON_UNESCAPED_UNICODE);
             foreach($phrases as $phrase) {
-                return stripos($haystack, trim($phrase)) !== false;
+                if (stripos($haystack, trim($phrase)) !== false) return true;
             }
+            return false;
         }));
+        return static::addStatistics($filtered);
     }
 
     static function userHasPrivilege(string $privilege): bool {

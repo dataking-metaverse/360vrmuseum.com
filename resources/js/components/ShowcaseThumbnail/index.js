@@ -1,10 +1,11 @@
-import React from "react";
+import React, {useState, useRef} from "react";
 import * as R from "ramda";
 
 import ClickToViewShadow from "~/components/ClickToViewShadow";
 import RatioGrid from "~/components/RatioGrid";
 import useLang from "~/hooks/useLang";
 import Showcase from "~/models/Showcase";
+import useIntersectionObserver from "~/hooks/useIntersectionObserver";
 import {
     Text,
     PureLink,
@@ -37,11 +38,18 @@ const usePresentedBy = (showcase: Showcase) => {
 
 function ShowcaseCardInner(props: InnerProps) {
     const {showcase} = props;
+    const [isVisible, setIsVisible] = useState(false);
+    const ref = useRef();
+    
+    useIntersectionObserver(ref, () => {
+        setIsVisible(true);
+    });
+
     const presentedBy = usePresentedBy(showcase);
     if (!showcase) { return null; }
     return (
         <React.Fragment>
-            <Image src={firstThumbnail(showcase)} />
+            <Image ref={ref} src={isVisible ? firstThumbnail(showcase) : null} />
             <Text>
                 <MainTitle>{mainTitle(showcase)}</MainTitle>
                 <Subtitle>

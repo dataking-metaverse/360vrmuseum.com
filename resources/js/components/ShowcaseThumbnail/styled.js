@@ -35,9 +35,11 @@ export const PureLink = styled(Link)`
 
 export const Image = styled.div`
     ${themeMixin('fill')}
-    background-image: url(${R.prop('src')});
+    background-color: #e0e0e0;
+    background-image: ${R.ifElse(R.prop('src'), R.pipe(R.prop('src'), (src) => `url(${src})`), R.always('none'))};
     background-size: cover;
     background-position: 50% 50%;
+    transition: background-image 0.5s ease-in-out;
 
     &:after {
         content: '';

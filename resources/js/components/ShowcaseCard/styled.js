@@ -81,9 +81,11 @@ export const LinkText = styled.div`
 
 export const Image = styled.div`
     position: relative;
-    background-image: url(${R.prop('image')});
+    background-color: #e0e0e0;
+    background-image: ${R.ifElse(R.prop('image'), R.pipe(R.prop('image'), (img) => `url(${img})`), R.always('none'))};
     background-size: cover;
     background-position: 50% 50%;
+    transition: background-image 0.5s ease-in-out;
 
     &:before {
         content: '';

@@ -4,7 +4,7 @@ import {connect} from "react-redux";
 import {withRouter} from "react-router";
 import {Row, Col} from "styled-bootstrap-grid";
 
-import {registerShowcaseGroupsElements} from "../../../redux/actionCreators/nationalMuseum";
+import {registerShowcaseGroupsElements, appendShowcaseGroupsElements} from "../../../redux/actionCreators/nationalMuseum";
 import ModelsContext from "../../../contexts/ModelsContext";
 import MuseumTitle from "../../../components/MuseumTitle";
 import Showcases from "../../../models/Showcases";
@@ -18,6 +18,7 @@ type Props = {
     exhibitionGroups: Array<string>,
     showcaseGroupsElements: Array<Node>,
     registerShowcaseGroupsElements: (value: Array<Node>) => void,
+    appendShowcaseGroupsElements: (value: Array<Node>) => void,
     match: {
         params: {
             museumName?: string,
@@ -68,22 +69,32 @@ function renderMuseumGridItem(museumName, showcases: Showcases) {
 }
 
 function MuseumGridItems(props: Props) {
-    const {exhibitionGroups, showcaseGroupsElements, registerShowcaseGroupsElements} = props;
+    const {exhibitionGroups, showcaseGroupsElements, registerShowcaseGroupsElements, appendShowcaseGroupsElements} = props;
     const {Showcases} = useContext(ModelsContext);
     const museumName = getMuseumName(props);
     const pickedExhibitions = typeof museumName === 'undefined' ? exhibitionGroups : [museumName];
 
     useEffect(() => {
-        if (!(Array.isArray(showcaseGroupsElements) && showcaseGroupsElements.length > 0)) {
-            Showcases.byPresentedBys(pickedExhibitions)
-                .then(R.pipe(
-                    R.toPairs,
-                    R.sort(([a], [b]) => pickedExhibitions.indexOf(a) - pickedExhibitions.indexOf(b)), // ramda should be able to solve this, rather than self composed
-                    R.map(R.apply(renderMuseumGridItem)),
-                    registerShowcaseGroupsElements
-                ));
-        }
-    }, []);
+        const loadMuseums = async () => {
+            // Clear existing elements if any
+            registerShowcaseGroupsElements([]);
+            
+            // Fetch each museum group individually for progressive rendering
+            for (const exhibition of pickedExhibitions) {
+                try {
+                    const group = await Showcases.byPresentedBys([exhibition]);
+                    const elements = R.pipe(
+                        R.toPairs,
+                        R.map(R.apply(renderMuseumGridItem))
+                    )(group);
+                    appendShowcaseGroupsElements(elements);
+                } catch (e) {
+                    console.error(`Failed to load showcases for ${exhibition}`, e);
+                }
+            }
+        };
+        loadMuseums();
+    }, [museumName]);
 
     return renderShowcaseGroups(showcaseGroupsElements);
 }
@@ -94,7 +105,7 @@ export default R.compose(
             exhibitionGroups: R.path(['config', 'pages', 'nationalMuseum', 'exhibitionGroups']),
             showcaseGroupsElements: R.prop('showcaseGroupsElements'),
         }),
-        R.applySpec({registerShowcaseGroupsElements})
+        R.applySpec({registerShowcaseGroupsElements, appendShowcaseGroupsElements})
     ),
     withRouter
 )(MuseumGridItems);

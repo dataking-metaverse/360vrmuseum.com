@@ -23,6 +23,7 @@ export const RECAPTCHA_VERIFICATION_REGISTER = 'RECAPTCHA_VERIFICATION_REGISTER'
 // ================================================================================
 
 export const SHOWCASE_GROUPS_ELEMENTS_REGISTER = 'SHOWCASE_GROUPS_ELEMENTS_REGISTER';
+export const SHOWCASE_GROUPS_ELEMENTS_APPEND = 'SHOWCASE_GROUPS_ELEMENTS_APPEND';
 
 // ================================================================================
 //    SHOWCASE
