@@ -24,7 +24,10 @@ const Root = styled(HomeContainer)`
 const PAGE_SIZE = 6;
 
 function ExhibitionList(props: Props) {
-    const {title, showcases} = props;
+    const {title, showcases: originalShowcases} = props;
+    // Reverse the array to show the latest exhibitions first
+    const showcases = R.reverse(originalShowcases || []);
+    
     const [showcasesCard, setShowcasesCard] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const [nextIndex, setNextIndex] = useState(0);

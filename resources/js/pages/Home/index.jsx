@@ -13,6 +13,23 @@ type Props = {
 
 @page("home")
 export default class Home extends React.PureComponent<Props> {
+    componentDidMount() {
+        // Reset scroll to top
+        window.scrollTo(0, 0);
+        
+        // Manual scroll restoration to prevent jumping issues with infinite scroll
+        if ('scrollRestoration' in window.history) {
+            window.history.scrollRestoration = 'manual';
+        }
+    }
+
+    componentWillUnmount() {
+        // Restore default scroll restoration behavior when leaving home page
+        if ('scrollRestoration' in window.history) {
+            window.history.scrollRestoration = 'auto';
+        }
+    }
+
     render() {
         return (
             <React.Fragment>
